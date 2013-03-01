@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   INVERT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/INVERT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    INVERT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="I_833016429_50793">
+   </a>
+   <a name="I_833016429_99308">
+   </a>
+   INVERT
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#I_833016429_50800">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_50802">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_875659">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_50807">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_50811">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_50823">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_880852">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1556">
+   </a>
+   INVERT
+   <a name="kanchor1557">
+   </a>
+   function uses the
+   <a name="kanchor1558">
+   </a>
+   Gaussian elimination method to compute the inverse of a square array. Errors from singular or near-singular arrays are accumulated in the optional
+   <i>
+    Status
+   </i>
+   argument.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you are working with complex inputs, use the LA_INVERT function instead.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_50800">
+   </a>
+   <a name="I_833016429_50800_PageTOC_INVERT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = INVERT(
+   <i>
+    Array
+   </i>
+   [,&#160;
+   <i>
+    Status
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_50809">
+    DOUBLE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_50802">
+   </a>
+   <a name="I_833016429_50802_PageTOC_INVERT_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is a single- or double-precision array of floating or complex values.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_875659">
+   </a>
+   <a name="I_833016429_875659_PageTOC_INVERT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Array
+  </h3>
+  <p>
+   The array to be inverted.
+   <i>
+    Array
+   </i>
+   must have two dimensions of equal size (i.e., a square array) and can be of any type except string. Note that the resulting array will be composed of single- or double-precision floating-point or complex values, depending on whether the DOUBLE keyword is set.
+  </p>
+  <h3 class="Argument">
+   Status
+  </h3>
+  <p>
+   A named variable to receive the status of the operation. Possible status values are:
+  </p>
+  <ul>
+   <li value="1">
+    0 = Successful completion.
+   </li>
+   <li value="2">
+    1 = Singular array (which indicates that the inversion is invalid).
+   </li>
+   <li value="3">
+    2 = Warning that a small pivot element was used and that significant accuracy was probably lost.
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="I_833016429_50807">
+   </a>
+   <a name="I_833016429_50807_PageTOC_INVERT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="I_833016429_50809">
+   </a>
+   <a name="I_833016429_50809_Keywords_INVERT__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_50811">
+   </a>
+   <a name="I_833016429_50811_PageTOC_INVERT_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Create an array A:
+   <br />
+   A = [[ 5.0, -1.0, 3.0], $
+   <br />
+   &#160;&#160;&#160;&#160;&#160;[ 2.0,  0.0, 1.0], $
+   <br />
+   &#160;&#160;&#160;&#160;&#160;[ 3.0,  2.0, 1.0]]
+   <br />
+   result = INVERT(A)
+   <br />
+   <br />
+   ; We can check the accuracy of the inversion by multiplying the
+   <br />
+   ; inverted array by the original array. The result should be a 3 x
+   <br />
+   ; 3 identity array.
+   <br />
+   PRINT, result # A
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   1.00000      0.00000      0.00000
+  </p>
+  <p class="Code">
+   0.00000      1.00000      0.00000
+  </p>
+  <p class="Code">
+   0.00000  9.53674e-07      1.00000
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_50823">
+   </a>
+   <a name="I_833016429_50823_PageTOC_INVERT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="I_833016429_880852">
+   </a>
+   <a name="I_833016429_880852_PageTOC_INVERT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/COND.html#C_854643309_749531">
+    COND
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../D/DETERM.html#D_843829869_749756">
+    DETERM
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LA_INVERT.html#L_826528365_959422">
+    LA_INVERT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/REVERSE.html#R_822202989_758865">
+    REVERSE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/ROTATE.html#R_822202989_678594">
+    ROTATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/TRANSPOSE.html#T_809226861_1152946" target="" title="" alt="">
+    TRANSPOSE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

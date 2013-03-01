@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HDF_SD_SETEXTFILE
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF Routines/HDF_SD_SETEXTFILE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF_Routines.html">
+    HDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    HDF_SD_SETEXTFILE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_1733484267_1012317">
+   </a>
+   <a name="HDF_1733484267_48072">
+   </a>
+   HDF_SD_SETEXTFILE
+  </h1>
+  <p>
+   The
+   <a name="kanchor1276">
+   </a>
+   HDF_SD_SETEXTFILE procedure moves data values from a dataset into an external file. Only the data is moved—all other information remains in the original file. This routine can only be used with HDF version 3.3 (and later) files, not on older HDF files or NetCDF files. Data can only be moved once, and the user must keep track of the external file(s). The OFFSET keyword allows writing to an arbitrary location in the external file.
+  </p>
+  <p>
+   As shown in the example, when adding data to an external file SD, you
+   <span class="Italic">
+    must
+   </span>
+   first use HDF_SD_ENDACCESS to sync the file, then reacquire the SDS ID with HDF_SD_SELECT before using HDF_SD_SETEXTFILE.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1054480_PageTOC_HDF_SD_SETEXTFILE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   HDF_SD_SETEXTFILE,
+   <span class="Italic">
+    SDdataset_id
+   </span>
+   ,
+   <span class="Italic">
+    Filename
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#HDF_1733484267_1012355">
+    OFFSET
+   </a>
+   =
+   <span class="Italic">
+    bytes
+   </span>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1054482_PageTOC_HDF_SD_SETEXTFILE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   SDdataset_id
+  </h3>
+  <p>
+   An SD dataset ID as returned by HDF_SD_SELECT.
+  </p>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   The name of the external file to be written.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1054487_PageTOC_HDF_SD_SETEXTFILE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="HDF_1733484267_1012355">
+   </a>
+   <a name="HDF_1733484267_1054488_Keywords_HDF_SD_SETEXTFILE_">
+   </a>
+   OFFSET
+  </h3>
+  <p>
+   Set this keyword to a number of bytes from the beginning of the external file at which data writing should begin. Exercise extreme caution when using this keyword with existing files.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1054490_PageTOC_HDF_SD_SETEXTFILE_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Create an HDF file:
+  </p>
+  <p class="Code">
+   SDinterface_id = HDF_SD_START('ext_main.hdf', /CREATE)
+  </p>
+  <p class="Code">
+   ; Add an SD:
+  </p>
+  <p class="Code">
+   SDdataset_id = HDF_SD_CREATE(SDinterface_id, 'float_findgen', [3,5], /FLOAT)
+  </p>
+  <p class="Code">
+   ; Put some data into the SD:
+  </p>
+  <p class="Code">
+   HDF_SD_ADDDATA, SDdataset_id, FINDGEN(3,5)
+  </p>
+  <p class="Code">
+   ; Call HDF_SD_ENDACCESS to sync the file:
+  </p>
+  <p class="Code">
+   HDF_SD_ENDACCESS,SDdataset_id
+  </p>
+  <p class="Code">
+   ; Reacquire the SDdataset_id:
+  </p>
+  <p class="Code">
+   SDdataset_id = HDF_SD_SELECT(SDinterface_id, 0)
+  </p>
+  <p class="Code">
+   ; Move data to an external file named findgen.hdf:
+  </p>
+  <p class="Code">
+   HDF_SD_SETEXTFILE, SDdataset_id, 'findgen.hdf'
+  </p>
+  <p class="Code">
+   ; Retrieve data from the external file into the variable fout:
+  </p>
+  <p class="Code">
+   HDF_SD_GETDATA, SDdataset_id, fout
+  </p>
+  <p class="Code">
+   ; Print the contents of fout:
+  </p>
+  <p class="Code">
+   PRINT, fout
+  </p>
+  <p class="Code">
+   ; Sync and close the files:
+  </p>
+  <p class="Code">
+   HDF_SD_ENDACCESS, SDdataset_id
+  </p>
+  <p class="Code">
+   HDF_SD_END, SDinterface_id
+  </p>
+  <h4>
+   IDL Output
+  </h4>
+  <p class="Code">
+   0.00000 1.00000 2.00000
+  </p>
+  <p class="Code">
+   3.00000 4.00000 5.00000
+  </p>
+  <p class="Code">
+   6.00000 7.00000 8.00000
+  </p>
+  <p class="Code">
+   9.00000 10.0000 11.0000
+  </p>
+  <p class="Code">
+   12.0000 13.0000 14.0000
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1054507_PageTOC_HDF_SD_SETEXTFILE_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="HDF_1733484267_1117807_PageTOC_HDF_SD_SETEXTFILE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="HDF_SD_END.html#HDF_1733484267_1011423">
+    HDF_SD_END
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HDF_SD_ENDACCESS.html#HDF_1733484267_1011494">
+    HDF_SD_ENDACCESS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HDF_SD_SELECT.html#HDF_1733484267_1012166">
+    HDF_SD_SELECT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HDF_SD_START.html#HDF_1733484267_1012597">
+    HDF_SD_START
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

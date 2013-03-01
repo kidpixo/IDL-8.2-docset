@@ -1,0 +1,576 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: R" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   READ_ASCII
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/R/READ_ASCII.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="R_list.html">
+    Routines: R
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    READ_ASCII
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="R_822202989_956701">
+   </a>
+   <a name="R_822202989_30033">
+   </a>
+   READ_ASCII
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#R_822202989_678412">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_678416">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_678425">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_678440">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_795798">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_1092913">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2209">
+   </a>
+   READ_ASCII function
+   <a name="kanchor2210">
+   </a>
+   reads data from an ASCII file into an IDL structure variable. READ_ASCII may be used with templates created by the
+   <a class="MCXref_Heading_0" href="../A/ASCII_TEMPLATE.html#A_850317933_983117">
+    ASCII_TEMPLATE
+   </a>
+   function.
+  </p>
+  <p>
+   This routine handles ASCII files consisting of an optional header of a fixed number of lines, followed by columnar data. One or more rows of data constitute a
+   <i>
+    record
+   </i>
+   . Each data element within a record is considered to be in a different column, or
+   <i>
+    field
+   </i>
+   . The data in one field must be of, or promotable to, a single type (e.g., FLOAT). Adjacent fields may be collected into multi-column fields, called
+   <i>
+    groups
+   </i>
+   . Files may also contain comments, which exist between a user-specified comment string and the corresponding end-of-line.
+  </p>
+  <p>
+   READ_ASCII is designed to be used with templates created by the ASCII template function.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    read_ascii.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_678412">
+   </a>
+   <a name="R_822202989_678412_PageTOC_READ_ASCII_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = READ_ASCII( [
+   <i>
+    Filename]
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#R_822202989_864824">
+    COMMENT_SYMBOL
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#R_822202989_864541">
+    COUNT
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#R_822202989_864606">
+    DATA_START
+   </a>
+   =
+   <i>
+    lines_to_skip
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#R_822202989_865250">
+    DELIMITER
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#R_822202989_865253">
+    HEADER
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#R_822202989_864515">
+    MISSING_VALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#R_822202989_864373">
+    NUM_RECORDS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#R_822202989_678426">
+    RECORD_START
+   </a>
+   =
+   <i>
+    index
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#R_822202989_863940">
+    TEMPLATE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#R_822202989_863965">
+    VERBOSE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   The result is an IDL structure array containing the data. Each field in the structure corresponds to a different column of data and each element in the array corresponds to a different record (a row of data).
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_678416">
+   </a>
+   <a name="R_822202989_678416_PageTOC_READ_ASCII_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A string containing the name of an ASCII file to read into an IDL variable. If
+   <span class="_Override" style="font-style: italic;">
+    filename
+   </span>
+   is not specified, a dialog allows the user to choose a file.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_678425">
+   </a>
+   <a name="R_822202989_678425_PageTOC_READ_ASCII_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   You can define the attributes of a field in two ways. If you use a template, you can either use a previously generated template, or create a template with
+   <a class="MCXref_Heading_0" href="../A/ASCII_TEMPLATE.html#A_850317933_983117">
+    ASCII_TEMPLATE
+   </a>
+   . You can use COMMENT_SYMBOL, DATA_START, DELIMITER, or MISSING_VALUE to either override template attributes or to provide one-time attributes for the file to be read, without a template.
+  </p>
+  <h3 class="Keyword">
+   <a name="R_822202989_864824">
+   </a>
+   <a name="R_822202989_864824_Keywords_READ_ASCII__">
+   </a>
+   COMMENT_SYMBOL
+  </h3>
+  <p>
+   Set this keyword to a string that identifies the character used to delineate comments in the ASCII file to be read. When READ_ASCII encounters the comment character, it discards data from that point until it reaches the end of the current line, identifying the rest of the line as a comment. The default character an empty string, ‘’, specifying that no comments will be recognized.
+  </p>
+  <h3 class="Keyword">
+   <a name="R_822202989_864541">
+   </a>
+   <a name="R_822202989_864541_Keywords_READ_ASCII__">
+   </a>
+   COUNT
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain the number of records read.
+  </p>
+  <h3 class="Keyword">
+   <a name="R_822202989_864606">
+   </a>
+   <a name="R_822202989_864606_Keywords_READ_ASCII__">
+   </a>
+   DATA_START
+  </h3>
+  <p>
+   Set this keyword equal to the number of header lines you want to skip. The default value is 0 if no template is specified.
+  </p>
+  <h3 class="Keyword">
+   <a name="R_822202989_865250">
+   </a>
+   <a name="R_822202989_865250_Keywords_READ_ASCII__">
+   </a>
+   DELIMITER
+  </h3>
+  <p>
+   Set this keyword to a string that identifies the end of a field. If no delimiter is specified, READ_ASCII uses information provided by the template in use. The default is a space, ‘&#160;’, specifying that an empty element constitutes the end of a field.
+  </p>
+  <h3 class="Keyword">
+   <a name="R_822202989_865253">
+   </a>
+   <a name="R_822202989_865253_Keywords_READ_ASCII__">
+   </a>
+   HEADER
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain the header in a string array of length DATA_START. If no header exists, an empty string is returned.
+  </p>
+  <h3 class="Keyword">
+   <a name="R_822202989_864515">
+   </a>
+   <a name="R_822202989_864515_Keywords_READ_ASCII__">
+   </a>
+   MISSING_VALUE
+  </h3>
+  <p>
+   Set this keyword equal to a value used to replace any missing or invalid data. The default value, if no template is supplied, is !VALUES.F_NAN. See
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Appendices/Constant_System_Variable.html#sysvars_272074529_996962" target="" title="" alt="">
+    !VALUES
+   </a>
+   for details.
+  </p>
+  <h3 class="Keyword">
+   <a name="R_822202989_864373">
+   </a>
+   <a name="R_822202989_864373_Keywords_READ_ASCII__">
+   </a>
+   NUM_RECORDS
+  </h3>
+  <p>
+   Set this keyword equal to the number of records to read. The default is to read up to and including the last record.
+  </p>
+  <h3 class="Keyword">
+   <a name="R_822202989_678426">
+   </a>
+   <a name="R_822202989_678426_Keywords_READ_ASCII__">
+   </a>
+   RECORD_START
+  </h3>
+  <p>
+   Set this keyword equal to the index of the first record to read. The default is the first record of the file (record 0).
+  </p>
+  <h3 class="Keyword">
+   <a name="R_822202989_863940">
+   </a>
+   <a name="R_822202989_863940_Keywords_READ_ASCII__">
+   </a>
+   TEMPLATE
+  </h3>
+  <p>
+   Use this keyword to specify the ASCII file template (generated by the function
+   <a class="MCXref_Heading_0" href="../A/ASCII_TEMPLATE.html#A_850317933_983117">
+    ASCII_TEMPLATE
+   </a>
+   ), that defines attributes of the file to be read. Specific attributes of the template may be overridden by the following keywords: COMMENT_SYMBOL, DATA_START, DELIMITER, MISSING_VALUE.
+  </p>
+  <h3 class="Keyword">
+   <a name="R_822202989_863965">
+   </a>
+   <a name="R_822202989_863965_Keywords_READ_ASCII__">
+   </a>
+   VERBOSE
+  </h3>
+  <p>
+   Set this keyword to print runtime messages.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_678440">
+   </a>
+   <a name="R_822202989_678440_PageTOC_READ_ASCII_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To read ASCII data using default file attributes, except for setting the number of skipped header lines to 10, type:
+  </p>
+  <p class="Code">
+   data = READ_ASCII(file, DATA_START=10)
+  </p>
+  <p>
+   To use a template to define file attributes, overriding the number of skipped header lines defined in the template, type:
+  </p>
+  <p class="Code">
+   data = READ_ASCII(file, TEMPLATE=template, DATA_START=10)
+  </p>
+  <p>
+   To use the ASCII_TEMPLATE GUI to generate a template within the function, type:
+  </p>
+  <p class="Code">
+   data = READ_ASCII(myfile, TEMPLATE=ASCII_TEMPLATE(myfile))
+  </p>
+  <h3>
+   <a name="R_822202989_1204665">
+   </a>
+   <a name="R_822202989_28132">
+   </a>
+   Working with a READ_ASCII Data Structure
+  </h3>
+  <p>
+   READ_ASCII returns a structure containing ASCII data, which is formatted according to specified keywords or a template. The following example returns a structure containing the data in the
+   <span class="Courier">
+    sine_waves.txt
+   </span>
+   file, found in the
+   <span class="Courier">
+    examples/data
+   </span>
+   subdirectory of the IDL installation directory.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Enter the following statement at the IDL command line to open the
+     <span class="Bold">
+      ASCII Template
+     </span>
+     dialog:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   sTemplate = ASCII_TEMPLATE()
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Complete the steps described in
+     <a class="MCXref_Heading_0" href="../A/ASCII_TEMPLATE.html#A_850317933_1025433" target="" title="" alt="">
+      Using the ASCII Template Dialog
+     </a>
+     to define the format of the data.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Use READ_ASCII to access the data, defined by the template created in the previous step;
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   data = READ_ASCII(FILEPATH('sine_waves.txt', $
+   <br />
+   &#160;&#160;&#160;SUBDIRECTORY=['examples', 'data']), TEMPLATE = sTemplate)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     The variable
+     <span class="Courier">
+      data
+     </span>
+     now contains the ASCII data. Use the format
+     <i>
+      structureName
+     </i>
+     .
+     <i>
+      fieldName
+     </i>
+     to access individual fields of data. The following lines plot each data field in an iPlot display:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   iPLOT, data.SmoothSine
+   <br />
+   iPLOT, data.NoisySine, color = [255, 0, 0], /OVERPLOT
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The Variable Watch window contains the
+   <span class="Courier">
+    sTemplate
+   </span>
+   and
+   <span class="Courier">
+    data
+   </span>
+   structures. Expand these items for information about the structure fields.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_795798">
+   </a>
+   <a name="R_822202989_795798_PageTOC_READ_ASCII_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="R_822202989_1092913">
+   </a>
+   <a name="R_822202989_1092913_PageTOC_READ_ASCII_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a href="../A/ASCII_TEMPLATE.html#A_850317933_983117" target="" title="" alt="" class="MCXref_0">
+    ASCII_TEMPLATE
+   </a>
+   ,
+   <a href="../I/IOPEN.html" target="" title="" alt="" class="MCXref_0">
+    IOPEN
+   </a>
+   ,
+   <a href="../Q/QUERY_ASCII.html#Q_815714925_1045490" target="" title="" alt="" class="MCXref_0">
+    QUERY_ASCII
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,442 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|File Format Object Classes|IDLffDICOM" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffDICOM::GetValue
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/File Format/IDLffDICOM__GetValue.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_ff.html">
+    File Format Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffDICOM::GetValue
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_ff_3755668711_1004706">
+   </a>
+   <a name="objects_ff_3755668711_40012">
+   </a>
+   <a name="kanchor3813">
+   </a>
+   IDLffDICOM::GetValue
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1004726">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1054427">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1004729">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1004735">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1004741">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1004807">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   This method takes optional DICOM group and/or element arguments and returns an array of POINTERs to the values of the elements matching those parameters.
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1004726">
+   </a>
+   <a name="objects_ff_3755668711_1334960_PageTOC_IDLffDICOM">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLffDICOM.html#objects_ff_3755668711_1003869">
+    IDLffDICOM
+   </a>
+   ::]GetValue([
+   <i>
+    Group
+   </i>
+   [,&#160;
+   <i>
+    Element
+   </i>
+   ]] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1004736">
+    REFERENCE
+   </a>
+   =
+   <i>
+    list&#160;of element references
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1004738">
+    NO_COPY
+   </a>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1054427">
+   </a>
+   <a name="objects_ff_3755668711_18943">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns an array of pointers to the values of the elements matching the
+   <i>
+    Group
+   </i>
+   and
+   <i>
+    Element
+   </i>
+   parameters. If no arguments or keywords are specified, the returned array contains pointers to all elements in the object. The effect of multiple keywords and parameters is to AND their results. If no matching elements can be found, the function returns -1.
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1004729">
+   </a>
+   <a name="objects_ff_3755668711_1334962_PageTOC_IDLffDICOM">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Group
+  </h3>
+  <p>
+   Set this optional argument to the value for the DICOM group for which to search, such as ‘0018’x. If this argument is omitted, then all of the DICOM array elements are returned.
+  </p>
+  <h3 class="Argument">
+   Element
+  </h3>
+  <p>
+   This optional argument can be specified only if the Group argument has also been specified. Set this to the value for the DICOM element for which to search, such as ‘0010’x. If this argument is omitted and the Group argument was specified, then all elements of the specified Group are returned.
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1004735">
+   </a>
+   <a name="objects_ff_3755668711_1334967_PageTOC_IDLffDICOM">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1004736">
+   </a>
+   <a name="objects_ff_3755668711_1004736_Keywords_IDLffDICOM">
+   </a>
+   REFERENCE
+  </h3>
+  <p>
+   Set this keyword to a list of element references from which to return pointer values.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1004738">
+   </a>
+   <a name="objects_ff_3755668711_1004738_Keywords_IDLffDICOM">
+   </a>
+   NO_COPY
+  </h3>
+  <p>
+   If this keyword is set, the pointers returned point to the actual data in the object for the specified DICOM fields. If not set (the default), the pointers point to copies of the data instead, and need to be freed by using PTR_FREE.
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1004741">
+   </a>
+   <a name="objects_ff_3755668711_1334972_PageTOC_IDLffDICOM">
+   </a>
+   Examples
+  </h2>
+  <h3>
+   <a name="objects_ff_3755668711_1004742_Keywords_IDLffDICOM">
+   </a>
+   Example 1
+  </h3>
+  <p class="Code">
+   obj = OBJ_NEW('IDLffDICOM')
+  </p>
+  <p class="Code">
+   read = obj-&gt;Read(DIALOG_PICKFILE(FILTER='*'))
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Get the image data
+  </p>
+  <p class="Code">
+   array = obj-&gt;GetValue('7fe0'x, '0010'x)
+  </p>
+  <p class="Code">
+   OBJ_DESTROY, obj
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   TVScl, *array[0]
+  </p>
+  <p class="Code">
+   PTR_FREE, array
+  </p>
+  <h3>
+   <a name="objects_ff_3755668711_1004752_Keywords_IDLffDICOM">
+   </a>
+   Example 2
+  </h3>
+  <p>
+   This example is broken into sections; click on each section to run the complete example:
+  </p>
+  <p class="Code">
+   PRO ex_idlffdicom_getvalue
+  </p>
+  <p class="Code">
+   obj = OBJ_NEW('IDLffDICOM')
+  </p>
+  <p class="Code">
+   read = obj-&gt;Read(DIALOG_PICKFILE(FILTER='*'))
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Get all of the image data element(s), 7fe0,0010, from the file:
+  </p>
+  <p class="Code">
+   array = obj-&gt;GetValue('7fe0'x,'0010'x,/NO_COPY)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Get the row &amp; column size of the image(s):
+  </p>
+  <p class="Code">
+   rows = obj-&gt;GetValue('0028'x,'0010'x,/NO_COPY)
+  </p>
+  <p class="Code">
+   cols = obj-&gt;GetValue('0028'x,'0011'x,/NO_COPY)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; If the image has a samples per pixel value greater than 1
+  </p>
+  <p class="Code">
+   ; it is most likely a color image, get the samples per pixel:
+  </p>
+  <p class="Code">
+   isColor = 0
+  </p>
+  <p class="Code">
+   samples = obj-&gt;GetValue('0028'x,'0002'x,/NO_COPY)
+  </p>
+  <p class="Code">
+   IF (SIZE(samples,/N_DIMENSIONS) NE 0) THEN BEGIN
+  </p>
+  <p class="Code">
+   IF (*samples[0] GT 1) THEN isColor = 1
+  </p>
+  <p class="Code">
+   ENDIF
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Next, we need to differentiate between files with color data
+  </p>
+  <p class="Code">
+   ; that is either color-by-plane or color-by-pixel, get the planar
+  </p>
+  <p class="Code">
+   ; configuration:
+  </p>
+  <p class="Code">
+   IF (isColor EQ 1) THEN BEGIN
+  </p>
+  <p class="Code">
+   isPlanar = 0
+  </p>
+  <p class="Code">
+   planar = obj-&gt;GetValue('0028'x,'0006'x, /NO_COPY)
+  </p>
+  <p class="Code">
+   IF (SIZE(planar, /N_DIMENSIONS) NE 0) THEN BEGIN
+  </p>
+  <p class="Code">
+   IF (*planar[0] EQ 1) THEN isPlanar = 1
+  </p>
+  <p class="Code">
+   ENDIF
+  </p>
+  <p class="Code">
+   ENDIF
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Display the first NumWin images from the file:
+  </p>
+  <p class="Code">
+   IF N_ELEMENTS(array) GT 10 THEN NumWin = 10 $
+  </p>
+  <p class="Code">
+   ELSE NumWin = N_ELEMENTS(array)
+  </p>
+  <p class="Code">
+   offset = 0
+  </p>
+  <p class="Code">
+   FOR index = 0, NumWin-1 DO BEGIN
+  </p>
+  <p class="Code">
+   ; Create window for each image that is the size of the image:
+  </p>
+  <p class="Code">
+   WINDOW,index,XSize=*cols[0],YSize=*rows[0],XPos=offset,YPos=0
+  </p>
+  <p class="Code">
+   WSET,index
+  </p>
+  <p class="Code">
+   ; Display the image data
+  </p>
+  <p class="Code">
+   IF (isColor EQ 1) THEN $
+  </p>
+  <p class="Code">
+   IF (isPlanar EQ 1) THEN $
+  </p>
+  <p class="Code">
+   ; color-by-plane
+  </p>
+  <p class="Code">
+   TVScl,TRANSPOSE(*array[index],[2,0,1]),/TRUE $
+  </p>
+  <p class="Code">
+   ELSE $
+  </p>
+  <p class="Code">
+   ; color-by-pixel
+  </p>
+  <p class="Code">
+   TVScl,*array[index],/TRUE $
+  </p>
+  <p class="Code">
+   ELSE $
+  </p>
+  <p class="Code">
+   ; monochrome
+  </p>
+  <p class="Code">
+   TVScl,*array[index]
+  </p>
+  <p class="Code">
+   offset = offset+10
+  </p>
+  <p class="Code">
+   ENDFOR
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Clean up
+  </p>
+  <p class="Code">
+   OBJ_DESTROY,obj
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1004807">
+   </a>
+   <a name="objects_ff_3755668711_92102">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

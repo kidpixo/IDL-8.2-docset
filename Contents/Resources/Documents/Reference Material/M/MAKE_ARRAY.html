@@ -1,0 +1,615 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: M" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   MAKE_ARRAY
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/M/MAKE_ARRAY.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="M_list.html">
+    Routines: M
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    MAKE_ARRAY
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="M_824365677_887420">
+   </a>
+   <a name="M_824365677_80497">
+   </a>
+   MAKE_ARRAY
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#M_824365677_887425">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_887427">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_887430">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_887482">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_887485">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_972883">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1772">
+   </a>
+   MAKE_ARRAY function enables you to dynamically create an array whose characteristics are not known until run time.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_887425">
+   </a>
+   <a name="M_824365677_887425_PageTOC_MAKE_ARRAY_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = MAKE_ARRAY (
+   <i>
+    [D
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   <i>
+    [
+   </i>
+   ,
+   <i>
+    ...
+   </i>
+   ,
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    8
+   </sub>
+   <i>
+    ]]
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#M_824365677_887432">
+    BYTE
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_887435">
+    COMPLEX
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_887438">
+    DCOMPLEX
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_887444">
+    DOUBLE
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_887447">
+    FLOAT
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_887453">
+    INTEGER
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_916074">
+    L64
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_887456">
+    LONG
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_887462">
+    OBJ
+   </a>
+   , | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_887465">
+    PTR
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_887471">
+    STRING
+   </a>
+   | ,  /
+   <a class="MCXref_Heading_0" href="#M_824365677_918501">
+    UINT
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_918504">
+    UL64
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#M_824365677_916082">
+    ULONG
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_887441">
+    DIMENSION
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#M_824365677_887450">
+    INDEX
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#M_824365677_887459">
+    NOZERO
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_887468">
+    SIZE
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_887474">
+    TYPE
+   </a>
+   =
+   <i>
+    type_code
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_887480">
+    VALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns an array of the specified type, dimensions, and initialization.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_887427">
+   </a>
+   <a name="M_824365677_887427_PageTOC_MAKE_ARRAY_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   D
+   <sub class="italic">
+    i
+   </sub>
+  </h3>
+  <p>
+   Either an array or a series of scalar expressions specifying the dimensions of the result. If a single argument is specified, it can be either a scalar expression or an array of up to eight elements. If multiple arguments are specified, they must all be scalar expressions. Up to eight dimensions can be specified. If the dimension arguments are not integer values, IDL will convert them to integer values before creating the new array.
+  </p>
+  <p>
+   The
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   arguments are optional if the dimensions of the result are specified using the DIMENSION keyword. Note that you should supply either the
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   arguments or a value for the DIMENSION keyword, but not both.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_887430">
+   </a>
+   <a name="M_824365677_887430_PageTOC_MAKE_ARRAY_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="M_824365677_887432">
+   </a>
+   <a name="M_824365677_887432_Keywords_MAKE_ARRAY__">
+   </a>
+   BYTE
+  </h3>
+  <p>
+   Set this keyword to create a byte array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887435">
+   </a>
+   <a name="M_824365677_887435_Keywords_MAKE_ARRAY__">
+   </a>
+   COMPLEX
+  </h3>
+  <p>
+   Set this keyword to create a complex, single-precision, floating-point array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887438">
+   </a>
+   <a name="M_824365677_887438_Keywords_MAKE_ARRAY__">
+   </a>
+   DCOMPLEX
+  </h3>
+  <p>
+   Set this keyword to create a complex, double-precision, floating-point array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887441">
+   </a>
+   <a name="M_824365677_887441_Keywords_MAKE_ARRAY__">
+   </a>
+   DIMENSION
+  </h3>
+  <p>
+   An array of up to eight scalar elements, specifying the dimensions of the result. Note that you should supply either the
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   arguments or a value for the DIMENSION keyword, but not both.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887444">
+   </a>
+   <a name="M_824365677_887444_Keywords_MAKE_ARRAY__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to create a double-precision, floating-point array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887447">
+   </a>
+   <a name="M_824365677_887447_Keywords_MAKE_ARRAY__">
+   </a>
+   FLOAT
+  </h3>
+  <p>
+   Set this keyword to create a single-precision, floating-point array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_916074">
+   </a>
+   <a name="M_824365677_916074_Keywords_MAKE_ARRAY__">
+   </a>
+   L64
+  </h3>
+  <p>
+   Set this keyword to create a 64-bit integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887450">
+   </a>
+   <a name="M_824365677_887450_Keywords_MAKE_ARRAY__">
+   </a>
+   INDEX
+  </h3>
+  <p>
+   Set this keyword to initialize the array with each element set to the value of its one-dimensional subscript.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887453">
+   </a>
+   <a name="M_824365677_887453_Keywords_MAKE_ARRAY__">
+   </a>
+   INTEGER
+  </h3>
+  <p>
+   Set this keyword to create an integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887456">
+   </a>
+   <a name="M_824365677_887456_Keywords_MAKE_ARRAY__">
+   </a>
+   LONG
+  </h3>
+  <p>
+   Set this keyword to create a longword integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887459">
+   </a>
+   <a name="M_824365677_887459_Keywords_MAKE_ARRAY__">
+   </a>
+   NOZERO
+  </h3>
+  <p>
+   Set this keyword to prevent the initialization of the array. Normally, each element of the resulting array is set to zero.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This keyword is ignored for arrays of objects or pointers. Arrays of type object or pointer will always be initialized to zero.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887462">
+   </a>
+   <a name="M_824365677_887462_Keywords_MAKE_ARRAY__">
+   </a>
+   OBJ
+  </h3>
+  <p>
+   Set this keyword to create an object reference array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887465">
+   </a>
+   <a name="M_824365677_887465_Keywords_MAKE_ARRAY__">
+   </a>
+   PTR
+  </h3>
+  <p>
+   Set this keyword to create a pointer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887468">
+   </a>
+   <a name="M_824365677_887468_Keywords_MAKE_ARRAY__">
+   </a>
+   SIZE
+  </h3>
+  <p>
+   A size vector specifying the type and dimensions of the result. The format of a size vector is given in the description of the SIZE function.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887471">
+   </a>
+   <a name="M_824365677_887471_Keywords_MAKE_ARRAY__">
+   </a>
+   STRING
+  </h3>
+  <p>
+   Set this keyword to create a string array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887474">
+   </a>
+   <a name="M_824365677_887474_Keywords_MAKE_ARRAY__">
+   </a>
+   TYPE
+  </h3>
+  <p>
+   The type code to set the type of the result.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   All type code values except for TYPE=8 (structures) are valid. To create an array of structures, use the
+   <a class="MCXref_Heading_0" href="../R/REPLICATE.html#R_822202989_1069463">
+    REPLICATE
+   </a>
+   function.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_918501">
+   </a>
+   <a name="M_824365677_918501_Keywords_MAKE_ARRAY__">
+   </a>
+   UINT
+  </h3>
+  <p>
+   Set this keyword to create an unsigned integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_918504">
+   </a>
+   <a name="M_824365677_918504_Keywords_MAKE_ARRAY__">
+   </a>
+   UL64
+  </h3>
+  <p>
+   Set this keyword to create an unsigned 64-bit integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_916082">
+   </a>
+   <a name="M_824365677_916082_Keywords_MAKE_ARRAY__">
+   </a>
+   ULONG
+  </h3>
+  <p>
+   Set this keyword to create an unsigned longword integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_887480">
+   </a>
+   <a name="M_824365677_887480_Keywords_MAKE_ARRAY__">
+   </a>
+   VALUE
+  </h3>
+  <p>
+   The value to initialize each element of the resulting array. VALUE can be a scalar of any type including structure types. The result type is taken from VALUE unless one of the other keywords that specify a type is also set. In that case, VALUE is converted to the type specified by the other keyword prior to initializing the resulting array.
+  </p>
+  <h3>
+   <a name="M_824365677_965830_PageTOC_MAKE_ARRAY_">
+   </a>
+   Thread Pool Keywords
+  </h3>
+  <p>
+   This routine is written to make use of IDL’s
+   <i>
+    thread pool
+   </i>
+   , which can increase execution speed on systems with multiple CPUs. The values stored in the !CPU system variable control whether IDL uses the thread pool for a given computation. In addition, you can use the thread pool keywords TPOOL_MAX_ELTS, TPOOL_MIN_ELTS, and TPOOL_NOTHREAD to override the defaults established by !CPU for a single invocation of this routine.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_887482">
+   </a>
+   <a name="M_824365677_887482_PageTOC_MAKE_ARRAY_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To create a 3-element by 4-element integer array with each element set to the value 5, enter:
+  </p>
+  <p class="Code">
+   M = MAKE_ARRAY(3, 4, /INTEGER, VALUE = 5)
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_887485">
+   </a>
+   <a name="M_824365677_887485_PageTOC_MAKE_ARRAY_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="M_824365677_972883">
+   </a>
+   <a name="M_824365677_972883_PageTOC_MAKE_ARRAY_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../B/BYTARR.html#B_856805997_675870">
+    BYTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../C/COMPLEXARR.html#C_854643309_676228">
+    COMPLEXARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../D/DBLARR.html#D_843829869_1060809">
+    DBLARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../D/DCOMPLEXARR.html#D_843829869_37687">
+    DCOMPLEXARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../F/FLTARR.html#F_848155245_676939">
+    FLTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../I/INTARR.html#I_833016429_677245">
+    INTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LON64ARR.html#L_826528365_983144">
+    LON64ARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LONARR.html#L_826528365_916547">
+    LONARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/REPLICATE.html#R_822202989_1069463">
+    REPLICATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/STRARR.html#S_820040301_679026">
+    STRARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../U/UINTARR.html#U_807064173_950250">
+    UINTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../U/ULON64ARR.html#U_807064173_950409">
+    ULON64ARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../U/ULONARR.html#U_807064173_950466">
+    ULONARR
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,687 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CW_DEFROI
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CW_DEFROI.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CW_DEFROI
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_881234">
+   </a>
+   <a name="dg_routines_3604229493_37165">
+   </a>
+   CW_DEFROI
+   <a name="kanchor457">
+   </a>
+   <![CDATA[ ]]>
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881267">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881288">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881291">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881298">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881349">
+     Widget Events Returned by the CW_DEFROI Widget
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881352">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881428">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881440">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The CW_DEFROI function creates a compound
+   <a name="kanchor458">
+   </a>
+   widget that allows the user to define a
+   <a name="kanchor459">
+   </a>
+   region of interest within a widget draw window.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This is a
+   <i>
+    modal
+   </i>
+   widget. No other widget applications will be responsive while this widget is in use. Also, since CW_DEFROI has its own event-handling loop, it should not be created as a child of a modal base.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    cw_defroi.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_881267">
+   </a>
+   <a name="dg_routines_3604229493_755432_PageTOC_CW_DEFROI_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = CW_DEFROI(
+   <i>
+    Draw
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881300">
+    IMAGE_SIZE
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881303">
+    OFFSET
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881306">
+    ORDER
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881309">
+    RESTORE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881312">
+    TAB_MODE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_881346">
+    ZOOM
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_881288">
+   </a>
+   <a name="dg_routines_3604229493_755434_PageTOC_CW_DEFROI_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This function returns an array of subscripts defining the region. If no region is defined, the scalar -1 is returned.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_881291">
+   </a>
+   <a name="dg_routines_3604229493_1027034_PageTOC_CW_DEFROI_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Draw
+  </h3>
+  <p>
+   The widget ID of draw window in which to draw the region. Note that the draw window must have both BUTTON and MOTION events enabled (see
+   <a href="../W/WIDGET_DRAW.html">
+    WIDGET_DRAW
+   </a>
+   for more information).
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_881298">
+   </a>
+   <a name="dg_routines_3604229493_755437_PageTOC_CW_DEFROI_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_881300">
+   </a>
+   <a name="dg_routines_3604229493_755439_Keywords_CW_DEFROI__">
+   </a>
+   IMAGE_SIZE
+  </h3>
+  <p>
+   The size of the underlying array, expressed as a two element vector: [
+   <i>
+    columns
+   </i>
+   ,
+   <i>
+    rows
+   </i>
+   ]. Default is the size of the draw window divided by the value of ZOOM.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_881303">
+   </a>
+   <a name="dg_routines_3604229493_755442_Keywords_CW_DEFROI__">
+   </a>
+   OFFSET
+  </h3>
+  <p>
+   The offset of lower left corner of image within the draw window. Default = [0,0].
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_881306">
+   </a>
+   <a name="dg_routines_3604229493_755445_Keywords_CW_DEFROI__">
+   </a>
+   ORDER
+  </h3>
+  <p>
+   Set this keyword to return inverted subscripts, as if the array were output from top to bottom.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_881309">
+   </a>
+   <a name="dg_routines_3604229493_755448_Keywords_CW_DEFROI__">
+   </a>
+   RESTORE
+  </h3>
+  <p>
+   Set this keyword to restore the draw window to its previous appearance on exit. Otherwise, the regions remain on the drawable.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_881312">
+   </a>
+   <a name="dg_routines_3604229493_94843">
+   </a>
+   TAB_MODE
+  </h3>
+  <p>
+   Set this keyword to one of the values shown in the table below to determine how the widget hierarchy can be navigated using the
+   <span class="Bold">
+    Tab
+   </span>
+   key. The TAB_MODE setting is inherited by lower-level bases and child widgets unless it is explicitly set on an individual widget.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   It is not possible to tab to disabled (SENSITIVE=0) or hidden (MAP=0) widgets.
+  </p>
+  <p>
+   Valid settings are:
+  </p>
+  <table style="width: 500px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    TAB_MODE Keyword Options
+   </p>
+   <col width="103px" />
+   <col width="397px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Disable navigation onto or off of the widget. This is the default. Child widgets automatically inherit the tab mode of the parent base as described in
+       <a href="../../Creating IDL Programs/Creating Applications in IDL/Enhancing_Widget_Applica.html#Specifyi">
+        Inheriting the TAB_MODE Value
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Enable navigation onto and off of the widget.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Navigate only onto the widget.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Navigate only off of the widget.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   In widget applications on the UNIX platform, the Motif library controls what widgets are brought into and released from focus using tabbing. The TAB_MODE keyword value is always zero, and any attempt to change it is ignored when running a widget application on the UNIX platform. Tabbing behavior may vary significantly between UNIX platforms; do not rely on a particular behavior being duplicated on all UNIX systems.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_881346">
+   </a>
+   <a name="dg_routines_3604229493_755451_Keywords_CW_DEFROI__">
+   </a>
+   ZOOM
+  </h3>
+  <p>
+   If the image array was expanded (using REBIN, for example) specify this two element vector containing the expansion factor in X and Y. Default = [1,1]. Both elements of ZOOM must be integers.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_881349">
+   </a>
+   <a name="dg_routines_3604229493_37541">
+   </a>
+   Widget Events Returned by the CW_DEFROI Widget
+  </h2>
+  <p>
+   Region definition widgets do not return an event structure.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_881352">
+   </a>
+   <a name="dg_routines_3604229493_755453_PageTOC_CW_DEFROI_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following two procedures create a region-of-interest widget and its event handler. Create a file containing the program code using a text editor and compile using the .RUN command, or type .RUN at the IDL prompt and enter the lines interactively. First, create the event handler:
+  </p>
+  <p class="Code">
+   PRO test_event, ev
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; The common block holds variables that are shared between the
+  </p>
+  <p class="Code">
+   ; routine and its event handler:
+  </p>
+  <p class="Code">
+   COMMON T, draw, dbutt, done, image
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Define what happens when you click the "Draw ROI" button:
+  </p>
+  <p class="Code">
+   IF ev.id EQ dbutt THEN BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; The ROI definition will be stored in the variable Q:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;Q = CW_DEFROI(draw)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;IF (Q[0] NE -1) then BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Show the size of the ROI definition array:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;HELP, Q
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Duplicate the original image.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;image2 = image
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Set the points in the ROI array Q equal to a single
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; color value:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;image2(Q)=!P.COLOR-1
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Get the window ID of the draw widget:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;WIDGET_CONTROL, draw, GET_VALUE=W
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Set the draw widget as the current graphics window:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;WSET, W
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Load the image plus the ROI into the draw widget:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;TV, image2
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENDIF
+  </p>
+  <p class="Code">
+   ENDIF
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Define what happens when you click the "Done" button:
+  </p>
+  <p class="Code">
+   IF ev.id EQ done THEN WIDGET_CONTROL, ev.top, /DESTROY
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   Next, create a draw widget that can call CW_DEFROI. Note that you
+   <i>
+    must
+   </i>
+   specify both button events and motion events when creating the draw widget, if it is to be used with CW_DEFROI.
+  </p>
+  <p class="Code">
+   PRO test
+  </p>
+  <p class="Code">
+   COMMON T, draw, dbutt, done, image
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Create a base to hold the draw widget and buttons:
+  </p>
+  <p class="Code">
+   base = WIDGET_BASE(/COLUMN)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Create a draw widget that will return both button and
+  </p>
+  <p class="Code">
+   ; motion events:
+  </p>
+  <p class="Code">
+   draw = WIDGET_DRAW(base, XSIZE=256, YSIZE=256, /BUTTON, /MOTION)
+  </p>
+  <p class="Code">
+   dbutt = WIDGET_BUTTON(base, VALUE='Draw ROI')
+  </p>
+  <p class="Code">
+   done = WIDGET_BUTTON(base, VALUE='Done')
+  </p>
+  <p class="Code">
+   WIDGET_CONTROL, base, /REALIZE
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Get the widget ID of the draw widget:
+  </p>
+  <p class="Code">
+   WIDGET_CONTROL, draw, GET_VALUE=W
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Set the draw widget as the current graphics window:
+  </p>
+  <p class="Code">
+   WSET, W
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Create an original image:
+  </p>
+  <p class="Code">
+   image = BYTSCL(SIN(DIST(256)))
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Display the image in the draw widget:
+  </p>
+  <p class="Code">
+   TV, image
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Start XMANAGER:
+  </p>
+  <p class="Code">
+   XMANAGER, "test", base
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   This results in the following:
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    The Region of Interest Definition Widget
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/cwdfroi1.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999752px;margin-bottom: 6.000484px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_881428">
+   </a>
+   <a name="dg_routines_3604229493_1053290_PageTOC_CW_DEFROI_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added TAB_MODE keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_881440">
+   </a>
+   <a name="dg_routines_3604229493_1052322_PageTOC_CW_DEFROI_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../D/DEFROI.html#dg_routines_3604229493_891529" target="" title="" alt="">
+    DEFROI
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,443 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: P" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   POWELL
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/P/POWELL.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="P_list.html">
+    Routines: P
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    POWELL
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="P_817877613_51436">
+   </a>
+   <a name="P_817877613_27298">
+   </a>
+   POWELL
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#P_817877613_51443">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_51445">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_51465">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_51475">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_51489">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_1079170">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The POWELL procedure
+   <a name="kanchor2090">
+   </a>
+   minimizes a user-written function
+   <i>
+    Func
+   </i>
+   of two or more independent variables using the
+   <a name="kanchor2091">
+   </a>
+   Powell method. POWELL does not require a user-supplied analytic gradient.
+  </p>
+  <p>
+   POWELL is based on the routine
+   <span class="Courier">
+    powell
+   </span>
+   described in section 10.5 of
+   <i>
+    Numerical Recipes in C: The Art of Scientific Computing
+   </i>
+   (Second Edition), published by Cambridge University Press, and is used by permission.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_51443">
+   </a>
+   <a name="P_817877613_51443_PageTOC_POWELL_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   POWELL,
+   <i>
+    P
+   </i>
+   ,
+   <i>
+    Xi
+   </i>
+   ,
+   <i>
+    Ftol
+   </i>
+   ,
+   <i>
+    Fmin
+   </i>
+   ,
+   <i>
+    Func
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#P_817877613_51467">
+    DOUBLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#P_817877613_51470">
+    ITER
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#P_817877613_51473">
+    ITMAX
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_51445">
+   </a>
+   <a name="P_817877613_51445_PageTOC_POWELL_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   P
+  </h3>
+  <p>
+   On input,
+   <i>
+    P
+   </i>
+   is an
+   <i>
+    n
+   </i>
+   -element vector specifying the starting point. On output, it is replaced with the location of the minimum.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If  POWELL is complex then only the real part is used for the computation.
+  </p>
+  <h3 class="Argument">
+   Xi
+  </h3>
+  <p>
+   On input,
+   <i>
+    Xi
+   </i>
+   is an initial
+   <i>
+    n
+   </i>
+   by
+   <i>
+    n
+   </i>
+   element array whose columns contain the initial set of directions (usually the
+   <i>
+    n
+   </i>
+   unit vectors). On output, it is replaced with the then-current directions.
+  </p>
+  <h3 class="Argument">
+   Ftol
+  </h3>
+  <p>
+   An input value specifying the fractional tolerance in the function value. Failure to decrease by more than
+   <i>
+    Ftol
+   </i>
+   in one iteration signals completeness. For single-precision computations, a value of 1.0&#160;∞&#160;10
+   <sup>
+    -4
+   </sup>
+   is recommended; for double-precision computations, a value of 1.0&#160;∞&#160;10
+   <sup>
+    -8
+   </sup>
+   is recommended.
+  </p>
+  <h3 class="Argument">
+   Fmin
+  </h3>
+  <p>
+   On output,
+   <i>
+    Fmin
+   </i>
+   contains the value at the minimum-point
+   <i>
+    P
+   </i>
+   of the user-supplied function specified by
+   <i>
+    Func
+   </i>
+   .
+  </p>
+  <h3 class="Argument">
+   Func
+  </h3>
+  <p>
+   A scalar string specifying the name of a user-supplied IDL function of two or more independent variables to be minimized. This function must accept a vector argument
+   <i>
+    X
+   </i>
+   and return a scalar result.
+  </p>
+  <p>
+   For example, suppose we wish to minimize the function
+  </p>
+  <p style="text-align: center;">
+   <img src="../../images/22_4.jpg" />
+  </p>
+  <p>
+   To evaluate this expression, we define an IDL function named POWFUNC:
+  </p>
+  <p class="Code">
+   FUNCTION powfunc, X
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, (X[0] + 2.0*X[1]) * EXP(-X[0]^2 -X[1]^2)
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_51465">
+   </a>
+   <a name="P_817877613_51465_PageTOC_POWELL_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="P_817877613_51467">
+   </a>
+   <a name="P_817877613_51467_Keywords_POWELL__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h3 class="Keyword">
+   <a name="P_817877613_51470">
+   </a>
+   <a name="P_817877613_51470_Keywords_POWELL__">
+   </a>
+   ITER
+  </h3>
+  <p>
+   Use this keyword to specify an output variable that will be set to the number of iterations performed.
+  </p>
+  <h3 class="Keyword">
+   <a name="P_817877613_51473">
+   </a>
+   <a name="P_817877613_51473_Keywords_POWELL__">
+   </a>
+   ITMAX
+  </h3>
+  <p>
+   Use this keyword to specify the maximum allowed number of iterations. The default is 200.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   POWELL halts once the value specified with ITMAX has been reached.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_51475">
+   </a>
+   <a name="P_817877613_51475_PageTOC_POWELL_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   We can use POWELL to minimize the function POWFUNC given above.
+  </p>
+  <p class="Code">
+   FUNCTION powfunc, X
+   <br />
+   &#160;&#160;&#160;RETURN, (X[0] + 2.0*X[1]) * EXP(-X[0]^2 -X[1]^2)
+   <br />
+   END
+   <br />
+   <br />
+   PRO TEST_POWELL
+   <br />
+   <br />
+   &#160;&#160;&#160;; Define the fractional tolerance:
+   <br />
+   &#160;&#160;&#160;ftol = 1.0e-4
+   <br />
+   <br />
+   &#160;&#160;&#160;; Define the starting point:
+   <br />
+   &#160;&#160;&#160;P = [.5d, -.25d]
+   <br />
+   <br />
+   &#160;&#160;&#160;; Define the starting directional vectors in column format:
+   <br />
+   &#160;&#160;&#160;xi = TRANSPOSE([[1.0, 0.0],[0.0, 1.0]])
+   <br />
+   <br />
+   &#160;&#160;&#160;; Minimize the function:
+   <br />
+   &#160;&#160;&#160;POWELL, P, xi, ftol, fmin, 'powfunc'
+   <br />
+   <br />
+   &#160;&#160;&#160;; Print the solution point:
+   <br />
+   &#160;&#160;&#160;PRINT, 'Solution point: ', P
+   <br />
+   <br />
+   &#160;&#160;&#160;; Print the value at the solution point:
+   <br />
+   &#160;&#160;&#160;PRINT, 'Value at solution point: ', fmin
+   <br />
+   <br />
+   END
+   <br />
+   <br />
+   TEST_POWELL
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   Solution point:&#160;&#160;&#160;&#160;-0.31622777     -0.63245552
+  </p>
+  <p class="Code">
+   Value at solution point:&#160;&#160;&#160;&#160;-0.95900918
+  </p>
+  <p>
+   The exact solution point is [-0.31622777, -0.63245553].
+  </p>
+  <p>
+   The exact minimum function value is -0.95900918.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_51489">
+   </a>
+   <a name="P_817877613_51489_PageTOC_POWELL_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="P_817877613_1079170">
+   </a>
+   <a name="P_817877613_1079170_PageTOC_POWELL_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../A/AMOEBA.html#A_850317933_992475">
+    AMOEBA
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../D/DFPMIN.html#D_843829869_861630">
+    DFPMIN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SIMPLEX.html#S_820040301_1103717">
+    SIMPLEX
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

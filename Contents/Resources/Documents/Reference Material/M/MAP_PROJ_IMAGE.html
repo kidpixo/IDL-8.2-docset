@@ -1,0 +1,770 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: M" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   MAP_PROJ_IMAGE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/M/MAP_PROJ_IMAGE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="M_list.html">
+    Routines: M
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    MAP_PROJ_IMAGE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="M_824365677_1061294">
+   </a>
+   <a name="M_824365677_69306">
+   </a>
+   MAP_PROJ_IMAGE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#M_824365677_1062539">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_1062541">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_1062543">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_1062550">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_1062573">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_1062626">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_1062628">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1801">
+   </a>
+   MAP_PROJ_IMAGE function warps an image (or other 2-dimensional dataset) from geographic coordinates (longitude and latitude) to a specified map projection.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Pass in the result from
+   <a class="MCXref_Heading_0" href="MAP_PROJ_INIT.html#M_824365677_981059">
+    MAP_PROJ_INIT
+   </a>
+   using this function’s
+   <a class="MCXref_Heading_0" href="#M_824365677_1062557">
+    MAP_STRUCTURE
+   </a>
+   keyword to set up the desired map projection.
+  </p>
+  <p>
+   Optionally, the MAP_PROJ_IMAGE function can be used to warp an image in Cartesian (UV) coordinates from one map projection to another.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_1062539">
+   </a>
+   <a name="M_824365677_1062539_PageTOC_MAP_PROJ_IMAGE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = MAP_PROJ_IMAGE(
+   <i>
+    Image
+   </i>
+   [,&#160;
+   <i>
+    Range
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#M_824365677_1062551">
+    BILINEAR
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_1062553">
+    DIMENSIONS
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_1062555">
+    IMAGE_STRUCTURE
+   </a>
+   =
+   <i>
+    structure
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_1062557">
+    MAP_STRUCTURE
+   </a>
+   =
+   <i>
+    structure
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_1062562">
+    MASK
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_1062565">
+    MAX_VALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_1062567">
+    MIN_VALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_1062569">
+    MISSING
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_1062571">
+    UVRANGE
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_1096402">
+    XINDEX
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    variable
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_1096407">
+    YINDEX
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    variable
+   </span>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_1062541">
+   </a>
+   <a name="M_824365677_1062541_PageTOC_MAP_PROJ_IMAGE_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This routine returns a two-dimensional array containing the warped image. The returned array has the same type as the input image.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_1062543">
+   </a>
+   <a name="M_824365677_1062543_PageTOC_MAP_PROJ_IMAGE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Image
+  </h3>
+  <p>
+   A two-dimensional array containing the image to warp.
+  </p>
+  <h3 class="Argument">
+   Range
+  </h3>
+  <p>
+   If you are warping
+   <i>
+    Image
+   </i>
+   from geographic coordinates to a map projection,
+   <i>
+    Range
+   </i>
+   is a four-element array specifying the longitude/latitude range (in degrees) of
+   <i>
+    Image. Range
+   </i>
+   has the format [
+   <i>
+    Lonmin
+   </i>
+   ,
+   <i>
+    Latmin
+   </i>
+   ,
+   <i>
+    Lonmax
+   </i>
+   ,
+   <i>
+    Latmax
+   </i>
+   ]. If
+   <i>
+    Range
+   </i>
+   is not supplied, the routine uses a default range of [-180, -90, 180, 90].
+  </p>
+  <p>
+   If you are warping
+   <i>
+    Image
+   </i>
+   from one map projection to another (that is, if you provide a value for the IMAGE_STRUCTURE keyword), then
+   <i>
+    Range
+   </i>
+   is a four-element array specifying the Cartesian (UV) range. In this case,
+   <i>
+    Range
+   </i>
+   must be provided and has the format [
+   <i>
+    Umin
+   </i>
+   ,
+   <i>
+    Vmin
+   </i>
+   ,
+   <i>
+    Umax
+   </i>
+   ,
+   <i>
+    Vmax
+   </i>
+   ].
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   Use the UVRANGE keyword to retrieve the range in Cartesian (UV) coordinates of
+   <i>
+    Result
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_1062550">
+   </a>
+   <a name="M_824365677_1062550_PageTOC_MAP_PROJ_IMAGE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="M_824365677_1062551">
+   </a>
+   <a name="M_824365677_1062551_Keywords_MAP_PROJ_IMAGE_">
+   </a>
+   BILINEAR
+  </h3>
+  <p>
+   Set this keyword to use bilinear interpolation when warping
+   <i>
+    Image
+   </i>
+   . By default, the routine will use nearest neighbor sampling. Bilinear interpolation will produce smoother results but may be slower.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_1062553">
+   </a>
+   <a name="M_824365677_1062553_Keywords_MAP_PROJ_IMAGE_">
+   </a>
+   DIMENSIONS
+  </h3>
+  <p>
+   Set this keyword equal to a two-element vector specifying the width and height of the desired
+   <i>
+    Result
+   </i>
+   , in pixels. If this keyword is not specified, then the
+   <i>
+    Result
+   </i>
+   has the same dimensions as the input
+   <i>
+    Image
+   </i>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_1062555">
+   </a>
+   <a name="M_824365677_1062555_Keywords_MAP_PROJ_IMAGE_">
+   </a>
+   IMAGE_STRUCTURE
+  </h3>
+  <p>
+   If the input
+   <i>
+    Image
+   </i>
+   is already in a certain projection, set this keyword equal to the !MAP structure associated with the input image. If IMAGE_STRUCTURE is supplied, the
+   <i>
+    Range
+   </i>
+   argument
+   <i>
+    must
+   </i>
+   be provided. In this case,
+   <i>
+    Image
+   </i>
+   will be warped from the projection specified by IMAGE_STRUCTURE to the projection specified by MAP_STRUCTURE.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_1062557">
+   </a>
+   <a name="M_824365677_1062557_Keywords_MAP_PROJ_IMAGE_">
+   </a>
+   MAP_STRUCTURE
+  </h3>
+  <p>
+   Set this keyword equal to a !MAP structure (as returned from the
+   <a class="MCXref_Heading_0" href="MAP_PROJ_INIT.html#M_824365677_981059">
+    MAP_PROJ_INIT
+   </a>
+   function) to be used instead of the default !MAP projection. If this keyword is not specified, the value of the !MAP system variable must have been previously set.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_1062562">
+   </a>
+   <a name="M_824365677_1062562_Keywords_MAP_PROJ_IMAGE_">
+   </a>
+   MASK
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain a byte array of the same dimensions as the
+   <i>
+    Result
+   </i>
+   , containing a mask of the “good” values. Values in
+   <i>
+    Result
+   </i>
+   that were set to MISSING (that is, the values were either off the map or outside the range specified by the MIN_VALUE and MAX_VALUE keywords) will have a mask value of 0 (zero), while all other mask values will be 1 (one).
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   The MASK array allows you to distinguish values in the
+   <i>
+    Result
+   </i>
+   that were explicitly set to MISSING versus those that happen to have a value equal to the MISSING value.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_1062565">
+   </a>
+   <a name="M_824365677_1062565_Keywords_MAP_PROJ_IMAGE_">
+   </a>
+   MAX_VALUE
+  </h3>
+  <p>
+   Set this keyword equal to an integer that represents the maximum value an element of the
+   <i>
+    Result
+   </i>
+   array should be allowed to have. Data points with values greater than or equal to this value will be treated as missing data, and will be set to the value specified by the MISSING keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_1062567">
+   </a>
+   <a name="M_824365677_1062567_Keywords_MAP_PROJ_IMAGE_">
+   </a>
+   MIN_VALUE
+  </h3>
+  <p>
+   Set this keyword equal to an integer that represents the minimum value an element of the
+   <i>
+    Result
+   </i>
+   array should be allowed to have. Data points with values less than or equal to this value will be treated as missing data, and will be set to the value specified by the MISSING keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_1062569">
+   </a>
+   <a name="M_824365677_1062569_Keywords_MAP_PROJ_IMAGE_">
+   </a>
+   MISSING
+  </h3>
+  <p>
+   Set this keyword equal to an integer value to be used for pixels that fall outside of the valid map coordinates or whose data values are outside of the range specified by the MIN_VALUE and MAX_VALUE keywords. The default value is 0.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_1062571">
+   </a>
+   <a name="M_824365677_1062571_Keywords_MAP_PROJ_IMAGE_">
+   </a>
+   UVRANGE
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain the range of the UV coordinates of the
+   <i>
+    Result
+   </i>
+   in a four-element array of the form [
+   <i>
+    U&#160;min
+   </i>
+   ,
+   <i>
+    V&#160;min
+   </i>
+   ,
+   <i>
+    U&#160;max
+   </i>
+   ,
+   <i>
+    V&#160;max
+   </i>
+   ].
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_1096402">
+   </a>
+   <a name="M_824365677_94167">
+   </a>
+   XINDEX
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain the
+   <span class="_Override" style="font-style: italic;">
+    x
+   </span>
+   index used to warp the image. Use this keyword (with
+   <a class="MCXref_Heading_0" href="#M_824365677_1096407">
+    YINDEX
+   </a>
+   ) when warping multiple images (or image channels) that have the same dimensions and map projection. For the first call to MAP_PROJ_IMAGE, XINDEX and YINDEX should be set to named variables that are either undefined or contain scalar values. Upon return, XINDEX and YINDEX contain the indices that were used for warping the image. For subsequent images, the XINDEX and YINDEX variables should be passed in unmodified. In this case, IDL bypasses the map projection and uses the indices to warp the image.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_1096407">
+   </a>
+   <a name="M_824365677_21464">
+   </a>
+   YINDEX
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain the
+   <span class="_Override" style="font-style: italic;">
+    y
+   </span>
+   index used to warp the image. Use this keyword (with
+   <a class="MCXref_Heading_0" href="#M_824365677_1096402">
+    XINDEX
+   </a>
+   ) when warping multiple images (or image channels) that have the same dimensions and map projection. For the first call to MAP_PROJ_IMAGE, XINDEX and YINDEX should be set to named variables that are either undefined or contain scalar values. Upon return, XINDEX and YINDEX contain the indices that were used for warping the image. For subsequent images, the XINDEX and YINDEX variables should be passed in unmodified. In this case, IDL bypasses the map projection and uses the indices to warp the image.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the XINDEX and YINDEX keywords are present, IDL ignores the
+   <span class="_Override" style="font-style: italic;">
+    Range
+   </span>
+   argument and the
+   <a class="MCXref_Heading_0" href="#M_824365677_1062555">
+    IMAGE_STRUCTURE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="#M_824365677_1062557">
+    MAP_STRUCTURE
+   </a>
+   , and
+   <a class="MCXref_Heading_0" href="#M_824365677_1062571">
+    UVRANGE
+   </a>
+   keywords. If you specified the
+   <a class="MCXref_Heading_0" href="#M_824365677_1062551">
+    BILINEAR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="#M_824365677_1062553">
+    DIMENSIONS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="#M_824365677_1062565">
+    MAX_VALUE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="#M_824365677_1062567">
+    MIN_VALUE
+   </a>
+   , or
+   <a class="MCXref_Heading_0" href="#M_824365677_1062569">
+    MISSING
+   </a>
+   keywords on the first call to MAP_PROJ_IMAGE, you should supply the same keywords with the same values on subsequent calls.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_1062573">
+   </a>
+   <a name="M_824365677_1062573_PageTOC_MAP_PROJ_IMAGE_">
+   </a>
+   Example
+  </h2>
+  <p>
+   The following example warps a global map from longitude/latitude (geographic) coordinates into the Interrupted Goode projection:
+  </p>
+  <p class="Code">
+   ; Load an image in longitude/latitude (geographic) coordinates
+   <br />
+   file = FILEPATH( 'avhrr.png', SUBDIRECTORY=['examples','data'] )
+   <br />
+   data = READ_PNG( file, r, g, b )
+   <br />
+   <br />
+   ; Resize the image data
+   <br />
+   red0 = REBIN( r[data], 360, 180 )
+   <br />
+   green0 = REBIN( g[data], 360, 180)
+   <br />
+   blue0 = REBIN( b[data], 360, 180 )
+   <br />
+   <br />
+   iImage, RED=red0, GREEN=green0, BLUE=blue0, $
+   <br />
+   &#160;&#160;&#160;DIMENSIONS=[500,600], VIEW_GRID=[1,3]
+   <br />
+   <br />
+   ; First map projection
+   <br />
+   sMap = MAP_PROJ_INIT('Interrupted Goode')
+   <br />
+   <br />
+   ; Warp each channel to the map projection. For the first
+   <br />
+   ; channel also compute the MASK and the UVRANGE.
+   <br />
+   ; Use XINDEX and YINDEX to speed up green and blue channels.
+   <br />
+   red1 = MAP_PROJ_IMAGE( red0, MAP_STRUCTURE=sMap, MASK=mask, $
+   <br />
+   &#160;&#160;&#160;UVRANGE=uvrange, XINDEX=xindex, YINDEX=yindex )
+   <br />
+   green1 = MAP_PROJ_IMAGE( green0, XINDEX=xindex, YINDEX=yindex )
+   <br />
+   blue1 = MAP_PROJ_IMAGE( blue0, XINDEX=xindex, YINDEX=yindex )
+   <br />
+   <br />
+   IIMAGE, RED=red1, GREEN=green1, BLUE=blue1, ALPHA=mask*255b, $
+   <br />
+   &#160;&#160;&#160;/VIEW_NEXT
+  </p>
+  <p>
+   Now warp the image from the Interrupted Goode projection to a new projection:
+  </p>
+  <p class="Code">
+   ; New map projection
+   <br />
+   mapStruct = MAP_PROJ_INIT( 'Mollweide', /GCTP )
+   <br />
+   <br />
+   ; Now use the IMAGE_STRUCTURE keyword to warp each channel
+   <br />
+   ; from the Interrupted Goode projection to Mollweide.
+   <br />
+   ; We also need to input the UVRANGE of the input image.
+   <br />
+   ; Use XINDEX and YINDEX to speed up green and blue channels,
+   <br />
+   ; but use a new variable since we already have xindex/yindex.
+   <br />
+   red2 = MAP_PROJ_IMAGE( red1, uvrange, IMAGE_STRUCTURE=sMap, $
+   <br />
+   &#160;&#160;&#160;MAP_STRUCTURE=mapStruct, MASK=mask, $
+   <br />
+   &#160;&#160;&#160;XINDEX=xindex2, YINDEX=yindex2 )
+   <br />
+   green2 = MAP_PROJ_IMAGE( green1, XINDEX=xindex2, YINDEX=yindex2 )
+   <br />
+   blue2 = MAP_PROJ_IMAGE( blue1, XINDEX=xindex2, YINDEX=yindex2 )
+   <br />
+   <br />
+   IIMAGE, RED=red2, GREEN=green2, BLUE=blue2, ALPHA=mask*255b, $
+   <br />
+   &#160;&#160;&#160;/VIEW_NEXT
+  </p>
+  <p>
+   The resulting iImage tool display is shown in the following figure.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Result of the MAP_PROJ_IMAGE Example
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/map_proj_image1.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 10.8px;margin-bottom: 7.080471px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="M_824365677_1062626">
+   </a>
+   <a name="M_824365677_1062626_PageTOC_MAP_PROJ_IMAGE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       XINDEX and YINDEX keywords added
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="M_824365677_1062628">
+   </a>
+   <a name="M_824365677_1062628_PageTOC_MAP_PROJ_IMAGE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../I/INDGEN.html#I_833016429_677235">
+    INDGEN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MAP_PROJ_FORWARD.html#M_824365677_1061414">
+    MAP_PROJ_FORWARD
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MAP_PROJ_INIT.html#M_824365677_981059">
+    MAP_PROJ_INIT
+   </a>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

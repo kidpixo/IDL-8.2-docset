@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: E" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   EFONT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/E/EFONT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="E_list.html">
+    Routines: E
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    EFONT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="E_841667181_1033751">
+   </a>
+   <a name="E_841667181_99388">
+   </a>
+   EFONT
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#E_841667181_762001">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_762003">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_762006">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_823205">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_992704">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor717">
+   </a>
+   EFONT procedure provides a simple
+   <a name="kanchor718">
+   </a>
+   widget-based vector font editor and display. Use this procedure to read and/or modify a local copy of the file
+   <span class="Courier">
+    hersh1.chr
+   </span>
+   , located in the
+   <span class="Courier">
+    resource/fonts
+   </span>
+   subdirectory of the main IDL directory, which contains the vector fonts used by IDL in plotting. This is a very rudimentary editor. Click the “Help” button on the EFONT main menu for more information.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    efont.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_762001">
+   </a>
+   <a name="E_841667181_762001_PageTOC_EFONT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   EFONT [,&#160;
+   <i>
+    Init_Font
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#E_841667181_921048">
+    BLOCK
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#E_841667181_988298">
+    GROUP
+   </a>
+   =
+   <i>
+    widget_id
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_762003">
+   </a>
+   <a name="E_841667181_762003_PageTOC_EFONT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Init_Font
+  </h3>
+  <p>
+   The initial font index, from 3 to 29. The default is 3.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_762006">
+   </a>
+   <a name="E_841667181_762006_PageTOC_EFONT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="E_841667181_921048">
+   </a>
+   <a name="E_841667181_921048_Keywords_EFONT__">
+   </a>
+   BLOCK
+  </h3>
+  <p>
+   Set this keyword to have XMANAGER
+   <i>
+    block
+   </i>
+   when this application is registered. By default, BLOCK is set equal to zero, providing access to the command line if active command line processing is available. Note that setting BLOCK=1 will cause
+   <i>
+    all
+   </i>
+   widget applications to block, not just this application. For more information, see the documentation for the
+   <a class="MCXref_Heading_0" href="../X/XMANAGER.html#X_800576109_921241">
+    NO_BLOCK
+   </a>
+   keyword to XMANAGER.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Only the outermost call to XMANAGER can block. Therefore, to have EFONT block, any earlier calls to XMANAGER must have been called with the NO_BLOCK keyword. See the documentation for the
+   <a class="MCXref_Heading_0" href="../X/XMANAGER.html#X_800576109_921241">
+    NO_BLOCK
+   </a>
+   keyword to XMANAGER for an example.
+  </p>
+  <h3 class="Keyword">
+   <a name="E_841667181_988298">
+   </a>
+   <a name="E_841667181_988298_Keywords_EFONT__">
+   </a>
+   GROUP
+  </h3>
+  <p>
+   The widget ID of the widget that calls EFONT. If GROUP is set, the death of the caller results in the death of EFONT.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_823205">
+   </a>
+   <a name="E_841667181_823205_PageTOC_EFONT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="E_841667181_992704">
+   </a>
+   <a name="E_841667181_992704_PageTOC_EFONT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../S/SHOWFONT.html#S_820040301_762058">
+    SHOWFONT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../X/XFONT.html#X_800576109_762090">
+    XFONT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

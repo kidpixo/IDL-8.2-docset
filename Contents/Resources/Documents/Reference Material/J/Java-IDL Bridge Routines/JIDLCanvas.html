@@ -1,0 +1,7087 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: J|Java-IDL Bridge Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   JIDLCanvas
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/J/Java-IDL Bridge Routines/JIDLCanvas.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../J_list.html">
+    Routines: J
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Java IDL Bridge Routines.html">
+    Java-IDL Bridge Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    JIDLCanvas
+   </span>
+  </div>
+  <h1>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas">
+   </a>
+   <a name="JIDL_Import_1464128226_ClassHead">
+   </a>
+   JIDLCanvas
+   <a name="kanchor1573">
+   </a>
+  </h1>
+  <h2 class="API">
+   Declaration
+  </h2>
+  <p class="Code">
+   public abstract class
+   <span class="Bold">
+    JIDLCanvas
+   </span>
+   extends
+   <span class="Courier">
+    java.awt.Canvas
+   </span>
+   implements
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.event.ComponentListener
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.event.KeyListener
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.event.MouseListener
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.event.MouseMotionListener
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     JIDLComponentListener
+    </a>
+   </span>
+   ,
+   <span class="Courier">
+    JIDLCursorSupport
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="Courier">
+    java.lang.Object
+   </span>
+  </p>
+  <p class="Code">
+   &#160;&#160;|
+  </p>
+  <p class="Code">
+   &#160;&#160;+--
+   <span class="Courier">
+    java.awt.Component
+   </span>
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+--
+   <span class="Courier">
+    java.awt.Canvas
+   </span>
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+--
+   <span class="Bold">
+    com.idl.javaidl.JIDLCanvas
+   </span>
+  </p>
+  <h2 class="API">
+   All Implemented Interfaces:
+  </h2>
+  <p class="Code">
+   <span class="Courier">
+    javax.accessibility.Accessible
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.event.ComponentListener
+   </span>
+   ,
+   <span class="Courier">
+    java.util.EventListener
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.image.ImageObserver
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     JIDLComponentListener
+    </a>
+   </span>
+   ,
+   <span class="Courier">
+    JIDLCursorSupport
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.event.KeyListener
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.MenuContainer
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.event.MouseListener
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.event.MouseMotionListener
+   </span>
+   ,
+   <span class="Courier">
+    java.io.Serializable
+   </span>
+  </p>
+  <h2 class="API">
+   Description
+  </h2>
+  <p>
+   This class wraps an IDL object of type IDLit-Window in a java.awt-Canvas providing direct rendering of the object from IDL.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   JIDLCanvas is not supported on Macintosh OS X.
+  </p>
+  <p>
+   In many of the methods of this class, one or more flags are required to be specified for parameters being passed to or from the bridge. These flags follow the following guidelines:
+  </p>
+  <p>
+   For all types of parameters (subclasses of JIDLNumber, JIDLString, JIDLObject-I and JIDLArray), a flag should be set that determines whether the parameter is in-only (const) or in-out (we expect it to be changed by IDL). The constants that determine this are either JIDLConst.PARMFLAG_CONST or JIDLConst.PARMFLAG_IN_OUT.
+  </p>
+  <p>
+   For parameters that are arrays, a flag should be set that tells the bridge whether the array is to be convolved when passed to IDL. If the PARM_IN_OUT flag is set, this flag will also tell the bridge whether to convolve the array when it is copied back to Java. The constants that determine this are either JIDLConst.PARMFLAG_CONVMAJORITY or JIDLConst.PARMFLAG_NO_CONVMAJORITY.
+  </p>
+  <p>
+   For example, if the parameter in question is an array that is to be modified by IDL (in-out) and needs to be convolved when passed to and from IDL, we would set its argpal array member as follows:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;argpal[2]&#160;=&#160;JIDLConst.PARMFLAG_IN_OUT&#160;|&#160;JIDLConst.PARMFLAG_CONVMAJORITY;
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 505px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="143px" />
+   <col width="362px" />
+   <thead>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Member Summary
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p style="font-family: Times;font-weight: bold;font-size: 11pt;letter-spacing: 0em;color: #000000;">
+       <span class="Bold">
+        Fields
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       static int
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDL_SOFTWARE_RENDERER">
+         IDL_SOFTWARE_RENDERER
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       static int
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_OPENGL_RENDERER">
+         OPENGL_RENDERER
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p style="font-family: Times;font-weight: bold;font-size: 11pt;letter-spacing: 0em;color: #000000;">
+       <span class="Bold">
+        Constructors
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_JIDLCanvas_java_lang_String__int__java_lang_String_">
+         JIDLCanvas(java.lang.String sClass, int iOPSFlags, java.lang.String sProcessName)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Construct a JIDLCanvas
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_JIDLCanvas_java_lang_String__java_lang_String_">
+         JIDLCanvas(java.lang.String sClass, java.lang.String sProcessName)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Construct a JIDLCanvas Note that constructing the JIDLObject does NOT create the object on the IDL-side of the bridge.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p style="font-family: Times;font-weight: bold;font-size: 11pt;letter-spacing: 0em;color: #000000;">
+       <span class="Bold">
+        Methods
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_abort__">
+         abort()
+        </a>
+       </span>
+      </p>
+      <p>
+       Requests that the IDL process containing the underlying IDL object abort its current activity.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLComponentListener_com_idl_javaidl_JIDLComponentListener_">
+         addIDLComponentListener(JIDLComponentListener listener)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Adds the specified JIDLComponent-Listener to a list of listeners that receive notification of Component events.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLKeyListener_com_idl_javaidl_JIDLKeyListener_">
+         addIDLKeyListener(JIDLKeyListener listener)
+        </a>
+       </span>
+      </p>
+      <p>
+       Adds the specified JIDLKey-Listener to a list of listeners that receive notification of Key events.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLMouseListener_com_idl_javaidl_JIDLMouseListener_">
+         addIDLMouseListener(JIDLMouseListener listener)
+        </a>
+       </span>
+      </p>
+      <p>
+       Adds the specified JIDLMouse-Listener to a list of listeners that receive notification of Mouse events.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLMouseMotionListener_com_idl_javaidl_JIDLMouseMotionListener_">
+         addIDLMouseMotionListener (JIDLMouseMotionListener listener)
+        </a>
+       </span>
+      </p>
+      <p>
+       Adds the specified JIDLMouse-Motion-Listener to a list of listeners that receive notification of Mouse-Motion events.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLMouseWheelListener_com_idl_javaidl_JIDLMouseWheelListener_">
+         addIDLMouseWheelListener (JIDLMouseWheelListener listener)
+        </a>
+       </span>
+      </p>
+      <p>
+       Adds the specified JIDLMouseWheelListener to a list of listeners that receive notification of MouseWheel events.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLNotifyListener_com_idl_javaidl_JIDLNotifyListener_">
+         addIDLNotifyListener(JIDLNotifyListener listener)
+        </a>
+       </span>
+      </p>
+      <p>
+       Adds the specified IDL notify listener to receive IDL notification events on this object.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLOutputListener_com_idl_javaidl_JIDLOutputListener_">
+         addIDLOutputListener(JIDLOutputListener listener)
+        </a>
+       </span>
+      </p>
+      <p>
+       Adds the specified IDL output listener to receive IDL output events on this object.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.Object
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_callFunction_java_lang_String__int_">
+         callFunction(java.lang.String sMethodName, int iPalFlag)
+        </a>
+       </span>
+      </p>
+      <p>
+       Call IDL function that accepts zero parameters.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.Object
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_callFunction_java_lang_String__int__java_lang_Object______int______int_">
+         callFunction(java.lang.String sMethodName, int argc, java.lang.Object argv, int[] argpal, int iPalFlag)
+        </a>
+       </span>
+      </p>
+      <p>
+       Call IDL function.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_callProcedure_java_lang_String_">
+         callProcedure(java.lang.String sMethodName)
+        </a>
+       </span>
+      </p>
+      <p>
+       Call IDL procedure that accepts zero parameters.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_callProcedure_java_lang_String__int__java_lang_Object______int_____">
+         callProcedure(java.lang.String sMethodName, int argc, java.lang.Object argv, int[] argpal)
+        </a>
+       </span>
+      </p>
+      <p>
+       Call IDL procedure.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_componentHidden_java_awt_event_ComponentEvent_">
+         componentHidden(java.awt.event.ComponentEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Called when the component is hidden.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_componentMoved_java_awt_event_ComponentEvent_">
+         componentMoved(java.awt.event.ComponentEvent e)
+        </a>
+       </span>
+      </p>
+      <p>
+       Called when the component is moved.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_componentResized_java_awt_event_ComponentEvent_">
+         componentResized(java.awt.event.ComponentEvent e)
+        </a>
+       </span>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_componentShown_java_awt_event_ComponentEvent_">
+         componentShown(java.awt.event.ComponentEvent e)
+        </a>
+       </span>
+      </p>
+      <p>
+       Called when the component is shown.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_createObject__">
+         createObject()
+        </a>
+       </span>
+      </p>
+      <p>
+       Create the wrapped object by calling IDL’s ::INIT method.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_createObject_int__java_lang_Object______int_____">
+         createObject(int argc, java.lang.Object argv, int[] argpal)
+        </a>
+       </span>
+      </p>
+      <p>
+       Create the wrapped object by calling IDL’s ::INIT method.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_createObject_int__java_lang_Object______int______JIDLProcessInitializer_">
+         createObject(int argc, java.lang.Object argv, int[] argpal, com.idl.javaidl.JIDLProcessInitializer initializer)
+        </a>
+       </span>
+      </p>
+      <p class="Code">
+       Create the wrapped object by calling IDL’s ::INIT method.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_createObject_JIDLProcessInitializer_">
+         createObject(com.idl.javaidl.JIDLProcessInitializer initializer)
+        </a>
+       </span>
+      </p>
+      <p class="Code">
+       Create the wrapped object by calling IDL’s ::INIT method.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_destroyObject__">
+         destroyObject()
+        </a>
+       </span>
+      </p>
+      <p>
+       Destroys the underlying IDL object associated with the wrapper.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_draw__">
+         draw()
+        </a>
+       </span>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_executeString_java_lang_String_">
+         executeString(java.lang.String sCmd)
+        </a>
+       </span>
+      </p>
+      <p>
+       Execute the given command string in IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.String
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getClassName__">
+         getClassName()
+        </a>
+       </span>
+      </p>
+      <p>
+       Get the class name of the object.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getCookie__">
+         getCookie()
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.String
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getIDLObjectClassName__">
+         getIDLObjectClassName()
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Retrieves the IDL object class name of the underlying IDL object.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.String
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getIDLObjectVariableName__">
+         getIDLObjectVariableName()
+        </a>
+       </span>
+      </p>
+      <p>
+       When the underlying IDL object was created in the IDL process, it was assigned a variable name.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.Object
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getIDLVariable_java_lang_String_">
+         getIDLVariable(java.lang.String sVar)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Given a variable name, return the IDL variable.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.String
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getObjVariableName__">
+         getObjVariableName()
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Get the IDL Variable name of the given object
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.String
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getProcessName__">
+         getProcessName()
+        </a>
+       </span>
+      </p>
+      <p>
+       Returns the name of the process that contains the underlying IDL object.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.Object
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getProperty_java_lang_String__int_">
+         getProperty(java.lang.String sProperty, int iPalFlag)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Call IDL get-Property method to get named property.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+         IDLcomponentExposed(JIDLObjectI obj)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Called when the JIDLCanvas is exposed.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentResized_com_idl_javaidl_JIDLObjectI__java_awt_event_ComponentEvent_">
+         IDLcomponentResized(JIDLObjectI obj, java.awt.event.ComponentEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Called when the JIDLCanvas is resized.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLkeyPressed_com_idl_javaidl_JIDLObjectI__java_awt_event_KeyEvent__int__int_">
+         IDLkeyPressed(JIDLObjectI obj, java.awt.event.KeyEvent e, int x, int y)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Called when the JIDLCanvas has focus and a key is pressed.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLkeyReleased_com_idl_javaidl_JIDLObjectI__java_awt_event_KeyEvent__int__int_">
+         IDLkeyReleased(JIDLObjectI obj, java.awt.event.KeyEvent e, int x, int y)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Called when the JIDLCanvas has focus and a key is released.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseDragged_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+         IDLmouseDragged(JIDLObjectI obj, java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Called when the mouse is dragged in a JIDLCanvas.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseEntered_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+         IDLmouseEntered(JIDLObjectI obj, java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Called when the mouse enters a JIDLCanvas.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseExited_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+         IDLmouseExited(JIDLObjectI obj, java.awt.event.MouseEvent e)
+        </a>
+       </span>
+      </p>
+      <p>
+       Called when the mouse exits a JIDLCanvas.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseMoved_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+         IDLmouseMoved(JIDLObjectI obj, java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p class="Code">
+       Called when the mouse is moved in a JIDLCanvas.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmousePressed_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+         IDLmousePressed(JIDLObjectI obj, java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p class="Code">
+       Called when the mouse is pressed in a JIDLCanvas.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseReleased_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+         IDLmouseReleased(JIDLObjectI obj, java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Called when the mouse is released in a JIDLCanvas.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+         initListeners()
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Initialize listeners.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       boolean
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_isFocusTraversable__">
+         isFocusTraversable()
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       boolean
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_isObjCreated__">
+         isObjCreated()
+        </a>
+       </span>
+      </p>
+      <p>
+       Determine if object has been created successfully.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       boolean
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_isObjectCreated__">
+         isObjectCreated()
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Determine if object has been created successfully.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       boolean
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_isObjectDisplayable__">
+         isObjectDisplayable()
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_keyPressed_java_awt_event_KeyEvent_">
+         keyPressed(java.awt.event.KeyEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_keyReleased_java_awt_event_KeyEvent_">
+         keyReleased(java.awt.event.KeyEvent e)
+        </a>
+       </span>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_keyTyped_java_awt_event_KeyEvent_">
+         keyTyped(java.awt.event.KeyEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       int
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mapIDLCursorToJavaCursor_java_lang_String_">
+         mapIDLCursorToJavaCursor(java.lang.String idlCursor)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Maps the IDL cursor to a suitable Java cursor.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseClicked_java_awt_event_MouseEvent_">
+         mouseClicked(java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseDragged_java_awt_event_MouseEvent_">
+         mouseDragged(java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseEntered_java_awt_event_MouseEvent_">
+         mouseEntered(java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseExited_java_awt_event_MouseEvent_">
+         mouseExited(java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseMoved_java_awt_event_MouseEvent_">
+         mouseMoved(java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mousePressed_java_awt_event_MouseEvent_">
+         mousePressed(java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseReleased_java_awt_event_MouseEvent_">
+         mouseReleased(java.awt.event.MouseEvent e)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_paint_java_awt_Graphics_">
+         paint(java.awt.Graphics g)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLComponentListener_com_idl_javaidl_JIDLComponentListener_">
+         removeIDLComponentListener
+        </a>
+       </span>
+      </p>
+      <p class="Code">
+       <span class="Link">
+        (JIDLComponentListener listener)
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Remove the specified JIDLComponent-Listener from a list of listeners that receive notification of Component events.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLKeyListener_com_idl_javaidl_JIDLKeyListener_">
+         removeIDLKeyListener(JIDLKeyListener listener)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Removes the specified JIDLKey-Listener from a list of listeners that receive notification of Key events.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLMouseListener_com_idl_javaidl_JIDLMouseListener_">
+         removeIDLMouseListener(JIDLMouseListener listener)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Removes the specified JIDLMouse-Listener from a list of listeners that receive notification of Mouse events.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLMouseMotionListener_com_idl_javaidl_JIDLMouseMotionListener_">
+         removeIDLMouseMotionListener (JIDLMouseMotionListener listener)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Removes the specified JIDLMouse-Motion-Listener from a list of listeners that receive notification of Mouse-Motion events.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLMouseWheelListener_com_idl_javaidl_JIDLMouseWheelListener_">
+         removeIDLMouseWheelListener (JIDLMouseWheelListener listener)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Removes the specified JIDLMouseWheelListener from a list of listeners that receive notification of MouseWheel events.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLNotifyListener_com_idl_javaidl_JIDLNotifyListener_">
+         removeIDLNotifyListener(JIDLNotifyListener listener)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Removes the specified IDL notify listener so it no longer receives IDL notifications.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLOutputListener_com_idl_javaidl_JIDLOutputListener_">
+         removeIDLOutputListener(JIDLOutputListener listener)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Removes the specified IDL output listener on this object.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_setCursor_java_lang_String_">
+         setCursor(java.lang.String idlCursor)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Set the JIDLCanvas cursor.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_setIDLVariable_java_lang_String__java_lang_Object_">
+         setIDLVariable(java.lang.String sVar, java.lang.Object obj)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Set/Create an IDL variable of the given name and value.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_setProcessName_java_lang_String_">
+         setProcessName(java.lang.String process)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Set the process name that the object will be created in.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_setProperty_java_lang_String__java_lang_Object__int_">
+         setProperty(java.lang.String sProperty, java.lang.Object obj, int iPalFlag)
+        </a>
+       </span>
+      </p>
+      <p>
+       Call IDL set-Property method to set named property.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.String
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_toString__">
+         toString()
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Returns a string representation of the object.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_update_java_awt_Graphics_">
+         update(java.awt.Graphics g)
+        </a>
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       Internal use.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 480px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="480px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Inherited Member Summary
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span class="Bold">
+        Fields inherited from class
+       </span>
+       <![CDATA[ ]]>
+       <span class="Courier">
+        Component
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Courier">
+        BOTTOM_ALIGNMENT
+       </span>
+       ,
+       <span class="Courier">
+        CENTER_ALIGNMENT
+       </span>
+       ,
+       <span class="Courier">
+        LEFT_ALIGNMENT
+       </span>
+       ,
+       <span class="Courier">
+        RIGHT_ALIGNMENT
+       </span>
+       ,
+       <span class="Courier">
+        TOP_ALIGNMENT
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span class="Bold">
+        Fields inherited from interface
+       </span>
+       <![CDATA[ ]]>
+       <span class="Courier">
+        ImageObserver
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Courier">
+        ABORT
+       </span>
+       ,
+       <span class="Courier">
+        ALLBITS
+       </span>
+       ,
+       <span class="Courier">
+        ERROR
+       </span>
+       ,
+       <span class="Courier">
+        FRAMEBITS
+       </span>
+       ,
+       <span class="Courier">
+        HEIGHT
+       </span>
+       ,
+       <span class="Courier">
+        PROPERTIES
+       </span>
+       ,
+       <span class="Courier">
+        SOMEBITS
+       </span>
+       ,
+       <span class="Courier">
+        WIDTH
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span class="Bold">
+        Methods inherited from class
+       </span>
+       <![CDATA[ ]]>
+       <span class="Courier">
+        Canvas
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Courier">
+        addNotify()
+       </span>
+       ,
+       <span class="Courier">
+        createBufferStrategy(int, BufferCapabilities)
+       </span>
+       ,
+       <span class="Courier">
+        createBufferStrategy(int, BufferCapabilities)
+       </span>
+       ,
+       <span class="Courier">
+        getAccessibleContext()
+       </span>
+       ,
+       <span class="Courier">
+        getBufferStrategy()
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span class="Bold">
+        Methods inherited from class
+       </span>
+       <![CDATA[ ]]>
+       <span class="Courier">
+        Component
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Courier">
+        action(Event, Object)
+       </span>
+       ,
+       <span class="Courier">
+        add(PopupMenu)
+       </span>
+       ,
+       <span class="Courier">
+        addComponentListener(ComponentListener)
+       </span>
+       ,
+       <span class="Courier">
+        addFocusListener(FocusListener)
+       </span>
+       ,
+       <span class="Courier">
+        addHierarchyBoundsListener(HierarchyBoundsListener)
+       </span>
+       ,
+       <span class="Courier">
+        addHierarchyListener(HierarchyListener)
+       </span>
+       ,
+       <span class="Courier">
+        addInputMethodListener(InputMethodListener)
+       </span>
+       ,
+       <span class="Courier">
+        addKeyListener(KeyListener)
+       </span>
+       ,
+       <span class="Courier">
+        addMouseListener(MouseListener)
+       </span>
+       ,
+       <span class="Courier">
+        addMouseMotionListener(MouseMotionListener)
+       </span>
+       ,
+       <span class="Courier">
+        addMouseWheelListener(MouseWheelListener)
+       </span>
+       ,
+       <span class="Courier">
+        addPropertyChangeListener(String, PropertyChangeListener)
+       </span>
+       ,
+       <span class="Courier">
+        addPropertyChangeListener(String, PropertyChangeListener)
+       </span>
+       ,
+       <span class="Courier">
+        applyComponentOrientation(ComponentOrientation)
+       </span>
+       ,
+       <span class="Courier">
+        areFocusTraversalKeysSet(int)
+       </span>
+       ,
+       <span class="Courier">
+        bounds()
+       </span>
+       ,
+       <span class="Courier">
+        checkImage(Image, ImageObserver)
+       </span>
+       ,
+       <span class="Courier">
+        checkImage(Image, ImageObserver)
+       </span>
+       ,
+       <span class="Courier">
+        contains(Point)
+       </span>
+       ,
+       <span class="Courier">
+        contains(Point)
+       </span>
+       ,
+       <span class="Courier">
+        createImage(ImageProducer)
+       </span>
+       ,
+       <span class="Courier">
+        createImage(ImageProducer)
+       </span>
+       ,
+       <span class="Courier">
+        createVolatileImage(int, int, ImageCapabilities)
+       </span>
+       ,
+       <span class="Courier">
+        createVolatileImage(int, int, ImageCapabilities)
+       </span>
+       ,
+       <span class="Courier">
+        deliverEvent(Event)
+       </span>
+       ,
+       <span class="Courier">
+        disable()
+       </span>
+       ,
+       <span class="Courier">
+        dispatchEvent(AWTEvent)
+       </span>
+       ,
+       <span class="Courier">
+        doLayout()
+       </span>
+       ,
+       <span class="Courier">
+        enable(boolean)
+       </span>
+       ,
+       <span class="Courier">
+        enable(boolean)
+       </span>
+       ,
+       <span class="Courier">
+        enableInputMethods(boolean)
+       </span>
+       ,
+       <span class="Courier">
+        getAlignmentX()
+       </span>
+       ,
+       <span class="Courier">
+        getAlignmentY()
+       </span>
+       ,
+       <span class="Courier">
+        getBackground()
+       </span>
+       ,
+       <span class="Courier">
+        getBounds(Rectangle)
+       </span>
+       ,
+       <span class="Courier">
+        getBounds(Rectangle)
+       </span>
+       ,
+       <span class="Courier">
+        getColorModel()
+       </span>
+       ,
+       <span class="Courier">
+        getComponentAt(Point)
+       </span>
+       ,
+       <span class="Courier">
+        getComponentAt(Point)
+       </span>
+       ,
+       <span class="Courier">
+        getComponentListeners()
+       </span>
+       ,
+       <span class="Courier">
+        getComponentOrientation()
+       </span>
+       ,
+       <span class="Courier">
+        getCursor()
+       </span>
+       ,
+       <span class="Courier">
+        getDropTarget()
+       </span>
+       ,
+       <span class="Courier">
+        getFocusCycleRootAncestor()
+       </span>
+       ,
+       <span class="Courier">
+        getFocusListeners()
+       </span>
+       ,
+       <span class="Courier">
+        getFocusTraversalKeys(int)
+       </span>
+       ,
+       <span class="Courier">
+        getFocusTraversalKeysEnabled()
+       </span>
+       ,
+       <span class="Courier">
+        getFont()
+       </span>
+       ,
+       <span class="Courier">
+        getFontMetrics(Font)
+       </span>
+       ,
+       <span class="Courier">
+        getForeground()
+       </span>
+       ,
+       <span class="Courier">
+        getGraphics()
+       </span>
+       ,
+       <span class="Courier">
+        getGraphicsConfiguration()
+       </span>
+       ,
+       <span class="Courier">
+        getHeight()
+       </span>
+       ,
+       <span class="Courier">
+        getHierarchyBoundsListeners()
+       </span>
+       ,
+       <span class="Courier">
+        getHierarchyListeners()
+       </span>
+       ,
+       <span class="Courier">
+        getIgnoreRepaint()
+       </span>
+       ,
+       <span class="Courier">
+        getInputContext()
+       </span>
+       ,
+       <span class="Courier">
+        getInputMethodListeners()
+       </span>
+       ,
+       <span class="Courier">
+        getInputMethodRequests()
+       </span>
+       ,
+       <span class="Courier">
+        getKeyListeners()
+       </span>
+       ,
+       <span class="Courier">
+        getListeners(Class)
+       </span>
+       ,
+       <span class="Courier">
+        getLocale()
+       </span>
+       ,
+       <span class="Courier">
+        getLocation(Point)
+       </span>
+       ,
+       <span class="Courier">
+        getLocation(Point)
+       </span>
+       ,
+       <span class="Courier">
+        getLocationOnScreen()
+       </span>
+       ,
+       <span class="Courier">
+        getMaximumSize()
+       </span>
+       ,
+       <span class="Courier">
+        getMinimumSize()
+       </span>
+       ,
+       <span class="Courier">
+        getMouseListeners()
+       </span>
+       ,
+       <span class="Courier">
+        getMouseMotionListeners()
+       </span>
+       ,
+       <span class="Courier">
+        getMouseWheelListeners()
+       </span>
+       ,
+       <span class="Courier">
+        getName()
+       </span>
+       ,
+       <span class="Courier">
+        getParent()
+       </span>
+       ,
+       <span class="Courier">
+        getPeer()
+       </span>
+       ,
+       <span class="Courier">
+        getPreferredSize()
+       </span>
+       ,
+       <span class="Courier">
+        getPropertyChangeListeners(String)
+       </span>
+       ,
+       <span class="Courier">
+        getPropertyChangeListeners(String)
+       </span>
+       ,
+       <span class="Courier">
+        getSize(Dimension)
+       </span>
+       ,
+       <span class="Courier">
+        getSize(Dimension)
+       </span>
+       ,
+       <span class="Courier">
+        getToolkit()
+       </span>
+       ,
+       <span class="Courier">
+        getTreeLock()
+       </span>
+       ,
+       <span class="Courier">
+        getWidth()
+       </span>
+       ,
+       <span class="Courier">
+        getX()
+       </span>
+       ,
+       <span class="Courier">
+        getY()
+       </span>
+       ,
+       <span class="Courier">
+        gotFocus(Event, Object)
+       </span>
+       ,
+       <span class="Courier">
+        handleEvent(Event)
+       </span>
+       ,
+       <span class="Courier">
+        hasFocus()
+       </span>
+       ,
+       <span class="Courier">
+        hide()
+       </span>
+       ,
+       <span class="Courier">
+        imageUpdate(Image,
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Courier">
+        int, int, int, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        inside(int, int)
+       </span>
+       ,
+       <span class="Courier">
+        invalidate()
+       </span>
+       ,
+       <span class="Courier">
+        isBackgroundSet()
+       </span>
+       ,
+       <span class="Courier">
+        isCursorSet()
+       </span>
+       ,
+       <span class="Courier">
+        isDisplayable()
+       </span>
+       ,
+       <span class="Courier">
+        isDoubleBuffered()
+       </span>
+       ,
+       <span class="Courier">
+        isEnabled()
+       </span>
+       ,
+       <span class="Courier">
+        isFocusCycleRoot(Container)
+       </span>
+       ,
+       <span class="Courier">
+        isFocusOwner()
+       </span>
+       ,
+       <span class="Courier">
+        isFocusable()
+       </span>
+       ,
+       <span class="Courier">
+        isFontSet()
+       </span>
+       ,
+       <span class="Courier">
+        isForegroundSet()
+       </span>
+       ,
+       <span class="Courier">
+        isLightweight()
+       </span>
+       ,
+       <span class="Courier">
+        isOpaque()
+       </span>
+       ,
+       <span class="Courier">
+        isShowing()
+       </span>
+       ,
+       <span class="Courier">
+        isValid()
+       </span>
+       ,
+       <span class="Courier">
+        isVisible()
+       </span>
+       ,
+       <span class="Courier">
+        keyDown(Event, int)
+       </span>
+       ,
+       <span class="Courier">
+        keyUp(Event, int)
+       </span>
+       ,
+       <span class="Courier">
+        layout()
+       </span>
+       ,
+       <span class="Courier">
+        list(PrintWriter, int)
+       </span>
+       ,
+       <span class="Courier">
+        list(PrintWriter, int)
+       </span>
+       ,
+       <span class="Courier">
+        list(PrintWriter, int)
+       </span>
+       ,
+       <span class="Courier">
+        list(PrintWriter, int)
+       </span>
+       ,
+       <span class="Courier">
+        list(PrintWriter, int)
+       </span>
+       ,
+       <span class="Courier">
+        locate(int, int)
+       </span>
+       ,
+       <span class="Courier">
+        location()
+       </span>
+       ,
+       <span class="Courier">
+        lostFocus(Event, Object)
+       </span>
+       ,
+       <span class="Courier">
+        minimumSize()
+       </span>
+       ,
+       <span class="Courier">
+        mouseDown(Event, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        mouseDrag(Event, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        mouseEnter(Event, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        mouseExit(Event, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        mouseMove(Event, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        mouseUp(Event, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        move(int, int)
+       </span>
+       ,
+       <span class="Courier">
+        nextFocus()
+       </span>
+       ,
+       <span class="Courier">
+        paintAll(Graphics)
+       </span>
+       ,
+       <span class="Courier">
+        postEvent(Event)
+       </span>
+       ,
+       <span class="Courier">
+        preferredSize()
+       </span>
+       ,
+       <span class="Courier">
+        prepareImage(Image, ImageObserver)
+       </span>
+       ,
+       <span class="Courier">
+        prepareImage(Image, ImageObserver)
+       </span>
+       ,
+       <span class="Courier">
+        print(Graphics)
+       </span>
+       ,
+       <span class="Courier">
+        printAll(Graphics)
+       </span>
+       ,
+       <span class="Courier">
+        remove(MenuComponent)
+       </span>
+       ,
+       <span class="Courier">
+        removeComponentListener(ComponentListener)
+       </span>
+       ,
+       <span class="Courier">
+        removeFocusListener(FocusListener)
+       </span>
+       ,
+       <span class="Courier">
+        removeHierarchyBoundsListener(HierarchyBoundsListener)
+       </span>
+       ,
+       <span class="Courier">
+        removeHierarchyListener(HierarchyListener)
+       </span>
+       ,
+       <span class="Courier">
+        removeInputMethodListener(InputMethodListener)
+       </span>
+       ,
+       <span class="Courier">
+        removeKeyListener(KeyListener)
+       </span>
+       ,
+       <span class="Courier">
+        removeMouseListener(MouseListener)
+       </span>
+       ,
+       <span class="Courier">
+        removeMouseMotionListener(MouseMotionListener)
+       </span>
+       ,
+       <span class="Courier">
+        removeMouseWheelListener(MouseWheelListener)
+       </span>
+       ,
+       <span class="Courier">
+        removeNotify()
+       </span>
+       ,
+       <span class="Courier">
+        removePropertyChangeListener(String, PropertyChangeListener)
+       </span>
+       ,
+       <span class="Courier">
+        removePropertyChangeListener(String, PropertyChangeListener)
+       </span>
+       ,
+       <span class="Courier">
+        repaint(long, int, int, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        repaint(long, int, int, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        repaint(long, int, int, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        repaint(long, int, int, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        requestFocus()
+       </span>
+       ,
+       <span class="Courier">
+        requestFocusInWindow()
+       </span>
+       ,
+       <span class="Courier">
+        reshape(int, int, int, int)
+       </span>
+       ,
+       <span class="Courier">
+        resize(Dimension)
+       </span>
+       ,
+       <span class="Courier">
+        resize(Dimension)
+       </span>
+       ,
+       <span class="Courier">
+        setBackground(Color)
+       </span>
+       ,
+       <span class="Courier">
+        setBounds(Rectangle)
+       </span>
+       ,
+       <span class="Courier">
+        setBounds(Rectangle)
+       </span>
+       ,
+       <span class="Courier">
+        setComponentOrientation(ComponentOrientation)
+       </span>
+       ,
+       <span class="Courier">
+        setCursor(Cursor)
+       </span>
+       ,
+       <span class="Courier">
+        setDropTarget(DropTarget)
+       </span>
+       ,
+       <span class="Courier">
+        setEnabled(boolean)
+       </span>
+       ,
+       <span class="Courier">
+        setFocusTraversalKeys(int, Set)
+       </span>
+       ,
+       <span class="Courier">
+        setFocusTraversalKeysEnabled(boolean)
+       </span>
+       ,
+       <span class="Courier">
+        setFocusable(boolean)
+       </span>
+       ,
+       <span class="Courier">
+        setFont(Font)
+       </span>
+       ,
+       <span class="Courier">
+        setForeground(Color)
+       </span>
+       ,
+       <span class="Courier">
+        setIgnoreRepaint(boolean)
+       </span>
+       ,
+       <span class="Courier">
+        setLocale(Locale)
+       </span>
+       ,
+       <span class="Courier">
+        setLocation(Point)
+       </span>
+       ,
+       <span class="Courier">
+        setLocation(Point)
+       </span>
+       ,
+       <span class="Courier">
+        setName(String)
+       </span>
+       ,
+       <span class="Courier">
+        setSize(Dimension)
+       </span>
+       ,
+       <span class="Courier">
+        setSize(Dimension)
+       </span>
+       ,
+       <span class="Courier">
+        setVisible(boolean)
+       </span>
+       ,
+       <span class="Courier">
+        show(boolean)
+       </span>
+       ,
+       <span class="Courier">
+        show(boolean)
+       </span>
+       ,
+       <span class="Courier">
+        size()
+       </span>
+       ,
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Courier">
+        transferFocus()
+       </span>
+       ,
+       <span class="Courier">
+        transferFocusBackward()
+       </span>
+       ,
+       <span class="Courier">
+        transferFocusUpCycle()
+       </span>
+       ,
+       <span class="Courier">
+        validate()
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span class="Bold">
+        Methods inherited from class
+       </span>
+       <![CDATA[ ]]>
+       <span class="Courier">
+        Object
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       <span class="Courier">
+        equals(Object)
+       </span>
+       ,
+       <span class="Courier">
+        getClass()
+       </span>
+       ,
+       <span class="Courier">
+        hashCode()
+       </span>
+       ,
+       <span class="Courier">
+        notify()
+       </span>
+       ,
+       <span class="Courier">
+        notifyAll()
+       </span>
+       ,
+       <span class="Courier">
+        wait(long, int)
+       </span>
+       ,
+       <span class="Courier">
+        wait(long, int)
+       </span>
+       ,
+       <span class="Courier">
+        wait(long, int)
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   Fields
+  </h2>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDL_SOFTWARE_RENDERER">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDL_SOFTWARE_RENDERER
+  </h3>
+  <p class="Code">
+   public static final int
+   <span class="Bold">
+    IDL_SOFTWARE_RENDERER
+   </span>
+  </p>
+  <p>
+   Internal use
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_OPENGL_RENDERER">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   OPENGL_RENDERER
+  </h3>
+  <p class="Code">
+   public static final int
+   <span class="Bold">
+    OPENGL_RENDERER
+   </span>
+  </p>
+  <p>
+   Internal use
+  </p>
+  <h2 class="API">
+   Constructors
+  </h2>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_JIDLCanvas_java_lang_String__int__java_lang_String_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   JIDLCanvas(String, int, String)
+  </h3>
+  <p class="Code">
+   public
+   <span class="Bold">
+    JIDLCanvas
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sClass, int&#160;iOPSFlags,
+   <span class="Courier">
+    java.lang.String
+   </span>
+   &#160;sProcessName)
+  </p>
+  <h4>
+   Deprecated.
+  </h4>
+  <p>
+   Replaced by constructor taking 2 parameters
+  </p>
+  <p>
+   Construct a JIDLCanvas
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sClass
+   </span>
+   - IDL Class name
+  </p>
+  <p>
+   <span class="Courier">
+    iOPSFlags
+   </span>
+   - Unused. The process name determines the OPS flags.
+  </p>
+  <p>
+   <span class="Courier">
+    sProcessName
+   </span>
+   - The process name. If null or “”, in-process is used.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_JIDLCanvas_java_lang_String__java_lang_String_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   JIDLCanvas(String, String)
+  </h3>
+  <p class="Code">
+   public
+   <span class="Bold">
+    JIDLCanvas
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sClass,
+   <span class="Courier">
+    java.lang.String
+   </span>
+   &#160;sProcessName)
+  </p>
+  <p>
+   Construct a JIDLCanvas Note that constructing the JIDLObject does NOT create the object on the IDL-side of the bridge. This is done using the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sClass
+   </span>
+   - IDL Class name
+  </p>
+  <p>
+   <span class="Courier">
+    sProcessName
+   </span>
+   - The process name. If null or “”, in-process is used.
+  </p>
+  <h2 class="API">
+   Methods
+  </h2>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_abort__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   abort()
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    abort
+   </span>
+   ()
+  </p>
+  <p>
+   Requests that the IDL process containing the underlying IDL object abort its current activity.
+  </p>
+  <p>
+   This is only a request and IDL may take a long time before it actually stops.
+  </p>
+  <p>
+   The client can only Abort the current IDL activity if that wrapper object is the current “owner” of the underlying IDL.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_abort__">
+     abort
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   JIDLAbortedException
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLComponentListener_com_idl_javaidl_JIDLComponentListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   addIDLComponentListener(JIDLComponentListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    addIDLComponentListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     com.idl.javaidl.JIDLComponentListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Adds the specified JIDLComponent-Listener to a list of listeners that receive notification of Component events.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     JIDLComponentListener
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLKeyListener_com_idl_javaidl_JIDLKeyListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   addIDLKeyListener(JIDLKeyListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    addIDLKeyListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     com.idl.javaidl.JIDLKeyListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Adds the specified JIDLKey-Listener to a list of listeners that receive notification of Key events.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLMouseListener_com_idl_javaidl_JIDLMouseListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   addIDLMouseListener(JIDLMouseListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    addIDLMouseListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     com.idl.javaidl.JIDLMouseListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Adds the specified JIDLMouse-Listener to a list of listeners that receive notification of Mouse events.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLMouseWheelListener_com_idl_javaidl_JIDLMouseWheelListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   addIDLMouseMotionListener(JIDLMouseMotionListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    addIDLMouseMotionListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     com.idl.javaidl.JIDLMouseMotionListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Adds the specified JIDLMouse-Motion-Listener to a list of listeners that receive notification of Mouse-Motion events.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLMouseMotionListener_com_idl_javaidl_JIDLMouseMotionListener_">
+    addIDLMouseWheelListener(JIDLMouseWheelListener)
+   </a>
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    addIDLMouseWheelListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLMouseWheelListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseWheelListener">
+     com.idl.javaidl.JIDLMouseWheelListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Adds the specified JIDLMouseWheelListener to a list of listeners that receive notification of MouseWheel events.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseWheelListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseWheelListener">
+     JIDLMouseWheelListener
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLNotifyListener_com_idl_javaidl_JIDLNotifyListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   addIDLNotifyListener(JIDLNotifyListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    addIDLNotifyListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLNotifyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLNotifyListener">
+     com.idl.javaidl.JIDLNotifyListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Adds the specified IDL notify listener to receive IDL notification events on this object.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_addIDLNotifyListener_com_idl_javaidl_JIDLNotifyListener_">
+     addIDLNotifyListener
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_addIDLOutputListener_com_idl_javaidl_JIDLOutputListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   addIDLOutputListener(JIDLOutputListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    addIDLOutputListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLOutputListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLOutputListener">
+     com.idl.javaidl.JIDLOutputListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Adds the specified IDL output listener to receive IDL output events on this object.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_addIDLOutputListener_com_idl_javaidl_JIDLOutputListener_">
+     addIDLOutputListener
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_callFunction_java_lang_String__int_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   callFunction(String, int)
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.Object
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    callFunction
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sMethodName, int&#160;iPalFlag)
+  </p>
+  <p>
+   Call IDL function that accepts zero parameters.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sMethodName
+   </span>
+   - the function name
+  </p>
+  <p>
+   <span class="Courier">
+    iPalFlag
+   </span>
+   - a flag determining whether a returned array is convolved or not. If the returned value is not an array, this value is zero. See class description for more information.
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   an Object of type JIDLNumber, JIDLString, JIDLObject or JIDLArray. The caller must know the type of the Object being returned and cast it to its proper type. May also return null.
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_callFunction_java_lang_String__int__java_lang_Object______int______int_">
+     callFunction(String, int, Object[], int[], int)
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_callFunction_java_lang_String__int__java_lang_Object______int______int_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   callFunction(String, int, Object[], int[], int)
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.Object
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    callFunction
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sMethodName, int&#160;argc,
+   <span class="Courier">
+    java.lang.Object[]
+   </span>
+   &#160;argv, int[]&#160;argpal, int&#160;iPalFlag)
+  </p>
+  <p>
+   Call IDL function.
+  </p>
+  <p>
+   The argpal parameter is an array of flags created by OR-ing constants from class JIDLConst. Each array element corresponds to the equivalent parameter in argv.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_callFunction_java_lang_String__int__java_lang_Object______int______int_">
+     callFunction
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sMethodName
+   </span>
+   - the procedure name
+  </p>
+  <p>
+   <span class="Courier">
+    argc
+   </span>
+   - the number of parameters
+  </p>
+  <p>
+   <span class="Courier">
+    argv
+   </span>
+   - array of Objects to be passed to IDL. This array should be of length
+   <span class="Courier">
+    argc
+   </span>
+   and should contain objects of type JIDLNumber, JIDLObject, JIDLString or JIDLObject.
+  </p>
+  <p>
+   <span class="Courier">
+    argpal
+   </span>
+   - array of flags denoting whether each argv parameter passed to be bridge is 1) in-out vs constant; or 2) a convolved or non-convolved array This array should be of length
+   <span class="Courier">
+    argc
+   </span>
+   .
+  </p>
+  <p>
+   <span class="Courier">
+    iPalFlag
+   </span>
+   - a flag determining whether a returned array if convolved or not. If the returned value is not an array, this value is zero.
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   an Object of type JIDLNumber, JIDLString, JIDLObject-I or JIDLArray. The caller must know the type of the Object being returned and cast it to its proper type.
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLNumber.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLNumber">
+     JIDLNumber
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLObject.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObject">
+     JIDLObject
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLString.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLString">
+     JIDLString
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLArray.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray">
+     JIDLArray
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_CONST">
+     JIDLConst.PARMFLAG_CONST
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_IN_OUT">
+     JIDLConst.PARMFLAG_IN_OUT
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_CONVMAJORITY">
+     JIDLConst.PARMFLAG_CONVMAJORITY
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_NO_CONVMAJORITY">
+     JIDLConst.PARMFLAG_NO_CONVMAJORITY
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_callProcedure_java_lang_String_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   callProcedure(String)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    callProcedure
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sMethodName)
+  </p>
+  <p>
+   Call IDL procedure that accepts zero parameters.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sMethodName
+   </span>
+   - the procedure name
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_callProcedure_java_lang_String__int__java_lang_Object______int_____">
+     callProcedure(String, int, Object[], int[])
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_callProcedure_java_lang_String__int__java_lang_Object______int_____">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   callProcedure(String, int, Object[], int[])
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    callProcedure
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sMethodName, int&#160;argc,
+   <span class="Courier">
+    java.lang.Object[]
+   </span>
+   &#160;argv, int[]&#160;argpal)
+  </p>
+  <p>
+   Call IDL procedure.
+  </p>
+  <p>
+   The argpal parameter is an array of flags created by OR-ing constants from class JIDLConst. Each array element corresponds to the equivalent parameter in argv.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_callProcedure_java_lang_String__int__java_lang_Object______int_____">
+     callProcedure
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sMethodName
+   </span>
+   - the procedure name
+  </p>
+  <p>
+   <span class="Courier">
+    argc
+   </span>
+   - the number of parameters
+  </p>
+  <p>
+   <span class="Courier">
+    argv
+   </span>
+   - array of Objects to be passed to IDL. This array should be of length
+   <span class="Courier">
+    argc
+   </span>
+   and should contain objects of type JIDLNumber, JIDLObject, JIDLString or JIDLObject.
+  </p>
+  <p>
+   <span class="Courier">
+    argpal
+   </span>
+   - array of flags denoting whether each argv parameter passed to be bridge is 1) in-out vs constant; or 2) a convolved or non-convolved array This array should be of length
+   <span class="Courier">
+    argc
+   </span>
+   .
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLNumber.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLNumber">
+     JIDLNumber
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLObject.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObject">
+     JIDLObject
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLString.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLString">
+     JIDLString
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLArray.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray">
+     JIDLArray
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_CONST">
+     JIDLConst.PARMFLAG_CONST
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_IN_OUT">
+     JIDLConst.PARMFLAG_IN_OUT
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_CONVMAJORITY">
+     JIDLConst.PARMFLAG_CONVMAJORITY
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_NO_CONVMAJORITY">
+     JIDLConst.PARMFLAG_NO_CONVMAJORITY
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_componentHidden_java_awt_event_ComponentEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   componentHidden(ComponentEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    componentHidden
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.ComponentEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Called when the component is hidden.
+  </p>
+  <p>
+   This method does nothing because IDL does not care about this event. This could be overridden by a child of JIDLCanvas if these events were of interest to the client application
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    componentHidden
+   </span>
+   in interface
+   <span class="Courier">
+    ComponentListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p class="Code">
+   <span class="Courier">
+    java.awt.event.ComponentListener
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_componentMoved_java_awt_event_ComponentEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   componentMoved(ComponentEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    componentMoved
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.ComponentEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Called when the component is moved.
+  </p>
+  <p>
+   This method does nothing because IDL does not care about this event. This could be overridden by a child of JIDLCanvas if these events were of interest to the client application
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    componentMoved
+   </span>
+   in interface
+   <span class="Courier">
+    ComponentListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p class="Code">
+   <span class="Courier">
+    java.awt.event.ComponentListener
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_componentResized_java_awt_event_ComponentEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   componentResized(ComponentEvent)
+  </h3>
+  <p class="Code">
+   public final void
+   <span class="Bold">
+    componentResized
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.ComponentEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when the JIDLCanvas is resized.
+  </p>
+  <p>
+   If interested in resize events, use IDLcomponent-Resized. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    componentResized
+   </span>
+   in interface
+   <span class="Courier">
+    ComponentListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     JIDLComponentListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentResized_com_idl_javaidl_JIDLObjectI__java_awt_event_ComponentEvent_">
+     IDLcomponentResized(JIDLObjectI, ComponentEvent)
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_componentShown_java_awt_event_ComponentEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   componentShown(ComponentEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    componentShown
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.ComponentEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Called when the component is shown.
+  </p>
+  <p>
+   This method does nothing because IDL does not care about this event. This could be overridden by a child of JIDLCanvas if these events were of interest to the client application
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    componentShown
+   </span>
+   in interface
+   <span class="Courier">
+    ComponentListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p class="Code">
+   <span class="Courier">
+    java.awt.event.ComponentListener
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_createObject__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   createObject()
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    createObject
+   </span>
+   ()
+  </p>
+  <p>
+   Create the wrapped object by calling IDL’s ::INIT method.
+  </p>
+  <p>
+   Used for ::INIT methods that take zero parameters.
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_createObject_int__java_lang_Object______int_____">
+     createObject(int, Object[], int[])
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_createObject_int__java_lang_Object______int_____">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   createObject(int, Object[], int[])
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    createObject
+   </span>
+   (int argc,
+   <span class="Courier">
+    java.lang.Object[]
+   </span>
+   &#160;argv, int[]&#160;argpal)
+  </p>
+  <p>
+   Create the wrapped object by calling IDL’s ::INIT method.
+  </p>
+  <p>
+   Note that the GUI that this Canvas lives in must be exposed
+   <span class="Italic">
+    before
+   </span>
+   the create-Object method is called.
+  </p>
+  <p>
+   create-Object does the following:
+  </p>
+  <p class="Bullet">
+   call IDL ::INIT
+  </p>
+  <p class="Bullet">
+   attach the IDL Window to this Canvas
+  </p>
+  <p class="Bullet">
+   call init-Listeners to hook up default event handling
+  </p>
+  <p class="Bullet">
+   repaint the canvas
+  </p>
+  <p>
+   The argpal parameter is an array of flags created by OR-ing constants from class JIDLConst. Each array element corresponds to the equivalent parameter in argv. See the class description for more information.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_createObject_int__java_lang_Object______int_____">
+     createObject
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    argc
+   </span>
+   - the number of parameters
+  </p>
+  <p>
+   <span class="Courier">
+    argv
+   </span>
+   - array of Objects to be passed to IDL. This array should be of length
+   <span class="Courier">
+    argc
+   </span>
+   and should contain objects of type JIDLNumber, JIDLObject, JIDLString or JIDLObject.
+  </p>
+  <p>
+   <span class="Courier">
+    argpal
+   </span>
+   - array of flags denoting whether each argv parameter passed to be bridge is 1) in-out vs constant; or 2) a convolved or non-convolved array This array should be of length
+   <span class="Courier">
+    argc
+   </span>
+   .
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst">
+     JIDLConst
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+     initListeners()
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_createObject_int__java_lang_Object______int______JIDLProcessInitializer_">
+    createObject(int, Object[], int[], JIDLProcessInitializer)
+   </a>
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    createObject
+   </span>
+   (int argc,
+   <span class="Courier">
+    java.lang.Object[]
+   </span>
+   &#160;argv, int[]&#160;argpal, com.idl.javaidl.JIDLProcessInitializer initializer)
+  </p>
+  <p>
+   Create the wrapped object by calling IDL’s ::INIT method.
+  </p>
+  <p>
+   Note that the GUI that this Canvas lives in must be exposed
+   <span class="Italic">
+    before
+   </span>
+   the create-Object method is called.
+  </p>
+  <p>
+   create-Object does the following:
+  </p>
+  <p class="Bullet">
+   Calls ::Init method in the IDL object
+  </p>
+  <p class="Bullet">
+   Calls the superclass init-Listeners method to initialize any event handlers. The init-Listeners method has default behavior, which is different for graphical and non-graphical objects. If the default behavior is not desired, a sub-class to modify the listener initialization may override the init-Listeners method.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_createObject_int__java_lang_Object______int_____">
+     createObject
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    argc
+   </span>
+   - the number of parameters to be passed to INIT
+  </p>
+  <p>
+   <span class="Courier">
+    argv
+   </span>
+   - array of Objects to be passed to IDL. This array should be of length argc and should contain objects of type JIDLNumber, JIDLObject, JIDLString or JIDLArray.
+  </p>
+  <p>
+   <span class="Courier">
+    argpal
+   </span>
+   - array of flags denoting whether each argv parameter that is of type array should be convolved or not. For parameters that are not arrays, the value within the array will always be 0.
+  </p>
+  <p>
+   <span class="Courier">
+    initializer
+   </span>
+   - a JIDLProcessInitializer object that specifies IDL process initialization parameters such as the licensing mode to be used.
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_createObject_JIDLProcessInitializer_">
+    createObject(JIDLProcessInitializer)
+   </a>
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    createObject
+   </span>
+   (com.idl.javaidl.JIDLProcessInitializer initializer)
+  </p>
+  <p>
+   Create the wrapped object by calling IDL’s ::INIT method.
+  </p>
+  <p>
+   Used for ::INIT methods that take zero parameters.
+  </p>
+  <p>
+   The initializer parameter is used to supply IDL process initialization values.
+  </p>
+  <p>
+   Note that the GUI that this Canvas lives in must be exposed
+   <span class="Italic">
+    before
+   </span>
+   the create-Object method is called.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    initializer
+   </span>
+   - a JIDLProcessInitializer object that specifies IDL process initialization parameters such as the licensing mode to be used.
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_destroyObject__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   destroyObject()
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    destroyObject
+   </span>
+   ()
+  </p>
+  <p>
+   Destroys the underlying IDL object associated with the wrapper.
+  </p>
+  <p>
+   If the object being destroyed is the last object within an OPS process, the OPS process is also destroyed.
+  </p>
+  <p>
+   Note that this does not destroy the actual wrapper object. Because the wrapper object is a Java object, it follows all the Java reference counting/garbage collection schemes. Once all references to the wrapper object are released from Java code and once the Java Virtual Machine calls the garbage collector, the wrapper object may be deleted from memory.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_destroyObject__">
+     destroyObject
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_draw__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   draw()
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    draw
+   </span>
+   ()
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Call IDL to inform the Canvas has been exposed to cause a redraw.
+  </p>
+  <p>
+   This in turn calls all the JIDLComponent-Listeners. Should not be overridden.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_executeString_java_lang_String_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   executeString(String)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    executeString
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sCmd)
+  </p>
+  <p>
+   Execute the given command string in IDL.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_executeString_java_lang_String_">
+     executeString
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sCmd
+   </span>
+   - the single-line command to execute in IDL.
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getClassName__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   getClassName()
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.String
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    getClassName
+   </span>
+   ()
+  </p>
+  <h4>
+   Deprecated.
+  </h4>
+  <p>
+   Replaced by
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getIDLObjectClassName__">
+     getIDLObjectClassName()
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <p>
+   Get the class name of the object.
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   class name (“” if object not created yet)
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getCookie__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   getCookie()
+  </h3>
+  <p class="Code">
+   public long
+   <span class="Bold">
+    getCookie
+   </span>
+   ()
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getCookie__">
+     getCookie
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getIDLObjectClassName__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   getIDLObjectClassName()
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.String
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    getIDLObjectClassName
+   </span>
+   ()
+  </p>
+  <p>
+   Retrieves the IDL object class name of the underlying IDL object.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getIDLObjectClassName__">
+     getIDLObjectClassName
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   the IDL object class name
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getIDLObjectVariableName__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   getIDLObjectVariableName()
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.String
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    getIDLObjectVariableName
+   </span>
+   ()
+  </p>
+  <p>
+   When the underlying IDL object was created in the IDL process, it was assigned a variable name. This method retrieves that name.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getIDLObjectVariableName__">
+     getIDLObjectVariableName
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   the variable name
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getIDLVariable_java_lang_String_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   getIDLVariable(String)
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.Object
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    getIDLVariable
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sVar)
+  </p>
+  <p>
+   Given a variable name, return the IDL variable.
+  </p>
+  <p>
+   Note that in the case of arrays, the array will ALWAYS be convolved when passed between Java and IDL.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getIDLVariable_java_lang_String_">
+     getIDLVariable
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sVar
+   </span>
+   - The IDL variable name
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   an Object of type JIDLNumber, JIDLString, JIDLObject or JIDLArray. The caller must know the type of the Object being returned and cast it to its proper type. May also return null.
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getObjVariableName__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   getObjVariableName()
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.String
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    getObjVariableName
+   </span>
+   ()
+  </p>
+  <h4>
+   Deprecated.
+  </h4>
+  <p>
+   Replaced by
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getIDLObjectVariableName__">
+     getIDLObjectVariableName()
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <p>
+   Get the IDL Variable name of the given object
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   a String representing the IDL Variable name
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getProcessName__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   getProcessName()
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.String
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    getProcessName
+   </span>
+   ()
+  </p>
+  <p>
+   Returns the name of the process that contains the underlying IDL object. For an in-process object, returns an empty string.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getProcessName__">
+     getProcessName
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   process name. Empty string if the process is in-process.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_getProperty_java_lang_String__int_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   getProperty(String, int)
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.Object
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    getProperty
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sProperty, int&#160;iPalFlag)
+  </p>
+  <p>
+   Call IDL get-Property method to get named property.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getProperty_java_lang_String__int_">
+     getProperty
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sProperty
+   </span>
+   - the property name
+  </p>
+  <p>
+   <span class="Courier">
+    iPalFlag
+   </span>
+   - a flag determining whether a returned array will be convolved or not. If the returned value is not is ignored.
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   an Object of type JIDLNumber, JIDLString, JIDLObject or JIDLArray. The caller must know the type of the Object being returned and cast it to its proper type. May also return null.
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+   </a>
+   <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+   </a>
+   <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+    <span class="Link">
+    </span>
+   </a>
+   <a href="JIDLNumber.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLNumber">
+    JIDLNumber
+   </a>
+   ,
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLString.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLString">
+     JIDLString
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLArray
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_CONVMAJORITY">
+     JIDLConst.PARMFLAG_CONVMAJORITY
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_NO_CONVMAJORITY">
+     JIDLConst.PARMFLAG_NO_CONVMAJORITY
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLcomponentExposed(JIDLObjectI)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLcomponentExposed
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj)
+  </p>
+  <p>
+   Called when the JIDLCanvas is exposed.
+  </p>
+  <p>
+   The default behavior of this method is to lock the Canvas, pass the event on to IDL to handle (i.e. redraw), and then unlock the Canvas.
+  </p>
+  <p>
+   The behavior may be changed by overriding this method in a sub-class. For example, the sub-class may want to do something special before or after the redraw happens. The method would be implemented as follows:
+  </p>
+  <p class="Code">
+   &#160;public&#160;class&#160;my-Sub-Class&#160;extends&#160;JIDLCanvas&#160;{
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;public&#160;void&#160;IDLcomponent-Exposed()&#160;{
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;//&#160;do&#160;something&#160;here&#160;before&#160;IDL&#160;is&#160;called
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;super.IDLcomponent-Exposed();
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;//&#160;do&#160;something&#160;if&#160;desired&#160;afterwards
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;}
+  </p>
+  <p class="Code">
+   &#160;}
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+     IDLcomponentExposed
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     JIDLComponentListener
+    </a>
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     JIDLComponentListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+     initListeners()
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentResized_com_idl_javaidl_JIDLObjectI__java_awt_event_ComponentEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLcomponentResized(JIDLObjectI, ComponentEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLcomponentResized
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj,
+   <span class="Courier">
+    java.awt.event.ComponentEvent
+   </span>
+   &#160;e)
+  </p>
+  <p>
+   Called when the JIDLCanvas is resized.
+  </p>
+  <p>
+   The default behavior of this method is to send the resize event to IDL to handle.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener_IDLcomponentResized_com_idl_javaidl_JIDLObjectI__java_awt_event_ComponentEvent_">
+     IDLcomponentResized
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     JIDLComponentListener
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     JIDLComponentListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+     initListeners()
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLkeyPressed_com_idl_javaidl_JIDLObjectI__java_awt_event_KeyEvent__int__int_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLkeyPressed(JIDLObjectI, KeyEvent, int, int)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLkeyPressed
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj,
+   <span class="Courier">
+    java.awt.event.KeyEvent
+   </span>
+   &#160;e, int&#160;x, int&#160;y)
+  </p>
+  <p>
+   Called when the JIDLCanvas has focus and a key is pressed.
+  </p>
+  <p>
+   The default behavior of this method is pass the event to IDL which, if registered for the event will call ::OnKeyboard.
+  </p>
+  <p>
+   The behavior may be changed by overriding this method in a sub-class. For example, the sub-class may want to ignore the event by providing an empty implementation of the method. Or the sub-class may do something special before or after the event happens.
+  </p>
+  <p>
+   See IDLcomponent-Exposed for an example of how this would be done.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener_IDLkeyPressed_com_idl_javaidl_JIDLObjectI__java_awt_event_KeyEvent__int__int_">
+     IDLkeyPressed
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+     IDLcomponentExposed(JIDLObjectI)
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    initListeners()
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLkeyReleased_com_idl_javaidl_JIDLObjectI__java_awt_event_KeyEvent__int__int_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLkeyReleased(JIDLObjectI, KeyEvent, int, int)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLkeyReleased
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj,
+   <span class="Courier">
+    java.awt.event.KeyEvent
+   </span>
+   &#160;e, int&#160;x, int&#160;y)
+  </p>
+  <p>
+   Called when the JIDLCanvas has focus and a key is released.
+  </p>
+  <p>
+   The default behavior of this method is pass the event to IDL which, if registered for the event will call ::OnKeyboard. The behavior may be changed by overriding this method in a sub-class. For example, the sub-class may want to ignore the event by providing an empty implementation of the method. Or the sub-class may do something special before or after the event happens. See IDLcomponent-Exposed for an example of how this would be done.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener_IDLkeyReleased_com_idl_javaidl_JIDLObjectI__java_awt_event_KeyEvent__int__int_">
+     IDLkeyReleased
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+     IDLcomponentExposed(JIDLObjectI)
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+     initListeners()
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseDragged_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLmouseDragged(JIDLObjectI, MouseEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLmouseDragged
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj,
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   &#160;e)
+  </p>
+  <p>
+   Called when the mouse is dragged in a JIDLCanvas.
+  </p>
+  <p>
+   The default behavior of this method is pass the event to IDL which, if registered for the event, will call ::On-Mouse-Motion.
+  </p>
+  <p>
+   The behavior may be changed by overriding this method in a sub-class. For example, the sub-class may want to ignore the event by providing an empty implementation of the method. Often our IDL IDLit-Window is only interested in one type of motion event and not another. Or the sub-class may do something special before or after the event happens.
+  </p>
+  <p>
+   See IDLcomponent-Exposed for an example of how this would be done.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener_IDLmouseDragged_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmouseDragged
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+     IDLcomponentExposed(JIDLObjectI)
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+     initListeners()
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseEntered_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLmouseEntered(JIDLObjectI, MouseEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLmouseEntered
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj,
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   &#160;e)
+  </p>
+  <p>
+   Called when the mouse enters a JIDLCanvas.
+  </p>
+  <p>
+   The default behavior of this method is to ignore the event.
+  </p>
+  <p>
+   The behavior may be changed by overriding this method in a sub-class.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmouseEntered_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmouseEntered
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+     initListeners()
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseExited_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLmouseExited(JIDLObjectI, MouseEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLmouseExited
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj,
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   &#160;e)
+  </p>
+  <p>
+   Called when the mouse exits a JIDLCanvas.
+  </p>
+  <p>
+   The default behavior of this method is to ignore the event.
+  </p>
+  <p>
+   The behavior may be changed by overriding this method in a sub-class.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmouseExited_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmouseExited
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+     initListeners()
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseMoved_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLmouseMoved(JIDLObjectI, MouseEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLmouseMoved
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj,
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   &#160;e)
+  </p>
+  <p>
+   Called when the mouse is moved in a JIDLCanvas.
+  </p>
+  <p>
+   The default behavior of this method is pass the event to IDL which, if registered for the event, will call ::On-Mouse-Motion.
+  </p>
+  <p>
+   The behavior may be changed by overriding this method in a sub-class. For example, the sub-class may want to ignore the event by providing an empty implementation of the method. Often our IDL IDLit-Window is only interested in one type of motion event and not another. Or the sub-class may do something special before or after the event happens.
+  </p>
+  <p>
+   See IDLcomponent-Exposed for an example of how this would be done.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener_IDLmouseMoved_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmouseMoved
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+     IDLcomponentExposed(JIDLObjectI)
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+     initListeners()
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmousePressed_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLmousePressed(JIDLObjectI, MouseEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLmousePressed
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <p class="Code">
+   obj,
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   &#160;e)
+  </p>
+  <p>
+   Called when the mouse is pressed in a JIDLCanvas.
+  </p>
+  <p>
+   The default behavior of this method is pass the event to IDL which, if registered for the event, will call ::On-Mouse-Down.
+  </p>
+  <p>
+   The behavior may be changed by overriding this method in a sub-class. For example, the sub-class may want to ignore the event by providing an empty implementation of the method. Or the sub-class may do something special before or after the event happens.
+  </p>
+  <p>
+   See IDLcomponent-Exposed for an example of how this would be done.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmousePressed_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmousePressed
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+     IDLcomponentExposed(JIDLObjectI)
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+     initListeners()
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseReleased_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLmouseReleased(JIDLObjectI, MouseEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLmouseReleased
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj,
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   &#160;e)
+  </p>
+  <p>
+   Called when the mouse is released in a JIDLCanvas.
+  </p>
+  <p>
+   The default behavior of this method is pass the event to IDL which, if registered for the event, will call ::On-Mouse-Up.
+  </p>
+  <p>
+   The behavior may be changed by overriding this method in a sub-class. For example, the sub-class may want to ignore the event by providing an empty implementation of the method. Or the sub-class may do something special before or after the event happens.
+  </p>
+  <p>
+   See IDLcomponent-Exposed for an example of how this would be done.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmouseReleased_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmouseReleased
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+     IDLcomponentExposed(JIDLObjectI)
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+     initListeners()
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_initListeners__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   initListeners()
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    initListeners
+   </span>
+   ()
+  </p>
+  <p>
+   Initialize listeners.
+  </p>
+  <p>
+   This method is always called by create-Object. The JIDLCanvas listens to the following events:
+  </p>
+  <p class="Bullet">
+   JIDLComponent-Listener
+  </p>
+  <p class="Bullet">
+   JIDLKey-Listener
+  </p>
+  <p class="Bullet">
+   JIDLMouse-Listener
+  </p>
+  <p class="Bullet">
+   JIDLMouse-Motion-Listener
+  </p>
+  <p>
+   The method may be overridden by sub-classes to initialize a different set of listeners (or none at all). For example if a sub-class of JIDLCanvas only wished to listen to key and component events, it would override init-Listeners as follows:
+  </p>
+  <p class="Code">
+   &#160;public&#160;void&#160;init-Listeners()&#160;{
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;add-IDLComponent-Listener(this);
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;add-IDLKey-Listener(this);
+  </p>
+  <p class="Code">
+   &#160;}
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p>
+   As another example, if a sub-class of JIDLCanvas wished to listen to key events, component events, and notify events, it would need to implement JIDLNotify-Listener and register to listen for these events in init-Listeners, as follows:
+  </p>
+  <p class="Code">
+   &#160;public&#160;class&#160;new-Canvas&#160;extends&#160;JIDLCanvas&#160;implements&#160;JIDLNotify-Listener
+  </p>
+  <p class="Code">
+   &#160;{
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;public&#160;void&#160;init-Listeners()&#160;{
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;add-IDLComponent-Listener(this);
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;add-IDLKey-Listener(this);
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;add-IDLNotify-Listener(this);
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;}
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;void&#160;On-IDLNotify(JIDLObject-I&#160;obj,&#160;String&#160;s1,&#160;String&#160;s2)&#160;{
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//&#160;do&#160;something&#160;with&#160;the&#160;notify
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;}
+  </p>
+  <p class="Code">
+   &#160;}
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_initListeners__">
+     initListeners
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     JIDLComponentListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLNotifyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLNotifyListener">
+     JIDLNotifyListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLOutputListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLOutputListener">
+     JIDLOutputListener
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_isFocusTraversable__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   isFocusTraversable()
+  </h3>
+  <p class="Code">
+   public boolean
+   <span class="Bold">
+    isFocusTraversable
+   </span>
+   ()
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <h4>
+   Overrides:
+  </h4>
+  <p>
+   <span class="Courier">
+    isFocusTraversable
+   </span>
+   in class
+   <span class="Courier">
+    Component
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_isObjCreated__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   isObjCreated()
+  </h3>
+  <p class="Code">
+   public boolean
+   <span class="Bold">
+    isObjCreated
+   </span>
+   ()
+  </p>
+  <h4>
+   Deprecated.
+  </h4>
+  <p>
+   Replaced by
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_isObjectCreated__">
+     isObjectCreated()
+    </a>
+   </span>
+  </p>
+  <p>
+   Determine if object has been created successfully.
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   <span class="Courier">
+    true
+   </span>
+   if object created successfully, or
+   <span class="Courier">
+    false
+   </span>
+   if object not created or creation was unsuccessful.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_isObjectCreated__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   isObjectCreated()
+  </h3>
+  <p class="Code">
+   public boolean
+   <span class="Bold">
+    isObjectCreated
+   </span>
+   ()
+  </p>
+  <p>
+   Determine if object has been created successfully.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_isObjectCreated__">
+     isObjectCreated
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   <span class="Courier">
+    true
+   </span>
+   if object created successfully, or
+   <span class="Courier">
+    false
+   </span>
+   if object not created, destroyed, or creation was unsuccessful.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_createObject__">
+     createObject()
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_isObjectDisplayable__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   isObjectDisplayable()
+  </h3>
+  <p class="Code">
+   public boolean
+   <span class="Bold">
+    isObjectDisplayable
+   </span>
+   ()
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_isObjectDisplayable__">
+     isObjectDisplayable
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_keyPressed_java_awt_event_KeyEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   keyPressed(KeyEvent)
+  </h3>
+  <p class="Code">
+   public final void
+   <span class="Bold">
+    keyPressed
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.KeyEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when a key is pressed when the JIDLCanvas has focus.
+  </p>
+  <p>
+   If interested in this event, use IDLkey-Pressed. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    keyPressed
+   </span>
+   in interface
+   <span class="Courier">
+    KeyListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLkeyPressed_com_idl_javaidl_JIDLObjectI__java_awt_event_KeyEvent__int__int_">
+     IDLkeyPressed(JIDLObjectI, KeyEvent, int, int)
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_keyReleased_java_awt_event_KeyEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   keyReleased(KeyEvent)
+  </h3>
+  <p class="Code">
+   public final void
+   <span class="Bold">
+    keyReleased
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.KeyEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when a key is released when the JIDLCanvas has focus.
+  </p>
+  <p>
+   If interested in this event, use IDLkey-Released. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    keyReleased
+   </span>
+   in interface
+   <span class="Courier">
+    KeyListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLkeyReleased_com_idl_javaidl_JIDLObjectI__java_awt_event_KeyEvent__int__int_">
+     IDLkeyReleased(JIDLObjectI, KeyEvent, int, int)
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_keyTyped_java_awt_event_KeyEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   keyTyped(KeyEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    keyTyped
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.KeyEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when a key is typed.
+  </p>
+  <p>
+   This method does nothing because IDL does not care about this event, using key-Pressed to trigger its mouse events. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    keyTyped
+   </span>
+   in interface
+   <span class="Courier">
+    KeyListener
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mapIDLCursorToJavaCursor_java_lang_String_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   mapIDLCursorToJavaCursor(String)
+  </h3>
+  <p class="Code">
+   public int
+   <span class="Bold">
+    mapIDLCursorToJavaCursor
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   idlCursor)
+  </p>
+  <p>
+   Maps the IDL cursor to a suitable Java cursor. This is called internally by set-Cursor when the IDL drawable changes the cursor.
+  </p>
+  <p>
+   May be overridden to change the mapping. The default mapping is as follows:
+  </p>
+  <p class="Bullet">
+   “ARROW” &#160;&gt;&#160; Cursor.DEFAULT_CURSOR;
+  </p>
+  <p class="Bullet">
+   “UP_ARROW” &#160;&gt;&#160; Cursor.DEFAULT_CURSOR;
+  </p>
+  <p class="Bullet">
+   “IBEAM” &#160;&gt;&#160; Cursor.TEXT_CURSOR;
+  </p>
+  <p class="Bullet">
+   “ICON” &#160;&gt;&#160; Cursor.TEXT_CURSOR;
+  </p>
+  <p class="Bullet">
+   “CROSSHAIR” &#160;&gt;&#160; Cursor.CROSSHAIR_CURSOR;
+  </p>
+  <p class="Bullet">
+   “ORIGINAL” &#160;&gt;&#160; Cursor.CROSSHAIR_CURSOR;
+  </p>
+  <p class="Bullet">
+   “HOURGLASS” &#160;&gt;&#160; Cursor.WAIT_CURSOR;
+  </p>
+  <p class="Bullet">
+   “MOVE” &#160;&gt;&#160; Cursor.MOVE_CURSOR;
+  </p>
+  <p class="Bullet">
+   “SIZE_NW” &#160;&gt;&#160; Cursor.NW_RESIZE_CURSOR;
+  </p>
+  <p class="Bullet">
+   “SIZE_SE” &#160;&gt;&#160; Cursor.SE_RESIZE_CURSOR;
+  </p>
+  <p class="Bullet">
+   “SIZE_NE” &#160;&gt;&#160; Cursor.NE_RESIZE_CURSOR;
+  </p>
+  <p class="Bullet">
+   “SIZE_SW” &#160;&gt;&#160; Cursor.SW_RESIZE_CURSOR;
+  </p>
+  <p class="Bullet">
+   “SIZE_EW” &#160;&gt;&#160; Cursor.E_RESIZE_CURSOR;
+  </p>
+  <p class="Bullet">
+   “SIZE_NS” &#160;&gt;&#160; Cursor.N_RESIZE_CURSOR;
+  </p>
+  <p class="Bullet">
+   otherwise &#160;&gt;&#160; Cursor.DEFAULT_CURSOR;
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    mapIDLCursorToJavaCursor
+   </span>
+   in interface
+   <span class="Courier">
+    JIDLCursorSupport
+   </span>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    idlCursor
+   </span>
+   - a String representing the IDL cursor
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   the Cursor constant representing the Java Cursor style
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_setCursor_java_lang_String_">
+     setCursor(String)
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseClicked_java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   mouseClicked(MouseEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    mouseClicked
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when the mouse is clicked.
+  </p>
+  <p>
+   This method does nothing because IDL does not care about this event, using mouse-Pressed to trigger its mouse events. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    mouseClicked
+   </span>
+   in interface
+   <span class="Courier">
+    MouseListener
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseDragged_java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   mouseDragged(MouseEvent)
+  </h3>
+  <p class="Code">
+   public final void
+   <span class="Bold">
+    mouseDragged
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when the mouse is dragged in the JIDLCanvas.
+  </p>
+  <p>
+   If interested in this event, use IDLmouse-Dragged. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    mouseDragged
+   </span>
+   in interface
+   <span class="Courier">
+    MouseMotionListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseDragged_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmouseDragged(JIDLObjectI, MouseEvent)
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseEntered_java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   mouseEntered(MouseEvent)
+  </h3>
+  <p class="Code">
+   public final void
+   <span class="Bold">
+    mouseEntered
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when the mouse enters the JIDLCanvas.
+  </p>
+  <p>
+   If interested in this event, use IDLmouse-Entered. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    mouseEntered
+   </span>
+   in interface
+   <span class="Courier">
+    MouseListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseEntered_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmouseEntered(JIDLObjectI, MouseEvent)
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseExited_java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   mouseExited(MouseEvent)
+  </h3>
+  <p class="Code">
+   public final void
+   <span class="Bold">
+    mouseExited
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when the mouse exits the JIDLCanvas.
+  </p>
+  <p>
+   If interested in this event, use IDLmouse-Exited. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    mouseExited
+   </span>
+   in interface
+   <span class="Courier">
+    MouseListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseExited_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmouseExited(JIDLObjectI, MouseEvent)
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseMoved_java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   mouseMoved(MouseEvent)
+  </h3>
+  <p class="Code">
+   public final void
+   <span class="Bold">
+    mouseMoved
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when the mouse moves in the JIDLCanvas.
+  </p>
+  <p>
+   If interested in this event, use IDLmouse-Moved. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    mouseMoved
+   </span>
+   in interface
+   <span class="Courier">
+    MouseMotionListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseMoved_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmouseMoved(JIDLObjectI, MouseEvent)
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mousePressed_java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   mousePressed(MouseEvent)
+  </h3>
+  <p class="Code">
+   public final void
+   <span class="Bold">
+    mousePressed
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when the mouse is pressed.
+  </p>
+  <p>
+   If interested in this event, use IDLmouse-Pressed. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    mousePressed
+   </span>
+   in interface
+   <span class="Courier">
+    MouseListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmousePressed_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmousePressed(JIDLObjectI, MouseEvent)
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mouseReleased_java_awt_event_MouseEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   mouseReleased(MouseEvent)
+  </h3>
+  <p class="Code">
+   public final void
+   <span class="Bold">
+    mouseReleased
+   </span>
+   (
+   <span class="Courier">
+    java.awt.event.MouseEvent
+   </span>
+   e)
+  </p>
+  <p>
+   Internal use.
+  </p>
+  <p>
+   Called when the mouse is released.
+  </p>
+  <p>
+   If interested in this event, use IDLmouse-Released. This method should NOT be overridden by a child of JIDLCanvas.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    mouseReleased
+   </span>
+   in interface
+   <span class="Courier">
+    MouseListener
+   </span>
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_IDLmouseReleased_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">
+     IDLmouseReleased(JIDLObjectI, MouseEvent)
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_paint_java_awt_Graphics_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   paint(Graphics)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    paint
+   </span>
+   (
+   <span class="Courier">
+    java.awt.Graphics
+   </span>
+   g)
+  </p>
+  <p>
+   Internal use. Paint the Canvas. (Do not override this method)
+  </p>
+  <h4>
+   Overrides:
+  </h4>
+  <p>
+   <span class="Courier">
+    paint
+   </span>
+   in class
+   <span class="Courier">
+    Canvas
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLComponentListener_com_idl_javaidl_JIDLComponentListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   removeIDLComponentListener(JIDLComponentListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    removeIDLComponentListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     com.idl.javaidl.JIDLComponentListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Remove the specified JIDLComponent-Listener from a list of listeners that receive notification of Component events.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLComponentListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+     JIDLComponentListener
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLKeyListener_com_idl_javaidl_JIDLKeyListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   removeIDLKeyListener(JIDLKeyListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    removeIDLKeyListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     com.idl.javaidl.JIDLKeyListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Removes the specified JIDLKey-Listener from a list of listeners that receive notification of Key events.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLKeyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLKeyListener">
+     JIDLKeyListener
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLMouseListener_com_idl_javaidl_JIDLMouseListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   removeIDLMouseListener(JIDLMouseListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    removeIDLMouseListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     com.idl.javaidl.JIDLMouseListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Removes the specified JIDLMouse-Listener from a list of listeners that receive notification of Mouse events.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener">
+     JIDLMouseListener
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLMouseMotionListener_com_idl_javaidl_JIDLMouseMotionListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   removeIDLMouseMotionListener(JIDLMouseMotionListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    removeIDLMouseMotionListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     com.idl.javaidl.JIDLMouseMotionListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Removes the specified JIDLMouse-Motion-Listener from a list of listeners that receive notification of Mouse-Motion events.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">
+     JIDLMouseMotionListener
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLMouseWheelListener_com_idl_javaidl_JIDLMouseWheelListener_">
+    removeIDLMouseWheelListener(JIDLMouseWheelListener)
+   </a>
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    removeIDLMouseWheelListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLMouseWheelListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseWheelListener">
+     com.idl.javaidl.JIDLMouseWheelListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Removes the specified JIDLMouseWheelListener to a list of listeners that receive notification of MouseWheel events.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLMouseWheelListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseWheelListener">
+     JIDLMouseWheelListener
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLNotifyListener_com_idl_javaidl_JIDLNotifyListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   removeIDLNotifyListener(JIDLNotifyListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    removeIDLNotifyListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLNotifyListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLNotifyListener">
+     com.idl.javaidl.JIDLNotifyListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Removes the specified IDL notify listener so it no longer receives IDL notifications.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_removeIDLNotifyListener_com_idl_javaidl_JIDLNotifyListener_">
+     removeIDLNotifyListener
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_removeIDLOutputListener_com_idl_javaidl_JIDLOutputListener_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   removeIDLOutputListener(JIDLOutputListener)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    removeIDLOutputListener
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLOutputListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLOutputListener">
+     com.idl.javaidl.JIDLOutputListener
+    </a>
+   </span>
+   listener)
+  </p>
+  <p>
+   Removes the specified IDL output listener on this object.
+  </p>
+  <p>
+   Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_removeIDLOutputListener_com_idl_javaidl_JIDLOutputListener_">
+     removeIDLOutputListener
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    listener
+   </span>
+   - the listener
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_setCursor_java_lang_String_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   setCursor(String)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    setCursor
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   idlCursor)
+  </p>
+  <p>
+   Set the JIDLCanvas cursor. Called automatically when the IDL cursor changes. This in turn calls map-IDLCursor-To-Java-Cursor to map the IDL cursor name to a suitable Java cursor type.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Courier">
+    setCursor
+   </span>
+   in interface
+   <span class="Courier">
+    JIDLCursorSupport
+   </span>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    idlCursor
+   </span>
+   - A String representing the IDL cursor name.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_mapIDLCursorToJavaCursor_java_lang_String_">
+     mapIDLCursorToJavaCursor(String)
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_setIDLVariable_java_lang_String__java_lang_Object_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   setIDLVariable(String, Object)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    setIDLVariable
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sVar,
+   <span class="Courier">
+    java.lang.Object
+   </span>
+   &#160;obj)
+  </p>
+  <p>
+   Set/Create an IDL variable of the given name and value.
+  </p>
+  <p>
+   Note that in the case of arrays, the array will ALWAYS be convolved when passed between Java and IDL.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_setIDLVariable_java_lang_String__java_lang_Object_">
+     setIDLVariable
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sVar
+   </span>
+   - the IDL variable name
+  </p>
+  <p>
+   <span class="Courier">
+    obj
+   </span>
+   - object to be passed to IDL. Should be an object of type JIDLNumber, JIDLObject, JIDLString or JIDLArray.
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_setProcessName_java_lang_String_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   setProcessName(String)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    setProcessName
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   process)
+  </p>
+  <p>
+   Set the process name that the object will be created in.
+  </p>
+  <p>
+   The process name may only be set before create-Object is called. If called after the object has been created, this method call does nothing.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_setProcessName_java_lang_String_">
+     setProcessName
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    process
+   </span>
+   - Process name. Empty String means create in same process (in-process).
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_setProperty_java_lang_String__java_lang_Object__int_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   setProperty(String, Object, int)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    setProperty
+   </span>
+   (
+   <span class="Courier">
+    java.lang.String
+   </span>
+   sProperty,
+   <span class="Courier">
+    java.lang.Object
+   </span>
+   &#160;obj, int&#160;iPalFlag)
+  </p>
+  <p>
+   Call IDL set-Property method to set named property.
+  </p>
+  <p>
+   The i-Pal-Flag parameter is a set of flags that are or-ed together. Currently this parameter is only used to specify whether a JIDLArray being passed in to IDL is convolved or not. For arrays argpal should be set to either JIDLConst.PARMFLAG_CONVMAJORITY or JIDLConst.PARMFLAG_NO_CONVMAJORITY.
+  </p>
+  <h4>
+   Specified By:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_setProperty_java_lang_String__java_lang_Object__int_">
+     setProperty
+    </a>
+   </span>
+   in interface
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     JIDLObjectI
+    </a>
+   </span>
+   <![CDATA[ ]]>
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    sProperty
+   </span>
+   - the property name
+  </p>
+  <p>
+   <span class="Courier">
+    obj
+   </span>
+   - object to be passed to IDL. Should be an object of type JIDLNumber, JIDLObject, JIDLString or JIDLObject.
+  </p>
+  <p>
+   <span class="Courier">
+    iPalFlag
+   </span>
+   - flag denoting whether the passed in parameter is convolved or not.
+   <br />
+   Note: set-Property does not allow obj to be modified by IDL
+  </p>
+  <h4>
+   Throws:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLException.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLException">
+     JIDLException
+    </a>
+   </span>
+   - If IDL encounters an error.
+  </p>
+  <h4>
+   See Also:
+  </h4>
+  <p>
+   <span class="Link">
+    <a href="JIDLNumber.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLNumber">
+     JIDLNumber
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLObject.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObject">
+     JIDLObject
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLString.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLString">
+     JIDLString
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLArray.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray">
+     JIDLArray
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_CONVMAJORITY">
+     JIDLConst.PARMFLAG_CONVMAJORITY
+    </a>
+   </span>
+   ,
+   <span class="Link">
+    <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_NO_CONVMAJORITY">
+     JIDLConst.PARMFLAG_NO_CONVMAJORITY
+    </a>
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_toString__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   toString()
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.String
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    toString
+   </span>
+   ()
+  </p>
+  <p>
+   Returns a string representation of the object.
+  </p>
+  <h4>
+   Overrides:
+  </h4>
+  <p>
+   <span class="Courier">
+    toString
+   </span>
+   in class
+   <span class="Courier">
+    Component
+   </span>
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas_update_java_awt_Graphics_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   update(Graphics)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    update
+   </span>
+   (
+   <span class="Courier">
+    java.awt.Graphics
+   </span>
+   g)
+  </p>
+  <p>
+   Internal use. Update the Canvas. (Do not override this method)
+  </p>
+  <h4>
+   Overrides:
+  </h4>
+  <p>
+   <span class="Courier">
+    update
+   </span>
+   in class
+   <span class="Courier">
+    Canvas
+   </span>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

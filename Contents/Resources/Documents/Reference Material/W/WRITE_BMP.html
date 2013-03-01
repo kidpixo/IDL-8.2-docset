@@ -1,0 +1,581 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WRITE_BMP
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WRITE_BMP.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WRITE_BMP
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="W_811389549_756424">
+   </a>
+   <a name="W_811389549_29793">
+   </a>
+   <a name="W_811389549_19796">
+   </a>
+   WRITE_BMP
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#W_811389549_917268">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_917270">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_756439">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_756452">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_756458">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_983481">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2910">
+   </a>
+   WRITE_BMP procedure writes an image and its color table vectors to a Microsoft Windows Version 3 device independent
+   <a name="kanchor2911">
+   </a>
+   bitmap file (.BMP).
+  </p>
+  <p>
+   WRITE_BMP does not handle 1-bit-images or compressed images.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    write_bmp.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_917268">
+   </a>
+   <a name="W_811389549_917268_PageTOC_WRITE_BMP_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   WRITE_BMP,
+   <i>
+    Filename
+   </i>
+   ,
+   <i>
+    Image
+   </i>
+   [,&#160;
+   <i>
+    R
+   </i>
+   ,
+   <i>
+    G
+   </i>
+   ,
+   <i>
+    B
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_756441">
+    FOUR_BIT
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_756444">
+    IHDR
+   </a>
+   =
+   <i>
+    structure
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_756447">
+    HEADER_DEFINE
+   </a>
+   =
+   <i>
+    h
+   </i>
+   {define
+   <i>
+    h
+   </i>
+   before call}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_964751">
+    RGB
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_917270">
+   </a>
+   <a name="W_811389549_917270_PageTOC_WRITE_BMP_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string containing the full pathname of the bitmap file to write.
+  </p>
+  <h3 class="Argument">
+   Image
+  </h3>
+  <p>
+   The array to write into the new bitmap file. The array should be scaled into a range of bytes for 8-, 24-, and 32-bit deep images. The array should be scaled to 0-15 for 4-bit deep images. If the image has 3 dimensions and the first dimension is 3, a 24-bit bitmap file is created. If the image has 3 dimensions and the first dimension is 4, a 32-bit bitmap file is created.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For 24-bit images, color interleaving is blue, green, red:
+   <i>
+    Image
+   </i>
+   [0,&#160;
+   <i>
+    i
+   </i>
+   ,&#160;
+   <i>
+    j
+   </i>
+   ] = blue,
+   <i>
+    Image
+   </i>
+   [1,&#160;
+   <i>
+    i
+   </i>
+   ,&#160;
+   <i>
+    j
+   </i>
+   ] = green,
+   <i>
+    Image
+   </i>
+   [2,&#160;
+   <i>
+    i
+   </i>
+   ,&#160;
+   <i>
+    j
+   </i>
+   ] = red.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For 32-bit images, color interleaving is blue, green, red, alpha:
+   <i>
+    Image
+   </i>
+   [0,&#160;
+   <i>
+    i
+   </i>
+   ,&#160;
+   <i>
+    j
+   </i>
+   ] = blue,
+   <i>
+    Image
+   </i>
+   [1,&#160;
+   <i>
+    i
+   </i>
+   ,&#160;
+   <i>
+    j
+   </i>
+   ] = green,
+   <i>
+    Image
+   </i>
+   [2,&#160;
+   <i>
+    i
+   </i>
+   ,&#160;
+   <i>
+    j
+   </i>
+   ] = red,
+   <i>
+    Image
+   </i>
+   [3,&#160;
+   <i>
+    i
+   </i>
+   ,&#160;
+   <i>
+    j
+   </i>
+   ] = alpha.
+  </p>
+  <h3 class="Argument">
+   R, G, B
+  </h3>
+  <p>
+   Color tables to be used for 8-bit images. If omitted, the colors loaded in the COLORS common block are used. These arguments are ignored for 24-bit and 32-bit images.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_756439">
+   </a>
+   <a name="W_811389549_756439_PageTOC_WRITE_BMP_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="W_811389549_756441">
+   </a>
+   <a name="W_811389549_756441_Keywords_WRITE_BMP__">
+   </a>
+   FOUR_BIT
+  </h3>
+  <p>
+   Set this keyword to write as a 4-bit device independent bitmap. If omitted or zero, an 8-bit deep bitmap is written.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_756444">
+   </a>
+   <a name="W_811389549_756444_Keywords_WRITE_BMP__">
+   </a>
+   IHDR
+  </h3>
+  <p>
+   Set this keyword to a BITMAPINFOHEADER structure containing the file header fields that are not obtained from the image itself. The fields in this structure that can be set are:
+   <span class="Courier">
+    bi{XY}PelsPerMeter
+   </span>
+   ,
+   <span class="Courier">
+    biClrUsed
+   </span>
+   , and
+   <span class="Courier">
+    biClrImportant
+   </span>
+   .
+  </p>
+  <p>
+   Tag names in the a BITMAPINFOHEADER structure are as defined in the Microsoft Developer Network Library; see
+   <span class="Link">
+    <a href="http://msdn.microsoft.com/en-us/library/ms532290.aspx">
+     http://msdn.microsoft.com/en-us/library/ms532290.aspx
+    </a>
+   </span>
+   for details.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_756447">
+   </a>
+   <a name="W_811389549_756447_Keywords_WRITE_BMP__">
+   </a>
+   HEADER_DEFINE
+  </h3>
+  <p>
+   If this keyword is set, WRITE_BMP returns an empty BITMAPINFOHEADER structure, containing zeros. No other actions are performed. This structure may be then modified with the pertinent fields and passed in via the IHDR keyword parameter. See the Microsoft Windows Programmers Reference Guide for a description of each field in the structure.
+  </p>
+  <p>
+   Note: this parameter must be defined
+   <i>
+    before
+   </i>
+   the call. For example:
+  </p>
+  <p class="Code">
+   H = 0
+  </p>
+  <p class="Code">
+   WRITE_BMP, HEADER_DEFINE = H
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_964751">
+   </a>
+   <a name="W_811389549_964751_Keywords_WRITE_BMP__">
+   </a>
+   RGB
+  </h3>
+  <p>
+   Set this keyword to reverse the color interleaving for 24-bit or 32-bit images to red, green, blue [, alpha]:
+   <i>
+    Image
+   </i>
+   [0,&#160;
+   <i>
+    i
+   </i>
+   ,&#160;
+   <i>
+    j
+   </i>
+   ] = red,
+   <i>
+    Image
+   </i>
+   [1,&#160;
+   <i>
+    i
+   </i>
+   ,&#160;
+   <i>
+    j
+   </i>
+   ] = green,
+   <i>
+    Image
+   </i>
+   [2,&#160;
+   <i>
+    i
+   </i>
+   ,&#160;
+   <i>
+    j
+   </i>
+   ] = blue, and if there is an alpha channel,
+   <i>
+    Image
+   </i>
+   [3,
+   <i>
+    i
+   </i>
+   ,
+   <i>
+    j
+   </i>
+   ] = alpha. By default, 24-bit images are written with color interleaving of blue, green, red. By default, 32-bit images are written with color interleaving of blue, green, red, alpha.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_756452">
+   </a>
+   <a name="W_811389549_756452_PageTOC_WRITE_BMP_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following command captures the contents of the current IDL graphics window and saves it to a Microsoft Windows Bitmap file with the name
+   <span class="Courier">
+    test.bmp
+   </span>
+   . Note that this works only on a PseudoColor (8-bit) display:
+  </p>
+  <p class="Code">
+   WRITE_BMP, 'test.bmp', TVRD()
+  </p>
+  <p>
+   The following lines create an image in an IDL graphics window, read it from the window and write it as a
+   <span class="Courier">
+    .bmp
+   </span>
+   file in the temporary directory, then read the
+   <span class="Courier">
+    .bmp
+   </span>
+   file and display it in the same graphics window:
+  </p>
+  <p class="Code">
+   ; Save device settings and tell IDL to use a color table
+   <br />
+   DEVICE, GET_DECOMPOSED=old_decomposed
+   <br />
+   DEVICE, DECOMPOSED=0
+   <br />
+   LOADCT, 14
+   <br />
+   <br />
+   ; Create an image and display it
+   <br />
+   IMAGE1 = DIST(300)
+   <br />
+   WINDOW, 1, XSIZE=300, YSIZE=300
+   <br />
+   TV, IMAGE1
+   <br />
+   <br />
+   ; Write a bitmap file to the temporary directory
+   <br />
+   ; Note the use of the TRUE keyword to TVRD
+   <br />
+   filename = FILEPATH('test.bmp', /TMP)
+   <br />
+   WRITE_BMP, filename, TVRD(/TRUE)
+   <br />
+   PRINT, 'File written to ', filename
+   <br />
+   <br />
+   ; Read in the bitmap file
+   <br />
+   IMAGE2 = READ_BMP(filename)
+   <br />
+   <br />
+   ; Display the IMAGE1 and IMAGE2 side by side
+   <br />
+   ; Note the use of the TRUE keyword to TV
+   <br />
+   WINDOW, 1, XSIZE=600, YSIZE=300, $
+   <br />
+   &#160;&#160;&#160;TITLE='Original (left) and Image read from file (right)'
+   <br />
+   TV, IMAGE1, 0
+   <br />
+   TV, IMAGE2, 1, /TRUE
+   <br />
+   <br />
+   ; Restore device settings.
+   <br />
+   DEVICE, DECOMPOSED=old_decomposed
+  </p>
+  <p>
+   The following commands scale an image to 0-15, and then write a 4-bit BMP file, using a grayscale color table:
+  </p>
+  <p class="Code">
+   ; Create a ramp from 0 to 255:
+   <br />
+   r = BYTSCL(INDGEN(16))
+   <br />
+   <br />
+   ; Create an image
+   <br />
+   IMAGE = DIST(300)
+   <br />
+   <br />
+   WRITE_BMP, GETENV('IDL_TMPDIR')+'test2.bmp', $
+   <br />
+   &#160;&#160;&#160;BYTSCL(Image, TOP=15), r, r, r, /FOUR
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_756458">
+   </a>
+   <a name="W_811389549_756458_PageTOC_WRITE_BMP_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Pre-4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Add support for 32-bit (RGBA) bitmaps files
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="W_811389549_983481">
+   </a>
+   <a name="W_811389549_983481_PageTOC_WRITE_BMP_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../R/READ_BMP.html#R_822202989_1071023">
+    READ_BMP
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../Q/QUERY___Routines.html#Q_815714925_982368">
+    QUERY_* Routines
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

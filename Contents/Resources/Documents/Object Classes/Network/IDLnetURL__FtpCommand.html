@@ -1,0 +1,690 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Network Object Classes|IDLnetURL" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLnetURL::FtpCommand
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Network/IDLnetURL__FtpCommand.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_network.html">
+    Network Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLnetURL::FtpCommand
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_network_1009015_1406559">
+   </a>
+   <a name="objects_network_1009015_69771">
+   </a>
+   I
+   <a name="kanchor4797">
+   </a>
+   DLnetURL::FtpCommand
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1406567">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1406569">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1406571">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1406604">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1417412">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1417484">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLnetURL::FtpCommand function method can be used to execute FTP commands, delete files, make directories, delete directories, and change directories on the remote FTP server.
+  </p>
+  <p>
+   This method throws an error if the call fails. Use a catch statement to trap errors and print the error messages and response codes.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When the FTP server issues response code 530 or 67, a login is required or the current username and password are incorrect.
+  </p>
+  <p>
+   This method sets the RESPONSE_CODE property, which contains the last FTP status code received. The RESPONSE_HEADER and RESPONSE_CODE properties are useful for troubleshooting problems. Receiving callbacks and printing the status strings with the VERBOSE property set to 1 is another valuable troubleshooting technique
+  </p>
+  <p>
+   Refer to
+   <a class="MCXref_Heading_0" href="IDLnetURL.html#objects_network_1009015_1408886" target="" title="" alt="">
+    Using Callbacks with the IDLnetURL Object
+   </a>
+   for details.
+  </p>
+  <p>
+   If a FTP connection fails, it may be necessary to switch the connection mode from active to passive using the FTP_CONNECTION_MODE property.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1406567">
+   </a>
+   <a name="objects_network_1009015_1406567_PageTOC_IDLnetURL">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLnetURL.html#objects_network_1009015_1370815">
+    IDLnetURL
+   </a>
+   ::]FtpCommand(
+   <i>
+    command
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1406607">
+    FTP_EXPLICIT_SSL
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1406609">
+    URL
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1406569">
+   </a>
+   <a name="objects_network_1009015_1406569_PageTOC_IDLnetURL">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The return value is the response header, which is a string. Examine the response header to determine if the command succeeded or failed.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1406571">
+   </a>
+   <a name="objects_network_1009015_1406571_PageTOC_IDLnetURL">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Command
+  </h3>
+  <p>
+   A string or string array containing FTP commands to execute.
+  </p>
+  <p>
+   The following table lists the FTP commands that IDL allows:
+  </p>
+  <table style="width: 498px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="130px" class="Column-Column1" />
+   <col width="368px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       CWD
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Change a directory
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       DELE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Delete a file
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       MKD
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Make a directory
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       RMD
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Remove a directory
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       RNFR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Rename from
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p>
+       RNTO
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       Rename to
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       To rename a file, you must issue both the RNFR and RNTO commands in succession (see the following examples)
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   The following are examples of using standard commands:
+  </p>
+  <p class="Code">
+   “CWD data”
+  </p>
+  <p class="Code">
+   “CWD ..”
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   “DELE path/filename”
+  </p>
+  <p class="Code">
+   “DELE /path/filename”
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   “MKD /path”
+  </p>
+  <p class="Code">
+   “MKD path”
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   “RMD /path”
+  </p>
+  <p class="Code">
+   “RMD path”
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   “RNFR /path/existingfilename”
+  </p>
+  <p class="Code">
+   “RNTO /path/newfilename”
+  </p>
+  <p class="Code">
+   ...or...
+  </p>
+  <p class="Code">
+   “RNFR path/existingfilename”
+  </p>
+  <p class="Code">
+   “RNTO path/newfilename”
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1406604">
+   </a>
+   <a name="objects_network_1009015_1406604_PageTOC_IDLnetURL">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_network_1009015_1406607">
+   </a>
+   <a name="objects_network_1009015_1406607_Keywords_IDLnetURL">
+   </a>
+   FTP_EXPLICIT_SSL
+  </h3>
+  <p>
+   Set this keyword to explicitly use SSL to transfer the commands and data to or from the remote FTP server. It is not necessary to set this keyword when the scheme is “ftps”, as this implicitly activates SSL.
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="IDLnetURL.html#objects_network_1009015_1404804" target="" title="" alt="">
+    Secure FTP
+   </a>
+   for additional notes on SSL connections.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_network_1009015_1406609">
+   </a>
+   <a name="objects_network_1009015_1406609_Keywords_IDLnetURL">
+   </a>
+   URL
+  </h3>
+  <p>
+   Set this keyword equal to the complete URL string of the location for which the command is to be executed. If this keyword is set, the URL_* properties are ignored.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you include a username and password as plain text in a URL, both are potentially visible to others. To avoid this security risk, set the URL_* properties, including the URL_USERNAME and URL_PASSWORD properties, specifically.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1417412">
+   </a>
+   <a name="objects_network_1009015_1406614_PageTOC_IDLnetURL">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following example uses the IDLnetURL::FtpCommand function method to send a
+   <span class="Courier">
+    cwd
+   </span>
+   FTP command to the
+   <span class="DocumentTitleCompanyName">
+    Exelis
+   </span>
+   FTP server. This command changes the working directory to
+   <span class="Courier">
+    /doc/examples
+   </span>
+   (this is the only command that can be issued with this method to a read-only server).
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   The code sample
+   <span class="Courier">
+    url_docs_ftp_cmd
+    <a name="kanchor4798">
+    </a>
+    .pro
+   </span>
+   is also located in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL distribution. View the file in an IDL editor window by entering
+   <span class="Courier">
+    .EDIT url_docs_ftp_cmd.pro
+   </span>
+   at the IDL Command Line.
+  </p>
+  <p class="Code">
+   ;-----------------------------------------------------------------
+  </p>
+  <p class="Code">
+   FUNCTION URL_CALLBACK, status, progress, data
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; print the info msgs from the url object
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, status
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; return 1 to continue, return 0 to cancel
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, 1
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;-----------------------------------------------------------------
+  </p>
+  <p class="Code">
+   PRO url_docs_ftp_cmd
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Catch any errors generated by the IDLnetURL object
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;CATCH, errorStatus
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;IF (errorStatus NE 0) THEN BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;CATCH, /CANCEL
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Display the error msg in a dialog and at the IDL
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; command line.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;r = DIALOG_MESSAGE(!ERROR_STATE.msg, TITLE='URL Error', $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;/ERROR)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, !ERROR_STATE.msg
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Get the properties that tell us more about
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; the error and display at the IDL command line.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;ourl-&gt;GetProperty, RESPONSE_CODE=rspCode, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;RESPONSE_HEADER=rspHdr, RESPONSE_FILENAME=rspFn
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, 'rspCode = ', rspCode
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, 'rspHdr= ', rspHdr
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, 'rspFn= ', rspFn
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Destroy the url object and return.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;OBJ_DESTROY, ourl
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;RETURN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENDIF
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Create a new url object
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ourl = OBJ_NEW('IDLnetUrl')
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Specify the callback function
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ourl-&gt;SetProperty, CALLBACK_FUNCTION ='URL_CALLBACK'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Set verbose to 1 to see more details
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ourl-&gt;SetProperty, VERBOSE = 1
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Specify that we will do an ftp transaction
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ourl-&gt;SetProperty, URL_SCHEME = 'ftp'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; The
+   <span class="DocumentTitleCompanyName">
+    Exelis
+   </span>
+   FTP server
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ourl-&gt;SetProperty, URL_HOST = 'data.exelisvis.com'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Build an array of commands. The following sample command
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; array changes to the /doc/examples dir (which is all
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; that can be done with this method on a read-only server.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; The following command will always work:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; cmds = 'cwd /'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;cmds = ['cwd doc/examples']
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Specify the appropriate username and password. If the
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; username is 'Anonymous', use an empty string for the password.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ourl-&gt;SetProperty, URL_USERNAME = 'Anonymous'
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ourl-&gt;SetProperty, URL_PASSWORD = ''
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Send the command array to the FTP server, saving the
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; responses in an IDL variable.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;respHdr = ourl-&gt;FtpCommand(cmds)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Display the responses.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, 'response header for the ftp commands'
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, respHdr
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Destroy the url object
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;OBJ_DESTROY, ourl
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1417484">
+   </a>
+   <a name="objects_network_1009015_1406616_PageTOC_IDLnetURL">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

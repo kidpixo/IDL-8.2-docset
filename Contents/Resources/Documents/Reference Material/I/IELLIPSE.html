@@ -1,0 +1,638 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IELLIPSE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/IELLIPSE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IELLIPSE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="iTools_api_3860698369_1000605">
+   </a>
+   <a name="iTools_api_3860698369_33672">
+   </a>
+   <span class="_Override">
+    IELLIPSE
+   </span>
+  </h1>
+  <p madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+   <span class="_Override">
+    <madcap:conditionaltext madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000632">
+      Syntax
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000662">
+      Arguments
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000668">
+      Keywords
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000709">
+      Examples
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000718">
+      Version History
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000726">
+      See Also
+     </a>
+    </madcap:conditionaltext>
+   </span>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <span class="_Override">
+    IELLIPSE creates an annotation object with an identifier of
+   </span>
+   <span class="Courier">
+    OVAL
+   </span>
+   <span class="_Override">
+    . This identifier must be used when manipulating the object with routines like ISETPROPERTY.
+   </span>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <span class="_Override">
+    If you create the ellipse with an anisotropic coordinate system, the resulting ellipse object might not appear as expected. If the ellipse object appears distorted, try using device input coordinates.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000632">
+   </a>
+   <a name="iTools_api_3860698369_1060033_PageTOC_IELLIPSE_">
+   </a>
+   <span class="_Override">
+    Syntax
+   </span>
+  </h2>
+  <p class="Syntax">
+   <span class="_Override">
+    IELLIPSE,
+   </span>
+   <span class="Italic">
+    A
+   </span>
+   <span class="_Override">
+    ,
+   </span>
+   <span class="Italic">
+    X
+   </span>
+   <span class="_Override">
+    ,
+   </span>
+   <span class="Italic">
+    Y
+   </span>
+   <span class="_Override">
+    [,&#160;
+   </span>
+   <span class="Italic">
+    Z
+   </span>
+   <span class="_Override">
+    ] [,&#160;/
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000674">
+     DATA
+    </a>
+    &#160;|&#160;,&#160;/
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000677">
+     DEVICE
+    </a>
+    &#160;|&#160;,&#160;/
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000690">
+     NORMAL
+    </a>
+    ] [,&#160;
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000680">
+     ECCENTRICITY
+    </a>
+    =
+    <span class="Italic">
+     Value
+    </span>
+    <span class="_Override">
+     ] [,&#160;
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000687">
+      IDENTIFIER
+     </a>
+     =
+     <span class="Italic">
+      Variable
+     </span>
+     <span class="_Override">
+      ] [,&#160;PROPERTY=
+     </span>
+     <span class="Italic">
+      Value
+     </span>
+     <span class="_Override">
+      ] [,&#160;
+      <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000693">
+       TARGET_IDENTIFIER
+      </a>
+      =
+      <span class="Italic">
+       iToolID
+      </span>
+      <span class="_Override">
+       ] [,&#160;
+       <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000696">
+        THETA
+       </a>
+       =
+       <span class="Italic">
+        Value
+       </span>
+       <span class="_Override">
+        ] [,&#160;
+        <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000703">
+         TOOL
+        </a>
+        =
+        <span class="Italic">
+         iToolID
+        </span>
+        <span class="_Override">
+         ] [,&#160;/
+         <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000706">
+          VISUALIZATION
+         </a>
+         ]
+        </span>
+       </span>
+      </span>
+     </span>
+    </span>
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000662">
+   </a>
+   <a name="iTools_api_3860698369_1060036_PageTOC_IELLIPSE_">
+   </a>
+   <span class="_Override">
+    Arguments
+   </span>
+  </h2>
+  <h3 class="Argument">
+   <span class="_Override">
+    A
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    The length of the semi-major axis, specified in normalized coordinates, unless the DATA or DEVICE keyword is set.
+   </span>
+  </p>
+  <h3 class="Argument">
+   <span class="_Override">
+    X, Y, Z
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    The center point of the ellipse, specified in normalized coordinates, unless the DATA or DEVICE keyword is set.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000668">
+   </a>
+   <a name="iTools_api_3860698369_1060043_PageTOC_IELLIPSE_">
+   </a>
+   <span class="_Override">
+    Keywords
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    Any property of an ellipse annotation can be set using this routine. To set the value of a property, specify the property name as a keyword set equal to the appropriate property value. See
+    <a class="MCXref_Heading_0" href="ISETPROPERTY.html#iTools_api_3860698369_1007484">
+     ISETPROPERTY
+    </a>
+    for details.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000674">
+   </a>
+   <a name="iTools_api_3860698369_80735">
+   </a>
+   <span class="_Override">
+    DATA
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword if the input arguments are specified in data coordinates.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000677">
+   </a>
+   <a name="iTools_api_3860698369_64304">
+   </a>
+   <span class="_Override">
+    DEVICE
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword if the input arguments are specified in device coordinates (pixels).
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000680">
+   </a>
+   <a name="iTools_api_3860698369_42921">
+   </a>
+   <span class="_Override">
+    ECCENTRICITY
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a floating-point value between 0.0 and 1.0 specifying the eccentricity of the ellipse, defined here as
+   </span>
+  </p>
+  <p style="text-align: center;">
+   <img src="../../Resources/Images/2_4.jpg" />
+  </p>
+  <p>
+   <span class="_Override">
+    where
+   </span>
+   <span class="Courier">
+    a
+   </span>
+   <span class="_Override">
+    is the length of the semi-major axis and
+   </span>
+   <span class="Courier">
+    b
+   </span>
+   <span class="_Override">
+    is the length of the semi-minor axis. If a value is not supplied, a default value of 0 (representing a circle) is used.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000687">
+   </a>
+   <a name="iTools_api_3860698369_56129">
+   </a>
+   <span class="_Override">
+    IDENTIFIER
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a named variable that will contain the full identifier of the newly-created object.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000690">
+   </a>
+   <a name="iTools_api_3860698369_34358">
+   </a>
+   <span class="_Override">
+    NORMAL
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword if the input arguments are specified in normalized [0, 1] coordinates (the default).
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000693">
+   </a>
+   <a name="iTools_api_3860698369_87219">
+   </a>
+   <span class="_Override">
+    TARGET_IDENTIFIER
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to the iTools identifier of an object that is contained in the data space into which the ellipse object should be placed. If a value is not supplied, the first data space in the current view is used.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000696">
+   </a>
+   <a name="iTools_api_3860698369_23222">
+   </a>
+   <span class="_Override">
+    THETA
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to the angle (in degrees) to rotate the object.
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    If a single value is supplied, the ellipse is rotated counter-clockwise from horizontal.
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    If a three-element vector is supplied, the values define the degrees of rotation around the X, Y, and Z axis, respectively. Rotation is applied in the order of X, Y, and then Z.
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    If a value is not supplied, a default of 0 ([0,0,0]) is used.
+   </span>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <span class="_Override">
+    The coordinate system is right-handed, such that when looking from a positive axis to the origin, a positive rotation is counter-clockwise.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000703">
+   </a>
+   <a name="iTools_api_3860698369_16249">
+   </a>
+   <span class="_Override">
+    TOOL
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to the iTools identifier of the iTool in which TARGET_IDENTIFIER is found. If a value is not supplied, the current iTool is used.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000706">
+   </a>
+   <a name="iTools_api_3860698369_96876">
+   </a>
+   <span class="_Override">
+    VISUALIZATION
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to add the object to the data space. If this keyword is not set, the object is added to the annotation layer.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000709">
+   </a>
+   <a name="iTools_api_3860698369_1060025_PageTOC_IELLIPSE_">
+   </a>
+   <span class="_Override">
+    Examples
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    In the following example, we overlay an ellipse on an interesting muscle tissue feature.
+    <madcap:conditionaltext madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+     &#160;
+    </madcap:conditionaltext>
+   </span>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Open the data filefile = FILEPATH('muscle.jpg', $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Create an iTool with the image data
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    IIMAGE, file, TITLE = 'Muscle Tissue', IDENTIFIER = iToolID
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Ellipse center (in data space coordinates)
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    center = [238, 315]
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Major and minor axis distances (data space coords)
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    majAxisDist = 50.0minAxisDist = 30.0
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Calculate the ellipse eccentricity
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    eccentricity = SQRT(1 - (minAxisDist^2 / majAxisDist^2))
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Write the ellipse to the iTool's data space
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    IELLIPSE, majAxisDist, center[0], center[1], $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;/DATA, ECCENTRICITY = eccentricity, $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;VISUALIZATION = iToolID, THETA = 120
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Change the ellipse's color, thickness, and transparency
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ISETPROPERTY, 'oval', THICK=3, COLOR=[240,0,0], FILL_BACKGROUND=0
+   </span>
+   <br />
+   <br />
+  </p>
+  <p style="text-align: center;">
+   <img src="../../Resources/Images/iellipse_example.gif" style="margin-left: 133.4275px;margin-top: 4.47408px;margin-right: 109.5753px;margin-bottom: 4.59431px;" />
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000718">
+   </a>
+   <a name="iTools_api_3860698369_1060174_PageTOC_IELLIPSE_">
+   </a>
+   <span class="_Override">
+    Version History
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    &#160;
+   </span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="28px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr style="height: 13px;">
+     <td>
+      <p>
+       7.1
+      </p>
+     </td>
+     <td>
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000726">
+   </a>
+   <a name="iTools_api_3860698369_1060196_PageTOC_IELLIPSE_">
+   </a>
+   <span class="_Override">
+    See Also
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    <a class="MCXref_Heading_0" href="IPOLYLINE.html#iTools_api_3860698369_1006302">
+     IPOLYLINE
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="IPOLYGON.html#iTools_api_3860698369_1006188">
+     IPOLYGON
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="ICONVERTCOORD.html#iTools_api_3860698369_1000055">
+     ICONVERTCOORD
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="ITEXT.html#iTools_api_3860698369_1008682">
+     ITEXT
+    </a>
+   </span>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

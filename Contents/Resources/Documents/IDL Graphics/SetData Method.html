@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   SetData Method
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#IDL Graphics/SetData Method.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <h1 class="ObjMethod">
+   SetData Method
+  </h1>
+  <p>
+   The
+   <a name="kanchor5327">
+   </a>
+   SetData procedure method allows you to programatically replace a graphic's existing data with the specified data. When the SetData method is called, the graphic window is immediately updated to display the new data.
+  </p>
+  <h2 class="API">
+   Coordinate Systems
+  </h2>
+  <p>
+   For the Arrow, Polygon, and Polyline, and Symbol graphics, if the graphic is created in data coordinates (with the DATA keyword), then data coordinates should be supplied to the SetData method. If the graphic is created in device coordinates (with the DEVICE keyword) or normalized coordinates (with the NORMAL keyword, the default value for creation), then normalized coordinates should be supplied to the SetData method. The
+   <a href="ConvertCoord Method.html">
+    ConvertCoord Method
+   </a>
+   may be used to convert values from one coordinate system to another.
+  </p>
+  <h2 class="API">
+   Example
+  </h2>
+  <p class="Code">
+   TEMP1=RANDOMU(SEED,12) * 100
+  </p>
+  <p class="Code">
+   TEMP2=RANDOMU(SEED,12) * 100
+  </p>
+  <p class="Code">
+   DAY=FINDGEN(12) * 30 + 15
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   p = PLOT(DAY, TEMP1, 'Db-1', $
+  </p>
+  <p class="Code">
+   TITLE = 'Temperature', $
+  </p>
+  <p class="Code">
+   XTITLE = 'Day of Year', $
+  </p>
+  <p class="Code">
+   YTITLE = 'Degrees Fahrenheit')
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   p.SetData, DAY, TEMP2
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    graphic
+   </i>
+   .SetData,
+   <i>
+    Argument
+    <sub class="italic">
+     1
+    </sub>
+   </i>
+   ,
+   <i>
+    Argument
+   </i>
+   <sub class="italic">
+    2
+   </sub>
+   , ...
+   <i>
+    Argument
+    <sub class="italic">
+     n
+    </sub>
+   </i>
+   <sub>
+    &#160;
+   </sub>
+   [,
+   <a href="#CONNECTI" target="" title="" alt="" class="MCXref_0">
+    CONNECTIVITY
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]
+  </p>
+  <p>
+   The arguments to the SetData method should be specified in the same manner as the function call used to create the graphic.
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <p>
+   The input arguments depend on the graphic being modified and the number of arguments supplied. The form of the arguments is similar to the arguments supplied for the creation of the graphic.
+  </p>
+  <table class="TableStyle-Keyword_Table" style="mc-table-style: url('../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+   <col style="width: 83px;" class="Column-Column1" />
+   <col style="width: 57px;" class="Column-Column1" />
+   <col style="width: 94px;" class="Column-Column1" />
+   <col style="width: 94px;" class="Column-Column1" />
+   <col style="width: 129px;" class="Column-Column1" />
+   <col style="width: 134px;" class="Column-Column1" />
+   <col style="width: 231px;" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <th class="HeadE-Column1-Header1">
+      <p>
+       Graphic
+      </p>
+     </th>
+     <th class="HeadE-Column1-Header1">
+      <p>
+       1 Arg
+      </p>
+     </th>
+     <th class="HeadE-Column1-Header1">
+      <p>
+       2 Args
+      </p>
+     </th>
+     <th class="HeadE-Column1-Header1">
+      <p>
+       3 Args
+      </p>
+     </th>
+     <th class="HeadE-Column1-Header1">
+      <p>
+       4 Args
+      </p>
+     </th>
+     <th class="HeadE-Column1-Header1">
+      <p>
+       Keywords
+      </p>
+     </th>
+     <th class="HeadD-Column1-Header1">
+      <p>
+       Coordinates
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <br />
+       Arrow
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       X, Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       NORMAL unless created with /DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       <br />
+       Barplot
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       X, Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <br />
+       Contour
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Z
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Z, X, Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       <br />
+       Errorplot
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Y, Yerror
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       X, Y, Yerror
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       X, Y, Xerror, Yerror
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <br />
+       Image
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Image
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Image, X, Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       <br />
+       Plot3D
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       X, Y, Z
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <br />
+       Plot
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       X, Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       <br />
+       Polarplot
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Theta
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       R, Theta
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <br />
+       Polygon
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       X, Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       X, Y, Z
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       CONNECTIVITY
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       NORMAL unless created with /DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       <br />
+       Polyline
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       X, Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       X, Y, Z
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       CONNECTIVITY
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       NORMAL unless created with /DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <br />
+       Streamline
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       U, V
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       U, V, X, Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       <br />
+       Surface
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Z
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Z, X, Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <br />
+       Symbol
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       X, Y
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       NORMAL unless created with /DATA
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p>
+       <br />
+       Vector
+      </p>
+     </td>
+     <td class="BodyB-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyB-Column1-Body2">
+      <p>
+       U, V
+      </p>
+     </td>
+     <td class="BodyB-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyB-Column1-Body2">
+      <p>
+       U, V, X, Y
+      </p>
+     </td>
+     <td class="BodyB-Column1-Body2">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       DATA
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="CONNECTI">
+   </a>
+   CONNECTIVITY
+  </h3>
+  <p>
+   This keyword applies only to the POLYLINE and POLYGON graphics, and is identical to the CONNECTIVITY keyword for the POLYLINE and POLYGON functions.
+  </p>
+  <h2 class="API">
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   See Also
+  </h2>
+  <p>
+   <a href="Save Method.html" target="" title="" alt="" class="MCXref_0">
+    Save Method
+   </a>
+   ,
+   <a href="Refresh Method.html" target="" title="" alt="" class="MCXref_0">
+    Refresh Method
+   </a>
+   ,
+   <a href="GetData Method.html" target="" title="" alt="" class="MCXref_0">
+    GetData Method
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

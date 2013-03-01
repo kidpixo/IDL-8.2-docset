@@ -1,0 +1,2326 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: P" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   PLOT Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/NoLines.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/P/PLOT_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="P_list.html">
+    Routines: P
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    PLOT Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_883230">
+   </a>
+   <a name="dg_routines_3604229493_39611">
+   </a>
+   PLOT Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875727">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875758">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875765">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875949">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876409">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876417">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Please see the
+   <a href="PLOT.html" target="" title="" alt="" class="MCXref_Heading_0">
+    PLOT
+   </a>
+   function, which replicates the functionality of this routine and offers an interactive interface.
+  </p>
+  <p>
+   The
+   <a name="kanchor2024">
+   </a>
+   PLOT procedure draws graphs of vector arguments. If one parameter is used, the vector parameter is plotted on the ordinate versus the point number on the abscissa. To plot one vector as a function of another, use two parameters. PLOT can also be used to create polar plots by setting the POLAR keyword.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_875727">
+   </a>
+   <a name="dg_routines_3604229493_678089_PageTOC_PLOT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   PLOT, [
+   <i>
+    X
+   </i>
+   ,]
+   <i>
+    Y
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875767">
+    ISOTROPIC
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875775">
+    MAX_VALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875782">
+    MIN_VALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875788">
+    NSUM
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875794">
+    POLAR
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875803">
+    THICK
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875807">
+    XLOG
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875812">
+    YLOG
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_875816">
+    YNOZERO
+   </a>
+   ]
+  </p>
+  <p class="Syntax">
+   <span class="Bold">
+    Graphics Keywords:
+   </span>
+   [,&#160;BACKGROUND=
+   <i>
+    color_index
+   </i>
+   ] [,&#160;CHARSIZE=
+   <i>
+    value
+   </i>
+   ] [,&#160;CHARTHICK=
+   <i>
+    integer
+   </i>
+   ] [,&#160;CLIP=
+   <i>
+    [X
+   </i>
+   <sub class="italic">
+    0
+   </sub>
+   ,
+   <i>
+    Y
+   </i>
+   <sub class="italic">
+    0
+   </sub>
+   ,
+   <i>
+    X
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   ,
+   <i>
+    Y
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   <i>
+    ]
+   </i>
+   ] [,&#160;COLOR=
+   <i>
+    value
+   </i>
+   ] [,&#160;/DATA | , /DEVICE | , /NORMAL] [,&#160;FONT=
+   <i>
+    integer
+   </i>
+   ] [,&#160;LINESTYLE={0 | 1 | 2 | 3 | 4 | 5}] [,&#160;/NOCLIP] [,&#160;/NODATA] [,&#160;/NOERASE] [,&#160;POSITION=
+   <i>
+    [X
+   </i>
+   <sub class="italic">
+    0
+   </sub>
+   ,
+   <i>
+    Y
+   </i>
+   <sub class="italic">
+    0
+   </sub>
+   ,
+   <i>
+    X
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   ,
+   <i>
+    Y
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   <i>
+    ]
+   </i>
+   ] [,&#160;PSYM=
+   <i>
+    integer
+   </i>
+   {0 to 10}] [,&#160;SUBTITLE=
+   <i>
+    string
+   </i>
+   ] [,&#160;SYMSIZE=
+   <i>
+    value
+   </i>
+   ] [,&#160;/T3D] [,&#160;THICK=
+   <i>
+    value
+   </i>
+   ] [,&#160;TICKLEN=
+   <i>
+    value
+   </i>
+   ] [,&#160;TITLE=
+   <i>
+    string
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}CHARSIZE=
+   <i>
+    value
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}GRIDSTYLE=
+   <i>
+    integer
+   </i>
+   {0 to 5}]
+   <br />
+   [,&#160;{X | Y | Z}MARGIN=
+   <i>
+    [left
+   </i>
+   ,
+   <i>
+    right]
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}MINOR=
+   <i>
+    integer
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}RANGE=
+   <i>
+    [min
+   </i>
+   ,
+   <i>
+    max]
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}STYLE=
+   <i>
+    value
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}THICK=
+   <i>
+    value
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICK_GET=
+   <i>
+    variable
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICKFORMAT=
+   <i>
+    string
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICKINTERVAL=
+   <i>
+    value
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICKLAYOUT=
+   <i>
+    scalar
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICKLEN=
+   <i>
+    value
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICKNAME=
+   <i>
+    string_array
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICKS=
+   <i>
+    integer
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICKUNITS=
+   <i>
+    string
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICKV=
+   <i>
+    array
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TITLE=
+   <i>
+    string
+   </i>
+   ]
+   <br />
+   [,&#160;ZVALUE=
+   <i>
+    value
+   </i>
+   {0 to 1}]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_875758">
+   </a>
+   <a name="dg_routines_3604229493_678091_PageTOC_PLOT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   A vector representing the abscissa values to be plotted. If X is not specified,
+   <i>
+    Y
+   </i>
+   is plotted as a function of point number (starting at zero). If both arguments are provided,
+   <i>
+    Y
+   </i>
+   is plotted as a function of
+   <i>
+    X
+   </i>
+   .
+  </p>
+  <p>
+   This argument is converted to double precision floating-point before plotting. Plots created with PLOT are limited to the range and precision of double-precision floating-point values.
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   The ordinate data to be plotted. This argument is converted to double-precision floating-point before plotting.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_875765">
+   </a>
+   <a name="dg_routines_3604229493_678097_PageTOC_PLOT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_875767">
+   </a>
+   <a name="dg_routines_3604229493_948898_Keywords_PLOT__">
+   </a>
+   ISOTROPIC
+  </h3>
+  <p>
+   Set this keyword to force the scaling of the X and Y axes to be equal.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The X and Y axes will be scaled isotropically and then fit within the rectangle defined by the POSITION keyword; one of the axes may be shortened. See
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316026">
+    POSITION
+   </a>
+   for more information.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_875775">
+   </a>
+   <a name="dg_routines_3604229493_678098_Keywords_PLOT__">
+   </a>
+   MAX_VALUE
+  </h3>
+  <p>
+   The maximum value to be plotted. If this keyword is present, data values greater than the value of MAX_VALUE are treated as
+   <a name="kanchor2025">
+   </a>
+   missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_875782">
+   </a>
+   <a name="dg_routines_3604229493_47057_Keywords_PLOT__">
+   </a>
+   MIN_VALUE
+  </h3>
+  <p>
+   The minimum value to be plotted. If this keyword is present, data values less than the value of MIN_VALUE are treated as missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_875788">
+   </a>
+   <a name="dg_routines_3604229493_678100_Keywords_PLOT__">
+   </a>
+   NSUM
+  </h3>
+  <p>
+   The presence of this keyword indicates the number of data points to average when plotting. If NSUM is larger than 1, every group of NSUM points is averaged to produce one plotted point. If there are
+   <i>
+    m
+   </i>
+   data points, then
+   <i>
+    m
+   </i>
+   /NSUM points are displayed. On logarithmic axes a geometric average is performed.
+  </p>
+  <p>
+   It is convenient to use NSUM when there is an extremely large number of data points to plot because it plots fewer points, the graph is less cluttered, and it is quicker.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_875794">
+   </a>
+   <a name="dg_routines_3604229493_678103_Keywords_PLOT__">
+   </a>
+   <a name="kanchor2026">
+   </a>
+   <a name="dg_routines_3604229493_49336">
+   </a>
+   POLAR
+  </h3>
+  <p>
+   Set this keyword to produce polar plots. The
+   <i>
+    X
+   </i>
+   and
+   <i>
+    Y
+   </i>
+   vector parameters, both of which must be present, are first converted from polar to Cartesian coordinates. The first parameter is the radius, and the second is the angle (expressed in radians). For example, to make a polar plot, you would use a command such as:
+  </p>
+  <p class="Code">
+   PLOT, /POLAR, R, THETA
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   See
+   <a class="MCXref_Heading_0" href="../A/AXIS_Procedure.html#dg_routines_3604229493_878604">
+    Using AXIS with Polar Plots
+   </a>
+   for an example that adds axes to a polar plot.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_875803">
+   </a>
+   <a name="dg_routines_3604229493_678106_Keywords_PLOT__">
+   </a>
+   THICK
+  </h3>
+  <p>
+   Controls the thickness of the lines connecting the points. A thickness of 1.0 is normal, 2 is double wide, etc.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_875807">
+   </a>
+   <a name="dg_routines_3604229493_810411_Keywords_PLOT__">
+   </a>
+   <a name="dg_routines_3604229493_26864">
+   </a>
+   XLOG
+  </h3>
+  <p>
+   Set this keyword to specify a logarithmic X
+   <a name="kanchor2027">
+   </a>
+   axis, producing a log-linear plot. Set both XLOG and YLOG to produce a log-log plot. Note that logarithmic axes that have ranges of less than a decade are not labeled.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_875812">
+   </a>
+   <a name="dg_routines_3604229493_810463_Keywords_PLOT__">
+   </a>
+   <a name="dg_routines_3604229493_39726">
+   </a>
+   YLOG
+  </h3>
+  <p>
+   Set this keyword to specify a logarithmic Y
+   <a name="kanchor2028">
+   </a>
+   axis, producing a linear-log plot. Set both XLOG and YLOG to produce a log-log plot. Note that logarithmic axes that have ranges of less than a decade are not labeled.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_875816">
+   </a>
+   <a name="dg_routines_3604229493_810415_Keywords_PLOT__">
+   </a>
+   YNOZERO
+  </h3>
+  <p>
+   Set this keyword to inhibit setting the minimum Y axis value to zero when the
+   <i>
+    Y
+   </i>
+   data are all positive and nonzero, and no explicit minimum Y value is specified (using YRANGE, or !Y.RANGE). By default, the Y axis spans the range of 0 to the maximum value of
+   <i>
+    Y
+   </i>
+   , in the case of positive Y data. Set bit 4 in !Y.STYLE to make this option the default.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_875820">
+   </a>
+   <a name="dg_routines_3604229493_810466_Keywords_PLOT__">
+   </a>
+   <a name="dg_routines_3604229493_810466_PageTOC_PLOT_">
+   </a>
+   Graphics Keywords Accepted
+  </h3>
+  <p>
+   See
+   <a class="MCXref_Chapter_Reference_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_317209">
+    Direct Graphics Keywords
+   </a>
+   for the description of the following graphics and plotting keywords:
+  </p>
+  <p>
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Comment">
+    AM_PM,
+   </madcap:conditionaltext>
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_328424">
+    BACKGROUND
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_266973">
+    CHARSIZE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_331668">
+    CHARTHICK
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315949">
+    CLIP
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_371352">
+    COLOR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315961">
+    DATA
+   </a>
+   ,
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Comment">
+    DAYS_OF_WEEK,
+   </madcap:conditionaltext>
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_369990">
+    DEVICE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_331795">
+    FONT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_331728">
+    LINESTYLE
+   </a>
+   ,
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Comment">
+    MONTHS,
+   </madcap:conditionaltext>
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_370050">
+    NOCLIP
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_371086">
+    NODATA
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316024">
+    NOERASE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315963">
+    NORMAL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316026">
+    POSITION
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_367154">
+    PSYM
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316057">
+    SUBTITLE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316061">
+    SYMSIZE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315956">
+    T3D
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316006">
+    THICK
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332207">
+    TICKLEN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332238">
+    TITLE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_331699">
+    [XYZ]CHARSIZE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332009">
+    [XYZ]GRIDSTYLE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332038">
+    [XYZ]MARGIN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332061">
+    [XYZ]MINOR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332090">
+    [XYZ]RANGE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332116">
+    [XYZ]STYLE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332298">
+    [XYZ]THICK
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_370350">
+    [XYZ]TICKFORMAT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332463">
+    [XYZ]TICKINTERVAL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332488">
+    [XYZ]TICKLAYOUT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332513">
+    [XYZ]TICKLEN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332536">
+    [XYZ]TICKNAME
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332559">
+    [XYZ]TICKS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332586">
+    [XYZ]TICKUNITS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332628">
+    [XYZ]TICKV
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332321">
+    [XYZ]TICK_GET
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316100">
+    [XYZ]TITLE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316102">
+    ZVALUE
+   </a>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Many of the graphic keyword parameters correspond directly to fields in the system variables !P, !X, !Y, or !Z. When specifying a keyword parameter name and value in a call that value affects only the current call, the corresponding system-variable field is not changed. Changing the value of a system-variable field changes the default for that particular parameter and remains in effect until explicitly changed.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_875949">
+   </a>
+   <a name="dg_routines_3604229493_678116_PageTOC_PLOT_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   This section includes the following examples:
+  </p>
+  <table style="width: 494px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="237px" />
+   <col width="257px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876018">
+        Simple Plot
+       </a>
+       &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876156">
+        Bar Charts
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876031">
+        X Versus Y Plots
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876238">
+        Specifying Tick Marks
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876063">
+        Axis Scaling
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876270">
+        Logarithmic Scaling
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876090">
+        Multiline Titles
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876288">
+        Multiple Plots on a Page
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876097">
+        Range Keyword
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876337">
+        Specifying the Location of the Plot
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876131">
+        Plotting Symbols
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="#dg_routines_3604229493_876382">
+        Plotting Missing Data
+       </a>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="dg_routines_3604229493_876018">
+   </a>
+   <a name="dg_routines_3604229493_99456">
+   </a>
+   Simple Plot
+  </h3>
+  <p>
+   The PLOT procedure has many keywords that allow you to create a vast variety of plots. Here are a few simple examples using the PLOT command.
+  </p>
+  <p class="Code">
+   ; Create a simple dataset:
+   <br />
+   D = FINDGEN(100)
+   <br />
+   <br />
+   ; Create a simple plot with the title "Simple Plot":
+   <br />
+   PLOT, D, TITLE = 'Simple Plot'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Plot one argument versus another:
+   <br />
+   PLOT, SIN(D/3), COS(D/6)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Create a polar plot:
+   <br />
+   PLOT, D, D, /POLAR, TITLE = 'Polar Plot'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Use plotting symbols instead of connecting lines
+   <br />
+   by including the PSYM keyword. Label the X and Y axes
+   <br />
+   with XTITLE and YTITLE:
+   <br />
+   PLOT, SIN(D/10), PSYM=4, XTITLE='X Axis', YTITLE='Y Axis'
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_876031">
+   </a>
+   <a name="dg_routines_3604229493_35183">
+   </a>
+   X Versus Y Plots
+  </h3>
+  <p>
+   This section
+   <a name="kanchor2029">
+   </a>
+   illustrates the use of the basic
+   <i>
+    x
+   </i>
+   versus
+   <i>
+    y
+   </i>
+   plotting routines, PLOT and OPLOT. PLOT produces linear-linear plots by default, and can produce linear-log, log-linear, or log-log plots with the addition of the XLOG and YLOG keywords.
+  </p>
+  <p>
+   Data used in these examples are from a fictitious study of Pacific Northwest Salmon fisheries. In the example, we suppose that data were collected in the years 1967, 1970, and from 1975 to 1983. The following
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   statements create and initialize the variables SOCKEYE, COHO, CHINOOK, and HUMPBACK, which contain fictitious fish population counts, in thousands, for the 11 observations:
+  </p>
+  <p class="Code">
+   SOCKEYE=[463, 459, 437, 433, 431, 433, 431, 428, 430, 431, 430]
+   <br />
+   COHO=[468, 461, 431, 430, 427, 425, 423, 420, 418, 421, 420]
+   <br />
+   CHINOOK=[514, 509, 495, 497, 497, 494, 493, 491, 492, 493, 493]
+   <br />
+   HUMPBACK=[467, 465, 449, 446, 445, 444, 443, 443, 443, 443, 445]
+   <br />
+   ; Construct a vector in which each element contains
+   <br />
+   ; the year of the sample:
+   <br />
+   YEAR = [1967, 1970, INDGEN(9) + 1975]
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   This code is also contained in the batch file
+   <span class="Courier">
+    plot01
+    <a name="kanchor2030">
+    </a>
+   </span>
+   , located in the
+   <span class="Courier">
+    examples/doc/plot
+   </span>
+   subdirectory of the IDL installation directory. To execute the batch file, enter the following command at the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   prompt:
+   <br />
+   <span class="Courier">
+    @plot01
+   </span>
+  </p>
+  <p>
+   The following
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   commands create a plot of the population of Sockeye salmon, by year:
+  </p>
+  <p class="Code">
+   PLOT, YEAR, SOCKEYE, $
+   <br />
+   &#160;&#160;&#160;TITLE='Sockeye Population', XTITLE='Year', $
+   <br />
+   &#160;&#160;&#160;YTITLE='Fish (thousands)'
+  </p>
+  <p>
+   The PLOT procedure, which produces an
+   <i>
+    x
+   </i>
+   versus
+   <i>
+    y
+   </i>
+   plot on a new set of axes, requires one or two parameters: a vector of
+   <i>
+    y
+   </i>
+   values or a vector of
+   <i>
+    x
+   </i>
+   values followed by a vector of
+   <i>
+    y
+   </i>
+   values. The first attempt at making a plot produces the figure shown below. Note that the three titles, defined by the keywords TITLE, XTITLE, and YTITLE, are optional.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    <a name="dg_routines_3604229493_57559">
+    </a>
+    Initial Population Plot
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/plng02.gif" style="margin-left: 5.99976px;margin-top: 0.7495199px;margin-right: 5.999752px;margin-bottom: 0.0007089376px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="dg_routines_3604229493_876063">
+   </a>
+   <a name="kanchor2031">
+   </a>
+   <a name="dg_routines_3604229493_68128">
+   </a>
+   Axis Scaling
+  </h3>
+  <p>
+   The fluctuations in the data are hard to see because the scores range from 428 to 463, and the plot’s
+   <i>
+    y
+   </i>
+   -axis is scaled from 0 to 500. Two factors cause this effect. By default,
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   sets the minimum
+   <i>
+    y
+   </i>
+   -axis value of linear plots to zero if the
+   <i>
+    y
+   </i>
+   data are all positive. The maximum axis value is automatically set by
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   from the maximum
+   <i>
+    y
+   </i>
+   data value. In addition,
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   attempts to produce from three to six tick-mark intervals that are in increments of an integer power of 10 times 2, 2.5, 5, or 10. In this example, this rounding effect causes the maximum axis value to be 500, rather than 463.
+  </p>
+  <p>
+   The YNOZERO keyword parameter inhibits setting the
+   <i>
+    y
+   </i>
+   -axis minimum to zero when given positive, nonzero data. The figure below illustrates the data plotted using this keyword. The
+   <i>
+    y
+   </i>
+   -axis now ranges from 420 to 470, and
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   creates tick-mark intervals of 10.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    <a name="dg_routines_3604229493_10708">
+    </a>
+    Properly Scaled Plot
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/plng03.gif" style="margin-left: 5.99976px;margin-top: 0.7495199px;margin-right: 5.999752px;margin-bottom: 0.0007089376px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Code">
+   ; Define variables:
+   <br />
+   @plot01
+   <br />
+   PLOT, YEAR, SOCKEYE, /YNOZERO, $
+   <br />
+   &#160;&#160;&#160;TITLE='Sockeye Population', XTITLE='Year', $
+   <br />
+   &#160;&#160;&#160;YTITLE='Fish (thousands)'
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_876090">
+   </a>
+   <a name="kanchor2032">
+   </a>
+   <a name="dg_routines_3604229493_37906">
+   </a>
+   Multiline Titles
+  </h3>
+  <p>
+   The graph-text positioning command !C, starts a new line of text output. Titles containing more than one line of text are easily produced by separating each line with this positioning command.
+  </p>
+  <p>
+   In the above example, the main title could have been displayed on two centered lines by changing the keyword parameter TITLE to the following statement:
+  </p>
+  <p class="Code">
+   TITLE = 'Sockeye!CPopulation'
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When using multiple line titles you may find that the default margins are inadequate, causing the titles to run off the page. In this case, set the [XY]MARGIN keywords or increase the values of !X.MARGIN or !Y.MARGIN.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_876097">
+   </a>
+   <a name="dg_routines_3604229493_92607">
+   </a>
+   Range Keyword
+  </h3>
+  <p>
+   <a name="kanchor2033">
+   </a>
+   The range of the
+   <i>
+    x
+   </i>
+   ,
+   <i>
+    y
+   </i>
+   , or
+   <i>
+    z
+   </i>
+   axes can be explicitly specified with the [XYZ] RANGE keyword parameter. The argument of the keyword parameter is a two-element vector containing the minimum and maximum axis values.
+  </p>
+  <p>
+   As explained above,
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   attempts to produce even tick intervals, and the axis range selected by
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   may be slightly larger than that given with the RANGE keyword. To obtain the exact specified interval, set the axis style parameter to one (
+   <span class="Courier">
+    YSTYLE = 1
+   </span>
+   ).
+  </p>
+  <p>
+   The effect of the YNOZERO keyword is identical to that obtained by including the keyword parameter
+   <span class="Courier">
+    YRANGE = [MIN(Y), MAX(Y)]
+   </span>
+   in the call to PLOT. You can make /YNOZERO the default in subsequent plots by setting bit 4 of !Y.STYLE to one (
+   <span class="Courier">
+    !Y.STYLE = 16
+   </span>
+   ).
+  </p>
+  <p>
+   See STYLE for details on the STYLE field of the axis system variables !X, !Y, and !Z. Briefly: Other bits in the STYLE field extend the axes by providing a margin around the data, suppress the axis and its notation, and suppress the box-style axes by drawing only left and bottom axes.
+  </p>
+  <p>
+   For example, to constrain the x-axis to the years 1975 to 1983, the keyword parameter
+   <span class="Courier">
+    XRANGE = [1975, 1983]
+   </span>
+   is included in the call to PLOT. The following figure illustrates the result.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    <a name="dg_routines_3604229493_94841">
+    </a>
+    Plot with X-Axis Range of 1975 to 1983
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/plng04.gif" style="margin-left: 5.99976px;margin-top: 1.49976px;margin-right: 5.999752px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Note that the
+   <i>
+    x
+   </i>
+   -axis actually extends from 1974 to 1984, as
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   elected to make five tick-mark intervals, each spanning two years. If, as explained above, the
+   <i>
+    x
+   </i>
+   -axis style is set to one, the plot will exactly span the given range. The call combining all these options is as follows:
+  </p>
+  <p class="Code">
+   ; Define variables:
+   <br />
+   @plot01
+   <br />
+   PLOT, YEAR, SOCKEYE, /YNOZERO, $
+   <br />
+   &#160;&#160;&#160;TITLE='Sockeye Population', XTITLE = 'Year', $
+   <br />
+   &#160;&#160;&#160;YTITLE = 'Fish (thousands)', XRANGE = [1975, 1983], /XSTYLE
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The keyword parameter syntax
+   <span class="Courier">
+    /XSTYLE
+   </span>
+   is synonymous with the expression
+   <span class="Courier">
+    XSTYLE = 1
+   </span>
+   . Setting a keyword parameter to 1 is often referred to as simply setting the keyword.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_876131">
+   </a>
+   <a name="kanchor2034">
+   </a>
+   <a name="dg_routines_3604229493_50406">
+   </a>
+   Plotting Symbols
+  </h3>
+  <p>
+   Each data point can be marked with a symbol and/or connected with lines. The value of the keyword parameter PSYM selects the marker symbol, as described in
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_367154">
+    PSYM
+   </a>
+   . For example, a value of 1 marks each data point with the plus sign (
+   <span class="Courier">
+    +
+   </span>
+   ), 2 is an asterisk (
+   <span class="Courier">
+    *
+   </span>
+   ), etc. Setting PSYM to minus the symbol number marks the points with a symbol and connects them with lines. A value of –1 marks points with a plus sign (
+   <span class="Courier">
+    +
+   </span>
+   ) and connects them with lines. Note also that setting PSYM to a value of 10 produces histogram style plots in which a horizontal line is drawn across each
+   <i>
+    x
+   </i>
+   bin.
+  </p>
+  <p>
+   Frequently, when data points are plotted against the results of a fit or model, symbols are used to mark the data points while the model is plotted using a line. The figure below illustrates this, fitting the Sockeye population values to a quadratic function of the year. The
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   function POLY_FIT is used to calculate the quadratic.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    <a name="dg_routines_3604229493_56711">
+    </a>
+    Plotting with Predefined Marker Symbols
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/plng07.gif" style="margin-left: 0.75024px;margin-top: 1.49976px;margin-bottom: 0.75024px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   The statements used to construct the above plot are as follows:
+  </p>
+  <p class="Code">
+   ; Define variables.
+   <br />
+   @plot01
+   <br />
+   ; Use the LINFIT function to fit the data to a line:
+   <br />
+   coeff = LINFIT(YEAR, SOCKEYE)
+   <br />
+   ;YFIT is the fitted line:
+   <br />
+   YFIT = coeff[0] + coeff[1]*YEAR
+   <br />
+   ; Plot the original data points with PSYM = 4, for diamonds:
+   <br />
+   PLOT, YEAR, SOCKEYE, /YNOZERO, PSYM = 4, $
+   <br />
+   &#160;&#160;&#160;TITLE = 'Quadratic Fit', XTITLE = 'Year', $
+   <br />
+   &#160;&#160;&#160;YTITLE = 'Sockeye Population'
+   <br />
+   ; Overplot the smooth curve using a plain line:
+   <br />
+   OPLOT, YEAR, YFIT
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   Alternatively, you can run the
+   <span class="Courier">
+    plot03
+    <a name="kanchor2035">
+    </a>
+   </span>
+   batch file to create the plot by entering:
+   <br />
+   @plot03
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_876156">
+   </a>
+   <a name="kanchor2036">
+   </a>
+   <a name="dg_routines_3604229493_75178">
+   </a>
+   Bar Charts
+  </h3>
+  <p>
+   Bar (or box) charts are used in business-style graphics and are useful in comparing a small number of measurements within a few discrete data sets. Although not designed as a tool for business graphics,
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   can produce many business-style plots with little effort.
+  </p>
+  <p>
+   The following example produces a box-style chart showing the four salmon populations as boxes of differing colors or shading. The commands used to draw the next figure are shown below with annotation.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Bar Chart Drawn with POLYFILL
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/plng10.gif" style="margin-left: 5.99976px;margin-right: 6.000454px;margin-bottom: 2.250011px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   You do not need to type these commands in yourself; they are collected in the files
+   <span class="Courier">
+    plot05
+    <a name="kanchor2037">
+    </a>
+    .pro
+   </span>
+   , which contains the two procedures, and the batch file,
+   <span class="Courier">
+    plot06
+    <a name="kanchor2038">
+    </a>
+   </span>
+   , which creates the plot. These files are located in the
+   <span class="Courier">
+    examples/doc/plot
+   </span>
+   subdirectory of the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   distribution. Run the example procedure by entering
+   <span class="Courier">
+    plot05
+   </span>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <span class="Courier">
+    .EDIT plot05.pro
+   </span>
+   .
+  </p>
+  <p>
+   First, we define a procedure called EX_BOX, which draws a box given the coordinates of two diagonal corners:
+  </p>
+  <p class="Code">
+   ; Define a procedure that draws a box, using POLYFILL,
+  </p>
+  <p class="Code">
+   ; whose corners are (X0, Y0) and (X1, Y1):
+  </p>
+  <p class="Code">
+   PRO EX_BOX, X0, Y0, X1, Y1, color
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Call POLYFILL:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;POLYFILL, [X0, X0, X1, X1], [Y0, Y1, Y1, Y0], COL = color
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   Next, create a procedure to draw the bar graph:
+  </p>
+  <p class="Code">
+   PRO EX_BARGRAPH, minval
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Define variables:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;@plot01
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Width of bars in data units:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;del = 1./5.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; The number of colors used in the bar graph is
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; defined by the number of colors available on your system:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ncol=!D.N_COLORS/5
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Create a vector of color indices to be used in this procedure:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;colors = ncol*INDGEN(4)+ncol
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Loop for each sample:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;FOR iscore = 0, 3 DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; The y value of annotation. Vertical separation is 20 data
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; units:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;yannot = minval + 20 *(iscore+1)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Label for each bar:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;XYOUTS, 1984, yannot, names[iscore]
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Bar for annotation:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;EX_BOX, 1984, yannot - 6, 1988, yannot - 2, colors[iscore]
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; The x offset of vertical bar for each sample:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;xoff = iscore * del - 2 * del
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Draw vertical box for each year's sample:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;FOR iyr=0, N_ELEMENTS(year)-1 DO $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;EX_BOX, year[iyr] + xoff, minval, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;year[iyr] + xoff + del, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;allpts[iyr, iscore], $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;colors[iscore]
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENDFOR
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   Enter the following at the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   prompt to compile these two procedures from the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   distribution:
+  </p>
+  <p class="Code">
+   .run plot05.pro
+  </p>
+  <p>
+   To create the bar graph on your screen, enter the following commands.
+  </p>
+  <p class="Code">
+   ; Load a color table:
+  </p>
+  <p class="Code">
+   LOADCT, 39
+  </p>
+  <p>
+   As in the previous example, the PLOT procedure is used to draw the axes and to establish the scaling using the NODATA keyword.
+  </p>
+  <p class="Code">
+   PLOT, year, CHINOOK, YRANGE = [MIN(allpts),MAX(allpts)], $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;TITLE = 'Salmon Populations', /NODATA, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;XRANGE = [year[0], 1990]
+  </p>
+  <p class="Code">
+   ; Get the y value of the bottom x-axis:
+  </p>
+  <p class="Code">
+   minval = !Y.CRANGE[0]
+  </p>
+  <p class="Code">
+   ; Create the bar chart:
+  </p>
+  <p class="Code">
+   EX_BARGRAPH, minval
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_876238">
+   </a>
+   <a name="dg_routines_3604229493_88800">
+   </a>
+   Specifying Tick Marks
+   <a name="kanchor2039">
+   </a>
+  </h3>
+  <p>
+   The following figure shows a box chart illustrating the direct specification of the
+   <i>
+    x
+   </i>
+   -axis tick values, number of ticks, and tick names. Building upon the previous program, this program shows each of the four scores for the year 1967, the first year in our data. It uses the EX_BOX procedure from the previous example to draw a rectangle for each sample.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    <a name="dg_routines_3604229493_42237">
+    </a>
+    Controlling Tick Marks and Their Annotation
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/plng11.gif" style="margin-left: 5.99976px;margin-right: 6.0005px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Enter the following command at the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   prompt to compile the
+   <span class="Courier">
+    EX_BOX
+   </span>
+   and
+   <span class="Courier">
+    EX_BARGRAPH
+   </span>
+   procedures (discussed in the previous example) from the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   distribution:
+  </p>
+  <p class="Code">
+   .run plot05.pro
+  </p>
+  <p>
+   Enter the following commands to create the box chart:
+  </p>
+  <p class="Code">
+   ; Define variables:
+   <br />
+   @plot01
+   <br />
+   ; Tick x values, 0.2, 0.4, 0.6, 0.8:
+   <br />
+   XVAL = FINDGEN(4)/5. + .2
+   <br />
+   ; Make a vector of scores from first year, corresponding to
+   <br />
+   ; the name vector from above:
+   <br />
+   YVAL = [COHO[0], SOCKEYE[0], HUMPBACK[0], CHINOOK[0]]
+   <br />
+   ; Make the axes with no data. Force x range to [0, 1],
+   <br />
+   ; centering xval, which also contains the tick values.
+   <br />
+   ; Force three tick intervals making four tick marks.
+   <br />
+   ; Specify the tick names from the names vector:
+   <br />
+   PLOT, XVAL, YVAL, /YNOZERO, XRANGE = [0,1], XTICKV = XVAL, $
+   <br />
+   &#160;&#160;&#160;XTICKS = 3, XTICKNAME = NAMES, /NODATA, $
+   <br />
+   &#160;&#160;&#160;TITLE = 'Salmon Populations, 1967'
+   <br />
+   ; Draw the boxes, centered over the tick marks.
+   <br />
+   ; !Y.CRANGE[0] is the y value of the bottom x-axis.
+   <br />
+   FOR I = 0, 3 DO EX_BOX, XVAL[I] - .08, !Y.CRANGE[0], $
+   <br />
+   &#160;&#160;&#160;XVAL[I] + 0.08, YVAL[I], 128
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   Alternatively, you can enter
+   <span class="Courier">
+    @plot07
+   </span>
+   at the IDL command prompt to run the
+   <span class="Courier">
+    plot07
+    <a name="kanchor2040">
+    </a>
+   </span>
+   batch file and create the plot.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <a name="kanchor2041">
+   </a>
+   You can display date/time data on plots, contours, and surfaces through the tick settings of the date/time axis. Date/time data can be displayed on any axis (x, y or z). The date/time data is stored as Julian dates, but the
+   <a href="../L/LABEL_DATE.html" target="" title="" alt="" class="MCXref_Heading_0">
+    LABEL_DATE
+   </a>
+   routine and axis keywords allow you to display this data as calendar dates. See
+   <a href="../L/LABEL_DATE.html" target="" title="" alt="" class="MCXref_Heading_0">
+    LABEL_DATE
+   </a>
+   for examples.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_876270">
+   </a>
+   <a name="kanchor2042">
+   </a>
+   <a name="dg_routines_3604229493_58501">
+   </a>
+   Logarithmic Scaling
+  </h3>
+  <p>
+   The XLOG, YLOG, and ZLOG keywords can be used with the PLOT routine to get any combination of linear and logarithmic axes. The OPLOT procedure uses the same scaling and transformation as did the most recent plot.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    <a name="dg_routines_3604229493_87838">
+    </a>
+    Example of Logarithmic Scaling
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/plng12.gif" style="margin-left: 5.99976px;margin-right: 5.999783px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   The figure illustrates using PLOT to make a linear-log plot. It was produced with the following statements:
+  </p>
+  <p class="Code">
+   ; Create data array:
+   <br />
+   X = FLTARR(256)
+   <br />
+   ; Make a step function. Array elements 80 through 120 are set to 1:
+   <br />
+   X[80:120] = 1
+   <br />
+   ; Make a filter:
+   <br />
+   FREQ = FINDGEN(256)
+   <br />
+   ; Make the filter symmetrical about the value x = 128:
+   <br />
+   FREQ = FREQ &lt; (256-FREQ)
+   <br />
+   ; Second order Butterworth, cutoff frequency = 20.
+   <br />
+   FIL = 1./(1+(FREQ/20)^2)
+   <br />
+   ; Plot with a logarithmic x-axis. Use exact axis range:
+   <br />
+   PLOT, /YLOG, FREQ, ABS(FFT(X,1)), $
+   <br />
+   &#160;&#160;&#160;XTITLE = 'Relative Frequency', YTITLE = 'Power', $
+   <br />
+   &#160;&#160;&#160;XSTYLE = 1
+   <br />
+   ; Plot graph:
+   <br />
+   OPLOT, FREQ, FIL
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   Alternatively, you can run the
+   <span class="Courier">
+    plot08
+    <a name="kanchor2043">
+    </a>
+   </span>
+   batch file to create the plot:
+   <br />
+   &#160;&#160;&#160;
+   <span class="Courier">
+    @plot08
+   </span>
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_876288">
+   </a>
+   <a name="dg_routines_3604229493_34878">
+   </a>
+   Multiple Plots on a Page
+  </h3>
+  <p>
+   Plots can be grouped on the display or page in the horizontal and/or vertical directions using the system variable field !P.MULTI.
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   sets the plot window to produce the given number of plots on each page and moves the window to a new sector at the beginning of each plot. If the page is full, it is first erased. If more than two rows or columns of plots are produced,
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   decreases the character size by a factor of 2.
+  </p>
+  <p>
+   !P.MULTI controls the output of multiple plots. Set !P.MULTI equal to an integer vector in which:
+  </p>
+  <p class="Bullet">
+   The first element of the vector contains the number of empty sectors remaining on the page. The display is erased if this field is zero when a new plot is begun.
+  </p>
+  <p class="Bullet">
+   The second element of the vector contains the number of plots per page in the horizontal direction.
+  </p>
+  <p class="Bullet">
+   The third element contains the number of plots per page in the vertical direction.
+  </p>
+  <p class="Bullet">
+   The fourth element contains the number of plots stacked in the Z dimension.
+  </p>
+  <p class="Bullet">
+   The fifth element controls the order in which plots are drawn. Set the fifth element equal to zero to make plots from left to right (column major), and top to bottom. Set the fifth element equal to one to make plots from top to bottom, left to right (row major).
+  </p>
+  <p>
+   Omitting any of the five elements from the vector is the same as setting that element equal to zero.
+  </p>
+  <p>
+   For example, to set up
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   to stack two plots vertically on each page, use the following statement:
+  </p>
+  <p class="Code">
+   !P.MULTI = [0, 1, 2]
+  </p>
+  <p>
+   Note that the first element, !P.MULTI (0), is set to zero to cause the next plot to begin a new page. To make four plots per page with two columns and two rows, use the following statement:
+  </p>
+  <p class="Code">
+   !P.MULTI = [0, 2, 2]
+  </p>
+  <p>
+   To reset to the default of one plot per page, set the value of !P.MULTI to 0, as shown in the following statement:
+  </p>
+  <p class="Code">
+   !P.MULTI = 0
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Multiple Plots Per Page, Various Tick Marks, and Multiple Axes
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/plng13.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999783px;margin-bottom: 5.999767px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   This figure shows four plots in a single window.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   For details, inspect the batch file
+   <span class="Courier">
+    plot09
+    <a name="kanchor2044">
+    </a>
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/plot
+   </span>
+   subdirectory of the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   distribution or type
+   <span class="Courier">
+    @plot09
+   </span>
+   at the IDL command prompt to run the example.
+   <span class="_Override" style="letter-spacing: -0.01em;">
+   </span>
+  </p>
+  <p>
+   Note the following features of the plots in the figure:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     The plot in the upper left has grid-style tick marks. This is accomplished by setting the TICKLEN keyword equal to 1.0
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     The plot in the upper right has outward-facing tick marks. This is accomplished by setting the TICKLEN keyword to a negative value.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     The plot in the lower left corner has different axes on left and right, top and bottom. This is accomplished by drawing the top and right axes separately, using the AXIS procedure.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     The plot in the lower right uses no default axes at all. The centered axes are drawn with calls to the AXIS procedure.
+    </td>
+   </tr>
+  </table>
+  <h3>
+   <a name="dg_routines_3604229493_876337">
+   </a>
+   <a name="dg_routines_3604229493_35756">
+   </a>
+   Specifying the Location of the Plot
+  </h3>
+  <p>
+   The plot-data window is the region of the page or screen enclosed by the axes. The plot region is the box enclosing the plot-data window and the titles and tick annotation.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    <a name="dg_routines_3604229493_73265">
+    </a>
+    The Plot-Data Window, Plot Region, and Device Area Relationship
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/plng13a.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999752px;margin-bottom: 5.999752px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   The figure illustrates the relationship of the plot-data window, plot region, and the entire device area. These areas are determined by the following system variables and keyword parameters, in order of decreasing precedence:
+  </p>
+  <table style="width: 274px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="274px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316026">
+        POSITION
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       !P.POSITION
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       !P.REGION
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       !P.MULTI
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332038">
+        [XYZ]MARGIN
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       ![XYZ].MARGIN
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="dg_routines_3604229493_876382">
+   </a>
+   <a name="dg_routines_3604229493_73109">
+   </a>
+   Plotting Missing Data
+  </h3>
+  <p>
+   The MAX_VALUE and MIN_VALUE keywords to PLOT can be used to create missing data plots wherein bad data values are not plotted. Data values greater than the value of the MAX_VALUE keyword or less than the value of the MIN_VALUE keyword are treated as missing and are not plotted. The following code creates a dataset with bad data values and plots it with and without these keywords:
+  </p>
+  <p class="Code">
+   ; Make a 100-element array where each element is
+   <br />
+   ; set equal to its index:
+   <br />
+   A = FINDGEN(100)
+   <br />
+   ; Set 20 random point in the array equal to 400.
+   <br />
+   ; This simulates "bad" data values above the range
+   <br />
+   ; of the "real" data.
+   <br />
+   A(RANDOMU(SEED, 20)*100)=400
+   <br />
+   ; Set 20 random point in the array equal to -10.
+   <br />
+   ; This simulates "bad" data values below the range
+   <br />
+   ; of the "real" data.
+   <br />
+   A(RANDOMU(SEED, 20)*100)=-10
+   <br />
+   ; Plot the dataset with the bad values. Looks pretty bad!
+   <br />
+   PLOT, A
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Plot the dataset, but don't plot any value over 101.
+   <br />
+   ; The resulting plot looks better, but still shows spurious values:
+   <br />
+   PLOT, A, MAX_VALUE=101
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; This time leave out both high and low spurious values.
+   <br />
+   ; The resulting plot more accurately reflects the "real" data:
+   <br />
+   PLOT, A, MAX_VALUE=101, MIN_VALUE=0
+  </p>
+  <p>
+   The following plotting routines allow you to set maximum and minimum values in this manner:
+   <a class="MCXref_Heading_0" href="../C/CONTOUR_Procedure.html#dg_routines_3604229493_879040">
+    CONTOUR Procedure
+   </a>
+   , &#160;PLOT, &#160;
+   <a class="MCXref_Heading_0" href="../S/SHADE_SURF_Procedure.html#dg_routines_3604229493_885128" target="" title="" alt="">
+    SHADE_SURF Procedure
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SURFACE_Procedure.html#dg_routines_3604229493_886816" target="" title="" alt="">
+    SURFACE Procedure
+   </a>
+   .
+  </p>
+  <p>
+   In addition to the maximum and minimum values specified with the MAX_VALUE and MIN_VALUE keywords, these plotting routines treat the IEEE floating-point value NaN (Not A Number) as missing data automatically.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_876409">
+   </a>
+   <a name="dg_routines_3604229493_821689_PageTOC_PLOT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_876417">
+   </a>
+   <a name="dg_routines_3604229493_1079071_PageTOC_PLOT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="PLOT.html" target="" title="" alt="">
+    PLOT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../O/OPLOT_Procedure.html#dg_routines_3604229493_884310">
+    OPLOT Procedure
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="PLOTS_Procedure.html#dg_routines_3604229493_877011">
+    PLOTS Procedure
+   </a>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

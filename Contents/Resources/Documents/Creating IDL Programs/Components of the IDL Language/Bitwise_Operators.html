@@ -1,0 +1,528 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Program Control" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Bitwise Operators
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/Bitwise_Operators.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Program Control.html">
+    Program Control
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Bitwise Operators
+   </span>
+  </div>
+  <h1>
+   <a name="expressions_2976722315_1032844">
+   </a>
+   <a name="expressions_2976722315_66838">
+   </a>
+   Bitwise Operators
+   <a name="kanchor3644">
+   </a>
+  </h1>
+  <p>
+   There are four bitwise operators in
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   :
+   <a class="MCXref_Heading_0" href="#expressions_2976722315_1057374" target="" title="" alt="">
+    AND
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="#expressions_2976722315_1057399" target="" title="" alt="">
+    NOT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="#expressions_2976722315_1057429" target="" title="" alt="">
+    OR
+   </a>
+   , and
+   <a class="MCXref_Heading_0" href="#expressions_2976722315_1057449" target="" title="" alt="">
+    XOR
+   </a>
+   . For integer operands (byte, signed- and unsigned-integer, longword, and 64-bit longword data types), bitwise operators operate on each bit of the operand or operands independently.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If one or both of the operands are objects, the operator may be overloaded.
+  </p>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');border-left-style: solid;border-left-width: 0px;border-right-style: solid;border-right-width: 0px;border-top-style: solid;border-top-width: 0px;border-bottom-style: solid;border-bottom-width: 2px;border-bottom-color: #d3d3d3;margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Logical Operators
+   </caption>
+   <col />
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Operator
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Description
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Example
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="expressions_2976722315_1057374">
+       </a>
+       <a name="expressions_2976722315_93321">
+       </a>
+       AND
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3645">
+       </a>
+       Bitwise AND
+      </p>
+      <p>
+       For integer, longword, and byte operands, a bitwise AND operation is performed. If the operands are scalars, it returns a scalar value. If either operand is an array, it returns an array containing one value for each element of the shortest array operand.
+      </p>
+      <p>
+       Before the operation, the second operand is converted to the same type as the first operand.
+      </p>
+      <p>
+       For operations on other types, the result is equal to the second operand if the first operand is not equal to zero or an empty string; otherwise, the result is zero or an empty string.
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       The bitwise AND operator is not valid for heap variable operands
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The statement
+      </p>
+      <p class="Code">
+       5&#160;AND&#160;6&#160;=&#160;4
+      </p>
+      <p>
+       is represented in binary as follows:
+      </p>
+      <p class="Code">
+       0101 AND 0110 = 0100
+       <br />
+      </p>
+      <p class="Code">
+       PRINT, (5 GT 2) AND (4 GT 2)
+      </p>
+      <p>
+       IDL Prints:
+       <span class="Courier">
+        1
+       </span>
+      </p>
+      <p class="Code">
+       PRINT, (5 GT 2) AND (4 GT 5)
+      </p>
+      <p>
+       IDL Prints:
+       <span class="Courier">
+        0
+       </span>
+      </p>
+      <p class="Code">
+       PRINT, 5 AND 7
+      </p>
+      <p>
+       IDL Prints:
+       <span class="Courier">
+        5
+       </span>
+      </p>
+      <p class="Code">
+       PRINT, 5 AND 2
+      </p>
+      <p>
+       IDL Prints:
+       <span class="Courier">
+        0
+       </span>
+      </p>
+      <p class="Code">
+       PRINT, 4 AND 2
+      </p>
+      <p>
+       IDL Prints:
+       <span class="Courier">
+        0
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="expressions_2976722315_1057399">
+       </a>
+       <a name="expressions_2976722315_98075">
+       </a>
+       NOT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3646">
+       </a>
+       Bitwise NOT
+      </p>
+      <p>
+       Returns the bitwise inverse of its scalar or array operand (returns scalar if operand is a scalar, or returns an array containing one value for each element of the operand array).
+      </p>
+      <p>
+       For integer, longword, and byte operands, NOT returns the complement of each bit of the operand. For floating-point operands, the result is 1.0 if the operand is zero; otherwise, the result is zero.
+      </p>
+      <p>
+       For pointer or object references, NOT returns 0 for null references and 1 for non-null references. It is the same as the logical not operator (~) for these types.
+      </p>
+      <p class="CellWarning">
+       Use caution when using the return value from the bitwise NOT operator as an operand for the logical operators
+       <span class="Courier">
+        &amp;&amp;
+       </span>
+       and
+       <span class="Courier">
+        ||
+       </span>
+       . See
+       <a class="MCXref_Heading_0" href="#expressions_2976722315_1057479" target="" title="" alt="">
+        Using the NOT Operator
+       </a>
+       for additional discussion.
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       Not valid for string or complex operands.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       The statement
+      </p>
+      <p class="Code">
+       NOT 4 = -5
+      </p>
+      <p>
+       is represented in binary as follows:
+      </p>
+      <p class="Code">
+       NOT 0100 = 1011
+       <br />
+      </p>
+      <p class="Code">
+       PRINT, NOT 1
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p class="Code" style="font-family: Courier;font-size: 10pt;">
+       <span class="Courier">
+        -2
+       </span>
+       <br />
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       Modern computers use the “2s complement” representation for negative signed integers. This means that to arrive at the decimal representation of a negative binary number (a string of binary digits with a one as the most significant bit), you must take the complement of each bit, add one, convert to decimal, and prepend a negative sign. For example, NOT 0 equals -1, NOT 1 equals -2, etc.
+      </p>
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;">
+       &#160;
+      </p>
+      <p class="Code">
+       IF (NOT (5 GT 6)) THEN $
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;PRINT, 'True'
+       <br />
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;">
+       <span class="Courier">
+        True
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="expressions_2976722315_1057429">
+       </a>
+       <a name="expressions_2976722315_75649">
+       </a>
+       OR
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3647">
+       </a>
+       Bitwise OR
+      </p>
+      <p>
+       Performs the logical “inclusive or” operation on two scalar or array operands (returning a scalar value for scalar operands, or returning an array containing one value for each element of the shortest array operand.
+      </p>
+      <p>
+       Before the operation, the second operand is converted to the same type as the first operand.
+      </p>
+      <p>
+       For integer or byte operands, a bitwise inclusive OR is performed. For floating- point operands, returns the first operand if it is non- zero, or the 2nd operand otherwise.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       For integer operands, OR performs a bitwise inclusive “or” operation and returns the result. The statement:
+      </p>
+      <p class="Code">
+       3 OR 5 = 7
+      </p>
+      <p>
+       is represented in binary as follows:
+      </p>
+      <p class="Code">
+       0011 OR 0101 = 0111
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       IF ((5 GT 3) OR $
+      </p>
+      <p class="Code">
+       (4 GT 5)) THEN $
+      </p>
+      <p class="Code">
+       PRINT, 'True'
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p class="Code">
+       True
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       <a name="expressions_2976722315_1057449">
+       </a>
+       <a name="expressions_2976722315_50648">
+       </a>
+       XOR
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       <a name="kanchor3648">
+       </a>
+       Bitwise exclusive XOR
+      </p>
+      <p>
+       XOR is only valid for byte, integer, and longword operands.
+      </p>
+      <p>
+       Performs the logical “exclusive or” operation on two scalar or array operands (returning a scalar value for scalar operands, or returning an array containing one value for each element of the shortest array operand.
+      </p>
+      <p>
+       A bit in the result is set to 1 if the corresponding bits in the operands are different; if they are equal, it is set to zero.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       For integer operands, XOR sets a bit in the result to 1 if the corresponding bits in the operands are different or to 0 if they are equal. The statement:
+      </p>
+      <p class="Code">
+       3&#160;XOR&#160;5&#160;=&#160;6
+      </p>
+      <p>
+       is represented in binary as follows:
+      </p>
+      <p class="Code">
+       0011 XOR 0101 = 0110
+      </p>
+      <p>
+       &#160;
+      </p>
+      <p class="Code">
+       IF ((5 GT 3) XOR (4  GT 5)) THEN $
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;PRINT, 'Different' $
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;ELSE PRINT, 'Same'
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p class="Code">
+       Different
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="expressions_2976722315_1057479">
+   </a>
+   <a name="expressions_2976722315_83947">
+   </a>
+   Using the NOT Operator
+  </h2>
+  <p>
+   Due to the bitwise nature of the NOT operator, logical negation operations should always use
+   <span class="Courier">
+    ~
+   </span>
+   in preference to NOT, reserving NOT exclusively for bitwise computations. Consider a statement such as:
+  </p>
+  <p class="Code">
+   IF ((NOT EOF(lun)) &amp;&amp; device_ready) THEN
+   <i>
+    statement
+   </i>
+  </p>
+  <p>
+   which wants to execute
+   <i>
+    statement
+   </i>
+   if the file specified by the variable
+   <span class="Courier">
+    lun
+   </span>
+   has data remaining, and the variable
+   <span class="Courier">
+    device_ready
+   </span>
+   is non-zero. When EOF returns the value 1, the expression
+   <span class="Courier">
+    NOT EOF(lun)
+   </span>
+   yields &#8209;2, due to the bitwise nature of the NOT operator. The
+   <span class="Courier">
+    &amp;&amp;
+   </span>
+   operator interprets the value &#8209;2 as true, and will therefore attempt to execute
+   <i>
+    statement
+   </i>
+   incorrectly in many cases. The proper way to write the above statement is:
+  </p>
+  <p class="Code">
+   IF ((~ EOF(lun)) &amp;&amp; device_ready) THEN
+   <i>
+    statement
+   </i>
+  </p>
+  <h2 class="API">
+   Additional Bitwise Operator Examples
+  </h2>
+  <p>
+   Some examples of bitwise expressions are as follows:
+  </p>
+  <p class="Code">
+   ; Displays the “negative” of an image contained in the array IMG.
+  </p>
+  <p class="Code">
+   TV, NOT IMG
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Adds the hexadecimal constant FF (255 in decimal) to the array
+  </p>
+  <p class="Code">
+   ; ARR. This masks the lower 8-bits and zeros the upper bits.
+  </p>
+  <p class="Code">
+   ARR AND 'FF'X
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,730 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Routines that Use the Thread Pool
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/NoLines.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Application Programming/Routines_that_Use_the_Th.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <h1>
+   <a name="threading_2361397167_998638">
+   </a>
+   <a name="threading_2361397167_10705">
+   </a>
+   Routines that Use the Thread Pool
+  </h1>
+  <p>
+   Multithreading does not offer the possibility of increased execution speed for all IDL routines. The operators and routines currently using the thread pool in
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   are listed below, grouped by functional category.
+  </p>
+  <h3>
+   Binary and Unary
+   <a name="kanchor5062">
+   </a>
+   Operators:
+  </h3>
+  <table style="width: 480px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="160px" />
+   <col width="160px" />
+   <col width="160px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       -&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       --&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       +&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ++&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       NOT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       AND
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       /
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       *
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       EQ
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       NE
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       GE
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       LE
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       GT
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       LT
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       &gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       &lt;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       OR
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       XOR
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ^
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       MOD
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       #
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       ##
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If an operator uses the thread pool, any compound assignment operator based on that operator (
+   <span class="Courier">
+    +=
+   </span>
+   ,
+   <span class="Courier">
+    *=
+   </span>
+   ,
+   <i>
+    etc.
+   </i>
+   ) also uses the thread pool.
+  </p>
+  <h3>
+   Mathematical
+   <a name="kanchor5063">
+   </a>
+   Routines:
+  </h3>
+  <table style="width: 461px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="135px" />
+   <col width="154px" />
+   <col width="172px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ABS&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ERRORF&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       MATRIX_MULTIPLY
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ACOS
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       EXP
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       PRODUCT
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ALOG
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       EXPINT
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       ROUND
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ALOG10
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       FINITE
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       SIN
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ASIN
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       FLOOR
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       SINH
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ATAN
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       GAMMA
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       SQRT
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       CEIL
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       GAUSSINT
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       TAN
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       CONJ
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       IMAGINARY
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       TANH
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       COS
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ISHFT
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       VOIGT
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       COSH
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       LNGAMMA
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   Image
+   <a name="kanchor5064">
+   </a>
+   Processing Routines:
+  </h3>
+  <table style="width: 441px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="214px" />
+   <col width="227px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       BYTSCL&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       INTERPOLATE
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       CONVOL
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       POLY_2D
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       FFT
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       TVSCL
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   Array Creation
+   <a name="kanchor5065">
+   </a>
+   Routines:
+  </h3>
+  <table style="width: 440px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="220px" />
+   <col width="220px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       BINDGEN&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       LINDGEN
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       BYTARR
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       L64INDGEN
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       CINDGEN
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       MAKE_ARRAY
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       DCINDGEN
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       REPLICATE
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       DCOMPLEXARR
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       UINDGEN
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       DINDGEN
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       ULINDGEN
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       FINDGEN
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       UL64INDGEN
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       INDGEN
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   Non-string Data
+   <a name="kanchor5066">
+   </a>
+   Type Conversion Routines:
+  </h3>
+  <table style="width: 446px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="223px" />
+   <col width="223px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       BYTE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       LONG
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       COMPLEX
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       LONG64
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       DCOMPLEX
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       UINT
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       DOUBLE
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       ULONG
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       FIX
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       ULONG64
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       FLOAT
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   Array Manipulation
+   <a name="kanchor5067">
+   </a>
+   Routines:
+  </h3>
+  <table style="width: 454px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="227px" />
+   <col width="227px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       MAX&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       TOTAL
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       MIN
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       WHERE
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       REPLICATE_INPLACE
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="kanchor5068">
+   </a>
+   Programming and
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   Control Routines:
+  </h3>
+  <table style="width: 455px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="214px" />
+   <col width="241px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       BYTEORDER
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       LOGICAL_OR
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       LOGICAL_AND
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       LOGICAL_TRUE
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

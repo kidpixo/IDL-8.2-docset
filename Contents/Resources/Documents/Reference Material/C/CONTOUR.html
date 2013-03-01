@@ -1,0 +1,2366 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CONTOUR
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CONTOUR.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CONTOUR
+   </span>
+  </div>
+  <h1 class="ClassRoutine">
+   <a name="kanchor352">
+   </a>
+   CONTOUR
+  </h1>
+  <p>
+   The CONTOUR&#160;function draws a two-dimensional contour plot for a 2D array of data.
+  </p>
+  <p>
+   <img src="../images/contour_ex.png" class="ImgFloatRight" />
+  </p>
+  <h2 class="API">
+   Example
+  </h2>
+  <p>
+   The following lines create the graphic shown at the top of this topic.
+  </p>
+  <p class="Code">
+   file = FILEPATH('convec.dat', $
+  </p>
+  <p class="Code">
+   SUBDIR=['examples', 'data'])
+  </p>
+  <p class="Code">
+   z = READ_BINARY(file,DATA_DIMS=[248,248])
+  </p>
+  <p class="Code">
+   index = [30,60,90,120,150,220,255]
+  </p>
+  <p class="Code">
+   c = CONTOUR(z, /FILL, ASPECT_RATIO=1, $
+  </p>
+  <p class="Code">
+   RGB_TABLE=39, RGB_INDICES=index, C_VALUE=index)
+  </p>
+  <h3>
+   Additional Examples
+  </h3>
+  <p>
+   See
+   <a href="../../GUInavigation/visualize.html#Surface" target="" title="" alt="" class="MCXref_0">
+    Surface, Contour, and Vector Examples
+   </a>
+   for additional examples using the CONTOUR&#160;function.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    graphic
+   </i>
+   = CONTOUR(
+   <i>
+    Z
+   </i>
+   [,
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   ]  [,
+   <i>
+    Keywords
+   </i>
+   =
+   <i>
+    value
+   </i>
+   ] [,
+   <i>
+    Properties
+   </i>
+   =
+   <i>
+    variable
+   </i>
+   ])
+  </p>
+  <h3>
+   Keywords
+  </h3>
+  <p>
+   Keywords are applied
+   <i>
+    only
+   </i>
+   during the initial creation of the graphic.
+  </p>
+  <p>
+   [,
+   <a href="#AXIS_STYLE">
+    AXIS_STYLE
+   </a>
+   ={0|1|2|3}] [, /
+   <a href="#BUFFER">
+    BUFFER
+   </a>
+   ] [, /
+   <a href="#CURRENT">
+    CURRENT
+   </a>
+   ] [, /
+   <a href="#DEVICE">
+    DEVICE
+   </a>
+   ] [,
+   <a href="#DIMENSIO">
+    DIMENSIONS
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,
+   <a href="#LAYOUT">
+    LAYOUT
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,
+   <a href="#LOCATION">
+    LOCATION
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,
+   <a href="#MARGIN2">
+    MARGIN
+   </a>
+   =
+   <i>
+    scalar
+   </i>
+   or
+   <i>
+    vector
+   </i>
+   ] [, /
+   <a href="#NODATA">
+    NODATA
+   </a>
+   ] [,
+   <a href="#OVERPLOT">
+    OVERPLOT
+   </a>
+   =1 or
+   <i>
+    variable
+   </i>
+   ] [,
+   <a href="#POSITION">
+    POSITION
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,
+   <a href="#WINDOW_T">
+    WINDOW_TITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ]
+  </p>
+  <h3>
+   Properties
+  </h3>
+  <p>
+   Properties can be set as keywords to the function during creation, or retrieved or changed using the "." notation after creation.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Unlike other keywords in IDL, you cannot use an abbreviated form of the property name when setting them during creation. Instead, you must use the full property name.
+  </p>
+  <p>
+   <a href="#ANTIALIA">
+    ANTIALIAS
+   </a>
+   ,
+   <a href="#ASPECT_R">
+    ASPECT_RATIO
+   </a>
+   ,
+   <a href="#ASPECT_Z">
+    ASPECT_Z
+   </a>
+   ,
+   <a href="#AXES">
+    AXES
+   </a>
+   ,
+   <a href="#BACKGROU">
+    BACKGROUND_COLOR
+   </a>
+   ,
+   <a href="#BACKTRANS">
+    BACKGROUND_TRANSPARENCY
+   </a>
+   ,
+   <a href="#C_COLOR">
+    C_COLOR
+   </a>
+   ,
+   <a href="#C_FILL_P">
+    C_FILL_PATTERN
+   </a>
+   ,
+   <a href="#C_LABEL_">
+    C_LABEL_INTERVAL
+   </a>
+   ,
+   <a href="#C_LABEL_2">
+    C_LABEL_NOGAPS
+   </a>
+   ,
+   <a href="#C_LABEL_3">
+    C_LABEL_OBJECTS
+   </a>
+   ,
+   <a href="#C_LABEL_4">
+    C_LABEL_SHOW
+   </a>
+   ,
+   <a href="#C_LINEST">
+    C_LINESTYLE
+   </a>
+   ,
+   <a href="#C_THICK">
+    C_THICK
+   </a>
+   ,
+   <a href="#C_USE_LA">
+    C_USE_LABEL_COLOR
+   </a>
+   ,
+   <a href="#C_USE_LA2">
+    C_USE_LABEL_ORIENTATION
+   </a>
+   ,
+   <a href="#C_VALUE">
+    C_VALUE
+   </a>
+   ,
+   <a href="#CLIP">
+    CLIP
+   </a>
+   ,
+   <a href="#COLOR">
+    COLOR
+   </a>
+   ,
+   <a href="#CROSSHAIR">
+    CROSSHAIR
+   </a>
+   ,
+   <a href="#DAYS_OF_">
+    DAYS_OF_WEEK
+   </a>
+   ,
+   <a href="#DEPTH_CU">
+    DEPTH_CUE
+   </a>
+   ,
+   <a href="#DOWNHILL">
+    DOWNHILL
+   </a>
+   ,
+   <a href="#FILL">
+    FILL
+   </a>
+   ,
+   <a href="#FONT_COL">
+    FONT_COLOR
+   </a>
+   ,
+   <a href="#FONT_NAM">
+    FONT_NAME
+   </a>
+   ,
+   <a href="#FONT_SIZ">
+    FONT_SIZE
+   </a>
+   ,
+   <a href="#FONT_STY">
+    FONT_STYLE
+   </a>
+   ,
+   <a href="#GRID_UNI">
+    GRID_UNITS
+   </a>
+   ,
+   <a href="#HIDE">
+    HIDE
+   </a>
+   ,
+   <a href="#LABEL_CO">
+    LABEL_COLOR
+   </a>
+   ,
+   <a href="#LABEL_FO">
+    LABEL_FORMAT
+   </a>
+   ,
+   <a href="#LABEL_FR">
+    LABEL_FRMTDATA
+   </a>
+   ,
+   <a href="#LABEL_UN">
+    LABEL_UNITS
+   </a>
+   ,
+   <a href="#MAPGRID">
+    MAPGRID
+   </a>
+   ,
+   <a href="#MAPPROJE">
+    MAPPROJECTION
+   </a>
+   ,
+   <a href="#MAP_PROJ">
+    MAP_PROJECTION
+   </a>
+   ,
+   <a href="#MAX_VALU">
+    MAX_VALUE
+   </a>
+   ,
+   <a href="#MIN_VALU">
+    MIN_VALUE
+   </a>
+   ,
+   <a href="#MONTHS">
+    MONTHS
+   </a>
+   ,
+   <a href="#NAME">
+    NAME
+   </a>
+   ,
+   <a href="#N_LEVELS">
+    N_LEVELS
+   </a>
+   ,
+   <a href="#PERSPECT">
+    PERSPECTIVE
+   </a>
+   ,
+   <a href="#PLANAR">
+    PLANAR
+   </a>
+   ,
+   <a href="#RGB_INDI">
+    RGB_INDICES
+   </a>
+   ,
+   <a href="#RGB_TABL">
+    RGB_TABLE
+   </a>
+   ,
+   <a href="#SHADE_RA">
+    SHADE_RANGE
+   </a>
+   ,
+   <a href="#SHADING">
+    SHADING
+   </a>
+   ,
+   <a href="#TICKINTE">
+    TICKINTERVAL
+   </a>
+   ,
+   <a href="#TICKLEN">
+    TICKLEN
+   </a>
+   ,
+   <a href="#TITLE">
+    TITLE
+   </a>
+   ,
+   <a href="#TRANSPAR">
+    TRANSPARENCY
+   </a>
+   ,
+   <a href="#USE_TEXT">
+    USE_TEXT_ALIGNMENTS
+   </a>
+   ,
+   <a href="#UVALUE">
+    UVALUE
+   </a>
+   ,
+   <a href="#VERT_COL">
+    VERT_COLORS
+   </a>
+   ,
+   <a href="#WINDOW">
+    WINDOW
+   </a>
+   ,
+   <a href="#XRANGE">
+    XRANGE
+   </a>
+   ,
+   <a href="#YRANGE">
+    YRANGE
+   </a>
+   ,
+   <a href="#ZRANGE">
+    ZRANGE
+   </a>
+   ,
+   <a href="#ZVALUE">
+    ZVALUE
+   </a>
+  </p>
+  <h2 class="API">
+   Methods
+  </h2>
+  <p class="Method">
+   <a href="../../IDL Graphics/Close Method.html">
+    Close
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/ConvertCoord Method.html">
+    ConvertCoord
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/CopyWindow Method.html">
+    CopyWindow
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Delete Method.html">
+    Delete
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/GetData Method.html">
+    GetData
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/GetValueAtLocation Method.html">
+    GetValueAtLocation
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/MapForward Method.html">
+    MapForward
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/MapInverse Method.html">
+    MapInverse
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Order Method.html">
+    Order
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Print Method.html">
+    Print
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Refresh Method.html">
+    Refresh
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Rotate Method.html">
+    Rotate
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Save Method.html">
+    Save
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Scale Method.html">
+    Scale
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Select Method.html">
+    Select
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/SetData Method.html">
+    SetData
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Translate Method.html">
+    Translate
+   </a>
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   The CONTOUR&#160;function returns a reference to the created graphic. Use the returned reference to manipulate the graphic after creation by changing properties or calling methods.
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Z
+  </h3>
+  <p>
+   A two-dimensional array containing the contour data.
+  </p>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   A vector or 2D array containing the x-coordinates of the
+   <i>
+    Z
+   </i>
+   data.
+			If
+   <i>
+    X
+   </i>
+   is a vector, then each element specifies the x-coordinate for a column of
+   <i>
+    Z
+   </i>
+   .
+		If
+   <i>
+    X
+   </i>
+   is a two-dimensional array, then each element specifies the x-coordinate of the corresponding point in
+   <i>
+    Z
+   </i>
+   .
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   A vector or 2D array containing the y-coordinates of the
+   <i>
+    Z
+   </i>
+   data.
+			If
+   <i>
+    Y
+   </i>
+   is a vector, then each element specifies the y-coordinate for a row of
+   <i>
+    Z
+   </i>
+   .
+		If
+   <i>
+    Y
+   </i>
+   is a two-dimensional array, then each element specifies the y-coordinate of the corresponding point in
+   <i>
+    Z
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <p>
+   Keywords are applied
+   <i>
+    only
+   </i>
+   during the initial creation of the graphic.
+  </p>
+  <p>
+   <a name="AXIS_STYLE">
+   </a>
+  </p>
+  <h3 class="Keyword">
+   AXIS_STYLE
+  </h3>
+  <p>
+   Set this keyword to one of the following values:
+  </p>
+  <ul>
+   <li value="1">
+    0 - No axes. This is the default for images.
+   </li>
+   <li value="2">
+    1 - Single X, Y (and Z if 3D) axes located at the minimum data value. This is the default for 3D graphics.
+   </li>
+   <li value="3">
+    2 - Box axes - multiple axes located at both the minimum and maximum data values. This is the default for 2D graphics.
+   </li>
+   <li value="4">
+    3 - Crosshair-style axes - located at the midpoint of each data dimension. This is the default for polar plots.
+   </li>
+  </ul>
+  <p>
+   You can set the following properties on the axes:
+  </p>
+  <table style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');caption-side: top;margin-left: 0;margin-right: auto;" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col style="width: 250px;" class="Column-Column1" />
+   <col style="width: 500px;" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <th class="HeadE-Column1-Header1">
+      <p>
+       Property
+      </p>
+     </th>
+     <th class="HeadD-Column1-Header1">
+      <p>
+       Description
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]COLOR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       A string or RGB vector containing the axis color.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]GRIDSTYLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       A string or integer giving the linestyle for tickmarks.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]LOG
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 if the axis is logarithmic.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]MAJOR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The number of major tick marks. Set to -1 to auto-compute, set to 0 to suppress.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]MINOR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The number of minor tick marks. Set to -1 to auto-compute, set to 0 to suppress.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]SHOWTEXT
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Set to 1 to show text labels or 0 to hide the text labels.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]STYLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The axis range style. The valid values are:
+      </p>
+      <p>
+       (0) "Nice" range. Default for all graphics except Image, Barplot, and Map.
+      </p>
+      <p>
+       (1) Force the exact data range. Default for Image, Barplot, and Map.
+      </p>
+      <p>
+       (2) Pad the axes slightly beyond the "nice" range.
+      </p>
+      <p>
+       (3) Pad the axes slightly beyond the exact data range.
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       The [XYZ]RANGE takes precedence over this property.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]SUBTICKLEN
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The ratio of the minor tick length to the major tick length. The default is 0.5.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TEXT_COLOR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       A string or RGB vector containing the axis text color.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      [XYZ]TEXT_ORIENTATION
+     </td>
+     <td class="BodyD-Column1-Body2">
+      The angle (in degrees) of the tick mark labels.
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TEXTPOS
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 to position text above the axis. The default is 0, below the axis.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]THICK
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Set to a floating-point value between 0 and 10 to specify the line thickness for tickmarks. A thickness of 0 gives a thin hairline. The default is 1.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKDIR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 to draw the tickmarks facing outwards. The default is 0, facing inwards.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TICKFONT_NAME
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       A string containing the font name for the axis text.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKFONT_SIZE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The axis text size in points.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TICKFONT_STYLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       A string or integer containing the font style: "normal" (0), "bold" (1), "italic" (2), or "bold italic" (3).
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKFORMAT
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       A string or string array of tick label formats.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TICKINTERVAL
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The interval between major tick marks.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKLAYOUT
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 to suppress tick marks; set to 2 to draw a box around the tick labels.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TICKLEN
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The normalized length of each major tick mark. Tick lengths &lt;&#160;0.25 are in arbitrary units that do not scale with the graphic. Larger tick lengths are normalized relative to the width of the graphic. The default is 0.05.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKNAME
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       A string array containing the tick labels.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TICKUNITS
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       A string giving the tick units. Valid values are "" (the default), "Years", "Months", "Days", "Hours", "Minutes", "Seconds", or "Time". If any of the time units are utilized, then the tick values are interpreted as Julian date/time values. If more than one unit is provided, the axis will be drawn with multiple levels.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKVALUES
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       An array of tick mark locations.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TITLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       A string giving the axis title.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TRANSPARENCY
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       An integer from 0-100 giving the percent transparency.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div madcap:targetname="Common Graphic Keywords">
+   <p>
+    For more detailed explanations of these properties, see the
+    <a href="../A/AXIS.html" target="" title="" alt="" class="MCXref_0">
+     AXIS
+    </a>
+    function.
+   </p>
+   <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+    <span class="autonumber">
+     <span>
+      <b>
+       Tip:
+      </b>
+     </span>
+    </span>
+    You can also use the
+    <a href="../A/AXIS.html" target="" title="" alt="" class="MCXref_0">
+     AXIS
+    </a>
+    function to insert additional axes after the graphic has been created.
+   </p>
+  </div>
+  <h3 class="Keyword">
+   <a name="BUFFER">
+   </a>
+   BUFFER
+  </h3>
+  <p>
+   Set this keyword to 1 to direct the graphics to an off-screen buffer instead of creating a window.
+  </p>
+  <h3 class="Keyword">
+   <a name="CURRENT">
+   </a>
+   CURRENT
+  </h3>
+  <p>
+   Set this keyword to create the graphic in the current window. If no window exists, a new window is created. The WINDOW's
+   <a href="../../IDL Graphics/SetCurrent Method.html">
+    SetCurrent
+   </a>
+   method may be used to set the current window.
+  </p>
+  <h3 class="Keyword">
+   <a name="DEVICE">
+   </a>
+   DEVICE
+  </h3>
+  <p>
+   Set this keyword if values are specified in device coordinates (pixels) for the MARGIN and POSITION keywords. (Normalized coordinates are the default for these keywords.)
+  </p>
+  <h3 class="Keyword">
+   <a name="DIMENSIO">
+   </a>
+   DIMENSIONS
+  </h3>
+  <p>
+   Set this keyword to a two-element vector of the form [
+   <i>
+    width
+   </i>
+   ,
+   <i>
+    height
+   </i>
+   ] to specify the window dimensions in pixels.&#160;If you do not specify a value for DIMENSIONS, IDL&#160;by default uses the values of the IDL_GR_WIN_HEIGHT and IDL_GR_WIN_WIDTH preferences for Windows platforms or the IDL_GR_X_HEIGHT and IDL_GR_X_WIDTH preferences for X Windows systems on UNIX.
+  </p>
+  <h3 class="Keyword">
+   <a name="LAYOUT">
+   </a>
+   LAYOUT
+  </h3>
+  <p>
+   Set this keyword to a three-element vector [
+   <i>
+    ncol
+   </i>
+   ,
+   <i>
+    nrow
+   </i>
+   ,
+   <i>
+    index
+   </i>
+   ] that arranges graphics in a grid. The first dimension
+   <i>
+    ncol
+   </i>
+   is the number of columns in the grid,
+   <i>
+    nrow
+   </i>
+   is the number of rows, and
+   <i>
+    index
+   </i>
+   is the grid position at which to place the graphic (starting at element 1). This keyword is ignored if either OVERPLOT or POSITION is specified.
+  </p>
+  <h3 class="Keyword">
+   <a name="LOCATION">
+   </a>
+   LOCATION
+  </h3>
+  <p>
+   Set this keyword to a two-element vector [
+   <i>
+    X offset
+   </i>
+   ,
+   <i>
+    Y offset
+   </i>
+   ] giving the window's screen offset in pixels.
+  </p>
+  <h3 class="Keyword">
+   <a name="MARGIN2">
+   </a>
+   MARGIN
+  </h3>
+  <p>
+   Set this keyword to the current graphic’s margin values in the layout specified by the LAYOUT property. Use a scalar value to set the same margin on all sides, or use a four-element vector [
+   <i>
+    left
+   </i>
+   ,
+   <i>
+    bottom
+   </i>
+   ,
+   <i>
+    right
+   </i>
+   ,
+   <i>
+    top
+   </i>
+   ] to specify different margins on each side.
+  </p>
+  <p>
+   By default, margin values are expressed in normalized units ranging from 0.0 to 0.5. If the DEVICE keyword is set, the values are given in device units (pixels).
+  </p>
+  <p>
+   This keyword is ignored if either OVERPLOT or POSITION is specified.
+  </p>
+  <h3 class="Keyword">
+   <a name="NODATA">
+   </a>
+   NODATA
+  </h3>
+  <p>
+   Set this keyword to 1 to create the graphic, but without any data attached to it. The axes and title (if present) are also created and displayed. If the OVERPLOT keyword is specified, axis ranges will not change.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You must still provide valid input arguments. The data range of the input arguments are used to automatically set the range of the axes. The [XYZ]RANGE properties may be used to override these default ranges.
+  </p>
+  <h3 class="Keyword">
+   <a name="OVERPLOT">
+   </a>
+   OVERPLOT
+  </h3>
+  <p>
+   Set this keyword to 1 (one) to place the graphic on top of the existing graphic in the current window. If no current window exists, a new window is created. Set this keyword to an existing IDL Graphic reference to direct the new graphic to the window specified by the provided IDL&#160;Graphic reference.
+  </p>
+  <h3 class="Keyword">
+   <a name="POSITION">
+   </a>
+   POSITION
+  </h3>
+  <p>
+   Set this keyword to a four-element vector that determines the location of the visualization within the graphic window. The coordinates
+   <i>
+    x
+   </i>
+   <sub class="italic">
+    0
+   </sub>
+   ,
+   <i>
+    y
+   </i>
+   <sub class="italic">
+    0
+   </sub>
+   represent the lower left and
+   <i>
+    x
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   ,
+   <i>
+    y
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   represent the upper right corners of the data space. Coordinates are expressed in normalized units ranging from 0.0 to 1.0. If the DEVICE property is set, the units are given in device units (pixels).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When using POSITION, factor in enough space to display the title and axis labels. For example, if you use POSITION to place your visualization at 0 on the X or Y axis, any labels for that axis will not be visible.
+  </p>
+  <h3 class="Keyword">
+   <a name="WINDOW_T">
+   </a>
+   WINDOW_TITLE
+  </h3>
+  <p>
+   Set this keyword to the title of the IDL Graphic window. The title is displayed in the window's title bar.
+  </p>
+  <h2 class="API">
+   Properties
+  </h2>
+  <h3 class="Keyword">
+   <a name="ANTIALIA">
+   </a>
+   ANTIALIAS
+  </h3>
+  <p>
+   By default anti-aliasing is used when drawing lines. Set this property to 0 to disable anti-aliasing.
+  </p>
+  <h3 class="Keyword">
+   <a name="ASPECT_R">
+   </a>
+   ASPECT_RATIO
+  </h3>
+  <p>
+   A floating point value indicating the ratio of the Y dimension to the X dimension in data units. If this property is set to a nonzero value, the aspect ratio will be preserved as the graphic is stretched or shrunk. The default value is 0 for all graphics except images, meaning that the aspect ratio is not fixed, but is allowed to change as the graphic is stretched or shrunk.
+  </p>
+  <h3 class="Keyword">
+   <a name="ASPECT_Z">
+   </a>
+   ASPECT_Z
+  </h3>
+  <p>
+   For 3-D graphics,  a floating point value indicating the ratio of the Z dimension to the X and Y dimensions, in data units. If this is a nonzero value, the aspect ratio will be preserved as the graphic is stretched or shrunk. The default value is 0, meaning that the aspect ratio is not fixed, but is allowed to change as the graphic is stretched or shrunk.
+  </p>
+  <h3 class="Keyword">
+   <a name="AXES">
+   </a>
+   AXES (Get Only)
+  </h3>
+  <p>
+   This property retrieves an array that contains all of the AXIS objects within the visualization. For example, for a plot visualization:
+  </p>
+  <p class="Code">
+   p = PLOT(/TEST)
+  </p>
+  <p class="Code">
+   ax = p.AXES
+  </p>
+  <p class="Code">
+   ax[0].TITLE = 'X axis'
+  </p>
+  <p class="Code">
+   ax[1].TITLE = 'Y axis'
+  </p>
+  <p class="Code">
+   ax[2].HIDE = 1  ; hide top X axis
+  </p>
+  <p class="Code">
+   ax[3].HIDE = 1  ; hide right Y axis
+  </p>
+  <p>
+   See
+   <a href="../A/AXIS.html">
+    AXIS
+   </a>
+   for a list of the available properties.
+  </p>
+  <h3 class="Keyword">
+   <a name="BACKGROU">
+   </a>
+   BACKGROUND_COLOR
+  </h3>
+  <p>
+   Set this property to a
+   <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color">
+    string or RGB vector
+   </a>
+   indicating the graphic's background color. The default value is [255, 255, 255] (white). Set this property to a scalar value to remove the background color.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   To set the background color of the entire window, retrieve the window object using the WINDOW property, and set the BACKGROUND_COLOR on the window object.
+  </p>
+  <h3 class="Keyword">
+   <a name="BACKTRANS">
+   </a>
+   BACKGROUND_TRANSPARENCY
+  </h3>
+  <p>
+   Set this property to an integer between 0 and 100 giving the percent transparency of the background color. The default is 100 (completely transparent).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the BACKGROUND_COLOR property is changed, and the current background transparency is 100, then the BACKGROUND_TRANSPARENCY will be automatically set to 0 (opaque) so that you can see the new color.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_COLOR">
+   </a>
+   C_COLOR
+  </h3>
+  <p>
+   Set this property to a string array of color names, or a 3 x N array of RGB color values representing the colors for each contour level. If there are more contour levels than elements in this vector, the colors will be repeated cyclically. If C_COLOR is set to 0, all contour levels will be drawn in the color specified by the COLOR property (this is the default).
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   Instead of C_COLOR, you can also use RGB_INDICES and RGB_TABLE to select colors from a predefined table.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_FILL_P">
+   </a>
+   C_FILL_PATTERN
+  </h3>
+  <p>
+   Set this property to an array of IDLgrPattern objects representing the patterns to be applied at each contour level if the FILL property is non-zero. If there are more contour levels than fill patterns, the patterns will be cyclically repeated. If this property is set to 0, all contour levels are filled with a solid color (this is the default).
+  </p>
+  <h3 class="Keyword">
+   <a name="C_LABEL_">
+   </a>
+   C_LABEL_INTERVAL
+  </h3>
+  <p>
+   Set this property to a vector of values indicating the distance (relative to the length of each contour path) between labels for each contour level. If the number of contour levels exceeds the number of provided intervals, the values will be repeated cyclically. The default is 0.4.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_LABEL_2">
+   </a>
+   C_LABEL_NOGAPS
+  </h3>
+  <p>
+   Set this property to a vector of values indicating whether gaps should be computed for the labels at the corresponding contour value (so that the contour line does not pass through the label). A zero value indicates that gaps will be computed for labels at that contour value (this is the default); a non-zero value indicates that no gaps will be computed for labels at that contour value. If the number of contour levels exceeds the number of elements in this vector, the values will be repeated cyclically.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_LABEL_3">
+   </a>
+   C_LABEL_OBJECTS
+  </h3>
+  <p>
+   Set this property to an array of object references to provide examples of labels to be drawn for each contour level. The objects specified via this property must inherit from either IDLgrSymbol
+or IDLgrText. If a single IDLgrText object is provided, each of its strings will correspond to a contour level. If a vector of objects is used, any IDLgrText objects should have only a single string; each object will correspond to a contour level. 
+By default, with C_LABEL_OBJECTS set equal to a null object, IDL computes text labels that are the string representations of the corresponding contour level values. 
+The contour labels will have the same color as their contour level (see C_COLOR) unless the C_USE_LABEL_COLOR property is specified. The orientation of the label will be automatically computed unless the C_USE_LABEL_ORIENTATION property is specified. The horizontal and vertical alignment of any text labels will default to 0.5 (i.e., centered) unless the USE_TEXT_ALIGNMENTS property is specified.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The objects specified via this property are used as descriptors only. The actual objects drawn as labels are generated by IDL.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_LABEL_4">
+   </a>
+   C_LABEL_SHOW
+  </h3>
+  <p>
+   Set this property to a scalar 1 to label all contour levels, or to a vector of 0's or 1's. For each contour value, if the corresponding value in the C_LABEL_SHOW vector is non-zero, the contour line for that contour value will be labeled. If the number of contour levels exceeds the number of elements in this vector, the  values will be repeated cyclically. The default is 0 indicating that no contour levels will be labeled.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_LINEST">
+   </a>
+   C_LINESTYLE
+  </h3>
+  <p>
+   Set this property to an array of strings or integers representing the linestyle of each contour level. If this property is set to 0, all levels are drawn as solid lines (this is the default). 
+
+The allowed values are:
+  </p>
+  <table class="TableStyle_Keyword_Table" cellspacing="0">
+   <col style="width: 149px;" />
+   <col style="width: 369px;" />
+   <tr>
+    <th class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+     Index
+    </th>
+    <th class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+     String (case insensitive)
+    </th>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep" style="text-align: center;">
+     0
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+     'solid' or '-'(dash)
+    </td>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep" style="text-align: center;">
+     1
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+     'dot' or ':'(colon)
+    </td>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep" style="text-align: center;">
+     2
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+     'dash' or '--' (double dashes)
+    </td>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep" style="text-align: center;">
+     3
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+     'dash dot' or '-.'
+    </td>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep" style="text-align: center;">
+     4
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+     'dash dot dot dot' or '-:'
+    </td>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep" style="text-align: center;">
+     5
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+     'long dash' or '__' (double underscores)
+    </td>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep" style="text-align: center;">
+     6
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+     'none' or ' ' (space)
+    </td>
+   </tr>
+  </table>
+  <h3 class="Keyword">
+   <a name="C_THICK">
+   </a>
+   C_THICK
+  </h3>
+  <p>
+   Set this property to an array representing the thickness (between 1 and 10 points) to be applied at each contour level. If there are more contour levels than values, the values will be cyclically repeated. If this property is omitted or set to 0, all contour levels are drawn with a line thickness of 1 point.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_USE_LA">
+   </a>
+   C_USE_LABEL_COLOR
+  </h3>
+  <p>
+   Set this property to a vector of values (0 or 1) to indicate whether the COLOR property value for each of the label objects (for the corresponding contour level) is to be used to draw that label. If the number of contour levels exceeds the number of elements in this vector, the values will be repeated cyclically. By default, this value is zero, indicating that the COLOR properties of the label objects will be ignored, and the C_COLOR property for the contour object will be used instead.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_USE_LA2">
+   </a>
+   C_USE_LABEL_ORIENTATION
+  </h3>
+  <p>
+   Set this property to a vector of values (0 or 1) to indicate whether the orientation for each of the label objects (for the corresponding contour level) is to be used when drawing the label. For text, the orientation of the object corresponds to the BASELINE and UPDIR property values; for a symbol, this refers to the default (un-rotated) orientation of the symbol. If the number of contour levels exceeds the number of elements in this vector, the values will be repeated cyclically. By default, this value is zero, indicating that orientation of the label objects will be automatically computed to correspond to the direction of the contour paths.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_VALUE">
+   </a>
+   C_VALUE
+  </h3>
+  <p>
+   Set this property to a scalar value or a vector of values for which contour levels are to be drawn. If this property is set to 0, contour levels will be evenly sampled across the range of the Z argument, using the value of the N_LEVELS property to determine the number of samples. IDL converts, maintains, and returns this data as double-precision floating-point.
+  </p>
+  <h3 class="Keyword">
+   <a name="CLIP">
+   </a>
+   CLIP
+  </h3>
+  <p>
+   Set this property to 1 to clip portions of the graphic that lie outside of the dataspace range, or to 0 to disable clipping. The default is 1.
+  </p>
+  <h3 class="Keyword">
+   <a name="COLOR">
+   </a>
+   COLOR&#160;
+  </h3>
+  <div madcap:targetname="ColorProp">
+   <p>
+    Set this property to a
+    <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color">
+     string or RGB vector
+    </a>
+    giving the contour color.
+   </p>
+   <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+    <span class="autonumber">
+     <span>
+      <b>
+       Note:
+      </b>
+     </span>
+    </span>
+    When you retrieve the COLOR property, the returned value will always be a three-element RGB vector, regardless of how the color was initially specified.
+   </p>
+  </div>
+  <p>
+   This value will be ignored if the C_COLOR property is set to a vector.
+  </p>
+  <p>
+   <a name="CROSSHAIR">
+   </a>
+  </p>
+  <h3 class="Keyword">
+   <a name="CROSSHAIR">
+   </a>
+   CROSSHAIR (Get Only)
+  </h3>
+  <p>
+   Use this property to retrieve a reference to the Crosshair graphic. All graphics objects within the same set of axes share a single Crosshair graphic. For Plot graphics the default behavior is to display the crosshair when the plot is selected. For other graphics the crosshair is disabled. The STYLE property may be used to control the automatic crosshair display, while the LOCATION property is used to manually draw a crosshair.
+  </p>
+  <p>
+   You can get and set the following properties on the retrieved crosshair:
+  </p>
+  <table style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');caption-side: top;margin-left: 0;margin-right: auto;" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col style="width: 200px;" class="Column-Column1" />
+   <col style="width: 550px;" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <th class="HeadE-Column1-Header1">
+      <p>
+       Property
+      </p>
+     </th>
+     <th class="HeadD-Column1-Header1">
+      <p>
+       Description
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       ANTIALIAS
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 to enable anti-aliasing for the lines.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       COLOR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      A string or RGB vector containing the color.
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       HIDE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 to hide the crosshair, 0 to show.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       INTERPOLATE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Set to 1 to force interpolation between Plot data points when SNAP is active. For other graphics this property is ignored. The default is&#160;0.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       LINESTYLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       An integer or string giving the line style. The default is 'dot'.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       LOCATION
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The location at which to draw the crosshair. For Plot graphics, if SNAP is enabled, then only the X coordinate needs to be supplied. Otherwise, LOCATION should be set to a two-element vector [X,&#160;Y] for two-dimensional graphics or [X,&#160;Y,&#160;Z] for three-dimensional graphics. If STYLE is currently "None", then setting the LOCATION will automatically set the STYLE to "Manual".
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       NAME
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The name of the graphic.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       SNAP
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Set to 1 to snap the crosshair to the nearest Plot data point. For other graphics this property is ignored. The default is&#160;1.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       STYLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      An integer or string giving the crosshair style. Possible values are:
+      <br />
+      0 - "None" - never draw the crosshair. This is the default.
+      <br />
+      1 - "Manual" - draw the crosshair using the LOCATION property.
+      <br />
+      2 - "Auto" - automatically draw the crosshair. This is the default for plots.
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       THICK
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The thickness of the lines. The default is 1.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       TRANSPARENCY
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The percent transparency of the lines. The default is 50.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p class="Keyword">
+       UVALUE
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       An IDL variable of any data type.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   For example, use the CROSSHAIR property to draw a crosshair on an image:
+  </p>
+  <p class="Code">
+   im = IMAGE(/TEST, TRANSPARENCY=50, AXIS_STYLE=2)
+  </p>
+  <p class="Code">
+   c = im.CROSSHAIR
+  </p>
+  <p class="Code">
+   c.COLOR = 'red'
+  </p>
+  <p class="Code">
+   c.THICK = 2
+  </p>
+  <p class="Code">
+   c.LOCATION = [300, 200]
+  </p>
+  <p>
+   See &#160;
+   <a href="../../GuideMe/MouseEventFunctions.html" class="MCXref_0">
+    Creating Mouse Event Functions
+   </a>
+   for a more detailed crosshair example.
+  </p>
+  <h3 class="Keyword">
+   <a name="DAYS_OF_">
+   </a>
+   DAYS_OF_WEEK
+  </h3>
+  <p>
+   Set this property to a vector of 7 strings to indicate the names to be used for the days of the week when processing explicitly formatted dates  with the LABEL_FORMAT property.
+  </p>
+  <h3 class="Keyword">
+   <a name="DEPTH_CU">
+   </a>
+   DEPTH_CUE
+  </h3>
+  <p>
+   Set this property to a two-element vector [
+   <i>
+    bright
+   </i>
+   ,
+   <i>
+    dim
+   </i>
+   ] specifying the near and far planes for depth cueing, in normalized units. Depth cueing causes graphics objects that are further away to fade into the background.&#160;The first element is where the fade starts to take effect, while the second element is where the objects are completely transparent. Negative values are closer to the eye, while positive values are farther from the eye. The default value is [0, 0] which disables depth cueing. A typical value would be [0, 1], which would cause objects to start to fade at the mid-plane of the window, and completely fade out at a normalized eye distance of 1.
+  </p>
+  <h3 class="Keyword">
+   <a name="DOWNHILL">
+   </a>
+   DOWNHILL
+  </h3>
+  <p>
+   Set this property to indicate that tick marks should be drawn on each contour level to indicate the downhill direction relative to the contour line.
+  </p>
+  <h3 class="Keyword">
+   <a name="FILL">
+   </a>
+   FILL
+  </h3>
+  <p>
+   Set this property to indicate that the contours should be filled. The default is to draw the contour levels as lines without filling.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   IDL only fills the regions in between the contour levels, and does not fill the region below the lowest level or above the highest level. To fill the region below the lowest level, you should specify an extra value at the start of your C_VALUE array that is less than the minimum of your contour data, along with an associated color in either C_COLOR or RGB_INDICES. Similarly, to fill the region inside the highest contour level, you should specify an extra value at the end of the C_VALUE array that is greater than the highest value in your data.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When saving to KML file format, the file size can be large. If this is an issue, try saving to KMZ format instead.
+  </p>
+  <h3 class="Keyword">
+   <a name="FONT_COL">
+   </a>
+   FONT_COLOR
+  </h3>
+  <p>
+   Set this property to a
+   <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color">
+    string or RGB vector
+   </a>
+   giving the color of the contour labels, title text, and axis text (if present). The default value is "black".
+  </p>
+  <h3 class="Keyword">
+   <a name="FONT_NAM">
+   </a>
+   FONT_NAME
+  </h3>
+  <p>
+   Set this property equal to a string specifying the IDL or system font for the contour labels, title text, and axes (if present). The default value is “Helvetica”.
+  </p>
+  <h3 class="Keyword">
+   <a name="FONT_SIZ">
+   </a>
+   FONT_SIZE
+  </h3>
+  <p>
+   Set this property equal to an integer specifying the font size for the contour labels, title text, and axes (if present). The default value is 16 points.
+  </p>
+  <h3 class="Keyword">
+   <a name="FONT_STY">
+   </a>
+   FONT_STYLE
+  </h3>
+  <p>
+   Set this property equal to an integer or a string specifying the font style for the contour labels, title text, and axes (if present). Allowed values are:
+  </p>
+  <table style="margin-left: 0;margin-right: auto;" class="TableStyle_Keyword_Table" cellspacing="0">
+   <col style="width: 70px;" />
+   <col style="width: 180px;" />
+   <col style="width: 128px;" />
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+     <p>
+      Integer
+     </p>
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+     <p>
+      <b>
+       String
+      </b>
+     </p>
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+     <p>
+      Resulting Style
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+     <p>
+      0
+     </p>
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+     <p>
+      "Normal" or "rm"
+     </p>
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+     <p>
+      Default (roman)
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+     <p>
+      1
+     </p>
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+     <p>
+      "Bold" or "bf"
+     </p>
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+     <p>
+      Bold
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+     <p>
+      2
+     </p>
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+     <p>
+      "Italic" or "it"
+     </p>
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+     <p>
+      Italic
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+     <p>
+      3
+     </p>
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+     <p>
+      "Bold italic" or "bi"
+     </p>
+    </td>
+    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+     <p>
+      Bold italic
+     </p>
+    </td>
+   </tr>
+  </table>
+  <h3 class="Keyword">
+   <a name="GRID_UNI">
+   </a>
+   GRID_UNITS
+  </h3>
+  <p>
+   Set this property to an integer or string specifying the units for the contour grid. This property applies only when there is a map projection inserted. It has the following values:
+  </p>
+  <ul>
+   <li value="1">
+    <p>
+     <b>
+      0 or ""
+     </b>
+     - None. The image grid is in arbitrary units that are not tied to a map projection. The image will not be warped to the current map projection.
+    </p>
+   </li>
+   <li value="2">
+    <p>
+     <b>
+      1 or "m" or "meters"
+     </b>
+     - Meters. The image grid is in meters, and is tied to a particular map projection. The image will be warped to the current map projection.
+    </p>
+   </li>
+   <li value="3">
+    <p>
+     <b>
+      2 or "deg" or "degrees"
+     </b>
+     - Degrees. The image grid is in degrees longitude/latitude, and will be automatically warped to the current map projection.
+    </p>
+   </li>
+  </ul>
+  <h3 class="Keyword">
+   <a name="HIDE">
+   </a>
+   HIDE
+  </h3>
+  <p>
+   Set this property to 1 to hide the graphic, or 0 to show the graphic.
+  </p>
+  <h3 class="Keyword">
+   <a name="LABEL_CO">
+   </a>
+   LABEL_COLOR
+  </h3>
+  <p>
+   Set this property to a
+   <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color">
+    string or RGB vector
+   </a>
+   giving the color of the contour labels. If this property is set to a scalar value (-1 for example) then the contour labels will be given the same color as the corresponding contour level. This is the default behavior.
+  </p>
+  <h3 class="Keyword">
+   <a name="LABEL_FO">
+   </a>
+   LABEL_FORMAT
+  </h3>
+  <p>
+   Set this property to a string that represents a format string or the name of a function to be used to format the contour labels. If the string begins with an open parenthesis, it is treated as a standard format string. (Refer to the Format Codes in the IDL Reference Guide.) If the string does not begin with an open parenthesis, it is interpreted as the name of a callback function to be used to generate contour level labels.
+  </p>
+  <p>
+   The callback function is called with three parameters: Axis, Index, and Value and an optional DATA property. Axis is simply the value 2 to indicate that values along the Z axis are being formatted, which allows a single callback routine to be used for both axis labeling and contour labeling. Index is the contour level index (indices start at 0). Value is the data value of the current contour level. DATA is the optional property allowing any user-defined value specified through the LABEL_FRMTDATA property.
+  </p>
+  <h3 class="Keyword">
+   <a name="LABEL_FR">
+   </a>
+   LABEL_FRMTDATA
+  </h3>
+  <p>
+   Set this property to a value of any type. It will be passed via the DATA property to the user-supplied formatting function specified via the LABEL_FORMAT property, if any. By default, this value is 0, indicating that the DATA property will not be passed through.
+  </p>
+  <h3 class="Keyword">
+   <a name="LABEL_UN">
+   </a>
+   LABEL_UNITS
+  </h3>
+  <p>
+   Set this property to a string indicating the units to be used for default contour level labeling. Valid values are "" (the default), "Years", "Months", "Days", "Hours", "Minutes", "Seconds", or "Time".
+  </p>
+  <h3 class="Keyword">
+   <a name="MAPGRID">
+   </a>
+   MAPGRID (Get Only)
+  </h3>
+  <p>
+   If a map projection is currently in effect, this property retrieves a reference to the
+   <a href="../M/MAPGRID.html" target="" title="" alt="" class="MCXref_0">
+    MAPGRID
+   </a>
+   object.
+  </p>
+  <h3 class="Keyword">
+   <a name="MAPPROJE">
+   </a>
+   MAPPROJECTION (Get Only)
+  </h3>
+  <p>
+   If a map projection is currently in effect, this property retrieves a reference to the
+   <a href="../M/MAP.html">
+    MAPPROJECTION
+   </a>
+   object.
+  </p>
+  <h3 class="Keyword">
+   <a name="MAP_PROJ">
+   </a>
+   MAP_PROJECTION
+  </h3>
+  <p>
+   A string giving the name of the current map projection. After creation, use this property to retrieve or set the current map projection.
+  </p>
+  <h3 class="Keyword">
+   <a name="MARGIN">
+   </a>
+   <a name="MAX_VALU">
+   </a>
+   MAX_VALUE
+  </h3>
+  <p>
+   The maximum value to be contoured. If this property is set, data values greater than the value of MAX_VALUE are treated as missing data.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The IEEE floating point value NaN is also treated as missing data.
+  </p>
+  <h3 class="Keyword">
+   <a name="MIN_VALU">
+   </a>
+   MIN_VALUE
+  </h3>
+  <p>
+   The minimum value to be contoured. If this property is set, data values less than the value of MIN_VALUE are treated as missing data.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The IEEE floating point value NaN is also treated as missing data.
+  </p>
+  <h3 class="Keyword">
+   <a name="MONTHS">
+   </a>
+   MONTHS
+  </h3>
+  <p>
+   Set this property to a vector of 12 strings indicating the names to be used for the months when processing explicitly formatted dates with the C_LABEL_FORMAT property.
+  </p>
+  <h3 class="Keyword">
+   <a name="NAME">
+   </a>
+   NAME
+  </h3>
+  <p>
+   A string that specifies the name of the graphic. The name can be used to retrieve the graphic using the brackets array notation.  If NAME is not set then a default name is chosen based on the graphic type.
+  </p>
+  <h3 class="Keyword">
+   <a name="N_LEVELS">
+   </a>
+   N_LEVELS
+  </h3>
+  <p>
+   Set this property to the number of contour levels to generate. This property is ignored if the C_VALUE property is set to a vector, in which case, the number of levels is derived from the number of elements in that vector. The default is 0, which indicates that IDL should compute a default number of levels based on the data range.
+  </p>
+  <h3 class="Keyword">
+   <a name="PERSPECT">
+   </a>
+   PERSPECTIVE
+  </h3>
+  <p>
+   Set this property to 1 to enable a perspective graphics projection. In the perspective projection, objects that are further away will appear smaller. The default is 0, which is the orthogonal perspective.
+  </p>
+  <h3 class="Keyword">
+   <a name="PLANAR">
+   </a>
+   PLANAR
+  </h3>
+  <p>
+   Set this property to indicate that the contoured data is to be projected onto a plane. Unlike the underlying IDLgrContour object, the default for ICONTOUR is planar (PLANAR = 1), which displays the contoured data in a plane. See the ZVALUE property to specify the Z value at which to display the planar Contour plot if it is displayed in a three dimensional data space.
+  </p>
+  <h3 class="Keyword">
+   <a name="RGB_INDI">
+   </a>
+   RGB_INDICES
+  </h3>
+  <p>
+   Set this property to a vector of indices into RGB_TABLE to select colors to use for the contour levels. If the number of colors selected using RGB_INDICES is less than the number of contour levels, the colors are repeated cyclically. If RGB_TABLE is set, but indices are not specified, a default vector of indices is constructed based on the values of the contour levels scaled to the byte range of RGB_TABLE. This property is ignored if C_COLOR is set.
+  </p>
+  <h3 class="Keyword">
+   <a name="RGB_TABL">
+   </a>
+   RGB_TABLE
+  </h3>
+  <p>
+   The number of the
+   <a href="../../LoadingDefaultColorTables.html">
+    predefined IDL color table
+   </a>
+   , or a 3 x 256 or 256 x 3 byte array containing color values to use for vertex colors. If the values supplied are not of type byte, they are scaled to the byte range using BYTSCL. Use the VERT_COLORS property to specify indices that select colors from the values specified with RGB_TABLE.
+  </p>
+  <h3 class="Keyword">
+   <a name="SHADE_RA">
+   </a>
+   SHADE_RANGE
+  </h3>
+  <p>
+   Set this property to a two-element array that specifies the range of pixel values (color indices) to use for shading. The first element is the color index for the darkest pixel. The second element is the color index for the brightest pixel. This value is ignored if the contour is drawn to a graphics destination that uses the RGB color model.
+  </p>
+  <h3 class="Keyword">
+   <a name="SHADING">
+   </a>
+   SHADING
+  </h3>
+  <p>
+   Set this property to 1 to use Gouraud shading, or to 0 (the default) to use flat shading. In flat shading the color has a constant intensity for each face of the contour, based on the normal vector.
+			In Gouraud shading the colors are interpolated between vertices, and then along scanlines from each of the edge intensities.
+		Gouraud shading may be slower than flat shading, but results in a smoother appearance.
+  </p>
+  <h3 class="Keyword">
+   <a name="TICKINTE">
+   </a>
+   TICKINTERVAL
+  </h3>
+  <p>
+   Set this property equal to a number indicating the distance between downhill tickmarks, in data units. If TICKINTERVAL is not set, or is set to 0, IDL will compute the distance based on the geometry of the contour.
+  </p>
+  <h3 class="Keyword">
+   <a name="TICKLEN">
+   </a>
+   TICKLEN
+  </h3>
+  <p>
+   Set this property equal to a number indicating the length of the downhill tickmarks, in data units. If TICKLEN is not set, or is set to 0, IDL will compute the length based on the geometry of the contour.
+  </p>
+  <h3 class="Keyword">
+   <a name="TITLE">
+   </a>
+   TITLE
+  </h3>
+  <p>
+   Set this property to a string specifying a title. The title properties may be modified using FONT_COLOR, FONT_NAME, FONT_SIZE, and FONT_STYLE. After creation the TITLE property may be used to retrieve a reference to the title text object, and the
+   <a href="../T/TEXT.html" target="" title="" alt="" class="MCXref_0">
+    TEXT
+   </a>
+   properties may be used to modify the title object.
+  </p>
+  <p>
+   You can also add Greek letters and mathematical symbols using a TeX-like syntax. These symbols need to be enclosed within a pair of "$" characters. See
+   <a href="../T/TEXT.html#Adding" target="" title="" alt="" class="MCXref_Heading_0">
+    Adding Mathematical Symbols and Greek Letters to the Text String
+   </a>
+   for details on the available symbols.
+  </p>
+  <h3 class="Keyword">
+   <a name="TRANSPAR">
+   </a>
+   TRANSPARENCY
+  </h3>
+  <p>
+   An integer between 0 and 100 that specifies the percent transparency of the plot line. The default value is 0.
+  </p>
+  <h3 class="Keyword">
+   <a name="USE_TEXT">
+   </a>
+   USE_TEXT_ALIGNMENTS
+  </h3>
+  <p>
+   Set this property to 1 to indicate that for any text labels (as specified via C_LABEL_OBJECTS), the ALIGNMENT and VERTICAL_ALIGNMENT property values should be honored. The default is 0, indicating that the horizontal and vertical alignments will be set to 0.5, which will produce centered labels.
+  </p>
+  <h3 class="Keyword">
+   <a name="UVALUE">
+   </a>
+   UVALUE
+  </h3>
+  <p>
+   Set this property to an IDL variable of any data type.
+  </p>
+  <h3 class="Keyword">
+   <a name="VERT_COL">
+   </a>
+   VERT_COLORS
+  </h3>
+  <p>
+   A vector of colors to be used to specify the color of a contour vertex. The vector may be of the form [n*m] or [n, m] where each entry is a color index, or of the form [3,n*m] where each 3-element row is an RGB color, or of the form [4,n*m] where each 4-element row is an RGBA color. To remove vertex colors after they have been set, set VERT_COLORS to a scalar. 
+
+		If VERT_COLORS is not specified, the entire contour is drawn in the single color provided by the COLOR property, which is the default action.  If this property is set to a vector or a two-dimensional array of equal size to
+   <i>
+    Z
+   </i>
+   , these values are indices into a color table that can be specified by the RGB_TABLE property. If more vertices exist than elements in VERT_COLORS, the elements of VERT_COLORS are cyclically repeated.
+  </p>
+  <h3 class="Keyword">
+   <a name="WINDOW">
+   </a>
+   WINDOW (Get Only)
+  </h3>
+  <p>
+   This property retrieves a reference to the
+   <a href="../W/WINDOW.html">
+    WINDOW
+   </a>
+   object which contains the graphic.
+  </p>
+  <h3 class="Keyword">
+   <a name="XRANGE">
+   </a>
+   XRANGE
+  </h3>
+  <p>
+   A two-element vector giving the X data range to plot. The default behavior is to plot the entire data range.
+  </p>
+  <h3 class="Keyword">
+   <a name="YRANGE">
+   </a>
+   YRANGE
+  </h3>
+  <p>
+   A two-element vector giving the Y data range to plot. The default behavior is to plot the entire data range.
+  </p>
+  <h3 class="Keyword">
+   <a name="ZRANGE">
+   </a>
+   ZRANGE
+  </h3>
+  <p>
+   A two-element vector giving the Z data range to plot. The default behavior is to plot the entire data range.
+  </p>
+  <h3 class="Keyword">
+   <a name="ZVALUE">
+   </a>
+   ZVALUE
+  </h3>
+  <p>
+   For a planar contour plot, the height of the Z plane onto which the contour plot is projected. This property will be ignored if PLANAR=0.
+  </p>
+  <h2 class="API">
+   Version History
+  </h2>
+  <table style="width: 100%;margin-left: auto;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col style="width: 84px;" />
+   <col />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       8.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       8.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Added the following properties: CROSSHAIR, MAP_PROJECTION, MAPGRID, MAPPROJECTION, UVALUE, WINDOW, [XYZ]SHOWTEXT, [XYZ]STYLE.
+      </p>
+      <p>
+       Added the following methods: Delete, GetData, GetValueAtLocation, MapForward, MapInverse, SetData.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      8.2
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      Added AXES, BACKGROUND_COLOR, BACKGROUND_TRANSPARENCY, CLIP properties.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   See Also
+  </h2>
+  <p madcap:conditions="">
+   <a href="../I/IMAGE.html" target="" title="" alt="" class="MCXref_Heading_0">
+    IMAGE
+   </a>
+   ,
+   <a href="../S/SURFACE.html" target="" title="" alt="" class="MCXref_Heading_0">
+    SURFACE
+   </a>
+   ,
+   <a href="../../GuideMe/Using IDL Graphics.html" target="" title="" alt="" class="MCXref_Heading_0">
+    Using IDL Graphics
+   </a>
+  </p>
+  <p class="Hidden">
+   CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOURCONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR  CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOURCONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR CONTOUR
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

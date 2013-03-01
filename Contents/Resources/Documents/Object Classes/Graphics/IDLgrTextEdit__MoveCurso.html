@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrTextEdit" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrTextEdit::MoveCursor
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrTextEdit__MoveCurso.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrTextEdit::MoveCursor
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1877359">
+   </a>
+   <a name="objects_gr_2157407275_32913">
+   </a>
+   IDLgrTextEdit::MoveCursor
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1877376">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1877383">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1877385">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1877387">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLgrTextEdit::
+   <a name="kanchor4523">
+   </a>
+   MoveCursor procedure method moves the cursor one space in the direction indicated by the direction argument. See
+   <a class="MCXref_Heading_0" href="IDLgrText.html#objects_gr_2157407275_1881241" target="" title="" alt="">
+    Character Indices in Text Strings
+   </a>
+   for more information.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1877376">
+   </a>
+   <a name="objects_gr_2157407275_1877376_PageTOC_IDLgrTextEdit">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrTextEdit.html#objects_gr_2157407275_1877008">
+    IDLgrTextEdit
+   </a>
+   ::]MoveCursor,
+   <i>
+    Window
+   </i>
+   [,
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1881042">
+    DIRECTION
+   </a>
+   ={0 | 1 | 2 | 3}][,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1877386">
+    SELECT
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1877383">
+   </a>
+   <a name="objects_gr_2157407275_1877383_PageTOC_IDLgrTextEdit">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Window
+  </h3>
+  <p>
+   An object reference to the IDLgrWindow object in which the text appears.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1877385">
+   </a>
+   <a name="objects_gr_2157407275_1877385_PageTOC_IDLgrTextEdit">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1881042">
+   </a>
+   <a name="objects_gr_2157407275_1881042_Keywords_IDLgrTextEdit">
+   </a>
+   DIRECTION
+  </h3>
+  <p>
+   Set this keyword to specify the direction the cursor moves. Possible values are:
+  </p>
+  <ul>
+   <li value="1">
+    0 — left (the default)
+   </li>
+   <li value="2">
+    1 — right
+   </li>
+   <li value="3">
+    2 — up
+   </li>
+   <li value="4">
+    3 — down
+   </li>
+  </ul>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1877386">
+   </a>
+   <a name="objects_gr_2157407275_1877386_Keywords_IDLgrTextEdit">
+   </a>
+   SELECT
+  </h3>
+  <p>
+   If set, this keyword moves the cursor and selects the text in the given direction. Otherwise, it moves the cursor and sets the selection length to zero. (See the
+   <a class="MCXref_Heading_0" href="IDLgrText_Properties.html#objects_gr_2157407275_1878147">
+    SELECTION_LENGTH
+   </a>
+   property of the
+   <a class="MCXref_Heading_0" href="IDLgrText.html#objects_gr_2157407275_1016385">
+    IDLgrText
+   </a>
+   object for more information.)
+  </p>
+  <h2 class="API">
+   Example
+  </h2>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="IDLgrTextEdit__Delete.html#objects_gr_2157407275_1877311" target="" title="" alt="">
+    IDLgrTextEdit::Delete
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1877387">
+   </a>
+   <a name="objects_gr_2157407275_1877387_PageTOC_IDLgrTextEdit">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       7.0.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Interfaces (Widgets)|About Tree Widgets" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Making a Tree Entry Visible
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Creating Applications in IDL/Making_a_Tree_Entry_Visi.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Widget Application Techniques.html">
+    Interfaces (Widgets)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="About_Tree_Widgets.html">
+    About Tree Widgets
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Making a Tree Entry Visible
+   </span>
+  </div>
+  <h1>
+   <a name="widget_tree_1678712652_98376">
+   </a>
+   <a name="widget_tree_1678712652_72442">
+   </a>
+   Making a Tree Entry Visible
+  </h1>
+  <p>
+   If your
+   <a name="kanchor4948">
+   </a>
+   tree is large or has many branches, you may need to explicitly bring a given node to the user’s attention. You can do this using the
+   <a class="MCXref_Heading_0" href="../../Reference Material/W/WIDGET_CONTROL.html#W_811389549_978561" target="" title="" alt="">
+    SET_TREE_VISIBLE
+   </a>
+   keyword to
+   <a href="../../Reference Material/W/WIDGET_CONTROL.html" target="" title="" alt="" class="MCXref_Heading_0">
+    WIDGET_CONTROL
+   </a>
+   :
+  </p>
+  <p class="Code">
+   WIDGET_CONTROL,
+   <i>
+    wTreeNode
+   </i>
+   , /SET_TREE_VISIBLE
+  </p>
+  <p>
+   were
+   <i>
+    wTreeNode
+   </i>
+   is any node attached to a tree widget — that is, any tree widget that has another tree widget as its parent widget. Setting this keyword has two possible effects:
+  </p>
+  <ol>
+   <li value="1">
+    If the specified node is inside a collapsed folder, the folder and all folders above it are expanded to reveal the node.
+   </li>
+   <li value="2">
+    If the specified node is in a portion of the tree that is not currently visible because the tree has scrolled within the parent base widget, the tree view scrolls so that the selected node is at the top of the base widget.
+   </li>
+  </ol>
+  <p>
+   Use of this keyword does not affect the tree widget selection state.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

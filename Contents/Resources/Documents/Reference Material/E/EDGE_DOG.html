@@ -1,0 +1,439 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: E" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   EDGE_DOG
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Property_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/E/EDGE_DOG.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="E_list.html">
+    Routines: E
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    EDGE_DOG
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="E_841667181_1035146">
+   </a>
+   <a name="E_841667181_95287">
+   </a>
+   EDGE_DOG
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#E_841667181_1033764">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_1034176">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_1034174">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_1033806">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_1033816">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_1033829">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_1033836">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor714">
+   </a>
+   EDGE_DOG
+   <a name="kanchor715">
+   </a>
+   function applies the Difference of Gaussians filter to a 2D image array to generate an array containing difference values that represent
+   <a name="kanchor716">
+   </a>
+   edges in the original image.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_1033764">
+   </a>
+   <a name="E_841667181_1033764_PageTOC_EDGE_DOG_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = EDGE_DOG(
+   <i>
+    Array
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#E_841667181_1033808">
+    RADIUS1
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#E_841667181_1034247">
+    RADIUS2
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#E_841667181_1033811">
+    THRESHOLD
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#E_841667181_1033814">
+    ZERO_CROSSINGS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_1034176">
+   </a>
+   <a name="E_841667181_1034176_PageTOC_EDGE_DOG_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   EDGE_DOG returns a signed difference array of the same shape as the input array. The input type is converted to an output type as follows:
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 260px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="130px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColSep">
+      <p>
+       Input
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColEnd">
+      <p>
+       Output
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       BYTE
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       INT
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       INT
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       LONG
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       UINT
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       LONG
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       ULONG
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       LONG64
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       ULONG64
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       LONG64
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="2" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Non-numeric types: not allowed
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       All other types
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Same as input type
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="E_841667181_1034174">
+   </a>
+   <a name="E_841667181_1034174_PageTOC_EDGE_DOG_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Array
+  </h3>
+  <p>
+   A 2D array of any numeric type containing the image.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_1033806">
+   </a>
+   <a name="E_841667181_1033806_PageTOC_EDGE_DOG_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="E_841667181_1033808">
+   </a>
+   <a name="E_841667181_77436">
+   </a>
+   RADIUS1
+  </h3>
+  <h3 class="Keyword">
+   <a name="E_841667181_1034247">
+   </a>
+   <a name="E_841667181_88616">
+   </a>
+   RADIUS2
+  </h3>
+  <p>
+   Set these keywords equal to scalars giving the radius in pixels of the Gaussian smoothing filters. The defaults are RADIUS1=3.0 and RADIUS2=5.0. The difference between the two RADIUS values influences the size of the features detected by the filter.
+  </p>
+  <h3 class="Keyword">
+   <a name="E_841667181_1033811">
+   </a>
+   <a name="E_841667181_69371">
+   </a>
+   THRESHOLD
+  </h3>
+  <p>
+   Set this keyword equal to a non-negative integer (or a float if
+   <i>
+    Image
+   </i>
+   is floating point) giving the clipping threshold. Gaussian differences that are smaller than this threshold are replaced with zero. This has the effect of removing small features from the result. It can be used to prevent noise in the image from being detected as edges. The default value is zero, meaning no thresholding is applied.
+  </p>
+  <h3 class="Keyword">
+   <a name="E_841667181_1033814">
+   </a>
+   <a name="E_841667181_22094">
+   </a>
+   ZERO_CROSSINGS
+  </h3>
+  <p>
+   Set this keyword equal to a two-element vector containing the values used to replace array values less than or equal to 0 and greater than zero, respectively. This creates a binary image useful for visualizing the edges.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_1033816">
+   </a>
+   <a name="E_841667181_1033816_PageTOC_EDGE_DOG_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The EDGE_DOG function can be used to isolate certain structures in an image, based on their size. This example isolates some of the bone structures in a CT scan.
+  </p>
+  <p class="Code">
+   file = FILEPATH('ctbone157.jpg', SUBDIR=['examples','data'])
+   <br />
+   READ_JPEG, file, image
+   <br />
+   IIMAGE, image, VIEW_GRID=[2,1], DIMENSIONS = [800, 500]
+   <br />
+   result = EDGE_DOG(image, RADIUS1=6.0, RADIUS2=20.0, THRESHOLD=15,$
+   <br />
+   &#160;&#160;&#160;ZERO_CROSSINGS=[0,255])
+   <br />
+   IIMAGE, result, /VIEW_NEXT
+   <br />
+  </p>
+  <p>
+   When working with a multi-channel image, it is sometimes advantageous to combine the channels into a single luminance channel with COLOR_CONVERT:
+  </p>
+  <p class="Code">
+   file = FILEPATH('rose.jpg', SUBDIR=['examples','data'])
+   <br />
+   READ_JPEG, file, rose
+   <br />
+   COLOR_CONVERT, rose, yuv, /RGB_YUV
+   <br />
+   y = BYTE(REFORM(yuv[0,*,*])*255)
+   <br />
+   IIMAGE, EDGE_DOG(y, THRESHOLD=3, ZERO_CROSSINGS=[0,255])
+   <br />
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Also see “Detecting Edges” (Chapter 8,
+   <i>
+    Image Processing in IDL
+   </i>
+   )in the
+   <code>
+    help/pdf
+   </code>
+   directory of your IDL installation.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_1033829">
+   </a>
+   <a name="E_841667181_1033829_PageTOC_EDGE_DOG_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="E_841667181_1033836">
+   </a>
+   <a name="E_841667181_1033836_PageTOC_EDGE_DOG_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="EMBOSS.html#E_841667181_1033904">
+    EMBOSS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LAPLACIAN.html#L_826528365_1070628">
+    LAPLACIAN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PREWITT.html#P_817877613_1162185">
+    PREWITT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/ROBERTS.html#R_822202989_678584">
+    ROBERTS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SHIFT_DIFF.html#S_820040301_1335939">
+    SHIFT_DIFF
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SOBEL.html#S_820040301_678928">
+    SOBEL
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

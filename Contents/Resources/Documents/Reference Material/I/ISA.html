@@ -1,0 +1,861 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   ISA
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/ISA.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    ISA
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="I_833016429_1127569">
+   </a>
+   <a name="I_833016429_57861">
+   </a>
+   ISA
+  </h1>
+  <p>
+   The
+   <a name="kanchor1562">
+   </a>
+   ISA function determines whether a variable is of a certain type, class, or structure name. It can also test whether a variable is a valid object or pointer, whether it is an array or scalar, and if a variable is associated with a file.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = ISA(
+   <i>
+    Variable
+   </i>
+   [,&#160;
+   <i>
+    Typename
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_1127602" target="" title="" alt="">
+    ARRAY
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_1127605" target="" title="" alt="">
+    FILE
+   </a>
+   ] [, /
+   <a href="#NULL" target="" title="" alt="" class="MCXref_0">
+    NULL
+   </a>
+   ] [, /
+   <a href="#NUMBER" target="" title="" alt="" class="MCXref_0">
+    NUMBER
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_1127608" target="" title="" alt="">
+    SCALAR
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns 1 (TRUE) if
+   <i>
+    Variable
+   </i>
+   is defined, and (optionally) matches
+   <i>
+    Typename
+   </i>
+   or one of the other keywords. Otherwise, 0 (FALSE) is returned.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If
+   <i>
+    Variable
+   </i>
+   is a scalar object or pointer, and
+   <i>
+    Typename
+   </i>
+   is not present, ISA returns 1 (TRUE) if the object or pointer is valid, and 0 (FALSE) if it is a null object or pointer.
+  </p>
+  <h2 class="API">
+   Argument
+  </h2>
+  <h3 class="Argument">
+   Variable
+  </h3>
+  <p>
+   An IDL variable or expression.
+  </p>
+  <h3 class="Argument">
+   Typename
+  </h3>
+  <p>
+   An optional scalar string type name to test against.
+   <i>
+    Typename
+   </i>
+   can be an IDL basic type name (like “FLOAT”), an object class name, or a structure name. For objects, the value 1 (TRUE) is returned if the variable contains
+   <i>
+    Typename
+   </i>
+   as either the class name or the name of a superclass. For structures, the value 1 is returned if the variable is a named structure of
+   <i>
+    Typename
+   </i>
+   , or if the variable inherits from a structure of
+   <i>
+    Typename
+   </i>
+   . For structures, the type name “Anonymous” may also be used to determine if the variable is an anonymous structure. In all cases, name matching is case insensitive.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If
+   <i>
+    Variable
+   </i>
+   is a scalar object or a one-element object array, then
+   <i>
+    Typename
+   </i>
+   can be the class name or the name of a superclass. If
+   <i>
+    Variable
+   </i>
+   is an object array with two or more elements,
+   <i>
+    Typename
+   </i>
+   can only be the IDL basic type name “OBJECT”. Structure arrays do not have this restriction because every element in a structure array must be of the same structure type.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If
+   <i>
+    Variable
+   </i>
+   is an undefined variable, and
+   <i>
+    Typename
+   </i>
+   is set to "UNDEFINED", then ISA will return 1 (TRUE). This is the only case where ISA will return 1 for an undefined variable.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If
+   <i>
+    Variable
+   </i>
+   is  equal to !NULL, and
+   <i>
+    Typename
+   </i>
+   is set to "UNDEFINED", then ISA will return 1 (TRUE). The NULL keyword can be used to distinguish between undefined variables and !NULL variables.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="I_833016429_1127602">
+   </a>
+   <a name="I_833016429_65422">
+   </a>
+   ARRAY
+  </h3>
+  <p>
+   Set this keyword to return 1 (TRUE) if
+   <i>
+    Variable
+   </i>
+   is an array, list, or structure and (optionally) matches
+   <i>
+    Typename
+   </i>
+   , and 0 (FALSE) otherwise. This keyword cannot be combined with the SCALAR keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_1127605">
+   </a>
+   <a name="I_833016429_22162">
+   </a>
+   FILE
+  </h3>
+  <p>
+   Set this keyword to return 1 (TRUE) if
+   <i>
+    Variable
+   </i>
+   is associated with a file (using the
+   <a class="MCXref_Heading_0" href="../A/ASSOC.html#A_850317933_675739" target="" title="" alt="">
+    ASSOC
+   </a>
+   function) and (optionally) matches
+   <i>
+    Typename
+   </i>
+   , and 0 (FALSE) otherwise.
+  </p>
+  <h3 class="Keyword">
+   <a name="NULL">
+   </a>
+   NULL
+  </h3>
+  <p>
+   Set this keyword to return 1 (TRUE) if
+   <i>
+    Variable
+   </i>
+   is equal to the
+   <a href="../../Creating IDL Programs/Components of the IDL Language/The_Null_Variable.html">
+    !NULL
+   </a>
+   system variable, and 0 (FALSE) if otherwise. This keyword cannot be combined with any other keywords.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   The NULL keyword allows you to distinguish between a variable that is simply undefined, and a variable that is equal to !NULL.
+  </p>
+  <h3 class="Keyword">
+   <a name="NUMBER">
+   </a>
+   NUMBER
+  </h3>
+  <p>
+   Set this keyword to return 1 (TRUE) if
+   <i>
+    Variable
+   </i>
+   is a numeric type, and 0 (FALSE) if otherwise. Numeric types include byte, any signed or unsigned integer type, float, double, complex, or double complex.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_1127608">
+   </a>
+   <a name="I_833016429_33838">
+   </a>
+   SCALAR
+  </h3>
+  <p>
+   Set this keyword to return 1 (TRUE) if
+   <i>
+    Variable
+   </i>
+   is a scalar and (optionally) matches
+   <i>
+    Typename
+   </i>
+   , and 0 (FALSE) otherwise. This keyword cannot be combined with the ARRAY keyword.
+  </p>
+  <h2 class="API">
+   Examples
+  </h2>
+  <p class="Code">
+   ; undefined variable foo
+  </p>
+  <table style="width: 432px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    &#160;
+   </p>
+   <col width="513px" />
+   <col width="145px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColSep">
+      <p>
+       Statement
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColEnd">
+      <p>
+       IDL Prints
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColSep">
+      <p class="Code">
+       PRINT, ISA(foo)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       0
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Code">
+   a = 1.0
+  </p>
+  <table style="width: 432px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    &#160;
+   </p>
+   <col width="514px" />
+   <col width="144px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColSep">
+      <p>
+       Statement
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColEnd">
+      <p>
+       IDL Prints
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColSep">
+      <p class="Code">
+       PRINT, ISA(a)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       PRINT, ISA(a, /NUMBER)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_1_0_ColSep">
+      <p class="Code">
+       PRINT, ISA(a, 'Float')
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_1_0_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       PRINT, ISA(a, /SCALAR)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColSep">
+      <p class="Code">
+       PRINT, ISA(a, /SCALAR, /NUMBER)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       PRINT, ISA(a, 'Float', /SCALAR)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_1_0_ColSep">
+      <p class="Code">
+       PRINT, ISA(a, 'Float', /ARRAY)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_1_0_ColEnd">
+      <p class="Code">
+       0
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       PRINT, ISA(a, 'String')
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       0
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColSep">
+      <p class="Code">
+       PRINT, ISA(STRING(a), /NUMBER)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       0
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Code">
+   list = LIST(1,2,3)
+  </p>
+  <table style="width: 432px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    &#160;
+   </p>
+   <col width="514px" />
+   <col width="144px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColSep">
+      <p>
+       Statement
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColEnd">
+      <p>
+       IDL Prints
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColSep">
+      <p class="Code">
+       PRINT, ISA(list, 'LIST')
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColSep">
+      <p class="Code">
+       PRINT, ISA(list, /ARRAY)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Code">
+   struct = {MYSTRUCT, field1: 'hi'}
+  </p>
+  <table style="width: 432px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    &#160;
+   </p>
+   <col width="514px" />
+   <col width="142px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColSep">
+      <p>
+       Statement
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColEnd">
+      <p>
+       IDL Prints
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColSep">
+      <p class="Code">
+       PRINT, ISA(struct)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       PRINT, ISA(struct, 'MYSTRUCT')
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_1_0_RowEnd_ColSep">
+      <p class="Code">
+       ; structures are always arrays
+      </p>
+      <p class="Code">
+       PRINT, ISA(struct, /ARRAY)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Code">
+   ptr = PTR_NEW()
+  </p>
+  <table style="width: 432px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    &#160;
+   </p>
+   <col width="514px" />
+   <col width="140px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColSep">
+      <p>
+       Statement
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColEnd">
+      <p>
+       IDL Prints
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColSep">
+      <p class="Code">
+       PRINT, ISA(ptr)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColEnd">
+      <p class="Code">
+       0
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       PRINT, ISA(ptr, /SCALAR)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       0
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_1_0_ColSep">
+      <p class="Code">
+       PRINT, ISA(ptr, /ARRAY)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_1_0_ColEnd">
+      <p class="Code">
+       0
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_1_0_RowEnd_ColSep">
+      <p class="Code">
+       PRINT, ISA(ptr, ‘POINTER’)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Code">
+   obj = OBJ_NEW('IDLgrModel')
+  </p>
+  <table style="width: 432px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    &#160;
+   </p>
+   <col width="514px" />
+   <col width="138px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColSep">
+      <p>
+       Statement
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Head_0_0_RowSep_ColEnd">
+      <p>
+       IDL Prints
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColSep">
+      <p class="Code">
+       PRINT, ISA(obj, /SCALAR)
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       ; IDL basic type
+      </p>
+      <p class="Code">
+       PRINT, ISA(obj, 'OBJREF')
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_1_0_ColSep">
+      <p class="Code">
+       ; my class
+      </p>
+      <p class="Code">
+       PRINT, ISA(obj, 'IDLgrModel')
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_1_0_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       ; a superclass
+      </p>
+      <p class="Code">
+       PRINT, ISA(obj, 'IDLitComponent')
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColSep">
+      <p class="Code">
+       ; not a superclass
+      </p>
+      <p class="Code">
+       PRINT, ISA(obj, 'IDLgrView')
+      </p>
+     </td>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       0
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       8.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      8.1
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      Added NUMBER keyword
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      8.2
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      Added NULL keyword
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../A/ASSOC.html#A_850317933_675739" target="" title="" alt="">
+    ASSOC
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SIZE.html#S_820040301_678885" target="" title="" alt="">
+    SIZE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/TYPENAME.html#T_809226861_1160964" target="" title="" alt="">
+    TYPENAME
+   </a>
+   ,&#160;
+   <a href="../../Creating IDL Programs/Components of the IDL Language/IDL_Data_Types.html#constants_818058343_672352" target="" title="" alt="" class="MCXref_0">
+    IDL Data Types
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

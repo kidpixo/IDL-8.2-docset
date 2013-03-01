@@ -1,0 +1,704 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: D" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   DISTANCE_MEASURE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/D/DISTANCE_MEASURE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="D_list.html">
+    Routines: D
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    DISTANCE_MEASURE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="D_843829869_1033423">
+   </a>
+   <a name="D_843829869_84938">
+   </a>
+   DISTANCE_MEASURE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#D_843829869_1032995">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_1033009">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_1033012">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_1033015">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_1033075">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_1033139">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_1033141">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor700">
+   </a>
+   DISTANCE_MEASURE function computes the pairwise distance between a set of items or observations. The DISTANCE_MEASURE function is designed to be used with the CLUSTER_TREE function.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    distance_measure.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_1032995">
+   </a>
+   <a name="D_843829869_1032995_PageTOC_DISTANCE_MEASURE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = DISTANCE_MEASURE(
+   <i>
+    Array
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#D_843829869_1033017">
+    DOUBLE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#D_843829869_1033020">
+    MATRIX
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#D_843829869_1033023">
+    MEASURE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#D_843829869_1033069">
+    POWER_MEASURE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_1033009">
+   </a>
+   <a name="D_843829869_1033009_PageTOC_DISTANCE_MEASURE_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The
+   <i>
+    Result
+   </i>
+   is a vector of
+   <i>
+    m
+   </i>
+   *(
+   <i>
+    m
+   </i>
+   -1)/2 elements containing the distance matrix in compact form. Given a distance between two items,
+   <i>
+    D
+   </i>
+   <sub>
+    i
+   </sub>
+   <sub>
+    ,
+   </sub>
+   <sub style="font-style: italic;">
+    j
+   </sub>
+   , the distances within Result are returned in the order: [
+   <i>
+    D
+   </i>
+   <sub>
+    0, 1
+   </sub>
+   ,
+   <i>
+    D
+   </i>
+   <sub>
+    0, 2
+   </sub>
+   , ...,
+   <i>
+    D
+   </i>
+   <sub>
+    0,
+   </sub>
+   <sub style="font-style: italic;">
+    m
+   </sub>
+   <sub>
+    -1
+   </sub>
+   ,
+   <i>
+    D
+   </i>
+   <sub>
+    1, 2
+   </sub>
+   , ...,
+   <i>
+    D
+   </i>
+   <sub>
+    m
+   </sub>
+   <sub>
+    -2,
+   </sub>
+   <sub style="font-style: italic;">
+    m-1
+   </sub>
+   ].
+  </p>
+  <p>
+   If MATRIX is set, then the
+   <i>
+    Result
+   </i>
+   is an
+   <i>
+    m
+   </i>
+   -by-
+   <i>
+    m
+   </i>
+   symmetric array containing the full distance matrix, with zeroes down the diagonal.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_1033012">
+   </a>
+   <a name="D_843829869_1033012_PageTOC_DISTANCE_MEASURE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Array
+  </h3>
+  <p>
+   An
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    m
+   </i>
+   array representing the coordinates (in an
+   <i>
+    n
+   </i>
+   -dimensional space) of
+   <i>
+    m
+   </i>
+   items. For example, a set of
+   <i>
+    m
+   </i>
+   points in a two-dimensional Cartesian space would be passed in as a 2-by-
+   <i>
+    m
+   </i>
+   array.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_1033015">
+   </a>
+   <a name="D_843829869_1033015_PageTOC_DISTANCE_MEASURE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="D_843829869_1033017">
+   </a>
+   <a name="D_843829869_34441">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to perform computations using double-precision arithmetic and to return a double-precision result. Set DOUBLE=0 to use single-precision for computations and to return a single-precision result. The default is /DOUBLE if
+   <i>
+    Array
+   </i>
+   is double precision, otherwise the default is DOUBLE=0.
+  </p>
+  <h3 class="Keyword">
+   <a name="D_843829869_1033020">
+   </a>
+   <a name="D_843829869_25486">
+   </a>
+   MATRIX
+  </h3>
+  <p>
+   Set this keyword to return the distance matrix as an
+   <i>
+    m
+   </i>
+   -by-
+   <i>
+    m
+   </i>
+   symmetric array. If this keyword is not set then the distance matrix is returned in compact vector form.
+  </p>
+  <h3 class="Keyword">
+   <a name="D_843829869_1033023">
+   </a>
+   <a name="D_843829869_51781">
+   </a>
+   MEASURE
+  </h3>
+  <p>
+   Set this keyword to an integer giving the distance measure (the metric) to use. Possible values are:
+  </p>
+  <table style="width: 499px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    MEASURE Values
+   </p>
+   <col width="120px" />
+   <col width="379px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Distance
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       (Default): Euclidean distance. The Euclidean distance is defined as:
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/10_9.jpg" />
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       CityBlock (Manhattan) distance. The CityBlock distance is defined as:
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/10_10.jpg" />
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Chebyshev distance. The Chebyshev distance is defined as:
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/10_11.jpg" />
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Correlative distance. The correlative distance, where
+       <i>
+        r
+       </i>
+       is the correlation coefficient between two items, is defined as:
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/10_12.jpg" />
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       4
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Percent disagreement. This distance is useful for categorical data and is defined as:
+      </p>
+      <p>
+       &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(Number of
+       <i>
+        x
+       </i>
+       <i style="font-size: 80%;vertical-align: sub;">
+        i
+       </i>
+       ≠
+       <i>
+        y
+       </i>
+       <i style="font-size: 80%;vertical-align: sub;">
+        i
+       </i>
+       )/
+       <i>
+        n
+       </i>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This keyword is ignored if POWER_MEASURE is set.
+  </p>
+  <h3 class="Keyword">
+   <a name="D_843829869_1033069">
+   </a>
+   <a name="D_843829869_71189">
+   </a>
+   POWER_MEASURE
+  </h3>
+  <p>
+   Set this keyword to a scalar or a two-element vector giving the parameters
+   <i>
+    p
+   </i>
+   and
+   <i>
+    r
+   </i>
+   to be used in the power distance, defined as:
+   <br />
+   If POWER_MEASURE is a scalar then the same value is used for both
+   <i>
+    p
+   </i>
+   and
+   <i>
+    r
+   </i>
+   (this is also known as the Minkowski distance).
+  </p>
+  <p style="text-align: center;">
+   <img src="../../images/10_13.jpg" />
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   POWER_MEASURE=1 is the same as the CityBlock distance, while POWER_MEASURE=2 is the same as Euclidean distance.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_1033075">
+   </a>
+   <a name="D_843829869_1033075_PageTOC_DISTANCE_MEASURE_">
+   </a>
+   Example
+  </h2>
+  <p class="Code">
+   ; Given a set of points in two-dimensional space.
+   <br />
+   <br />
+   &#160;&#160;&#160;DATA&#160;=&#160;[ $
+   <br />
+   &#160;&#160;&#160;[1, 1], $
+   <br />
+   &#160;&#160;&#160;[1, 3], $
+   <br />
+   &#160;&#160;&#160;[2, 2.2], $
+   <br />
+   &#160;&#160;&#160;[4, 1.75], $
+   <br />
+   &#160;&#160;&#160;[4, 4], $
+   <br />
+   &#160;&#160;&#160;[5, 1], $
+   <br />
+   &#160;&#160;&#160;[5.5, 3]]
+   <br />
+   <br />
+   ; Compute the Euclidean distance between each point.
+   <br />
+   DISTANCE&#160;=&#160;DISTANCE_MEASURE(data)
+   <br />
+   <br />
+   i1 = [0,0,0,0,0,0, 1,1,1,1,1, 2,2,2,2, 3,3,3, 4,4, 5]
+   <br />
+   i2 = [1,2,3,4,5,6, 2,3,4,5,6, 3,4,5,6, 4,5,6, 5,6, 6]
+   <br />
+   PRINT, 'Item#  Item#  Distance'
+   <br />
+   PRINT, TRANSPOSE([[i1],[i2],[distance]]), $
+   <br />
+   &#160;&#160;&#160;FORMAT&#160;=&#160;'(I3, I7, F10.2)'
+   <br />
+   <br />
+   PLOT, data[0,*], data[1,*], PSYM&#160;=&#160;6, SYMSIZE&#160;=&#160;2, $
+   <br />
+   &#160;&#160;&#160;XRANGE&#160;=&#160;[0,6], YRANGE&#160;=&#160;[0,5], $
+   <br />
+   &#160;&#160;&#160;TITLE='Distance between each point'
+   <br />
+   <br />
+   FOR i&#160;=&#160;0,N_ELEMENTS(distance)-1 DO $
+   <br />
+   &#160;&#160;&#160;PLOTS, data[*, [i1[i], i2[i]]], linestyle&#160;=&#160;1
+   <br />
+   <br />
+   ; Midpoint of each pair.
+   <br />
+   <br />
+   AVG&#160;=&#160;0.5*(data[*, i1] + data[*, i2])
+   <br />
+   XYOUTS, avg[0,*], avg[1,*], ALIGN&#160;=&#160;0.5, $
+   <br />
+   &#160;&#160;&#160;STRTRIM(STRING(distance, format&#160;=&#160;'(F7.2)'),2)
+   <br />
+  </p>
+  <p>
+   When this code is run, IDL prints:
+  </p>
+  <p class="Code">
+   Item#  Item#  Distance
+  </p>
+  <p class="Code">
+   0      1      2.00
+  </p>
+  <p class="Code">
+   0      2      1.56
+  </p>
+  <p class="Code">
+   0      3      3.09
+  </p>
+  <p class="Code">
+   0      4      4.24
+  </p>
+  <p class="Code">
+   0      5      4.00
+  </p>
+  <p class="Code">
+   0      6      4.92
+  </p>
+  <p class="Code">
+   1      2      1.28
+  </p>
+  <p class="Code">
+   1      3      3.25
+  </p>
+  <p class="Code">
+   1      4      3.16
+  </p>
+  <p class="Code">
+   1      5      4.47
+  </p>
+  <p class="Code">
+   1      6      4.50
+  </p>
+  <p class="Code">
+   2      3      2.05
+  </p>
+  <p class="Code">
+   2      4      2.69
+  </p>
+  <p class="Code">
+   2      5      3.23
+  </p>
+  <p class="Code">
+   2      6      3.59
+  </p>
+  <p class="Code">
+   3      4      2.25
+  </p>
+  <p class="Code">
+   3      5      1.25
+  </p>
+  <p class="Code">
+   3      6      1.95
+  </p>
+  <p class="Code">
+   4      5      3.16
+  </p>
+  <p class="Code">
+   4      6      1.80
+  </p>
+  <p class="Code">
+   5      6      2.06
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Distance Between Each Point Using DISTANCE_MEASURE
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/distancemeasure1.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 22.50067px;margin-bottom: 6.000484px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="D_843829869_1033139">
+   </a>
+   <a name="D_843829869_1033139_PageTOC_DISTANCE_MEASURE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="D_843829869_1033141">
+   </a>
+   <a name="D_843829869_1033141_PageTOC_DISTANCE_MEASURE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/CLUSTER_TREE.html#C_854643309_1074886">
+    CLUSTER_TREE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="DENDROGRAM.html#D_843829869_1032476">
+    DENDROGRAM
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF-EOS Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   EOS_GD_DEFPROJ
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF-EOS Routines/EOS_GD_DEFPROJ.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF-EOS Routines.html">
+    HDF-EOS Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    EOS_GD_DEFPROJ
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_EOS_3103509269_1006258">
+   </a>
+   <a name="HDF_EOS_3103509269_52426">
+   </a>
+   EOS_GD_DEFPROJ
+  </h1>
+  <p>
+   This function
+   <a name="kanchor757">
+   </a>
+   defines the GCTP projection and projection parameters of the grid. For GCTP projection information, see the
+   <span class="Italic">
+    HDF-EOS User’s Guide, Volume 2: Reference Guide
+   </span>
+   provided by NASA.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1030350_PageTOC_EOS_GD_DEFPROJ_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = EOS_GD_DEFPROJ(
+   <span class="Italic">
+    gridID
+   </span>
+   ,
+   <span class="Italic">
+    projcode
+   </span>
+   ,
+   <span class="Italic">
+    zonecode
+   </span>
+   ,
+   <span class="Italic">
+    spherecode
+   </span>
+   ,
+   <span class="Italic">
+    projparm
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1030353_PageTOC_EOS_GD_DEFPROJ_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns SUCCEED(0) if successful and FAIL(–1) otherwise
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1030355_PageTOC_EOS_GD_DEFPROJ_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   gridID
+  </h3>
+  <p>
+   Grid id (long) returned by
+   <a class="MCXref_Heading_0" href="EOS_GD_CREATE.html#HDF_EOS_3103509269_1005799">
+    EOS_GD_CREATE
+   </a>
+   or
+   <a class="MCXref_Heading_0" href="EOS_GD_ATTACH.html#HDF_EOS_3103509269_1005515">
+    EOS_GD_ATTACH
+   </a>
+   .
+  </p>
+  <h3 class="Argument">
+   projcode
+  </h3>
+  <p>
+   GCTP projection code (long).
+  </p>
+  <h3 class="Argument">
+   zonecode
+  </h3>
+  <p>
+   GCTP zone code used by UTM projection (long).
+  </p>
+  <h3 class="Argument">
+   spherecode
+  </h3>
+  <p>
+   GCTP spheroid code (long).
+  </p>
+  <h3 class="Argument">
+   projparm
+  </h3>
+  <p>
+   GCTP projection parameter array.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1063804_PageTOC_EOS_GD_DEFPROJ_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1030368_PageTOC_EOS_GD_DEFPROJ_">
+   </a>
+   Examples
+  </h2>
+  <h3>
+   <a name="HDF_EOS_3103509269_1037562_Keywords_EOS_GD_DEFPROJ_">
+   </a>
+   Example 1
+  </h3>
+  <p>
+   In this example, we define a Universal Transverse Mercator (UTM) grid bounded by 54 E - 60 E longitude and 20 N - 30 N latitude - UTM zonecode 40, using default spheroid (Clarke 1866), spherecode = 0:
+  </p>
+  <p class="Code">
+   spherecode = 0
+  </p>
+  <p class="Code">
+   zonecode = 40
+  </p>
+  <p class="Code">
+   status = EOS_GD_DEFPROJ(gridID, 1, zonecode, spherecode, 0)
+  </p>
+  <h3>
+   <a name="HDF_EOS_3103509269_1030373_Keywords_EOS_GD_DEFPROJ_">
+   </a>
+   Example 2
+  </h3>
+  <p>
+   In this example, we define a Polar Stereographic projection of the Northern Hemisphere (True scale at 90 N, 0 Longitude below pole) using the International 1967 spheroid:
+  </p>
+  <p class="Code">
+   spherecode = 3
+  </p>
+  <p class="Code">
+   projparm = lonarr (13)
+  </p>
+  <p class="Code">
+   ;Set Long below pole &amp; true scale in DDDMMMSSS.SSS form
+  </p>
+  <p class="Code">
+   projparm[5] = 90000000.00
+  </p>
+  <p class="Code">
+   status = EOS_GD_DEFPROJ(gridID, 6, 0, spherecode, projparm)
+  </p>
+  <h3>
+   <a name="HDF_EOS_3103509269_1030379_Keywords_EOS_GD_DEFPROJ_">
+   </a>
+   Example 3
+  </h3>
+  <p>
+   Finally, we define a Geographic projection. In this case, neither the zone code, sphere code, or the projection parameters are used:
+  </p>
+  <p class="Code">
+   status = EOS_GD_DEFPROJ(gridID, 0, 0, 0, 0)
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1052260_PageTOC_EOS_GD_DEFPROJ_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,584 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: M" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   MAP_PROJ_FORWARD
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/M/MAP_PROJ_FORWARD.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="M_list.html">
+    Routines: M
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    MAP_PROJ_FORWARD
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="M_824365677_1061414">
+   </a>
+   <a name="M_824365677_30282">
+   </a>
+   <a name="M_824365677_12714">
+   </a>
+   <a name="M_824365677_46108">
+   </a>
+   MAP_PROJ_FORWARD
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#M_824365677_980926">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_988600">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_980928">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_980933">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_980956">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_981045">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_981047">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1798">
+   </a>
+   MAP_PROJ_FORWARD function
+   <a name="kanchor1799">
+   </a>
+   transforms map coordinates from longitude and latitude to
+   <a name="kanchor1800">
+   </a>
+   Cartesian (x, y) coordinates, using either the !MAP system variable or a supplied map projection structure created by
+   <a class="MCXref_Heading_0" href="MAP_PROJ_INIT.html#M_824365677_981059" target="" title="" alt="">
+    MAP_PROJ_INIT
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_980926">
+   </a>
+   <a name="M_824365677_980926_PageTOC_MAP_PROJ_FORWARD_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = MAP_PROJ_FORWARD(
+   <i>
+    Longitude
+   </i>
+   [,&#160;
+   <i>
+    Latitude
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_999199">
+    CONNECTIVITY
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;/
+   <span class="Link">
+    <a href="#FILL" target="" title="" alt="" class="MCXref_0">
+     FILL
+    </a>
+   </span>
+   ] [,&#160;
+   <a href="#MAP_STRU" target="" title="" alt="" class="MCXref_0">
+    MAP_STRUCTURE
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_999214">
+    POLYGONS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_999218">
+    POLYLINES
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160; /
+   <a class="MCXref_Heading_0" href="#M_824365677_999222">
+    RADIANS
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_988600">
+   </a>
+   <a name="M_824365677_45237">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is a (2,
+   <i>
+    n
+   </i>
+   ) array containing the Cartesian (x, y) coordinates.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the POLYGONS or POLYLINES keyword is present, the number of points in the result may be different than the number of input points, depending upon whether clipping and splitting occurs.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_980928">
+   </a>
+   <a name="M_824365677_980928_PageTOC_MAP_PROJ_FORWARD_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Longitude
+  </h3>
+  <p>
+   An
+   <i>
+    n
+   </i>
+   -element vector containing the longitude values. If the
+   <i>
+    Latitude
+   </i>
+   argument is omitted,
+   <i>
+    Longitude
+   </i>
+   must be a (2,
+   <i>
+    n
+   </i>
+   ) array of longitude and latitude pairs.
+  </p>
+  <h3 class="Argument">
+   Latitude
+  </h3>
+  <p>
+   An
+   <i>
+    n
+   </i>
+   -element vector containing latitude values. If this argument is omitted,
+   <i>
+    Longitude
+   </i>
+   must be a (2,
+   <i>
+    n
+   </i>
+   ) array of longitude and latitude pairs.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_980933">
+   </a>
+   <a name="M_824365677_980933_PageTOC_MAP_PROJ_FORWARD_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="M_824365677_999199">
+   </a>
+   <a name="M_824365677_999199_Keywords_MAP_PROJ_FORWARD__">
+   </a>
+   CONNECTIVITY
+  </h3>
+  <p>
+   Set this keyword to a vector containing an input connectivity list for polygons or polylines. The CONNECTIVITY keyword allows you to specify multiple polygons or polylines using a single array.
+  </p>
+  <p>
+   The CONNECTIVITY list is a one-dimensional integer array of the form:
+  </p>
+  <p style="text-align: center;">
+   <img src="../../images/19_10.jpg" />
+  </p>
+  <p>
+   where each
+   <i>
+    m
+   </i>
+   <sub class="italic">
+    j
+   </sub>
+   is an integer specifying the number of vertices that define the polyline or polygon (the
+   <i>
+    vertex count
+   </i>
+   ), and each associated set of
+   <i>
+    i
+   </i>
+   <sub>
+    0
+   </sub>
+   ...
+   <i>
+    i
+   </i>
+   <sub class="italic">
+    m
+   </sub>
+   <sub>
+    -1
+   </sub>
+   are indices into the arrays of vertices specified by the
+   <i>
+    Longitude
+   </i>
+   and
+   <i>
+    Latitude
+   </i>
+   arguments.
+  </p>
+  <p>
+   For example, to draw polylines between the first, third, and sixth longitude and latitude values and the fourth, sixth, ninth, and tenth longitude and latitude values, set the CONNECTIVITY array equal to
+   <span class="Courier">
+    [3,0,2,5,4,3,5,8,9]
+   </span>
+   .
+  </p>
+  <p>
+   To ignore a set of entries in the CONNECTIVITY array, set the vertex count,
+   <i>
+    m
+   </i>
+   <sub class="italic">
+    j
+   </sub>
+   , equal to zero. (Note that if you set an
+   <i>
+    m
+   </i>
+   equal to zero, you must remove the associated set of
+   <i>
+    i
+   </i>
+   <sub>
+    0
+   </sub>
+   ...
+   <i>
+    i
+   </i>
+   <sub class="italic">
+    m
+   </sub>
+   <sub>
+    -1
+   </sub>
+   values as well.) To ignore the remaining entries in the CONNECTIVITY array, set the vertex count,
+   <i>
+    m
+   </i>
+   <sub class="italic">
+    j
+   </sub>
+   , equal to -1.
+  </p>
+  <p>
+   This keyword is ignored if neither POLYGONS nor POLYLINES is present.
+  </p>
+  <h3 class="Keyword">
+   <a name="FILL">
+   </a>
+   FILL
+  </h3>
+  <p>
+   Set this keyword, along with the POLYGONS keyword, to perform a tessellation on the returned polygons after any clipping or splitting has been completed. This keyword is ignored if POLYGONS is not set.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   The use of the FILL keyword avoids having to first pass your data through MAP_PROJ_FORWARD, and then again through the IDLgrTessellator object. Since IDLgrPolygon can only draw convex polygons correctly, you should use the FILL keyword when your input polygon is either complex (that is, if the polygon crosses itself) or concave. Tessellation is also useful if your data contains one polygon within another, such as an island within a lake within a country. In this case the CONNECTIVITY array could be used to pass all three polygons in to MAP_PROJ_FORWARD, and the FILL keyword would automatically perform the correct tessellation.
+  </p>
+  <h3 class="Keyword">
+   <a name="MAP_STRU">
+   </a>
+   MAP_STRUCTURE
+  </h3>
+  <p>
+   Set this keyword to a !MAP structure variable containing the projection parameters, as constructed by the
+   <a class="MCXref_Heading_0" href="MAP_PROJ_INIT.html#M_824365677_981059">
+    MAP_PROJ_INIT
+   </a>
+   . If this keyword is omitted, the !MAP system variable is used.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_999214">
+   </a>
+   <a name="M_824365677_999214_Keywords_MAP_PROJ_FORWARD__">
+   </a>
+   POLYGONS
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain a connectivity array of the form described above in the CONNECTIVITY keyword.
+  </p>
+  <p>
+   If this keyword is present, the arrays specified by the
+   <i>
+    Longitude
+   </i>
+   and
+   <i>
+    Latitude
+   </i>
+   arguments are assumed to be the vertices of a closed polygon. In this case, polygon clipping and splitting is performed in addition to the map transform, and the connectivity array is returned in the specified variable.
+  </p>
+  <p>
+   If this keyword is not present, the arrays specified by the
+   <i>
+    Longitude
+   </i>
+   and
+   <i>
+    Latitude
+   </i>
+   arguments are assumed to be independent points and no clipping or splitting is performed.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_999218">
+   </a>
+   <a name="M_824365677_999218_Keywords_MAP_PROJ_FORWARD__">
+   </a>
+   POLYLINES
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain a connectivity array of the form described above in the CONNECTIVITY keyword.
+  </p>
+  <p>
+   If this keyword is present, the arrays specified by the
+   <i>
+    Longitude
+   </i>
+   and
+   <i>
+    Latitude
+   </i>
+   arguments are assumed to be the vertices of a polyline. In this case, polyline clipping and splitting is performed in addition to the map transform, and the connectivity array is returned in the specified variable.
+  </p>
+  <p>
+   If this keyword is not present, the arrays specified by the
+   <i>
+    Longitude
+   </i>
+   and
+   <i>
+    Latitude
+   </i>
+   arguments are assumed to be independent points and no clipping or splitting is performed.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_999222">
+   </a>
+   <a name="M_824365677_999222_Keywords_MAP_PROJ_FORWARD__">
+   </a>
+   RADIANS
+  </h3>
+  <p>
+   Set this keyword to indicate that the input longitude and latitude coordinates are in radians. By default, coordinates are assumed to be in degrees.
+  </p>
+  <h3>
+   Thread Pool Keywords
+  </h3>
+  <p>
+   This routine is written to make use of IDL’s
+   <i>
+    thread pool
+   </i>
+   , which can increase execution speed on systems with multiple CPUs. The values stored in the !CPU system variable control whether IDL uses the thread pool for a given computation. In addition, you can use the thread pool keywords TPOOL_MAX_ELTS, TPOOL_MIN_ELTS, and TPOOL_NOTHREAD to override the defaults established by !CPU for a single invocation of this routine. See
+   <a class="MCXref_Chapter_Reference_0" href="../../Creating IDL Programs/Appendices/tpoolkeyw.html#tpoolkeyw_2501860834_317209" target="" title="" alt="">
+    Thread Pool Keywords
+   </a>
+   for details.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Threading is only used when individual points are being transformed, and has no effect if either the
+   <a class="MCXref_Heading_0" href="#M_824365677_999214">
+    POLYGONS
+   </a>
+   or
+   <a class="MCXref_Heading_0" href="#M_824365677_999218">
+    POLYLINES
+   </a>
+   keyword is specified.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_980956">
+   </a>
+   <a name="M_824365677_980956_PageTOC_MAP_PROJ_FORWARD_">
+   </a>
+   Example
+  </h2>
+  <p>
+   The example
+   <span class="Courier">
+    map_proj_forward_doc.pro
+   </span>
+   creates a latitude and longitude grid with labels for the Goodes Homolosine map projection. This example file is installed in the IDL installation’s
+   <span class="Courier">
+    /example/doc/plot
+   </span>
+   directory. To view the example code, enter
+   <span class="Courier">
+    .edit map_proj_forward_doc.pro
+   </span>
+   at the IDL command line. To execute the code, enter
+   <span class="Courier">
+    map_proj_forward_doc
+   </span>
+   at the IDL command line.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_981045">
+   </a>
+   <a name="M_824365677_981045_PageTOC_MAP_PROJ_FORWARD_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       FILL keyword added
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Thread pool keywords added
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="M_824365677_981047">
+   </a>
+   <a name="M_824365677_981047_PageTOC_MAP_PROJ_FORWARD_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="MAP_PROJ_INIT.html#M_824365677_981059">
+    MAP_PROJ_INIT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MAP_PROJ_INVERSE.html#M_824365677_981859">
+    MAP_PROJ_INVERSE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF-EOS Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   EOS_SW_DEFTIMEPERIOD
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF-EOS Routines/EOS_SW_DEFTIMEPERIOD.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF-EOS Routines.html">
+    HDF-EOS Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    EOS_SW_DEFTIMEPERIOD
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_EOS_3103509269_1011660">
+   </a>
+   <a name="HDF_EOS_3103509269_93123">
+   </a>
+   EOS_SW_DEFTIMEPERIOD
+  </h1>
+  <p>
+   This function
+   <a name="kanchor837">
+   </a>
+   defines a time period for a swath. It returns a swath period ID which is used by the EOS_SW_EXTRACTPERIOD function to read all the entries of a data field within the time period. A cross track is within a time period if its midpoint is within the time period box (0), or either of its endpoints is within the time period box (1), or any point of the cross track is within the time period box (2), depending on the inclusion mode designated by the user. All elements within an included cross track are considered to be within the time period even though a particular element of the cross track might be outside the time period. The swath structure must have the Time field defined.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018138_PageTOC_EOS_SW_DEFTIMEPERIOD_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = EOS_SW_DEFTIMEPERIOD(
+   <span class="_Override" style="font-style: italic;">
+    swathID
+   </span>
+   ,
+   <span class="_Override" style="font-style: italic;">
+    starttime
+   </span>
+   ,
+   <span class="_Override" style="font-style: italic;">
+    stoptime
+   </span>
+   ,
+   <span class="_Override" style="font-style: italic;">
+    mode
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018141_PageTOC_EOS_SW_DEFTIMEPERIOD_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the swath period ID if successful and FAIL (–1) otherwise.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018143_PageTOC_EOS_SW_DEFTIMEPERIOD_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   swathID
+  </h3>
+  <p>
+   Swath id (long) returned by
+   <a class="MCXref_Heading_0" href="EOS_SW_CREATE.html#HDF_EOS_3103509269_1011130">
+    EOS_SW_CREATE
+   </a>
+   or
+   <a class="MCXref_Heading_0" href="EOS_SW_ATTACH.html#HDF_EOS_3103509269_1010903">
+    EOS_SW_ATTACH
+   </a>
+   .
+  </p>
+  <h3 class="Argument">
+   starttime
+  </h3>
+  <p>
+   Start time (double) of period.
+  </p>
+  <h3 class="Argument">
+   stoptime
+  </h3>
+  <p>
+   Stop time (double) of period.
+  </p>
+  <h3 class="Argument">
+   mode
+  </h3>
+  <p>
+   Cross Track inclusion mode (long). Allowable values are:
+  </p>
+  <p class="Bullet">
+   0 = Midpoint
+  </p>
+  <p class="Bullet">
+   1 = Endpoint
+  </p>
+  <p class="Bullet">
+   2 = Anypoint
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1064218_PageTOC_EOS_SW_DEFTIMEPERIOD_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018154_PageTOC_EOS_SW_DEFTIMEPERIOD_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   In this example, we define a time period with a start time of 35232487.2 and a stop time of 36609898.1.We will consider a cross track to be within the time period if either one of the time values at the endpoints of a cross track are within the time period:
+  </p>
+  <p class="Code">
+   starttime = 35232487.2d
+  </p>
+  <p class="Code">
+   stoptime = 36609898.1d
+  </p>
+  <p class="Code">
+   periodID = EOS_SW_DEFTIMEPERIOD(swathID, starttime, stoptime, 1)
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1052864_PageTOC_EOS_SW_DEFTIMEPERIOD_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

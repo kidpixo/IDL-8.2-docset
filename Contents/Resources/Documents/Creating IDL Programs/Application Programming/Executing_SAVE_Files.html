@@ -1,0 +1,445 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Tasks|Using Procedures, Functions, SAVE Files" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Executing SAVE Files
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Application Programming/Executing_SAVE_Files.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Programming Tasks.html">
+    Tasks
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Program Types.html">
+    Using Procedures, Functions, SAVE Files
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Executing SAVE Files
+   </span>
+  </div>
+  <h1>
+   <a name="Save_3439793193_857652">
+   </a>
+   <a name="Save_3439793193_41976">
+   </a>
+   Executing SAVE Files
+  </h1>
+  <p>
+   IDL
+   <a name="kanchor3568">
+   </a>
+   SAVE files (created using the
+   <a class="MCXref_Heading_0" href="../../Reference Material/S/SAVE.html#S_820040301_678623" target="" title="" alt="">
+    SAVE
+   </a>
+   procedure) can contain one or more routines that have been packaged into a single binary file. SAVE files can also contain system or data variables.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   While IDL routines or data can be saved in a file with any extension, it is common to use the extension
+   <span class="Courier">
+    .sav
+   </span>
+   for SAVE files. Using the
+   <span class="Courier">
+    .sav
+   </span>
+   extension has two benefits: it makes it clear to another IDL user that the file contains IDL routines or data, and it allows IDL to locate routines with the same base name as the file in SAVE files located in IDL’s path.
+  </p>
+  <p>
+   This section describes various ways to re
+   <a name="kanchor3569">
+   </a>
+   store files created with the SAVE procedure. In order of increasing complexity and flexibility, your options are:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="#Save_3439793193_857679">
+     Using the IDL Virtual Machine to Run SAVE Files
+    </a>
+    ,
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="#Save_3439793193_863056">
+     Executing SAVE Files in the IDL Workbench
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="#Save_3439793193_863008">
+     Executing SAVE Files From the Operating System
+    </a>
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="#Save_3439793193_857689">
+     Executing SAVE Files by Name
+    </a>
+   </li>
+   <li value="5">
+    <a class="MCXref_Heading_0" href="#Save_3439793193_857697">
+     Using RESTORE to Access SAVE Files
+    </a>
+   </li>
+   <li value="6">
+    <a class="MCXref_Heading_0" href="#Save_3439793193_857709">
+     Using the IDL_Savefile Object to Access SAVE Files
+    </a>
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="Save_3439793193_857679">
+   </a>
+   <a name="Save_3439793193_29456">
+   </a>
+   Using the IDL Virtual Machine to Run SAVE Files
+  </h2>
+  <p>
+   Users without an IDL license can use the IDL Virtual Machine to access programs contained in SAVE files created in IDL version 6.0 or later.
+  </p>
+  <h2 class="API">
+   <a name="Save_3439793193_863056">
+   </a>
+   <a name="Save_3439793193_78348">
+   </a>
+   Executing SAVE Files in the IDL Workbench
+  </h2>
+  <p>
+   If you use the IDL Workbench
+   <b>
+    File&#160;&gt;&#160;Open
+   </b>
+   menu item to select a SAVE file with the extension
+   <span class="Courier">
+    .sav
+   </span>
+   , IDL will automatically restore the file, with the following results:
+  </p>
+  <ul>
+   <li value="1">
+    If the SAVE file contains routines, the routines are restored and IDL attempts to run a routine with the same name as the
+    <span class="Courier">
+     .sav
+    </span>
+    file.
+   </li>
+   <li value="2">
+    If the SAVE file contains data, the variables are restored in IDL’s $MAIN$ scope.
+   </li>
+  </ul>
+  <p>
+   Similarly, if the SAVE file is included in an open project, double-clicking on the file in the Project Explorer view will restore the file’s contents as described above.
+  </p>
+  <h2 class="API">
+   <a name="Save_3439793193_863008">
+   </a>
+   <a name="Save_3439793193_78827">
+   </a>
+   Executing SAVE Files From the Operating System
+  </h2>
+  <p>
+   On Windows and Macintosh systems, you can execute or restore a SAVE file directly from the operating system’s file manager. Simply double-click on a file with the extension
+   <span class="Courier">
+    .sav
+   </span>
+   in the Windows Explorer or Macintosh Finder.
+  </p>
+  <p>
+   If the SAVE file contains routines:
+  </p>
+  <ul>
+   <li value="1">
+    If IDL is already running, the routines are restored and IDL attempts to run a routine with the same name as the
+    <span class="Courier">
+     .sav
+    </span>
+    file.
+   </li>
+   <li value="2">
+    If IDL is not running, it launches in Virtual Machine mode, restores the routines and attempts to run a routine with the same name as the
+    <span class="Courier">
+     .sav
+    </span>
+    file.
+   </li>
+  </ul>
+  <p>
+   If the SAVE file contains data, the IDL Workbench launches automatically (if it is not already running) and the variables are restored in IDL’s $MAIN$ scope.
+  </p>
+  <h2 class="API">
+   <a name="Save_3439793193_857689">
+   </a>
+   <a name="Save_3439793193_97560">
+   </a>
+   Executing SAVE Files by Name
+  </h2>
+  <p>
+   You can execute a program stored in a SAVE file from the IDL command line by typing in the name of the routine if the file meets the following conditions:
+  </p>
+  <ul>
+   <li value="1">
+    The SAVE file has the same base name as the routine you wish to run
+   </li>
+   <li value="2">
+    The SAVE file has the extension
+    <span class="Courier">
+     .sav
+    </span>
+   </li>
+   <li value="3">
+    The SAVE file is stored in a directory included in the !PATH system variable
+   </li>
+  </ul>
+  <p>
+   Call the procedure with the same name as the
+   <span class="Courier">
+    .sav
+   </span>
+   file to restore the program and execute it immediately using IDL’s
+   <i>
+    <a name="kanchor3570">
+    </a>
+    automatic compilation
+   </i>
+   mechanism. IDL will search the current directory then the path specified by !PATH for a
+   <span class="Courier">
+    .sav
+   </span>
+   file with the name of the called routine and, if it finds the
+   <span class="Courier">
+    .sav
+   </span>
+   file, it restores, compiles and executes it automatically.
+  </p>
+  <p>
+   For example, to restore and execute the
+   <span class="Courier">
+    draw_arrow
+   </span>
+   routine contained in the file
+   <span class="Courier">
+    draw_arrow.sav
+   </span>
+   (created in
+   <a class="MCXref_Heading_0" href="Creating_SAVE_Files_of_P.html#Save_3439793193_857079" target="" title="" alt="">
+    Example: A SAVE File of a Simple Routine
+   </a>
+   ), enter the following at the command line:
+  </p>
+  <p class="Code">
+   draw_arrow
+  </p>
+  <p>
+   IDL will search for a file named either
+   <span class="Courier">
+    draw_arrow.pro
+   </span>
+   or
+   <span class="Courier">
+    draw_arrow.sav
+   </span>
+   , beginning in the current working directory and then searching in each directory specified by !PATH. When it finds a file whose name matches (in this case,
+   <span class="Courier">
+    draw_arrow.sav
+   </span>
+   ), it will compile the routines in the file up to and including the routine whose name matches the filename. IDL then executes the routine with the matching name. See Automatic Compilation for additional details.
+  </p>
+  <h2 class="API">
+   <a name="Save_3439793193_857697">
+   </a>
+   <a name="Save_3439793193_49818">
+   </a>
+   Using RESTORE to Access SAVE Files
+  </h2>
+  <p>
+   Use the
+   <a name="kanchor3571">
+   </a>
+   <a class="MCXref_Heading_0" href="../../Reference Material/R/RESTORE.html#R_822202989_135743" target="" title="" alt="">
+    RESTORE
+   </a>
+   procedure to explicitly restore the entire contents of a SAVE file that contains variable data or program files. Because calling a procedure with the same name as a SAVE file allows IDL to automatically find and restore the SAVE file, it isn’t always necessary to explicitly restore a
+   <span class="Courier">
+    .sav
+   </span>
+   file using RESTORE. Cases in which you
+   <i>
+    must
+   </i>
+   use RESTORE include the following:
+  </p>
+  <ul>
+   <li value="1">
+    When you are restoring a SAVE file containing variable data.
+   </li>
+   <li value="2">
+    When your SAVE file contains multiple routines, and you need to first call a routine that uses a different name than the
+    <span class="Courier">
+     .sav
+    </span>
+    file. For example, if you have a SAVE file named
+    <span class="Courier">
+     routines.sav
+    </span>
+    that contains the ARROW and BAR_PLOT procedures, you would need to restore
+    <span class="Courier">
+     routines.sav
+    </span>
+    before calling ARROW or BAR_PLOT.
+   </li>
+  </ul>
+  <p>
+   Using RESTORE is more powerful and flexible than relying on IDL’s rules for automatic compilation, for the following reasons:
+  </p>
+  <ul>
+   <li value="1">
+    The restored SAVE file can contain IDL variable data
+   </li>
+   <li value="2">
+    If the restored SAVE file contains IDL routines,
+    <i>
+     all
+    </i>
+    routines contained in the file will be restored, and
+    <i>
+     none
+    </i>
+    will be executed
+   </li>
+   <li value="3">
+    The restored SAVE file can have any filename and extension
+   </li>
+   <li value="4">
+    The restored SAVE file can be located in any directory
+   </li>
+  </ul>
+  <p>
+   For example, in
+   <a class="MCXref_Heading_0" href="Creating_SAVE_Files_of_P.html#Save_3439793193_857079" target="" title="" alt="">
+    Example: A SAVE File of a Simple Routine
+   </a>
+   , we created two SAVE files:
+   <span class="Courier">
+    imagefile.sav
+   </span>
+   and
+   <span class="Courier">
+    draw_arrow.sav
+   </span>
+   . The
+   <span class="Courier">
+    imagefile.sav
+   </span>
+   file contains image variable data. To restore the image data, enter the following at the IDL command line:
+  </p>
+  <p class="Code">
+   RESTORE, 'imagefile.sav'
+  </p>
+  <p>
+   IDL creates the variable
+   <i>
+    image
+   </i>
+   in the current scope using the saved variable data.
+  </p>
+  <p>
+   If the file you are attempting to restore is not located in your current working directory, you will need to specify a path to the file. RESTORE does not search for SAVE files in any other directory. For example, if
+   <span class="Courier">
+    draw_arrow.sav
+   </span>
+   is located in
+   <span class="Courier">
+    myappdir
+   </span>
+   , restore it using the following statement:
+  </p>
+  <p class="Code">
+   RESTORE, 'myappdir/draw_arrow.sav'
+  </p>
+  <h2 class="API">
+   <a name="Save_3439793193_857709">
+   </a>
+   <a name="Save_3439793193_82827">
+   </a>
+   Using the IDL_Savefile Object to Access SAVE Files
+  </h2>
+  <p>
+   You can use the IDL_Savefile object class to gain information about the contents of a SAVE file, and to selectively restore items from the save file. Once a routine has been restored via calls the IDL_Savefile object, you can execute it simply by typing its name at the IDL command prompt. For example, if an IDL program named
+   <span class="Courier">
+    myroutine
+   </span>
+   is stored in
+   <span class="Courier">
+    myroutine.sav
+   </span>
+   , which is located in a directory that is
+   <i>
+    not
+   </i>
+   in !PATH, entering the following at the IDL command line will restore the routine and execute it:
+  </p>
+  <p class="Code">
+   obj = OBJ_NEW('IDL_Savefile', 'path/myroutine.sav')
+  </p>
+  <p class="Code">
+   obj-&gt;RESTORE, 'myroutine'
+  </p>
+  <p class="Code">
+   myroutine
+  </p>
+  <p>
+   where
+   <i>
+    path
+   </i>
+   is the full path to the
+   <span class="Courier">
+    myroutine.sav
+   </span>
+   file.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

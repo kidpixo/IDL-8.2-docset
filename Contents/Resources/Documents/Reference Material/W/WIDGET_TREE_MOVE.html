@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WIDGET_TREE_MOVE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WIDGET_TREE_MOVE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WIDGET_TREE_MOVE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="W_811389549_1222300">
+   </a>
+   <a name="W_811389549_66971">
+   </a>
+   WIDGET_TREE_MOVE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#W_811389549_1222331">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1222334">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1222341">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1222367">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1222370">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1222523">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2900">
+   </a>
+   WIDGET_TREE_MOVE procedure copies and moves tree widget nodes from one tree to another or within the same tree.
+  </p>
+  <p>
+   WIDGET_TREE_MOVE has two parameters that specify the widget IDs of the nodes to copy and the folder (or root) in which to move (or copy) them. Each of the nodes in the first parameter will be moved (or copied). The default behavior is to duplicate the entire hierarchy rooted at each folder.
+  </p>
+  <p>
+   These properties are automatically inherited by all newly created nodes:
+  </p>
+  <p class="Bullet">
+   FOLDER, EXPANDED
+  </p>
+  <p class="Bullet">
+   BITMAP, MASK
+  </p>
+  <p class="Bullet">
+   DRAGGABLE, DRAG_NOTIFY, DROP_EVENTS
+  </p>
+  <p class="Bullet">
+   VALUE, UVALUE, UNAME
+  </p>
+  <p class="Bullet">
+   EVENT_FUNC, EVENT_PRO
+  </p>
+  <p>
+   Move operations handle any data associated with UVALUEs by taking data away from the source and attaching it to the destination node, without making a temporary copy. This allows for an efficient transfer of large data during a move. The callback function can be used to adjust the values based on the parent's values.
+  </p>
+  <p>
+   The following keywords represent properties that are not transferred:
+  </p>
+  <p class="Bullet">
+   FUNC_GET_VALUE
+  </p>
+  <p class="Bullet">
+   PRO_SET_VALUE
+  </p>
+  <p class="Bullet">
+   NOTIFY_REALIZE
+  </p>
+  <p class="Bullet">
+   KILL_NOTIFY
+  </p>
+  <p>
+   If these keywords must be set, the new node could be destroyed and recreated in the procedure's callback (with the same parent and index). An alternative is to write a fully custom version of WIDGET_TREE_MOVE.
+  </p>
+  For a more detailed discussion of the tree widget, along with examples, see
+  <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/About_Tree_Widgets.html#widget_tree_1678712652_96344" target="" title="" alt="">
+   About Tree Widgets
+  </a>
+  .
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    widget_treet_move.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1222331">
+   </a>
+   <a name="W_811389549_1222331_PageTOC_WIDGET_TREE_MOVE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   WIDGET_TREE_MOVE,
+   <a class="MCXref_Heading_0" href="#W_811389549_1222335">
+    wMoveNodes
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="#W_811389549_1222338">
+    wDestFolder
+   </a>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_1222343">
+    CALLBACK_FUNC
+   </a>
+   =
+   <i>
+    name
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_1222352">
+    COPY
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_1222355">
+    INDEX
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_1222358">
+    SELECT
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_1222361">
+    UPDATE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_1222364">
+    USERDATA
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1222334">
+   </a>
+   <a name="W_811389549_1222334_PageTOC_WIDGET_TREE_MOVE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   <a name="W_811389549_1222335">
+   </a>
+   <a name="W_811389549_96407">
+   </a>
+   wMoveNodes
+  </h3>
+  <p>
+   The widget IDs of the nodes that are to be moved or copied. The value can be a scalar or a vector. By default, moving or copying a folder node duplicates the entire hierarchy rooted at that folder. If a node in the list is a descendant of another node in the list, then it will be copied twice: once as a member of the list and once as a member of the ancestor's descendants. For drag and drop implementations, this situation can be avoided by using the TREE_DRAG_SELECT keyword to
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_680333">
+    WIDGET_INFO
+   </a>
+   , which removes “duplicate” nodes from a tree's current selection.
+  </p>
+  <h3 class="Argument">
+   <a name="W_811389549_1222338">
+   </a>
+   <a name="W_811389549_55358">
+   </a>
+   wDestFolder
+  </h3>
+  <p>
+   The widget ID of the destination folder or tree root. The value must be a scalar. If the INDEX keyword is not specified then the moved/copied nodes will be placed at the end of the destination folder's current list of children.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1222341">
+   </a>
+   <a name="W_811389549_1222341_PageTOC_WIDGET_TREE_MOVE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="W_811389549_1222343">
+   </a>
+   <a name="W_811389549_1222343_Keywords_WIDGET_TREE_MOVE_">
+   </a>
+   <a name="W_811389549_89974">
+   </a>
+   CALLBACK_FUNC
+  </h3>
+  <p>
+   Set this keyword to the name of a function to customize node moving and/or copying. The callback is invoked immediately after each and every node is duplicated. The callback must be defined as:
+  </p>
+  <p class="indent">
+   <span class="Courier">
+    FUNCTION Name, wOriginalNode, wNewNode, USERDATA=
+   </span>
+   <i style="font-family: Times;font-style: italic;line-height: 13pt;">
+    value
+   </i>
+  </p>
+  <p>
+   The value from the USERDATA keyword is passed to the callback function. During move operations, the original node's UVALUE is efficiently transferred to the new node. Copy operations duplicate all UVALUEs.
+  </p>
+  <p>
+   The callback's return value should typically be 1 (one). This causes the new node's children to be duplicated. Entire hierarchies can be duplicated in this manner. This is the default behavior when a callback is not specified. However, if a “flat copy” is desired, then 0 (zero) should be returned. Return values of 0 stop further duplication of the new node so that its children are not recursively copied. Mixing return values of 0 and 1 is possible and can produce more sophisticated moves/copies.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1222352">
+   </a>
+   <a name="W_811389549_1222352_Keywords_WIDGET_TREE_MOVE_">
+   </a>
+   <a name="W_811389549_30908">
+   </a>
+   COPY
+  </h3>
+  <p>
+   Set this keyword to make a copy of the widgets in wMoveNodes. If not set then the original wMoveNodes are destroyed.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1222355">
+   </a>
+   <a name="W_811389549_1222355_Keywords_WIDGET_TREE_MOVE_">
+   </a>
+   <a name="W_811389549_78270">
+   </a>
+   INDEX
+  </h3>
+  <p>
+   Set this keyword to an integer to specify the relative position at which to insert wMoveNodes into the wDestFolder. The position is zero-based and a value of -1 (the default value) inserts at the tail.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1222358">
+   </a>
+   <a name="W_811389549_1222358_Keywords_WIDGET_TREE_MOVE_">
+   </a>
+   <a name="W_811389549_32419">
+   </a>
+   SELECT
+  </h3>
+  <p>
+   Set this keyword to select the newly moved/copied nodes.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1222361">
+   </a>
+   <a name="W_811389549_1222361_Keywords_WIDGET_TREE_MOVE_">
+   </a>
+   <a name="W_811389549_89283">
+   </a>
+   UPDATE
+  </h3>
+  <p>
+   Set this keyword to allow the source and destination trees to be visually updated during the operation. The default is to turn off updates to prevent flickering.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1222364">
+   </a>
+   <a name="W_811389549_1222364_Keywords_WIDGET_TREE_MOVE_">
+   </a>
+   <a name="W_811389549_10961">
+   </a>
+   USERDATA
+  </h3>
+  <p>
+   Set this keyword to a value that is passed to the CALLBACK_FUNC function.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1222367">
+   </a>
+   <a name="W_811389549_1222367_PageTOC_WIDGET_TREE_MOVE_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   For examples using WIDGET_TREE_MOVE, see
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/About_Tree_Widgets.html#widget_tree_1678712652_96344" target="" title="" alt="">
+    About Tree Widgets
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1222370">
+   </a>
+   <a name="W_811389549_1222370_PageTOC_WIDGET_TREE_MOVE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="W_811389549_1222523">
+   </a>
+   <a name="W_811389549_1222523_PageTOC_WIDGET_TREE_MOVE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="WIDGET_TREE.html#W_811389549_995819">
+    WIDGET_TREE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_1232714">
+    WIDGET_CONTROL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_680333">
+    WIDGET_INFO
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

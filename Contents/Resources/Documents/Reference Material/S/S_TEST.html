@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   S_TEST
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/S_TEST.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    S_TEST
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_1337163">
+   </a>
+   <a name="S_820040301_14319">
+   </a>
+   S_TEST
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_54185">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1132905">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_54187">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_54192">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_54196">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_54205">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110234">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2325">
+   </a>
+   S_TEST
+   <a name="kanchor2326">
+   </a>
+   function
+   <a name="kanchor2327">
+   </a>
+   tests the
+   <a name="kanchor2328">
+   </a>
+   hypothesis that two sample populations
+   <i>
+    X
+   </i>
+   and
+   <i>
+    Y
+   </i>
+   have the same mean of distribution against the hypothesis that they differ.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    s_test.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_54185">
+   </a>
+   <a name="S_820040301_54185_PageTOC_S_TEST_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = S_TEST(
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_54194">
+    ZDIFF
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1132905">
+   </a>
+   <a name="S_820040301_18655">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is a two-element vector containing the maximum number of signed differences between corresponding pairs of
+   <i>
+    xi
+   </i>
+   and
+   <i>
+    yi
+   </i>
+   and its one-tailed significance. This type of test is often referred to as the “
+   <a name="kanchor2329">
+   </a>
+   Sign Test.”
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_54187">
+   </a>
+   <a name="S_820040301_54187_PageTOC_S_TEST_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   An
+   <i>
+    n
+   </i>
+   -element integer, single-, or double-precision floating-point vector.
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   An
+   <i>
+    n
+   </i>
+   -element integer, single-, or double-precision floating-point vector.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_54192">
+   </a>
+   <a name="S_820040301_54192_PageTOC_S_TEST_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="S_820040301_54194">
+   </a>
+   <a name="S_820040301_54194_Keywords_S_TEST__">
+   </a>
+   ZDIFF
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain the number of differences between corresponding pairs of
+   <i>
+    xi
+   </i>
+   and
+   <i>
+    yi
+   </i>
+   resulting in zero. Paired data resulting in a difference of zero are excluded from the ranking and the sample size is correspondingly reduced.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_54196">
+   </a>
+   <a name="S_820040301_54196_PageTOC_S_TEST_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Define two n-element sample populations:
+   <br />
+   X = [47, 56, 54, 49, 36, 48, 51, 38, 61, 49, 56, 52]
+   <br />
+   Y = [71, 63, 45, 64, 50, 55, 42, 46, 53, 57, 75, 60]
+   <br />
+   <br />
+   ; Test the hypothesis that the two sample populations have the same
+   <br />
+   ; mean of distribution against the hypothesis that they differ at
+   <br />
+   ; the 0.05 significance level:
+   <br />
+   PRINT, S_TEST(X, Y, ZDIFF = zdiff)
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   [9.00000, 0.0729981]
+  </p>
+  <p>
+   The computed probability (0.0729981) is greater than the 0.05 significance level and therefore we do not reject the hypothesis that
+   <i>
+    X
+   </i>
+   and
+   <i>
+    Y
+   </i>
+   have the same mean of distribution.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_54205">
+   </a>
+   <a name="S_820040301_54205_PageTOC_S_TEST_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110234">
+   </a>
+   <a name="S_820040301_1110234_PageTOC_S_TEST_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../F/FV_TEST.html#F_848155245_870978">
+    FV_TEST
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../K/KW_TEST.html#K_837341805_859052">
+    KW_TEST
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../M/MD_TEST.html#M_824365677_888234">
+    MD_TEST
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/RS_TEST.html#R_822202989_1228995">
+    RS_TEST
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/TM_TEST.html#T_809226861_1076846">
+    TM_TEST
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

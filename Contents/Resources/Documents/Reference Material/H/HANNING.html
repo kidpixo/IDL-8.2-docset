@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HANNING
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/H/HANNING.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    HANNING
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="H_835179117_883964">
+   </a>
+   <a name="H_835179117_14061">
+   </a>
+   <a name="H_835179117_60367">
+   </a>
+   HANNING
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#H_835179117_758091">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_874085">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_874087">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_758098">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_758103">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_876590">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_880137">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1117">
+   </a>
+   HANNING function is used to create a “window” for Fourier Transform
+   <a name="kanchor1118">
+   </a>
+   filtering. It can be used to create both Hanning and Hamming windows.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    hanning.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <p>
+   The Hanning window is defined as:
+  </p>
+  <p>
+   w(k) = alpha - (1-alpha)*cos(2 pi k/ N),  k = 0,1,...,N-1
+  </p>
+  <p>
+   where alpha=0.5 for the Hanning, and alpha=0.54 for the Hamming window.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Because of the factor of 1/N (rather than 1/(N-1)) in the above equation, the Hanning filter is not exactly symmetric, and does not go to zero at the last point. The factor of 1/N is chosen to give the best behavior for spectral estimation of discrete data.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758091">
+   </a>
+   <a name="H_835179117_758091_PageTOC_HANNING_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = HANNING(
+   <i>
+    N
+   </i>
+   <sub>
+    1
+   </sub>
+   [,&#160;
+   <i>
+    N
+   </i>
+   <sub>
+    2
+   </sub>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_758100">
+    ALPHA
+   </a>
+   =
+   <i>
+    value
+   </i>
+   {0.5 to 1.0}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#H_835179117_874103">
+    DOUBLE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_874085">
+   </a>
+   <a name="H_835179117_874085_PageTOC_HANNING_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   If only
+   <i>
+    N1
+   </i>
+   is specified, this function returns an array of dimensions [
+   <i>
+    N1
+   </i>
+   ]. If both
+   <i>
+    N1
+   </i>
+   and
+   <i>
+    N2
+   </i>
+   are specified, this function returns an array of dimensions [
+   <i>
+    N1
+   </i>
+   ,
+   <i>
+    N2
+   </i>
+   ]. If any of the inputs are double-precision or if the DOUBLE keyword is set, the result is double-precision, otherwise the result is single-precision.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_874087">
+   </a>
+   <a name="H_835179117_874087_PageTOC_HANNING_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   N
+   <sub>
+    1
+   </sub>
+  </h3>
+  <p>
+   The number of columns in the resulting array.
+  </p>
+  <h3 class="Argument">
+   N
+   <sub>
+    2
+   </sub>
+  </h3>
+  <p>
+   The number of rows in the resulting array.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758098">
+   </a>
+   <a name="H_835179117_758098_PageTOC_HANNING_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="H_835179117_758100">
+   </a>
+   <a name="H_835179117_758100_Keywords_HANNING__">
+   </a>
+   ALPHA
+  </h3>
+  <p>
+   Set this keyword equal to the width parameter of a generalized Hamming window. ALPHA must be in the range of 0.5 to 1.0. If ALPHA = 0.5 (the default) the function is called a “Hanning” window. If ALPHA = 0.54, the result is called a “Hamming” window.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_874103">
+   </a>
+   <a name="H_835179117_874103_Keywords_HANNING__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computations to be done in double-precision arithmetic.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758103">
+   </a>
+   <a name="H_835179117_758103_PageTOC_HANNING_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Construct a time series with three sine waves.
+   <br />
+   n = 1024
+   <br />
+   dt = 0.02
+   <br />
+   w = 2*!DPI*dt*DINDGEN(n)
+   <br />
+   x = -0.3d + SIN(2.8d * w) + SIN(6.25d * w) + SIN(11.0d * w)
+   <br />
+   ; Find the power spectrum with and without the Hanning filter.
+   <br />
+   han = HANNING(n, /DOUBLE)
+   <br />
+   powerHan = ABS(FFT(han*x))^2
+   <br />
+   powerUnfilt = ABS(FFT(x))^2
+   <br />
+   freq = FINDGEN(n)/(n*dt)
+   <br />
+   ; Plot the results.
+   <br />
+   PLOT, freq, powerHan, /XLOG, /YLOG, $
+   <br />
+   XRANGE=[1,1./(2*dt)], XSTYLE=1, $
+   <br />
+   TITLE='Power spectrum with Hanning (solid) and without (dashed)'
+   <br />
+   OPLOT, freq, powerUnfilt, LINESTYLE=2
+   <br />
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Also see “Removing Noise” (Chapter 8,
+   <i>
+    Image Processing in IDL
+   </i>
+   ) in the
+   <code>
+    help/pdf
+   </code>
+   directory of the IDL installation directory.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_876590">
+   </a>
+   <a name="H_835179117_876590_PageTOC_HANNING_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="H_835179117_880137">
+   </a>
+   <a name="H_835179117_880137_PageTOC_HANNING_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../F/FFT.html#F_848155245_676828">
+    FFT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

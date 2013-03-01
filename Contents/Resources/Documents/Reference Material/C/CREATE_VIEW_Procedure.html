@@ -1,0 +1,618 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CREATE_VIEW Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/NoLines.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CREATE_VIEW_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CREATE_VIEW Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_880139">
+   </a>
+   CREATE_VIEW Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880209">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880257">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880260">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880307">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880323">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880331">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor404">
+   </a>
+   CREATE_VIEW procedure sets the various system variables required to define a
+   <a name="kanchor405">
+   </a>
+   coordinate system and a
+   <a name="kanchor406">
+   </a>
+   3-D view. This procedure builds the system viewing matrix (
+   <a name="kanchor407">
+   </a>
+   !P.T) in such a way that the correct aspect ratio of the data is maintained even if the display window is not square. CREATE_VIEW also sets the “Data” to “Normal” coordinate conversion factors (!X.S, !Y.S, and !Z.S) so that center of the unit cube will be located at the center of the display window.
+  </p>
+  <p>
+   CREATE_VIEW sets the following IDL system variables:
+  </p>
+  <table style="caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_NoLines">
+   <col style="width: 120px;" />
+   <col style="width: 120px;" />
+   <col style="width: 120px;" />
+   <col style="width: 120px;" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       !P.T
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      &#160;
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       !Y.S
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       !Z.S
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor408">
+       </a>
+       !P.T3D
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       !X.Style
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       !Y.Style
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       !Z.Style
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       !P.Position&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       !X.Range
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       !Y.Range
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       !Z.Range
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       !P.Clip
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       !X.Margin&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       !Y.Margin&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       !Z.Margin&#160;&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       !P.Region
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    create_view.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_880209">
+   </a>
+   <a name="dg_routines_3604229493_927515_PageTOC_CREATE_VIEW_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   CREATE_VIEW [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880262">
+    AX
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880265">
+    AY
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880268">
+    AZ
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880271">
+    PERSP
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880274">
+    RADIANS
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880277">
+    WINX
+   </a>
+   =
+   <i>
+    pixels
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880280">
+    WINY
+   </a>
+   =
+   <i>
+    pixels
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880283">
+    XMAX
+   </a>
+   =
+   <i>
+    scalar
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880286">
+    XMIN
+   </a>
+   =
+   <i>
+    scalar
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880289">
+    YMAX
+   </a>
+   =
+   <i>
+    scalar
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880292">
+    YMIN
+   </a>
+   =
+   <i>
+    scalar
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880295">
+    ZFAC
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880298">
+    ZMAX
+   </a>
+   =
+   <i>
+    scalar
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880301">
+    ZMIN
+   </a>
+   =
+   <i>
+    scalar
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_880304">
+    ZOOM
+   </a>
+   =
+   <i>
+    scalar or 3-element vector
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_880257">
+   </a>
+   <a name="dg_routines_3604229493_756872_PageTOC_CREATE_VIEW_">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   This procedure has no required arguments.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_880260">
+   </a>
+   <a name="dg_routines_3604229493_756874_PageTOC_CREATE_VIEW_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880262">
+   </a>
+   <a name="dg_routines_3604229493_756876_Keywords_CREATE_VIEW__">
+   </a>
+   AX
+  </h3>
+  <p>
+   A floating-point value specifying the orientation (X rotation) of the view. The default is 0.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880265">
+   </a>
+   <a name="dg_routines_3604229493_756879_Keywords_CREATE_VIEW__">
+   </a>
+   AY
+  </h3>
+  <p>
+   A floating-point value specifying the orientation (Y rotation) of the view. The default is 0.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880268">
+   </a>
+   <a name="dg_routines_3604229493_756882_Keywords_CREATE_VIEW__">
+   </a>
+   AZ
+  </h3>
+  <p>
+   A floating-point value specifying the orientation (Z rotation) of the view. The default is 0.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880271">
+   </a>
+   <a name="dg_routines_3604229493_756885_Keywords_CREATE_VIEW__">
+   </a>
+   PERSP
+  </h3>
+  <p>
+   A floating-point value specifying the perspective projection distance. A value of 0.0 indicates an isometric projection (NO perspective). The default is 0.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880274">
+   </a>
+   <a name="dg_routines_3604229493_756888_Keywords_CREATE_VIEW__">
+   </a>
+   RADIANS
+  </h3>
+  <p>
+   Set this keyword if AX, AY, and AZ are specified in radians. The default is degrees.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880277">
+   </a>
+   <a name="dg_routines_3604229493_756891_Keywords_CREATE_VIEW__">
+   </a>
+   WINX
+  </h3>
+  <p>
+   A long integer specifying the X size, in pixels, of the window that the view is being set up for. The default is 640.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880280">
+   </a>
+   <a name="dg_routines_3604229493_756894_Keywords_CREATE_VIEW__">
+   </a>
+   WINY
+  </h3>
+  <p>
+   A long integer specifying the Y size, in pixels, of the window that the view is being set up for. The default is 512.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880283">
+   </a>
+   <a name="dg_routines_3604229493_756897_Keywords_CREATE_VIEW__">
+   </a>
+   XMAX
+  </h3>
+  <p>
+   A scalar specifying the maximum data value on the X axis. The default is 1.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880286">
+   </a>
+   <a name="dg_routines_3604229493_756900_Keywords_CREATE_VIEW__">
+   </a>
+   XMIN
+  </h3>
+  <p>
+   A scalar specifying the minimum data value on the X axis. The default is 0.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880289">
+   </a>
+   <a name="dg_routines_3604229493_756903_Keywords_CREATE_VIEW__">
+   </a>
+   YMAX
+  </h3>
+  <p>
+   A scalar specifying the maximum data value on the Y axis. The default is 1.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880292">
+   </a>
+   <a name="dg_routines_3604229493_756906_Keywords_CREATE_VIEW__">
+   </a>
+   YMIN
+  </h3>
+  <p>
+   A scalar specifying the minimum data value on the Y axis. The default is 0.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880295">
+   </a>
+   <a name="dg_routines_3604229493_756909_Keywords_CREATE_VIEW__">
+   </a>
+   ZFAC
+  </h3>
+  <p>
+   Set this keyword to a floating-point value to expand or contract the view in the Z dimension. The default is 1.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880298">
+   </a>
+   <a name="dg_routines_3604229493_756912_Keywords_CREATE_VIEW__">
+   </a>
+   ZMAX
+  </h3>
+  <p>
+   A scalar specifying the maximum data value on the Z axis. The default is 1.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880301">
+   </a>
+   <a name="dg_routines_3604229493_756915_Keywords_CREATE_VIEW__">
+   </a>
+   ZMIN
+  </h3>
+  <p>
+   A scalar specifying the minimum data value on the Z axis. The default is 0.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_880304">
+   </a>
+   <a name="dg_routines_3604229493_756918_Keywords_CREATE_VIEW__">
+   </a>
+   ZOOM
+  </h3>
+  <p>
+   A floating-point number or 3-element vector specifying the view zoom factor. If zoom is a single value then the view will be zoomed equally in all 3 dimensions. If zoom is a 3-element vector then the view will be scaled zoom[0] in X, zoom[1] in Y, and zoom[2] in Z. The default is 1.0.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_880307">
+   </a>
+   <a name="dg_routines_3604229493_756920_PageTOC_CREATE_VIEW_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Set up a view to display an iso-surface from volumetric data. First, create some data:
+  </p>
+  <p class="Code">
+   vol = FLTARR(40, 50, 30)
+  </p>
+  <p class="Code">
+   vol(3:36, 3:46, 3:26) = RANDOMU(S, 34, 44, 24)
+  </p>
+  <p class="Code">
+   FOR I = 0, 10 DO vol = SMOOTH(vol, 3)
+  </p>
+  <p>
+   Generate the iso-surface.
+  </p>
+  <p class="Code">
+   SHADE_VOLUME, vol, 0.2, polygon_list, vertex_list, /LOW
+  </p>
+  <p>
+   Set up the view. Note that the subscripts into the Vol array range from 0 to 39 in X, 0 to 49 in Y, and 0 to 29 in Z. As such, the 3-D coordinates of the iso-surface (vertex_list) may have the same range. Set XMIN, YMIN, and ZMIN to zero (the default), and set XMAX=39, YMAX=49, and ZMAX=29.
+  </p>
+  <p class="Code">
+   WINDOW, XSIZE = 600, YSIZE = 400
+  </p>
+  <p class="Code">
+   CREATE_VIEW, XMAX = 39, YMAX = 49, ZMAX = 29, $
+  </p>
+  <p class="Code">
+   &#160;&#160;AX = (-60.0), AZ = (30.0), WINX = 600, WINY = 400, $
+  </p>
+  <p class="Code">
+   &#160;&#160;ZOOM = (0.7), PERSP = (1.0)
+  </p>
+  <p>
+   Display the iso-surface in the specified view.
+  </p>
+  <p class="Code">
+   img = POLYSHADE(polygon_list, vertex_list, /DATA, /T3D)
+  </p>
+  <p class="Code">
+   TVSCL, img
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_880323">
+   </a>
+   <a name="dg_routines_3604229493_756935_PageTOC_CREATE_VIEW_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_880331">
+   </a>
+   <a name="dg_routines_3604229493_1052246_PageTOC_CREATE_VIEW_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../S/SCALE3_Procedure.html#dg_routines_3604229493_884691" target="" title="" alt="">
+    SCALE3 Procedure
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/T3D_Procedure.html#dg_routines_3604229493_887435" target="" title="" alt="">
+    T3D Procedure
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

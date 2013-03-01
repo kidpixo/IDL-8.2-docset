@@ -1,0 +1,1004 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   SHADE_SURF Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/SHADE_SURF_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    SHADE_SURF Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_885128">
+   </a>
+   <a name="dg_routines_3604229493_80802">
+   </a>
+   SHADE_SURF Procedure
+  </h1>
+  <p>
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885165">
+    Syntax
+   </a>
+   |
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885199">
+    Arguments
+   </a>
+   |
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885210">
+    Keywords
+   </a>
+   |
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885361">
+    Examples
+   </a>
+   |
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885411">
+    Version History
+   </a>
+   |
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885419">
+    See Also
+   </a>
+  </p>
+  <p>
+   The
+   <a name="kanchor2367">
+   </a>
+   SHADE_SURF procedure creates a
+   <a name="kanchor2368">
+   </a>
+   shaded-surface representation of a regular or nearly-regular gridded surface with shading from either a light source model or from a user-specified array of intensities. Displays are easily constructed depicting the surface elevation of a variable shaded as a function of itself or another variable. This procedure and its parameters are similar to SURFACE, but it renders the visible surface as a shaded image rather than a mesh. Given a regular or near-regular grid of elevations it produces a shaded-surface representation of the data with hidden surfaces removed.
+  </p>
+  <p>
+   The
+   <a class="MCXref_Heading_0" href="SET_SHADING_Procedure.html#dg_routines_3604229493_884993" target="" title="" alt="">
+    SET_SHADING Procedure
+   </a>
+   procedure can be used to control the direction of the light source and other shading parameters.
+  </p>
+  <p>
+   If the graphics output device has scalable pixels (e.g., PostScript), the output image is scaled so that its largest dimension is less than or equal to 512 (unless the PIXELS keyword is set to some other value). This default resolution may not be high enough for some datasets. If your output looks jagged or “stair-stepped”, try specifying a larger value with the PIXELS keyword.
+  </p>
+  <p>
+   When outputting to a device that prints black on a white background, (e.g., PostScript), pixels that contain the background color index of 0 are set to white.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_885162">
+   </a>
+   <a name="dg_routines_3604229493_678741_PageTOC_SHADE_SURF_">
+   </a>
+   Restrictions
+  </h3>
+  <p>
+   If the
+   <i>
+    (X, Y)
+   </i>
+   grid is not regular or nearly regular, errors in hidden line removal will occur. If the T3D keyword is set, the 3-D to 2-D transformation matrix contained in !P.T must project the Z axis to a line parallel to the device Y axis, or errors will occur. The SHADE_SURF_IRR procedure can be used to render many datasets that do not meet these requirements. Irregularly-gridded data can also be made interpolated to a regular grid using the TRIGRID and TRIANGULATE routines.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_885165">
+   </a>
+   <a name="dg_routines_3604229493_678743_PageTOC_SHADE_SURF_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   SHADE_SURF,
+   <i>
+    Z
+   </i>
+   [,&#160;
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885212">
+    AX
+   </a>
+   =
+   <i>
+    degrees
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885218">
+    AZ
+   </a>
+   =
+   <i>
+    degrees
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885221">
+    IMAGE
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885224">
+    MAX_VALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885231">
+    MIN_VALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885237">
+    PIXELS
+   </a>
+   =
+   <i>
+    pixels
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885240">
+    SAVE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885243">
+    SHADES
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885250">
+    XLOG
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_885254">
+    YLOG
+   </a>
+   ]
+  </p>
+  <p class="Syntax">
+   <span class="Bold">
+    Graphics Keywords:
+   </span>
+   [,&#160;CHARSIZE=
+   <i>
+    value
+   </i>
+   ] [,&#160;CHARTHICK=
+   <i>
+    integer
+   </i>
+   ] [,&#160;COLOR=
+   <i>
+    value
+   </i>
+   ][,&#160;/DATA | , /DEVICE | , /NORMAL] [,&#160;FONT=
+   <i>
+    integer
+   </i>
+   ] [,&#160;/NODATA] [,&#160;POSITION=
+   <i>
+    [X
+   </i>
+   <sub class="italic">
+    0
+   </sub>
+   ,
+   <i>
+    Y
+   </i>
+   <sub class="italic">
+    0
+   </sub>
+   ,
+   <i>
+    X
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   ,
+   <i>
+    Y
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   <i>
+    ]
+   </i>
+   ] [,&#160;SUBTITLE=
+   <i>
+    string
+   </i>
+   ] [,&#160;/T3D] [,&#160;THICK=
+   <i>
+    value
+   </i>
+   ] [,&#160;TICKLEN=
+   <i>
+    value
+   </i>
+   ] [,&#160;TITLE=
+   <i>
+    string
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}CHARSIZE=
+   <i>
+    value
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}GRIDSTYLE=
+   <i>
+    integer
+   </i>
+   {0 to 5}]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}MARGIN=
+   <i>
+    [left
+   </i>
+   ,
+   <i>
+    right]
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}MINOR=
+   <i>
+    integer
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}RANGE=
+   <i>
+    [min
+   </i>
+   ,
+   <i>
+    max]
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}STYLE=
+   <i>
+    value
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}THICK=
+   <i>
+    value
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}TICKFORMAT=
+   <i>
+    string
+   </i>
+   ]
+   <br />
+   [, {X | Y | Z}TICKINTERVAL=
+   <i>
+    value
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICKLAYOUT=
+   <i>
+    scalar
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}TICKLEN=
+   <i>
+    value
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}TICKNAME=
+   <i>
+    string_array
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;| Z}TICKS=
+   <i>
+    integer
+   </i>
+   ]
+   <br />
+   [,&#160;{X | Y | Z}TICKUNITS=
+   <i>
+    string
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}TICKV=
+   <i>
+    array
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}TICK_GET=
+   <i>
+    variable
+   </i>
+   ]
+   <br />
+   [,&#160;{X&#160;|&#160;Y&#160;|&#160;Z}TITLE=
+   <i>
+    string
+   </i>
+   ]
+   <br />
+   [,&#160;ZVALUE=
+   <i>
+    value
+   </i>
+   {0 to 1}]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_885199">
+   </a>
+   <a name="dg_routines_3604229493_678745_PageTOC_SHADE_SURF_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Z
+  </h3>
+  <p>
+   The two-dimensional array to be displayed. If
+   <i>
+    X
+   </i>
+   and
+   <i>
+    Y
+   </i>
+   are provided, the surface is plotted as a function of the (
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   ) locations specified by their contents. Otherwise, the surface is generated as a function of the array index of each element of
+   <i>
+    Z
+   </i>
+   .
+  </p>
+  <p>
+   This argument is converted to double-precision floating-point before plotting. Plots created with SHADE_SURF are limited to the range and precision of double-precision floating-point values.
+  </p>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   A vector or two-dimensional array specifying the X coordinates of the grid. If this argument is a vector, each element of
+   <i>
+    X
+   </i>
+   specifies the X coordinate for a column of
+   <i>
+    Z
+   </i>
+   (e.g.,
+   <span class="Courier">
+    X[0]
+   </span>
+   specifies the X coordinate for
+   <span class="Courier">
+    Z[0,*]
+   </span>
+   ). If
+   <i>
+    X
+   </i>
+   is a two-dimensional array, each element of
+   <i>
+    X
+   </i>
+   specifies the X coordinate of the corresponding point in
+   <i>
+    Z
+   </i>
+   (
+   <i>
+    X
+   </i>
+   <sub class="italic">
+    ij
+   </sub>
+   specifies the X coordinate for
+   <i>
+    Z
+   </i>
+   <sub class="italic">
+    ij
+   </sub>
+   ).
+  </p>
+  <p>
+   This argument is converted to double-precision floating-point before plotting.
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   A vector or two-dimensional array specifying the Y coordinates of the grid. If this argument is a vector, each element of
+   <i>
+    Y
+   </i>
+   specifies the Y coordinate for a row of
+   <i>
+    Z
+   </i>
+   (e.g.,
+   <span class="Courier">
+    Y[0]
+   </span>
+   specifies the Y coordinate for
+   <span class="Courier">
+    Z[*,0]
+   </span>
+   ). If
+   <i>
+    Y
+   </i>
+   is a two-dimensional array, each element of
+   <i>
+    Y
+   </i>
+   specifies the Y coordinate of the corresponding point in
+   <i>
+    Z
+   </i>
+   (
+   <i>
+    Y
+   </i>
+   <sub class="italic">
+    ij
+   </sub>
+   specifies the Y coordinate for
+   <i>
+    Z
+   </i>
+   <sub class="italic">
+    ij
+   </sub>
+   ).
+  </p>
+  <p>
+   This argument is converted to double-precision floating-point before plotting.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_885210">
+   </a>
+   <a name="dg_routines_3604229493_678753_PageTOC_SHADE_SURF_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_885212">
+   </a>
+   <a name="dg_routines_3604229493_678754_Keywords_SHADE_SURF__">
+   </a>
+   AX
+  </h3>
+  <p>
+   This keyword specifies the angle of rotation, about the X axis, in degrees towards the viewer. This keyword is effective only if !P.T3D and the T3D keyword are not set. If !P.T3D is set, the three-dimensional to two-dimensional transformation used by SURFACE is contained in the 4 by 4 array !P.T.
+  </p>
+  <p>
+   The surface represented by the two-dimensional array is first rotated, AZ (see below) degrees about the Z axis, then by AX degrees about the X axis, tilting the surface towards the viewer (AX &gt; 0), or away from the viewer.
+  </p>
+  <p>
+   The AX and AZ keyword parameters default to +30 degrees if omitted.
+  </p>
+  <p>
+   The three-dimensional to two-dimensional transformation represented by AX and AZ, can be saved in !P.T by including the SAVE keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_885218">
+   </a>
+   <a name="dg_routines_3604229493_678759_Keywords_SHADE_SURF__">
+   </a>
+   AZ
+  </h3>
+  <p>
+   This keyword specifies the counterclockwise angle of rotation about the Z axis. This keyword is effective only if !P.T3D is not set. The order of rotation is AZ first, then AX.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_885221">
+   </a>
+   <a name="dg_routines_3604229493_678761_Keywords_SHADE_SURF__">
+   </a>
+   IMAGE
+  </h3>
+  <p>
+   A named variable into which an image containing the shaded surface is stored. If this keyword is omitted, the image is displayed but not saved.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_885224">
+   </a>
+   <a name="dg_routines_3604229493_678763_Keywords_SHADE_SURF__">
+   </a>
+   MAX_VALUE
+  </h3>
+  <p>
+   The maximum value to be plotted. If this keyword is present, data values greater than the value of MAX_VALUE are treated as
+   <a name="kanchor2369">
+   </a>
+   missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_885231">
+   </a>
+   <a name="dg_routines_3604229493_47127_Keywords_SHADE_SURF__">
+   </a>
+   MIN_VALUE
+  </h3>
+  <p>
+   The minimum value to be plotted. If this keyword is present, data values less than the value of MIN_VALUE are treated as missing and are not plotted. Note that the IEEE floating-point value NaN is also treated as missing data.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_885237">
+   </a>
+   <a name="dg_routines_3604229493_844042_Keywords_SHADE_SURF__">
+   </a>
+   PIXELS
+  </h3>
+  <p>
+   Set this keyword to a scalar value that specifies the maximum size of the image dimensions, in pixels. PIXELS only applies when the output device uses scalable pixels (e.g., the PostScript device). Use this keyword to increase the resolution of the output image if the default looks jagged or “stair-stepped”.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_885240">
+   </a>
+   <a name="dg_routines_3604229493_678765_Keywords_SHADE_SURF__">
+   </a>
+   SAVE
+  </h3>
+  <p>
+   Set this keyword to save the 3-D to 2-D transformation matrix established by SHADE_SURF in the system variable field !P.T. Use this keyword when combining the output of SHADE_SURF with the output of other routines in the same plot.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_885243">
+   </a>
+   <a name="dg_routines_3604229493_678767_Keywords_SHADE_SURF__">
+   </a>
+   SHADES
+  </h3>
+  <p>
+   An array expression, of the same dimensions as
+   <i>
+    Z
+   </i>
+   , that contains the color index at each point. The shading of each pixel is interpolated from the surrounding SHADE values. If this parameter is omitted, light-source shading is used. For most displays, this parameter should be scaled into the range of bytes.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When using the SHADES keyword on True Color devices, we recommend that decomposed color support be turned off, by setting DECOMPOSED=0 for
+   <a class="MCXref_Heading_0" href="../D/DEVICE_Procedure.html#dg_routines_3604229493_882302" target="" title="" alt="">
+    DEVICE Procedure
+   </a>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_885250">
+   </a>
+   <a name="dg_routines_3604229493_158361_Keywords_SHADE_SURF__">
+   </a>
+   XLOG
+  </h3>
+  <p>
+   Set this keyword to specify a logarithmic X
+   <a name="kanchor2370">
+   </a>
+   axis.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_885254">
+   </a>
+   <a name="dg_routines_3604229493_158393_Keywords_SHADE_SURF__">
+   </a>
+   YLOG
+  </h3>
+  <p>
+   Set this keyword to specify a logarithmic Y axis.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_885258">
+   </a>
+   <a name="dg_routines_3604229493_678773_Keywords_SHADE_SURF__">
+   </a>
+   <a name="dg_routines_3604229493_678773_PageTOC_SHADE_SURF_">
+   </a>
+   Graphics Keywords Accepted
+  </h3>
+  <p>
+   See
+   <a href="../../Direct Graphics/graphkeyw.html" target="" title="" alt="" class="MCXref_0">
+    Direct Graphics Keywords
+   </a>
+   for the description of the following graphics and plotting keywords:
+  </p>
+  <p>
+   <span class="Link">
+    <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_266973" target="" title="" alt="">
+     CHARSIZE
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_331668" target="" title="" alt="">
+     CHARTHICK
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_371352" target="" title="" alt="">
+     COLOR
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315961" target="" title="" alt="">
+     DATA
+    </a>
+    ,
+    <span class="Link">
+     <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_369990" target="" title="" alt="">
+      DEVICE
+     </a>
+     ,
+     <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_331795" target="" title="" alt="">
+      FONT
+     </a>
+     ,
+     <span class="Link">
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_371086" target="" title="" alt="">
+       NODATA
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315963" target="" title="" alt="">
+       NORMAL
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316026" target="" title="" alt="">
+       POSITION
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316057" target="" title="" alt="">
+       SUBTITLE
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315956" target="" title="" alt="">
+       T3D
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316006" target="" title="" alt="">
+       THICK
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332207" target="" title="" alt="">
+       TICKLEN
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332238" target="" title="" alt="">
+       TITLE
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_331699" target="" title="" alt="">
+       [XYZ]CHARSIZE
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332009" target="" title="" alt="">
+       [XYZ]GRIDSTYLE
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332038" target="" title="" alt="">
+       [XYZ]MARGIN
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332061" target="" title="" alt="">
+       [XYZ]MINOR
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332090" target="" title="" alt="">
+       [XYZ]RANGE
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332116" target="" title="" alt="">
+       [XYZ]STYLE
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332298" target="" title="" alt="">
+       [XYZ]THICK
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_370350" target="" title="" alt="">
+       [XYZ]TICKFORMAT
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332463" target="" title="" alt="">
+       [XYZ]TICKINTERVAL
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332488" target="" title="" alt="">
+       [XYZ]TICKLAYOUT
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332513" target="" title="" alt="">
+       [XYZ]TICKLEN
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332536" target="" title="" alt="">
+       [XYZ]TICKNAME
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332559" target="" title="" alt="">
+       [XYZ]TICKS
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332586" target="" title="" alt="">
+       [XYZ]TICKUNITS
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332628" target="" title="" alt="">
+       [XYZ]TICKV
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332321" target="" title="" alt="">
+       [XYZ]TICK_GET
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316100" target="" title="" alt="">
+       [XYZ]TITLE
+      </a>
+      ,
+      <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_316102" target="" title="" alt="">
+       ZVALUE
+      </a>
+     </span>
+    </span>
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_885361">
+   </a>
+   <a name="dg_routines_3604229493_678775_PageTOC_SHADE_SURF_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Create a simple dataset:
+   <br />
+   D = DIST(40)
+   <br />
+   ; Display the dataset as a light-source shaded surface:
+   <br />
+   SHADE_SURF, D, TITLE = 'Shaded Surface'
+  </p>
+  <p>
+   Instead of light-source shading, an array of the same size as the elevation dataset can be used to color the surface. This technique creates four-dimensional displays.
+  </p>
+  <p class="Code">
+   ; Create an array of shades to use:
+   <br />
+   S = SIN(D)
+   <br />
+   <br />
+   ; Now create a new shaded surface that uses the array of shading
+   <br />
+   ; values instead of the light source:
+   <br />
+   SHADE_SURF, D, SHADES = BYTSCL(S)
+  </p>
+  <p>
+   Note that the BYTSCL function is used to scale S into the range of bytes.
+  </p>
+  <p>
+   The following figure illustrates the application of SHADE_SURF, with light-source shading, to the two-dimensional Gaussian. This figure was produced by the following statements.
+  </p>
+  <p class="Code">
+   ; Create a 40-by-40 array in which each element
+   <br />
+   ; is equal to the Euclidean distance from the center.
+   <br />
+   Z = SHIFT(DIST(40), 20, 20)
+   <br />
+   ; Make Gaussian with a 1/e width of 10:
+   <br />
+   Z = EXP(-(Z/10)^2)
+   <br />
+   SHADE_SURF, Z
+  </p>
+  <p>
+   The right half of the following figure shows the use of an array of shades, which in this case is simply the surface elevation scaled into the range of bytes.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    <a name="dg_routines_3604229493_86061">
+    </a>
+    Shaded Representations of a Two-Dimensional Gaussian
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/mult16.gif" style="margin-left: 4.5px;margin-right: 7.500244px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   The output of SURFACE is superimposed over the shaded image with the statements below.
+  </p>
+  <p class="Code">
+   ; Show Gaussian with shades created by scaling
+   <br />
+   ; elevation into the range of bytes.
+   <br />
+   SHADE_SURF, Z, SHADES=BYTSCL(Z, TOP = !D.TABLE_SIZE)
+   <br />
+   ; Draw the mesh surface over the shaded figure.
+   <br />
+   ; Suppress the axes:
+   <br />
+   SURFACE, Z, XST = 4, YST = 4, ZST = 4, /NOERASE
+  </p>
+  <p>
+   The next figure shows the Maroon Bells data as a light-source shaded surface. It was produced by the following statements:
+  </p>
+  <p class="Code">
+   ; Restore variables.
+   <br />
+   @cntour01
+   <br />
+   SHADE_SURF, elev, AZ=210, AX=45, XST=4, YST=4, ZST=4
+  </p>
+  <p>
+   The AX and AZ keywords specify the orientation. The axes are suppressed by the axis-style keyword parameters; as in this orientation, the axes are behind the surface.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    <a name="dg_routines_3604229493_37900">
+    </a>
+    Maroon Bells Data Shown as a Shaded Surface
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/mult17.gif" style="margin-left: 3.00024px;margin-top: 0.75024px;margin-right: 9.000004px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_885411">
+   </a>
+   <a name="dg_routines_3604229493_795769_PageTOC_SHADE_SURF_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_885419">
+   </a>
+   <a name="dg_routines_3604229493_1110285_PageTOC_SHADE_SURF_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   ISURFACE,
+   <a class="MCXref_Heading_0" href="../P/POLYSHADE_Procedure.html#dg_routines_3604229493_892899" target="" title="" alt="">
+    POLYSHADE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="SET_SHADING_Procedure.html#dg_routines_3604229493_884993" target="" title="" alt="">
+    SET_SHADING Procedure
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="SHADE_VOLUME_Procedure.html#dg_routines_3604229493_885531" target="" title="" alt="">
+    SHADE_VOLUME Procedure
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="SURFACE_Procedure.html#dg_routines_3604229493_886816" target="" title="" alt="">
+    SURFACE Procedure
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

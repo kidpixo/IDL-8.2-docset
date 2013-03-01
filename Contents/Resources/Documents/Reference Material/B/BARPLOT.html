@@ -1,0 +1,1847 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: B" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   BARPLOT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/B/BARPLOT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="B_list.html">
+    Routines: B
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    BARPLOT
+   </span>
+  </div>
+  <h1 class="ClassRoutine">
+   BARPLOT
+  </h1>
+  <p>
+   <a name="kanchor126">
+   </a>
+   The BARPLOT function plots data as a series of rectangular bars.
+  </p>
+  <p>
+   <img src="../images/barplot_1_ex.gif" style="float: right;" />
+  </p>
+  <h2 class="API">
+   Example
+  </h2>
+  <div madcap:targetname="Examples">
+   <p>
+    The following lines create the plot shown at the top of this topic.
+   </p>
+   <p class="Code">
+    nBars = 3
+   </p>
+   <p class="Code">
+    index = 0
+   </p>
+   <p class="Code">
+    colors = ['red','yellow','blue']
+   </p>
+   <p class="Code">
+    data = RANDOMU(s,10,nBars)
+   </p>
+   <p class="Code">
+    FOR i=0,nBars-1 DO $
+   </p>
+   <p class="Code">
+    b = BARPLOT(data[*,i], NBARS=nBars, INDEX=index++, $
+   </p>
+   <p class="Code">
+    FILL_COLOR=colors[i], /OVERPLOT)
+   </p>
+  </div>
+  <h3>
+   Additional Examples
+  </h3>
+  <p>
+   See
+   <a href="../../GUInavigation/visualize.html#Plot" target="" title="" alt="" class="MCXref_0">
+    Plot Examples
+   </a>
+   for additional examples using the BARPLOT function.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    graphic
+   </i>
+   = BARPLOT(
+   <i>
+    [Locations]
+   </i>
+   ,
+   <i>
+    Values
+   </i>
+   <i>
+    ,
+   </i>
+   [,
+   <i>
+    Keywords
+   </i>
+   =
+   <i>
+    value
+   </i>
+   ] [,
+   <i>
+    Properties
+   </i>
+   =
+   <i>
+    variable
+   </i>
+   ])
+  </p>
+  <h3>
+   Keywords
+  </h3>
+  <p>
+   Keywords are applied
+   <i>
+    only
+   </i>
+   during the initial creation of the graphic.
+  </p>
+  <p class="Syntax">
+   [,
+   <a href="#AXIS_STYLE">
+    AXIS_STYLE
+   </a>
+   ={0|1|2|3}] [, /
+   <a href="#BUFFER">
+    BUFFER
+   </a>
+   ] [, /
+   <a href="#CURRENT">
+    CURRENT
+   </a>
+   ] [, /
+   <a href="#DEVICE">
+    DEVICE
+   </a>
+   ] [,
+   <a href="#DIMENSIO">
+    DIMENSIONS
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,
+   <a href="#LAYOUT">
+    LAYOUT
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,
+   <a href="#LOCATION">
+    LOCATION
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,
+   <a href="#MARGIN">
+    MARGIN
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ]  [, /
+   <a href="#NODATA">
+    NODATA
+   </a>
+   ] [,
+   <a href="#OVERPLOT">
+    OVERPLOT
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,
+   <a href="#POSITION">
+    POSITION
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,
+   <a href="#WINDOW_T">
+    WINDOW_TITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ]
+  </p>
+  <h3>
+   Properties
+  </h3>
+  <p>
+   Properties can be set as keywords to the function during creation, or retrieved or changed using the "." notation after creation.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Unlike other keywords in IDL, you cannot use an abbreviated form of the property name when setting them during creation. Instead, you must use the full property name.
+  </p>
+  <p>
+   <a href="#ANTIALIA">
+    ANTIALIAS
+   </a>
+   ,
+   <a href="#ASPECT_R">
+    ASPECT_RATIO
+   </a>
+   ,
+   <a href="#AXES">
+    AXES
+   </a>
+   ,
+   <a href="#BACKGROU">
+    BACKGROUND_COLOR
+   </a>
+   ,
+   <a href="#BACKTRANS">
+    BACKGROUND_TRANSPARENCY
+   </a>
+   ,
+   <a href="#BOTTOM_C">
+    BOTTOM_COLOR
+   </a>
+   ,
+   <a href="#BOTTOM_V">
+    BOTTOM_VALUES
+   </a>
+   ,
+   <a href="#C_RANGE">
+    C_RANGE
+   </a>
+   ,
+   <a href="#CLIP">
+    CLIP
+   </a>
+   ,
+   <a href="#COLOR">
+    COLOR
+   </a>
+   ,
+   <a href="#CROSSHAIR">
+    CROSSHAIR
+   </a>
+   ,
+   <a href="#FILL_COL">
+    FILL_COLOR
+   </a>
+   ,
+   <a href="#FONT_COL">
+    FONT_COLOR
+   </a>
+   ,
+   <a href="#FONT_NAM">
+    FONT_NAME
+   </a>
+   ,
+   <a href="#FONT_SIZ">
+    FONT_SIZE
+   </a>
+   ,
+   <a href="#FONT_STY">
+    FONT_STYLE
+   </a>
+   ,
+   <a href="#HIDE">
+    HIDE
+   </a>
+   ,
+   <a href="#HORIZONT">
+    HORIZONTAL
+   </a>
+   ,
+   <a href="#INDEX">
+    INDEX
+   </a>
+   ,
+   <a href="#LINESTYL">
+    LINESTYLE
+   </a>
+   ,
+   <a href="#NAME">
+    NAME
+   </a>
+   ,
+   <a href="#NBARS">
+    NBARS
+   </a>
+   ,
+   <a href="#OUTLINE">
+    OUTLINE
+   </a>
+   ,
+   <a href="#THICK">
+    THICK
+   </a>
+   ,
+   <a href="#TITLE">
+    TITLE
+   </a>
+   ,
+   <a href="#TRANSPAR">
+    TRANSPARENCY
+   </a>
+   ,
+   <a href="#UVALUE">
+    UVALUE
+   </a>
+   ,
+   <a href="#WIDTH">
+    WIDTH
+   </a>
+   ,
+   <a href="#WINDOW">
+    WINDOW
+   </a>
+   ,
+   <a href="#XRANGE">
+    XRANGE
+   </a>
+   ,
+   <a href="#YRANGE">
+    YRANGE
+   </a>
+  </p>
+  <h2 class="API">
+   Methods
+  </h2>
+  <p class="Method">
+   <a href="../../IDL Graphics/Close Method.html">
+    Close
+   </a>
+   &#160;
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/ConvertCoord Method.html">
+    ConvertCoord
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/CopyWindow Method.html">
+    CopyWindow
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Delete Method.html">
+    Delete
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/GetData Method.html">
+    GetData
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/GetValueAtLocation Method.html">
+    GetValueAtLocation
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Order Method.html">
+    Order
+   </a>
+   &#160;
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Print Method.html">
+    Print
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Refresh Method.html">
+    Refresh
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Rotate Method.html">
+    Rotate
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Save Method.html">
+    Save
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Scale Method.html">
+    Scale
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Select Method.html">
+    Select
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/SetData Method.html">
+    SetData
+   </a>
+  </p>
+  <p class="Method">
+   <a href="../../IDL Graphics/Translate Method.html">
+    Translate
+   </a>
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   The BARPLOT function returns a reference to the created graphic. Use the returned reference to manipulate the graphic after creation by changing properties or calling methods.
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Locations
+  </h3>
+  <a name="wp678093" shape="rect">
+  </a>
+  <p>
+   A vector representing the abscissa values to be plotted. If
+   <i>
+    Locations
+   </i>
+   is not specified,
+   <i>
+    Values
+   </i>
+   is plotted as a function of point number (starting at zero). If both arguments are provided,
+   <i>
+    Values
+   </i>
+   is plotted as a function of
+   <i>
+    Locations
+   </i>
+   .  If HORIZONTAL is set, these values will be located on the Y axis. If HORIZONTAL is not set (the default), these values will be located on the X axis.
+  </p>
+  <a name="wp678094" shape="rect">
+  </a>
+  <a name="wp678095" shape="rect">
+  </a>
+  <h3 class="Argument">
+   Values
+  </h3>
+  <a name="wp678096" shape="rect">
+  </a>
+  <p>
+   The ordinate data to be plotted. If HORIZONTAL is set, these values will be positioned along the X axis. If HORIZONTAL is not set (the default), these values will be positioned along the Y axis.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <p>
+   Keywords are applied
+   <i>
+    only
+   </i>
+   during the initial creation of the graphic.
+  </p>
+  <p>
+   <a name="AXIS_STYLE">
+   </a>
+  </p>
+  <h3 class="Keyword">
+   AXIS_STYLE
+  </h3>
+  <p>
+   Set this keyword to one of the following values:
+  </p>
+  <ul>
+   <li value="1">
+    0 - No axes. This is the default for images.
+   </li>
+   <li value="2">
+    1 - Single X, Y (and Z if 3D) axes located at the minimum data value. This is the default for 3D graphics.
+   </li>
+   <li value="3">
+    2 - Box axes - multiple axes located at both the minimum and maximum data values. This is the default for 2D graphics.
+   </li>
+   <li value="4">
+    3 - Crosshair-style axes - located at the midpoint of each data dimension. This is the default for polar plots.
+   </li>
+  </ul>
+  <p>
+   You can set the following properties on the axes:
+  </p>
+  <table style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');caption-side: top;margin-left: 0;margin-right: auto;" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col style="width: 250px;" class="Column-Column1" />
+   <col style="width: 500px;" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <th class="HeadE-Column1-Header1">
+      <p>
+       Property
+      </p>
+     </th>
+     <th class="HeadD-Column1-Header1">
+      <p>
+       Description
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]COLOR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       A string or RGB vector containing the axis color.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]GRIDSTYLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       A string or integer giving the linestyle for tickmarks.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]LOG
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 if the axis is logarithmic.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]MAJOR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The number of major tick marks. Set to -1 to auto-compute, set to 0 to suppress.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]MINOR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The number of minor tick marks. Set to -1 to auto-compute, set to 0 to suppress.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]SHOWTEXT
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Set to 1 to show text labels or 0 to hide the text labels.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]STYLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The axis range style. The valid values are:
+      </p>
+      <p>
+       (0) "Nice" range. Default for all graphics except Image, Barplot, and Map.
+      </p>
+      <p>
+       (1) Force the exact data range. Default for Image, Barplot, and Map.
+      </p>
+      <p>
+       (2) Pad the axes slightly beyond the "nice" range.
+      </p>
+      <p>
+       (3) Pad the axes slightly beyond the exact data range.
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       The [XYZ]RANGE takes precedence over this property.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]SUBTICKLEN
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The ratio of the minor tick length to the major tick length. The default is 0.5.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TEXT_COLOR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       A string or RGB vector containing the axis text color.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      [XYZ]TEXT_ORIENTATION
+     </td>
+     <td class="BodyD-Column1-Body2">
+      The angle (in degrees) of the tick mark labels.
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TEXTPOS
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 to position text above the axis. The default is 0, below the axis.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]THICK
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Set to a floating-point value between 0 and 10 to specify the line thickness for tickmarks. A thickness of 0 gives a thin hairline. The default is 1.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKDIR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 to draw the tickmarks facing outwards. The default is 0, facing inwards.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TICKFONT_NAME
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       A string containing the font name for the axis text.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKFONT_SIZE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The axis text size in points.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TICKFONT_STYLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       A string or integer containing the font style: "normal" (0), "bold" (1), "italic" (2), or "bold italic" (3).
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKFORMAT
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       A string or string array of tick label formats.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TICKINTERVAL
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The interval between major tick marks.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKLAYOUT
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 to suppress tick marks; set to 2 to draw a box around the tick labels.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TICKLEN
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The normalized length of each major tick mark. Tick lengths &lt;&#160;0.25 are in arbitrary units that do not scale with the graphic. Larger tick lengths are normalized relative to the width of the graphic. The default is 0.05.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKNAME
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       A string array containing the tick labels.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TICKUNITS
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       A string giving the tick units. Valid values are "" (the default), "Years", "Months", "Days", "Hours", "Minutes", "Seconds", or "Time". If any of the time units are utilized, then the tick values are interpreted as Julian date/time values. If more than one unit is provided, the axis will be drawn with multiple levels.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TICKVALUES
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       An array of tick mark locations.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       [XYZ]TITLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       A string giving the axis title.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p class="Keyword">
+       [XYZ]TRANSPARENCY
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       An integer from 0-100 giving the percent transparency.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div madcap:targetname="Common Graphic Keywords">
+   <p>
+    For more detailed explanations of these properties, see the
+    <a href="../A/AXIS.html" target="" title="" alt="" class="MCXref_0">
+     AXIS
+    </a>
+    function.
+   </p>
+   <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+    <span class="autonumber">
+     <span>
+      <b>
+       Tip:
+      </b>
+     </span>
+    </span>
+    You can also use the
+    <a href="../A/AXIS.html" target="" title="" alt="" class="MCXref_0">
+     AXIS
+    </a>
+    function to insert additional axes after the graphic has been created.
+   </p>
+  </div>
+  <h3 class="Keyword">
+   <a name="BUFFER">
+   </a>
+   BUFFER
+  </h3>
+  <p>
+   Set this keyword to 1 to direct the graphics to an off-screen buffer instead of creating a window.
+  </p>
+  <h3 class="Keyword">
+   <a name="CURRENT">
+   </a>
+   CURRENT
+  </h3>
+  <p>
+   Set this keyword to create the graphic in the current window. If no window exists, a new window is created. The WINDOW's
+   <a href="../../IDL Graphics/SetCurrent Method.html">
+    SetCurrent
+   </a>
+   method may be used to set the current window.
+  </p>
+  <h3 class="Keyword">
+   <a name="DEVICE">
+   </a>
+   DEVICE
+  </h3>
+  <p>
+   Set this keyword if values are specified in device coordinates (pixels) for the MARGIN and POSITION propertys. (Normalized coordinates are the default for these propertys.)
+  </p>
+  <h3 class="Keyword">
+   <a name="DIMENSIO">
+   </a>
+   DIMENSIONS
+  </h3>
+  <p>
+   Set this keyword to a two-element vector of the form [
+   <i>
+    width
+   </i>
+   ,
+   <i>
+    height
+   </i>
+   ] to specify the window dimensions in pixels. If you do not specify a value for DIMENSIONS, IDL&#160;by default uses the values of the IDL_GR_WIN_HEIGHT and IDL_GR_WIN_WIDTH preferences for Windows platforms or the IDL_GR_X_HEIGHT and IDL_GR_X_WIDTH preferences for X Windows systems on UNIX.
+  </p>
+  <h3 class="Keyword">
+   <a name="LAYOUT">
+   </a>
+   LAYOUT
+  </h3>
+  <p>
+   Set this keyword to a three-element vector [
+   <i>
+    ncol
+   </i>
+   ,
+   <i>
+    nrow
+   </i>
+   ,
+   <i>
+    index
+   </i>
+   ] that arranges graphics in a grid. The first dimension
+   <i>
+    ncol
+   </i>
+   is the number of columns in the grid,
+   <i>
+    nrow
+   </i>
+   is the number of rows, and
+   <i>
+    index
+   </i>
+   is the grid position at which to place the graphic (starting at element 1). This property is ignored if either OVERPLOT or POSITION is specified.
+  </p>
+  <h3 class="Keyword">
+   <a name="LOCATION">
+   </a>
+   LOCATION
+  </h3>
+  <p>
+   Set this keyword to a two-element vector [
+   <i>
+    X offset
+   </i>
+   ,
+   <i>
+    Y offset
+   </i>
+   ] giving the window's screen offset in pixels.
+  </p>
+  <h3 class="Keyword">
+   <a name="MARGIN">
+   </a>
+   MARGIN
+  </h3>
+  <p>
+   Set this keyword to the current graphic’s margin values in the layout specified by the LAYOUT property. Use a scalar value to set the same margin on all sides, or use a four-element vector [
+   <i>
+    left
+   </i>
+   ,
+   <i>
+    bottom
+   </i>
+   ,
+   <i>
+    right
+   </i>
+   ,
+   <i>
+    top
+   </i>
+   ] to specify different margins on each side.
+  </p>
+  <p>
+   By default, margin values are expressed in normalized units ranging from 0.0 to 0.5. If the DEVICE property is set, the values are given in device units (pixels).
+  </p>
+  <p>
+   This keyword is ignored if either OVERPLOT or POSITION is specified.
+  </p>
+  <h3 class="Keyword">
+   <a name="NODATA">
+   </a>
+   NODATA
+  </h3>
+  <p>
+   Set this keyword to 1 to create the graphic, but without any data attached to it. The axes and title (if present) are also created and displayed. If the OVERPLOT keyword is specified, axis ranges will not change.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You must still provide valid input arguments. The data range of the input arguments are used to automatically set the range of the axes. The [XYZ]RANGE properties may be used to override these default ranges.
+  </p>
+  <h3 class="Keyword">
+   <a name="OVERPLOT">
+   </a>
+   OVERPLOT
+  </h3>
+  <p>
+   Set this keyword to 1 (one) to place the graphic on top of the existing graphic in the current window. If no current window exists, a new window is created.
+  </p>
+  <p>
+   Or, set this keyword to an existing IDL Graphic reference to direct the new graphic to the window specified by the provided IDL&#160;Graphic reference.
+  </p>
+  <h3 class="Keyword">
+   <a name="POSITION">
+   </a>
+   POSITION
+  </h3>
+  <p>
+   Set this keyword to a four-element vector that determines the location of the visualization within the graphic window. The coordinates
+   <i>
+    x
+   </i>
+   <sub class="italic">
+    0
+   </sub>
+   ,
+   <i>
+    y
+   </i>
+   <sub class="italic">
+    0
+   </sub>
+   represent the lower left and
+   <i>
+    x
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   ,
+   <i>
+    y
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   represent the upper right corners of the data space. Coordinates are expressed in normalized units ranging from 0.0 to 1.0. If the DEVICE property is set, the units are given in device units (pixels).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When using POSITION, factor in enough space to display the title and axis labels. For example, if you use POSITION to place your visualization at 0 on the X or Y axis, any labels for that axis will not be visible.
+  </p>
+  <h3 class="Keyword">
+   <a name="WINDOW_T">
+   </a>
+   WINDOW_TITLE
+  </h3>
+  <p>
+   Set this keyword to the title of the IDL Graphic window. The title is displayed in the window's title bar.
+  </p>
+  <h2 class="API">
+   Properties
+  </h2>
+  <h3 class="Keyword">
+   <a name="ANTIALIA">
+   </a>
+   ANTIALIAS
+  </h3>
+  <p>
+   By default anti-aliasing is used when drawing lines. Set this property to 0 to disable anti-aliasing.
+  </p>
+  <h3 class="Keyword">
+   <a name="ASPECT_R">
+   </a>
+   ASPECT_RATIO
+  </h3>
+  <p>
+   Set this property to a floating point value indicating the ratio of the Y dimension to the X dimension in data units. If this property is set to a nonzero value, the aspect ratio will be preserved as the graphic is stretched or shrunk. The default value is 0 for all graphics except images, meaning that the aspect ratio is not fixed, but is allowed to change as the graphic is stretched or shrunk.
+  </p>
+  <h3 class="Keyword">
+   <a name="AXES">
+   </a>
+   AXES (Get Only)
+  </h3>
+  <p>
+   This property retrieves an array that contains all of the AXIS objects within the visualization. For example, for a plot visualization:
+  </p>
+  <p class="Code">
+   p = PLOT(/TEST)
+  </p>
+  <p class="Code">
+   ax = p.AXES
+  </p>
+  <p class="Code">
+   ax[0].TITLE = 'X axis'
+  </p>
+  <p class="Code">
+   ax[1].TITLE = 'Y axis'
+  </p>
+  <p class="Code">
+   ax[2].HIDE = 1  ; hide top X axis
+  </p>
+  <p class="Code">
+   ax[3].HIDE = 1  ; hide right Y axis
+  </p>
+  <p>
+   See
+   <a href="../A/AXIS.html">
+    AXIS
+   </a>
+   for a list of the available properties.
+  </p>
+  <h3 class="Keyword">
+   <a name="BACKGROU">
+   </a>
+   BACKGROUND_COLOR
+  </h3>
+  <p>
+   Set this property to a
+   <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color">
+    string or RGB vector
+   </a>
+   indicating the graphic's background color. The default value is [255, 255, 255] (white). Set this property to a scalar value to remove the background color.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   To set the background color of the entire window, retrieve the window object using the WINDOW property, and set the BACKGROUND_COLOR on the window object.
+  </p>
+  <h3 class="Keyword">
+   <a name="BACKTRANS">
+   </a>
+   BACKGROUND_TRANSPARENCY
+  </h3>
+  <p>
+   Set this property to an integer between 0 and 100 giving the percent transparency of the background color. The default is 100 (completely transparent).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the BACKGROUND_COLOR property is changed, and the current background transparency is 100, then the BACKGROUND_TRANSPARENCY will be automatically set to 0 (opaque) so that you can see the new color.
+  </p>
+  <h3 class="Keyword">
+   <a name="BOTTOM_C">
+   </a>
+   BOTTOM_COLOR
+  </h3>
+  <p>
+   Set this property to a
+   <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color">
+    string or RGB vector
+   </a>
+   indicating the bottom color of the bars. The bars will be shaded between BOTTOM_COLOR and FILL_COLOR. Set BOTTOM_COLOR to -1 to disable shading.
+  </p>
+  <h3 class="Keyword">
+   <a name="BOTTOM_V">
+   </a>
+   BOTTOM_VALUES
+  </h3>
+  <p>
+   Set this property to a scalar or vector that defines the lower limit of the bars.  If BOTTOM_VALUES is a vector it should have the same number of elements as VALUES.  If BOTTOM_VALUES is a scalar then the same value will be used for each bar.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_RANGE">
+   </a>
+   C_RANGE
+  </h3>
+  <p>
+   Set C_RANGE to a two element vector, [
+   <i>
+    low
+   </i>
+   ,
+   <i>
+    high
+   </i>
+   ], denoting the low and high values between which BOTTOM_COLOR and FILL_COLOR should be shaded. Any portions of a bar that exists above the high value or below the low value will be colored FILL_COLOR or BOTTOM_COLOR, respectively. If set to a scalar, each bar will be shaded from BOTTOM_COLOR to FILL_COLOR regardless of bar length.
+  </p>
+  <h3 class="Keyword">
+   <a name="CLIP">
+   </a>
+   CLIP
+  </h3>
+  <p>
+   Set this property to 1 to clip portions of the graphic that lie outside of the dataspace range, or to 0 to disable clipping. The default is 1.
+  </p>
+  <h3 class="Keyword">
+   <a name="COLOR">
+   </a>
+   COLOR
+  </h3>
+  <p>
+   Set this property to a
+   <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color">
+    string or RGB vector
+   </a>
+   indicating the color of the outline around each bar.
+  </p>
+  <p>
+   <a name="CROSSHAIR">
+   </a>
+  </p>
+  <h3 class="Keyword">
+   <a name="CROSSHAIR">
+   </a>
+   CROSSHAIR (Get Only)
+  </h3>
+  <p>
+   Use this property to retrieve a reference to the Crosshair graphic. All graphics objects within the same set of axes share a single Crosshair graphic. For Plot graphics the default behavior is to display the crosshair when the plot is selected. For other graphics the crosshair is disabled. The STYLE property may be used to control the automatic crosshair display, while the LOCATION property is used to manually draw a crosshair.
+  </p>
+  <p>
+   You can get and set the following properties on the retrieved crosshair:
+  </p>
+  <table style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');caption-side: top;margin-left: 0;margin-right: auto;" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col style="width: 200px;" class="Column-Column1" />
+   <col style="width: 550px;" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <th class="HeadE-Column1-Header1">
+      <p>
+       Property
+      </p>
+     </th>
+     <th class="HeadD-Column1-Header1">
+      <p>
+       Description
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       ANTIALIAS
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 to enable anti-aliasing for the lines.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       COLOR
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      A string or RGB vector containing the color.
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       HIDE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Set to 1 to hide the crosshair, 0 to show.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       INTERPOLATE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Set to 1 to force interpolation between Plot data points when SNAP is active. For other graphics this property is ignored. The default is&#160;0.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       LINESTYLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       An integer or string giving the line style. The default is 'dot'.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       LOCATION
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The location at which to draw the crosshair. For Plot graphics, if SNAP is enabled, then only the X coordinate needs to be supplied. Otherwise, LOCATION should be set to a two-element vector [X,&#160;Y] for two-dimensional graphics or [X,&#160;Y,&#160;Z] for three-dimensional graphics. If STYLE is currently "None", then setting the LOCATION will automatically set the STYLE to "Manual".
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       NAME
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The name of the graphic.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       SNAP
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Set to 1 to snap the crosshair to the nearest Plot data point. For other graphics this property is ignored. The default is&#160;1.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       STYLE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      An integer or string giving the crosshair style. Possible values are:
+      <br />
+      0 - "None" - never draw the crosshair. This is the default.
+      <br />
+      1 - "Manual" - draw the crosshair using the LOCATION property.
+      <br />
+      2 - "Auto" - automatically draw the crosshair. This is the default for plots.
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p class="Keyword">
+       THICK
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The thickness of the lines. The default is 1.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p class="Keyword">
+       TRANSPARENCY
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The percent transparency of the lines. The default is 50.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p class="Keyword">
+       UVALUE
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       An IDL variable of any data type.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   For example, use the CROSSHAIR property to draw a crosshair on an image:
+  </p>
+  <p class="Code">
+   im = IMAGE(/TEST, TRANSPARENCY=50, AXIS_STYLE=2)
+  </p>
+  <p class="Code">
+   c = im.CROSSHAIR
+  </p>
+  <p class="Code">
+   c.COLOR = 'red'
+  </p>
+  <p class="Code">
+   c.THICK = 2
+  </p>
+  <p class="Code">
+   c.LOCATION = [300, 200]
+  </p>
+  <p>
+   See &#160;
+   <a href="../../GuideMe/MouseEventFunctions.html" class="MCXref_0">
+    Creating Mouse Event Functions
+   </a>
+   for a more detailed crosshair example.
+  </p>
+  <h3 class="Keyword">
+   <a name="FILL_COL">
+   </a>
+   FILL_COLOR
+  </h3>
+  <p>
+   Set this property to a
+   <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color">
+    string or RGB vector
+   </a>
+   indicating the plot bar color.
+  </p>
+  <h3 class="Keyword">
+   <a name="FONT_COL">
+   </a>
+   FONT_COLOR
+  </h3>
+  <p>
+   Set this property equal to the
+   <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color">
+    text color
+   </a>
+   for the title and axes (if present). The default value is "black".
+  </p>
+  <h3 class="Keyword">
+   <a name="FONT_NAM">
+   </a>
+   FONT_NAME
+  </h3>
+  <p>
+   Set this property equal to a string specifying the IDL or system font for the title and axes (if present). The default value is “Helvetica”.
+  </p>
+  <h3 class="Keyword">
+   <a name="FONT_SIZ">
+   </a>
+   FONT_SIZE
+  </h3>
+  <p>
+   Set this property equal to an integer specifying the font size for the title and axes (if present). The default value is 16 points.
+  </p>
+  <h3 class="Keyword">
+   <a name="FONT_STY">
+   </a>
+   FONT_STYLE
+  </h3>
+  <p>
+   Set this property equal to an integer or a string specifying the font style for the title and axes (if present). Allowed values are:
+  </p>
+  <table style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col style="width: 70px;" class="Column-Column1" />
+   <col style="width: 180px;" class="Column-Column1" />
+   <col style="width: 120px;" class="Column-Column1" />
+   <tr class="Body-Body1">
+    <td class="BodyE-Column1-Body1">
+     <p>
+      Integer
+     </p>
+    </td>
+    <td class="BodyE-Column1-Body1">
+     <p>
+      <b>
+       String
+      </b>
+     </p>
+    </td>
+    <td class="BodyD-Column1-Body1">
+     <p>
+      Resulting Style
+     </p>
+    </td>
+   </tr>
+   <tr class="Body-Body2">
+    <td class="BodyE-Column1-Body2">
+     <p>
+      0
+     </p>
+    </td>
+    <td class="BodyE-Column1-Body2">
+     <p>
+      "Normal" or "rm"
+     </p>
+    </td>
+    <td class="BodyD-Column1-Body2">
+     <p>
+      Default (roman)
+     </p>
+    </td>
+   </tr>
+   <tr class="Body-Body1">
+    <td class="BodyE-Column1-Body1">
+     <p>
+      1
+     </p>
+    </td>
+    <td class="BodyE-Column1-Body1">
+     <p>
+      "Bold" or "bf"
+     </p>
+    </td>
+    <td class="BodyD-Column1-Body1">
+     <p>
+      Bold
+     </p>
+    </td>
+   </tr>
+   <tr class="Body-Body2">
+    <td class="BodyE-Column1-Body2">
+     <p>
+      2
+     </p>
+    </td>
+    <td class="BodyE-Column1-Body2">
+     <p>
+      "Italic" or "it"
+     </p>
+    </td>
+    <td class="BodyD-Column1-Body2">
+     <p>
+      Italic
+     </p>
+    </td>
+   </tr>
+   <tr class="Body-Body1">
+    <td class="BodyE-Column1-Body1">
+     <p>
+      3
+     </p>
+    </td>
+    <td class="BodyE-Column1-Body1">
+     <p>
+      "Bold italic" or "bi"
+     </p>
+    </td>
+    <td class="BodyD-Column1-Body1">
+     <p>
+      Bold italic
+     </p>
+    </td>
+   </tr>
+  </table>
+  <h3 class="Keyword">
+   <a name="HIDE">
+   </a>
+   HIDE
+  </h3>
+  <p>
+   Set this property to 1 to hide the graphic. Set HIDE to 0 to show the graphic.
+  </p>
+  <h3 class="Keyword">
+   <a name="HORIZONT">
+   </a>
+   HORIZONTAL
+  </h3>
+  <p>
+   If set, the bars will be drawn horizontally (parallel to the X axis). The default behavior is to draw vertical bars (parallel to the Y axis). This is on a per bar plot basis; setting this property on a given bar plot will not affect any currently existing bar plots.
+  </p>
+  <h3 class="Keyword">
+   <a name="INDEX">
+   </a>
+   INDEX
+  </h3>
+  <p>
+   If side-by-side bars are being created, INDEX specifies which bar, out of NBARS, that the current bar plot occupies.  This value is zero-based and begins on the left.  This value is used on a per bar plot basis and should be used in conjunction with NBARS.  The default value is 0.
+  </p>
+  <h3 class="Keyword">
+   <a name="LINESTYL">
+   </a>
+   LINESTYLE
+  </h3>
+  <p>
+   Set this property to the
+   <a href="../../IDL Graphics/FormattingSymsAndLines.html#Linestyl">
+    line style
+   </a>
+   used to draw the outline around each bar.  The default value is a solid line.
+  </p>
+  <h3 class="Keyword">
+   <a name="NAME">
+   </a>
+   NAME
+  </h3>
+  <p>
+   Set this property to a string that specifies the name of the graphic. The name can be used to retrieve the graphic using the brackets array notation.  If NAME is not set then a default name is chosen based on the graphic type.
+  </p>
+  <h3 class="Keyword">
+   <a name="NBARS">
+   </a>
+   NBARS
+  </h3>
+  <p>
+   If side-by-side bars are being created, NBARS specifies the number of bars that exists per LOCATION. This value is used on a per bar plot basis and should be used in conjunction with INDEX. The default behavior is one bar per LOCATION.
+  </p>
+  <h3 class="Keyword">
+   <a name="OUTLINE">
+   </a>
+   OUTLINE
+  </h3>
+  <p>
+   If set (the default behavior), an outline will be displayed around each bar.  If set to zero, no outline will be displayed around each bar.
+  </p>
+  <h3 class="Keyword">
+   <a name="THICK">
+   </a>
+   THICK
+  </h3>
+  <p>
+   The thickness of the outline around each bar. A value between 0 and 10 that specifies the line thickness. A thickness of 0 displays a thin hairline on the chosen device. The default value is 1.
+  </p>
+  <h3 class="Keyword">
+   <a name="TITLE">
+   </a>
+   TITLE
+  </h3>
+  <p>
+   Set this property to a string specifying a title. The title properties may be modified using FONT_COLOR, FONT_NAME, FONT_SIZE, and FONT_STYLE. After creation the TITLE property may be used to retrieve a reference to the title text object, and the
+   <a href="../T/TEXT.html" target="" title="" alt="" class="MCXref_0">
+    TEXT
+   </a>
+   properties may be used to modify the title object.
+  </p>
+  <p>
+   You can also add Greek letters and mathematical symbols using a TeX-like syntax. These symbols need to be enclosed within a pair of "$" characters. See
+   <a href="../T/TEXT.html#Adding" target="" title="" alt="" class="MCXref_Heading_0">
+    Adding Mathematical Symbols and Greek Letters to the Text String
+   </a>
+   for details on the available symbols.
+  </p>
+  <h3 class="Keyword">
+   <a name="TRANSPAR">
+   </a>
+   TRANSPARENCY
+  </h3>
+  <p>
+   Set this property to the percent transparency of the bars, which can be an integer between 0 and 100. The default value is 0.
+  </p>
+  <h3 class="Keyword">
+   <a name="UVALUE">
+   </a>
+   UVALUE
+  </h3>
+  <p>
+   Set this property to an IDL variable of any data type.
+  </p>
+  <h3 class="Keyword">
+   <a name="WIDTH">
+   </a>
+   WIDTH
+  </h3>
+  <p>
+   Set this property to the width of every bar, represented as a scalar value.  This value ranges from 0 to 1. The default value is 0.8.
+  </p>
+  <h3 class="Keyword">
+   <a name="WINDOW">
+   </a>
+   WINDOW (Get Only)
+  </h3>
+  <p>
+   This property retrieves a reference to the
+   <a href="../W/WINDOW.html">
+    WINDOW
+   </a>
+   object which contains the graphic.
+  </p>
+  <h3 class="Keyword">
+   <a name="XRANGE">
+   </a>
+   XRANGE
+  </h3>
+  <p>
+   Set this property to a two-element vector giving the X data range to plot. The default behavior is to plot the entire data range.
+  </p>
+  <h3 class="Keyword">
+   <a name="YRANGE">
+   </a>
+   YRANGE
+  </h3>
+  <p>
+   Set this property to a two-element vector giving the Y data range to plot. The default behavior is to plot the entire data range.
+  </p>
+  <h2 class="API">
+   Additional Examples
+  </h2>
+  <h3>
+   Stacked Bar Plot
+  </h3>
+  <p>
+   <img src="../images/barplot_2_ex.gif" />
+  </p>
+  <p class="Code">
+   data1 = SIN((FINDGEN(15)+1)/15*!PI/2)
+  </p>
+  <p class="Code">
+   data2 = data1+COS((FINDGEN(15)+0)/15*!PI/2)
+  </p>
+  <p class="Code">
+   data3 = data2+0.25+RANDOMU(s,15)
+  </p>
+  <p class="Code">
+   b1 = BARPLOT(data1)
+  </p>
+  <p class="Code">
+   b2 = BARPLOT(data2, BOTTOM_VALUES=data1, $
+  </p>
+  <p class="Code">
+   FILL_COLOR='yellow', /OVERPLOT)
+  </p>
+  <p class="Code">
+   b3 = BARPLOT(data3, BOTTOM_VALUES=data2, $
+  </p>
+  <p class="Code">
+   FILL_COLOR='red', /OVERPLOT)
+  </p>
+  <h3>
+   Horizontal Floating Shaded Bar Plot
+  </h3>
+  <p>
+   <img src="../images/barplot_3_ex.gif" />
+  </p>
+  <p class="Code">
+   data = (RANDOMU(s,10)+0.1) &lt; 1
+  </p>
+  <p class="Code">
+   bottom = (data/4-0.1) &gt; 0
+  </p>
+  <p class="Code">
+   b = BARPLOT(data, BOTTOM_VALUES=bottom, FILL_COLOR='red', $
+  </p>
+  <p class="Code">
+   BOTTOM_COLOR='yellow', C_RANGE=[0,1], /HORIZONTAL)
+  </p>
+  <h2 class="API">
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');margin-left: auto;margin-right: auto;" cellspacing="0" class="TableStyle_VersionTable">
+   <col style="width: 84px;" />
+   <col />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      8.0
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      Introduced
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      8.1
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Added the following properties: CROSSHAIR, UVALUE, WINDOW, [XYZ]SHOWTEXT, [XYZ]STYLE
+      </p>
+      <p>
+       The THICK property was changed to accept a value between 0 and 10.
+      </p>
+      <p>
+       Added the following methods: Delete, GetData, GetValueAtLocation, SetData.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      8.2
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      Added AXES, BACKGROUND_COLOR, BACKGROUND_TRANSPARENCY properties.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   See Also
+  </h2>
+  <p>
+   <a href="../P/PLOT.html" target="" title="" alt="" class="MCXref_Heading_0">
+    PLOT
+   </a>
+   ,
+   <a href="../E/ERRORPLOT.html" target="" title="" alt="" class="MCXref_Heading_0">
+    ERRORPLOT
+   </a>
+   ,
+   <a href="../../GuideMe/Using IDL Graphics.html" target="" title="" alt="" class="MCXref_Heading_0">
+    Using IDL Graphics
+   </a>
+  </p>
+  <p class="Hidden">
+   BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT BARPLOT
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

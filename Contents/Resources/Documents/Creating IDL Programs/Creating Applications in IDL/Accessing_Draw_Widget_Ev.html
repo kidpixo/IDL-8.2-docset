@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Interfaces (Widgets)|About Draw Widgets" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Accessing Draw Widget Events
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Creating Applications in IDL/Accessing_Draw_Widget_Ev.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Widget Application Techniques.html">
+    Interfaces (Widgets)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="About_Draw_Widgets.html">
+    About Draw Widgets
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Accessing Draw Widget Events
+   </span>
+  </div>
+  <h1>
+   <a name="widget_draw_834959296_97624">
+   </a>
+   <a name="widget_draw_834959296_13327">
+   </a>
+   Accessing Draw Widget Events
+  </h1>
+  <p>
+   To go beyond merely displaying an image in a draw widget and allow the user to interact in some way with the displayed image, you must configure the draw widget to generate either
+   <i>
+    <a name="kanchor4917">
+    </a>
+    button
+   </i>
+   ,
+   <i>
+    <a name="kanchor4918">
+    </a>
+    motion
+   </i>
+   ,
+   <a name="kanchor4919">
+   </a>
+   <i>
+    wheel
+   </i>
+   , or
+   <i>
+    <a name="kanchor4920">
+    </a>
+    keyboard
+   </i>
+   events:
+  </p>
+  <ul>
+   <li value="1">
+    <i>
+     Button events
+    </i>
+    are enabled by setting the BUTTON_EVENTS keyword to WIDGET_DRAW. Once enabled, button events are generated when the user clicks on the draw widget.
+   </li>
+   <li value="2">
+    <i>
+     Motion events
+    </i>
+    are enabled by setting the MOTION_EVENTS keyword to WIDGET_DRAW. Once enabled, motion events are generated whenever the cursor moves over the draw widget.
+   </li>
+   <li value="3">
+    <p>
+     <i>
+      Wheel events
+     </i>
+     are enabled by setting the WHEEL_EVENTS keyword to WIDGET_DRAW. Once enabled, wheel events are generated when the draw widget has focus and the user rolls the scroll wheel.
+    </p>
+    <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+     <span class="autonumber">
+      <span>
+       <b>
+        Note:
+       </b>
+      </span>
+     </span>
+     Wheel events are enabled only under Microsoft Windows.
+    </p>
+   </li>
+   <li value="4">
+    <i>
+     Keyboard events
+    </i>
+    are enabled by setting the KEYBOARD_EVENTS keyword to WIDGET_DRAW. Once enabled, events are generated when the draw widget has focus and a keyboard key is pressed.
+   </li>
+  </ul>
+  <p>
+   The following example uses motion events to update the values of several label widgets as the mouse cursor moves over an image in a draw widget. This and several other features are discussed in the section following the code.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See the file
+   <span class="Courier">
+    draw_widget_data.
+    <a name="kanchor4921">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/widgets
+   </span>
+   subdirectory of the IDL distribution for the example code. Run this example procedure by entering
+   <span class="Courier">
+    draw_widget_data
+   </span>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <span class="Courier" style="color: #0000ff;">
+    .
+   </span>
+   <span class="Courier">
+    EDIT draw_widget_data.pro
+   </span>
+   . See
+   <a class="MCXref_Heading_0" href="About_Widget_Application.html#widget_apps_4063420628_1041756" target="" title="" alt="">
+    Running the Example Code
+   </a>
+   if IDL does not run the program as expected. You may need to enter
+   <span class="Courier">
+    DEVICE, DECOMPOSED=1
+   </span>
+   at the IDL command prompt before running this example.
+  </p>
+  <p>
+   The following things about this example are worth noting:
+  </p>
+  <ul>
+   <li value="1">
+    Since we use the image data in both the widget creation routine (where we display the image) and the event-handler routine (where we retrieve the value of the data point under the cursor), we need access to the variable that holds the image in both places. We could pass the entire image array from the creation routine to the event-handler in the
+    <span class="Courier">
+     stash
+    </span>
+    structure, but since the image could be large, we choose to pass a
+    <i>
+     pointer
+    </i>
+    to the image instead. This means we must dereference the pointer variable every time we need to use the image data.
+   </li>
+   <li value="2">
+    In this example we have set the MOTION_EVENTS keyword to WIDGET_DRAW; this causes events to be generated continuously as the cursor moves across the draw widget. We could have set the BUTTON_EVENTS keyword instead; this would force the user to click the draw widget in order to update the text fields.
+   </li>
+  </ul>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

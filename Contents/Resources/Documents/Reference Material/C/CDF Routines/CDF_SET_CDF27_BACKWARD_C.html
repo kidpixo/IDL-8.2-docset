@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C|CDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CDF_SET_CDF27_BACKWARD_COMPATIBLE
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/C/CDF Routines/CDF_SET_CDF27_BACKWARD_C.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../CDF_Routines.html">
+    CDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CDF_SET_CDF27_BACKWARD_COMPATIBLE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="CDF_1744428779_1008232">
+   </a>
+   <a name="CDF_1744428779_42680">
+   </a>
+   CD
+   <span class="_Override" style="letter-spacing: -0.01em;">
+    F_SET_CDF27_BACKWARD_COMPATIBLE
+   </span>
+  </h1>
+  <p>
+   The
+   <a name="kanchor254">
+   </a>
+   CDF_SET_CDF27_BACKWARD_COMPATIBLE procedure allows users of IDL version 6.3 and later to create a CDF file that can be read by IDL 6.2 or earlier, or by CDF version 2.7.2 or earlier. By default, a CDF file created by IDL 6.3 or later cannot be read by earlier versions.
+  </p>
+  <p>
+   This procedure must be called prior to calling the CDF_CREATE function. It is useful if you need to create and share CDF files with colleagues who access CDF files using IDL version 6.2 or earlier, or using the CDF library version 2.7.2 or earlier.
+  </p>
+  <p>
+   In CDF version 2.7.2 and earlier, the maximum CDF file size was 2 Gbytes. This limitation was lifted in CDF version 3.0 with the use of a 64-bit file offset. As a result, users who use a CDF library older than CDF version 3.0 cannot read CDF files that were produced by CDF version 3.0 or a later release. CDF versions 3.0 and later
+   <span class="Italic">
+    can
+   </span>
+   read files that were generated with any of the previous CDF releases.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   After calling this routine, the “backward compatible” setting specified persists either until this routine is called again or until the end of the IDL session.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071592_PageTOC_CDF_SET_CDF27_BACKWARD_COMPATIBLE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   CDF_SET_CDF27_BACKWARD_COMPATIBLE [,&#160;/
+   <a class="MCXref_Heading_0" href="#CDF_1744428779_1008269">
+    YES
+   </a>
+   &#160;|&#160;/
+   <a class="MCXref_Heading_0" href="#CDF_1744428779_1008272">
+    NO
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071594_PageTOC_CDF_SET_CDF27_BACKWARD_COMPATIBLE_">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071596_PageTOC_CDF_SET_CDF27_BACKWARD_COMPATIBLE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1008269">
+   </a>
+   <a name="CDF_1744428779_1071597_Keywords_CDF_SET_CDF27_BACKWARD_COMPATIBLE_">
+   </a>
+   YES
+  </h3>
+  <p>
+   Set this keyword to create a CDF file that can be read by IDL version 6.2 or earlier, or by CDF version 2.7.2 or earlier. If this keyword is set, the maximum file size is 2 Gbytes.
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1008272">
+   </a>
+   <a name="CDF_1744428779_1071599_Keywords_CDF_SET_CDF27_BACKWARD_COMPATIBLE_">
+   </a>
+   NO
+  </h3>
+  <p>
+   Set this keyword to create a file that can only be read using IDL version 6.3 or later or CDF version 3.0 or later. This is the default when a CDF file is created.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071601_PageTOC_CDF_SET_CDF27_BACKWARD_COMPATIBLE_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Use the following command to create a CDF file that can be read by IDL 6.2 or earlier IDL versions.
+  </p>
+  <p class="Code">
+   CDF_SET_CDF27_BACKWARD_COMPATIBLE, /YES
+  </p>
+  <p class="Code">
+   id = CDF_CREATE('myfile.cdf')
+  </p>
+  <p class="Code">
+   CDF_CLOSE, id
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071606_PageTOC_CDF_SET_CDF27_BACKWARD_COMPATIBLE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

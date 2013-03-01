@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   STANDARDIZE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/STANDARDIZE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    STANDARDIZE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_1074850">
+   </a>
+   <a name="S_820040301_22088">
+   </a>
+   STANDARDIZE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_844912">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1135145">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_844914">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_844917">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_844920">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_844956">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110421">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2457">
+   </a>
+   STANDARDIZE function computes
+   <a name="kanchor2458">
+   </a>
+   standardized variables from an array of
+   <i>
+    m
+   </i>
+   variables (columns) and
+   <i>
+    n
+   </i>
+   observations (rows).
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    standardize.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_844912">
+   </a>
+   <a name="S_820040301_844912_PageTOC_STANDARDIZE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = STANDARDIZE(
+   <i>
+    A
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_844918">
+    DOUBLE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1135145">
+   </a>
+   <a name="S_820040301_40538">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is an
+   <i>
+    m
+   </i>
+   -column,
+   <i>
+    n
+   </i>
+   -row array where all columns have a mean of zero and a variance of one.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_844914">
+   </a>
+   <a name="S_820040301_844914_PageTOC_STANDARDIZE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   A
+  </h3>
+  <p>
+   An
+   <i>
+    m
+   </i>
+   -column,
+   <i>
+    n
+   </i>
+   -row single- or double-precision floating-point array.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_844917">
+   </a>
+   <a name="S_820040301_844917_PageTOC_STANDARDIZE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="S_820040301_844918">
+   </a>
+   <a name="S_820040301_844918_Keywords_STANDARDIZE__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_844920">
+   </a>
+   <a name="S_820040301_844920_PageTOC_STANDARDIZE_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Define an array with 4 variables and 20 observations:
+   <br />
+   array = $
+   <br />
+   [[19.5, 43.1, 29.1, 11.9], $
+   <br />
+   [24.7, 49.8, 28.2, 22.8], $
+   <br />
+   [30.7, 51.9, 37.0, 18.7], $
+   <br />
+   [29.8, 54.3, 31.1, 20.1], $
+   <br />
+   [19.1, 42.2, 30.9, 12.9], $
+   <br />
+   [25.6, 53.9, 23.7, 21.7], $
+   <br />
+   [31.4, 58.5, 27.6, 27.1], $
+   <br />
+   [27.9, 52.1, 30.6, 25.4], $
+   <br />
+   [22.1, 49.9, 23.2, 21.3], $
+   <br />
+   [25.5, 53.5, 24.8, 19.3], $
+   <br />
+   [31.1, 56.6, 30.0, 25.4], $
+   <br />
+   [30.4, 56.7, 28.3, 27.2], $
+   <br />
+   [18.7, 46.5, 23.0, 11.7], $
+   <br />
+   [19.7, 44.2, 28.6, 17.8], $
+   <br />
+   [14.6, 42.7, 21.3, 12.8], $
+   <br />
+   [29.5, 54.4, 30.1, 23.9], $
+   <br />
+   [27.7, 55.3, 25.7, 22.6], $
+   <br />
+   [30.2, 58.6, 24.6, 25.4], $
+   <br />
+   [22.7, 48.2, 27.1, 14.8], $
+   <br />
+   [25.2, 51.0, 27.5, 21.1]]
+  </p>
+  <p>
+   Then do the computations and print the results:
+  </p>
+  <p class="Code">
+   ; Compute the mean and variance of each variable using the MOMENT
+   <br />
+   ; function. The skewness and kurtosis are also computed:
+   <br />
+   FOR K = 0, 3 DO PRINT, MOMENT(array[K,*])
+   <br />
+   <br />
+   ; Compute the standardized variables:
+   <br />
+   result = STANDARDIZE(array)
+   <br />
+   <br />
+   ; Compute the mean and variance of each standardized variable using
+   <br />
+   ; the MOMENT function. The skewness and kurtosis are also computed:
+   <br />
+   FOR K = 0, 3 DO PRINT, MOMENT(result[K,*])
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   25.3050      25.2331    -0.454763     -1.10028
+  </p>
+  <p class="Code">
+   51.1700      27.4012    -0.356958     -1.19516
+  </p>
+  <p class="Code">
+   27.6200      13.3017     0.420289     0.104912
+  </p>
+  <p class="Code">
+   20.1950      26.0731    -0.363277     -1.24886
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   -7.67130e-07      1.00000    -0.454761 &#160;&#160;&#160;-1.10028
+  </p>
+  <p class="Code">
+   -3.65451e-07      1.00000    -0.356958 &#160;&#160;&#160;-1.19516
+  </p>
+  <p class="Code">
+   -1.66707e-07      1.00000     0.420290 &#160;&#160;&#160;&#160;0.104913
+  </p>
+  <p class="Code">
+   &#160;4.21703e-07      1.00000    -0.363278 &#160;&#160;&#160;-1.24886
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_844956">
+   </a>
+   <a name="S_820040301_844956_PageTOC_STANDARDIZE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110421">
+   </a>
+   <a name="S_820040301_1110421_PageTOC_STANDARDIZE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../M/MOMENT.html#M_824365677_888917">
+    MOMENT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

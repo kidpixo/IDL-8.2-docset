@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CONGRID
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CONGRID.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CONGRID
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_757829">
+   </a>
+   <a name="C_854643309_73623">
+   </a>
+   CONGRID
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_757835">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="COND.html#C_854643309_1075190">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_757837">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_757846">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_757856">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_757859">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1052179">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor344">
+   </a>
+   CONGRID function shrinks or expands the size of an
+   <a name="kanchor345">
+   </a>
+   array by an arbitrary amount. CONGRID is similar to REBIN in that it can resize a one, two, or three dimensional array, but where REBIN requires that the new array size must be an integer multiple of the original size, CONGRID will resize an array to any arbitrary size. (REBIN is somewhat faster, however.) REBIN averages multiple points when shrinking an array, while CONGRID just resamples the array.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    congrid.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_757835">
+   </a>
+   <a name="C_854643309_757835_PageTOC_CONGRID_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = CONGRID(
+   <i>
+    Array
+   </i>
+   ,
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   ,
+   <i>
+    Z
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_757848">
+    CENTER
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1042041">
+    CUBIC
+   </a>
+   =
+   <i>
+    value
+   </i>
+   {-1 to 0}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_757851">
+    INTERP
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_757854">
+    MINUS_ONE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns the resized array. The returned array has the same number of dimensions as the original array and is of the same data type.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_757837">
+   </a>
+   <a name="C_854643309_757837_PageTOC_CONGRID_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Array
+  </h3>
+  <p>
+   A 1-, 2-, or 3-dimensional array to resize.
+   <i>
+    Array
+   </i>
+   can be any type except string or structure.
+  </p>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   The new X-dimension of the resized array.
+   <i>
+    X
+   </i>
+   must be an integer or a long integer, and must be greater than or equal to 2.
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   The new Y-dimension of the resized array. If the original array has only 1 dimension,
+   <i>
+    Y
+   </i>
+   is ignored. If the original array has 2 or 3 dimensions
+   <i>
+    Y
+   </i>
+   MUST be present.
+  </p>
+  <h3 class="Argument">
+   Z
+  </h3>
+  <p>
+   The new Z-dimension of the resized array. If the original array has only 1 or 2 dimensions,
+   <i>
+    Z
+   </i>
+   is ignored. If the original array has 3 dimensions then
+   <i>
+    Z
+   </i>
+   MUST be present.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_757846">
+   </a>
+   <a name="C_854643309_757846_PageTOC_CONGRID_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="C_854643309_757848">
+   </a>
+   <a name="C_854643309_757848_Keywords_CONGRID__">
+   </a>
+   CENTER
+  </h3>
+  <p>
+   Set this keyword to shift the interpolation so that points in the input and output arrays are assumed to lie at the midpoint of their coordinates rather than at their lower-left corner.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1042041">
+   </a>
+   <a name="C_854643309_1042041_Keywords_CONGRID__">
+   </a>
+   CUBIC
+  </h3>
+  <p>
+   Set this keyword to a value between -1 and 0 to use the cubic convolution interpolation method with the specified value as the interpolation parameter. Setting this keyword equal to a value greater than zero specifies a value of -1 for the interpolation parameter. Park and Schowengerdt (see reference below) suggest that a value of -0.5 significantly improves the reconstruction properties of this algorithm. This keyword has no effect when used with 3-dimensional arrays.
+  </p>
+  <p>
+   Cubic convolution is an interpolation method that closely approximates the theoretically optimum sinc interpolation function using cubic polynomials. According to sampling theory, details of which are beyond the scope of this document, if the original signal,
+   <i>
+    f
+   </i>
+   , is a band-limited signal, with no frequency component larger than ω
+   <sub style="font-family: Times;">
+    0
+   </sub>
+   , and
+   <i>
+    f
+   </i>
+   is sampled with spacing less than or equal to 1/(2ω
+   <sub style="font-family: Times;">
+    0
+   </sub>
+   ), then
+   <i>
+    f
+   </i>
+   can be reconstructed by convolving with a sinc function: sinc(
+   <i>
+    x
+   </i>
+   ) = sin(π
+   <i style="font-family: Times;font-style: italic;">
+    x
+   </i>
+   ) / (π
+   <i style="font-family: Times;font-style: italic;">
+    x
+   </i>
+   ).
+  </p>
+  <p>
+   In the one-dimensional case, four neighboring points are used, while in the two-dimensional case 16 points are used. Note that cubic convolution interpolation is significantly slower than bilinear interpolation.
+  </p>
+  <p>
+   For further details see:
+  </p>
+  <p>
+   Rifman, S.S. and McKinnon, D.M., “Evaluation of Digital Correction Techniques for ERTS Images; Final Report”, Report 20634-6003-TU-00, TRW Systems, Redondo Beach, CA, July 1974.
+  </p>
+  <p>
+   S. Park and R. Schowengerdt, 1983 “Image Reconstruction by Parametric Cubic Convolution”, Computer Vision, Graphics &amp; Image Processing 23, 256.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_757851">
+   </a>
+   <a name="C_854643309_757851_Keywords_CONGRID__">
+   </a>
+   INTERP
+  </h3>
+  <p>
+   Set this keyword to force CONGRID to use linear interpolation when resizing a 1- or 2-dimensional array. CONGRID automatically uses linear interpolation if the input array is 3-dimensional. When the input array is 1- or 2-dimensional, the default is to employ nearest-neighbor sampling.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_757854">
+   </a>
+   <a name="C_854643309_757854_Keywords_CONGRID__">
+   </a>
+   MINUS_ONE
+  </h3>
+  <p>
+   Set this keyword to prevent CONGRID from extrapolating one row or column beyond the bounds of the input array. For example, if the input array has the dimensions (
+   <i>
+    i, j
+   </i>
+   ) and the output array has the dimensions (
+   <i>
+    x, y
+   </i>
+   ), then by default the array is resampled by a factor of (
+   <i>
+    i/x
+   </i>
+   ) in the X direction and (
+   <i>
+    j/y
+   </i>
+   ) in the Y direction. If MINUS_ONE is set, the array will be resampled by the factors (
+   <i>
+    i
+   </i>
+   -1)/(
+   <i>
+    x
+   </i>
+   -1) and (
+   <i>
+    j
+   </i>
+   -1)/(
+   <i>
+    y
+   </i>
+   -1).
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_757856">
+   </a>
+   <a name="C_854643309_757856_PageTOC_CONGRID_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following example reads some data from a file, displays it at its original size, then uses CONGRID to resize the array and display the magnified version.
+  </p>
+  <p class="Code_Indented">
+   ; Select the file.
+  </p>
+  <p class="Code_Indented">
+   file = FILEPATH('convec.dat', SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   ; Use READ_BINARY to read in the data,
+  </p>
+  <p class="Code_Indented">
+   ; specifying known data dimensions.
+  </p>
+  <p class="Code_Indented">
+   image = READ_BINARY(file, DATA_DIMS = [248, 248])
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   ; Use the IMAGE function to display the original image with a color table.
+  </p>
+  <p class="Code_Indented">
+   im = IMAGE(image, RGB_TABLE = 28)
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   ; Use the CONGRID function to increase the image array
+  </p>
+  <p class="Code_Indented">
+   ; size to 600 by 600 pixels and force bilinear interpolation.
+  </p>
+  <p class="Code_Indented">
+   magnifiedIm = CONGRID(image, 600, 600, /INTERP)
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   ; Display the magnified image in a new window
+  </p>
+  <p class="Code_Indented">
+   ; with a color table.
+  </p>
+  <p class="Code_Indented">
+   im2 = IMAGE(magnifiedIm, RGB_TABLE = 28)
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_757859">
+   </a>
+   <a name="C_854643309_757859_PageTOC_CONGRID_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1052179">
+   </a>
+   <a name="C_854643309_1052179_PageTOC_CONGRID_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../R/REBIN.html#R_822202989_678489">
+    REBIN
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

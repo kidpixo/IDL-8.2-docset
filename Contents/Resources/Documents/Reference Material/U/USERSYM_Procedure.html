@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: U" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   USERSYM Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/U/USERSYM_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="U_list.html">
+    Routines: U
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    USERSYM Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_889401">
+   </a>
+   <a name="dg_routines_3604229493_29292">
+   </a>
+   USERSYM Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889425">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889437">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889441">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889453">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889491">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889499">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2663">
+   </a>
+   USERSYM procedure is used to define the plotting symbol that marks points when the PSYM keyword symbol is set to plus or minus 8. Symbols can be drawn with vectors or can be filled. Symbols can be of any size and can have up to 49 vertices.
+  </p>
+  <p>
+   The symbol you define can be drawn using lines or it can be filled using the polygon filling operator. USERSYM accepts two vector parameters: a vector of
+   <i>
+    x
+   </i>
+   values and a vector of
+   <i>
+    y
+   </i>
+   values. The coordinate system you use to define the symbol’s shape is centered on each data point, and each unit is approximately the size of a character. The color and line thickness used to draw the symbols are also optional keyword parameters of USERSYM.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889425">
+   </a>
+   <a name="dg_routines_3604229493_886938_PageTOC_USERSYM_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   USERSYM,
+   <i>
+    X
+   </i>
+   [,&#160;
+   <i>
+    Y
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889443">
+    COLOR
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889446">
+    FILL
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889450">
+    THICK
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889437">
+   </a>
+   <a name="dg_routines_3604229493_886940_PageTOC_USERSYM_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   X, Y
+  </h3>
+  <p>
+   The
+   <i>
+    X
+   </i>
+   and/or
+   <i>
+    Y
+   </i>
+   parameters define the vertices of the symbol as offsets from the data point in units of approximately the size of a character. In the case of a vector drawn symbol, the symbol is formed by connecting the vertices in order. If only one argument is specified, it must be a (2,
+   <i>
+    N
+   </i>
+   ) array of vertices, with element [0,
+   <i>
+    i
+   </i>
+   ] containing the X coordinate of the vertex, and element [1,
+   <i>
+    i
+   </i>
+   ] containing the Y. If both arguments are provided,
+   <i>
+    X
+   </i>
+   contains only the X coordinates.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889441">
+   </a>
+   <a name="dg_routines_3604229493_886943_PageTOC_USERSYM_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_889443">
+   </a>
+   <a name="dg_routines_3604229493_886945_Keywords_USERSYM__">
+   </a>
+   COLOR
+  </h3>
+  <p>
+   The color used to draw the symbols, or used to fill the polygon. The default color is the same as the line color.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_889446">
+   </a>
+   <a name="dg_routines_3604229493_886948_Keywords_USERSYM__">
+   </a>
+   FILL
+  </h3>
+  <p>
+   Set this
+   <a name="kanchor2664">
+   </a>
+   keyword to fill the polygon defined by the vertices. If FILL is not set, lines are drawn connecting the vertices.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_889450">
+   </a>
+   <a name="dg_routines_3604229493_886951_Keywords_USERSYM__">
+   </a>
+   THICK
+  </h3>
+  <p>
+   The thickness of the lines used in drawing the symbol. The default thickness is 1.0.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889453">
+   </a>
+   <a name="dg_routines_3604229493_886953_PageTOC_USERSYM_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To define the simplest symbol, use a one character-wide dash centered over the data point:
+  </p>
+  <p class="Code">
+   USERSYM, [-.5, .5], [0, 0]
+   <br />
+   PLOT, FINDGEN(20), PSYM = 8
+  </p>
+  <p>
+   Make a diamond-shaped plotting symbol. Define vectors of X and Y values before calling USERSYM:
+  </p>
+  <p class="Code">
+   X = [-2, 0, 2, 0, -2]
+   <br />
+   Y = [0, 2, 0, -2, 0]
+   <br />
+   USERSYM, X, Y
+   <br />
+   PLOT, FINDGEN(20), PSYM = 8
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_889459">
+   </a>
+   C
+   <a name="kanchor2665">
+   </a>
+   reating a Filled Circle Symbol
+  </h3>
+  <p>
+   The following code illustrates the use of USERSYM to define a new symbol—a filled circle:
+  </p>
+  <p class="Code">
+   ; Make a vector of 16 points, A[i] = 2pi/16:
+   <br />
+   A = FINDGEN(17) * (!PI*2/16.)
+   <br />
+   ; Define the symbol to be a unit circle with 16 points,
+   <br />
+   ; and set the filled flag:
+   <br />
+   USERSYM, COS(A), SIN(A), /FILL
+  </p>
+  <p>
+   Using the variables defined in a batch file, we then create the plot, specifying 8 (user-defined) for the PSYM keyword to PLOT:
+  </p>
+  <p class="Code">
+   ; Define variables.
+   <br />
+   @plot01
+   <br />
+   ; Use the LINFIT function to fit the data to a line:
+   <br />
+   coeff = LINFIT(YEAR, SOCKEYE)
+   <br />
+   ;YFIT is the fitted line:
+   <br />
+   YFIT = coeff[0] + coeff[1]*YEAR
+   <br />
+   <br />
+   PLOT, YEAR, SOCKEYE, /YNOZERO, PSYM = 8, $
+   <br />
+   &#160;&#160;&#160;TITLE = 'Quadratic Fit', XTITLE = 'Year', $
+   <br />
+   &#160;&#160;&#160;YTITLE = 'Sockeye Population'
+   <br />
+   ; Overplot the smooth curve using a plain line:
+   <br />
+   OPLOT, YEAR, YFIT
+  </p>
+  <p>
+   The following figure shows the result of this code:
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Plotting with User-defined Plotting Symbols
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/plng07a.gif" style="margin-left: 5.99976px;margin-top: 0.75024px;margin-right: 9.599026px;margin-bottom: 10.31975px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   does not find the batch file, the required directory may not be in your IDL search path. All of the files mentioned are located in the
+   <span class="Courier">
+    examples/doc
+   </span>
+   subdirectory of the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   distribution. By default, this directory is part of
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   ’s path; if you have not changed your path, you will be able to run the examples as described here.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889491">
+   </a>
+   <a name="dg_routines_3604229493_886962_PageTOC_USERSYM_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889499">
+   </a>
+   <a name="dg_routines_3604229493_957833_PageTOC_USERSYM_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_883230" target="" title="" alt="">
+    PLOT Procedure
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

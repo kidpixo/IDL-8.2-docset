@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: N|NCDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   NCDF_CREATE
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/N/NetCDF Routines/NCDF_CREATE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../N_list.html">
+    Routines: N
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../NCDF_Routines.html">
+    NCDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    NCDF_CREATE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="netCDF_2618656010_1006152">
+   </a>
+   <a name="netCDF_2618656010_30606">
+   </a>
+   NCDF_CREATE
+  </h1>
+  <p>
+   The
+   <a name="kanchor1937">
+   </a>
+   NCDF_CREATE function creates a new NetCDF file. By default, the file format is NetCDF version 3.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   To create NetCDF version 4 files, use the
+   <a href="#netCDF_2618656010_1006206">
+    NETCDF4_FORMAT
+   </a>
+   keyword.
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_997285_PageTOC_NCDF_CREATE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = NCDF_CREATE(
+   <span class="Italic">
+    Filename
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#netCDF_2618656010_1006200">
+    CLOBBER
+   </a>
+   &#160;|&#160;/
+   <a class="MCXref_Heading_0" href="#netCDF_2618656010_1006203">
+    NOCLOBBER
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#netCDF_2618656010_1006206">
+    NETCDF4_FORMAT
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_1019963_PageTOC_NCDF_CREATE_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   If successful, the NetCDF ID for the file is returned. The newly-created NetCDF file is automatically placed into define mode. If you do not have write permission to create the specified Filename, NCDF_CREATE returns an error message instead of a NetCDF file ID.
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_997287_PageTOC_NCDF_CREATE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string containing the name of the file to be created.
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_997290_PageTOC_NCDF_CREATE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="netCDF_2618656010_1006200">
+   </a>
+   <a name="netCDF_2618656010_997292_Keywords_NCDF_CREATE_">
+   </a>
+   CLOBBER
+  </h3>
+  <p>
+   Set this keyword to erase the existing file (if the file already exists) before creating the new version.
+  </p>
+  <h3 class="Keyword">
+   <a name="netCDF_2618656010_1006203">
+   </a>
+   <a name="netCDF_2618656010_997295_Keywords_NCDF_CREATE_">
+   </a>
+   NOCLOBBER
+  </h3>
+  <p>
+   Set this keyword to create a new NetCDF file only if the specified file does not already exist. This is the default.
+  </p>
+  <h3 class="Keyword">
+   <a name="netCDF_2618656010_1006206">
+   </a>
+   <a name="netCDF_2618656010_44487">
+   </a>
+   NETCDF4_FORMAT
+  </h3>
+  <p>
+   Set this keyword to create a new NetCDF 4 file. In NetCDF 4 files, data is created and accessed with the HDF5 library. NetCDF 4 files are valid HDF5 files, and may be read with HDF5 routines.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If a NetCDF 4 file is modified using the HDF5 routines, rather than with the NetCDF 4 routines, the file is no longer a valid NetCDF 4 file, and may no longer be readable with the NetCDF routines.
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_997297_PageTOC_NCDF_CREATE_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Open a new NetCDF File and destroy test.nc if it already exists:
+  </p>
+  <p class="Code">
+   id = NCDF_CREATE('test.nc',/CLOBBER)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   id2 = NCDF_CREATE('test.nc', /NOCLOBBER)
+  </p>
+  <p>
+   This attempt to create a new version of the file
+   <span class="Courier">
+    test.nc
+   </span>
+   produces the following error because the NOCLOBBER keyword was set:
+  </p>
+  <p class="Code">
+   nccreate: filename "test.nc": File exists
+  </p>
+  <p class="Code">
+   % NCDF_CREATE: Operation failed
+  </p>
+  <p class="Code">
+   % Execution halted at $MAIN$   (NCDF_CREATE).
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_997304_PageTOC_NCDF_CREATE_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added the NETCDF4_FORMAT keyword.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="netCDF_2618656010_1019044_PageTOC_NCDF_CREATE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="NCDF_CLOSE.html#netCDF_2618656010_1005935">
+    NCDF_CLOSE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="NCDF_CONTROL.html#netCDF_2618656010_1005986">
+    NCDF_CONTROL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="NCDF_OPEN.html#netCDF_2618656010_1007165">
+    NCDF_OPEN
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

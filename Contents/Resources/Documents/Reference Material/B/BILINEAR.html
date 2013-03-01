@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: B" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   BILINEAR
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/B/BILINEAR.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="B_list.html">
+    Routines: B
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    BILINEAR
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="B_856805997_998860">
+   </a>
+   <a name="B_856805997_43479">
+   </a>
+   BILINEAR
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#B_856805997_749448">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_749450">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_996240">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_996636">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_769735">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_993418">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor137">
+   </a>
+   BILINEAR function uses a
+   <a name="kanchor138">
+   </a>
+   bilinear interpolation algorithm to compute the value of a data array at each of a set of subscript values.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    bilinear.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_749448">
+   </a>
+   <a name="B_856805997_749448_PageTOC_BILINEAR_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = BILINEAR(
+   <i>
+    P, IX, JY
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#B_856805997_996637">
+    MISSING
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_749450">
+   </a>
+   <a name="B_856805997_68844">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This function returns a two-dimensional interpolated array of the same type as the input array.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_996240">
+   </a>
+   <a name="B_856805997_749450_PageTOC_BILINEAR_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   P
+  </h3>
+  <p>
+   A two-dimensional data array.
+  </p>
+  <h3 class="Argument">
+   IX and JY
+  </h3>
+  <p>
+   Arrays containing the X and Y “virtual subscripts” of
+   <i>
+    P
+   </i>
+   for which to interpolate values.
+   <i>
+    IX
+   </i>
+   and
+   <i>
+    JY
+   </i>
+   can be either of the following:
+  </p>
+  <p class="Bullet">
+   One-dimensional,
+   <i>
+    n
+   </i>
+   -element floating-point arrays of subscripts to look up in
+   <i>
+    P.
+   </i>
+   One-dimensional arrays will be converted to two-dimensional arrays in such a way that
+   <i>
+    IX
+   </i>
+   contains
+   <i>
+    n
+   </i>
+   identical rows and
+   <i>
+    JY
+   </i>
+   contains
+   <i>
+    n
+   </i>
+   identical columns.
+  </p>
+  <p class="Bullet">
+   Two-dimensional,
+   <i>
+    n
+   </i>
+   -element floating-point arrays that uniquely specify the X subscripts (the
+   <i>
+    IX
+   </i>
+   array) and the Y subscripts (the
+   <i>
+    JY
+   </i>
+   array) of the points to be computed from the input array
+   <i>
+    P
+   </i>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Location points outside the bounds of the array
+   <i>
+    P
+   </i>
+   —that is, elements of the
+   <i>
+    IX
+   </i>
+   or
+   <i>
+    IY
+   </i>
+   arguments that are either less than zero or greater than the largest subscript in the corresponding dimension of
+   <i>
+    P —
+   </i>
+   are interpolated to the closest value within the bounds of the array
+   <i>
+    P
+   </i>
+   .
+  </p>
+  <p>
+   It is better to use two-dimensional arrays for
+   <i>
+    IX
+   </i>
+   and
+   <i>
+    JY
+   </i>
+   because the algorithm is somewhat faster. If
+   <i>
+    IX
+   </i>
+   and
+   <i>
+    JY
+   </i>
+   are specified as one-dimensional, the returned two-dimensional arrays
+   <i>
+    IX
+   </i>
+   and
+   <i>
+    JY
+   </i>
+   can be re-used on subsequent calls to take advantage of the faster 2D algorithm.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="B_856805997_996637">
+   </a>
+   <a name="B_856805997_50020">
+   </a>
+   MISSING
+  </h3>
+  <p>
+   The value to return for elements outside the bounds of
+   <i>
+    P.
+   </i>
+   The bounds of
+   <i>
+    P
+   </i>
+   are 0 to
+   <i>
+    n
+   </i>
+   -1 and 0 to
+   <i>
+    m
+   </i>
+   -1 where
+   <i>
+    P
+   </i>
+   is an
+   <i>
+    n
+   </i>
+   x
+   <i>
+    m
+   </i>
+   array.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If MISSING value is set to a complex number, IDL uses only the real part.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_996636">
+   </a>
+   <a name="B_856805997_749464_PageTOC_BILINEAR_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Create a 3 x 3 floating point array
+   <i>
+    P
+   </i>
+   :
+  </p>
+  <p class="Code">
+   P = FINDGEN(3,3)
+  </p>
+  <p>
+   Suppose we wish to find the value of a point half way between the first and second elements of the first row of
+   <i>
+    P
+   </i>
+   . Create the subscript arrays
+   <i>
+    IX
+   </i>
+   and
+   <i>
+    JY
+   </i>
+   :
+  </p>
+  <p class="Code">
+   IX = 0.5 ;Define the X subscript.
+   <br />
+   JY = 0.0 ;Define the Y subscript.
+   <br />
+   Z = BILINEAR(P, IX, JY) ;Interpolate.
+   <br />
+   PRINT, Z ;Print the value at the point IX,JY within P.
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   0.500000
+  </p>
+  <p>
+   Suppose we wish to find the values of a 2 x 2 array of points in
+   <i>
+    P
+   </i>
+   . Create the subscript arrays
+   <i>
+    IX
+   </i>
+   and
+   <i>
+    JY
+   </i>
+   :
+  </p>
+  <p class="Code">
+   IX = [[0.5, 1.9], [1.1, 2.2]] ;Define the X subscripts.
+   <br />
+   JY = [[0.1, 0.9], [1.2, 1.8]] ;Define the Y subscripts.
+   <br />
+   Z = BILINEAR(P, IX, JY) ;Interpolate.
+   <br />
+   PRINT, Z ;Print the array of values.
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   0.800000&#160;&#160;&#160;&#160;4.60000
+  </p>
+  <p class="Code">
+   4.70000&#160;&#160;&#160;&#160;&#160;7.40000
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_769735">
+   </a>
+   <a name="B_856805997_769735_PageTOC_BILINEAR_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added MISSING keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="B_856805997_993418">
+   </a>
+   <a name="B_856805997_993418_PageTOC_BILINEAR_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../I/INTERPOL.html#I_833016429_872030">
+    INTERPOL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../I/INTERPOLATE.html#I_833016429_677258">
+    INTERPOLATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../K/KRIG2D.html#K_837341805_750558">
+    KRIG2D
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: X" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   XBM_EDIT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/X/XBM_EDIT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="X_list.html">
+    Routines: X
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    XBM_EDIT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="X_800576109_1046006">
+   </a>
+   <a name="X_800576109_10065">
+   </a>
+   XBM_EDIT
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#X_800576109_762707">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#X_800576109_996414">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#X_800576109_762709">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#X_800576109_1033858">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#X_800576109_1033866">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor3006">
+   </a>
+   XBM_EDIT procedure is a utility for
+   <a name="kanchor3007">
+   </a>
+   creating and editing
+   <a name="kanchor3008">
+   </a>
+   icons for use with IDL widgets as bitmap labels for widget buttons.
+  </p>
+  <p>
+   The icons created with XBM_EDIT can be saved in two different file formats. IDL “array definition files” are text files that can be inserted into IDL programs. “Bitmap array files” are data files that can be read into IDL programs. Bitmap array files should be used temporarily until the final icon design is determined and then they can be saved as IDL array definitions for inclusion in the final widget code. This routine does not check the file types of the files being read and assumes that they are of the correct size and type for reading. XBM_EDIT maintains its state in a common block so it is restricted to one working copy at a time.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    xbm_edit.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib/utilities
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="X_800576109_762707">
+   </a>
+   <a name="X_800576109_762707_PageTOC_XBM_EDIT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   XBM_EDIT [,&#160;/
+   <a class="MCXref_Heading_0" href="#X_800576109_937479">
+    BLOCK
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#X_800576109_762711">
+    FILENAME
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#X_800576109_762714">
+    GROUP
+   </a>
+   =
+   <i>
+    widget_id
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#X_800576109_762717">
+    XSIZE
+   </a>
+   =
+   <i>
+    pixels
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#X_800576109_762720">
+    YSIZE
+   </a>
+   =
+   <i>
+    pixels
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="X_800576109_996414">
+   </a>
+   <a name="X_800576109_99321">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="X_800576109_762709">
+   </a>
+   <a name="X_800576109_762709_PageTOC_XBM_EDIT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="X_800576109_937479">
+   </a>
+   <a name="X_800576109_937479_Keywords_XBM_EDIT__">
+   </a>
+   BLOCK
+  </h3>
+  <p>
+   Set this keyword to have XMANAGER
+   <i>
+    block
+   </i>
+   when this application is registered. By default, BLOCK is set equal to zero, providing access to the command line if active command line processing is available. Note that setting BLOCK=1 will cause
+   <i>
+    all
+   </i>
+   widget applications to block, not just this application. For more information, see the documentation for the
+   <a class="MCXref_Heading_0" href="XMANAGER.html#X_800576109_921241">
+    NO_BLOCK
+   </a>
+   keyword to XMANAGER.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Only the outermost call to XMANAGER can block. Therefore, to have XBM_EDIT block, any earlier calls to XMANAGER must have been called with the NO_BLOCK keyword. See the documentation for the
+   <a class="MCXref_Heading_0" href="XMANAGER.html#X_800576109_921241">
+    NO_BLOCK
+   </a>
+   keyword to XMANAGER for an example.
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_762711">
+   </a>
+   <a name="X_800576109_762711_Keywords_XBM_EDIT__">
+   </a>
+   FILENAME
+  </h3>
+  <p>
+   Set this keyword to a scalar string that contains the filename to be used for the new icon. If this argument is not specified, the name “idl.bm” is used. The filename can be changed in XBM_EDIT by editing the “Filename” field before selecting a file option.
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_762714">
+   </a>
+   <a name="X_800576109_762714_Keywords_XBM_EDIT__">
+   </a>
+   GROUP
+  </h3>
+  <p>
+   The widget ID of the widget that calls XBM_EDIT. When this ID is specified, the death of the caller results in the death of XBM_EDIT.
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_762717">
+   </a>
+   <a name="X_800576109_762717_Keywords_XBM_EDIT__">
+   </a>
+   XSIZE
+  </h3>
+  <p>
+   The number of pixels across the bitmap is in the horizontal direction. The default value is 16 pixels.
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_762720">
+   </a>
+   <a name="X_800576109_762720_Keywords_XBM_EDIT__">
+   </a>
+   YSIZE
+  </h3>
+  <p>
+   The number of pixels across the bitmap is in the vertical direction. The default value is 16 pixels.
+  </p>
+  <h2 class="API">
+   <a name="X_800576109_1033858">
+   </a>
+   <a name="X_800576109_820222_PageTOC_XBM_EDIT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre-4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="X_800576109_1033866">
+   </a>
+   <a name="X_800576109_991402_PageTOC_XBM_EDIT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../W/WIDGET_BUTTON.html#W_811389549_36288">
+    WIDGET_BUTTON
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

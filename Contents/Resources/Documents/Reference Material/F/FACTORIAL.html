@@ -1,0 +1,325 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: F" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   FACTORIAL
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/F/FACTORIAL.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="F_list.html">
+    Routines: F
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    FACTORIAL
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="F_848155245_54485">
+   </a>
+   <a name="F_848155245_49328">
+   </a>
+   FACTORIAL
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#F_848155245_880293">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_899651">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_880295">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_54498">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_54509">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_54514">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_891254">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor907">
+   </a>
+   FACTORIAL
+   <a name="kanchor908">
+   </a>
+   function computes the
+   <a name="kanchor909">
+   </a>
+   factorial
+   <i>
+    N
+   </i>
+   ! For integers, the factorial is computed as (
+   <i>
+    N
+   </i>
+   ) • (
+   <i>
+    N
+   </i>
+   &#160;–&#160;1) • (
+   <i>
+    N&#160;
+   </i>
+   –&#160;2) • ... • 3 • 2 • 1. For non-integers the factorial is computed using GAMMA(&#160;
+   <i>
+    N
+   </i>
+   +1&#160;).
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    factorial.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_880293">
+   </a>
+   <a name="F_848155245_880293_PageTOC_FACTORIAL_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = FACTORIAL(
+   <i>
+    N
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_54500">
+    STIRLING
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_880257">
+    UL64
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_899651">
+   </a>
+   <a name="F_848155245_83324">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the product of the non-negative scalar value or array of values.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_880295">
+   </a>
+   <a name="F_848155245_880295_PageTOC_FACTORIAL_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   N
+  </h3>
+  <p>
+   A non-negative scalar or array of values.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Large values of
+   <i>
+    N
+   </i>
+   will cause floating-point overflow errors. The maximum size of
+   <i>
+    N
+   </i>
+   varies with machine architecture. On machines that support the IEEE standard for floating-point arithmetic, the maximum value of
+   <i>
+    N
+   </i>
+   is 170. See
+   <a class="MCXref_Heading_0" href="../M/MACHAR.html#M_824365677_887317">
+    MACHAR
+   </a>
+   for a discussion of machine-specific parameters affecting floating-point arithmetic.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_54498">
+   </a>
+   <a name="F_848155245_54498_PageTOC_FACTORIAL_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="F_848155245_54500">
+   </a>
+   <a name="F_848155245_54500_Keywords_FACTORIAL__">
+   </a>
+   STIRLING
+  </h3>
+  <p>
+   Set this keyword to use Stirling’s asymptotic formula to approximate
+   <i>
+    N
+   </i>
+   !:
+  </p>
+  <p style="text-align: center;">
+   <img src="../../images/12_7.jpg" />
+  </p>
+  <p>
+   where
+   <i>
+    e
+   </i>
+   is the base of the natural logarithm.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_880257">
+   </a>
+   <a name="F_848155245_880257_Keywords_FACTORIAL__">
+   </a>
+   UL64
+  </h3>
+  <p>
+   Set this keyword to return the results as unsigned 64-bit integers. This keyword is ignored if STIRLING is set.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Unsigned 64-bit integers will overflow for values of
+   <i>
+    N
+   </i>
+   greater than 20.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_54509">
+   </a>
+   <a name="F_848155245_54509_PageTOC_FACTORIAL_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Compute 20!:
+  </p>
+  <p class="Code">
+   PRINT, FACTORIAL(20)
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   2.4329020e+18
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_54514">
+   </a>
+   <a name="F_848155245_54514_PageTOC_FACTORIAL_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="F_848155245_891254">
+   </a>
+   <a name="F_848155245_891254_PageTOC_FACTORIAL_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../B/BINOMIAL.html#B_856805997_53018">
+    BINOMIAL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/TOTAL.html#T_809226861_1069724">
+    TOTAL
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

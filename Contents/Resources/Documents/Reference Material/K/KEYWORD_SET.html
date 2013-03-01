@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: K" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   KEYWORD_SET
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/K/KEYWORD_SET.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="K_list.html">
+    Routines: K
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    KEYWORD_SET
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="K_837341805_938653">
+   </a>
+   <a name="K_837341805_96477">
+   </a>
+   KEYWORD_SET
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#K_837341805_929611">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#K_837341805_930212">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#K_837341805_677377">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#K_837341805_930203">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#K_837341805_677380">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#K_837341805_822371">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#K_837341805_929512">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   <a name="K_837341805_23670">
+   </a>
+   The
+   <a name="kanchor1600">
+   </a>
+   KEYWORD_SET function returns a Boolean value based on the value of the specified expression. It returns a True (1) if its argument is defined and nonzero, and False (0) otherwise. The exact rules used to determine this are given in
+   <a class="MCXref_Heading_0" href="#K_837341805_930212">
+    Return Value
+   </a>
+   below.
+  </p>
+  <h2 class="API">
+   <a name="K_837341805_929611">
+   </a>
+   <a name="K_837341805_929611_PageTOC_KEYWORD_SET_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = KEYWORD_SET(
+   <i>
+    Expression
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="K_837341805_930212">
+   </a>
+   <a name="K_837341805_34604">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This function returns True (1) if:
+  </p>
+  <p class="Bullet">
+   <i>
+    Expression
+   </i>
+   is a scalar or 1-element array with a non-zero value.
+  </p>
+  <p class="Bullet">
+   <i>
+    Expression
+   </i>
+   is a structure.
+  </p>
+  <p class="Bullet">
+   <i>
+    Expression
+   </i>
+   is an ASSOC file variable.
+  </p>
+  <p>
+   KEYWORD_SET returns False (0) if:
+  </p>
+  <p class="Bullet">
+   <i>
+    Expression
+   </i>
+   is undefined.
+  </p>
+  <p class="Bullet">
+   <i>
+    Expression
+   </i>
+   is a scalar or 1&#8209;element array with a zero value.
+  </p>
+  <h2 class="API">
+   <a name="K_837341805_677377">
+   </a>
+   <a name="K_837341805_677377_PageTOC_KEYWORD_SET_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Expression
+  </h3>
+  <p>
+   The expression to be tested.
+   <i>
+    Expression
+   </i>
+   is usually a named variable.
+  </p>
+  <h2 class="API">
+   <a name="K_837341805_930203">
+   </a>
+   <a name="K_837341805_69741">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="K_837341805_677380">
+   </a>
+   <a name="K_837341805_677380_PageTOC_KEYWORD_SET_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Suppose that you are writing an
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   procedure that has the following procedure definition line:
+  </p>
+  <p class="Code">
+   PRO myproc, KEYW1 = keyw1, KEYW2 = keyw2
+  </p>
+  <p>
+   The following command could be used to execute a set of commands only if the keyword KEYW1 is set (i.e., it is present and nonzero):
+  </p>
+  <p class="Code">
+   IF KEYWORD_SET(keyw1) THEN BEGIN
+  </p>
+  <p>
+   The commands to be executed only if KEYW1 is set would follow.
+  </p>
+  <h2 class="API">
+   <a name="K_837341805_822371">
+   </a>
+   <a name="K_837341805_822371_PageTOC_KEYWORD_SET_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       <span class="_Override" style="font-family: Times;line-height: 13pt;">
+        Original
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="K_837341805_929512">
+   </a>
+   <a name="K_837341805_929512_PageTOC_KEYWORD_SET_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../A/ARG_PRESENT.html#A_850317933_1009459">
+    ARG_PRESENT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LOGICAL_TRUE.html#L_826528365_983139" target="" title="" alt="">
+    LOGICAL_TRUE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../N/N_ELEMENTS.html#N_830853741_953695">
+    N_ELEMENTS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../N/N_PARAMS.html#N_830853741_889230">
+    N_PARAMS
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

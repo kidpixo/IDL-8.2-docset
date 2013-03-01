@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrWindow" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrWindow::SetCurrentCursor
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/NoLines.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrWindow__SetCurrentC.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrWindow::SetCurrentCursor
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1019088">
+   </a>
+   <a name="objects_gr_2157407275_22093">
+   </a>
+   IDLgrWindow::SetCurrentCursor
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1019106">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1019110">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1019143">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1019153">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1745209">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLgrWindow::
+   <a name="kanchor4604">
+   </a>
+   SetCurrentCursor procedure method s
+   <a name="kanchor4605">
+   </a>
+   ets the current cursor image to be used while positioned over a drawing area.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1019106">
+   </a>
+   <a name="objects_gr_2157407275_1025993_PageTOC_IDLgrWindow">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrWindow.html#objects_gr_2157407275_1018335">
+    IDLgrWindow
+   </a>
+   ::]SetCurrentCursor [,&#160;
+   <i>
+    CursorName
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1019144">
+    IMAGE
+   </a>
+   =
+   <i>
+    16 x 16 bitmap
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1019146">
+    MASK
+   </a>
+   =
+   <i>
+    16 x 16 bitmap
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1019148">
+    HOTSPOT
+   </a>
+   =
+   <i>
+    [x
+   </i>
+   ,
+   <i>
+    y]
+   </i>
+   ]
+  </p>
+  <p class="Syntax">
+   <span class="Bold">
+    Unix-Only Keywords:
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1019150">
+    STANDARD
+   </a>
+   =
+   <i>
+    index
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1019110">
+   </a>
+   <a name="objects_gr_2157407275_1025995_PageTOC_IDLgrWindow">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   CursorName
+  </h3>
+  <p>
+   A string that specifies which built-in cursor to use. This argument is ignored if any keywords to this routine are set. This string can either be a name provided to the REGISTER_CURSOR routine or one of the following:
+  </p>
+  <table style="width: 328px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="140px" />
+   <col width="188px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ARROW
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       CROSSHAIR
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ICON
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       IBEAM
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       MOVE
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       ORIGINAL
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       SIZE_NE
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       SIZE_NW
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       SIZE_SE
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       SIZE_SW
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       SIZE_NS
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       SIZE_EW
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       UP_ARROW
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1019143">
+   </a>
+   <a name="objects_gr_2157407275_1026000_PageTOC_IDLgrWindow">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1019144">
+   </a>
+   <a name="objects_gr_2157407275_1019144_Keywords_IDLgrWindow">
+   </a>
+   IMAGE
+  </h3>
+  <p>
+   Set this keyword to a 16x16 column bitmap, contained in a 16-element short integer vector, specifying the cursor pattern. This image can be created from a string array using the
+   <a class="MCXref_Heading_0" href="../../Reference Material/C/CREATE_CURSOR.html#C_854643309_1375274">
+    CREATE_CURSOR
+   </a>
+   procedure. The offset from the upper-left pixel to the point that is considered the “hot spot” can be provided via the HOTSPOT keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1019146">
+   </a>
+   <a name="objects_gr_2157407275_1019146_Keywords_IDLgrWindow">
+   </a>
+   MASK
+  </h3>
+  <p>
+   When the IMAGE keyword is set, the MASK keyword can be used to simultaneously specify the mask that should be used. In the mask, bits that are set indicate bits in the IMAGE that should be seen and bits that are not are “masked out”.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1019148">
+   </a>
+   <a name="objects_gr_2157407275_1019148_Keywords_IDLgrWindow">
+   </a>
+   HOTSPOT
+  </h3>
+  <p>
+   Set this keyword to a two-element vector specifying the [
+   <i>
+    x
+   </i>
+   ,
+   <i>
+    y
+   </i>
+   ] pixel offset of the cursor “hot spot”, the point which is considered to be the mouse position, from the upper left corner of the cursor image. This parameter is only applicable if IMAGE is provided. The cursor image is displayed top-down (the first row is displayed at the top).
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1019150">
+   </a>
+   <a name="objects_gr_2157407275_1019150_Keywords_IDLgrWindow">
+   </a>
+   STANDARD
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on UNIX platforms.
+   </i>
+  </p>
+  <p>
+   Set this keyword to an X11 cursor font index to change the appearance of the cursor in the IDL graphics window to a glyph in this font. On non-X platforms, setting this keyword displays the crosshair cursor.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1019153">
+   </a>
+   <a name="objects_gr_2157407275_43864">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added
+       <i>
+        CursorName
+       </i>
+       argument
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1745209">
+   </a>
+   <a name="objects_gr_2157407275_50508">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../../Reference Material/R/REGISTER_CURSOR.html#R_822202989_1105371">
+    REGISTER_CURSOR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Reference Material/C/CREATE_CURSOR.html#C_854643309_1375274">
+    CREATE_CURSOR
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

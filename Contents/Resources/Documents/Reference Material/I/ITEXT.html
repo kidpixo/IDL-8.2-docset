@@ -1,0 +1,662 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   ITEXT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/ITEXT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    ITEXT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="iTools_api_3860698369_1008682">
+   </a>
+   <a name="iTools_api_3860698369_63410">
+   </a>
+   <span class="_Override">
+    ITEXT
+   </span>
+  </h1>
+  <p madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+   <span class="_Override">
+    <madcap:conditionaltext madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008707">
+      Syntax
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008743">
+      Arguments
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008749">
+      Keywords
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008809">
+      Examples
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008817">
+      Version History
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008825">
+      See Also
+     </a>
+    </madcap:conditionaltext>
+   </span>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Please see the
+   <a href="../T/TEXT.html" target="" title="" alt="" class="MCXref_Heading_0">
+    TEXT
+   </a>
+   function, which replaces the functionality of this routine.
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1008707">
+   </a>
+   <a name="iTools_api_3860698369_1060655_PageTOC_ITEXT_">
+   </a>
+   <span class="_Override">
+    Syntax
+   </span>
+  </h2>
+  <p class="Syntax">
+   <span class="_Override">
+    ITEXT,
+   </span>
+   <span class="Italic">
+    Text
+   </span>
+   <span class="_Override">
+    [,&#160;X,&#160;Y&#160;[,&#160;Z]] [,&#160;
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008755">
+     ALIGNMENT
+    </a>
+    =
+    <span class="Italic">
+     Value
+    </span>
+    <span class="_Override">
+     ] [,&#160;
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008759">
+      BASELINE
+     </a>
+     =
+     <span class="Italic">
+      Value
+     </span>
+     <span class="_Override">
+      ] [,&#160;/
+      <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008780">
+       DATA
+      </a>
+      &#160;|&#160;,&#160;/
+      <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008783">
+       DEVICE
+      </a>
+      &#160;|&#160;,&#160;/
+      <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008789">
+       NORMAL
+      </a>
+      ] [,&#160;
+      <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008786">
+       IDENTIFIER
+      </a>
+      =
+      <span class="Italic">
+       Variable
+      </span>
+      <span class="_Override">
+       ] [,&#160;
+       <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008792">
+        ORIENTATION
+       </a>
+       =
+       <span class="Italic">
+        Value
+       </span>
+       <span class="_Override">
+        ] [,&#160;PROPERTY=
+       </span>
+       <span class="Italic">
+        Value
+       </span>
+       <span class="_Override">
+        ] [,&#160;
+        <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008795">
+         TARGET_IDENTIFIER
+        </a>
+        =
+        <span class="Italic">
+         iToolID
+        </span>
+        <span class="_Override">
+         ] [,&#160;
+         <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008798">
+          TOOL
+         </a>
+         =
+         <span class="Italic">
+          iToolID
+         </span>
+         <span class="_Override">
+          ] [,&#160;
+          <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008801">
+           UPDIR
+          </a>
+          =
+          <span class="Italic">
+           Value
+          </span>
+          <span class="_Override">
+           ] [,&#160;/
+           <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1008806">
+            VISUALIZATION
+           </a>
+           ]
+          </span>
+         </span>
+        </span>
+       </span>
+      </span>
+     </span>
+    </span>
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1008743">
+   </a>
+   <a name="iTools_api_3860698369_1060658_PageTOC_ITEXT_">
+   </a>
+   <span class="_Override">
+    Arguments
+   </span>
+  </h2>
+  <h3 class="Argument">
+   <span class="_Override">
+    Text
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    The text to be displayed.
+   </span>
+  </p>
+  <h3 class="Argument">
+   <span class="_Override">
+    X, Y, Z
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    The location of the text to be displayed, specified in normalized coordinates unless the DATA or DEVICE keyword is set.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1008749">
+   </a>
+   <a name="iTools_api_3860698369_1060665_PageTOC_ITEXT_">
+   </a>
+   <span class="_Override">
+    Keywords
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    Any property of a text annotation can be set using this routine. To set the value of a property, specify the property name as a keyword set equal to the appropriate property value. See
+    <a class="MCXref_Heading_0" href="ISETPROPERTY.html#iTools_api_3860698369_1007484">
+     ISETPROPERTY
+    </a>
+    for details.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008755">
+   </a>
+   <a name="iTools_api_3860698369_34639">
+   </a>
+   <span class="_Override">
+    ALIGNMENT
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a floating-point value between 0.0 and 1.0 to indicate the horizontal alignment of the text baseline. An alignment of 0.0 (the default) left-justifies the text at the given position; an alignment of 1.0 right-justifies the text, and an alignment of 0.5 centers the text.
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    For example, if ALIGNMENT is set to 1.0, then the X, Y text location refers to the right edge of the text string.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008759">
+   </a>
+   <a name="iTools_api_3860698369_28486">
+   </a>
+   <span class="_Override">
+    BASELINE
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a two- or three-element floating-point vector describing the direction in which the baseline is to be oriented. Use this property in conjunction with the UPDIR keyword to specify the plane on which the text lies.
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    The following table gives the commonly-used BASELINE values:
+   </span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="125px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 286px;caption-side: top;">
+   <col width="112px" />
+   <col width="174px" />
+   <thead>
+    <tr style="height: 15px;background-color: #cbcbff;">
+     <td>
+      <p style="text-align: center;">
+       Vector
+      </p>
+     </td>
+     <td>
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr style="height: 32px;">
+     <td>
+      <p style="text-align: center;">
+       [1.0, 0, 0]
+      </p>
+     </td>
+     <td>
+      <p>
+       Parallel to +X axis (default)
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p style="text-align: center;">
+       [0, 1.0, 0]
+      </p>
+     </td>
+     <td>
+      <p>
+       Parallel to +Y axis
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p style="text-align: center;">
+       [0, 0, 1.0]
+      </p>
+     </td>
+     <td>
+      <p>
+       Parallel to +Z axis
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008780">
+   </a>
+   <a name="iTools_api_3860698369_86828">
+   </a>
+   <span class="_Override">
+    DATA
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword if the input arguments are specified in data coordinates.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008783">
+   </a>
+   <a name="iTools_api_3860698369_12595">
+   </a>
+   <span class="_Override">
+    DEVICE
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword if the input arguments are specified in device coordinates (pixels).
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008786">
+   </a>
+   <a name="iTools_api_3860698369_67210">
+   </a>
+   <span class="_Override">
+    IDENTIFIER
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a named variable that will contain the full identifier of the newly-created object.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008789">
+   </a>
+   <a name="iTools_api_3860698369_99434">
+   </a>
+   <span class="_Override">
+    NORMAL
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword if the input arguments are specified in normalized [0, 1] coordinates (the default).
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008792">
+   </a>
+   <a name="iTools_api_3860698369_98131">
+   </a>
+   <span class="_Override">
+    ORIENTATION
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to the orientation angle of the text in degrees. The orientation angle is defined as counter-clockwise from the positive x axis. The default value is 0.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008795">
+   </a>
+   <a name="iTools_api_3860698369_25136">
+   </a>
+   <span class="_Override">
+    TARGET_IDENTIFIER
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to the iTools identifier of an object that is contained in the data space into which the text object should be placed. If a value is not supplied, the first data space in the current view is used.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008798">
+   </a>
+   <a name="iTools_api_3860698369_84067">
+   </a>
+   <span class="_Override">
+    TOOL
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to the iTools identifier of the iTool in which TARGET_IDENTIFIER is found. If a value is not supplied, the current iTool is used.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008801">
+   </a>
+   <a name="iTools_api_3860698369_95798">
+   </a>
+   <span class="_Override">
+    UPDIR
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a two- or three-element floating-point vector describing the vertical direction for the string. The
+   </span>
+   <span class="Italic">
+    upward direction
+   </span>
+   <span class="_Override">
+    is the direction defined by a vector pointing from the origin to the point specified.
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    Use this keyword in conjunction with the BASELINE keyword to specify the plane on which the text lies (the direction specified by UPDIR should be orthogonal to the direction specified by BASELINE).
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    For example, if you wanted a string to lie in the Y-Z plane, pointing downwards and towards you, you’d define BASELINE to be [0, 0, 1.0] (the +Z direction), and UPDIR to be [0, -1.0, 0] (the -Y direction).
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1008806">
+   </a>
+   <a name="iTools_api_3860698369_63629">
+   </a>
+   <span class="_Override">
+    VISUALIZATION
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to add the object to the data space. The default behavior is to add the object to the annotation layer.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1008809">
+   </a>
+   <a name="iTools_api_3860698369_1060802_PageTOC_ITEXT_">
+   </a>
+   <span class="_Override">
+    Examples
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    In this example, we draw a polyline that points to a particular red blood cell, turn the line into an arrow by changing the polyline’s properties, and add a caption.
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Create an iTool with some image
+   </span>
+   <span class="_Override">
+    data
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    file=FILEPATH('rbcells.jpg', $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;SUBDIRECTORY=['examples', 'data'])
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    IIMAGE, file, TITLE='Red Blood Cells', IDENTIFIER=imageID
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; A line pointing to a cell, in data space coordinates
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    lineCoords=[[177, 141.5], [120, 41.5]]
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Draw an arrow in the image's data space,
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; setting the line's color and thickness
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    IPOLYLINE, lineCoords, /DATA, VISUALIZATION=imageID, $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;THICK=3, COLOR=[240,0,0], ARROW_STYLE=2
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Draw a label for the arrowtextCoords=[131, 26.5]
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ITEXT, 'Genome-modified Cell', textCoords[0], $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;textCoords[1], /DATA, VISUALIZATION=imageID, $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;ALIGNMENT=0.5, COLOR=[255,255,255]
+   </span>
+   <br />
+   <br />
+   <br />
+   <br />
+   <img src="../../Resources/Images/itext_example.gif" style="margin-left: 84.87px;margin-top: 6.76296px;margin-right: 84.86926px;margin-bottom: 5.731944px;" />
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1008817">
+   </a>
+   <a name="iTools_api_3860698369_1060804_PageTOC_ITEXT_">
+   </a>
+   <span class="_Override">
+    Version History
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    &#160;
+   </span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="28px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr style="height: 13px;">
+     <td>
+      <p>
+       7.1
+      </p>
+     </td>
+     <td>
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1008825">
+   </a>
+   <a name="iTools_api_3860698369_1060811_PageTOC_ITEXT_">
+   </a>
+   <span class="_Override">
+    See Also
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    <a class="MCXref_Heading_0" href="ICONVERTCOORD.html#iTools_api_3860698369_1000055">
+     ICONVERTCOORD
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="IPOLYGON.html#iTools_api_3860698369_1006188">
+     IPOLYGON
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="IPOLYLINE.html#iTools_api_3860698369_1006302">
+     IPOLYLINE
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="IELLIPSE.html#iTools_api_3860698369_1000605">
+     IELLIPSE
+    </a>
+   </span>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

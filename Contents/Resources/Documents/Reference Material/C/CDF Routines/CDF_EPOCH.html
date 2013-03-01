@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C|CDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CDF_EPOCH
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/C/CDF Routines/CDF_EPOCH.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../CDF_Routines.html">
+    CDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CDF_EPOCH
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="CDF_1744428779_1007319">
+   </a>
+   <a name="CDF_1744428779_64236">
+   </a>
+   CDF_EPOCH
+  </h1>
+  <p>
+   The
+   <a name="kanchor237">
+   </a>
+   CDF_EPOCH procedure computes or breaks down CDF_EPOCH values in a CDF file. When computing an
+   <a name="kanchor238">
+   </a>
+   epoch, any missing value is considered to be zero.
+  </p>
+  <p>
+   If you supply a value for the Epoch argument and set the BREAKDOWN_EPOCH keyword, CDF_EPOCH will compute the values of the Year, Month, Day, etc. and insert the values into the named variables you supply. If you specify the Year (and optionally, the Month, Day, etc.) and set the COMPUTE_EPOCH keyword, CDF_EPOCH will compute the epoch and place the value in the named variable supplied as the Epoch parameter.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Y
+   <span class="_Override" style="letter-spacing: -0.01em;">
+    ou must set either the BREAKDOWN_EPOCH or COMPUTE_EPOCH keyword.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1005142_PageTOC_CDF_EPOCH_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   CDF_EPOCH,
+   <span class="Italic">
+    Epoch
+   </span>
+   ,
+   <span class="Italic">
+    Year
+   </span>
+   [,&#160;
+   <span class="Italic">
+    Month
+   </span>
+   ,
+   <span class="Italic">
+    Day
+   </span>
+   ,
+   <span class="Italic">
+    Hour
+   </span>
+   ,
+   <span class="Italic">
+    Minute
+   </span>
+   ,
+   <span class="Italic">
+    Second
+   </span>
+   ,
+   <span class="Italic">
+    Milli
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#CDF_1744428779_1007379">
+    BREAKDOWN_EPOCH
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#CDF_1744428779_1007382">
+    COMPUTE_EPOCH
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997490_PageTOC_CDF_EPOCH_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Epoch
+  </h3>
+  <p>
+   The Epoch value to be broken down, or a named variable that will contain the computed epoch will be placed. The Epoch value is the number of milliseconds since
+   <span class="Courier">
+    01-Jan-0000 00:00:00.000
+   </span>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   “Year zero” is a convention chosen by NSSDC to measure epoch values. This date is more commonly referred to as 1 BC. Remember that 1 BC was a leap year. The Epoch is defined as the number of milliseconds since
+   <span class="Courier">
+    01-Jan-0000 00:00:00.000
+   </span>
+   , as computed using the CDF library’s internal date routines. The CDF date/time calculations do not take into account the changes to the Gregorian calendar, and cannot be directly converted into Julian date/times. To convert between CDF epochs and date/times, use the CDF_EPOCH routine with either the BREAKDOWN_EPOCH or CONVERT_EPOCH keywords.
+  </p>
+  <h3 class="Argument">
+   Year
+  </h3>
+  <p>
+   If COMPUTE_EPOCH is set, a four-digit integer representing the year.
+  </p>
+  <p>
+   If BREAKDOWN_EPOCH is set, a named variable that will contain the year.
+  </p>
+  <h3 class="Argument">
+   Month
+  </h3>
+  <p>
+   If COMPUTE_EPOCH is set, an integer between 1 and 12 representing the month. Alternately, you can set
+   <span class="Italic">
+    Month
+   </span>
+   equal to zero, in which case the
+   <span class="Italic">
+    Day
+   </span>
+   argument can take on any value between 1-366.
+  </p>
+  <p>
+   If BREAKDOWN_EPOCH is set, a named variable that will contain the numeric month value.
+  </p>
+  <h3 class="Argument">
+   Day
+  </h3>
+  <p>
+   If COMPUTE_EPOCH is set, an integer between 1 and 31 representing the day of the month. Alternately, if the
+   <span class="Italic">
+    Month
+   </span>
+   argument is set equal to zero,
+   <span class="Italic">
+    Day
+   </span>
+   can be an integer between 1-366 representing the day of the year.
+  </p>
+  <p>
+   If BREAKDOWN_EPOCH is set, a named variable that will contain the numeric day of the month value.
+  </p>
+  <h3 class="Argument">
+   Hour
+  </h3>
+  <p>
+   If COMPUTE_EPOCH is set, an integer between 0 and 23 representing the hour of the day.
+  </p>
+  <p>
+   If BREAKDOWN_EPOCH is set, a named variable that will contain the numeric hour of the day value.
+  </p>
+  <h3 class="Argument">
+   Minute
+  </h3>
+  <p>
+   If COMPUTE_EPOCH is set, an integer between 0 and 59 representing the minute of the hour.
+  </p>
+  <p>
+   If BREAKDOWN_EPOCH is set, a named variable that will contain the numeric minute of the hour value.
+  </p>
+  <h3 class="Argument">
+   Second
+  </h3>
+  <p>
+   If COMPUTE_EPOCH is set, an integer between 0 and 59 representing the second of the minute.
+  </p>
+  <p>
+   If BREAKDOWN_EPOCH is set, a named variable that will contain the numeric second of the minute value.
+  </p>
+  <h3 class="Argument">
+   Milli
+  </h3>
+  <p>
+   If COMPUTE_EPOCH is set, an integer between 0 and 999 representing the millisecond. Alternately, if the
+   <span class="Italic">
+    Hour
+   </span>
+   ,
+   <span class="Italic">
+    Minute
+   </span>
+   , and
+   <span class="Italic">
+    Second
+   </span>
+   arguments are set all equal to zero,
+   <span class="Italic">
+    Milli
+   </span>
+   can be an integer between 0-86400000 representing the millisecond of the day.
+  </p>
+  <p>
+   If BREAKDOWN_EPOCH is set, a named variable that will contain the numeric millisecond value.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997507_PageTOC_CDF_EPOCH_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1007379">
+   </a>
+   <a name="CDF_1744428779_997509_Keywords_CDF_EPOCH_">
+   </a>
+   BREAKDOWN_EPOCH
+  </h3>
+  <p>
+   Set this keyword to break down the value of the
+   <span class="Italic">
+    Epoch
+   </span>
+   argument into its component parts, storing the resulting year, month, day,
+   <span class="Italic">
+    etc
+   </span>
+   . values in the variables specified by the corresponding arguments.
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1007382">
+   </a>
+   <a name="CDF_1744428779_997512_Keywords_CDF_EPOCH_">
+   </a>
+   COMPUTE_EPOCH
+  </h3>
+  <p>
+   Set this keyword to compute the value of
+   <span class="Italic">
+    Epoch
+   </span>
+   from the values specified by the
+   <span class="Italic">
+    Year
+   </span>
+   ,
+   <span class="Italic">
+    Month
+   </span>
+   ,
+   <span class="Italic">
+    Day
+   </span>
+   ,
+   <span class="Italic">
+    etc
+   </span>
+   . arguments.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1005163_PageTOC_CDF_EPOCH_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To compute the epoch value of September 20, 1992 at 3:00 am:
+  </p>
+  <p class="Code">
+   CDF_EPOCH, MergeDate, 1992, 9, 20, 3, /COMPUTE_EPOCH
+  </p>
+  <p>
+   To break down the given epoch value into standard date components:
+  </p>
+  <p class="Code">
+   CDF_EPOCH, 4.7107656e13, yr, mo, dy, hr, mn, sc, milli, /BREAK
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1028632_PageTOC_CDF_EPOCH_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

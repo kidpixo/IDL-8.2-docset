@@ -1,0 +1,2775 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WIDGET_BASE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WIDGET_BASE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WIDGET_BASE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="W_811389549_974349">
+   </a>
+   <a name="W_811389549_51835">
+   </a>
+   WIDGET_BASE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#W_811389549_679914">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1001487">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_679916">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_679919">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_680002">
+     Events Returned by Base Widgets
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_982646">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_983418">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2695">
+   </a>
+   WIDGET_BASE f
+   <a name="kanchor2696">
+   </a>
+   unction is used to create base widgets. Base widgets serve as containers for other widgets, including other base widgets. Base widgets can optionally contain scroll bars that allow the base to be larger than the space on the screen. In this case, only part of the base is visible at any given time, and the scroll bars are used to control which part is visible.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   In most cases, you will want to let IDL determine the placement of widgets within the base widget. Do this by specifying either the COLUMN keyword or the ROW keyword. See
+   <a class="MCXref_Heading_0" href="#W_811389549_1247940">
+    Positioning Child Widgets Within a Base
+   </a>
+   in the following section for details.
+  </p>
+  <h3>
+   Exclusive And Non-Exclusive Bases
+  </h3>
+  <p>
+   <a name="kanchor2697">
+   </a>
+   If the EXCLUSIVE or NONEXCLUSIVE keywords are specified, the base only allows button widget children.
+  </p>
+  <h3>
+   <a name="W_811389549_1247940">
+   </a>
+   <a name="W_811389549_38128">
+   </a>
+   Positioning Child Widgets Within a Base
+  </h3>
+  <p>
+   <a name="kanchor2698">
+   </a>
+   The standard base widget does not impose any placement constraints on its child widgets. Children of a “
+   <a name="kanchor2699">
+   </a>
+   bulletin board” base (a base that was created without setting the COLUMN or ROW keywords) have an offset of (0,0) unless an offset is explicitly specified via the XOFFSET or YOFFSET keywords. This means that if you do not specify any of COLUMN, ROW, XOFFSET, or YOFFSET keywords, child widgets will be placed one on top of the other in the upper left corner of the base.
+  </p>
+  <p>
+   However, laying out widgets using the XSIZE, YSIZE, XOFFSET, and YOFFSET keywords can be both tedious and error-prone. Also, if you want your widget application to display properly on different platforms, you should use the COLUMN and ROW keywords to influence child widget layouts instead of explicitly formatting your interfaces.
+  </p>
+  <p>
+   When the ROW or COLUMN keywords are specified, the base decides how to lay out its children, and any XOFFSET and YOFFSET keywords specified for such children are ignored.
+  </p>
+  <h3>
+   <a name="W_811389549_1247982">
+   </a>
+   <a name="W_811389549_40186">
+   </a>
+   Positioning Top-Level Bases
+  </h3>
+  <p>
+   <i>
+    Top-level bases
+   </i>
+   are a special class of base widget created without a parent widget ID. Every widget hierarchy has exactly one top-level base. (Multiple widget hierarchies, represented by their top-level bases, can be organized into an application hierarchy by specifying the GROUP_LEADER keyword. (See
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Using_Multiple_Widget_Hi.html#widget_techniques_4218446668_109965" target="" title="" alt="">
+    Using Multiple Widget Hierarchies
+   </a>
+   for additional discussion of widget applications with multiple widget hierarchies.)
+  </p>
+  <p>
+   <a name="kanchor2700">
+   </a>
+   When locating a new top level window, some window managers ignore the program’s positioning requests and either choose a position or allow the user to choose. In such cases, the XOFFSET and YOFFSET keywords to WIDGET_BASE will not have an effect. The window manager may provide a way to disable this positioning style. The Motif window manager (mwm) can be told to honor positioning requests by placing the following lines in your
+   <span class="Courier">
+    .Xdefaults
+   </span>
+   file:
+  </p>
+  <p class="Code">
+   Mwm*clientAutoPlace: False
+  </p>
+  <p class="Code">
+   Mwm*interactivePlacement: False
+  </p>
+  <h4>
+   Top-Level Base Positioning in Multi-Monitor Situations
+  </h4>
+  <p>
+   In multi-monitor environments you can place your widget on any desired monitor. To do this, use the XOFFSET and YOFFSET keywords to WIDGET_BASE to position the widget on the desired monitor. If the monitors are configured as an extended desktop, XOFFSET and YOFFSET will be sufficient for locating the widget base on any monitor.
+   <a name="kanchor2701">
+   </a>
+   In X Multi-Screen environments, you must also use the DISPLAY_NAME keyword to select the desired monitor. For more details, see
+   <a class="MCXref_Heading_0" href="../../Object Classes/Miscellaneous/IDLsysMonitorInfo.html#objects_misc_904195448_1078241">
+    IDLsysMonitorInfo
+   </a>
+   .
+  </p>
+  <p>
+   If position is
+   <i>
+    not
+   </i>
+   specified, the top-level base widget is placed at [0,0] on the primary monitor.
+  </p>
+  <p>
+   If a position
+   <i>
+    is
+   </i>
+   specified that does not exist on any available monitor, or if a position selected would cause the widget to be partly off-screen, the widget will be positioned so that it is completely on the monitor that is closest to the specified position.
+  </p>
+  <p>
+   To move a widget off-screen, use the
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_1232714">
+    WIDGET_CONTROL
+   </a>
+   function.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Direct Graphics draw widgets cannot be used on the non-default DISPLAY in the X Multi-Screen environment.
+  </p>
+  <h3>
+   <a name="W_811389549_1221767">
+   </a>
+   <a name="W_811389549_37081">
+   </a>
+   Iconizing, Layering, and Destroying Groups of Top-Level Bases
+  </h3>
+  <p>
+   Group membership (defined via the GROUP_LEADER keyword) controls the way top-level base widgets are iconized, layered, and destroyed.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   A group can contain sub-groups. Group behavior affects all members of a group and its sub-groups. For example, suppose we create three top-level base widgets with the following group hierarchy:
+  </p>
+  <p class="Code">
+   base1 = WIDGET_BASE()
+  </p>
+  <p class="Code">
+   base2 = WIDGET_BASE(GROUP_LEADER=base1)
+  </p>
+  <p class="Code">
+   base3 = WIDGET_BASE(GROUP_LEADER=base2)
+  </p>
+  <p>
+   Effectively, two groups are created. One group has
+   <span class="Courier">
+    base2
+   </span>
+   as its leader and
+   <span class="Courier">
+    base3
+   </span>
+   as its member. The other group has
+   <span class="Courier">
+    base1
+   </span>
+   as its leader and both
+   <span class="Courier">
+    base2
+   </span>
+   and
+   <span class="Courier">
+    base3
+   </span>
+   as members. If
+   <span class="Courier">
+    base1
+   </span>
+   is iconized, both
+   <span class="Courier">
+    base2
+   </span>
+   and
+   <span class="Courier">
+    base3
+   </span>
+   are iconized as well. If
+   <span class="Courier">
+    base2
+   </span>
+   is iconized,
+   <span class="Courier">
+    base3
+   </span>
+   is iconized but
+   <span class="Courier">
+    base1
+   </span>
+   is not.
+  </p>
+  <p>
+   Widgets behave slightly differently when displayed on different platforms, and depending on whether they are floating or modal bases. The following rules apply to groups of widgets within a group leader/member hierarchy. Widgets that do not belong to the same group hierarchy cannot influence each other.
+  </p>
+  <h4>
+   Iconization and Mapping
+  </h4>
+  <p>
+   Bases and groups of bases can be
+   <i>
+    iconized
+   </i>
+   (or
+   <i>
+    minimized
+   </i>
+   ) by clicking the system minimize control. Bases and groups of bases can also be
+   <i>
+    mapped
+   </i>
+   (made visible) and
+   <i>
+    unmapped
+   </i>
+   (made invisible).
+  </p>
+  <p>
+   Mapping or unmapping a group leader has no effect on the mapped state of the group members. Iconifying or mapping a group member has no effect on the group leader.  Modal bases cannot be unmapped.
+  </p>
+  <p>
+   Bases and groups of bases can be iconized (or minimized) by clicking the system minimize control. When a group leader is iconized, all members of the group are iconized as well. Similarly, when a group leader is restored, all members of the group are restored.
+  </p>
+  <h4>
+   Layering
+  </h4>
+  <p>
+   <i>
+    Layering
+   </i>
+   is the process by which groups of widgets seem to share the same plane on the display screen. Within a layer on the screen, widgets have a
+   <i>
+    Z-order
+   </i>
+   , or front-to-back order, that defines which widgets appear to be on top of other widgets.
+  </p>
+  <h5>
+   Motif
+  </h5>
+  <p>
+   All elements on the screen—widgets, the workbench, other Motif applications—share a single layer and have an arbitrary Z-order. There is no special layering of IDL widgets.
+  </p>
+  <h5>
+   Windows
+  </h5>
+  <p>
+   All non-floating and non-modal widgets within a group hierarchy share the same layer—that is, when one group member has the input focus, all members of the group hierarchy are displayed in a layer that appears in front of all other groups or applications. Within the layer, the widgets can have an arbitrary Z-order.
+  </p>
+  <p>
+   Widgets that are floating or modal always float above their group leaders.
+  </p>
+  <h4>
+   Destruction
+  </h4>
+  <p>
+   When a group leader widget is destroyed, either programmatically or by clicking on the system “close” button, all members of the group and all sub-groups are destroyed as well.
+  </p>
+  <p>
+   If a modal base is on the display, it must be dismissed before any widget can be destroyed.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_679914">
+   </a>
+   <a name="W_811389549_679914_PageTOC_WIDGET_BASE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = WIDGET_BASE( [
+   <i>
+    Parent
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_679920">
+    ALIGN_BOTTOM
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#W_811389549_107036">
+    ALIGN_CENTER
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#W_811389549_107030">
+    ALIGN_LEFT
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#W_811389549_107035">
+    ALIGN_RIGHT
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#W_811389549_107037">
+    ALIGN_TOP
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_107046">
+    BASE_ALIGN_BOTTOM
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#W_811389549_107047">
+    BASE_ALIGN_CENTER
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#W_811389549_107048">
+    BASE_ALIGN_LEFT
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#W_811389549_107049">
+    BASE_ALIGN_RIGHT
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#W_811389549_107050">
+    BASE_ALIGN_TOP
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_1231048">
+    BITMAP
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_107029">
+    COLUMN
+   </a>
+   =
+   <i>
+    ncols
+   </i>
+   | ,
+   <a class="MCXref_Heading_0" href="#W_811389549_679951">
+    ROW
+   </a>
+   =
+   <i>
+    nrows
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_917417">
+    CONTEXT_EVENTS
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_970908">
+    CONTEXT_MENU
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679923">
+    EVENT_FUNC
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679925">
+    EVENT_PRO
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_679927">
+    EXCLUSIVE
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#W_811389549_679946">
+    NONEXCLUSIVE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_911154">
+    FLOATING
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679931">
+    FRAME
+   </a>
+   =
+   <i>
+    width
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679933">
+    FUNC_GET_VALUE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_679935">
+    GRID_LAYOUT
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_895915">
+    GROUP_LEADER
+   </a>
+   =
+   <i>
+    widget_id
+   </i>
+   {must specify for modal dialogs}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_912183">
+    KBRD_FOCUS_EVENTS
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679938">
+    KILL_NOTIFY
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_108526">
+    MAP
+   </a>
+   {not&#160;for&#160;modal&#160;bases}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_1231203">
+    MASK
+   </a>
+   ] [,
+   <a class="MCXref_Heading_0" href="#W_811389549_934563">
+    MBAR
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   | , /
+   <a class="MCXref_Heading_0" href="#W_811389549_910174">
+    MODAL
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_106818">
+    NO_COPY
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_67508">
+    NOTIFY_REALIZE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679949">
+    PRO_SET_VALUE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_948019">
+    SCR_XSIZE
+   </a>
+   =
+   <i>
+    width
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_58070">
+    SCR_YSIZE
+   </a>
+   =
+   <i>
+    height
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_679954">
+    SCROLL
+   </a>
+   {not for modal bases}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_948204">
+    SENSITIVE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679957">
+    SPACE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   {ignored if exclusive or nonexclusive}] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_1068884">
+    TAB_MODE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679959">
+    TITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_977197">
+    TLB_FRAME_ATTR
+   </a>
+   =
+   <i>
+    value
+   </i>
+   {top-level bases only}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_984484">
+    TLB_ICONIFY_EVENTS
+   </a>
+   {top-level bases only}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_192742">
+    TLB_KILL_REQUEST_EVENTS
+   </a>
+   {top-level bases only}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_984511">
+    TLB_MOVE_EVENTS
+   </a>
+   {top-level bases only}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_679965">
+    TLB_SIZE_EVENTS
+   </a>
+   {top-level bases only}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_978753">
+    TOOLBAR
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_58059">
+    TRACKING_EVENTS
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_949220">
+    UNAME
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_895507">
+    UNITS
+   </a>
+   ={0 | 1 | 2}] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679967">
+    UVALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679972">
+    XOFFSET
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679975">
+    XPAD
+   </a>
+   =
+   <i>
+    value
+   </i>
+   {ignored if exclusive or nonexclusive}] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679977">
+    XSIZE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679980">
+    X_SCROLL_SIZE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679983">
+    YOFFSET
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679986">
+    YPAD
+   </a>
+   =
+   <i>
+    value
+   </i>
+   {ignored if exclusive or nonexclusive}] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679988">
+    YSIZE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_679991">
+    Y_SCROLL_SIZE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <p class="Syntax">
+   <span class="Bold">
+    X Windows Keywords:
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_970988">
+    DISPLAY_NAME
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_281150">
+    RESOURCE_NAME
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_72437">
+    RNAME_MBAR
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1001487">
+   </a>
+   <a name="W_811389549_21214">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The returned value of this function is the widget ID of the newly-created base.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_679916">
+   </a>
+   <a name="W_811389549_679916_PageTOC_WIDGET_BASE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Parent
+  </h3>
+  <p>
+   The widget ID of the parent widget. To create a
+   <a name="kanchor2702">
+   </a>
+   <i>
+    top-level
+   </i>
+   base, omit the
+   <i>
+    Parent
+   </i>
+   argument.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_679919">
+   </a>
+   <a name="W_811389549_679919_PageTOC_WIDGET_BASE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="W_811389549_679920">
+   </a>
+   <a name="W_811389549_679920_Keywords_WIDGET_BASE__">
+   </a>
+   ALIGN_BOTTOM
+  </h3>
+  <p>
+   Set this keyword to align the new widget with the bottom of its parent base. To take effect, the parent must be a ROW base.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_107036">
+   </a>
+   <a name="W_811389549_107036_Keywords_WIDGET_BASE__">
+   </a>
+   ALIGN_CENTER
+  </h3>
+  <p>
+   Set this keyword to align the new widget with the center of its parent base. To take effect, the parent must be a ROW or COLUMN base. In ROW bases, the new widget will be vertically centered. In COLUMN bases, the new widget will be horizontally centered.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_107030">
+   </a>
+   <a name="W_811389549_107030_Keywords_WIDGET_BASE__">
+   </a>
+   ALIGN_LEFT
+  </h3>
+  <p>
+   Set this keyword to align the new widget with the left side of its parent base. To take effect, the parent must be a COLUMN base.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_107035">
+   </a>
+   <a name="W_811389549_107035_Keywords_WIDGET_BASE__">
+   </a>
+   ALIGN_RIGHT
+  </h3>
+  <p>
+   Set this keyword to align the new widget with the right side of its parent base. To take effect, the parent must be a COLUMN base.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_107037">
+   </a>
+   <a name="W_811389549_107037_Keywords_WIDGET_BASE__">
+   </a>
+   ALIGN_TOP
+  </h3>
+  <p>
+   Set this keyword to align the new widget with the top of its parent base. To take effect, the parent must be a ROW base.
+  </p>
+  <p>
+   To apply actions triggered by menu items to widgets other than the base that includes the menubar, use the
+   <a class="MCXref_Heading_0" href="#W_811389549_912183">
+    KBRD_FOCUS_EVENTS
+   </a>
+   keyword to keep track of which widget has (or last had) the keyboard focus.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_107046">
+   </a>
+   <a name="W_811389549_107046_Keywords_WIDGET_BASE__">
+   </a>
+   BASE_ALIGN_BOTTOM
+  </h3>
+  <p>
+   Set this keyword to make all children of the new base align themselves with the bottom of the base by default. To take effect, you must also set the ROW keyword for the new base. The default can be overridden for individual child widgets by setting a different ALIGN_XXX keyword when the child widget is created.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_107047">
+   </a>
+   <a name="W_811389549_107047_Keywords_WIDGET_BASE__">
+   </a>
+   BASE_ALIGN_CENTER
+  </h3>
+  <p>
+   Set this keyword to make all children of the new base align themselves with the center of the base by default. To take effect, you must also set the COLUMN or ROW keyword for the new base. The default can be overridden for individual child widgets by setting a different ALIGN_XXX keyword when the child widget is created. In ROW bases, child widgets will be vertically centered. In COLUMN bases, child widgets will be horizontally centered.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_107048">
+   </a>
+   <a name="W_811389549_107048_Keywords_WIDGET_BASE__">
+   </a>
+   BASE_ALIGN_LEFT
+  </h3>
+  <p>
+   Set this keyword to make all children of the new base align themselves with the left side of the base by default. To take effect, you must also set the COLUMN keyword for the new base. The default can be overridden for individual child widgets by setting a different ALIGN_XXX keyword when the child widget is created.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_107049">
+   </a>
+   <a name="W_811389549_107049_Keywords_WIDGET_BASE__">
+   </a>
+   BASE_ALIGN_RIGHT
+  </h3>
+  <p>
+   Set this keyword to make all children of the new base align themselves with the right side of the base by default. To take effect, you must also set the COLUMN keyword for the new base. The default can be overridden for individual child widgets by setting a different ALIGN_XXX keyword when the child widget is created.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_107050">
+   </a>
+   <a name="W_811389549_107050_Keywords_WIDGET_BASE__">
+   </a>
+   BASE_ALIGN_TOP
+  </h3>
+  <p>
+   Set this keyword to make all children of the new base align themselves with the top of the base by default. To take effect, you must also set the ROW keyword for the new base. The default can be overridden for individual child widgets by setting a different ALIGN_XXX keyword when the child widget is created.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1231048">
+   </a>
+   <a name="W_811389549_81684">
+   </a>
+   BITMAP
+  </h3>
+  <p>
+   Set this keyword to specify a custom top level base icon that will be used in the title bar, the task bar and the Windows task switching window (accessed using
+   <span class="Courier">
+    Alt+Tab
+   </span>
+   ).
+  </p>
+  <p>
+   There are three allowed value types:
+  </p>
+  <table style="width: 350px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="115px" class="Column-Column1" />
+   <col width="235px" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <td class="HeadE-Column1-Header1">
+      <p>
+       Value Type
+      </p>
+     </td>
+     <td class="HeadD-Column1-Header1">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       String
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The full path to a bitmap or icon file (BMP or ICO)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       String Array
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The full paths to one or more bitmap files
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       Byte Array
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       An [
+       <i>
+        n
+       </i>
+       ,
+       <i>
+        n
+       </i>
+       , 3] byte array containing the red, green, and blue values for the icon.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Specifying an icon file or an array of bitmap files allows the top level base icon to be legible at a wide range of sizes. IDL chooses the image whose size best matches the needed use (title bar, task switcher, etc.). It is recommended that ICO files and arrays of bitmap files include both 16x16 pixel and 32x32 pixel images. In rare cases a 48x48 pixel image might be useful because users can customize window properties, such as the height of title bars. When there is no exact match the image is automatically scaled.
+  </p>
+  <p>
+   When the keyword is not set, the top level base inherits the icon of its group leader. An application-wide icon can be specified by applying the icon to just the group leaders.
+  </p>
+  <p>
+   To enable transparency in BMP files and byte arrays, set the MASK keyword. Icon files (.ICO) define their own transparency.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The base widget icon functionality is only available on the Microsoft Windows platform. On Motif platforms the BITMAP and MASK keywords are quietly ignored.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_107029">
+   </a>
+   <a name="W_811389549_107029_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_37165">
+   </a>
+   COLUMN
+  </h3>
+  <p>
+   If this keyword is included, the base lays out its children in
+   <a name="kanchor2703">
+   </a>
+   columns. The value of this keyword specifies the number of columns to be used. The number of child widgets in each column is determined by distributing the children as evenly as possible across the columns.
+  </p>
+  <p>
+   Specifying both the COLUMN and ROW keywords causes an error.
+  </p>
+  <h4>
+   Column Width
+  </h4>
+  <p>
+   The width of each column is determined by the width of the widest widget in that column. If the GRID_LAYOUT keyword is set, all columns are as wide as the widest widget in the base.
+  </p>
+  <h4>
+   Horizontal Size of Widgets
+  </h4>
+  <p>
+   If any of the BASE_ALIGN_* keywords to WIDGET_BASE is set, each widget has its “natural” width, determined either by the value of the widget or by the XSIZE keyword. Similarly, if any of the child widgets specifies one of the ALIGN_* keywords, that widget will have its “natural” width. If none of the BASE_ALIGN_* or (ALIGN_*) keywords are set, all widgets in the base are as wide as their column.
+  </p>
+  <h4>
+   Vertical Placement
+  </h4>
+  <p>
+   Child widgets are placed vertically one below the other, with no extra space. If the GRID_LAYOUT keyword is set, each row is as high as its tallest member.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_917417">
+   </a>
+   <a name="W_811389549_917417_Keywords_WIDGET_BASE__">
+   </a>
+   CONTEXT_EVENTS
+  </h3>
+  <p>
+   Set this keyword to cause context menu events (or simply context events) to be issued when the user clicks the right mouse button over the widget. Set the keyword to 0 (zero) to disable such events. Context events are intended for use with context-sensitive menus (also known as pop-up or shortcut menus); pass the context event ID to the
+   <a class="MCXref_Heading_0" href="WIDGET_DISPLAYCONTEXTMEN.html#W_811389549_970597">
+    WIDGET_DISPLAYCONTEXTMENU
+   </a>
+   procedure within your widget program’s event handler to display the context menu.
+  </p>
+  <p>
+   For more on detecting and handling context menu events, see
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Creating_Menus.html#widget_techniques_4218446668_95574">
+    Context-Sensitive&gt;Menus
+   </a>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_970908">
+   </a>
+   <a name="W_811389549_970908_Keywords_WIDGET_BASE__">
+   </a>
+   CONTEXT_MENU
+  </h3>
+  <p>
+   Set this keyword to create a base widget that can be used as the base for a context-sensitive menu (also known as a pop-up or shortcut menu). A context menu base must have as its parent one of the following types of widgets: WIDGET_BASE, WIDGET_DRAW, WIDGET_TEXT, WIDGET_LIST, WIDGET_PROPERTYSHEET, WIDGET_TABLE, WIDGET_TEXT or WIDGET_TREE.
+  </p>
+  <p>
+   For more on creating context menus, see
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Creating_Menus.html#widget_techniques_4218446668_95574">
+    Context-Sensitive&gt;Menus
+   </a>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_970988">
+   </a>
+   <a name="W_811389549_970988_Keywords_WIDGET_BASE__">
+   </a>
+   DISPLAY_NAME
+  </h3>
+  <p>
+   Set this keyword equal to a string that specifies the name of the X Windows display on which the base should be displayed. This keyword has no effect on Microsoft Windows platforms.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679923">
+   </a>
+   <a name="W_811389549_679923_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_EVENT_FUNC">
+   </a>
+   EVENT_FUNC
+  </h3>
+  <p>
+   A string containing the name of a function to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you are using XMANAGER to manage events for your widget application, you should not specify an event processing routine for the top-level base of the application using this keyword. Instead, specify the event processing routine using the
+   <a href="../X/XMANAGER.html#X_800576109_762797" target="" title="" alt="" class="MCXref_0">
+    EVENT_HANDLER
+   </a>
+   keyword to XMANAGER.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679925">
+   </a>
+   <a name="W_811389549_679925_Keywords_WIDGET_BASE__">
+   </a>
+   EVENT_PRO
+  </h3>
+  <p>
+   A string containing the name of a procedure to be called by the WIDGET_EVENT function when an event arrives from a widget in the widget hierarchy rooted at the newly-created widget.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you are using XMANAGER to manage events for your widget application, you should not specify an event processing routine for the top-level base of the application using this keyword. Instead, specify the event processing routine using the
+   <a href="../X/XMANAGER.html#X_800576109_762797" target="" title="" alt="" class="MCXref_0">
+    EVENT_HANDLER
+   </a>
+   keyword to XMANAGER.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679927">
+   </a>
+   <a name="W_811389549_679927_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="kanchor2704">
+   </a>
+   EXCLUSIVE
+  </h3>
+  <p>
+   <a name="kanchor2705">
+   </a>
+   Set this keyword to specify that the base can have only button-widget children and that only one button can be set at a time. These buttons, unlike normal button widgets, have two states—set and unset.
+  </p>
+  <p>
+   When one exclusive button is pressed, any other exclusive buttons (in the same base) that are currently set are automatically released. Hence, only one button can ever be set at one time.
+  </p>
+  <p>
+   This keyword can be used to create exclusive button menus. See the
+   <a class="MCXref_Heading_0" href="../C/CW_BGROUP.html#C_854643309_755132">
+    CW_BGROUP
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="../C/CW_PDMENU.html#C_854643309_998412">
+    CW_PDMENU
+   </a>
+   functions for high-level menu-creation utilities.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If this keyword is set, the XOFFSET and YOFFSET keywords are ignored for any widgets in this base. Exclusive bases are always laid out in columns or rows. If neither the COLUMN nor ROW keyword is specified for an exclusive base, the base defaults to COLUMN layout.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_911154">
+   </a>
+   <a name="W_811389549_911154_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_38368">
+   </a>
+   FLOATING
+  </h3>
+  <p>
+   Set this keyword—along with the GROUP_LEADER keyword—to create a “floating” top-level base widget. If the windowing system provides Z-order control, floating base widgets appear above the base specified as their group leader. If the windowing system does not provide Z-order control, the FLOATING keyword has no effect.
+  </p>
+  <p>
+   See
+   <![CDATA[ ]]>
+   <a class="MCXref_Heading_0" href="#W_811389549_1221767">
+    Iconizing, Layering, and Destroying Groups of Top-Level Bases
+   </a>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679931">
+   </a>
+   <a name="W_811389549_679931_Keywords_WIDGET_BASE__">
+   </a>
+   FRAME
+  </h3>
+  <p>
+   The value of this keyword specifies the width of a frame (in pixels) to be drawn around the borders of the widget. Note that this keyword is only a hint to the toolkit, and may be ignored in some instances.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679933">
+   </a>
+   <a name="W_811389549_679933_Keywords_WIDGET_BASE__">
+   </a>
+   FUNC_GET_VALUE
+  </h3>
+  <p>
+   <a name="W_811389549_A_string_contianing_the_name_of_a_function_to_be_called_when_the_GET_VALUE_keyword_to_the_WIDGET_CONTROL_procedure_is_called_for_this_widget__Using_this_technique_allows_you_to_change_the_value_that_should_be_returned_for_a_widget__Compound_widgets_use_th">
+   </a>
+   A string containing the name of a function to be called when the GET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. Using this technique allows you to change the value that should be returned for a widget. Compound widgets use this ability to define their values transparently to the user.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679935">
+   </a>
+   <a name="W_811389549_679935_Keywords_WIDGET_BASE__">
+   </a>
+   GRID_LAYOUT
+  </h3>
+  <p>
+   Set this keyword to force the base to have a grid layout, in which all rows have the same height, and all columns have the same width. The row heights and column widths are taken from the largest child widget.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_895915">
+   </a>
+   <a name="W_811389549_895915_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_33891">
+   </a>
+   GROUP_LEADER
+  </h3>
+  <p>
+   The widget ID of an existing widget that serves as “group leader” for the newly-created widget. Widget application hierarchies are defined by group membership relationships between top-level widget bases. When a group leader is killed, for any reason, all widgets in the group are also destroyed. See
+   <![CDATA[ ]]>
+   <a class="MCXref_Heading_0" href="#W_811389549_1221767">
+    Iconizing, Layering, and Destroying Groups of Top-Level Bases
+   </a>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you specify a modal base (created with the
+   <a class="MCXref_Heading_0" href="#W_811389549_910174">
+    MODAL
+   </a>
+   keyword) as a group leader, all member bases will automatically be created as modal. If you specify a floating base (created with the
+   <a class="MCXref_Heading_0" href="#W_811389549_911154">
+    FLOATING
+   </a>
+   keyword) as a group leader, all non-modal member bases will automatically be created as floating.
+  </p>
+  <p>
+   <a name="W_811389549_A_given_widget_can_be_in_more_than_one_group__The_WIDGET_CONTROL_procedure_can_be_used_to_add_additional_group_associations_to_a_widget__It_is_not_possible_to_remove_a_widget_from_an_existing_group_">
+   </a>
+   A given widget can be in more than one group. The WIDGET_CONTROL procedure can be used to add additional group associations to a widget. It is not possible to remove a widget from an existing group.
+  </p>
+  <p>
+   If the group leader specified by this keyword uses a custom title bar icon (as specified by the
+   <a class="MCXref_Heading_0" href="#W_811389549_1231048">
+    BITMAP
+   </a>
+   keyword), the same icon will be used in the title bar of a new top-level base widget. If a top-level base has more than one group leader, the icon associated with the
+   <i>
+    first
+   </i>
+   group leader assigned is used.
+  </p>
+  <p>
+   On multi-monitor configurations, the widget will appear at the upper-left corner [0,0] of the monitor that contains the group leader if no explicit offset was specified.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_912183">
+   </a>
+   <a name="W_811389549_912183_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_25404">
+   </a>
+   KBRD_FOCUS_EVENTS
+  </h3>
+  <p>
+   <a name="kanchor2706">
+   </a>
+   Set this keyword to make the base return keyboard focus events whenever the keyboard focus of the base changes. See the
+   <a class="MCXref_Heading_0" href="#W_811389549_680002">
+    Events Returned by Base Widgets
+   </a>
+   section below for more information.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679938">
+   </a>
+   <a name="W_811389549_679938_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_KILL_NOTIFY">
+   </a>
+   KILL_NOTIFY
+  </h3>
+  <p>
+   Set this keyword
+   <a name="kanchor2707">
+   </a>
+   to a string that contains the name of a procedure to be called automatically when the specified widget dies. Each widget is allowed a single such “callback” procedure. It can be removed by setting the routine to an empty string (
+   <span class="Courier">
+    ''
+   </span>
+   ).
+  </p>
+  <p>
+   The callback routine is called with the widget identifier as its only argument. At that point, the widget identifier can only be used with the WIDGET_CONTROL procedure to get or set the user value. All other requests that require a widget ID are disallowed for the target widget. The callback is not issued until the WIDGET_EVENT function is called.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   A procedure specified via the CLEANUP keyword to XMANAGER will override a procedure specified for your application’s top-level base with WIDGET_BASE, KILL_NOTIFY.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_108526">
+   </a>
+   <a name="W_811389549_108526_Keywords_WIDGET_BASE__">
+   </a>
+   MAP
+  </h3>
+  <p>
+   Once a widget hierarchy has been realized, it can be
+   <a name="kanchor2708">
+   </a>
+   mapped (visible) or
+   <a name="kanchor2709">
+   </a>
+   unmapped (invisible). This keyword specifies the initial map state for the given base and its descendants. Specifying a non-zero value indicates that the base should be mapped when realized (the default). A zero value indicates that the base should be unmapped initially.
+  </p>
+  <p>
+   After the base is realized, its map state can be altered using the MAP keyword to the WIDGET_CONTROL procedure.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Modal bases cannot be mapped and unmapped.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Under Microsoft Windows, when a hidden base is realized, then mapped, a Windows resize message is sent by the windowing system. This “extra” resize event is generated before any manipulation of the base widget by the user.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1231203">
+   </a>
+   <a name="W_811389549_12332">
+   </a>
+   MASK
+  </h3>
+  <p>
+   Set this keyword along with the BITMAP keyword to create a top level base icon that has transparency. When set to 1 (one), all bitmap pixels that match the lower left pixel are treated as transparent, allowing the background color to show through. The default value is 0. The MASK keyword has no effect when the BITMAP keyword references an icon file (.ico) because images in icon files define their own transparency.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The base widget icon functionality is only available on the Microsoft Windows platform. On Motif platforms the BITMAP and MASK keywords are quietly ignored.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_934563">
+   </a>
+   <a name="W_811389549_934563_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_29119">
+   </a>
+   MBAR
+  </h3>
+  <p>
+   <a name="kanchor2710">
+   </a>
+   Set this keyword to a named variable to cause a menubar to be placed at the top of the base (the base must be a top-level base). The menubar is itself a special kind of base widget that can only have buttons as children. Upon return, the named variable contains the widget ID of the new menubar base. This widget ID can then be used to fill the menubar with pulldown menus. For example, the following widget creation commands first create a base with a menubar, then populate the menubar with a simple pulldown menu (CW_PDMENU could also have been used to construct the pulldown menu):
+  </p>
+  <p class="Code">
+   base = WIDGET_BASE(TITLE = 'Example', MBAR=bar)
+  </p>
+  <p class="Code">
+   file_menu = WIDGET_BUTTON(bar, VALUE='File', /MENU)
+  </p>
+  <p class="Code">
+   file_bttn1=WIDGET_BUTTON(file_menu, VALUE='Item 1',$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;UVALUE='FILE1')
+  </p>
+  <p class="Code">
+   file_bttn2=WIDGET_BUTTON(file_menu, VALUE='Item 2',$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;UVALUE='FILE2')
+  </p>
+  <p>
+   Note that to set X Window System resources for menubars created with this keyword, you must use the RNAME_MBAR keyword rather than the RESOURCE_NAME keyword.
+  </p>
+  <p>
+   If you use CW_PDMENU to create a menu for the menubar, be sure to set the MBAR keyword to that function as well.
+  </p>
+  <p>
+   Note also that the size returned by the
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_980339">
+    GEOMETRY
+   </a>
+   keyword to WIDGET_INFO does not include the size of the menubar.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You cannot specify both the MBAR and MODAL keywords for the same widget. Doing so will cause an error.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You cannot specify both an APP_MBAR and an MBAR for the same top-level base widget. Doing so will cause an error.
+  </p>
+  <p>
+   To apply actions triggered by menu items to widgets other than the base that includes the menubar, use the
+   <a class="MCXref_Heading_0" href="#W_811389549_912183">
+    KBRD_FOCUS_EVENTS
+   </a>
+   keyword to keep track of which widget has (or last had) the keyboard focus.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_910174">
+   </a>
+   <a name="W_811389549_910174_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_30467">
+   </a>
+   MODAL
+  </h3>
+  <p>
+   Set this keyword to create a modal dialog. While a modal dialog is displayed, IDL blocks event processing.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Modal dialogs must have a group leader. Specify the group leader for a modal top-level base via the
+   <a class="MCXref_Heading_0" href="#W_811389549_895915">
+    GROUP_LEADER
+   </a>
+   keyword.
+  </p>
+  <p>
+   Modal dialogs cannot be scrollable, nor can they support menubars. Setting the SCROLL, MBAR, or APP_MBAR keywords in conjunction with the MODAL keyword will cause an error. Modal dialogs cannot be mapped or unmapped. Setting the MAP keyword on a modal base will cause an error. Modal dialogs cannot be resized, regardless of the setting of the TLB_SIZE_EVENTS keyword.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   On Windows platforms, the group leader of a modal base must be realized before the modal base itself can be realized. If the group leader has not been realized, it will be realized automatically.
+  </p>
+  <p>
+   See
+   <![CDATA[ ]]>
+   <a class="MCXref_Heading_0" href="#W_811389549_1221767">
+    Iconizing, Layering, and Destroying Groups of Top-Level Bases
+   </a>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_106818">
+   </a>
+   <a name="W_811389549_106818_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_23906">
+   </a>
+   NO_COPY
+  </h3>
+  <p>
+   Usually, when setting or getting widget user values, either at widget creation or using the SET_UVALUE and GET_UVALUE keywords to WIDGET_CONTROL, IDL makes a second copy of the data being transferred. Although this technique is fine for small data, it can have a significant memory cost when the data being copied is large.
+  </p>
+  <p>
+   If the NO_COPY keyword is set, IDL handles these operations differently. Rather than copy the source data, it takes the data away from the source and attaches it directly to the destination. This feature can be used by compound widgets to obtain state information from a UVALUE without all the memory copying that would otherwise occur. However, it has the side effect of causing the source variable to become undefined. On a “set” operation (using the UVALUE keyword to WIDGET_BASE or the SET_UVALUE keyword to WIDGET_CONTROL), the variable passed as value becomes undefined. On a “get” operation (GET_UVALUE keyword to WIDGET_CONTROL), the user value of the widget in question becomes undefined.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679946">
+   </a>
+   <a name="W_811389549_679946_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="kanchor2711">
+   </a>
+   NONEXCLUSIVE
+  </h3>
+  <p>
+   <a name="kanchor2712">
+   </a>
+   Set this keyword to specify that the base can only have button widget children. These buttons, unlike normal button widgets, have two states—set and unset. Non-exclusive bases allow any number of the toggle buttons to be set at one time.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If this keyword is set, the XOFFSET and YOFFSET keywords are ignored for any widgets in this base. Non-exclusive bases are always laid out in columns or rows. If neither the COLUMN nor ROW keyword is specified for a non-exclusive base, the base defaults to COLUMN layout.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_67508">
+   </a>
+   <a name="W_811389549_67508_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_97943">
+   </a>
+   NOTIFY_REALIZE
+  </h3>
+  <p>
+   <a name="W_811389549_96358">
+   </a>
+   Set this keyword to a string
+   <a name="kanchor2713">
+   </a>
+   that contains the name of a procedure to be called automatically when the specified widget is realized. This callback occurs just once (because widgets are realized only once). Each widget is allowed a single such “callback” procedure. It can be removed by setting the routine to an empty string (
+   <span class="Courier">
+    ''
+   </span>
+   ). The callback routine is called with the widget ID as its only argument.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679949">
+   </a>
+   <a name="W_811389549_679949_Keywords_WIDGET_BASE__">
+   </a>
+   PRO_SET_VALUE
+  </h3>
+  <p>
+   A string containing the name of a procedure to be called when the SET_VALUE keyword to the WIDGET_CONTROL procedure is called for this widget. See the description of the
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_680154">
+    PRO_SET_VALUE
+   </a>
+   keyword to
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_1232714">
+    WIDGET_CONTROL
+   </a>
+   for information on using this keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_281150">
+   </a>
+   <a name="W_811389549_281150_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="kanchor2714">
+   </a>
+   <a name="W_811389549_71756">
+   </a>
+   RESOURCE_NAME
+  </h3>
+  <p>
+   A string containing an X Window System resource name to be applied to the widget. Once defined, this name can be used in the user’s
+   <span class="Courier">
+    <a name="kanchor2715">
+    </a>
+    .Xdefaults
+   </span>
+   file to customize widget resources not directly supported via the IDL widget routines. This keyword is accepted by all widget creation routines. This keyword only works with the “X” device and is ignored on Microsoft Windows platforms.
+  </p>
+  <p>
+   RESOURCE_NAME allows unrestricted access to the underlying Motif widgets within the following limitations:
+  </p>
+  <p class="Bullet">
+   Users must have the appropriate resources defined in their
+   <span class="Courier">
+    .Xdefaults
+   </span>
+   or application default resource file, or IDL will not see the definitions and they will not take effect.
+  </p>
+  <p class="Bullet">
+   Motif resources are documented in the
+   <i>
+    OSF/Motif Programmer’s Reference Manual
+   </i>
+   . To use them with RESOURCE_NAME, the IDL programmer must determine the type of widget being used by IDL, and then look up the resources that apply to them. Hence, RESOURCE_NAME requires some programmer-level familiarity with Motif.
+  </p>
+  <p class="Bullet">
+   Only resources that are not set within IDL can be modified using this mechanism. Although it is not an error to set resources also set by IDL, the IDL settings will silently override user settings. These IDL resources are not documented since the actual resources used may differ from release to release as the IDL widgets evolve. Therefore, you should set only those resources that are obviously not being set by IDL. Among the resources that are not being set by IDL are those that control colors, menu mnemonics, and accelerator keys.
+  </p>
+  <h4>
+   Example
+  </h4>
+  <p>
+   The sample code below produces a pulldown menu named “Menu” with 2 entries named “Item 1” and “Item 2”.
+  </p>
+  <p>
+   Using the RESOURCE_NAME keyword in conjunction with X resource definitions, we can alter “Item 1” in several ways not possible through the standard IDL widgets interface. We’ll give Item 1 a red background color. We’ll also assign “I” as the keyboard mnemonic. Note that Motif automatically underlines the “I” in the title to indicate this. We’ll also select Meta-F4 as the keyboard accelerator for selecting “Item 1”. If Meta-F4 is pressed while the pointer is anywhere over this application, the effect will be as if the menu was pulled down and “Item 1” was selected with the mouse.
+  </p>
+  <p class="Code">
+   ; Simple event handler:
+  </p>
+  <p class="Code">
+   PRO test_event, ev
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;HELP, /STRUCTURE, ev
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Simple widget creation routine:
+  </p>
+  <p class="Code">
+   PRO test
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; The base gets the resource name "test":
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;a = WIDGET_BASE(RESOURCE_NAME = 'test')
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;b = WIDGET_BUTTON(a, VALUE='Menu', /MENU)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Assign the Item 1 button the resource name "item1":
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;c = WIDGET_BUTTON(b, VALUE='Item 1', $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;RESOURCE_NAME='item1')
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;c = WIDGET_BUTTON(b, VALUE='Item 2')
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;WIDGET_CONTROL, /REALIZE, a
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;XMANAGER, 'test', a
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   Note that we gave the overall application the resource name “test”, and the “Item 1” button the resource name “item1”. Now we can use these names in the following
+   <span class="Courier">
+    .Xdefaults
+   </span>
+   file entries:
+  </p>
+  <p class="Code">
+   Idl*test*item1*mnemonic: I
+  </p>
+  <p class="Code">
+   Idl*test*item1*accelerator: Meta&lt;Key&gt;F4
+  </p>
+  <p class="Code">
+   Idl*test*item1*acceleratorText: Meta-F4
+  </p>
+  <p class="Code">
+   Idl*test*item1*background: red
+  </p>
+  <h4>
+   Note on Specifying Color
+   <a name="kanchor2716">
+   </a>
+   Resources
+  </h4>
+  <p>
+   If you wish to specify unique colors for your widgets, it is generally a good idea to use a color name (“red” or “lightblue”, for example) rather than specifying an exact color match with a color string (such as “#b1b122222020”). If IDL is not able to allocate an exact color, the entire operation may fail. Specifying a named color implies “closest color match,” an operation that rarely fails.
+  </p>
+  <p>
+   If you need an exact color match and IDL fails to allocate the color, try modifying the
+   <span class="Courier">
+    Idl.colors
+   </span>
+   resource in the
+   <span class="Courier">
+    $IDL_DIR/resource/X11/lib/app-defaults/Idl
+   </span>
+   file.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_72437">
+   </a>
+   <a name="W_811389549_72437_Keywords_WIDGET_BASE__">
+   </a>
+   RNAME_MBAR
+  </h3>
+  <p>
+   A string containing an X Window System resource name to be applied to the menubar created by the MBAR keyword. This keyword is identical to the RESOURCE_NAME keyword except that the resource it specifies applies only to the menubar.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679951">
+   </a>
+   <a name="W_811389549_679951_Keywords_WIDGET_BASE__">
+   </a>
+   ROW
+  </h3>
+  <p>
+   If this keyword is included, the base lays out its children in
+   <a name="kanchor2717">
+   </a>
+   rows. The value of this keyword specifies the number of rows to be used. The number of child widgets in each row is determined by distributing the children as evenly as possible across the rows.
+  </p>
+  <p>
+   Specifying both the COLUMN and ROW keywords causes an error.
+  </p>
+  <h4>
+   Row Height
+  </h4>
+  <p>
+   The height of each row is determined by the height of the tallest widget in that row. If the GRID_LAYOUT keyword is set, all rows are as tall as the tallest widget in the base.
+  </p>
+  <h4>
+   Vertical Size of Widgets
+  </h4>
+  <p>
+   If any of the BASE_ALIGN_* keywords to WIDGET_BASE is set, each widget has its “natural” height, determined either by the value of the widget or by the YSIZE keyword. Similarly, if any of the child widgets specifies one of the ALIGN_* keywords, that widget will have its “natural” height. If none of the BASE_ALIGN_* or (ALIGN_*) keywords are set, all widgets in the base are as tall as their row.
+  </p>
+  <h4>
+   Horizontal Placement
+  </h4>
+  <p>
+   Child widgets are placed horizontally one next to the other, with no extra space. If the GRID_LAYOUT keyword is set, each column is as wide as its widest member.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_948019">
+   </a>
+   <a name="W_811389549_948019_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_28305">
+   </a>
+   SCR_XSIZE
+  </h3>
+  <p>
+   Set this keyword to the desired “screen” width of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the XSIZE keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_58070">
+   </a>
+   <a name="W_811389549_58070_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_57777">
+   </a>
+   SCR_YSIZE
+  </h3>
+  <p>
+   Set this keyword to the desired “screen” height of the widget, in units specified by the UNITS keyword (pixels are the default). In many cases, setting this keyword is the same as setting the YSIZE keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679954">
+   </a>
+   <a name="W_811389549_679954_Keywords_WIDGET_BASE__">
+   </a>
+   SCROLL
+  </h3>
+  <p>
+   Set this keyword to give the widget scroll bars that allow viewing portions of the widget contents that are not currently on the screen. You must also set
+   <a class="MCXref_Heading_0" href="#W_811389549_679980">
+    X_SCROLL_SIZE
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="#W_811389549_679991">
+    Y_SCROLL_SIZE
+   </a>
+   to set the viewport size.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Under UNIX, base widgets with scroll bars do not automatically size themselves to fit their contents. Use the
+   <a class="MCXref_Heading_0" href="#W_811389549_679977">
+    XSIZE
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="#W_811389549_679988">
+    YSIZE
+   </a>
+   keywords to explicitly specify the size of the base widget.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You cannot specify both the SCROLL and MODAL keywords for the same widget. Doing so will cause an error.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_948204">
+   </a>
+   <a name="W_811389549_948204_Keywords_WIDGET_BASE__">
+   </a>
+   SENSITIVE
+  </h3>
+  <p>
+   Set this keyword to control the initial sensitivity state of the widget.
+  </p>
+  <p>
+   If SENSITIVE is zero, the widget becomes insensitive. If nonzero, it becomes sensitive.
+   <a name="kanchor2718">
+   </a>
+   When a widget is sensitive, it has normal appearance and can receive user input. For example, a sensitive button widget can be activated by moving the mouse cursor over it and pressing a mouse button. When a widget is insensitive, it indicates the fact by changing its appearance, looking disabled, and it ignores any input.
+  </p>
+  <p>
+   Sensitivity can be used to control when a user is allowed to manipulate the widget. Note that some widgets do not change their appearance when they are made insensitive, but they cease generating events.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Under Microsoft Windows, a top-level base that is insensitive does not allow the user to control the window using the system close or minimize/maximize buttons.
+  </p>
+  <p>
+   After creating the widget hierarchy, you can change the sensitivity state using the SENSITIVE keyword with the
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_1232714">
+    WIDGET_CONTROL
+   </a>
+   procedure.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679957">
+   </a>
+   <a name="W_811389549_679957_Keywords_WIDGET_BASE__">
+   </a>
+   SPACE
+  </h3>
+  <p>
+   <a name="kanchor2719">
+   </a>
+   The space, in units specified by the UNITS keyword (pixels are the default), between children of a row or column major base. This keyword is ignored if either the EXCLUSIVE or NONEXCLUSIVE keyword is present.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1068884">
+   </a>
+   <a name="W_811389549_72836">
+   </a>
+   TAB_MODE
+  </h3>
+  <p>
+   Set this keyword to one of the values shown in the table below to determine how the widget hierarchy can be navigated using the
+   <span class="Bold">
+    Tab
+   </span>
+   key. The TAB_MODE setting is inherited by lower-level bases and child widgets unless it is explicitly set on an individual widget.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   It is not possible to tab to disabled (SENSITIVE=0) or hidden (MAP=0) widgets.
+  </p>
+  <p>
+   Valid settings are:
+  </p>
+  <table style="width: 500px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="103px" class="Column-Column1" />
+   <col width="397px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Disable navigation onto or off of the widget. This is the default. Child widgets automatically inherit the tab mode of the parent base as described in
+       <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Enhancing_Widget_Applica.html#widget_techniques_4218446668_142828">
+        Inheriting the TAB_MODE Value
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Enable navigation onto and off of the widget.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Navigate only onto the widget.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       Navigate only off of the widget.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   In widget applications on the UNIX platform, the Motif library controls what widgets are brought into and released from focus using tabbing. The TAB_MODE keyword value is always zero, and any attempt to change it is ignored when running a widget application on the UNIX platform. Tabbing behavior may vary significantly between UNIX platforms; do not rely on a particular behavior being duplicated on all UNIX systems.
+  </p>
+  <p>
+   After creating the widget hierarchy, you can change tabbing support using the
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_1232714">
+    WIDGET_CONTROL
+   </a>
+   procedure’s TAB_MODE keyword, or query a widget’s support for tabbing using the
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_680333">
+    WIDGET_INFO
+   </a>
+   procedure’s TAB_MODE keyword.
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Enhancing_Widget_Applica.html#widget_techniques_4218446668_142739">
+    Tabbing in Widget Applications
+   </a>
+   for usage details and examples.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679959">
+   </a>
+   <a name="W_811389549_679959_Keywords_WIDGET_BASE__">
+   </a>
+   TITLE
+  </h3>
+  <p>
+   A string containing the title to be used for the widget. Base widgets use the title only if they are top-level widgets or if they are children of a tab widget. For top-level base widgets, the title appears in the “window dressing” at the top of the base widget; the appearance is platform-specific. For base widgets that have a tab widget as their parent widget, the title is used as the text of the tab.
+  </p>
+  <p>
+   Note that if the widget base is not wide enough to contain the specified title, the title may appear truncated. If you must be able to see the full title, you have several alternatives:
+  </p>
+  <p class="Bullet">
+   Rearrange the widgets in the base so that the base becomes naturally wide enough. This is the best solution.
+  </p>
+  <p class="Bullet">
+   Don’t worry about this issue. If the user needs to see the entire label, they can resize the window using the mouse.
+  </p>
+  <p class="Bullet">
+   Create the base without using the COLUMN or ROW keywords. Instead, use the XSIZE keyword to explicitly set a usable width. This is an undesirable solution that can lead to strange-looking widget layouts.
+  </p>
+  <p>
+   For bases that are children of tab widgets, the title may be truncated depending on the width of the largest base that is a child of the tab widget. See the description of the MULTILINE keyword to
+   <a class="MCXref_Heading_0" href="WIDGET_TAB.html#W_811389549_995663">
+    WIDGET_TAB
+   </a>
+   for additional details.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You can use language catalogs to internationalize this value with strings in particular languages.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_977197">
+   </a>
+   <a name="W_811389549_977197_Keywords_WIDGET_BASE__">
+   </a>
+   TLB_FRAME_ATTR
+  </h3>
+  <p>
+   Set this keyword to one of the values shown in the table below to suppress certain aspects of a top-level base’s window frame. This keyword applies only to top-level bases. The settings are merely hints to the window system and may be ignored by some window managers. Valid settings are:
+  </p>
+  <table style="width: 387px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="74px" class="Column-Column1" />
+   <col width="313px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Base cannot be resized, minimized, or maximized.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Suppress display of system menu.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       4
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Suppress title bar.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       8
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Base cannot be closed.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       16
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       Base cannot be moved.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   This keyword is set bitwise, so multiple effects can be set by adding values together. For example, to make a base that has no title bar (value
+   <span class="Courier">
+    4
+   </span>
+   ) and cannot be moved (value
+   <span class="Courier">
+    16
+   </span>
+   ), set the TLB_FRAME_ATTR keyword to
+   <span class="Courier">
+    20
+   </span>
+   (that is,
+   <span class="Courier">
+    4+16
+   </span>
+   ).
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_984484">
+   </a>
+   <a name="W_811389549_984484_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_46275">
+   </a>
+   TLB_ICONIFY_EVENTS
+  </h3>
+  <p>
+   Set this keyword when creating a top-level base to make that base return an event when the base is iconified or restored by the user. See the
+   <a class="MCXref_Heading_0" href="#W_811389549_680002">
+    Events Returned by Base Widgets
+   </a>
+   section below for more information.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_192742">
+   </a>
+   <a name="W_811389549_192742_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_99529">
+   </a>
+   TLB_KILL_REQUEST_EVENTS
+  </h3>
+  <p>
+   Set this keyword, usable only with top-level bases, to send the top-level base a
+   <a name="kanchor2720">
+   </a>
+   WIDGET_KILL_REQUEST event if a user tries to destroy the widget using the window manager (by default, widgets are simply destroyed). See the
+   <a class="MCXref_Heading_0" href="#W_811389549_680002">
+    Events Returned by Base Widgets
+   </a>
+   section below for more information.
+  </p>
+  <p>
+   Use this keyword to perform complex actions before allowing a widget application to exit. Note that widgets that have this keyword set are responsible for killing themselves after receiving a WIDGET_KILL_REQUEST event—they cannot be destroyed using the usual window system controls.
+  </p>
+  <p>
+   Use a call to TAG_NAMES with the STRUCTURE_NAME keyword set to differentiate a WIDGET_KILL_REQUEST event from other types of widget events. For example:
+  </p>
+  <p class="Code">
+   IF TAG_NAMES(event, /STRUCTURE_NAME) EQ $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;'WIDGET_KILL_REQUEST' THEN ...
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_984511">
+   </a>
+   <a name="W_811389549_984511_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_82889">
+   </a>
+   TLB_MOVE_EVENTS
+  </h3>
+  <p>
+   Set this keyword when creating a top-level base to make that base return an event when the base is moved on the screen by the user. See the
+   <a class="MCXref_Heading_0" href="#W_811389549_680002">
+    Events Returned by Base Widgets
+   </a>
+   section below for more information.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679965">
+   </a>
+   <a name="W_811389549_679965_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_34589">
+   </a>
+   TLB_SIZE_EVENTS
+  </h3>
+  <p>
+   <a name="kanchor2721">
+   </a>
+   Set this keyword, when creating a top-level base, to make that base return an event when the base is resized by the user. See the
+   <a class="MCXref_Heading_0" href="#W_811389549_680002">
+    Events Returned by Base Widgets
+   </a>
+   section below for more information.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_978753">
+   </a>
+   <a name="W_811389549_978753_Keywords_WIDGET_BASE__">
+   </a>
+   TOOLBAR
+  </h3>
+  <p>
+   Set this keyword to indicate that the base is used to hold bitmap buttons that make up a toolbar.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Setting this keyword does not cause any changes in behavior; its only affect is to slightly alter the appearance of the bitmap buttons on the base for cosmetic reasons.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   On Motif platforms, if bitmap buttons are on a toolbar base that is also EXCLUSIVE or NONEXCLUSIVE, they will not have a separate “toggle” indicator, they will be grouped closely together, and will have a two-pixel shadow border.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This keyword has no effect on Windows platforms.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_58059">
+   </a>
+   <a name="W_811389549_58059_Keywords_WIDGET_BASE__">
+   </a>
+   <a name="W_811389549_72083">
+   </a>
+   TRACKING_EVENTS
+  </h3>
+  <p>
+   <a name="kanchor2722">
+   </a>
+   Set this keyword to cause widget tracking events to be issued for the widget whenever the mouse pointer
+   <i>
+    enters
+   </i>
+   or
+   <i>
+    leaves
+   </i>
+   the region covered by that widget. Widget tracking events are returned as structures with the following definition:
+  </p>
+  <p class="Code">
+   { WIDGET_TRACKING, ID:0L, TOP:0L, HANDLER:0L, ENTER:0 }
+  </p>
+  <p>
+   ID, TOP, and HANDLER are the standard fields found in every widget event. ENTER is 1 if the tracking event is an entry event, and 0 if it is an exit event.
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Working_with_Widget_Even.html#widget_techniques_4218446668_110080">
+    Tracking Events
+   </a>
+   for more information.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_949220">
+   </a>
+   <a name="W_811389549_949220_Keywords_WIDGET_BASE__">
+   </a>
+   UNAME
+  </h3>
+  <p>
+   Set this keyword to a string that can be used to identify the widget in your code. You can associate a name with each widget in a specific hierarchy, and then use that name to query the widget hierarchy and get the correct widget ID.
+  </p>
+  <p>
+   To query the widget hierarchy, use the
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_680333">
+    WIDGET_INFO
+   </a>
+   function with the FIND_BY_UNAME keyword. The UNAME should be unique to the widget hierarchy because the FIND_BY_UNAME keyword returns the ID of the first widget with the specified name.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_895507">
+   </a>
+   <a name="W_811389549_895507_Keywords_WIDGET_BASE__">
+   </a>
+   UNITS
+  </h3>
+  <p>
+   Set this keyword to specify the units used when
+   <i>
+    supplying
+   </i>
+   measurements or position values. Set UNITS equal to 0 (zero) to specify that all measurements are in pixels (this is the default), to 1 (one) to specify that all measurements are in inches, or to 2 (two) to specify that all measurements are in centimeters. This keyword does not change the units used in a widget event structure or in most of the fields of the geometry structure returned by WIDGET_INFO.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679967">
+   </a>
+   <a name="W_811389549_679967_Keywords_WIDGET_BASE__">
+   </a>
+   UVALUE
+  </h3>
+  <p>
+   The “user value” to be assigned to the widget.
+  </p>
+  <p>
+   Each widget can contain a user-specified value of any data type and organization. This value is not used by the widget in any way, but exists entirely for the convenience of the IDL programmer. This keyword allows you to set this value when the widget is first created.
+  </p>
+  <p>
+   If UVALUE is not present, the widget’s initial user value is undefined.
+  </p>
+  <p>
+   The user value for a widget can be accessed and modified at any time by using the GET_UVALUE and SET_UVALUE keywords to the WIDGET_CONTROL procedure.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679972">
+   </a>
+   <a name="W_811389549_679972_Keywords_WIDGET_BASE__">
+   </a>
+   XOFFSET
+  </h3>
+  <p>
+   The horizontal offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent.
+  </p>
+  <p>
+   Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget layout.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679975">
+   </a>
+   <a name="W_811389549_679975_Keywords_WIDGET_BASE__">
+   </a>
+   XPAD
+  </h3>
+  <p>
+   The horizontal space, in units specified by the UNITS keyword (pixels are the default), between child widgets and the edges of a row or column major base. The default value of XPAD is platform dependent. This keyword is ignored if either the EXCLUSIVE or NONEXCLUSIVE keyword is present.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679977">
+   </a>
+   <a name="W_811389549_679977_Keywords_WIDGET_BASE__">
+   </a>
+   XSIZE
+  </h3>
+  <p>
+   The width of the widget in units specified by the UNITS keyword (pixels are the default). Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. This keyword is only a “hint” to the toolkit and may be ignored in some situations.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679980">
+   </a>
+   <a name="W_811389549_679980_Keywords_WIDGET_BASE__">
+   </a>
+   X_SCROLL_SIZE
+  </h3>
+  <p>
+   The XSIZE keyword always specifies the width of a widget. When the SCROLL keyword is specified, this size is not necessarily the same as the width of the visible area. The X_SCROLL_SIZE keyword allows you to set the width of the scrolling viewport independently of the actual width of the widget. X_SCROLL_SIZE must be less than XSIZE for scrollbars to appear.
+  </p>
+  <p>
+   Use of the X_SCROLL_SIZE keyword implies SCROLL. This means that scroll bars will be added in both the horizontal and vertical directions when X_SCROLL_SIZE is specified. Because the default size of the scrolling viewport may differ between platforms, it is best to specify Y_SCROLL_SIZE when specifying X_SCROLL_SIZE.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   X_SCROLL_SIZE and Y_SCROLL_SIZE are ignored if you specify the screen size using the SCR_XSIZE and SCR_YSIZE keywords to the widget creation routine.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679983">
+   </a>
+   <a name="W_811389549_679983_Keywords_WIDGET_BASE__">
+   </a>
+   YOFFSET
+  </h3>
+  <p>
+   The vertical offset of the widget in units specified by the UNITS keyword (pixels are the default) relative to its parent. This offset is specified relative to the
+   <i>
+    upper left
+   </i>
+   corner of the parent widget.
+  </p>
+  <p>
+   Specifying an offset relative to a row or column major base widget does not work because those widgets enforce their own layout policies. This keyword is primarily of use relative to a plain base widget. Note that it is best to avoid using this style of widget layout.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679986">
+   </a>
+   <a name="W_811389549_679986_Keywords_WIDGET_BASE__">
+   </a>
+   YPAD
+  </h3>
+  <p>
+   The vertical space, in units specified by the UNITS keyword (pixels are the default), between child widgets and the edges of a row or column major base. The default value of YPAD is platform-dependent. This keyword is ignored if either the EXCLUSIVE or NONEXCLUSIVE keyword is present.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679988">
+   </a>
+   <a name="W_811389549_679988_Keywords_WIDGET_BASE__">
+   </a>
+   YSIZE
+  </h3>
+  <p>
+   The height of the widget in units specified by the UNITS keyword (pixels are the default). Most widgets attempt to size themselves to fit the situation. However, if the desired effect is not produced, use this keyword to override it. This keyword is only a “hint” to the toolkit and may be ignored in some situations.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_679991">
+   </a>
+   <a name="W_811389549_679991_Keywords_WIDGET_BASE__">
+   </a>
+   Y_SCROLL_SIZE
+  </h3>
+  <p>
+   The YSIZE keyword always specifies the height of a widget. When the SCROLL keyword is specified, this size is not necessarily the same as the height of the visible area. The Y_SCROLL_SIZE keyword allows you to set the height of the scrolling viewport independently of the actual height of the widget. Y_SCROLL_SIZE must be less than YSIZE for scrollbars to appear.
+  </p>
+  <p>
+   Use of the Y_SCROLL_SIZE keyword implies SCROLL. This means that scroll bars will be added in both the horizontal and vertical directions when Y_SCROLL_SIZE is specified. Because the default size of the scrolling viewport may differ between platforms, it is best to specify X_SCROLL_SIZE when specifying Y_SCROLL_SIZE.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   X_SCROLL_SIZE and Y_SCROLL_SIZE are ignored if you specify the screen size using the SCR_XSIZE and SCR_YSIZE keywords to the widget creation routine.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_51615">
+   </a>
+   Keywords to WIDGET_CONTROL
+  </h2>
+  <p>
+   A number of keywords to the
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_1232714">
+    WIDGET_CONTROL
+   </a>
+   procedure affect the behavior of base widgets. In addition to those keywords that affect all widgets, the following are particularly useful:
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_949802">
+    CONTEXT_EVENTS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_919052">
+    KBRD_FOCUS_EVENTS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_984722">
+    TLB_ICONIFY_EVENTS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_984735">
+    TLB_MOVE_EVENTS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_984752">
+    TLB_SIZE_EVENTS
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_92944">
+   </a>
+   Keywords to WIDGET_INFO
+  </h2>
+  <p>
+   A number of keywords to the
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_680333">
+    WIDGET_INFO
+   </a>
+   function return information that applies specifically to base widgets. In addition to those keywords that apply to all widgets, the following are particularly useful:
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_1018413">
+    CONTEXT_EVENTS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_1012790">
+    KBRD_FOCUS_EVENTS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_910752">
+    MODAL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_1186243">
+    STRING_SIZE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_984875">
+    TLB_ICONIFY_EVENTS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_192881">
+    TLB_KILL_REQUEST_EVENTS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_CONTROL.html#W_811389549_58191">
+    SCR_YSIZE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WIDGET_INFO.html#W_811389549_984889">
+    TLB_SIZE_EVENTS
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_680002">
+   </a>
+   <a name="W_811389549_14452">
+   </a>
+   Events Returned by Base Widgets
+  </h2>
+  <p>
+   Base widgets do not generate any events by default. They can be configured to generate events when the base widget receives the keyboard focus or the user clicks the right-hand mouse button. In addition, top-level bases can be configured to generate events when the base is resized, moved, iconified, or killed.
+  </p>
+  <h3>
+   <a name="W_811389549_680003_Keywords_WIDGET_BASE__">
+   </a>
+   Resize Events
+  </h3>
+  <p>
+   <a name="kanchor2723">
+   </a>
+   Top-level widget bases return the following event structure only when they are resized by the user and the base was created with the
+   <a class="MCXref_Heading_0" href="#W_811389549_679965">
+    TLB_SIZE_EVENTS
+   </a>
+   keyword set:
+  </p>
+  <p class="Code">
+   { WIDGET_BASE, ID:0L, TOP:0L, HANDLER:0L, X:0L, Y:0L }
+  </p>
+  <p>
+   ID is the widget ID of the base generating the event. TOP is the widget ID of the top level widget containing ID. HANDLER contains the widget ID of the widget associated with the handler routine. The X and Y fields return the new width of the base, not including any frame provided by the window manager.
+  </p>
+  <h3>
+   <a name="W_811389549_984551_Keywords_WIDGET_BASE__">
+   </a>
+   Move Events
+  </h3>
+  <p>
+   Top-level widget bases return the following event structure when the base is moved and the base was created with the
+   <a class="MCXref_Heading_0" href="#W_811389549_984511">
+    TLB_MOVE_EVENTS
+   </a>
+   keyword set:
+  </p>
+  <p class="Code">
+   { WIDGET_TLB_MOVE, ID:0L, TOP:0L, HANDLER:0L, X:0L, Y:0L }
+  </p>
+  <p>
+   ID is the widget ID of the base generating the event. TOP is the widget ID of the top level widget containing ID. HANDLER contains the widget ID of the widget associated with the handler routine. X and Y are the new location of the top left corner of the base.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   On Windows, move events are generated while dragging. On UNIX, move events are generated only on the mouse-up.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If both
+   <a class="MCXref_Heading_0" href="#W_811389549_679965">
+    TLB_SIZE_EVENTS
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="#W_811389549_984511">
+    TLB_MOVE_EVENTS
+   </a>
+   are enabled, a user resize operation that causes the top left corner of the base to move will generate both a move event and a resize event.
+  </p>
+  <h3>
+   <a name="W_811389549_984561_Keywords_WIDGET_BASE__">
+   </a>
+   Iconify Events
+  </h3>
+  <p>
+   Top-level widget bases return the following event structure when the base is iconified or restored and the base was created with the
+   <a class="MCXref_Heading_0" href="#W_811389549_984484">
+    TLB_ICONIFY_EVENTS
+   </a>
+   keyword set:
+  </p>
+  <p class="Code">
+   { WIDGET_TLB_ICONIFY, ID:0L, TOP:0L, HANDLER:0L, ICONIFIED:0 }
+  </p>
+  <p>
+   ID is the widget ID of the base generating the event. TOP is the widget ID of the top level widget containing ID. HANDLER contains the widget ID of the widget associated with the handler routine. ICONIFIED is 1 (one) if the user iconified the base and 0 (zero) if the user restored the base.
+  </p>
+  <h3>
+   <a name="W_811389549_911477_Keywords_WIDGET_BASE__">
+   </a>
+   Keyboard Focus Events
+  </h3>
+  <p>
+   Widget bases return the following event structure when the keyboard focus changes and the base was created with the
+   <a class="MCXref_Heading_0" href="#W_811389549_912183">
+    KBRD_FOCUS_EVENTS
+   </a>
+   keyword set:
+  </p>
+  <p class="Code">
+   { WIDGET_KBRD_FOCUS, ID:0L, TOP:0L, HANDLER:0L, ENTER:0 }
+  </p>
+  <p>
+   ID is the widget ID of the base generating the event. TOP is the widget ID of the top level widget containing ID. HANDLER contains the widget ID of the widget associated with the handler routine. The ENTER field returns 1 (one) if the base is gaining the keyboard focus, or 0 (zero) if the base is losing the keyboard focus.
+  </p>
+  <h3>
+   <a name="W_811389549_911475_Keywords_WIDGET_BASE__">
+   </a>
+   Kill Request Events
+  </h3>
+  <p>
+   Top-level widget bases return the following event structure only when a user tries to destroy the widget using the window manager and the base was created with the
+   <a class="MCXref_Heading_0" href="#W_811389549_192742">
+    TLB_KILL_REQUEST_EVENTS
+   </a>
+   keyword set:
+  </p>
+  <p class="Code">
+   { WIDGET_KILL_REQUEST, ID:0L, TOP:0L, HANDLER:0L }
+  </p>
+  <p>
+   ID is the widget ID of the base generating the event. TOP is the widget ID of the top level widget containing ID. HANDLER contains the widget ID of the widget associated with the handler routine.
+  </p>
+  <h3>
+   <a name="W_811389549_972322_Keywords_WIDGET_BASE__">
+   </a>
+   Context Menu Events
+  </h3>
+  <p>
+   A base widget created with the CONTEXT_EVENTS keyword set returns the following event structure in response to a right mouse button click:
+  </p>
+  <p class="Code">
+   {WIDGET_CONTEXT, ID:0L, TOP:0L, HANDLER:0L, X:0L, Y:0L,
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ROW:0L, COL:0L}
+  </p>
+  <p>
+   The first three fields are the standard fields found in every widget event. The X and Y fields give the device coordinates at which the event occurred, measured from the upper left corner of the base widget. The ROW and COL fields return meaningful information for table widgets and values of zero (0) for other widgets.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_982646">
+   </a>
+   <a name="W_811389549_982646_PageTOC_WIDGET_BASE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Pre-4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Added TLB_ICONIFY_EVENTS, TLB_MOVE_EVENTS, and TOOLBAR keywords; added new event structures for iconify and move events
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Added TAB_MODE keyword
+      </p>
+      <p>
+       Added ROW and COL fields to WIDGET_CONTEXT event structure
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       Pre-6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Deprecated APP_MBAR keyword
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added BITMAP and MASK keywords
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="W_811389549_983418">
+   </a>
+   <a name="W_811389549_983418_PageTOC_WIDGET_BASE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a href="../../Creating IDL Programs/Creating Applications in IDL/About_Widgets.html#widget_apps_4063420628_1041647" class="MCXref_0">
+    About Widgets
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

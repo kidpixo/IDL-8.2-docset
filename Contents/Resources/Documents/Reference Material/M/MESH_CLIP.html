@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: M" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   MESH_CLIP
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/M/MESH_CLIP.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="M_list.html">
+    Routines: M
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    MESH_CLIP
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="M_824365677_888450">
+   </a>
+   <a name="M_824365677_23756">
+   </a>
+   MESH_CLIP
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#M_824365677_948386">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_948388">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_948390">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_948401">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_953036">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_967501">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_972949">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1855">
+   </a>
+   MESH_CLIP function clips a polygonal mesh to an arbitrary plane in space and returns a polygonal mesh of the remaining portion. An auxiliary array of data may also be passed and clipped. This array can have multiple values for each vertex. The portion of the mesh below the plane, satisfying
+   <i>
+    ax
+   </i>
+   <span class="_Override" style="font-style: italic;">
+    +
+   </span>
+   <i>
+    by
+   </i>
+   <span class="_Override" style="font-style: italic;">
+    +
+   </span>
+   <i>
+    cz
+   </i>
+   <span class="_Override" style="font-style: italic;">
+    +
+   </span>
+   <i>
+    d
+   </i>
+   <span class="_Override" style="font-style: italic;">
+    &lt;
+   </span>
+   0, remains after the clipping operation.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_948386">
+   </a>
+   <a name="M_824365677_948386_PageTOC_MESH_CLIP_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = MESH_CLIP (
+   <i>
+    Plane
+   </i>
+   ,
+   <i>
+    Vertsin
+   </i>
+   ,
+   <i>
+    Connin
+   </i>
+   ,
+   <i>
+    Vertsout
+   </i>
+   ,
+   <i>
+    Connout
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_948402" target="" title="" alt="">
+    AUXDATA_IN
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    array
+   </span>
+   ,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_948404" target="" title="" alt="">
+    AUXDATA_OUT
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    variable
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_948406" target="" title="" alt="">
+    CUT_VERTS
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    variable
+   </span>
+   ]&#160;)
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_948388">
+   </a>
+   <a name="M_824365677_948388_PageTOC_MESH_CLIP_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The return value is the number of triangles in the returned mesh.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_948390">
+   </a>
+   <a name="M_824365677_948390_PageTOC_MESH_CLIP_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Plane
+  </h3>
+  <p>
+   Input four element array describing the equation of the plane to be clipped to. The elements are the coefficients (
+   <span class="_Override" style="font-style: italic;">
+    a,b,c,d
+   </span>
+   ) of the equation
+   <i>
+    ax
+   </i>
+   <span class="_Override" style="font-style: italic;">
+    +
+   </span>
+   <i>
+    by
+   </i>
+   <span class="_Override" style="font-style: italic;">
+    +
+   </span>
+   <i>
+    cz
+   </i>
+   <span class="_Override" style="font-style: italic;">
+    +
+   </span>
+   <i>
+    d
+   </i>
+   <span class="_Override" style="font-style: italic;">
+    =
+   </span>
+   0.
+  </p>
+  <h3 class="Argument">
+   Vertsin
+  </h3>
+  <p>
+   Input array of polygonal vertices [3,
+   <span class="_Override" style="font-style: italic;">
+    n
+   </span>
+   ].
+  </p>
+  <h3 class="Argument">
+   Connin
+  </h3>
+  <p>
+   Input polygonal mesh connectivity array.
+  </p>
+  <h3 class="Argument">
+   Vertsout
+  </h3>
+  <p>
+   Output array of polygonal vertices.
+  </p>
+  <h3 class="Argument">
+   Connout
+  </h3>
+  <p>
+   Output polygonal mesh connectivity array.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_948401">
+   </a>
+   <a name="M_824365677_948401_PageTOC_MESH_CLIP_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="M_824365677_948402">
+   </a>
+   <a name="M_824365677_948402_Keywords_MESH_CLIP__">
+   </a>
+   AUXDATA_IN
+  </h3>
+  <p>
+   Input array of auxiliary data. If present, these values are interpolated and returned through AUXDATA_OUT. The trailing array dimension must match the number of vertices in the Vertsin array.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_948404">
+   </a>
+   <a name="M_824365677_948404_Keywords_MESH_CLIP__">
+   </a>
+   AUXDATA_OUT
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain an output array of interpolated auxiliary data.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_948406">
+   </a>
+   <a name="M_824365677_948406_Keywords_MESH_CLIP__">
+   </a>
+   CUT_VERTS
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain an output array of vertex indices (into Vertsout) of the vertices which are considered to be “on” the clipped surface.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_953036">
+   </a>
+   <a name="M_824365677_953036_PageTOC_MESH_CLIP_">
+   </a>
+   Example
+  </h2>
+  <p>
+   This example clips an octahedral mesh (an eight-sided, three-dimensional shape similar to a cut diamond). The original mesh contains one rectangle and eight triangles. The
+   <a name="kanchor1856">
+   </a>
+   connectivity list is formed with the rectangle listed first followed by the triangles. The mesh is placed in a
+   <a name="kanchor1857">
+   </a>
+   polygon object, which is added to a model. The model is displayed in the XOBJVIEW utility, which allows you to click-and-drag the polygon object to rotate and translate it. See
+   <a class="MCXref_Heading_0" href="../X/XOBJVIEW.html#X_800576109_956910" target="" title="" alt="">
+    XOBJVIEW
+   </a>
+   for more information on this utility.
+  </p>
+  <p>
+   When you quit out of the first XOBJVIEW display, the second XOBJVIEW display will appear. This display shows the mesh
+   <a name="kanchor1858">
+   </a>
+   clipped with an oblique plane. The final XOBJVIEW display shows the results of using the TRIANGULATE routine to cover the clipped area. See
+   <a class="MCXref_Heading_0" href="../T/TRIANGULATE.html#T_809226861_679530" target="" title="" alt="">
+    TRIANGULATE
+   </a>
+   for more information in this routine.
+  </p>
+  <p>
+   This example has been split into three parts; click each section to enter the code at the IDL command line.
+  </p>
+  <p class="Code">
+   ; Create a mesh of an octahedron.
+   <br />
+   vertices = [[0, -1, 0], [1, 0, 0], [0, 1, 0], $
+   <br />
+   [-1, 0, 0], [0, 0, 1], [0, 0, -1]]
+   <br />
+   connectivity = [4, 0, 1, 2, 3, 3, 0, 1, 4, 3, 1, 2, 4, $
+   <br />
+   3, 2, 3, 4, 3, 3, 0, 4, 3, 1, 0, 5, 3, 2, 1, 5, $
+   <br />
+   3, 3, 2, 5, 3, 0, 3, 5]
+   <br />
+   <br />
+   ; Initialize model for display.
+   <br />
+   oModel = OBJ_NEW('IDLgrModel')
+   <br />
+   <br />
+   ; Initialize polygon and polyline outline to contain
+   <br />
+   ; the mesh of the octahedron.
+   <br />
+   oPolygon = OBJ_NEW('IDLgrPolygon', vertices, $
+   <br />
+   POLYGONS = connectivity, SHADING = 1, $
+   <br />
+   COLOR = [0, 255, 0])
+   <br />
+   oPolyline = OBJ_NEW('IDLgrPolyline', vertices, $
+   <br />
+   POLYLINES = connectivity, COLOR = [0, 0, 0])
+   <br />
+   <br />
+   ; Add the polygon and the polyline to the model.
+   <br />
+   oModel-&gt;Add, oPolygon
+   <br />
+   oModel-&gt;Add, oPolyline
+   <br />
+   <br />
+   ; Rotate model for better initial perspective.
+   <br />
+   oModel-&gt;Rotate, [-1, 0, 1], 22.5
+   <br />
+   <br />
+   ; Display model.
+   <br />
+   XOBJVIEW, oModel, /BLOCK, SCALE = 1, $
+   <br />
+   TITLE = 'Original Octahedron Mesh'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Clip mesh.
+   <br />
+   clip = MESH_CLIP([1., 1., 1., 0.], vertices, connectivity, $
+   <br />
+   clippedVertices, clippedConnectivity, $
+   <br />
+   CUT_VERTS = cutVerticesIndex)
+   <br />
+   <br />
+   ; Update polygon with the resulting clipped mesh.
+   <br />
+   oPolygon-&gt;SetProperty, DATA = clippedVertices, $
+   <br />
+   POLYGONS = clippedConnectivity
+   <br />
+   <br />
+   ; Display the updated model.
+   <br />
+   XOBJVIEW, oModel, /BLOCK, SCALE = 1, $
+   <br />
+   TITLE = 'Clipped Octahedron Mesh'
+   <br />
+   <br />
+   ; Determine the vertices of the clipped plane.
+   <br />
+   cutVertices = clippedVertices[*, cutVerticesIndex]
+   <br />
+   <br />
+   ; Derive the x and y components of the clipped plane's
+   <br />
+   ; vertices.
+   <br />
+   x = cutVertices[0, *]
+   <br />
+   y = cutVertices[1, *]
+   <br />
+   <br />
+   ; Triangulate the connectivity of the clipped plane.
+   <br />
+   TRIANGULATE, x, y, triangles
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Derive the connectivity of the clipped plane from the
+   <br />
+   ; results of the triangulation.
+   <br />
+   arraySize = SIZE(triangles, /DIMENSIONS)
+   <br />
+   array = FLTARR(4, arraySize[1])
+   <br />
+   array[0, *] = 3
+   <br />
+   array[1, 0] = triangles
+   <br />
+   cutConnectivity = REFORM(array, N_ELEMENTS(array))
+   <br />
+   <br />
+   ; Initialize the clipped plane's polygon and polyline.
+   <br />
+   oCutPolygon = OBJ_NEW('IDLgrPolygon', cutVertices, $
+   <br />
+   POLYGONS = cutConnectivity, SHADING = 1, $
+   <br />
+   COLOR = [0, 0, 255])
+   <br />
+   oCutPolyline = OBJ_NEW('IDLgrPolyline', cutVertices, $
+   <br />
+   POLYLINES = cutConnectivity, COLOR = [255, 0, 0], $
+   <br />
+   THICK = 3.)
+   <br />
+   <br />
+   ; Add polyline and polygon to model.
+   <br />
+   oModel-&gt;Add, oCutPolyline
+   <br />
+   oModel-&gt;Add, oCutPolygon
+   <br />
+   <br />
+   ; Display updated model.
+   <br />
+   XOBJVIEW, oModel, /BLOCK, SCALE = 1, $
+   <br />
+   TITLE = 'Clipped Octahedron Mesh with Clipping Plane'
+   <br />
+   <br />
+   ; Clean-up object references.
+   <br />
+   OBJ_DESTROY, [oModel]
+  </p>
+  <p>
+   <a name="M_824365677_65236">
+   </a>
+   The results for this example are shown in the following figure. The original octahedron is on the left and the two clipped results are shown to the right.
+  </p>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    The Original Octahedron (left) and the Two Clipped Results (right)
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/mesh_clip.gif" style="margin-left: 9.124559px;margin-top: 3.49992px;margin-right: 3.530134px;margin-bottom: 3.985187px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="M_824365677_967501">
+   </a>
+   <a name="M_824365677_967501_PageTOC_MESH_CLIP_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.5
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="M_824365677_972949">
+   </a>
+   <a name="M_824365677_972949_PageTOC_MESH_CLIP_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a href="MESH_DECIMATE.html" class="MCXref_0">
+    MESH_DECIMATE
+   </a>
+   <a class="MCXref_Heading_0" href="MESH_ISSOLID.html#M_824365677_929914" target="" title="" alt="">
+    MESH_ISSOLID
+   </a>
+   ,
+   <a href="MESH_MERGE.html" target="" title="" alt="" class="MCXref_Heading_0">
+    MESH_MERGE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MESH_NUMTRIANGLES.html#M_824365677_929942" target="" title="" alt="">
+    MESH_NUMTRIANGLES
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MESH_OBJ.html#M_824365677_929903" target="" title="" alt="">
+    MESH_OBJ
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MESH_SMOOTH.html#M_824365677_929954" target="" title="" alt="">
+    MESH_SMOOTH
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MESH_SURFACEAREA.html#M_824365677_929966" target="" title="" alt="">
+    MESH_SURFACEAREA
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MESH_VALIDATE.html#M_824365677_929978" target="" title="" alt="">
+    MESH_VALIDATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MESH_VOLUME.html#M_824365677_929990" target="" title="" alt="">
+    MESH_VOLUME
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

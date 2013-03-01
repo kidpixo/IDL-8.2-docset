@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrBuffer" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrBuffer::Draw
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrBuffer__Draw.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrBuffer::Draw
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1007808">
+   </a>
+   <a name="objects_gr_2157407275_15593">
+   </a>
+   IDLgrBuffer::Draw
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007827">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007830">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007843">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007849">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLgrBuffer::
+   <a name="kanchor4169">
+   </a>
+   Draw procedure method draws the given picture to this graphics destination.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Objects are drawn to the destination device in the order that they are added to the model, view, viewgroup, or scene object that contains them.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1007827">
+   </a>
+   <a name="objects_gr_2157407275_1143522_PageTOC_IDLgrBuffer">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrBuffer.html#objects_gr_2157407275_1007684">
+    IDLgrBuffer
+   </a>
+   ::]Draw [,&#160;
+   <i>
+    Picture
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007844">
+    CREATE_INSTANCE
+   </a>
+   ={1 | 2}] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1676831">
+    DRAW_INSTANCE
+   </a>
+   ={1 | 2}]
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1007830">
+   </a>
+   <a name="objects_gr_2157407275_1143524_PageTOC_IDLgrBuffer">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Picture
+  </h3>
+  <p>
+   The view (an instance of an
+   <a class="MCXref_Heading_0" href="IDLgrView.html#objects_gr_2157407275_1016728">
+    IDLgrView
+   </a>
+   object), viewgroup (an instance of an
+   <a class="MCXref_Heading_0" href="IDLgrViewgroup.html#objects_gr_2157407275_1017081">
+    IDLgrViewgroup
+   </a>
+   object) or scene (an instance of an
+   <a class="MCXref_Heading_0" href="IDLgrScene.html#objects_gr_2157407275_1092773">
+    IDLgrScene
+   </a>
+   object) to be drawn.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1007843">
+   </a>
+   <a name="objects_gr_2157407275_1143533_PageTOC_IDLgrBuffer">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1007844">
+   </a>
+   <a name="objects_gr_2157407275_1007844_Keywords_IDLgrBuffer">
+   </a>
+   CREATE_INSTANCE
+  </h3>
+  <p>
+   Set this keyword equal to one to specify that this scene or view is the unchanging part of a drawing. Some destinations can make an instance from the current window contents without having to perform a complete redraw. If the view or scene to be drawn is identical to the previously drawn view or scene, this keyword can be set equal to 2 to hint the destination to create the instance from the current window contents if it can.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1676831">
+   </a>
+   <a name="objects_gr_2157407275_1007846_Keywords_IDLgrBuffer">
+   </a>
+   DRAW_INSTANCE
+  </h3>
+  <p>
+   Set this keyword to specify that the instance, or unchanging part of the drawing, is drawn to the device first. IDL then draws the changing part of the drawing, indicated by the scene, view or viewgroup specified by the Picture argument.
+  </p>
+  <p>
+   If the value of this keyword is 1, IDL copies both the instance image (color buffer) and the instance depth buffer to the device.
+  </p>
+  <p>
+   If the value of this keyword is 2, IDL copies only the instance image to the device.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1007849">
+   </a>
+   <a name="objects_gr_2157407275_77026">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

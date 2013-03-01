@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrLegend" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrLegend::Remove
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrLegend__Remove.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrLegend::Remove
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   IDLgrLegend::Remove
+  </h1>
+  <p>
+   The IDLgrLegend::
+   <a name="kanchor4291">
+   </a>
+   Remove procedure method removes a legend item from the legend.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrLegend.html#objects_gr_2157407275_1010440" target="" title="" alt="">
+    IDLgrLegend
+   </a>
+   ::]Remove [, Items] [, /
+   <a href="#ALL" target="" title="" alt="" class="MCXref_0">
+    ALL
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Items
+  </h3>
+  <p>
+   A single item, an array of items, or a list of items to be removed from the legend. An item can be a graphic reference or a graphic name.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="ALL">
+   </a>
+   ALL
+  </h3>
+  <p>
+   Set this keyword to remove all legend items from the legend.
+  </p>
+  <h2 class="API">
+   Example
+  </h2>
+  <p class="Code">
+   ; Draw four plots in the same window
+  </p>
+  <p class="Code">
+   sinewave = SIN( 2.0 * FINDGEN(200) * !PI / 25.0) * EXP(-0.2 * FINDGEN(200))
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   p1 = PLOT(sinewave, NAME='Plot 1')
+  </p>
+  <p class="Code">
+   p2 = PLOT(sinewave/2, NAME='Plot 2', COLOR='red', /OVERPLOT)
+  </p>
+  <p class="Code">
+   p3 = PLOT(sinewave/4, NAME='Plot 3', COLOR='green', /OVERPLOT)
+  </p>
+  <p class="Code">
+   p4 = PLOT(sinewave/6, NAME='Plot 4', COLOR='blue', /OVERPLOT)
+  </p>
+  <p class="Code">
+   l = LEGEND()
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Remove the second plot from the legend with its object reference
+  </p>
+  <p class="Code">
+   l.Remove, p2
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Remove the first and fourth plot from the legend with their name references
+  </p>
+  <p class="Code">
+   l.Remove, ['Plot 1', 'Plot 4']
+  </p>
+  <h2 class="API">
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

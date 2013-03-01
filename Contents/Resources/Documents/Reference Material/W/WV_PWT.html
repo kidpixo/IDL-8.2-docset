@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WV_PWT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WV_PWT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WV_PWT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="ref_3320460235_1003503">
+   </a>
+   <a name="ref_3320460235_44025">
+   </a>
+   WV_PWT
+  </h1>
+  <p madcap:conditions="wavelet.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="wavelet.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1018666">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1006178">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1006180">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1006191">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1023271">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1015202">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2999">
+   </a>
+   WV_PWT function returns the
+   <a name="kanchor3000">
+   </a>
+   partial
+   <a name="kanchor3001">
+   </a>
+   wavelet transform of the input vector
+   <span class="Italic">
+    A
+   </span>
+   . The transform is done using a user-inputted wavelet filter. WV_PWT is called by
+   <a href="WV_DWT.html" target="" title="" alt="" class="MCXref_Heading_0">
+    WV_DWT
+   </a>
+   <a class="MCXref_Heading_0" href="WV_DWT.html#ref_3320460235_1010303">
+    WV_DWT
+   </a>
+   .
+  </p>
+  <p>
+   WV_PWT is based on the routine
+   <span class="Courier">
+    pwt
+   </span>
+   described in section 13.10 of
+   <span class="Italic">
+    Numerical Recipes in C: The Art of Scientific Computing, 2nd ed.
+   </span>
+   (Cambridge University Press), and is used by permission.
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1018666">
+   </a>
+   <a name="ref_3320460235_1018666_PageTOC_WV_PWT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = WV_PWT(
+   <span class="Italic">
+    A
+   </span>
+   ,
+   <span class="Italic">
+    Scaling
+   </span>
+   ,
+   <span class="Italic">
+    Wavelet
+   </span>
+   ,
+   <span class="Italic">
+    Ioff
+   </span>
+   ,
+   <span class="Italic">
+    Joff
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1006192">
+    DOUBLE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1006194">
+    INVERSE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1006178">
+   </a>
+   <a name="ref_3320460235_1006178_PageTOC_WV_PWT_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is an output vector of the same length as
+   <span class="Italic">
+    A
+   </span>
+   , containing one stage of the
+   <a name="kanchor3002">
+   </a>
+   pyramidal algorithm (Mallat 1989).
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1006180">
+   </a>
+   <a name="ref_3320460235_1006180_PageTOC_WV_PWT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   A
+  </h3>
+  <p>
+   The input vector. The length must be either less than four (4) or a power of two (2).
+  </p>
+  <h3 class="Argument">
+   Scaling
+  </h3>
+  <p>
+   A vector of scaling (father) coefficients, of length N.
+  </p>
+  <h3 class="Argument">
+   Wavelet
+  </h3>
+  <p>
+   A vector of wavelet (mother) coefficients, of length N.
+  </p>
+  <h3 class="Argument">
+   Ioff
+  </h3>
+  <p>
+   An integer that specifies the support offset for
+   <span class="Italic">
+    Scaling
+   </span>
+   . To center the scaling function over each point in
+   <span class="Italic">
+    Array
+   </span>
+   , set
+   <span class="Italic">
+    Ioff
+   </span>
+   to –N/2+2.
+  </p>
+  <h3 class="Argument">
+   Joff
+  </h3>
+  <p>
+   An integer that specifies the support offset for
+   <span class="Italic">
+    Wavelet
+   </span>
+   . To center the wavelet function over each point in
+   <span class="Italic">
+    Array
+   </span>
+   , set
+   <span class="Italic">
+    Joff
+   </span>
+   to –N/2+2.
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1006191">
+   </a>
+   <a name="ref_3320460235_1006191_PageTOC_WV_PWT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1006192">
+   </a>
+   <a name="ref_3320460235_1006192_Keywords_WV_PWT_">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1006194">
+   </a>
+   <a name="ref_3320460235_1006194_Keywords_WV_PWT_">
+   </a>
+   INVERSE
+  </h3>
+  <p>
+   If set, the inverse transform is computed. By default, the forward transform is computed.
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1015166_PageTOC_WV_PWT_">
+   </a>
+   Method and Result Format
+  </h2>
+  <p>
+   The WV_PWT function computes the wavelet coefficients for one level of the pyramidal algorithm. For a one-dimensional vector with 16 elements, one level of the pyramid appears below:
+  </p>
+  <p class="Code">
+   Array elements
+  </p>
+  <p class="Code">
+   [&#160;0,&#160;&#160;1,&#160;&#160;2,&#160;&#160;3,&#160;&#160;4,&#160;&#160;5,&#160;&#160;6,&#160;&#160;7,&#160;&#160;8,&#160;&#160;9,&#160;10,&#160;11,&#160;12,&#160;13,&#160;14,&#160;15]
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;\&#160;/&#160;&#160;&#160;&#160;&#160;\&#160;/&#160;&#160;&#160;&#160;&#160;\&#160;/&#160;&#160;&#160;&#160;&#160;\&#160;/&#160;&#160;&#160;&#160;&#160;\&#160;/&#160;&#160;&#160;&#160;&#160;\&#160;/&#160;&#160;&#160;&#160;&#160;\&#160;/&#160;&#160;&#160;&#160;&#160;\&#160;/
+  </p>
+  <p class="Code">
+   &#160;&#160;s0,d0&#160;&#160;&#160;s1,d1&#160;&#160;&#160;s2,d2&#160;&#160;&#160;s3,d3&#160;&#160;&#160;s4,d4&#160;&#160;&#160;s5,d5&#160;&#160;&#160;s6,d6&#160;&#160;&#160;s7,d7
+  </p>
+  <p>
+   where
+   <span class="Courier">
+    Si
+   </span>
+   and
+   <span class="Courier">
+    Di
+   </span>
+   are the scaling and wavelet coefficients and
+   <span class="Courier">
+    i
+   </span>
+   represents the position. The wavelet coefficients are stored in
+   <span class="Italic">
+    Result
+   </span>
+   in the following order:
+  </p>
+  <p class="Code">
+   Result&#160;=&#160;[ s0, s1, s2, s3, s4, s5, s6, s7,
+  </p>
+  <p class="Code">
+   &#160;&#160;d0,&#160;d1,&#160;d2,&#160;d3,&#160;d4,&#160;d5,&#160;d6,&#160;d7&#160;]
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1023271">
+   </a>
+   <a name="ref_3320460235_1023271_PageTOC_WV_PWT_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="28px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr style="height: 13px;">
+     <td>
+      <p>
+       5.3
+      </p>
+     </td>
+     <td>
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="ref_3320460235_1015202">
+   </a>
+   <a name="ref_3320460235_1015202_PageTOC_WV_PWT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="WV_DWT.html#ref_3320460235_1010303" target="" title="" alt="">
+    WV_DWT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

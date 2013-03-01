@@ -1,0 +1,482 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C|CDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CDF_VARCREATE
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/C/CDF Routines/CDF_VARCREATE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../CDF_Routines.html">
+    CDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CDF_VARCREATE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="CDF_1744428779_1008374">
+   </a>
+   <a name="CDF_1744428779_72205">
+   </a>
+   CDF_VARCREATE
+  </h1>
+  <p>
+   The
+   <a name="kanchor257">
+   </a>
+   CDF_VARCREATE function creates a new variable in a Common Data Format file.
+  </p>
+  <p>
+   In CDF,
+   <span class="Italic">
+    variable
+   </span>
+   is a generic name for an object that represents data. Data can be scalar (0-dimensional) or multi-dimensional (up to 10-dimensional). Data does not have any associated scientific context; it could represent an independent variable, a dependent variable, a time and date value, an image, the name of an XML file,
+   <span class="Italic">
+    etc
+   </span>
+   . You can describe a variable’s relationship to other variables via CDF’s
+   <span class="Italic">
+    attributes
+   </span>
+   .
+  </p>
+  <p>
+   CDF supports two types of variables: zVariables and rVariables. Different zVariables in a CDF data set can have different numbers of dimensions and different dimension sizes. All rVariables in a CDF data set must have the same number of dimensions and the same dimension sizes; this is much less efficient than the zVariable storage mechanism. (rVariables were included in the original version of CDF, and zVariables were added in a later version to address the rVariables’ inefficient use of disk space.)
+  </p>
+  <p>
+   If you are working with a data set created using an early version of CDF, you may need to use rVariables. If you are creating a new CDF data set, you should use zVariables.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997715_PageTOC_CDF_VARCREATE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = CDF_VARCREATE(
+   <span class="Italic">
+    Id
+   </span>
+   ,
+   <span class="Italic">
+    Name
+   </span>
+   [,&#160;
+   <span class="Italic">
+    DimVary
+   </span>
+   ] [,&#160;/
+   <span class="Italic">
+    <a class="MCXref_Heading_0" href="#CDF_1744428779_1008438">
+     VariableType
+    </a>
+    ] [,&#160;
+    <a class="MCXref_Heading_0" href="#CDF_1744428779_1008461">
+     ALLOCATERECS
+    </a>
+    =
+    <span class="Italic">
+     records
+    </span>
+    ] [,&#160;
+    <a class="MCXref_Heading_0" href="#CDF_1744428779_1008464">
+     DIMENSIONS
+    </a>
+    =
+    <span class="Italic">
+     array
+    </span>
+    ] [,&#160;
+    <a class="MCXref_Heading_0" href="#CDF_1744428779_1008472">
+     NUMELEM
+    </a>
+    =
+    <span class="Italic">
+     characters
+    </span>
+    ] [,&#160;/
+    <a class="MCXref_Heading_0" href="#CDF_1744428779_1008475">
+     REC_NOVARY
+    </a>
+    | , /
+    <a class="MCXref_Heading_0" href="#CDF_1744428779_1008478">
+     REC_VARY
+    </a>
+    ] [,&#160;/
+    <a class="MCXref_Heading_0" href="#CDF_1744428779_1008481">
+     ZVARIABLE
+    </a>
+    ] )
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_76372">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the variable of the type specified by the chosen keyword.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997717_PageTOC_CDF_VARCREATE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Id
+  </h3>
+  <p>
+   The CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE.
+  </p>
+  <h3 class="Argument">
+   Name
+  </h3>
+  <p>
+   A string containing the name of the variable to be created.
+  </p>
+  <h3 class="Argument">
+   DimVary
+  </h3>
+  <p>
+   A one-dimensional array containing one element per CDF dimension. If the element is non-zero or the string ‘VARY’, the variable will have variance in that dimension. If the element is zero or the string ‘NOVARY’ then the variable will have no variance with that dimension. If the variable is zero-dimensional, this argument may be omitted.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997724_PageTOC_CDF_VARCREATE_">
+   </a>
+   Keywords
+  </h2>
+  <h3>
+   <a name="CDF_1744428779_1008438">
+   </a>
+   <a name="CDF_1744428779_1027601_Keywords_CDF_VARCREATE_">
+   </a>
+   VariableType
+  </h3>
+  <p>
+   You must specify the type variable being created. This is done by setting one of the following keywords:
+  </p>
+  <h3 class="Keyword">
+   CDF_BYTE
+  </h3>
+  <h3 class="Keyword">
+   CDF_CHAR
+  </h3>
+  <h3 class="Keyword">
+   CDF_DOUBLE
+  </h3>
+  <p>
+   (same as CDF_REAL8)
+  </p>
+  <h3 class="Keyword">
+   CDF_EPOCH
+  </h3>
+  <h3 class="Keyword">
+   CDF_LONG_EPOCH
+  </h3>
+  <p>
+   (see note below)
+  </p>
+  <h3 class="Keyword">
+   CDF_FLOAT
+  </h3>
+  <p>
+   (same as CDF_REAL4)
+  </p>
+  <h3 class="Keyword">
+   CDF_INT1
+  </h3>
+  <h3 class="Keyword">
+   CDF_INT2
+  </h3>
+  <h3 class="Keyword">
+   CDF_INT4
+  </h3>
+  <h3 class="Keyword">
+   CDF_REAL4
+  </h3>
+  <h3 class="Keyword">
+   CDF_REAL8
+  </h3>
+  <h3 class="Keyword">
+   CDF_UCHAR
+  </h3>
+  <h3 class="Keyword">
+   CDF_UINT1
+  </h3>
+  <h3 class="Keyword">
+   CDF_UINT2
+  </h3>
+  <h3 class="Keyword">
+   CDF_UINT4
+  </h3>
+  <p>
+   If no type is specified, CDF_FLOAT is assumed.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The keyword associated with the CDF_EPOCH16 variable type is CDF_LONG_EPOCH. The keyword name differs from the variable type name to avoid a keyword-name conflict with the CDF_EPOCH keyword. All other references to the CDF_EPOCH16 variable type use the variable type name.
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1008461">
+   </a>
+   <a name="CDF_1744428779_997736_Keywords_CDF_VARCREATE_">
+   </a>
+   ALLOCATERECS
+  </h3>
+  <p>
+   Set this keyword equal to the desired number of pre-allocated records for this variable in a SINGLE_FILE CDF file. Pre-allocating records ensures that variable data is stored contiguously in the CDF file. For discussion about allocating records, see “Records” in the
+   <span class="Italic">
+    CDF User’s Guide
+   </span>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1008464">
+   </a>
+   <a name="CDF_1744428779_997739_Keywords_CDF_VARCREATE_">
+   </a>
+   DIMENSIONS
+  </h3>
+  <p>
+   Set this keyword to create a new zVariable with the specified dimensions. If this keyword is not set, the variable is assumed to be a scalar. For example:
+  </p>
+  <p class="Code">
+   id = CDF_CREATE("cdffile.cdf")
+  </p>
+  <p class="Code">
+   zid = CDF_VARCREATE(id, "Zvar", [1,1,1], $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;DIM=[10,20,30], /CDF_INT4)
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Variables created with the DIMENSIONS keyword set are always zVariables.
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1008472">
+   </a>
+   <a name="CDF_1744428779_997744_Keywords_CDF_VARCREATE_">
+   </a>
+   NUMELEM
+  </h3>
+  <p>
+   The number of elements of the data type at each variable value. This keyword only has meaning for string data types (CDF_CHAR, CDF_UCHAR). This is the number of characters in the string. The default is 1.
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1008475">
+   </a>
+   <a name="CDF_1744428779_997747_Keywords_CDF_VARCREATE_">
+   </a>
+   REC_NOVARY
+  </h3>
+  <p>
+   If this keyword is set, all records will contain the same information.
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1008478">
+   </a>
+   <a name="CDF_1744428779_997750_Keywords_CDF_VARCREATE_">
+   </a>
+   REC_VARY
+  </h3>
+  <p>
+   If this keyword is set, all records will contain unique data. This is the default.
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1008481">
+   </a>
+   <a name="CDF_1744428779_997753_Keywords_CDF_VARCREATE_">
+   </a>
+   ZVARIABLE
+  </h3>
+  <p>
+   Set this keyword to create a zVariable. For example:
+  </p>
+  <p class="Code">
+   id = CDF_CREATE("cdffile.cdf")
+  </p>
+  <p class="Code">
+   zid = CDF_VARCREATE(id, "Zvar", /CDF_DOUBLE, /ZVARIABLE)
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   zVariables are much more efficient than rVariables in their use of disk space. Unless the recipient of your data set is using a very early version of CDF, you should always create zVariables.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Variables created with the DIMENSIONS keyword set are always zVariables.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997758_PageTOC_CDF_VARCREATE_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   In this example, we create a variable, setting the data type from a string variable, which could have been returned by the DATATYPE keyword to a CDF_VARINQ call:
+  </p>
+  <p class="Code">
+   ; create a file in IDL’s current directory
+  </p>
+  <p class="Code">
+   id = CDF_CREATE('temp.cdf')
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   VARTYPE = 'CDF_FLOAT'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Use the _EXTRA keyword and the CREATE_STRUCT function to
+  </p>
+  <p class="Code">
+   ; make the appropriate keyword.
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   VarId = CDF_VARCREATE(Id, 'Pressure', [1,1], $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;NUMELEM=2, _EXTRA=CREATE_STRUCT(VARTYPE,1))
+  </p>
+  <p class="Code">
+   VarId1 = CDF_VARCREATE(id, "Zvar", /CDF_DOUBLE, /ZVARIABLE)
+  </p>
+  <p class="Code">
+   VarId2 = CDF_VARCREATE(id, "Zvar", [1,1,1], $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;/CDF_INT4, DIM=[10,20,30])
+  </p>
+  <p class="Code">
+   CDF_CLOSE, id ; Close the CDF file.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1028664_PageTOC_CDF_VARCREATE_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Add support for the CDF_EPOCH16 variable type
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Rename CDF_EPOCH16 keyword as CDF_LONG_EPOCH to avoid name conflict with CDF_EPOCH keyword.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

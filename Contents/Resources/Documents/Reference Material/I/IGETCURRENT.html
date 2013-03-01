@@ -1,0 +1,483 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IGETCURRENT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/IGETCURRENT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IGETCURRENT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="iTools_api_3860698369_1000791">
+   </a>
+   <a name="iTools_api_3860698369_88806">
+   </a>
+   <span class="_Override">
+    IGETCURRENT
+   </span>
+  </h1>
+  <p madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+   <span class="_Override">
+    <madcap:conditionaltext madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000820">
+      Syntax
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000838">
+      Return Value
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000841">
+      Arguments
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000844">
+      Keywords
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000862">
+      Examples
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000875">
+      Version History
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000891">
+      See Also
+     </a>
+    </madcap:conditionaltext>
+   </span>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <span class="_Override">
+    You can also retrieve the identifier of an iTool by specifying the IDENTIFIER keyword in the call to the routine that creates the tool (for example, IPLOT or IIMAGE).
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000820">
+   </a>
+   <a name="iTools_api_3860698369_1056206_PageTOC_IGETCURRENT_">
+   </a>
+   <span class="_Override">
+    Syntax
+   </span>
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   <span class="_Override">
+    = IGETCURRENT( [,&#160;
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000846">
+     THUMBBACKGROUND
+    </a>
+    =
+    <span class="Italic">
+     Value
+    </span>
+    <span class="_Override">
+     ] [,&#160;
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000849">
+      THUMBNAIL
+     </a>
+     =
+     <span class="Italic">
+      Value
+     </span>
+     <span class="_Override">
+      ] [,&#160;/
+      <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000852">
+       THUMBORDER
+      </a>
+      ] [,&#160;
+      <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000855">
+       THUMBSIZE
+      </a>
+      =
+      <span class="Italic">
+       Value
+      </span>
+      <span class="_Override">
+       ] [,&#160;
+       <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000858">
+        TOOL
+       </a>
+       =
+       <span class="Italic">
+        Value
+       </span>
+       <span class="_Override">
+        ] )
+       </span>
+      </span>
+     </span>
+    </span>
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000838">
+   </a>
+   <a name="iTools_api_3860698369_1056224_PageTOC_IGETCURRENT_">
+   </a>
+   <span class="_Override">
+    Return Value
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    Returns the identifier of the current tool in the iTool system. If no tool exists, an empty string (' ') is returned.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000841">
+   </a>
+   <a name="iTools_api_3860698369_1056227_PageTOC_IGETCURRENT_">
+   </a>
+   <span class="_Override">
+    Arguments
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    None.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000844">
+   </a>
+   <a name="iTools_api_3860698369_1056230_PageTOC_IGETCURRENT_">
+   </a>
+   <span class="_Override">
+    Keywords
+   </span>
+  </h2>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000846">
+   </a>
+   <a name="iTools_api_3860698369_41353">
+   </a>
+   <span class="_Override">
+    THUMBBACKGROUND
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to the color of the thumbnail background. If set to 1, the color of the lower left pixel of the tool window is used as the background color. If set to an RGB triplet, that color is used. If a value is not specified, a default value of [255,255,255] (white) is used. This keyword is ignored if the THUMBNAIL keyword is not specified.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000849">
+   </a>
+   <a name="iTools_api_3860698369_62131">
+   </a>
+   <span class="_Override">
+    THUMBNAIL
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a named variable that will contain a thumbnail image of the current tool. The image is returned as a True Color (3x
+   </span>
+   <span class="Italic">
+    m
+   </span>
+   <span class="_Override">
+    x
+   </span>
+   <span class="Italic">
+    m
+   </span>
+   <span class="_Override">
+    ) image.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000852">
+   </a>
+   <a name="iTools_api_3860698369_31281">
+   </a>
+   <span class="_Override">
+    THUMBORDER
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to return the thumbnail in top-to-bottom order rather than the IDL default of bottom-to-top order. This keyword is ignored if the THUMBNAIL keyword is not specified.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000855">
+   </a>
+   <a name="iTools_api_3860698369_79463">
+   </a>
+   <span class="_Override">
+    THUMBSIZE
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to the size of the thumbnail to return. A thumbnail is always returned as a square image. If a value is not supplied, a default value of 32 is used. THUMBSIZE must be greater than 3 and smaller than the smallest dimension of the tool window. This keyword is ignored if the THUMBNAIL keyword is not specified.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000858">
+   </a>
+   <a name="iTools_api_3860698369_52051">
+   </a>
+   <span class="_Override">
+    TOOL
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a named variable in which to return the object reference to the current tool object, or a null object if no tool exists.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000862">
+   </a>
+   <a name="iTools_api_3860698369_1056247_PageTOC_IGETCURRENT_">
+   </a>
+   <span class="_Override">
+    <a name="iTools_api_3860698369_1056247_PageTOC_IGETCURRENT_">
+    </a>
+    Examples
+   </span>
+  </h2>
+  <h3>
+   <span class="_Override">
+    Example 1
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Suppose you have several iPlot tools running in your IDL session, and you want to retrieve the iTool identifier for one of them. Select the iPlot tool using the mouse, and issue the following IDL command:
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    idPlot = IGETCURRENT()
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    The
+   </span>
+   <span class="Courier">
+    idPlot
+   </span>
+   <span class="_Override">
+    variable will contain the iTool identifier for the selected tool.
+   </span>
+  </p>
+  <h3>
+   <span class="_Override">
+    Example 2
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    In the following example, we create a few iPlot tools, and use the retrieved iTool IDs to change their color property.
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Plot a few graphs, and get the iTool IDs
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    IPLOT, SIN(FINDGEN(361) * !DTOR), COLOR=[0,0,255], THICK=2
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    idPlot1 = IGETCURRENT()
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    seed = 1001LIPLOT, RANDOMU(seed, 25)
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    idPlot2 = IGETCURRENT()
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Insert a dialog box to pause the flow of action
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    result = DIALOG_MESSAGE('Click OK to reset the iTool colors.', $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;/INFORMATION)
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ; Use the iTool IDs to reset the tool color property
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ISETPROPERTY, 'plot', COLOR=[0,255,0], TOOL=idPlot1
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    ISETPROPERTY, 'plot', COLOR=[255,0,255], TOOL=idPlot2
+   </span>
+   <br />
+   <br />
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000875">
+   </a>
+   <a name="iTools_api_3860698369_1056260_PageTOC_IGETCURRENT_">
+   </a>
+   <span class="_Override">
+    Version History
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    &#160;
+   </span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="136px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr style="height: 13px;">
+     <td>
+      <p>
+       6.0
+      </p>
+     </td>
+     <td>
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 13px;">
+     <td>
+      <p>
+       6.1
+      </p>
+     </td>
+     <td>
+      <p>
+       Added TOOL keyword
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 65px;">
+     <td>
+      <p>
+       7.1
+      </p>
+     </td>
+     <td>
+      <p>
+       Added THUMBNAIL, THUMBSIZE, THUMBORDER, and THUMBBACKGROUND keywords.
+       <br />
+       Routine name changed from ITGETCURRENT to IGETCURRENT.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000891">
+   </a>
+   <a name="iTools_api_3860698369_1056276_PageTOC_IGETCURRENT_">
+   </a>
+   <span class="_Override">
+    See Also
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    <a class="MCXref_Heading_0" href="ISETCURRENT.html#iTools_api_3860698369_1007411">
+     ISETCURRENT
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="IDELETE.html#iTools_api_3860698369_1000192">
+     IDELETE
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="IRESET.html#iTools_api_3860698369_1006774">
+     IRESET
+    </a>
+   </span>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

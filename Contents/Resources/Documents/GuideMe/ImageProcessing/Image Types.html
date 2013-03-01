@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Image Analysis" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Image Types
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#GuideMe/ImageProcessing/Image Types.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Graphics/Image Processing.html">
+    Image Analysis
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Image Types
+   </span>
+  </div>
+  <h1>
+   <a name="kanchor41">
+   </a>
+   Image Types
+  </h1>
+  <p>
+   Various kinds of images can be displayed in IDL. This list describes them:
+  </p>
+  <ul>
+   <li value="1">
+    <b>
+     Binary Images
+    </b>
+    — Binary images contain only two values (off or on). The off value is usually 0 and the on value is usually 1. This type of image is commonly used as a multiplier to mask regions within another image.
+   </li>
+   <li value="2">
+    <b>
+     Grayscale Images
+    </b>
+    — Grayscale images represent intensities. Pixels range from least intense (black) to most intense (white). Pixel values usually range from 0 to 255 or are scaled to this range when displayed.
+   </li>
+   <li value="3">
+    <b>
+     Indexed Images
+    </b>
+    — Instead of intensities, a pixel value within an indexed image relates to a color value within a color lookup table. Since indexed images reference color tables composed of up to 256 colors, the data values of these images are usually scaled to range from 0 to 255.
+   </li>
+   <li value="4">
+    <b>
+     RGB Images
+    </b>
+    — Within the three-dimensional array of an RGB image, two of the dimensions specify the location of a pixel within an image. The other dimension specifies the color of each pixel. The color dimension always has a size of 3 and is composed of the red, green, and blue color bands (channels) of the image.
+   </li>
+  </ul>
+  <h2 class="API">
+   Pixel Values in Image Data
+  </h2>
+  <p>
+   Pixel values in an image file can be stored in many different data types. The original data type of an image is reflected in IDL when importing the image, but you can convert the type once the image is stored in an IDL variable. The following types are commonly used for images:
+  </p>
+  <ul>
+   <li value="1">
+    <b>
+     Byte
+    </b>
+    — An 8-bit unsigned integer ranging  from 0 to 255. Pixels in images are commonly represented as byte data.
+   </li>
+   <li value="2">
+    <b>
+     Unsigned Integer
+    </b>
+    — A 16-bit unsigned integer ranging from 0 to 65535.
+   </li>
+   <li value="3">
+    <b>
+     Signed Integer
+    </b>
+    — A 16-bit signed integer ranging from -32,768 to +32,767.
+   </li>
+   <li value="4">
+    <b>
+     Unsigned Longword Integer
+    </b>
+    — A 32-bit unsigned integer ranging  from 0 to approximately four billion.
+   </li>
+   <li value="5">
+    <b>
+     Longword Integer
+    </b>
+    — A 32-bit signed integer ranging in value from approximately minus two billion to plus two billion.
+   </li>
+   <li value="6">
+    <b>
+     Floating-point
+    </b>
+    — A 32-bit, single-precision, floating-point number ranging from -1038 to 1038, with approximately 6 or 7 decimal places of significance.
+   </li>
+   <li value="7">
+    <b>
+     Double-precision
+    </b>
+    — A 64-bit, double-precision, floating-point number ranging from -10308 to 10308 with approximately 14 decimal places of significance.
+   </li>
+  </ul>
+  <p>
+   While pixel values are commonly stored in files as whole numbers, they are usually converted to floating-point or double-precision data types prior to performing numerical computations. See the examples section of
+   <a href="../../Reference Material/R/REFORM.html">
+    REFORM
+   </a>
+   for more information.
+  </p>
+  <p>
+   Use these IDL functions to convert data from one type to another:
+  </p>
+  <ul>
+   <li value="1">
+    <a href="../../Reference Material/B/BYTE.html">
+     BYTE
+    </a>
+    — Convert to byte
+   </li>
+   <li value="2">
+    <a href="../../Reference Material/B/BYTSCL.html">
+     BYTSCL
+    </a>
+    — Scale data to range from 0 to 255 and then convert to byte
+   </li>
+   <li value="3">
+    <a href="../../Reference Material/U/UINT.html">
+     UINT
+    </a>
+    — Convert to 16-bit unsigned integer
+   </li>
+   <li value="4">
+    <a href="../../Reference Material/F/FIX.html">
+     FIX
+    </a>
+    — Convert to 16-bit integer, or optionally other type
+   </li>
+   <li value="5">
+    <a href="../../Reference Material/U/ULONG.html">
+     ULONG
+    </a>
+    — Convert to 32-bit unsigned integer
+   </li>
+   <li value="6">
+    <a href="../../Reference Material/L/LONG.html">
+     LONG
+    </a>
+    — Convert to 32-bit integer
+   </li>
+   <li value="7">
+    <a href="../../Reference Material/F/FLOAT.html">
+     FLOAT
+    </a>
+    — Convert to floating-point
+   </li>
+   <li value="8">
+    <a href="../../Reference Material/D/DOUBLE.html">
+     DOUBLE
+    </a>
+    — Convert to double-precision floating-point
+   </li>
+  </ul>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

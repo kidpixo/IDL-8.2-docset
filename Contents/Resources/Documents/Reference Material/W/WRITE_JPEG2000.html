@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WRITE_JPEG2000
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WRITE_JPEG2000.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WRITE_JPEG2000
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="W_811389549_1077187">
+   </a>
+   <a name="W_811389549_65330">
+   </a>
+   WRITE_JPEG2000
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#W_811389549_1112329">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1112346">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1112354">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1112367">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1112372">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1112374">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2919">
+   </a>
+   WRITE_JPEG2000 procedure writes image data into a JPEG2000 file. This procedure is a wrapper around the IDLffJPEG2000 object interface that presents JPEG2000 image writing in a familiar way to users of the WRITE_* image routines. However this procedure is not as efficient as the object interface and the object interface should be used whenever possible. See
+   <a class="MCXref_Heading_0" href="../../Object Classes/File Format/IDLffJPEG2000.html#objects_ff_3755668711_1371624">
+    IDLffJPEG2000
+   </a>
+   for information about the object interface.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1112329">
+   </a>
+   <a name="W_811389549_1112329_PageTOC_WRITE_JPEG2000_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   WRITE_JPEG2000,
+   <i>
+    Filename
+   </i>
+   ,
+   <i>
+    Image
+   </i>
+   [,&#160;
+   <i>
+    Red
+   </i>
+   ,
+   <i>
+    Green
+   </i>
+   ,
+   <i>
+    Blue
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_1112356">
+    N_LAYERS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_1112359">
+    N_LEVELS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_1112362">
+    ORDER
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_1112365">
+    REVERSIBLE
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1112346">
+   </a>
+   <a name="W_811389549_1112346_PageTOC_WRITE_JPEG2000_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string containing the full path and filename of the JPEG2000 file to write. If the file suffix is .jp2 or .jpx (case insensitive), the file is written using the JP2 file format. Otherwise the file is written as a raw JPEG2000 code stream.
+  </p>
+  <h3 class="Argument">
+   Image
+  </h3>
+  <p>
+   A byte or integer array of either two or three dimensions, containing the image to be written. Single channel images must have dimensions of [
+   <i>
+    Width
+   </i>
+   ,
+   <i>
+    Height
+   </i>
+   ]. Multi-channel images must have dimensions of [
+   <i>
+    nComponents
+   </i>
+   ,
+   <i>
+    Width
+   </i>
+   ,
+   <i>
+    Height
+   </i>
+   ], where
+   <i>
+    nComponents
+   </i>
+   is the number of components present in the image.
+  </p>
+  <h3 class="Argument">
+   <a name="W_811389549_79465">
+   </a>
+   Red, Green, Blue
+  </h3>
+  <p>
+   For single-channel images,
+   <i>
+    Red
+   </i>
+   ,
+   <i>
+    Green
+   </i>
+   , and
+   <i>
+    Blue
+   </i>
+   should contain the red, green, and blue color vectors to be stored within the JPEG2000 palette. For multi-channel images, these arguments are ignored.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1112354">
+   </a>
+   <a name="W_811389549_1112354_PageTOC_WRITE_JPEG2000_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="W_811389549_1112356">
+   </a>
+   <a name="W_811389549_29022">
+   </a>
+   N_LAYERS
+  </h3>
+  <p>
+   Set this keyword to a positive integer specifying the number of quality layers. Each layer contains the information required to represent the image at a higher quality, given the information from all the previous layers. A larger number of layers takes longer to encode and produces a larger file, but provides more flexibility when decoding. The default is 1. If N_LAYERS is greater than1, the layers will be assigned roughly logarithmically-spaced bit rates, with the last layer containing all of the compressed bits.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1112359">
+   </a>
+   <a name="W_811389549_99969">
+   </a>
+   N_LEVELS
+  </h3>
+  <p>
+   Set this keyword to an integer specifying the number of wavelet decomposition levels, or stages, in the range of 0...15. A value of zero indicates that no wavelet transform will be used. Higher values will typically give better compression. If this keyword is omitted, then the default value of 5 is used. If the file is in JP2 format, and a
+   <i>
+    Red
+   </i>
+   ,
+   <i>
+    Green
+   </i>
+   ,
+   <i>
+    Blue
+   </i>
+   palette is present, then the default is N_LEVELS=0.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1112362">
+   </a>
+   <a name="W_811389549_37750">
+   </a>
+   ORDER
+  </h3>
+  <p>
+   JPEG2000 images are assumed to be stored in top-to-bottom order, while IDL usually assumes images are in bottom-to-top order. By default (ORDER = 0), WRITE_JPEG2000 will automatically flip the input arrays to match JPEG2000's top-to-bottom order. Setting ORDER to a nonzero value will save the image directly to the JPEG2000 file without doing the vertical flip.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_1112365">
+   </a>
+   <a name="W_811389549_82421">
+   </a>
+   REVERSIBLE
+  </h3>
+  <p>
+   Set this keyword to specify that reversible (lossless) compression should be used. The default is to use irreversible (lossy) compression. If the file is in JP2 format, and a Red, Green, Blue palette is present, then the default is REVERSIBLE=1.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1112367">
+   </a>
+   <a name="W_811389549_1112367_PageTOC_WRITE_JPEG2000_">
+   </a>
+   Example
+  </h2>
+  <p>
+   For an example, see
+   <a class="MCXref_Heading_0" href="../R/READ_JPEG2000.html#R_822202989_1168172">
+    READ_JPEG2000
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1112372">
+   </a>
+   <a name="W_811389549_1112372_PageTOC_WRITE_JPEG2000_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="W_811389549_1112374">
+   </a>
+   <a name="W_811389549_1112374_PageTOC_WRITE_JPEG2000_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../Q/QUERY_JPEG2000.html#Q_815714925_1095115">
+    QUERY_JPEG2000
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/READ_JPEG2000.html#R_822202989_1168172">
+    READ_JPEG2000
+   </a>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

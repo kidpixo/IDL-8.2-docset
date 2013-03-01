@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Interfaces (Widgets)|About Draw Widgets" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Draw Widget Example
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Creating Applications in IDL/Draw_Widget_Example.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Widget Application Techniques.html">
+    Interfaces (Widgets)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="About_Draw_Widgets.html">
+    About Draw Widgets
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Draw Widget Example
+   </span>
+  </div>
+  <h1>
+   <a name="widget_draw_834959296_96336">
+   </a>
+   <a name="widget_draw_834959296_30786">
+   </a>
+   Draw Widget Example
+  </h1>
+  <p>
+   The following example program creates a small widget application consisting of a draw widget and a droplist menu. One of three plots is displayed in the draw widget depending on the selection made from the droplist. To add to dynamic behavior, we will use timer events to change the color table used in the draw window every three seconds.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   This example is included in the file
+   <span class="Courier">
+    draw_widget_example.
+    <a name="kanchor4916">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/widgets
+   </span>
+   subdirectory of the IDL distribution. Run this example procedure by entering
+   <span class="Courier">
+    draw_widget_example
+   </span>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <span class="Courier">
+    .EDIT draw_widget_example.pro
+   </span>
+   .
+  </p>
+  <p>
+   This procedure checks the type of event structure returned. See
+   <a class="MCXref_Heading_0" href="Working_with_Widget_Even.html#widget_techniques_4218446668_96246" target="" title="" alt="">
+    Identifying Widget Type from an Event
+   </a>
+   for more on identifying widget types from returned event structures.
+  </p>
+  <p>
+   The intent of this example is to demonstrate the use of draw widgets, menus, and timer events with a minimum of other complicating issues. However, it is easy to imagine applications wherein a graphics window containing a plot or some other information is updated periodically by a timer. The method used here can be easily applied to more realistic situations.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

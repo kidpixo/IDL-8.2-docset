@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Fonts in IDL Direct Graphics
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#Direct Graphics/Fonts_in_IDL_Direct_Grap.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <h1>
+   <a name="DG_Programming_590869838_998746">
+   </a>
+   <a name="DG_Programming_590869838_33888">
+   </a>
+   Fonts in IDL Direct Graphics
+  </h1>
+  <p>
+   When generating characters for
+   <a name="kanchor5102">
+   </a>
+   Direct Graphics plots, IDL uses the font system specified by setting the
+   <a name="kanchor5103">
+   </a>
+   !P.FONT system variable to one of the following values:
+  </p>
+  <table style="width: 428px;caption-side: top;mc-table-style: url('../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="57px" class="Column-Column1" />
+   <col width="371px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       -1&#160;&#160;&#160;&#160;
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Use Hershey vector-drawn fonts—the d
+       <a name="kanchor5104">
+       </a>
+       efault
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Use device fonts (fonts supplied by the graphics device)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       Use TrueType fonts
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   The IDL system variable !P.FONT setting can be overridden for a single IDL Direct Graphics routine (AXIS, CONTOUR, PLOT, SHADE_SURF, SURFACE, or XYOUTS) by setting the FONT keyword equal to -1, 0, or 1.
+  </p>
+  <p>
+   Once a font system has been selected, an individual font can be chosen either via a formatting command embedded in a text string as described in
+   <a class="MCXref_Heading_0" href="../Creating IDL Programs/Appendices/Embedded_Formatting_Comm.html#DG_Programming_590869838_999335" target="" title="" alt="">
+    Embedded Formatting Commands
+   </a>
+   , or by setting the value of the SET_FONT keyword to the DEVICE routine (see
+   <a class="MCXref_Heading_0" href="Keywords_Accepted_by_the.html#devices_517620971_499045" target="" title="" alt="">
+    SET_FONT
+   </a>
+   ). Also see
+   <a class="MCXref_Heading_0" href="../Creating IDL Programs/Appendices/Using_TrueType_Fonts.html#DG_Programming_590869838_998923" target="" title="" alt="">
+    Using TrueType Fonts
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="../Creating IDL Programs/Appendices/Using_Device_Fonts.html#DG_Programming_590869838_999037" target="" title="" alt="">
+    Using Device Fonts
+   </a>
+   for additional examples of using SET_FONT.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

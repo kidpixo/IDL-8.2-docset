@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   STRTRIM
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/STRTRIM.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    STRTRIM
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_1069489">
+   </a>
+   <a name="S_820040301_95224">
+   </a>
+   STRTRIM
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_679169">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1135429">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_679171">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_679176">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_795950">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110515">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2483">
+   </a>
+   STRTRIM function removes leading and/or trailing blank from the input
+   <i>
+    String
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679169">
+   </a>
+   <a name="S_820040301_679169_PageTOC_STRTRIM_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = STRTRIM(
+   <i>
+    String
+   </i>
+   [,&#160;
+   <i>
+    Flag
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1135429">
+   </a>
+   <a name="S_820040301_54464">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a copy of string with the specified blank spaces removed.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679171">
+   </a>
+   <a name="S_820040301_679171_PageTOC_STRTRIM_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   String
+  </h3>
+  <p>
+   The string to have leading and/or trailing blanks removed. If this argument is not a string, it is converted using
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   ’s default formatting rules. If it is an array, the result is an array with the same structure where each element contains a trimmed copy of the corresponding element of
+   <i>
+    String
+   </i>
+   .
+  </p>
+  <h3 class="Argument">
+   Flag
+  </h3>
+  <p>
+   A value that controls the action of STRTRIM. If
+   <i>
+    Flag
+   </i>
+   is zero or not present, trailing blanks are removed. Leading blanks are removed if it is equal to 1. Both are removed if it is equal to 2.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679176">
+   </a>
+   <a name="S_820040301_679176_PageTOC_STRTRIM_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Converting variables to string type often results in undesirable leading blanks. For example, the following command converts the integer 56 to string type:
+  </p>
+  <p class="Code">
+   C = STRING(56)
+  </p>
+  <p>
+   Entering the command:
+  </p>
+  <p class="Code">
+   HELP, C
+  </p>
+  <p>
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   prints:
+  </p>
+  <p class="Code">
+   C &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;STRING = '&#160;&#160;&#160;&#160;&#160;&#160;56'
+  </p>
+  <p>
+   which shows that there are six leading spaces before the characters 5 and 6. To remove these leading blanks, enter the command:
+  </p>
+  <p class="Code">
+   C = STRTRIM(C, 1)
+  </p>
+  <p>
+   To confirm that the blanks were removed, enter:
+  </p>
+  <p class="Code">
+   HELP, C
+  </p>
+  <p>
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   prints:
+  </p>
+  <p class="Code">
+   C &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;STRING = '56'
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_795950">
+   </a>
+   <a name="S_820040301_795950_PageTOC_STRTRIM_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110515">
+   </a>
+   <a name="S_820040301_1110515_PageTOC_STRTRIM_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="STRMID.html#S_820040301_1074010">
+    STRMID
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRPOS.html#S_820040301_679132">
+    STRPOS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRPUT.html#S_820040301_679148">
+    STRPUT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRSPLIT.html#S_820040301_679167">
+    STRSPLIT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

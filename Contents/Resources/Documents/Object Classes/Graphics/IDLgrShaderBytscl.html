@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrShaderBytscl
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrShaderBytscl.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrShaderBytscl
+   </span>
+  </div>
+  <h1 class="ObjClass">
+   <a name="objects_gr_2157407275_1796318">
+   </a>
+   <a name="objects_gr_2157407275_23771">
+   </a>
+   IDLgrShaderBytscl
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796423">
+     Superclasses
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796429">
+     Creation
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796435">
+     Properties
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796691">
+     Methods
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796715">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796724">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1798294">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   A
+   <a name="kanchor4450">
+   </a>
+   shader byte-scale object is a subclass of IDLgrShader that can be associated with an IDLgrImage object via the
+   <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1799401">
+    SHADER
+   </a>
+   property. This object lets you quickly perform a BYTSCL operation on the image data as it is drawn to the screen, taking advantage of the advanced processing power of the hardware-based OpenGL Shading Language (GLSL) if an appropriate graphics card is available. Otherwise, this object performs the byte-scale operation using a software-based alternative.
+  </p>
+  <p>
+   Use the IN_RANGE and OUT_RANGE property values to control the byte-scaling parameters, which can be independently applied to each channel of image data. This object performs the byte-scaling operation in floating-point format and does not call the IDL BYTSCL function.
+  </p>
+  <p>
+   If the image data is other than byte or 8-bits per channel, set the IDLgrImage
+   <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1801217">
+    INTERNAL_DATA_TYPE
+   </a>
+   property to avoid having your data truncated to byte.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Setting IDLgrImage
+   <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1665804">
+    RENDER_METHOD
+   </a>
+   =1 (do not render image as texture-mapped polygon) disables all shader functionality including the software-based alternative.
+  </p>
+  <p>
+   This object class is implemented in the IDL language. Its source code can be found in the file idlgrshaderbytscl__define.pro in the lib subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796423">
+   </a>
+   <a name="objects_gr_2157407275_16132">
+   </a>
+   Superclasses
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="IDLgrShader.html#objects_gr_2157407275_1789376">
+    IDLgrShader
+   </a>
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796429">
+   </a>
+   <a name="objects_gr_2157407275_49718">
+   </a>
+   Creation
+  </h2>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="IDLgrShaderBytscl__Init.html#objects_gr_2157407275_1797347">
+    IDLgrShaderBytscl::Init
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796435">
+   </a>
+   <a name="objects_gr_2157407275_98421">
+   </a>
+   Properties
+  </h2>
+  <p>
+   Objects of this class have the following properties. See
+   <a class="MCXref_Heading_0" href="IDLgrShaderBytscl_Proper.html#objects_gr_2157407275_1796740" target="" title="" alt="">
+    IDLgrShaderBytscl Properties
+   </a>
+   for details on individual properties.
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="IDLgrShaderBytscl_Proper.html#objects_gr_2157407275_1797745">
+     IN_RANGE
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="IDLgrShaderBytscl_Proper.html#objects_gr_2157407275_1797149">
+     OUT_RANGE
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="IDLgrShaderBytscl_Proper.html#objects_gr_2157407275_1798042">
+     UNITS_IN_RANGE
+    </a>
+   </li>
+  </ul>
+  <p>
+   In addition, objects of this class inherit the properties of all superclasses of this class.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796691">
+   </a>
+   <a name="objects_gr_2157407275_38342">
+   </a>
+   Methods
+   <a name="kanchor4451">
+   </a>
+  </h2>
+  <p>
+   This class has the following methods:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="IDLgrShaderBytscl__Clean.html#objects_gr_2157407275_1798070">
+     IDLgrShaderBytscl::Cleanup
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="IDLgrShaderBytscl__GetPr.html#objects_gr_2157407275_1797292">
+     IDLgrShaderBytscl::GetProperty
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="IDLgrShaderBytscl__Init.html#objects_gr_2157407275_1797347">
+     IDLgrShaderBytscl::Init
+    </a>
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="IDLgrShaderBytscl__SetPr.html#objects_gr_2157407275_1797513">
+     IDLgrShaderBytscl::SetProperty
+    </a>
+   </li>
+  </ul>
+  <p>
+   In addition, this class inherits the methods of its superclass (
+   <a class="MCXref_Heading_0" href="IDLgrShader.html#objects_gr_2157407275_1789376">
+    IDLgrShader
+   </a>
+   ).
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796715">
+   </a>
+   <a name="objects_gr_2157407275_34899">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following example creates an object that inherits from the IDLgrShaderBytscl object, loads grayscale image data and lets you interactively adjust the input and output data ranges using two sliders. Note that when using the IDLgrShaderBytscl object with non-byte data, you should set the IDLgrImage INTERNAL_DATA_TYPE property to avoid having your data truncated to a byte (0&#8209;255) range.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    shader_bytscl_doc__define
+    <a name="kanchor4452">
+    </a>
+    .pro
+   </span>
+   for the complete, working example, which is located in the
+   <span class="Courier">
+    examples/doc/shaders
+   </span>
+   subdirectory of the IDL distribution. Run the example by creating an instance of the object at the IDL command prompt using
+   <span class="Courier">
+    obytsclshader=OBJ_NEW("shader_bytscl_doc")
+   </span>
+   or view the file in an IDL Editor window by entering
+   <span class="Courier">
+    shader_bytscl_doc__define.pro
+   </span>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796724">
+   </a>
+   <a name="objects_gr_2157407275_65288">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1798294">
+   </a>
+   <a name="objects_gr_2157407275_49386">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="IDLgrShaderConvol3.html#objects_gr_2157407275_1810150">
+    IDLgrShaderConvol3
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IDLgrShader.html#objects_gr_2157407275_1789376">
+    IDLgrShader
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IDLgrFilterChain.html#objects_gr_2157407275_1808615">
+    IDLgrFilterChain
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

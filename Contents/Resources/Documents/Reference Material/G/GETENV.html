@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: G" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   GETENV
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/G/GETENV.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="G_list.html">
+    Routines: G
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    GETENV
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="G_845992557_677069">
+   </a>
+   <a name="G_845992557_28024">
+   </a>
+   GETENV
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#G_845992557_677071">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_677073">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_874621">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_884643">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_870454">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_822897">
+     See Also
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_881378">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1050">
+   </a>
+   GETENV function returns the value of one or more specified environment variables from the
+   <a name="kanchor1051">
+   </a>
+   environment of the IDL process.
+  </p>
+  <h4>
+   <a name="G_845992557_856777_PageTOC_GETENV_">
+   </a>
+   About the Process Environment
+   <a name="kanchor1052">
+   </a>
+  </h4>
+  <p>
+   Every process has an
+   <i>
+    environment
+   </i>
+   consisting of environment variables, each of which has an associated string value. Some environment variables always exist, such as PATH, which tells the shell where to look for programs. Others can be added by the user, either interactively via a shell, via a UNIX startup file such as
+   <span class="Courier">
+    .login
+   </span>
+   , or a via a Windows control panel.
+  </p>
+  <p>
+   When a process is created, it is given a copy of the environment from its parent process. IDL is no exception to this; when started, it inherits a copy of the environment of its parent process, which may be an interactive shell, the windowing system’s desktop environment, or some other process. In turn, any child process created by IDL (such as those from the SPAWN procedure) inherits a copy of IDL’s current environment.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   It is important to realize that environment variables are not an IDL feature; they are part of every process. Although they can serve as a form of global memory, it is best to avoid using them in that way. Instead, IDL heap variables (pointers or object references), IDL system variables, or common blocks should be used in that role. Environment variables should be used for communicating with child processes. One example is setting the value of the SHELL environment variable prior to calling SPAWN to change the shell executed by SPAWN.
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_677071">
+   </a>
+   <a name="G_845992557_677071_PageTOC_GETENV_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = GETENV(&#160;
+   <i>
+    Name
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#G_845992557_887078">
+    ENVIRONMENT
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_677073">
+   </a>
+   <a name="G_845992557_677073_PageTOC_GETENV_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the value of the environment variable
+   <i>
+    Name
+   </i>
+   from the environment of the IDL process, or an empty string if
+   <i>
+    Name
+   </i>
+   does not exist in the environment. If
+   <i>
+    Name
+   </i>
+   is an array, the result has the same structure, with each element containing the value for the corresponding element of
+   <i>
+    Name
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_874621">
+   </a>
+   <a name="G_845992557_874621_PageTOC_GETENV_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Name
+  </h3>
+  <p>
+   A scalar string or string array variable containing the names of environment variables for which values are desired.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Under UNIX, environment variable names are case sensitive. Under Windows, case is ignored, with one exception: because it is handled specially, the IDL_TMPDIR environment variable should always be specified in upper case characters.
+  </p>
+  <h4>
+   <a name="G_845992557_870456_PageTOC_GETENV_">
+   </a>
+   Special Handling of the IDL_TMPDIR Environment Variable
+  </h4>
+  <p>
+   The normal action of GETENV is to look up the specified name in the environment without performing any special action, and to return an empty string if it is not found. However, if you specify the upper-case string “IDL_TMPDIR” as the value of
+   <span class="_Override" style="font-style: italic;">
+    Name
+   </span>
+   , GETENV takes the following special actions:
+  </p>
+  <p class="Bullet">
+   If the IDL_TMPDIR preference has a non-NULL value, GETENV returns the value of that preference. For more information on this preference, see
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Appendices/prefs_directory.html#preferences_2247882535_1025600" target="" title="" alt="">
+    IDL_TMPDIR
+   </a>
+   .
+  </p>
+  <p class="Bullet">
+   On UNIX systems, IDL uses the value of the standard TMPDIR environment variable. If TMPDIR is not defined, IDL chooses a reasonable temporary directory based on operating system and vendor conventions.
+  </p>
+  <p class="Bullet">
+   On Windows systems, IDL uses the value provided by Windows, which is the first of the following that is defined: the value of the TMP environment variable, the value of the TEMP environment variable, or the default value for the current Windows version.
+  </p>
+  <p>
+   This special processing has the following benefits:
+  </p>
+  <p class="Bullet">
+   IDL_TMPDIR always yields a temporary directory path, so IDL code can use it immediately without additional work.
+  </p>
+  <p class="Bullet">
+   The default behavior is to use the system defined location for temporary files, meaning that IDL applications automatically follow the standard conventions of the underlying platform.
+  </p>
+  <p class="Bullet">
+   Sometimes, local site considerations require the use of a non-standard location. The IDL_TMPDIR preference lets this requirement be managed in an easy and flexible manner.
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_884643">
+   </a>
+   <a name="G_845992557_11274">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="G_845992557_887078">
+   </a>
+   <a name="G_845992557_887078_Keywords_GETENV__">
+   </a>
+   ENVIRONMENT
+  </h3>
+  <p>
+   Set this keyword to return a string array containing all entries in the current process, one variable per entry, in the SETENV format (Variable=
+   <i>
+    Value
+   </i>
+   ). If ENVIRONMENT is set, the
+   <i>
+    Name
+   </i>
+   argument should not be supplied.
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_870454">
+   </a>
+   <a name="G_845992557_870454_PageTOC_GETENV_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To print the name of the current UNIX shell, enter the command:
+  </p>
+  <p class="Code">
+   PRINT, 'The current shell is: ', GETENV('SHELL')
+  </p>
+  <p>
+   To store the path to the directory where IDL believes temporary files should be placed in the variable
+   <span class="Courier">
+    mytemp
+   </span>
+   , use the following statement:
+  </p>
+  <p class="Code">
+   mytemp = GETENV('IDL_TMPDIR')
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_822897">
+   </a>
+   <a name="G_845992557_822897_PageTOC_GETENV_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../S/SETENV.html#S_820040301_678708">
+    SETENV
+   </a>
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_881378">
+   </a>
+   <a name="G_845992557_881378_PageTOC_GETENV_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       ENVIRONMENT keyword modified to work on all platforms
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

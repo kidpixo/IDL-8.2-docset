@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Formatting IDL&#160;Graphics Symbols and Lines
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#IDL Graphics/FormattingSymsAndLines.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <h1>
+   <a name="top">
+   </a>
+   Formatting IDL&#160;Graphics Symbols and Lines
+  </h1>
+  <p>
+   You can format IDL Graphics lines and symbols using properties or the string argument
+   <i>
+    Format
+   </i>
+   .
+  </p>
+  <p>
+   For example, to set the plotting symbol to a plus character, the plotting color to green, the linestyle to a dash-dot-dot-dot line, and the line thickness to a value of 2, you could use the
+   <i>
+    Format
+   </i>
+   string argument:
+  </p>
+  <p class="Code">
+   p = PLOT(/TEST, '+g-:2')
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When using a
+   <i>
+    Format
+   </i>
+   string, you can include any combination of modifiers, in any order.
+  </p>
+  <p>
+   You could also set these individual properties:
+  </p>
+  <p class="Code">
+   p1 = PLOT(/TEST, SYMBOL='+', COLOR='green', LINESTYLE='-:', THICK=2)
+  </p>
+  <p>
+   IDL is case-sensitive when interpreting the
+   <i>
+    Format
+   </i>
+   argument and associated keyword strings.
+  </p>
+  <h2 class="API">
+   <a name="Color">
+   </a>
+   Color Values
+  </h2>
+  <p>
+   The following table lists the single characters that you can use as the color modifier in either the COLOR property or the
+   <i>
+    Format
+   </i>
+   string argument. You must use the lower-case character.
+  </p>
+  <table style="mc-table-style: url('../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col style="width: 115px;" class="Column-Column1" />
+   <col style="width: 105px;" class="Column-Column1" />
+   <tr class="Body-Body1">
+    <th class="BodyE-Column1-Body1">
+     Color Name
+    </th>
+    <th class="BodyD-Column1-Body1">
+     Character
+    </th>
+   </tr>
+   <tr class="Body-Body2">
+    <td class="BodyE-Column1-Body2">
+     Blue
+    </td>
+    <td class="BodyD-Column1-Body2" style="text-align: center;">
+     b
+    </td>
+   </tr>
+   <tr class="Body-Body1">
+    <td class="BodyE-Column1-Body1">
+     Green
+    </td>
+    <td class="BodyD-Column1-Body1" style="text-align: center;">
+     g
+    </td>
+   </tr>
+   <tr class="Body-Body2">
+    <td class="BodyE-Column1-Body2">
+     Red
+    </td>
+    <td class="BodyD-Column1-Body2" style="text-align: center;">
+     r
+    </td>
+   </tr>
+   <tr class="Body-Body1">
+    <td class="BodyE-Column1-Body1">
+     Cyan
+    </td>
+    <td class="BodyD-Column1-Body1" style="text-align: center;">
+     c
+    </td>
+   </tr>
+   <tr class="Body-Body2">
+    <td class="BodyE-Column1-Body2">
+     Magenta
+    </td>
+    <td class="BodyD-Column1-Body2" style="text-align: center;">
+     m
+    </td>
+   </tr>
+   <tr class="Body-Body1">
+    <td class="BodyE-Column1-Body1">
+     Yellow
+    </td>
+    <td class="BodyD-Column1-Body1" style="text-align: center;">
+     y
+    </td>
+   </tr>
+   <tr class="Body-Body2">
+    <td class="BodyE-Column1-Body2">
+     Black
+    </td>
+    <td class="BodyD-Column1-Body2" style="text-align: center;">
+     k
+    </td>
+   </tr>
+   <tr class="Body-Body1">
+    <td class="BodyE-Column1-Body1">
+     White
+    </td>
+    <td class="BodyD-Column1-Body1" style="text-align: center;">
+     w
+    </td>
+   </tr>
+  </table>
+  <p>
+   When setting the COLOR property, you can also use any of the string values defined by the !COLOR system variable, as shown in the following image:
+  </p>
+  <p style="text-align: center;">
+   <img src="images/idlcolors.png" />
+  </p>
+  <h2 class="API">
+   Plot Symbol Values
+  </h2>
+  <p>
+   The following table lists the IDL symbol values. For the SYMBOL property you may use an index value, the short name, or the long name. For the
+   <i>
+    Format
+   </i>
+   string argument you may use the short name.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you use a
+   <i>
+    Format
+   </i>
+   string that contains a symbol but no linestyle (for example, 'd'), the linestyle value is set to 6 (no line is drawn).
+  </p>
+  <p style="text-align: center;">
+   <img src="images/symbols.png" />
+  </p>
+  <h2 class="API">
+   Linestyle Values
+  </h2>
+  <p>
+   The following table lists the index values, strings, and characters you can use with the LINESTYLE property, and the equivalent characters and strings you can use in the
+   <i>
+    Format
+   </i>
+   string argument.
+  </p>
+  <table style="mc-table-style: url('../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col style="width: 92px;" class="Column-Column1" />
+   <col style="width: 286px;" class="Column-Column1" />
+   <col style="width: 175px;" class="Column-Column1" />
+   <col style="width: 177px;" class="Column-Column1" />
+   <tr class="Body-Body1">
+    <th class="BodyE-Column1-Body1">
+     Index
+    </th>
+    <th class="BodyE-Column1-Body1">
+     LINESTYLE Property
+    </th>
+    <th class="BodyE-Column1-Body1">
+     <i>
+      Format
+     </i>
+     Argument
+    </th>
+    <th class="BodyD-Column1-Body1">
+     Description
+    </th>
+   </tr>
+   <tr class="Body-Body2">
+    <td style="text-align: center;" class="BodyE-Column1-Body2">
+     0
+    </td>
+    <td class="BodyE-Column1-Body2">
+     'solid_line', '-'(dash)
+    </td>
+    <td class="BodyE-Column1-Body2">
+     '-' (dash)
+    </td>
+    <td class="BodyD-Column1-Body2">
+     solid line
+    </td>
+   </tr>
+   <tr class="Body-Body1">
+    <td class="BodyE-Column1-Body1" style="text-align: center;">
+     1
+    </td>
+    <td class="BodyE-Column1-Body1">
+     'dot', ':'(colon)
+    </td>
+    <td class="BodyE-Column1-Body1">
+     ':'(colon)
+    </td>
+    <td class="BodyD-Column1-Body1">
+     dotted
+    </td>
+   </tr>
+   <tr class="Body-Body2">
+    <td class="BodyE-Column1-Body2" style="text-align: center;">
+     2
+    </td>
+    <td class="BodyE-Column1-Body2">
+     'dash', '--' (double dashes)
+    </td>
+    <td class="BodyE-Column1-Body2">
+     '--' (double dashes)
+    </td>
+    <td class="BodyD-Column1-Body2">
+     dashed
+    </td>
+   </tr>
+   <tr class="Body-Body1">
+    <td class="BodyE-Column1-Body1" style="text-align: center;">
+     3
+    </td>
+    <td class="BodyE-Column1-Body1">
+     'dash_dot', '-.'
+    </td>
+    <td class="BodyE-Column1-Body1">
+     '-.'
+    </td>
+    <td class="BodyD-Column1-Body1">
+     dash dot
+    </td>
+   </tr>
+   <tr class="Body-Body2">
+    <td class="BodyE-Column1-Body2" style="text-align: center;">
+     4
+    </td>
+    <td class="BodyE-Column1-Body2">
+     'dash_dot_dot_dot', '-:'
+    </td>
+    <td class="BodyE-Column1-Body2">
+     '-:'
+    </td>
+    <td class="BodyD-Column1-Body2">
+     dash dot dot dot
+    </td>
+   </tr>
+   <tr class="Body-Body1">
+    <td class="BodyE-Column1-Body1" style="text-align: center;">
+     5
+    </td>
+    <td class="BodyE-Column1-Body1">
+     'long_dash', '__' (two underscores)
+    </td>
+    <td class="BodyE-Column1-Body1">
+     '__' (double underscores)
+    </td>
+    <td class="BodyD-Column1-Body1">
+     long dash
+    </td>
+   </tr>
+   <tr class="Body-Body2">
+    <td class="BodyE-Column1-Body2" style="text-align: center;">
+     6
+    </td>
+    <td class="BodyE-Column1-Body2">
+     'none', ' ' (space)
+    </td>
+    <td class="BodyE-Column1-Body2">
+     ' ' (space)
+    </td>
+    <td class="BodyD-Column1-Body2">
+     no line
+    </td>
+   </tr>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you use the LINESTYLE value or
+   <i>
+    Format
+   </i>
+   string '-.', the linestyle is set to dash-dot and the plot symbol is not set.
+  </p>
+  <h2 class="API">
+   Line Thickness Values
+  </h2>
+  <p>
+   You can specify a line thickness value (from 0 to 10) using the THICK property, or by including a value in the
+   <i>
+    Format
+   </i>
+   string.  The default line thickness is 1 point.
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,309 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HEAP_REFCOUNT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/H/HEAP_REFCOUNT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    HEAP_REFCOUNT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="H_835179117_925652">
+   </a>
+   <a name="H_835179117_25312">
+   </a>
+   HEAP_REFCOUNT
+  </h1>
+  <p>
+   The
+   <a name="kanchor1477">
+   </a>
+   HEAP_REFCOUNT function returns the current reference count for a pointer or object reference (a heap variable). It can also be used to disable garbage collection for a heap variable, or for all heap variables.
+  </p>
+  <p>
+   See Heap Variables and
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Components of the IDL Language/Automatic_Garbage_Collec.html#pointers_3224653378_1018570" target="" title="" alt="">
+    Automatic Garbage Collection
+   </a>
+   for in-depth discussions of these topics.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = HEAP_REFCOUNT( [
+   <i>
+    Heaprefs
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#H_835179117_933148">
+    DISABLE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#H_835179117_933182">
+    ENABLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_933188">
+    IS_ENABLED
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns a result of the same shape as the input argument, containing the current reference count for the associated heap variables. Invalid heap variables return a reference count of zero.
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Heaprefs
+  </h3>
+  <p>
+   <i>
+    Heaprefs
+   </i>
+   can either be a scalar or array of pointer or object references, or a scalar or array of integer heap identifiers. If
+   <i>
+    Heaprefs
+   </i>
+   is not supplied, the DISABLE, ENABLE, and IS_ENABLED keywords apply to the entire automatic garbage collection system for
+   <i>
+    all
+   </i>
+   heap variables.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="H_835179117_933148">
+   </a>
+   <a name="H_835179117_60609">
+   </a>
+   DISABLE
+  </h3>
+  <p>
+   Set this keyword to disable automatic garbage collection for
+   <i>
+    Heaprefs
+   </i>
+   .  If
+   <i>
+    Heaprefs
+   </i>
+   is not supplied, automatic garbage collection is disabled for all heap variables.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you disable reference counting for a particular heap variable or variables, then the reference count will still be incremented or decremented appropriately for those heap variables, but the heap variables will not be destroyed when the reference count reaches zero. If you then re-enable reference counting for those heap variables, and the reference count has reached zero, then the heap variables will be destroyed the next time they are accessed.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you disable reference counting for
+   <i>
+    all
+   </i>
+   heap variables, then the reference counts will no longer be incremented or decremented. If you then re-enable reference counting, the reference counts for any existing heap variables may be incorrect, and these heap variables may be unexpectedly destroyed.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_933182">
+   </a>
+   <a name="H_835179117_33555">
+   </a>
+   ENABLE
+  </h3>
+  <p>
+   Set this keyword to re-enable automatic garbage collection for
+   <i>
+    Heaprefs
+   </i>
+   . This keyword is necessary only if garbage collection for
+   <i>
+    Heaprefs
+   </i>
+   was turned off using the DISABLE keyword. If
+   <i>
+    Heaprefs
+   </i>
+   is not supplied, automatic garbage collection is re-enabled for all heap variables.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_933188">
+   </a>
+   <a name="H_835179117_80416">
+   </a>
+   IS_ENABLED
+  </h3>
+  <p>
+   Set this keyword to a named variable which will contain the value 1 if garbage collection is enabled for the heap variable, or 0 if garbage collection is disabled. If
+   <i>
+    Heaprefs
+   </i>
+   is an array, the variable will contain an array of 1s or 0s.
+  </p>
+  <p>
+   If
+   <i>
+    Heaprefs
+   </i>
+   is not supplied, the variable value reflects the state of garbage collection for all heap variables (1 if automatic garbage collection is enabled, 0 if garbage collection is disabled).
+  </p>
+  <h2 class="API">
+   Examples
+  </h2>
+  <p class="Code">
+   ; Create an array of heap pointers
+   <br />
+   ptr = PTRARR(3)
+   <br />
+   ptr[0] = PTR_NEW(10)
+   <br />
+   ptr[1] = PTR_NEW(20)
+   <br />
+   ptr[2] = PTR_NEW(30)
+   <br />
+   <br />
+   ; Each pointer has a reference count of 1
+   <br />
+   PRINT, HEAP_REFCOUNT(ptr)
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   1           1           1
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Automatic garbage collection destroys the pointer
+   <br />
+   ptr[0] = PTR_NEW()
+   <br />
+   ; Create another reference to the heap variable pointed to
+   <br />
+   ; by ptr[1]
+   <br />
+   ptrNew = ptr[1]
+   <br />
+   <br />
+   ; The reference counts have changed
+   <br />
+   PRINT, HEAP_REFCOUNT(ptr)
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   0           2           1
+  </p>
+  <h2 class="API">
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../P/PTR_FREE.html#P_817877613_845045">
+    PTR_FREE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../O/OBJ_DESTROY.html#O_828691053_889421">
+    OBJ_DESTROY
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HEAP_FREE.html#H_835179117_877451">
+    HEAP_FREE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HEAP_GC.html#H_835179117_852187">
+    HEAP_GC
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

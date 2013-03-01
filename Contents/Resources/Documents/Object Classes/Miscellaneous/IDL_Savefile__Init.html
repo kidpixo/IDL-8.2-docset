@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Miscellaneous Object Classes|IDL_Savefile" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDL_Savefile::Init
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDL_Savefile__Init.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_misc.html">
+    Miscellaneous Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDL_Savefile::Init
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_misc_904195448_1034695">
+   </a>
+   <a name="objects_misc_904195448_87634">
+   </a>
+   IDL_Savefile::Init
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1034699">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1034709">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1034712">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1034715">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1034734">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDL_Savefile::
+   <a name="kanchor4703">
+   </a>
+   Init function method initializes the savefile object. The SAVE file associated with the object is opened and scanned to construct an internal data structure representing the contents. The SAVE file remains open until the savefile object is destroyed — the user is not allowed to use the CLOSE procedure to close the SAVE file.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Init methods are special
+   <i>
+    lifecycle methods
+   </i>
+   , and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: If you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1034699">
+   </a>
+   <a name="objects_misc_904195448_1034699_PageTOC_IDL_Savefile">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   = OBJ_NEW('IDL_Savefile' [,&#160;
+   <i>
+    Filename
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1034717">
+    FILENAME
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1034721">
+    RELAXED_STRUCTURE_ASSIGNMENT
+   </a>
+   ])
+  </p>
+  <p>
+   or
+  </p>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDL_Savefile.html#objects_misc_904195448_1076956">
+    IDL_Savefile
+   </a>
+   ::]Init()  &#160;&#160;&#160;
+   <i>
+    (In a lifecycle method only.
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1034709">
+   </a>
+   <a name="objects_misc_904195448_1034709_PageTOC_IDL_Savefile">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   When this method is called indirectly, as part of the call to the OBJ_NEW function, the return value is an object reference to the newly-created object.
+  </p>
+  <p>
+   When called directly within a subclass Init method, the return value is 1 (one) if initialization was successful, or 0 (zero) otherwise.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1034712">
+   </a>
+   <a name="objects_misc_904195448_1034712_PageTOC_IDL_Savefile">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string that contains the path name of the SAVE file from which information or data is to be recovered. If
+   <i>
+    Filename
+   </i>
+   is not present but the FILENAME keyword is specified, the keyword value is used. If neither the argument or the keyword is present, the file
+   <span class="Courier">
+    idlsave.dat
+   </span>
+   in IDL’s current working directory is used.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1034715">
+   </a>
+   <a name="objects_misc_904195448_1034715_PageTOC_IDL_Savefile">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_misc_904195448_1034717">
+   </a>
+   <a name="objects_misc_904195448_999961_Keywords_IDL_Savefile">
+   </a>
+   FILENAME
+  </h3>
+  <p>
+   Set this keyword equal to a scalar string that contains the path name of the SAVE file from which information or data is to be recovered.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The FILENAME keyword duplicates the functionality of the
+   <i>
+    Filename
+   </i>
+   argument. If both are provided, the value specified by the
+   <i>
+    Filename
+   </i>
+   argument is used.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_misc_904195448_1034721">
+   </a>
+   <a name="objects_misc_904195448_999964_Keywords_IDL_Savefile">
+   </a>
+   RELAXED_STRUCTURE_ASSIGNMENT
+  </h3>
+  <p>
+   Normally, the
+   <a class="MCXref_Heading_0" href="IDL_Savefile__Restore.html#objects_misc_904195448_1034827">
+    IDL_Savefile::Restore
+   </a>
+   method is unable to restore a structure variable if the definition of its type has changed since the SAVE file was written. This commonly occurs when objects are saved and the class structures of the objects change before they are restored in another IDL session. In such cases, IDL_Savefile::Restore issues an error and does not restore the item.
+  </p>
+  <p>
+   Set the RELAXED_STRUCTURE_ASSIGNMENT keyword when creating a savefile object to cause the IDL_Savefile::Restore method to restore such incompatible values using “relaxed structure assignment,” in which all possible data are restored using a field-by-field copy.
+  </p>
+  <p>
+   See the description of the
+   <a class="MCXref_Heading_0" href="../../Reference Material/S/STRUCT_ASSIGN.html#S_820040301_900692" target="" title="" alt="">
+    STRUCT_ASSIGN
+   </a>
+   procedure for additional details.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1034734">
+   </a>
+   <a name="objects_misc_904195448_1034734_PageTOC_IDL_Savefile">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

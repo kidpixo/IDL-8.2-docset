@@ -1,0 +1,395 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   SPLINE_P
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/SPLINE_P.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    SPLINE_P
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_758542">
+   </a>
+   <a name="S_820040301_27408">
+   </a>
+   SPLINE_P
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_758547">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_758549">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_758559">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_758569">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_758581">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110397">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2447">
+   </a>
+   SPLINE_P procedure performs parametric cubic
+   <a name="kanchor2448">
+   </a>
+   spline
+   <a name="kanchor2449">
+   </a>
+   interpolation with relaxed or clamped end conditions.
+  </p>
+  <p>
+   This routine is both more general and faster than the SPLINE function. One call to SPLINE_P is equivalent to two calls to SPLINE, as both the X and Y are interpolated with splines. It is suited for interpolating between randomly placed points, and the abscissa values need not be monotonic. In addition, the end conditions may be optionally specified via tangents.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    spline_p.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_758547">
+   </a>
+   <a name="S_820040301_758547_PageTOC_SPLINE_P_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   SPLINE_P,
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   ,
+   <i>
+    Xr
+   </i>
+   ,
+   <i>
+    Yr
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1187959">
+    DOUBLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_758561">
+    INTERVAL
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_758564">
+    TAN0
+   </a>
+   =
+   <i>
+    [X
+   </i>
+   <i style="font-size: 80%;vertical-align: sub;">
+    0
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   <i style="font-size: 80%;vertical-align: sub;">
+    0
+   </i>
+   <i>
+    ]
+   </i>
+   ]
+   <br />
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_758567">
+    TAN1
+   </a>
+   =
+   <i>
+    [X
+   </i>
+   <sub class="italic">
+    n-1
+   </sub>
+   ,
+   <i>
+    Y
+   </i>
+   <sub class="italic">
+    n-1
+   </sub>
+   <i>
+    ]
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_758549">
+   </a>
+   <a name="S_820040301_758549_PageTOC_SPLINE_P_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   The abscissa vector.
+   <i>
+    X
+   </i>
+   should be floating-point or double-precision.
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   The vector of ordinate values corresponding to X.
+   <i>
+    Y
+   </i>
+   should be floating-point or double-precision.
+  </p>
+  <p>
+   Neither X or Y need be monotonic.
+  </p>
+  <h3 class="Argument">
+   Xr
+  </h3>
+  <p>
+   A named variable that will contain the abscissa values of the interpolated function. If X or Y is double-precision, then the computations will be done using double-precision and a double-precision result will be returned. Otherwise, single-precision will be used.
+  </p>
+  <h3 class="Argument">
+   Yr
+  </h3>
+  <p>
+   A named variable that will contain the ordinate values of the interpolated function. If X or Y is double-precision, then the computations will be done using double-precision and a double-precision result will be returned. Otherwise, single-precision will be used.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_758559">
+   </a>
+   <a name="S_820040301_758559_PageTOC_SPLINE_P_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="S_820040301_1187959">
+   </a>
+   <a name="S_820040301_41773">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to perform computations using double-precision arithmetic and to return a double-precision result.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_758561">
+   </a>
+   <a name="S_820040301_758561_Keywords_SPLINE_P__">
+   </a>
+   INTERVAL
+  </h3>
+  <p>
+   Set this keyword equal to the desired interval in XY space between interpolants. If omitted, approximately 8 interpolants per XY segment will result.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_758564">
+   </a>
+   <a name="S_820040301_758564_Keywords_SPLINE_P__">
+   </a>
+   TAN0
+  </h3>
+  <p>
+   The tangent to the spline curve at X[0], Y[0]. If omitted, the tangent is calculated to make the curvature of the result zero at the beginning. TAN0 is a two element vector, containing the X and Y components of the tangent.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_758567">
+   </a>
+   <a name="S_820040301_758567_Keywords_SPLINE_P__">
+   </a>
+   TAN1
+  </h3>
+  <p>
+   The tangent to the spline curve at X[
+   <i>
+    n
+   </i>
+   -1], Y[
+   <i>
+    n
+   </i>
+   -1]. If omitted, the tangent is calculated to make the curvature of the result zero at the end. TAN1 is a two element vector, containing the X and Y components of the tangent.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_758569">
+   </a>
+   <a name="S_820040301_758569_PageTOC_SPLINE_P_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The commands below show a typical use of SPLINE_P:
+  </p>
+  <p class="Code">
+   ; Abscissas for square with a vertical diagonal:
+   <br />
+   X = [0.,1,0,-1,0]
+   <br />
+   <br />
+   ; Ordinates:
+   <br />
+   Y = [0.,1,2,1,0]
+   <br />
+   <br />
+   ; Interpolate with relaxed end conditions:
+   <br />
+   SPLINE_P, X, Y, XR, YR
+   <br />
+   <br />
+   ; Show it:
+   <br />
+   PLOT, XR, YR
+  </p>
+  <p>
+   As above, but with setting both the beginning and end tangents:
+  </p>
+  <p class="Code">
+   SPLINE_P, X, Y, XR, YR, TAN0=[1,0], TAN1=[1,0]
+  </p>
+  <p>
+   This yields approximately 32 interpolants.
+  </p>
+  <p>
+   As above, but with setting the interval to 0.05, making more interpolants, closer together:
+  </p>
+  <p class="Code">
+   SPLINE_P, X, Y, XR, YR, TAN0=[1,0], TAN1=[1,0], INTERVAL=0.05
+  </p>
+  <p>
+   This yields 116 interpolants and looks close to a circle.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_758581">
+   </a>
+   <a name="S_820040301_758581_PageTOC_SPLINE_P_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Pre-4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added DOUBLE keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110397">
+   </a>
+   <a name="S_820040301_1110397_PageTOC_SPLINE_P_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="SPL_INIT.html#S_820040301_126854">
+    SPL_INIT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="SPLINE.html#S_820040301_758519">
+    SPLINE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

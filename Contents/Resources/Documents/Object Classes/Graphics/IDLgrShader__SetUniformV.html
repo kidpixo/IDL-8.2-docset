@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrShader" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrShader::SetUniformVariable
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrShader__SetUniformV.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrShader::SetUniformVariable
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1796144">
+   </a>
+   <a name="objects_gr_2157407275_60974">
+   </a>
+   IDLgrShader::SetUniformVariable
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796172">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796178">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796184">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796190">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1796198">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLgrShader::
+   <a name="kanchor4449">
+   </a>
+   SetUniformVariable procedure method assigns a value to a named uniform variable. A uniform variable provides a way to pass small amounts of data to a shader program. It can enable interactivity by linking user interface control changes to shader program updates.
+  </p>
+  <p>
+   IDL stores the
+   <i>
+    Name
+   </i>
+   and
+   <i>
+    Value
+   </i>
+   of the uniform variable with the instance of the associated IDLgrShader object the first time this method is called. When SetUniformVariable is called again using the same
+   <i>
+    Name
+   </i>
+   argument, the uniform variable is updated with the current contents of
+   <i>
+    Value
+   </i>
+   . Once a uniform variable is associated with a shader object, there is no way to remove the reference. Any uniform variable that is defined, but not used in the shader program is simply ignored.
+  </p>
+  <p>
+   The fragment shader program will support a minimum of 64 uniform variables (use
+   <a href="IDLgrWindow__GetDeviceIn.html" target="" title="" alt="" class="MCXref_Heading_0">
+    IDLgrWindow::GetDeviceInfo
+   </a>
+   to determine the exact number). For maximum shader program portability, define 64 or fewer variables.
+  </p>
+  <p>
+   In the case of a shader object associated with an IDLgrImage, or an IDLgrPolygon or IDLgrSurface with an associated TEXTURE_MAP image, you do not need to use SetUniformVariable to pass the image data to the shader program if multi-texturing is not occurring. The reserved uniform variable, _IDL_ImageTexture, automatically contains the texture map data associated with the primary IDLgrImage object.
+   <![CDATA[ ]]>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If a shader object is associated with more than a single graphic object, any changes to a uniform variable will be applied to all associated objects. To avoid this, copy and associate an individual instance of a shader object with each individual graphic objects.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796172">
+   </a>
+   <a name="objects_gr_2157407275_1796172_PageTOC_IDLgrShader">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrShader.html#objects_gr_2157407275_1789376">
+    IDLgrShader
+   </a>
+   ::]SetUniformVariable,
+   <i>
+    Name, Value
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796178">
+   </a>
+   <a name="objects_gr_2157407275_1796178_PageTOC_IDLgrShader">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Name
+  </h3>
+  <p>
+   Specifies a case-sensitive string name of the uniform variable.
+  </p>
+  <h3 class="Argument">
+   Value
+  </h3>
+  <p>
+   Defines an IDL simple scalar value, array or an IDLgrImage object reference to be associated with
+   <i>
+    Name
+   </i>
+   . IDL strings, structures, pointers, and undefined variables are not allowed and will cause an error that halts execution. IDL converts all integer types to 32-bit long and converts all floating types to 32-bit float before submitting the data to the shader program.
+  </p>
+  <p>
+   If this argument is set to a 1-D or 2-D IDLgrImage object reference (the only type of object reference permitted), IDL loads the image data into an OpenGL texture that can be accessed using the uniform variable specified. This uniform variable must be defined as GLSL type
+   <i>
+    sampler1D
+   </i>
+   or
+   <i>
+    sampler2D
+   </i>
+   in the shader program.
+  </p>
+  <p>
+   If the dimensions of the IDLgrImage are not a power of 2 then the image will be padded to the next largest power of 2. If the dimensions of the IDLgrImage are larger than
+   <a class="MCXref_Heading_0" href="IDLgrWindow__GetDeviceIn.html#objects_gr_2157407275_1018626" target="" title="" alt="">
+    MAX_TEXTURE_DIMENSIONS
+   </a>
+   (returned by GetDeviceInfo) then the image will be scaled down to MAX_TEXTURE_DIMENSIONS. Keep this in mind when generating texture coordinates to access the texture map. The IDLgrImage passed to SetUniformVariable cannot be tiled.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796184">
+   </a>
+   <a name="objects_gr_2157407275_1796184_PageTOC_IDLgrShader">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796190">
+   </a>
+   <a name="objects_gr_2157407275_1796190_PageTOC_IDLgrShader">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1796198">
+   </a>
+   <a name="objects_gr_2157407275_1796198_PageTOC_IDLgrShader">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="IDLgrShader__GetUniformV.html#objects_gr_2157407275_1795988">
+    IDLgrShader::GetUniformVariable
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

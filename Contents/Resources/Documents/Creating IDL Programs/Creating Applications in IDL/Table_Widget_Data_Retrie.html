@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Interfaces (Widgets)|About Table Widgets" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Table Widget Data Retrieval
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Creating Applications in IDL/Table_Widget_Data_Retrie.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Widget Application Techniques.html">
+    Interfaces (Widgets)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="About_Table_Widgets.html">
+    About Table Widgets
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Table Widget Data Retrieval
+   </span>
+  </div>
+  <h1>
+   <a name="widget_table_1174167527_98325">
+   </a>
+   <a name="widget_table_1174167527_16584">
+   </a>
+   Table Widget Data Retrieval
+  </h1>
+  <p>
+   To
+   <a name="kanchor4935">
+   </a>
+   retrieve data from a table widget, use the GET_VALUE keyword to WIDGET_CONTROL. You can retrieve the entire contents of the table or the contents of either a standard or disjoint selection. The format of the variable returned by the GET_VALUE keyword depends on the type of data displayed in the table (see
+   <a class="MCXref_Heading_0" href="Table_Widget_Data_Types.html#widget_table_1174167527_105327" target="" title="" alt="">
+    Table Widget Data Types
+   </a>
+   ) and the type of selection (see
+   <a class="MCXref_Heading_0" href="Table_Widget_Selection_M.html#widget_table_1174167527_97620" target="" title="" alt="">
+    Table Widget Selection Modes
+   </a>
+   ).
+  </p>
+  <h2 class="API">
+   Entire Table
+  </h2>
+  <p>
+   To retrieve data from the entire table, use the following command:
+  </p>
+  <p class="Code">
+   WIDGET_CONTROL,
+   <i>
+    table
+   </i>
+   , GET_VALUE=
+   <i>
+    table_value
+   </i>
+  </p>
+  <p>
+   where
+   <i>
+    table
+   </i>
+   is the widget ID of the table widget. The
+   <i>
+    table_value
+   </i>
+   variable will contain either:
+  </p>
+  <ul>
+   <li value="1">
+    an array with the same dimensions as the table, with one element per table cell, if the table contains data of a single data type, or
+   </li>
+   <li value="2">
+    a vector of structures, with one structure per table row or column, if the table contains structure data.
+   </li>
+  </ul>
+  <h2 class="API">
+   Standard Selection
+  </h2>
+  <p>
+   To retrieve data for a group of selected cells, use the following command:
+  </p>
+  <p class="Code">
+   WIDGET_CONTROL,
+   <i>
+    table
+   </i>
+   , GET_VALUE=
+   <i>
+    selection_value
+   </i>
+   /USE_TABLE_SELECT
+  </p>
+  <p>
+   where
+   <i>
+    table
+   </i>
+   is the widget ID of the table widget. In standard selection mode, the
+   <i>
+    selection_value
+   </i>
+   variable will contain either:
+  </p>
+  <ul>
+   <li value="1">
+    an array with the same dimensions as the selection, with one element per selected cell, if the table contains data of a single data type, or
+   </li>
+   <li value="2">
+    a vector of structures, with one structure per selected row or column, if the table contains structure data.
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You can also set the USE_TABLE_SELECT keyword equal to a four-element array of the form [&#160;
+   <i>
+    left
+   </i>
+   ,&#160;
+   <i>
+    top
+   </i>
+   ,&#160;
+   <i>
+    right
+   </i>
+   ,&#160;
+   <i>
+    bottom
+   </i>
+   &#160;] containing the zero-based indices of the columns and rows that should be selected.
+  </p>
+  <p>
+   To retrieve the list of selected cells, use the following command:
+  </p>
+  <p class="Code">
+   <i>
+    selected_cells
+   </i>
+   = WIDGET_INFO(
+   <i>
+    table
+   </i>
+   , /TABLE_SELECT)
+  </p>
+  <p>
+   where
+   <i>
+    table
+   </i>
+   is the widget ID of the table widget. The
+   <i>
+    selected_cells
+   </i>
+   variable will contain a four-element array of the form [&#160;
+   <i>
+    left
+   </i>
+   ,&#160;
+   <i>
+    top
+   </i>
+   ,&#160;
+   <i>
+    right
+   </i>
+   ,&#160;
+   <i>
+    bottom
+   </i>
+   &#160;] containing the zero-based indices of the columns and rows that are selected.
+  </p>
+  <h2 class="API">
+   Disjoint Selection
+  </h2>
+  <p>
+   To retrieve data for a group of selected cells, use the following command:
+  </p>
+  <p class="Code">
+   WIDGET_CONTROL,
+   <i>
+    table
+   </i>
+   , GET_VALUE=
+   <i>
+    selection_value,
+   </i>
+   /USE_TABLE_SELECT
+  </p>
+  <p>
+   where
+   <i>
+    table
+   </i>
+   is the widget ID of the table widget. In disjoint selection mode, the
+   <i>
+    selection_value
+   </i>
+   variable will contain either:
+  </p>
+  <ul>
+   <li value="1">
+    a one-dimensional array of values, with one element per selected cell, if the table contains data of a single data type, or
+   </li>
+   <li value="2">
+    a structure, with one field per selected cell, if the table contains structure data.
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You can also set the USE_TABLE_SELECT keyword equal to a 2&#160;x&#160;
+   <i>
+    n
+   </i>
+   element array of column/row pairs specifying the cells that should be selected.
+  </p>
+  <p>
+   To retrieve the list of selected cells, use the following command:
+  </p>
+  <p class="Code">
+   <i>
+    selected_cells
+   </i>
+   = WIDGET_INFO(
+   <i>
+    table
+   </i>
+   , /TABLE_SELECT)
+  </p>
+  <p>
+   where
+   <i>
+    table
+   </i>
+   is the widget ID of the table widget. The
+   <i>
+    selected_cells
+   </i>
+   variable will contain 2&#160;x&#160;
+   <i>
+    n
+   </i>
+   array of column/row pairs containing the zero-based indices of the selected cells.
+  </p>
+  <h2 class="API">
+   Converting Between Cell List Formats
+  </h2>
+  <p>
+   With the addition of the ability to create disjoint table selections in IDL 5.6, the format of the list of selected cells returned by WIDGET_INFO was altered to accommodate non-rectangular regions when disjoint selections are enabled. To preserve backwards-compatibility, the format of the list was not changed for tables using standard selection mode, which guarantees a rectangular selection region.
+  </p>
+  <p>
+   If your application allows the table widget to switch between standard and disjoint selection mode, or if you have selection-handling routines that can be used with tables in either mode, you may want to modify the rectangular selection values returned for standard selections to match the lists of cells returned for disjoint selections. The following is a template for such a utility function. It accepts a four-element array of the form [&#160;
+   <i>
+    left
+   </i>
+   ,&#160;
+   <i>
+    top
+   </i>
+   ,&#160;
+   <i>
+    right
+   </i>
+   ,&#160;
+   <i>
+    bottom
+   </i>
+   &#160;] containing the zero-based indices of the columns and rows that are selected and converts it into a 2&#160;x&#160;
+   <i>
+    n
+   </i>
+   array of column/row pairs containing the zero-based indices the selected cells.
+  </p>
+  <p class="Code">
+   FUNCTION Make_Cell_List, Selection_Vector
+  </p>
+  <p class="Code">
+   &#160;&#160;num_cells = (Selection_Vector[2]-(Selection_Vector[0]-1)) * $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;(Selection_Vector[3]-(Selection_Vector[1]-1))
+  </p>
+  <p class="Code">
+   &#160;&#160;return_arr = intarr(2,num_cells)
+  </p>
+  <p class="Code">
+   &#160;&#160;n=0
+  </p>
+  <p class="Code">
+   &#160;&#160;FOR i=Selection_Vector[1], Selection_Vector[3] DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;FOR j=Selection_Vector[0], Selection_Vector[2] DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;return_arr(n)=j
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;return_arr(n+1)=i
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;n=n+2
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;ENDFOR
+  </p>
+  <p class="Code">
+   &#160;&#160;ENDFOR
+  </p>
+  <p class="Code">
+   &#160;&#160;RETURN, return_arr
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   With this function compiled, you could retrieve the four-element selection array from a standard selection and turn it into a 2 x
+   <i>
+    n
+   </i>
+   element array with the following commands:
+  </p>
+  <p class="Code">
+   selected_cells = WIDGET_INFO(
+   <i>
+    table
+   </i>
+   , /TABLE_SELECT)
+  </p>
+  <p class="Code">
+   cell_list = Make_Cell_List(selected_cells)
+  </p>
+  <p>
+   where
+   <i>
+    table
+   </i>
+   is the widget ID of a table widget in standard selection mode.
+  </p>
+  <p>
+   To reform the array returned by
+  </p>
+  <p class="Code">
+   WIDGET_CONTROL,
+   <i>
+    table
+   </i>
+   , GET_VALUE=
+   <i>
+    Selection_Value
+   </i>
+  </p>
+  <p>
+   for a standard selection into one-dimensional array like those returned for disjoint selections, use the following command:
+  </p>
+  <p class="Code">
+   REFORM(
+   <i>
+    Selection_Value
+   </i>
+   , N_ELEMENTS(
+   <i>
+    Selection_Value
+   </i>
+   ), 1)
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

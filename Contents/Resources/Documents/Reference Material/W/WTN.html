@@ -1,0 +1,510 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WTN
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WTN.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WTN
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="W_811389549_52399">
+   </a>
+   <a name="W_811389549_14361">
+   </a>
+   WTN
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#W_811389549_52406">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1084213">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_52413">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_52423">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_52487">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_983566">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2948">
+   </a>
+   WTN function returns a multi-dimensional discrete
+   <a name="kanchor2949">
+   </a>
+   wavelet transform of the input array
+   <i>
+    A
+   </i>
+   . The transform is based on a
+   <a name="kanchor2950">
+   </a>
+   Daubechies wavelet filter.
+  </p>
+  <p>
+   WTN is based on the routine
+   <span class="Courier">
+    wtn
+   </span>
+   described in section 13.10 of
+   <i>
+    Numerical Recipes in C: The Art of Scientific Computing
+   </i>
+   (Second Edition), published by Cambridge University Press, and is used by permission.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_52406">
+   </a>
+   <a name="W_811389549_52406_PageTOC_WTN_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = WTN(
+   <i>
+    A
+   </i>
+   ,
+   <i>
+    Coef
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_58787">
+    COLUMN
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_52415">
+    DOUBLE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_52418">
+    INVERSE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_52421">
+    OVERWRITE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns an output array of the same dimensions as
+   <i>
+    A
+   </i>
+   , containing the discrete wavelet transform over each dimension.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1084213">
+   </a>
+   <a name="W_811389549_52408_PageTOC_WTN_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   A
+  </h3>
+  <p>
+   The input vector or array. The dimensions of
+   <i>
+    A
+   </i>
+   must all be powers of 2.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If  WTN is complex then only the real part is used for the computation.
+  </p>
+  <h3 class="Argument">
+   Coef
+  </h3>
+  <p>
+   An integer that specifies the number of wavelet filter coefficients. The allowed values are 4, 12, or 20. When
+   <i>
+    Coef
+   </i>
+   is 4, the
+   <span class="Courier">
+    daub4()
+   </span>
+   function (see
+   <i>
+    Numerical Recipes
+   </i>
+   , section 13.10) is used. When
+   <i>
+    Coef
+   </i>
+   is 12 or 20,
+   <span class="Courier">
+    pwt()
+   </span>
+   is called, preceded by
+   <span class="Courier">
+    pwtset()
+   </span>
+   (see
+   <i>
+    Numerical Recipes
+   </i>
+   , section 13.10).
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_52413">
+   </a>
+   <a name="W_811389549_52413_PageTOC_WTN_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="W_811389549_58787">
+   </a>
+   <a name="W_811389549_58787_Keywords_WTN__">
+   </a>
+   COLUMN
+  </h3>
+  <p>
+   Set this keyword if the input array
+   <i>
+    A
+   </i>
+   is in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_52415">
+   </a>
+   <a name="W_811389549_52415_Keywords_WTN__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_52418">
+   </a>
+   <a name="W_811389549_52418_Keywords_WTN__">
+   </a>
+   INVERSE
+  </h3>
+  <p>
+   If the INVERSE keyword is set, the inverse transform is computed. By default, WTN performs the forward wavelet transform.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_52421">
+   </a>
+   <a name="W_811389549_52421_Keywords_WTN__">
+   </a>
+   OVERWRITE
+  </h3>
+  <p>
+   Set the OVERWRITE keyword to perform the transform “in place.” The result overwrites the original contents of the array.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_52423">
+   </a>
+   <a name="W_811389549_52423_PageTOC_WTN_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   This example demonstrates the use of IDL’s discrete wavelet transform and sparse array storage format to compress and store an 8-bit gray-scale digital image. First, an image selected from the
+   <span class="Courier">
+    people.dat
+   </span>
+   data file is transformed into its wavelet representation and written to a separate data file using the WRITEU procedure.
+  </p>
+  <p class="Note" madcap:conditions="Reference Material.Online_Help_Only" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    If you are viewing this topic from within the IDL Workbench, you can click on each code block in turn to execute the example.
+   </madcap:conditionaltext>
+  </p>
+  <p class="Code">
+   ; Begin by choosing the number of wavelet coefficients to use and a
+   <br />
+   ; threshold value:
+   <br />
+   coeffs = 12 &amp; thres = 10.0
+   <br />
+   <br />
+   ; Open the people.dat data file, read an image using associated
+   <br />
+   ; variables, and close the file:
+   <br />
+   OPENR, 1, FILEPATH('people.dat', SUBDIR = ['examples','data'])
+   <br />
+   images = ASSOC(1, BYTARR(192, 192, /NOZERO))
+   <br />
+   image_1 = images[0]
+   <br />
+   CLOSE, 1
+   <br />
+   <br />
+   ; Expand the image to the nearest power of two using cubic
+   <br />
+   ; convolution, and transform the image into its wavelet
+   <br />
+   ; representation using the WTN function:
+   <br />
+   pwr = 256
+   <br />
+   image_1 = CONGRID(image_1, pwr, pwr, /CUBIC)
+   <br />
+   wtn_image = WTN(image_1, coeffs)
+   <br />
+   <br />
+   ; Write the image to a file using the WRITEU procedure and check
+   <br />
+   ; the size of the file (in bytes) using the FSTAT function:
+   <br />
+   OPENW, 1, 'original.dat'
+   <br />
+   WRITEU, 1, wtn_image
+   <br />
+   status = FSTAT(1)
+   <br />
+   CLOSE, 1
+   <br />
+   PRINT, 'Size of the file is ', status.size, ' bytes.'
+  </p>
+  <p>
+   Next, the transformed image is converted, using the SPRSIN function, to row-indexed sparse storage format retaining only elements with an absolute magnitude greater than or equal to a specified threshold. The sparse image is written to a data file using the WRITE_SPR procedure.
+  </p>
+  <p class="Code">
+   ; Now, we convert the wavelet representation of the image to a
+   <br />
+   ; row-indexed sparse storage format using the SPRSIN function,
+   <br />
+   ; write the data to a file using the WRITE_SPR procedure, and check
+   <br />
+   ; the size of the "compressed" file:
+   <br />
+   sprs_image = SPRSIN(wtn_image, THRES = thres)
+   <br />
+   WRITE_SPR, sprs_image, 'sparse.dat'
+   <br />
+   OPENR, 1, 'sparse.dat'
+   <br />
+   status = FSTAT(1)
+   <br />
+   CLOSE, 1
+   <br />
+   PRINT, 'Size of the compressed file is ', status.size, ' bytes.'
+   <br />
+   <br />
+   ; Determine the number of elements (as a percentage of total
+   <br />
+   ; elements) whose absolute magnitude is less than the specified
+   <br />
+   ; threshold. These elements are not retained in the row-indexed
+   <br />
+   ; sparse storage format:
+   <br />
+   PRINT, 'Percentage of elements under threshold: ',$
+   <br />
+   &#160;&#160;&#160;100.*N_ELEMENTS(WHERE(ABS(wtn_image) LT thres, $
+   <br />
+   &#160;&#160;&#160;count)) / N_ELEMENTS(image_1)
+  </p>
+  <p>
+   Finally, the transformed image is reconstructed from the storage file and displayed alongside the original.
+  </p>
+  <p class="Code">
+   ; Next, read the row-indexed sparse data back from the file
+   <br />
+   ; sparse.dat using the READ_SPR function and reconstruct the
+   <br />
+   ; image from the non-zero data using the FULSTR function:
+   <br />
+   sprs_image = READ_SPR('sparse.dat')
+   <br />
+   wtn_image = FULSTR(sprs_image)
+   <br />
+   <br />
+   ; Apply the inverse wavelet transform to the image:
+   <br />
+   image_2 = WTN(wtn_image, COEFFS, /INVERSE)
+   <br />
+   <br />
+   ; Finally, display the original and reconstructed
+   <br />
+   ; images side by side:
+   <br />
+   WINDOW, 1, XSIZE = pwr*2, YSIZE = pwr, $
+   <br />
+   &#160;&#160;&#160;TITLE = 'Wavelet Image Compression and File I/O'
+   <br />
+   TV, image_1, 0, 0
+   <br />
+   TV, image_2, pwr - 1, 0
+   <br />
+   <br />
+   ; Calculate and print the amount of data used in
+  </p>
+  <p class="Code">
+   ; reconstruction of the image:
+   <br />
+   PRINT, 'The image on the right is reconstructed from:', $
+   <br />
+   &#160;&#160;&#160;100.0 - (100.* count/N_ELEMENTS(image_1)),$
+   <br />
+   &#160;&#160;&#160;'% of original image data.'
+  </p>
+  <h4>
+   IDL Output
+  </h4>
+  <p class="Code">
+   Size of the file is &#160;&#160;262144 bytes.
+  </p>
+  <p class="Code">
+   Size of the compressed file is &#160;&#160;69600 bytes.
+  </p>
+  <p class="Code">
+   Percentage of elements under threshold: &#160;&#160;87.0331
+  </p>
+  <p class="Code">
+   The image on the right is reconstructed from: 12.9669% of original image data.
+  </p>
+  <p>
+   The sparse array contains only 13% of the elements contained in the original array. The following figure is created from this example. The image on the left is the original 256 by 256 image. The image on the right was compressed by the above process and was reconstructed from 13% of the original data. The size of the compressed image’s data file is 26.6% of the size of the original image’s data file. Note that due to limitations in the printing process, differences between the images may not be as evident as they would be on a high-resolution printer or monitor.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Original image (left) and image reconstructed
+    <br />
+    from 13% of the data (right).
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/wtn.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999752px;margin-bottom: 6.000484px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="W_811389549_52487">
+   </a>
+   <a name="W_811389549_52487_PageTOC_WTN_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="W_811389549_983566">
+   </a>
+   <a name="W_811389549_983566_PageTOC_WTN_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../F/FFT.html#F_848155245_676828">
+    FFT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

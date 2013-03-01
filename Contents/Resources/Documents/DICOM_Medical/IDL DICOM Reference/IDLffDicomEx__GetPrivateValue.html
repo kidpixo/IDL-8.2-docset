@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Additional Topics|Medical Imaging in IDL|IDL DICOM Reference|IDLffDicomEx" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffDicomEx::GetPrivateValue
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#DICOM_Medical/IDL DICOM Reference/IDLffDicomEx__GetPrivateValue.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../OtherTopics.html">
+    Additional Topics
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Expanded DICOM Support in IDL/ExpandedDICOMFunctionality.html">
+    Medical Imaging in IDL
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="DICOMEX_GETCONFIGFILEPAT.html">
+    IDL DICOM Reference
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffDicomEx::GetPrivateValue
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   IDLffDicomEx::GetPrivateValue
+  </h1>
+  <p>
+   The IDLffDicomEx::GetPrivateValue function method returns the value of a private DICOM attribute using a private code defined by the author of the private tag, a group number and part of the element tag instead of a standard DICOM attribute tag.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   GetPrivateValue will fail if you attempt to return a value for an attribute that does not exist, an attribute that does not have a value, or an attribute that has been removed. If you are not sure an attribute exists or has a value use
+   <a href="IDLffDicomEx__QueryPrivateValue.html" class="MCXref_0">
+    IDLffDicomEx::QueryPrivateValue
+   </a>
+   before calling GetPrivateValue.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   In the majority of cases,
+   <a href="IDLffDicomEx__GetValue.html" class="MCXref_0">
+    IDLffDicomEx::GetValue
+   </a>
+   can be used to read a private tag.
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1007574">
+   </a>
+   <a name="dicom_ex_4010397576_1007574_PageTOC_IDLffDicomEx">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result = Obj
+   </span>
+   -&gt;[
+   <a href="IDLffDicomEx.html" class="MCXref_0">
+    IDLffDicomEx
+   </a>
+   ::]GetPrivateValue(
+   <span class="Italic">
+    PrivateCode
+   </span>
+   ,
+   <span class="Italic">
+    Group
+   </span>
+   ,
+   <span class="Italic">
+    Element
+   </span>
+   [,&#160;
+   <a href="#dicom_ex_4010397576_1007590" target="" title="" alt="" class="MCXref_0">
+    SEQID
+   </a>
+   =
+   <span class="Italic">
+    integer
+   </span>
+   ] [,&#160;
+   <a href="#dicom_ex_4010397576_1007594" target="" title="" alt="" class="MCXref_0">
+    COUNT
+   </a>
+   =
+   <span class="Italic">
+    variable
+   </span>
+   ]&#160;)
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1007576">
+   </a>
+   <a name="dicom_ex_4010397576_1007576_PageTOC_IDLffDicomEx">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns one of the following:
+  </p>
+  <ul>
+   <li value="1">
+    A scalar value for a private attribute with one value.
+   </li>
+   <li value="2">
+    A vector of scalar values for private attributes with multiple values.
+   </li>
+   <li value="3">
+    A long integer if the private attribute is a sequence. This value is used as the SEQID keyword in subsequent calls to GetPrivateValue to access items contained in the sequence.
+   </li>
+   <li value="4">
+    A vector of values when the sequence contains groups (set of repeating tags within the sequence). See the
+    <a href="IDLffDicomEx__GetPrivateValueLength.html" class="MCXref_0">
+     IDLffDicomEx::GetPrivateValueLength
+    </a>
+    method “Example” section for code that uses such an array.
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1007582">
+   </a>
+   <a name="dicom_ex_4010397576_1007582_PageTOC_IDLffDicomEx">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   PrivateCode
+  </h3>
+  <p>
+   A string identification code that identifies the private block of data. Within a given private group
+   <span class="Italic">
+    PrivateCode
+   </span>
+   labels are stored sequentially in the element addresses ranging from '0010' to '00FF'. For example, the string value stored at DICOM tag address '0029,0010' is the
+   <span class="Italic">
+    PrivateCode
+   </span>
+   for the block of data tagged at '0029,1000'&#160;&#8209;&#160;'0029,10FF'. The label stored at '0029,0011' would be the
+   <span class="Italic">
+    PrivateCode
+   </span>
+   for the data in tags '0029,1100' - '0029,11 FF'.
+  </p>
+  <h3 class="Argument">
+   Group
+  </h3>
+  <p>
+   A string identifying the group tag number of the private attribute (the first four digits of a DICOM tag). This must be an odd number and in the form 'XXXX'.
+  </p>
+  <h3 class="Argument">
+   Element
+  </h3>
+  <p>
+   A string identifying the last two digits of the element associated with the private attribute. This must be in the form 'XX'. Valid values are 10 - FF.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The first two digits of the
+   <span class="Italic">
+    Element
+   </span>
+   are implicit in the
+   <span class="Italic">
+    PrivateCode
+   </span>
+   argument.
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1007589">
+   </a>
+   <a name="dicom_ex_4010397576_1007589_PageTOC_IDLffDicomEx">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dicom_ex_4010397576_1007590">
+   </a>
+   <a name="dicom_ex_4010397576_38128">
+   </a>
+   SEQID
+  </h3>
+  <p>
+   Set this keyword only if retrieving the value of a private attribute that exists within a sequence. Use this keyword to specify sequence identifier as follows:
+  </p>
+  <ul>
+   <li value="1">
+    Set to a non-zero value (a sequence identifier) indicating the sequence in which the value is contained. This sequence identifier may have been returned via a previous call to the GetPrivateValue method.
+   </li>
+   <li value="2">
+    Set to 0 or do not specify this keyword to indicate the private attribute exists at the root level of the DICOM file. This is the default.
+   </li>
+  </ul>
+  <h3 class="Keyword">
+   <a name="dicom_ex_4010397576_1007594">
+   </a>
+   <a name="dicom_ex_4010397576_58744">
+   </a>
+   COUNT
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain an unsigned long value indicating the number of elements in this method’s return value. Possible values are:
+  </p>
+  <ul>
+   <li value="1">
+    1 indicating the return value is a scalar value.
+   </li>
+   <li value="2">
+    <span class="Italic">
+     n
+    </span>
+    where
+    <span class="Italic">
+     n
+    </span>
+    is the number of elements in the returned array. This corresponds to the number of values in the multi-valued attribute.
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1034993">
+   </a>
+   <a name="dicom_ex_4010397576_1034993_PageTOC_IDLffDicomEx">
+   </a>
+   Example
+  </h2>
+  <p>
+   The following example uses the results of the IDLffDicomEx::GetPrivateValue method COUNT keyword to cycle through a multi-valued private attribute that has been added to a file. To avoid errors arising from attempting to write to an existing file, the cloned image is not saved to the database. To save the changes, call the
+   <a href="IDLffDicomEx__Commit.html" class="MCXref_0">
+    IDLffDicomEx::Commit
+   </a>
+   method.
+  </p>
+  <p class="Code">
+   PRO dicom_getprivate_value_count_doc
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Select a DICOM file.
+  </p>
+  <p class="Code">
+   sFile = DIALOG_PICKFILE( $
+  </p>
+  <p class="Code">
+   PATH=FILEPATH('',SUBDIRECTORY=['examples','data']), $
+  </p>
+  <p class="Code">
+   TITLE='Select DICOM Patient File', FILTER='*.dcm', $
+  </p>
+  <p class="Code">
+   GET_PATH=path)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Create a clone (aImgClone.dcm) of the selected file (sfile).
+  </p>
+  <p class="Code">
+   oImg = OBJ_NEW('IDLffDicomEx', path + 'aImgClone.dcm', $
+  </p>
+  <p class="Code">
+   CLONE=sfile)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Add private tags. The following are hypothetical.
+  </p>
+  <p class="Code">
+   ; Create a multi-valued tag at the root level.
+  </p>
+  <p class="Code">
+   arr = [11, 12, 13, 14]
+  </p>
+  <p class="Code">
+   oImg-&gt;SetPrivateValue, 'Private Test', '0053', '10', 'SS', arr
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Create a sequence at the root level.
+  </p>
+  <p class="Code">
+   vSeqId = oImg-&gt;AddPrivateSequence('VOI Min,Max', '0055', '12')
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Add items to the sequence, specifying SQ identifier returned by
+  </p>
+  <p class="Code">
+   ; AddPrivateSequence.
+  </p>
+  <p class="Code">
+   oImg-&gt;SetPrivateValue, 'VOI Min,Max', '0055', '13', 'IS', '215', $
+  </p>
+  <p class="Code">
+   SEQID=vSeqID
+  </p>
+  <p class="Code">
+   oImg-&gt;SetPrivateValue, 'VOI Min,Max', '0055', '14', 'IS', '234', $
+  </p>
+  <p class="Code">
+   SEQID=vSeqID
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Get the value of a multi-valued root-level private attribute.
+  </p>
+  <p class="Code">
+   ; Get the nubmer of items in the multi-valued attribute using
+  </p>
+  <p class="Code">
+   ; either the COUNT keyword to GetPrivateValue or
+  </p>
+  <p class="Code">
+   ; GetPrivateValueCount.
+  </p>
+  <p class="Code">
+   vValue = oImg-&gt;GetPrivateValue('Private Test', '0053', '10', $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;COUNT=vCount)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Get the VR.
+  </p>
+  <p class="Code">
+   vVR = oImg-&gt;GetPrivateVR('Private Test', '0053', '10')
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   FOR i = 1, vCount DO BEGIN
+  </p>
+  <p class="Code">
+   Print, 'Value number', i, + ' is ', vValue[i-1], + $
+  </p>
+  <p class="Code">
+   ' and VR is ', vVR
+  </p>
+  <p class="Code">
+   ENDFOR
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Clean up references.
+  </p>
+  <p class="Code">
+   OBJ_DESTROY, oImg
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   The following appears in the Output Log window.
+  </p>
+  <p class="Code">
+   Value number       1 is       11 and VR is SS
+  </p>
+  <p class="Code">
+   Value number       2 is       12 and VR is SS
+  </p>
+  <p class="Code">
+   Value number       3 is       13 and VR is SS
+  </p>
+  <p class="Code">
+   Value number       4 is       14 and VR is SS
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1036910">
+   </a>
+   <a name="dicom_ex_4010397576_1036910_PageTOC_IDLffDicomEx">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

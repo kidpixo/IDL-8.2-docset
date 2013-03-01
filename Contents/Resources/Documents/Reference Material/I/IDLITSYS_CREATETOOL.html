@@ -1,0 +1,914 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLITSYS_CREATETOOL
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/NoLines.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Property_Table.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/IDLITSYS_CREATETOOL.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLITSYS_CREATETOOL
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="iTools_api_3860698369_1000300">
+   </a>
+   <a name="iTools_api_3860698369_87454">
+   </a>
+   <span class="_Override">
+    IDLITSYS_CREATETOOL
+   </span>
+  </h1>
+  <p madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+   <span class="_Override">
+    <madcap:conditionaltext madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000328">
+      Syntax
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000388">
+      Return Value
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000391">
+      Arguments
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000395">
+      Keywords
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000510">
+      Examples
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000516">
+      Version History
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000544">
+      See Also
+     </a>
+    </madcap:conditionaltext>
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000328">
+   </a>
+   <a name="iTools_api_3860698369_99042">
+   </a>
+   <span class="_Override">
+    Syntax
+   </span>
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   <span class="_Override">
+    = IDLITSYS_CREATETOOL(
+   </span>
+   <span class="Italic">
+    StrTool
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000398">
+    ANISOTROPIC_SCALE_2D
+   </a>
+   =
+   <span class="Italic">
+    value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000401">
+    ANISOTROPIC_SCALE_3D
+   </a>
+   =
+   <span class="Italic">
+    value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000404">
+    CURRENT
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000407">
+    DIMENSIONS
+   </a>
+   =[
+   <span class="Italic">
+    width
+   </span>
+   <span class="_Override">
+    ,
+   </span>
+   <span class="Italic">
+    height
+   </span>
+   ]] [,&#160;/
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000410">
+    DISABLE_SPLASH_SCREEN
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000413">
+    IDENTIFIER
+   </a>
+   =
+   <span class="Italic">
+    variable
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000416">
+    INITIAL_DATA
+   </a>
+   =
+   <span class="Italic">
+    data
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000419">
+    LOCATION
+   </a>
+   =[
+   <span class="Italic">
+    x
+   </span>
+   <span class="_Override">
+    ,
+   </span>
+   <span class="Italic">
+    y
+   </span>
+   ]] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000426">
+    MACRO_NAMES
+   </a>
+   =
+   <span class="Italic">
+    string&#160;or&#160;string&#160;array
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000429">
+    NO_SAVEPROMPT
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000432">
+    OVERPLOT
+   </a>
+   =
+   <span class="Italic">
+    iToolID
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000437">
+    RENDERER
+   </a>
+   ={0&#160;|&#160;1}] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000463">
+    SCALE_ISOTROPIC
+   </a>
+   =
+   <span class="Italic">
+    value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000481">
+    STYLE_NAME
+   </a>
+   =
+   <span class="Italic">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000484">
+    USER_INTERFACE
+   </a>
+   =
+   <span class="Italic">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000496">
+    VIEW_GRID
+   </a>
+   =
+   <span class="Italic">
+    vector
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000499">
+    VIEW_NEXT
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000503">
+    VIEW_NUMBER
+   </a>
+   =
+   <span class="Italic">
+    number
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000507">
+    VISUALIZATION_TYPE
+   </a>
+   =
+   <span class="Italic">
+    vistype
+   </span>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000388">
+   </a>
+   <a name="iTools_api_3860698369_91066">
+   </a>
+   Return Value
+  </h2>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000391">
+   </a>
+   <a name="iTools_api_3860698369_21326">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   StrTool
+  </h3>
+  <p>
+   The name of a tool that has been registered with the iTools system via the IREGISTER routine.
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000395">
+   </a>
+   <a name="iTools_api_3860698369_41698">
+   </a>
+   Keywords
+  </h2>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Additional keywords/properties associated with the target visualization at the command line are passed to the underlying system to be applied to the created tool and visualizations.
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000398">
+   </a>
+   <a name="iTools_api_3860698369_20853">
+   </a>
+   ANISOTROPIC_SCALE_2D
+  </h3>
+  <p>
+   For two-dimensional anisotropic visualizations, set this keyword to a floating point value indicating the ratio of the Y dimension to the X dimension. The default is 0.7. If the dataspace and its contained visualizations are isotropic then this keyword is ignored.
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000401">
+   </a>
+   <a name="iTools_api_3860698369_70147">
+   </a>
+   ANISOTROPIC_SCALE_3D
+  </h3>
+  <p>
+   For three-dimensional anisotropic visualizations, set this keyword to a floating point value indicating the ratio of the Z dimension to the X and Y dimensions. The default is 0.7. If the dataspace and its contained visualizations are isotropic then this keyword is ignored.
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000404">
+   </a>
+   <a name="iTools_api_3860698369_62853">
+   </a>
+   CURRENT
+  </h3>
+  <p>
+   Set this keyword to direct the graphical output of the visualization to a new data space in the current tool. If no tool exists, a new tool is created.
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000407">
+   </a>
+   <a name="iTools_api_3860698369_984612_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    DIMENSIONS
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a two-element vector of the form [
+   </span>
+   <span class="Italic">
+    width
+   </span>
+   <span class="_Override">
+    ,
+   </span>
+   <span class="Italic">
+    height
+   </span>
+   <span class="_Override">
+    ] to specify the dimensions of the drawing area of the specific tool in device units. The minimum width of the window correlates to the width of the menubar. The minimum window height is 100 pixels.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000410">
+   </a>
+   <a name="iTools_api_3860698369_49290">
+   </a>
+   <span class="_Override">
+    DISABLE_SPLASH_SCREEN
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to disable the iTools splash screen. By default, the first time an iTool is run, the splash screen is displayed.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000413">
+   </a>
+   <a name="iTools_api_3860698369_984573_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    IDENTIFIER
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a named IDL variable that will contain the iToolID for the created tool. This value can then be used to reference this tool during overplotting operations or command-line-based tool management operations.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000416">
+   </a>
+   <a name="iTools_api_3860698369_939956_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    INITIAL_DATA
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to the data objects that are used to create the initial visualizations in the created tool.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000419">
+   </a>
+   <a name="iTools_api_3860698369_984462_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    LOCATION
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a two-element vector of the form [
+   </span>
+   <span class="Italic">
+    x
+   </span>
+   <span class="_Override">
+    ,
+   </span>
+   <span class="Italic">
+    y
+   </span>
+   <span class="_Override">
+    ] to specify the location of the upper left-hand corner of the tool relative to the display screen, in device units.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000426">
+   </a>
+   <a name="iTools_api_3860698369_964508_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    MACRO_NAMES
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a scalar string or an array of strings that specifies the names of one or more macros to run. The macro names are retrieved and the macros are run sequentially after the iTool and (if applicable) any visualizations have been created. If a macro of the specified name does not exist, IDL generates an error and the routine exits.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000429">
+   </a>
+   <a name="iTools_api_3860698369_982826_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    NO_SAVEPROMPT
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to cause the iTool
+   </span>
+   <span class="Italic">
+    not
+   </span>
+   <span class="_Override">
+    to prompt the user to save changes when closing the tool. The default is to prompt the user to save changes.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000432">
+   </a>
+   <a name="iTools_api_3860698369_939958_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    OVERPLOT
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to an iToolID to direct the graphical output of the visualization to the tool specified by the provided iToolID.
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    Set this keyword to 1 (one) to place the graphical output of the visualization in the current tool. If no current tool exists, a new tool is created.
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    This iToolID can be obtained during the creation of a previous tool or from the
+   </span>
+   <span class="_Override" style="text-transform: uppercase;">
+    iGetCurrent
+   </span>
+   <span class="_Override">
+    routine.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000437">
+   </a>
+   <a name="iTools_api_3860698369_1040198_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    RENDERER
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to override the value specified by the IDL_GR_WIN_RENDERER (Windows) or IDL_GR_X_RENDERER (UNIX) preference for the iTool. IDL will use the specified graphics renderer when drawing objects within the iTool window. Valid values are:
+   </span>
+  </p>
+  <table cellpadding="0" cellspacing="0" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" class="TableStyle_Property_Table" height="86px">
+   <col width="84px" />
+   <col width="249px" />
+   <thead>
+    <tr style="height: 20px;background-color: #cbcbff;">
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr style="height: 15px;">
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       Use platform native OpenGL
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td class="TableStyle_Property_Table_Body_0_0_RowEnd_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Use IDL’s software implementation
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   <span class="_Override">
+    If your platform does not have a native OpenGL implementation, IDL uses its own software implementation regardless of the value of this property.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000463">
+   </a>
+   <a name="iTools_api_3860698369_92626">
+   </a>
+   <span class="_Override">
+    SCALE_ISOTROPIC
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to indicate the scaling method to be used for the dataspace. Possible
+   </span>
+  </p>
+  <p>
+   <span class="_Override">
+    values are:
+   </span>
+  </p>
+  <table cellpadding="0" cellspacing="0" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 416px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" class="TableStyle_NoLines" height="236px">
+   <col width="55px" />
+   <col width="361px" />
+   <tbody>
+    <tr style="height: 84px;">
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       Automatic scaling. If any visualization within the dataspace has its Isotropic scaling property set to True, the dataspace will be automatically set to isotropic. If none of the visualizations are isotropic, the dataspace will be automatically set to anisotropic. This is the default.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 49px;">
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       Isotropic scaling. The dataspace will be proportionally scaled in the X, Y, and Z directions according to the data ranges in each direction.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 67px;">
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Anistropic scaling. The dataspace will be scaled in the X, Y, and Z directions according to the ANISOTROPIC_SCALE_2D or ANISOTROPIC_SCALE_3D keywords.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <span class="_Override">
+    If the dataspace is anisotropic (either automatically or by setting SCALE_ISOTROPIC to 2), then the ANISOTROPIC_SCALE_2D or ANISOTROPIC_SCALE_3D keywords may be used to change the scaling. If the dataspace is isotropic then the ANISOTROPIC_SCALE_2D and ANISOTROPIC_SCALE_3D keywords are ignored.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000481">
+   </a>
+   <a name="iTools_api_3860698369_984522_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    STYLE_NAME
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword equal to a string that specifies the name of a user-defined or a system style. If a style of the specified name does not exist, IDL generates an error and the routine exits. The style is applied to all items within all views and the current tool style is updated with the new style.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000484">
+   </a>
+   <a name="iTools_api_3860698369_983497_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    USER_INTERFACE
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword equal to a string containing the name of a custom user interface that was previously registered using the USER_INTERFACE keyword to the
+    <a class="MCXref_Heading_0" href="IREGISTER.html#iTools_api_3860698369_1006642">
+     IREGISTER
+    </a>
+    procedure. The following user interfaces are provided by default:
+   </span>
+  </p>
+  <ul>
+   <li value="1">
+    <span class="Courier">
+     'Default'
+    </span>
+    <span class="_Override">
+     — uses the standard iTools user interface.
+    </span>
+   </li>
+   <li value="2">
+    <span class="Courier">
+     'None'
+    </span>
+    <span class="_Override">
+     — creates an iTool without a user interface and uses a graphics buffer object instead of a window. If you use this interface, by default
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000410">
+      DISABLE_SPLASH_SCREEN
+     </a>
+     is set to True.
+    </span>
+   </li>
+  </ul>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   <span class="_Override">
+    This interface could be used for batch processing, where you can use a macro to automatically process the input data and output the results to a file. Note, however, that setting the user interface to
+   </span>
+   <span class="Courier">
+    'None'
+   </span>
+   <span class="_Override">
+    applies only to the newly created tool. If your macro operation starts a new tool or requires user input, those tools or dialogs will still appear.Note also that you are responsible for closing any iTools created by your batch process. In a macro, consider using the
+   </span>
+   <br />
+   <br />
+   <span class="Bold">
+    File
+   </span>
+   <span class="_Override">
+    <![CDATA[ ]]>
+   </span>
+   &#160;&gt;&#160;
+   <span class="_Override">
+    <![CDATA[ ]]>
+   </span>
+   <span class="Bold">
+    Exit
+   </span>
+   <span class="_Override">
+    macro operation to close the tool after processing.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000496">
+   </a>
+   <a name="iTools_api_3860698369_939979_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    VIEW_GRID
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a two-element vector of the form [
+   </span>
+   <span class="Italic">
+    columns
+   </span>
+   <span class="_Override">
+    ,
+   </span>
+   <span class="Italic">
+    rows
+   </span>
+   <span class="_Override">
+    ] to specify the view layout within the new tool. This keyword is only used if a new tool is being created; it is ignored if OVERPLOT, VIEW_NEXT, or VIEW_NUMBER are specified.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000499">
+   </a>
+   <a name="iTools_api_3860698369_939981_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    VIEW_NEXT
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to change the view selection to the next view following the currently-selected view before issuing any graphical commands. If the currently-selected view is the last one in the layout, then /VIEW_NEXT will cause the first view in the layout to become selected. This keyword is ignored if no current tool exists.
+   </span>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <span class="_Override">
+    The contents of the newly-selected view will be emptied unless /OVERPLOT is set.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000503">
+   </a>
+   <a name="iTools_api_3860698369_939984_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    VIEW_NUMBER
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to change the currently-selected view to the view specified by the VIEW_NUMBER before issuing any graphical commands. The view number starts at 1, and corresponds to the position of the view within the graphics container (not necessarily the position on the screen). This keyword is ignored if no current tool exists.
+   </span>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <span class="_Override">
+    The contents of the newly-selected view will be emptied unless /OVERPLOT is set.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000507">
+   </a>
+   <a name="iTools_api_3860698369_939987_Keywords_IDLITSYS_CREATETOOL_">
+   </a>
+   <span class="_Override">
+    VISUALIZATION_TYPE
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a string containing the name of a registered visualization type that should be used to visualize any data specified by the INITIAL_DATA keyword. If this keyword is not specified, the iTool will select a visualization type based on the data type of the input data.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000510">
+   </a>
+   <a name="iTools_api_3860698369_12443">
+   </a>
+   <span class="_Override">
+    Examples
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    See
+   </span>
+   Chapter 5, “Example: Simple iTool” (iTool Developer’s Guide)
+   <span class="_Override">
+    .
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000516">
+   </a>
+   <a name="iTools_api_3860698369_32624">
+   </a>
+   <span class="_Override">
+    Version History
+   </span>
+  </h2>
+  <table cellpadding="0" cellspacing="0" class="TableStyle_VersionTable" height="192px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr style="height: 13px;">
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       6.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 13px;">
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       Pre 6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Deprecated the PANEL_LOCATION keyword
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 13px;">
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Added MACRO_NAMES and STYLE_NAME keywords
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 30px;">
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Added DISABLE_SPLASH_SCREEN, USER_INTERFACE keywords
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 48px;">
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added the ANISTROPIC_SCALE_2D, ANISTROPIC_SCALE_3D, RENDERER, and SCALE_ISOTROPIC keywords
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000544">
+   </a>
+   <a name="iTools_api_3860698369_31148">
+   </a>
+   <span class="_Override">
+    See Also
+   </span>
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="IREGISTER.html#iTools_api_3860698369_1006642">
+    IREGISTER
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

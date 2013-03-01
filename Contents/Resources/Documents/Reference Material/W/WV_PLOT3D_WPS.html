@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WV_PLOT3D_WPS
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WV_PLOT3D_WPS.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WV_PLOT3D_WPS
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="ref_3320460235_1004600">
+   </a>
+   <a name="ref_3320460235_40472">
+   </a>
+   WV_PLOT3D_WPS
+  </h1>
+  <p madcap:conditions="wavelet.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="wavelet.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1006224">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1006226">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1006228">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1006235">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1023254">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1006251">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2995">
+   </a>
+   WV_PLOT3D_WPS function runs the graphical user interface for three-dimensional visualization of the
+   <a name="kanchor2996">
+   </a>
+   wavelet power spectrum. WV_PLOT3D_WPS is accessible from the Visualize Menu of WV_APPLET.
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1006224">
+   </a>
+   <a name="ref_3320460235_1006224_PageTOC_WV_PLOT3D_WPS_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = WV_PLOT3D_WPS(
+   <span class="Italic">
+    Array
+   </span>
+   [,&#160;
+   <span class="Italic">
+    X
+   </span>
+   ] [,&#160;
+   <span class="Italic">
+    Y
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1006236">
+    GROUP_LEADER
+   </a>
+   =
+   <span class="Italic">
+    widget_id
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1015696">
+    SURFACE_STYLE
+   </a>
+   =
+   <span class="Italic">
+    value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1006239">
+    TITLE
+   </a>
+   =
+   <span class="Italic">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1006241">
+    UNITS
+   </a>
+   =
+   <span class="Italic">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1006243">
+    XTITLE
+   </a>
+   =
+   <span class="Italic">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1006245">
+    XUNITS
+   </a>
+   =
+   <span class="Italic">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1006247">
+    YTITLE
+   </a>
+   =
+   <span class="Italic">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1006249">
+    YUNITS
+   </a>
+   =
+   <span class="Italic">
+    string
+   </span>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1006226">
+   </a>
+   <a name="ref_3320460235_1006226_PageTOC_WV_PLOT3D_WPS_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The returned variable is the Widget ID of the newly-created widget.
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1006228">
+   </a>
+   <a name="ref_3320460235_1006228_PageTOC_WV_PLOT3D_WPS_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Input
+  </h3>
+  <p>
+   <span class="Italic">
+    Input
+   </span>
+   must be either a string giving the name of a file to open, or a one- or two-dimensional array of data. If set to a string, the file must contain a valid WV_PLOT3D_WPS “saved state.”
+  </p>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   An optional vector of uniformly-spaced values giving the location of points along the first dimension of
+   <span class="Italic">
+    Input
+   </span>
+   . The default is 0, 1, 2,..., N
+   <span class="SubScript">
+    X
+   </span>
+   –1, where N
+   <span class="SubScript">
+    X
+   </span>
+   is the size of the first dimension. This argument is ignored if Input is a filename.
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   An optional vector of uniformly-spaced values giving the location of points along the second dimension of
+   <span class="Italic">
+    Input
+   </span>
+   . The default is 0, 1, 2,..., N
+   <span class="SubScript">
+    Y
+   </span>
+   –1, where N
+   <span class="SubScript">
+    Y
+   </span>
+   is the size of the second dimension. This argument is ignored if
+   <span class="Italic">
+    Input
+   </span>
+   is a filename.
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1006235">
+   </a>
+   <a name="ref_3320460235_1006235_PageTOC_WV_PLOT3D_WPS_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1006236">
+   </a>
+   <a name="ref_3320460235_1006236_Keywords_WV_PLOT3D_WPS_">
+   </a>
+   GROUP_LEADER
+  </h3>
+  <p>
+   The widget ID of an existing widget that serves as "group leader" for the newly-created widget. When a group leader is killed, for any reason, all widgets in the group are also destroyed.
+  </p>
+  <p>
+   A given widget can be in more than one group. The WIDGET_CONTROL procedure can be used to add additional group associations to a widget. See
+   <a href="WIDGET_CONTROL.html" target="" title="" alt="" class="MCXref_Heading_0">
+    WIDGET_CONTROL
+   </a>
+   for more information. It is not possible to remove a widget from an existing group.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The following keywords are ignored if
+   <span class="Italic">
+    Input
+   </span>
+   is a filename. This includes the SURFACE_STYLE, TITLE, UNITS, XTITLE, XUNITS, YTITLE, and YUNITS keywords.
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1015696">
+   </a>
+   <a name="ref_3320460235_1015696_Keywords_WV_PLOT3D_WPS_">
+   </a>
+   SURFACE_STYLE
+  </h3>
+  <p>
+   Set this keyword to an integer specifying the initial style to use for the three-dimensional surface. Valid values are:
+  </p>
+  <p class="Bullet">
+   0 = Off
+  </p>
+  <p class="Bullet">
+   1 = Points
+  </p>
+  <p class="Bullet">
+   2 = Mesh
+  </p>
+  <p class="Bullet">
+   3 = Shaded
+  </p>
+  <p class="Bullet">
+   4 = XZ lines
+  </p>
+  <p class="Bullet">
+   5 = YZ lines
+  </p>
+  <p class="Bullet">
+   6 = Lego
+  </p>
+  <p class="Bullet">
+   7 = Lego fill
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1006239">
+   </a>
+   <a name="ref_3320460235_1006239_Keywords_WV_PLOT3D_WPS_">
+   </a>
+   TITLE
+  </h3>
+  <p>
+   A scalar string giving the label to be used for the widget. The default is ‘WPS:’.
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1006241">
+   </a>
+   <a name="ref_3320460235_1006241_Keywords_WV_PLOT3D_WPS_">
+   </a>
+   UNITS
+  </h3>
+  <p>
+   A scalar string giving the units of
+   <span class="Italic">
+    Array
+   </span>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1006243">
+   </a>
+   <a name="ref_3320460235_1006243_Keywords_WV_PLOT3D_WPS_">
+   </a>
+   XTITLE
+  </h3>
+  <p>
+   A scalar string giving the label to be used for the first dimension.
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1006245">
+   </a>
+   <a name="ref_3320460235_1006245_Keywords_WV_PLOT3D_WPS_">
+   </a>
+   XUNITS
+  </h3>
+  <p>
+   A scalar string giving the units of
+   <span class="Italic">
+    X
+   </span>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1006247">
+   </a>
+   <a name="ref_3320460235_1006247_Keywords_WV_PLOT3D_WPS_">
+   </a>
+   YTITLE
+  </h3>
+  <p>
+   A scalar string giving the label to be used for the y-axis (for a 1D vector) or for the second dimension (for a 2D array).
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1006249">
+   </a>
+   <a name="ref_3320460235_1006249_Keywords_WV_PLOT3D_WPS_">
+   </a>
+   YUNITS
+  </h3>
+  <p>
+   A scalar string giving the units of
+   <span class="Italic">
+    Array
+   </span>
+   (for a 1D vector) or the units of
+   <span class="Italic">
+    Y
+   </span>
+   (for a 2D array).
+  </p>
+  <h3>
+   <a name="ref_3320460235_1015789_Keywords_WV_PLOT3D_WPS_">
+   </a>
+   <a name="ref_3320460235_1015789_PageTOC_WV_PLOT3D_WPS_">
+   </a>
+   Widget Keywords Accepted
+  </h3>
+  <p>
+   The WV_PLOT3D_WPS function also accepts the following WIDGET_BASE keywords: DISPLAY_NAME, EVENT_FUNC, FRAME, KBRD_FOCUS_EVENTS, KILL_NOTIFY, MODAL, NOTIFY_REALIZE, RESOURCE_NAME, SCR_XSIZE, SCR_YSIZE, SPACE, TLB_FRAME_ATTR, TRACKING_EVENTS, UNITS, XOFFSET, XSIZE, YOFFSET, YSIZE. See
+   <a href="WIDGET_BASE.html" target="" title="" alt="" class="MCXref_Heading_0">
+    WIDGET_BASE
+   </a>
+   for more information.
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1023254">
+   </a>
+   <a name="ref_3320460235_1023254_PageTOC_WV_PLOT3D_WPS_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="28px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr style="height: 13px;">
+     <td>
+      <p>
+       5.3
+      </p>
+     </td>
+     <td>
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="ref_3320460235_1006251">
+   </a>
+   <a name="ref_3320460235_1006251_PageTOC_WV_PLOT3D_WPS_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="WV_APPLET.html#ref_3320460235_1027522" target="" title="" alt="">
+    WV_APPLET
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

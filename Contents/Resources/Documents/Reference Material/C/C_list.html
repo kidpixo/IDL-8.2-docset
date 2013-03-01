@@ -1,0 +1,728 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   C Routines
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/C_list.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    C Routines
+   </span>
+  </div>
+  <h1>
+   C Routines
+  </h1>
+  <div class="MCMiniTocBox_0">
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="C_CORRELATE.html">
+     C_CORRELATE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CALENDAR_Procedure.html">
+     CALENDAR Procedure
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CALDAT.html">
+     CALDAT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CALL_EXTERNAL.html">
+     CALL_EXTERNAL
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CALL_FUNCTION.html">
+     CALL_FUNCTION
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CALL_METHOD.html">
+     CALL_METHOD
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CALL_PROCEDURE.html">
+     CALL_PROCEDURE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CANNY.html">
+     CANNY
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CASE.html">
+     CASE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CATCH.html">
+     CATCH
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CD.html">
+     CD
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CDF_Routines.html">
+     CDF Routines
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ATTCREATE.html">
+     CDF_ATTCREATE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ATTDELETE.html">
+     CDF_ATTDELETE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ATTEXISTS.html">
+     CDF_ATTEXISTS
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ATTGET.html">
+     CDF_ATTGET
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ATTGET_ENTRY.html">
+     CDF_ATTGET_ENTRY
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ATTINQ.html">
+     CDF_ATTINQ
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ATTNUM.html">
+     CDF_ATTNUM
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ATTPUT.html">
+     CDF_ATTPUT
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ATTRENAME.html">
+     CDF_ATTRENAME
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_CLOSE.html">
+     CDF_CLOSE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_COMPRESSION.html">
+     CDF_COMPRESSION
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_CONTROL.html">
+     CDF_CONTROL
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_CREATE.html">
+     CDF_CREATE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_DELETE.html">
+     CDF_DELETE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_DOC.html">
+     CDF_DOC
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ENCODE_EPOCH.html">
+     CDF_ENCODE_EPOCH
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ENCODE_EPOCH16.html">
+     CDF_ENCODE_EPOCH16
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_EPOCH.html">
+     CDF_EPOCH
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_EPOCH16.html">
+     CDF_EPOCH16
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_EPOCH_COMPARE.html">
+     CDF_EPOCH_COMPARE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_EPOCH_DIFF.html">
+     CDF_EPOCH_DIFF
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_ERROR.html">
+     CDF_ERROR
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_EXISTS.html">
+     CDF_EXISTS
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_INQUIRE.html">
+     CDF_INQUIRE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_LIB_INFO.html">
+     CDF_LIB_INFO
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_OPEN.html">
+     CDF_OPEN
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_PARSE_EPOCH.html">
+     CDF_PARSE_EPOCH
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_PARSE_EPOCH16.html">
+     CDF_PARSE_EPOCH16
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_SET_CDF27_BACKWARD_C.html">
+     CDF_SET_CDF27_BACKWARD_COMPATIBLE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_SET_MD5CHECKSUM.html">
+     CDF_SET_MD5CHECKSUM
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_SET_VALIDATE.html">
+     CDF_SET_VALIDATE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_VARCREATE.html">
+     CDF_VARCREATE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_VARDELETE.html">
+     CDF_VARDELETE
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_VARGET.html">
+     CDF_VARGET
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_VARGET1.html">
+     CDF_VARGET1
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_VARINQ.html">
+     CDF_VARINQ
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_VARNUM.html">
+     CDF_VARNUM
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_VARPUT.html">
+     CDF_VARPUT
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="CDF Routines/CDF_VARRENAME.html">
+     CDF_VARRENAME
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CEIL.html">
+     CEIL
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CHEBYSHEV.html">
+     CHEBYSHEV
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CHECK_MATH.html">
+     CHECK_MATH
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CHISQR_CVF.html">
+     CHISQR_CVF
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CHISQR_PDF.html">
+     CHISQR_PDF
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CHOLDC.html">
+     CHOLDC
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CHOLSOL.html">
+     CHOLSOL
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CINDGEN.html">
+     CINDGEN
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CIR_3PNT.html">
+     CIR_3PNT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CLOSE.html">
+     CLOSE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CLUST_WTS.html">
+     CLUST_WTS
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CLUSTER.html">
+     CLUSTER
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CLUSTER_TREE.html">
+     CLUSTER_TREE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CMYK_CONVERT.html">
+     CMYK_CONVERT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COLOR_CONVERT.html">
+     COLOR_CONVERT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COLOR_EXCHANGE.html">
+     COLOR_EXCHANGE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COLOR_QUAN.html">
+     COLOR_QUAN
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COLOR_RANGE_MAP.html">
+     COLOR_RANGE_MAP
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COLORBAR.html">
+     COLORBAR
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COLORIZE_SAMPLE.html">
+     COLORIZE_SAMPLE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COLORMAP_APPLICABLE.html">
+     COLORMAP_APPLICABLE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COLORMAP_GRADIENT.html">
+     COLORMAP_GRADIENT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COLORMAP_ROTATION.html">
+     COLORMAP_ROTATION
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COMFIT.html">
+     COMFIT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COMMAND_LINE_ARGS.html">
+     COMMAND_LINE_ARGS
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COMMON.html">
+     COMMON
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COMPILE_OPT.html">
+     COMPILE_OPT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COMPLEX.html">
+     COMPLEX
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COMPLEXARR.html">
+     COMPLEXARR
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COMPLEXROUND.html">
+     COMPLEXROUND
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COMPUTE_MESH_NORMALS.html">
+     COMPUTE_MESH_NORMALS
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COND.html">
+     COND
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CONGRID.html">
+     CONGRID
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CONJ.html">
+     CONJ
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CONSTRAINED_MIN.html">
+     CONSTRAINED_MIN
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CONTINUE.html">
+     CONTINUE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CONTOUR.html">
+     CONTOUR
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CONTOUR_Procedure.html">
+     CONTOUR Procedure
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CONVERT_COORD.html">
+     CONVERT_COORD
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CONVOL.html">
+     CONVOL
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CONVOL_FFT.html">
+     CONVOL_FFT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COORD2TO3.html">
+     COORD2TO3
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COPY_LUN.html">
+     COPY_LUN
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CORRELATE.html">
+     CORRELATE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COS.html">
+     COS
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="COSH.html">
+     COSH
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CPU.html">
+     CPU
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CRAMER.html">
+     CRAMER
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CREATE_CURSOR.html">
+     CREATE_CURSOR
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CREATE_STRUCT.html">
+     CREATE_STRUCT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CREATE_VIEW_Procedure.html">
+     CREATE_VIEW Procedure
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CROSSP.html">
+     CROSSP
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CRVLENGTH.html">
+     CRVLENGTH
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CT_LUMINANCE.html">
+     CT_LUMINANCE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CTI_TEST.html">
+     CTI_TEST
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CURSOR.html">
+     CURSOR
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CURSOR_Procedure.html">
+     CURSOR Procedure
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CURVEFIT.html">
+     CURVEFIT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CV_COORD.html">
+     CV_COORD
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CVTTOBM.html">
+     CVTTOBM
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_ANIMATE.html">
+     CW_ANIMATE
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_ANIMATE_GETP.html">
+     CW_ANIMATE_GETP
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_ANIMATE_LOAD.html">
+     CW_ANIMATE_LOAD
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_ANIMATE_RUN.html">
+     CW_ANIMATE_RUN
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_ARCBALL.html">
+     CW_ARCBALL
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_BGROUP.html">
+     CW_BGROUP
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_CLR_INDEX.html">
+     CW_CLR_INDEX
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_COLORSEL.html">
+     CW_COLORSEL
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_DEFROI.html">
+     CW_DEFROI
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_FIELD.html">
+     CW_FIELD
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_FILESEL.html">
+     CW_FILESEL
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_FORM.html">
+     CW_FORM
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_FSLIDER.html">
+     CW_FSLIDER
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_LIGHT_EDITOR.html">
+     CW_LIGHT_EDITOR
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_LIGHT_EDITOR_GET.html">
+     CW_LIGHT_EDITOR_GET
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_LIGHT_EDITOR_SET.html">
+     CW_LIGHT_EDITOR_SET
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_ORIENT.html">
+     CW_ORIENT
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_PALETTE_EDITOR.html">
+     CW_PALETTE_EDITOR
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_PALETTE_EDITOR_GET.html">
+     CW_PALETTE_EDITOR_GET
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_PALETTE_EDITOR_SET.html">
+     CW_PALETTE_EDITOR_SET
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_PDMENU.html">
+     CW_PDMENU
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_RGBSLIDER.html">
+     CW_RGBSLIDER
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_TMPL.html">
+     CW_TMPL
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="CW_ZOOM.html">
+     CW_ZOOM
+    </a>
+   </p>
+  </div>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

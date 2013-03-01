@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrFilterChain
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrFilterChain.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrFilterChain
+   </span>
+  </div>
+  <h1 class="ObjClass">
+   <a name="objects_gr_2157407275_1808615">
+   </a>
+   <a name="objects_gr_2157407275_59435">
+   </a>
+   IDLgrFilterChain
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1808638">
+     Superclasses
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1808647">
+     Properties
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1808641">
+     Creation
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1808679">
+     Methods
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1808699">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1808705">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1808743">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   An IDLgrFilterChain object is a specialization of the IDL_Container object that is designed to execute a sequence of image filtering shader objects according to their container order. The chain of shader objects must be “image filtering” shaders (those designed to modify an IDLgrImage object). To apply a chain of shaders to an image, set the IDLgrImage SHADER property equal to the filter chain object. Only shader objects (IDLgrShader objects and objects subclassing from IDLgrShader) can be added to the IDLgrFilterChain. See
+   <a class="MCXref_Heading_0" href="IDLgrShader.html#objects_gr_2157407275_1789376" target="" title="" alt="">
+    IDLgrShader
+   </a>
+   for more information about shader objects.
+  </p>
+  <p>
+   When the sequence of shaders are executed, the output from the first shader is passed to each subsequent shader in the chain until the last shader is reached, the result of which is drawn to the destination device.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This functionality requires support for OpenGL frame buffer object extension in addition to the standard hardware support require by IDLgrShader. See the
+   <a class="MCXref_Heading_0" href="IDLgrWindow__GetDeviceIn.html#objects_gr_2157407275_1018597">
+    IDLgrWindow::GetDeviceInfo
+   </a>
+   methods’s
+   <a class="MCXref_Heading_0" href="IDLgrWindow__GetDeviceIn.html#objects_gr_2157407275_1808084">
+    FRAMEBUFFER_OBJECT_EXTENSION
+   </a>
+   keyword for details).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   To control the precision of the temporary storage used to pass data between shaders, use the
+   <a class="MCXref_Heading_0" href="IDLgrShader_Properties.html#objects_gr_2157407275_1807807">
+    OUTPUT_DATA_TYPE
+   </a>
+   property of IDLgrShader.
+  </p>
+  <p>
+   If the GPU hardware does not provide sufficient support or if FORCE_FILTER is set, the software fallback is used. In such cases, the IDLgrShader::FILTER method (if provided) will be called for each shader in the filter chain. The array returned from FILTER must have the same dimensions as the incoming image. If the returned array from any IDLgrShader in the chain does not meet these requirements IDL draws the image with its original data.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Setting IDLgrImage
+   <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1665804">
+    RENDER_METHOD
+   </a>
+   =1 (do
+   <i>
+    not
+   </i>
+   render image as texture-mapped polygon) disables all shader functionality including the software-based alternative.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1808638">
+   </a>
+   <a name="objects_gr_2157407275_17938">
+   </a>
+   Superclasses
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../../Reference Material/I/IDL_Container.html#objects_misc_904195448_1010504" target="" title="" alt="">
+    IDL_Container
+   </a>
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1808641">
+   </a>
+   <a name="objects_gr_2157407275_34000">
+   </a>
+   Creation
+  </h2>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="IDLgrFilterChain__Init.html#objects_gr_2157407275_1809797" target="" title="" alt="">
+    IDLgrFilterChain::Init
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1808647">
+   </a>
+   <a name="objects_gr_2157407275_29751">
+   </a>
+   Properties
+  </h2>
+  <p>
+   Objects of this class have the following properties. See
+   <a class="MCXref_Heading_0" href="IDLgrFilterChain_Propert.html#objects_gr_2157407275_1809348" target="" title="" alt="">
+    IDLgrFilterChain Properties
+   </a>
+   for details on individual properties.
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="IDLgrFilterChain_Propert.html#objects_gr_2157407275_1809383">
+     FORCE_FILTER
+    </a>
+   </li>
+  </ul>
+  <p>
+   In addition, objects of this class inherit the properties of all superclasses of this class.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1808679">
+   </a>
+   <a name="objects_gr_2157407275_53429">
+   </a>
+   Methods
+   <a name="kanchor4213">
+   </a>
+  </h2>
+  <p>
+   This class has the following methods:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="IDLgrFilterChain__Cleanu.html#objects_gr_2157407275_1808908">
+     IDLgrFilterChain::Cleanup
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="IDLgrFilterChain__GetPro.html#objects_gr_2157407275_1808982">
+     IDLgrFilterChain::GetProperty
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="IDLgrFilterChain__Init.html#objects_gr_2157407275_1809797">
+     IDLgrFilterChain::Init
+    </a>
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="IDLgrFilterChain__SetPro.html#objects_gr_2157407275_1809574">
+     IDLgrFilterChain::SetProperty
+    </a>
+   </li>
+  </ul>
+  <p>
+   In addition, this class inherits the methods of its superclass (
+   <a class="MCXref_Heading_0" href="../../Reference Material/I/IDL_Container.html#objects_misc_904195448_1010504" target="" title="" alt="">
+    IDL_Container
+   </a>
+   ).
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1808699">
+   </a>
+   <a name="objects_gr_2157407275_18697">
+   </a>
+   Examples
+  </h2>
+  <h3>
+   Create an IDLgrFilterChain Object
+  </h3>
+  <p>
+   The following example creates an IDLgrFilterChain object and lets you add and remove individual
+   <a href="IDLgrShaderConvol3.html#objects_gr_2157407275_1810150" target="" title="" alt="" class="MCXref_0">
+    IDLgrShaderConvol3
+   </a>
+   objects, which provide the ability to apply sharpening, smoothing, and edge detection convolution filters to an image. Like the IDLgrShaderBytscl object, the pre-defined IDLgrShaderConvol3 object includes a software fallback that is automatically used when there is not sufficient hardware support for shader operations.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    shader_filterchain_doc__define
+    <a name="kanchor4214">
+    </a>
+    .pro
+   </span>
+   , located in the
+   <span class="Courier">
+    examples/doc/shaders
+   </span>
+   subdirectory of the IDL distribution, for the complete, working example. Run the example by entering
+   <span class="Courier">
+    obj=OBJ_NEW('shader_filterchain_doc')
+   </span>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT shader_filterchain_doc__define.pro
+   </code>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1808705">
+   </a>
+   <a name="objects_gr_2157407275_43539">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1808743">
+   </a>
+   <a name="objects_gr_2157407275_37935">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="IDLgrShader.html#objects_gr_2157407275_1789376">
+    IDLgrShader
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IDLgrShaderBytscl.html#objects_gr_2157407275_1796318">
+    IDLgrShaderBytscl
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IDLgrShaderConvol3.html#objects_gr_2157407275_1810150">
+    IDLgrShaderConvol3
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IDLgrImage.html#objects_gr_2157407275_1010038">
+    IDLgrImage
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

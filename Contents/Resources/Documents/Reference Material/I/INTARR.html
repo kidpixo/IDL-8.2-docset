@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   INTARR
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/INTARR.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    INTARR
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="I_833016429_677245">
+   </a>
+   <a name="I_833016429_87062">
+   </a>
+   INTARR
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#I_833016429_677247">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_884810">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_677249">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_677252">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_677255">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_822445">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_880836">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1550">
+   </a>
+   INTARR function returns an
+   <a name="kanchor1551">
+   </a>
+   integer vector or array.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677247">
+   </a>
+   <a name="I_833016429_677247_PageTOC_INTARR_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = INTARR(
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   <i>
+    [
+   </i>
+   ,
+   <i>
+    ...
+   </i>
+   ,
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    8
+   </sub>
+   <i>
+    ]
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_677253">
+    NOZERO
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_884810">
+   </a>
+   <a name="I_833016429_95537">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the integer array of the specified dimensions.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677249">
+   </a>
+   <a name="I_833016429_677249_PageTOC_INTARR_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   D
+   <sub class="italic">
+    i
+   </sub>
+  </h3>
+  <p>
+   Either an array or a series of scalar expressions specifying the dimensions of the result. If a single argument is specified, it can be either a scalar expression or an array of up to eight elements. If multiple arguments are specified, they must all be scalar expressions. Up to eight dimensions can be specified.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677252">
+   </a>
+   <a name="I_833016429_677252_PageTOC_INTARR_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="I_833016429_677253">
+   </a>
+   <a name="I_833016429_677253_Keywords_INTARR__">
+   </a>
+   NOZERO
+  </h3>
+  <p>
+   Normally, INTARR sets every element of the result to zero. If NOZERO is nonzero, this zeroing is not performed and INTARR executes faster.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677255">
+   </a>
+   <a name="I_833016429_677255_PageTOC_INTARR_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Create I, a 3-element by 3-element integer array with each element set to 0 by entering:
+  </p>
+  <p class="Code">
+   I = INTARR(3, 3)
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_822445">
+   </a>
+   <a name="I_833016429_822445_PageTOC_INTARR_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="I_833016429_880836">
+   </a>
+   <a name="I_833016429_880836_PageTOC_INTARR_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../B/BYTARR.html#B_856805997_675870">
+    BYTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../C/COMPLEXARR.html#C_854643309_676228">
+    COMPLEXARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../D/DBLARR.html#D_843829869_1060809">
+    DBLARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../D/DCOMPLEXARR.html#D_843829869_37687">
+    DCOMPLEXARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../F/FLTARR.html#F_848155245_676939">
+    FLTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LON64ARR.html#L_826528365_983144">
+    LON64ARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LONARR.html#L_826528365_916547">
+    LONARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../M/MAKE_ARRAY.html#M_824365677_887420">
+    MAKE_ARRAY
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/STRARR.html#S_820040301_679026">
+    STRARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../U/UINTARR.html#U_807064173_950250">
+    UINTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../U/ULON64ARR.html#U_807064173_950409">
+    ULON64ARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../U/ULONARR.html#U_807064173_950466">
+    ULONARR
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

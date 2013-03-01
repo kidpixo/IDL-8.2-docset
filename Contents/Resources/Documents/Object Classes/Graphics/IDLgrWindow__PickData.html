@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrWindow" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrWindow::PickData
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrWindow__PickData.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrWindow::PickData
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1018924">
+   </a>
+   <a name="objects_gr_2157407275_38238">
+   </a>
+   IDLgrWindow::PickData
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1807235">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1249363">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1018956">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1018992">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLgrWindow::
+   <a name="kanchor4600">
+   </a>
+   PickData function method maps a point in the two-dimensional device space of the window to a point in the three-dimensional data space of an object tree. The resulting 3-D data space coordinates are returned in a user-specified variable. The PickData function returns one if the specified location in the window’s device space “hits” a graphic object, or zero if no object was “hit”. PickData returns -1 if the point selected falls outside of the specified view or window.
+  </p>
+  <p class="Warning">
+   If you use the DEPTH_WRITE_DISABLE or DEPTH_TEST_DISABLE property of an object to prevent an object from modifying the depth buffer as it is drawn, this also prevents the object from affecting the result returned by the PickData method. The PickData method relies on the contents of the depth buffer at the time it is called to compute and return its results. Be sure that the depth buffer contents are appropriate for getting the expected results from PickData.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1807235">
+   </a>
+   <a name="objects_gr_2157407275_1030760_PageTOC_IDLgrWindow">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrWindow.html#objects_gr_2157407275_1018335">
+    IDLgrWindow
+   </a>
+   ::]PickData(
+   <i>
+    View
+   </i>
+   ,
+   <i>
+    Object
+   </i>
+   ,
+   <i>
+    Location
+   </i>
+   ,
+   <i>
+    XYZLocation
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1018957">
+    DIMENSIONS
+   </a>
+   =
+   <i>
+    [w,h]
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1018961">
+    PATH
+   </a>
+   =
+   <i>
+    objref(s)
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1018967">
+    PICK_STATUS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns 1 if the specified location in the window’s device space “hits” a graphic object, or 0 if no object was hit. Returns -1 if the point selected falls outside the specified view or window.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1249363">
+   </a>
+   <a name="objects_gr_2157407275_1030762_PageTOC_IDLgrWindow">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   View
+  </h3>
+  <p>
+   The object reference of an IDLgrView object that contains the object being picked.
+  </p>
+  <h3 class="Argument">
+   Object
+  </h3>
+  <p>
+   The object reference of a model or atomic graphic object from which the data space coordinates are being requested.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Even though you can specify any object for this argument, the location that is returned may not lie on this object. If another object is in front of the specified object then the returned location lies on the object in front. However, the coordinate system used is that of the object specified by this argument.
+  </p>
+  <h3 class="Argument">
+   Location
+  </h3>
+  <p>
+   A two-element vector [
+   <i>
+    x
+   </i>
+   ,
+   <i>
+    y
+   </i>
+   ] specifying the location in the window’s device space of the point to pick data from.
+  </p>
+  <h3 class="Argument">
+   XYZLocation
+  </h3>
+  <p>
+   A named variable that will contain the three-dimensional double-precision floating-point data space coordinates of the picked point. Note that the value returned in this variable is a location, not a data value.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the atomic graphic object specified as the target has been transformed using either the LOCATION or DIMENSIONS properties (this is only possible with IDLgrAxis, IDLgrImage, and IDLgrText objects), these transformations will
+   <i>
+    not
+   </i>
+   be included in the data coordinates returned by the PickData function. This means that you may need to re-apply the transformation accomplished by specifying LOCATION or DIMENSIONS once you have retrieved the data coordinates with PickData. This situation does not occur if you transform the axis, text, or image object using the [XYZ]COORD_CONV properties.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1018956">
+   </a>
+   <a name="objects_gr_2157407275_1296014_PageTOC_IDLgrWindow">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1018957">
+   </a>
+   <a name="objects_gr_2157407275_1018957_Keywords_IDLgrWindow">
+   </a>
+   DIMENSIONS
+  </h3>
+  <p>
+   Set this keyword to a two-element array [
+   <i>
+    w
+   </i>
+   ,
+   <i>
+    h
+   </i>
+   ] to specify data picking should occur for all device locations that fall within a
+   <i>
+    pick box
+   </i>
+   of these dimensions. The pick box will be centered about the coordinates [
+   <i>
+    x, y
+   </i>
+   ] specified in the
+   <i>
+    Location
+   </i>
+   argument, and will occupy the rectangle defined by:
+  </p>
+  <p class="Code">
+   (x-(w/2), y-(h/2)) - (x+(w/2), y+(h/2))
+  </p>
+  <p>
+   By default, the pick box covers a single pixel. The array returned via the
+   <i>
+    XYZLocation
+   </i>
+   argument will have dimensions [
+   <i>
+    3, w, h
+   </i>
+   ].
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1018961">
+   </a>
+   <a name="objects_gr_2157407275_1018961_Keywords_IDLgrWindow">
+   </a>
+   PATH
+  </h3>
+  <p>
+   Set this keyword to a single object reference or a vector of object references. This keyword specifies the path in the graphics hierarchy to map the device position to a data space coordinate. Each path object reference specified with this keyword must contain an alias. The data space coordinate is computed for the version of the object falling within that path. If this keyword is not set, the PARENT properties determine the path from the current object to the top of the graphics hierarchy and no alias paths are pursued.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For more information on aliases, refer to the
+   <a class="MCXref_Heading_0" href="IDLgrModel__Add.html#objects_gr_2157407275_1011206">
+    ALIAS
+   </a>
+   keyword in IDLgrModel::Add.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1018967">
+   </a>
+   <a name="objects_gr_2157407275_1018967_Keywords_IDLgrWindow">
+   </a>
+   PICK_STATUS
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain “hit” information for each pixel in the pick box. If the DIMENSIONS keyword is not set, the PICK_STATUS will be a scalar value exactly matching the
+   <i>
+    Result
+   </i>
+   of the method call. If the DIMENSIONS keyword is set, the PICK_STATUS variable will be an array matching the dimensions of the pick box. Each value in the PICK_STATUS array corresponds to a pixel in the pick box, and will be set to one of the following values:
+  </p>
+  <table style="width: 421px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    PICK_STATUS Keyword Values
+   </p>
+   <col width="105px" />
+   <col width="316px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       -1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The pixel falls outside of the window’s viewport.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       No graphic object is “hit” at that pixel location.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       A graphic object is “hit” at that pixel location.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1018992">
+   </a>
+   <a name="objects_gr_2157407275_95924">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added PICK_STATUS keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

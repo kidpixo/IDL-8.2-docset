@@ -1,0 +1,946 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IOPEN
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/IOPEN.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IOPEN
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="iTools_api_3860698369_1004572">
+   </a>
+   <a name="iTools_api_3860698369_79521">
+   </a>
+   <span class="_Override">
+    IOPEN
+   </span>
+  </h1>
+  <p madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+   <span class="_Override">
+    <madcap:conditionaltext madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1004602">
+      Syntax
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1004615">
+      Arguments
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1004624">
+      Keywords
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1004639">
+      File Types Supported by IOPEN
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1004773">
+      Examples
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1004798">
+      Version History
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1004806">
+      See Also
+     </a>
+    </madcap:conditionaltext>
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1004602">
+   </a>
+   <a name="iTools_api_3860698369_1055505_PageTOC_IOPEN_">
+   </a>
+   <span class="_Override">
+    Syntax
+   </span>
+  </h2>
+  <p class="Syntax">
+   <span class="_Override">
+    IOPEN,
+   </span>
+   <span class="Italic">
+    Filename
+   </span>
+   <span class="_Override">
+    [,&#160;
+   </span>
+   <span class="Italic">
+    Data
+   </span>
+   <span class="_Override">
+    [,&#160;
+   </span>
+   <span class="Italic">
+    Palette
+   </span>
+   <span class="_Override">
+    ]] [,&#160;/
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1004626">
+     BINARY
+    </a>
+    ] [,&#160;/
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1004629">
+     VISUALIZE
+    </a>
+    ]
+   </span>
+  </p>
+  <p class="Syntax">
+   <span class="Bold">
+    File Reader Keywords:
+   </span>
+   <span class="_Override">
+    Various default iTool file readers accept the following keywords: COLORS, DITHER, GEOTIFF, GRAYSCALE, IMAGE_INDEX, ORDER, TEMPLATE, TRUE, and TWO_PASS_QUANTIZE. Not all keywords are supported by all file readers.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1004615">
+   </a>
+   <a name="iTools_api_3860698369_1055514_PageTOC_IOPEN_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   <a name="iTools_api_3860698369_20335">
+   </a>
+   <span class="_Override">
+    Filename
+   </span>
+  </h3>
+  <p>
+   A string containing the name of the file to open and read. If
+   <span class="Italic">
+    Filename
+   </span>
+   is an ISV file, IDL opens and displays the embedded iTool.
+  </p>
+  <h3 class="Argument">
+   Data
+  </h3>
+  <p>
+   A named variable in which the data will be returned. If
+   <span class="Italic">
+    Data
+   </span>
+   is not supplied, IDL will open and read the file, but it will not automatically create a variable.
+  </p>
+  <h3 class="Argument">
+   Palette
+  </h3>
+  <p>
+   A named variable that will contain the 3x
+   <span class="Italic">
+    N
+   </span>
+   color palette, if a palette is included in the file.
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1004624">
+   </a>
+   <a name="iTools_api_3860698369_1055522_PageTOC_IOPEN_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1004626">
+   </a>
+   <a name="iTools_api_3860698369_53798">
+   </a>
+   BINARY
+  </h3>
+  <p>
+   Set this keyword to include the binary file reader in the list of available readers. By default, the binary file reader is not included because the binary reader has no predefined file extension.
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1004629">
+   </a>
+   <a name="iTools_api_3860698369_55950">
+   </a>
+   VISUALIZE
+  </h3>
+  <p>
+   Set this keyword to display the data in an appropriate iTool window. The VISUALIZE keyword is valid only for image data.
+  </p>
+  <h3>
+   File Reader Keywords Accepted
+  </h3>
+  <p>
+   Most keywords are passed on to the applicable file reader.
+  </p>
+  <p>
+   <span class="_Override">
+    A keyword is ignored if not accepted by the reader being used.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1004639">
+   </a>
+   <a name="iTools_api_3860698369_1055533_PageTOC_IOPEN_">
+   </a>
+   <span class="_Override">
+    <a name="iTools_api_3860698369_23379">
+    </a>
+    File Types Supported by IOPEN
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    By default, IOPEN supports the following file types:
+   </span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="1061px" style="margin-left: 0in;border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 571px;caption-side: bottom;">
+   <caption valign="bottom" style="padding-bottom: 15pt;">
+   </caption>
+   <p class="TableTitle">
+    File Types Supported by IOPEN
+   </p>
+   <col width="87px" />
+   <col width="245px" />
+   <col width="239px" />
+   <thead>
+    <tr style="height: 20px;background-color: #cbcbff;">
+     <td>
+      <p>
+       Extension
+      </p>
+     </td>
+     <td>
+      <p>
+       Keywords Accepted
+      </p>
+     </td>
+     <td>
+      <p>
+       Return Value
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr style="height: 49px;">
+     <td>
+      <p>
+       .bmp
+      </p>
+     </td>
+     <td>
+      <p>
+       None
+      </p>
+     </td>
+     <td>
+      <p>
+       The image array is returned in
+       <span class="Italic">
+        Data
+       </span>
+       . If a palette is present, the palette information is returned in
+       <span class="Italic">
+        Palette
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 49px;">
+     <td>
+      <p>
+       .dcm
+      </p>
+     </td>
+     <td>
+      <p>
+       None
+      </p>
+     </td>
+     <td>
+      <p>
+       The image array is returned in
+       <span class="Italic">
+        Data
+       </span>
+       . If a palette is present, the palette information is returned in
+       <span class="Italic">
+        Palette
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 49px;">
+     <td>
+      <p>
+       .gif
+      </p>
+     </td>
+     <td>
+      <p>
+       None
+      </p>
+     </td>
+     <td>
+      <p>
+       The image array is returned in
+       <span class="Italic">
+        Data
+       </span>
+       . If a palette is present, the palette information is returned in
+       <span class="Italic">
+        Palette
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 67px;">
+     <td>
+      <p>
+       .h5
+      </p>
+     </td>
+     <td>
+      <p>
+       [/SHOW_HARDLINKS]
+      </p>
+     </td>
+     <td>
+      <p>
+       The data is returned as an IDL structure in
+       <span class="Italic">
+        Data
+       </span>
+       . The returned structure format is documented in the H5_PARSE function.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 32px;">
+     <td>
+      <p>
+       .isv
+      </p>
+     </td>
+     <td>
+      <p>
+       None
+      </p>
+     </td>
+     <td>
+      <p>
+       No data is returned; an iTool is created instead.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 49px;">
+     <td>
+      <p>
+       .jp2, .j2k, .jpx
+      </p>
+     </td>
+     <td>
+      <p>
+       None
+      </p>
+     </td>
+     <td>
+      <p>
+       The image array is returned in
+       <span class="Italic">
+        Data
+       </span>
+       . If a palette is present, the palette information is returned in
+       <span class="Italic">
+        Palette
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 101px;">
+     <td>
+      <p>
+       .jpg, .jpeg
+      </p>
+     </td>
+     <td>
+      <p>
+       [
+       <a class="MCXref_Heading_0" xrefformat="{paratext}">
+        COLORS
+       </a>
+       =
+       <span class="Italic">
+        value
+       </span>
+       {8 to 256}]
+       <br />
+       [DITHER={0&#160;|&#160;1&#160;|&#160;2}]
+       <br />
+       [/GRAYSCALE]
+       <br />
+       [/ORDER]
+       <br />
+       [TRUE={1&#160;|&#160;2&#160;|&#160;3}]
+       <br />
+       [/TWO_PASS_QUANTIZE]
+      </p>
+     </td>
+     <td>
+      <p>
+       The image array is returned in
+       <span class="Italic">
+        Data
+       </span>
+       . If a palette is present, the palette information is returned in
+       <span class="Italic">
+        Palette
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 49px;">
+     <td>
+      <p>
+       .pct, .pict
+      </p>
+     </td>
+     <td>
+      <p>
+       None
+      </p>
+     </td>
+     <td>
+      <p>
+       The image array is returned in
+       <span class="Italic">
+        Data
+       </span>
+       . If a palette is present, the palette information is returned in
+       <span class="Italic">
+        Palette
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 49px;">
+     <td>
+      <p>
+       .png
+      </p>
+     </td>
+     <td>
+      <p>
+       None
+      </p>
+     </td>
+     <td>
+      <p>
+       The image array is returned in
+       <span class="Italic">
+        Data
+       </span>
+       . If a palette is present, the palette information is returned in
+       <span class="Italic">
+        Palette
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 32px;">
+     <td>
+      <p>
+       .shp
+      </p>
+     </td>
+     <td>
+      <p>
+       None
+      </p>
+     </td>
+     <td>
+      <p>
+       A single IDLffShape object is returned.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 176px;">
+     <td>
+      <p>
+       .tiff, .tif
+      </p>
+     </td>
+     <td>
+      <p>
+       [GEOTIFF=
+       <span class="Italic">
+        variable
+       </span>
+       ]
+       <br />
+       [IMAGE_INDEX=
+       <span class="Italic">
+        value
+       </span>
+       ]
+      </p>
+     </td>
+     <td>
+      <p>
+       The image array is returned in
+       <span class="Italic">
+        Data
+       </span>
+       . If a palette is present, the palette information is returned in
+       <span class="Italic">
+        Palette
+       </span>
+       .
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       IOPEN will reorient the image array as specified by the Orientation information contained in the TIFF file, if present. As a result, the image array returned by IOPEN may not match an array returned by the READ_TIFF routine.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 55px;">
+     <td>
+      <p>
+       .txt
+      </p>
+     </td>
+     <td>
+      <p style="font-family: Times;letter-spacing: 0em;">
+       [TEMPLATE=
+       <span class="Italic">
+        structure
+       </span>
+       ]
+      </p>
+      <p style="font-family: Times;letter-spacing: 0em;">
+       This template structure is commonly created by ASCII_TEMPLATE.
+      </p>
+     </td>
+     <td>
+      <p>
+       The ASCII data is returned in an IDL structure.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 89px;">
+     <td>
+      <p>
+       Various
+      </p>
+     </td>
+     <td>
+      <p style="font-family: Times;letter-spacing: 0em;">
+       [TEMPLATE=
+       <span class="Italic">
+        structure
+       </span>
+       ]
+      </p>
+      <p style="font-family: Times;letter-spacing: 0em;">
+       This template structure is commonly created by BINARY_TEMPLATE.
+      </p>
+     </td>
+     <td>
+      <p>
+       The binary data is returned in an IDL structure.
+      </p>
+      <p>
+       The use of a binary template structure implies the use of the BINARY keyword.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       .wav
+      </p>
+     </td>
+     <td>
+      <p>
+       None
+      </p>
+     </td>
+     <td>
+      <p>
+       The wave data is returned in
+       <span class="Italic">
+        Data
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1004773">
+   </a>
+   <a name="iTools_api_3860698369_1055645_PageTOC_IOPEN_">
+   </a>
+   <span class="_Override">
+    Examples
+   </span>
+  </h2>
+  <h3>
+   <span class="_Override">
+    Example 1
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    In the following example, we use the IOPEN procedure with the /VISUALIZE keyword to open and display the image
+   </span>
+   <span class="Courier">
+    meteor_crater.jpg
+   </span>
+   <span class="_Override">
+    . We then display information about the
+   </span>
+   <span class="Courier">
+    imageData
+   </span>
+   <span class="_Override">
+    variable that holds the file data.
+   </span>
+  </p>
+  <p class="Code">
+   dataFilePath = FILEPATH('meteor_crater.jpg', $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;SUBDIR=['examples','data'])
+  </p>
+  <p class="Code">
+   IOPEN, dataFilePath, imageData, /VISUALIZE
+  </p>
+  <p class="Code">
+   ; Get information about the IDL-created variable that
+  </p>
+  <p class="Code">
+   ; holds the image dataHELP, imageData
+   <br />
+   <br />
+  </p>
+  <h3>
+   Example 2
+  </h3>
+  <p>
+   In the following example, we will use the IOPEN procedure to open and read data from the
+   <span class="Courier">
+    sine_waves
+   </span>
+   <span class="_Override">
+    .
+   </span>
+   <span class="Courier">
+    txt
+   </span>
+   ASCII file. We will then plot the data using the variables IOPEN created to hold the file data.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     <span class="_Override">
+      Enter the following code at the IDL command line:
+     </span>
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   <span class="_Override">
+    dataFilePath = FILEPATH('sine_waves.txt', $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;SUBDIR=['examples','data'])
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    templateStruct = ASCII_TEMPLATE(dataFilePath)
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    IOPEN, dataFilePath, plotData, Palette, $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;TEMPLATE = templateStruct
+   </span>
+   <br />
+   <br />
+  </p>
+  <p class="indent">
+   <span class="_Override">
+    The
+   </span>
+   <span class="Bold">
+    ASCII Template
+   </span>
+   <span class="_Override">
+    dialog is displayed.
+   </span>
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     <a name="iTools_api_3860698369_13296">
+     </a>
+     <span class="_Override">
+      Follow the steps in the ASCII_TEMPLATE example,
+      <span class="Link">
+       Using the ASCII Template Dialog
+      </span>
+      , starting with the step
+      <span class="Link">
+       Define ASCII data type and range.
+      </span>
+     </span>
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   <span class="_Override">
+    This procedure explains how to use the
+   </span>
+   <span class="Bold">
+    ASCII Template
+   </span>
+   <span class="_Override">
+    dialog to create a template that IDL uses to read ASCII data from the file.
+   </span>
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     <span class="_Override">
+      In the Variables view, a
+     </span>
+     <span class="Courier">
+      plotData
+     </span>
+     <span class="_Override">
+      structure now exists with member arrays
+     </span>
+     <span class="Courier">
+      FIELD1
+     </span>
+     <span class="_Override">
+      and
+     </span>
+     <span class="Courier">
+      FIELD2
+     </span>
+     <span class="_Override">
+      . Let’s examine these member arrays and plot them with iPlot:
+     </span>
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   <span class="_Override">
+    ; Get information about the plotData structure
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    HELP, plotData, /STRUCTURE
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    IPLOT, INDGEN(512), plotData.smoothsine, TITLE='Two Sine Waves'
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    IPLOT, INDGEN(512), plotData.noisysine, /OVERPLOT, $
+   </span>
+  </p>
+  <p class="Code">
+   <span class="_Override">
+    &#160;&#160;&#160;LINESTYLE=2
+   </span>
+   <br />
+   <br />
+   <img src="../../Resources/Images/iopen_plot.gif" style="margin-left: 74.7576px;margin-top: 7.19568px;margin-right: 65.5618px;margin-bottom: 7.920012px;" />
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1004798">
+   </a>
+   <a name="iTools_api_3860698369_1055669_PageTOC_IOPEN_">
+   </a>
+   <span class="_Override">
+    Version History
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    &#160;
+   </span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="28px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr style="height: 13px;">
+     <td>
+      <p>
+       7.1
+      </p>
+     </td>
+     <td>
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1004806">
+   </a>
+   <a name="iTools_api_3860698369_1055676_PageTOC_IOPEN_">
+   </a>
+   <span class="_Override">
+    See Also
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    <a href="../R/READ_JPEG.html" target="" title="" alt="" class="MCXref_0">
+     READ_JPEG
+    </a>
+    ,
+    <a href="../R/READ_TIFF.html" target="" title="" alt="" class="MCXref_0">
+     READ_TIFF
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="../R/READ_GIF.html" target="" title="" alt="">
+     READ_GIF
+    </a>
+    ,
+    <a href="../R/READ_BMP.html" target="" title="" alt="" class="MCXref_0">
+     READ_BMP
+    </a>
+    ,
+    <a href="../R/READ_ASCII.html" target="" title="" alt="" class="MCXref_0">
+     READ_ASCII
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="../R/READ_BINARY.html" target="" title="" alt="">
+     READ_BINARY
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="../R/READ_PNG.html" target="" title="" alt="">
+     READ_PNG
+    </a>
+    ,
+    <a href="../R/READ_DICOM.html" target="" title="" alt="" class="MCXref_0">
+     READ_DICOM
+    </a>
+    ,
+    <a href="../R/READ_PICT.html" target="" title="" alt="" class="MCXref_0">
+     READ_PICT
+    </a>
+   </span>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,635 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WV_FN_PAUL
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WV_FN_PAUL.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WV_FN_PAUL
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="ref_3320460235_1018224">
+   </a>
+   <a name="ref_3320460235_63826">
+   </a>
+   WV_FN_PAUL
+  </h1>
+  <p madcap:conditions="wavelet.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="wavelet.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1009977">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1009979">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1010067">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1010077">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1015586">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1023220">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#ref_3320460235_1010086">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2983">
+   </a>
+   WV_FN_PAUL function constructs wavelet coefficients for the
+   <a name="kanchor2984">
+   </a>
+   Paul
+   <a name="kanchor2985">
+   </a>
+   wavelet function. In real space, the Paul wavelet function is proportional to the complex polynomial (1 –
+   <span class="Italic">
+    i
+   </span>
+   <span class="Italic">
+    x
+   </span>
+   /
+   <span class="Italic">
+    s
+   </span>
+   )^(–
+   <span class="Italic">
+    m
+   </span>
+   –1), where
+   <span class="Italic">
+    s
+   </span>
+   is the wavelet scale,
+   <span class="Italic">
+    m
+   </span>
+   is a non-dimensional parameter, and
+   <span class="Italic">
+    x
+   </span>
+   is the position.
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1009977">
+   </a>
+   <a name="ref_3320460235_1009977_PageTOC_WV_FN_PAUL_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = WV_FN_PAUL( [
+   <span class="Italic">
+    Order
+   </span>
+   ] [,
+   <span class="Italic">
+    Scale
+   </span>
+   ,
+   <span class="Italic">
+    N
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1010078">
+    DOUBLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1015576">
+    FREQUENCY
+   </a>
+   =
+   <span class="Italic">
+    variable
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1010080">
+    SPATIAL
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#ref_3320460235_1010082">
+    WAVELET
+   </a>
+   =
+   <span class="Italic">
+    variable
+   </span>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1009979">
+   </a>
+   <a name="ref_3320460235_1009979_PageTOC_WV_FN_PAUL_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The returned value of this function is an anonymous structure of information about the particular wavelet.
+  </p>
+  <table cellpadding="0" cellspacing="0" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 508px;caption-side: bottom;" class="Default" height="373px">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Structure Tags for Result
+   </p>
+   <col width="153px" />
+   <col width="93px" />
+   <col width="262px" />
+   <thead>
+    <tr style="height: 20px;background-color: #cbcbff;">
+     <td>
+      <p>
+       Tag
+      </p>
+     </td>
+     <td>
+      <p>
+       Type
+      </p>
+     </td>
+     <td>
+      <p>
+       Definition
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       FAMILY
+      </p>
+     </td>
+     <td>
+      <p>
+       STRING
+      </p>
+     </td>
+     <td>
+      <p>
+       ‘Paul’
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       ORDER_NAME
+      </p>
+     </td>
+     <td>
+      <p>
+       STRING
+      </p>
+     </td>
+     <td>
+      <p>
+       ‘Parameter’
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       ORDER_RANGE
+      </p>
+     </td>
+     <td>
+      <p>
+       DBLARR(3)
+      </p>
+     </td>
+     <td>
+      <p>
+       [1, 20, 4] Valid orders [first, last, default]
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       ORDER
+      </p>
+     </td>
+     <td>
+      <p>
+       DOUBLE
+      </p>
+     </td>
+     <td>
+      <p>
+       The chosen
+       <span class="Italic">
+        Order
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       DISCRETE
+      </p>
+     </td>
+     <td>
+      <p>
+       INT
+      </p>
+     </td>
+     <td>
+      <p>
+       0 [0=continuous, 1=discrete]
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       ORTHOGONAL
+      </p>
+     </td>
+     <td>
+      <p>
+       INT
+      </p>
+     </td>
+     <td>
+      <p>
+       0 [0=nonorthogonal, 1=orthogonal]
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       SYMMETRIC
+      </p>
+     </td>
+     <td>
+      <p>
+       INT
+      </p>
+     </td>
+     <td>
+      <p>
+       1 [0=asymmetric, 1=symm.]
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       SUPPORT
+      </p>
+     </td>
+     <td>
+      <p>
+       DOUBLE
+      </p>
+     </td>
+     <td>
+      <p>
+       Infinity [Compact support width]
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       MOMENTS
+      </p>
+     </td>
+     <td>
+      <p>
+       INT
+      </p>
+     </td>
+     <td>
+      <p>
+       1 [Number of vanishing moments]
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 32px;">
+     <td>
+      <p>
+       REGULARITY
+      </p>
+     </td>
+     <td>
+      <p>
+       DOUBLE
+      </p>
+     </td>
+     <td>
+      <p>
+       Infinity [Number of continuous derivatives]
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       E_FOLDING
+      </p>
+     </td>
+     <td>
+      <p>
+       DOUBLE
+      </p>
+     </td>
+     <td>
+      <p>
+       1/sqrt(2) [Autocorrelation
+       <span class="Italic">
+        e
+       </span>
+       -fold distance]
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       FOURIER_PERIOD
+      </p>
+     </td>
+     <td>
+      <p>
+       DOUBLE
+      </p>
+     </td>
+     <td>
+      <p>
+       Ratio of Fourier wavelength to scale
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="ref_3320460235_1010067">
+   </a>
+   <a name="ref_3320460235_1010067_PageTOC_WV_FN_PAUL_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Order
+  </h3>
+  <p>
+   A scalar that specifies the non-dimensional order for the wavelet. The default is 4.
+  </p>
+  <h3 class="Argument">
+   Scale
+  </h3>
+  <p>
+   A scalar that specifies the scale at which to construct the wavelet function.
+  </p>
+  <h3 class="Argument">
+   N
+  </h3>
+  <p>
+   An integer that specifies the number of points in the wavelet function. For Fourier space (SPATIAL=0), the frequencies are constructed following the FFT convention:
+  </p>
+  <p class="Bullet">
+   For N even: 0, 1/N, 2/N, ..., (N–2)/(2N), 1/2, –(N–2)/(2N), ..., –1/N.
+  </p>
+  <p class="Bullet">
+   For N odd: 0, 1/N, 2/N, ..., (N–1)/(2N), –(N–1)/(2N), ..., –1/N.
+  </p>
+  <p>
+   For real space (/SPATIAL), the spatial coordinates are –(N–1)/2...(N–1)/2.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If none of the above arguments are present then the function will simply return the
+   <span class="Italic">
+    Result
+   </span>
+   structure using the default
+   <span class="Italic">
+    Order
+   </span>
+   .
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1010077">
+   </a>
+   <a name="ref_3320460235_1010077_PageTOC_WV_FN_PAUL_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1010078">
+   </a>
+   <a name="ref_3320460235_1010078_Keywords_WV_FN_PAUL_">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1015576">
+   </a>
+   <a name="ref_3320460235_1015576_Keywords_WV_FN_PAUL_">
+   </a>
+   FREQUENCY
+  </h3>
+  <p>
+   Set this keyword to a named variable in which to return the frequency array used to construct the wavelet. This variable will be undefined if SPATIAL is set.
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1010080">
+   </a>
+   <a name="ref_3320460235_1010080_Keywords_WV_FN_PAUL_">
+   </a>
+   SPATIAL
+  </h3>
+  <p>
+   Set this keyword to return the wavelet function in real space. The default is to return the wavelet function in Fourier space.
+  </p>
+  <h3 class="Keyword">
+   <a name="ref_3320460235_1010082">
+   </a>
+   <a name="ref_3320460235_1010082_Keywords_WV_FN_PAUL_">
+   </a>
+   WAVELET
+  </h3>
+  <p>
+   Set this keyword to a named variable in which to return the wavelet function.
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1010084_PageTOC_WV_FN_PAUL_">
+   </a>
+   Reference
+  </h2>
+  <p>
+   Torrence and Compo, 1998: A Practical Guide to Wavelet Analysis.
+   <span class="Italic">
+    Bull. Amer. Meteor. Soc.
+   </span>
+   ,
+   <span class="Bold">
+    79
+   </span>
+   , 61–78.
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1015586">
+   </a>
+   <a name="ref_3320460235_1015586_PageTOC_WV_FN_PAUL_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Plot the Paul wavelet function at scale=100:
+  </p>
+  <p class="Code">
+   n = 1000 ; pick a nice number of points
+  </p>
+  <p class="Code">
+   info = WV_FN_PAUL( 6, 100, n, /SPATIAL, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;WAVELET=wavelet)
+  </p>
+  <p class="Code">
+   plot, float(wavelet), THICK=2
+  </p>
+  <p class="Code">
+   oplot, imaginary(wavelet)
+  </p>
+  <p>
+   Now plot the same wavelet in Fourier space:
+  </p>
+  <p class="Code">
+   info = WV_FN_PAUL( 6, 100, n, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;FREQUENCY=frequency, WAVELET=wave_fourier)
+  </p>
+  <p class="Code">
+   plot, frequency, wave_fourier, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;xrange=[-0.2,0.2], thick=2
+  </p>
+  <h2 class="API">
+   <a name="ref_3320460235_1023220">
+   </a>
+   <a name="ref_3320460235_1023220_PageTOC_WV_FN_PAUL_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="28px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr style="height: 13px;">
+     <td>
+      <p>
+       5.4
+      </p>
+     </td>
+     <td>
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="ref_3320460235_1010086">
+   </a>
+   <a name="ref_3320460235_1010086_PageTOC_WV_FN_PAUL_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="WV_CWT.html#ref_3320460235_1009330" target="" title="" alt="">
+    WV_CWT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WV_FN_GAUSSIAN.html#ref_3320460235_1018230" target="" title="" alt="">
+    WV_FN_GAUSSIAN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="WV_FN_MORLET.html#ref_3320460235_1009579" target="" title="" alt="">
+    WV_FN_MORLET
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

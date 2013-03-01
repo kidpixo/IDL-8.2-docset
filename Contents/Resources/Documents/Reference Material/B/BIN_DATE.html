@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: B" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   BIN_DATE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/B/BIN_DATE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="B_list.html">
+    Routines: B
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    BIN_DATE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="B_856805997_762117">
+   </a>
+   <a name="B_856805997_74370">
+   </a>
+   BIN_DATE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#B_856805997_762128">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_996704">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_762130">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_762135">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_996492">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_993422">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor139">
+   </a>
+   BIN_DATE function converts a standard form
+   <a name="kanchor140">
+   </a>
+   ASCII date/time string to a binary string.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    bin_date.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_762128">
+   </a>
+   <a name="B_856805997_762128_PageTOC_BIN_DATE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = BIN_DATE(
+   <i>
+    Ascii_Time
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_996704">
+   </a>
+   <a name="B_856805997_41222">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The function returns a six-element integer array where:
+  </p>
+  <p class="Bullet">
+   Element 0 is the year (e.g., 1994)
+  </p>
+  <p class="Bullet">
+   Element 1 is the month (1-12)
+  </p>
+  <p class="Bullet">
+   Element 2 is the day (1-31)
+  </p>
+  <p class="Bullet">
+   Element 3 is the hour (0-23)
+  </p>
+  <p class="Bullet">
+   Element 4 is minutes (0-59)
+  </p>
+  <p class="Bullet">
+   Element 5 is seconds (0-59)
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_762130">
+   </a>
+   <a name="B_856805997_762130_PageTOC_BIN_DATE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Ascii_Time
+  </h3>
+  <p>
+   A string containing the date/time to convert in standard ASCII format. If this argument is omitted, the current date/time is used. Standard form is a 24 character string:
+  </p>
+  <p class="Code">
+   DOW MON DD HH:MM:SS YYYY
+  </p>
+  <p>
+   where DOW is the day of the week, MON is the month, DD is the day of month, HH:MM:SS is the time in hours, minutes, second, and YYYY is the year.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_762135">
+   </a>
+   <a name="B_856805997_88689">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_996492">
+   </a>
+   <a name="B_856805997_762135_PageTOC_BIN_DATE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="B_856805997_993422">
+   </a>
+   <a name="B_856805997_993422_PageTOC_BIN_DATE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/CALDAT.html#C_854643309_1083750">
+    CALDAT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../J/JULDAY.html#J_839504493_762378">
+    JULDAY
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SYSTIME.html#S_820040301_762665">
+    SYSTIME
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

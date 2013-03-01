@@ -1,0 +1,683 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HDF_BROWSER
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF Routines/HDF_BROWSER.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF_Routines.html">
+    HDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    HDF_BROWSER
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_1733484267_1006184">
+   </a>
+   <a name="HDF_1733484267_56850">
+   </a>
+   HDF_BROWSER
+  </h1>
+  <p>
+   The
+   <a name="kanchor1141">
+   </a>
+   HDF_BROWSER function presents a graphical user interface (GUI) that allows the user to view the contents of a Hierarchical Data Format (HDF), HDF-EOS, or NetCDF file, and prepare a template for the extraction of HDF data and metadata into IDL. The output template is an IDL structure that may be used when reading HDF files with the HDF_READ routine. If you have several HDF files of identical form, the returned template from HDF_BROWSER may be reused to extract data from these files with HDF_READ. If you do not need a multi-use template, you may call HDF_READ directly.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1303568_PageTOC_HDF_BROWSER_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Template
+   </span>
+   = HDF_BROWSER([
+   <span class="Italic">
+    Filename
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#HDF_1733484267_1006231">
+    CANCEL
+   </a>
+   =
+   <span class="Italic">
+    variable
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#HDF_1733484267_1006234">
+    GROUP
+   </a>
+   =
+   <span class="Italic">
+    widget_id
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#HDF_1733484267_1006238">
+    PREFIX
+   </a>
+   =
+   <span class="Italic">
+    string
+   </span>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1303580_PageTOC_HDF_BROWSER_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a template structure containing heap variable references, or 0 if no file was selected. The user is required to clean up the heap variable references when done with them.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1303583_PageTOC_HDF_BROWSER_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A string containing the name of an HDF file to browse. If
+   <span class="Italic">
+    Filename
+   </span>
+   is not specified, a dialog allows you to choose a file.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1303587_PageTOC_HDF_BROWSER_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="HDF_1733484267_1006231">
+   </a>
+   <a name="HDF_1733484267_852206_Keywords_HDF_BROWSER__">
+   </a>
+   CANCEL
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain the byte value 1 (one) if the user clicked the “Cancel” button or the byte value 0 (zero) otherwise.
+  </p>
+  <h3 class="Keyword">
+   <a name="HDF_1733484267_1006234">
+   </a>
+   <a name="HDF_1733484267_870963_Keywords_HDF_BROWSER__">
+   </a>
+   GROUP
+  </h3>
+  <p>
+   Set this keyword to the widget ID of a widget that calls HDF_BROWSER. When this ID is specified, a death of the caller results in the death of the HDF_BROWSER. The following example demonstrates how to use the GROUP keyword to properly call HDF_BROWSER from within a widget application. To run this example, save the following code as
+   <span class="Courier">
+    browser_example.pro
+   </span>
+   :
+  </p>
+  <p class="Code">
+   PRO BROWSER_EXAMPLE_EVENT,ev
+   <br />
+   <br />
+   &#160;&#160;&#160;WIDGET_CONTROL,ev.id,GET_VALUE=val
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;CASE val of
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'Browser':BEGIN
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;a=HDF_BROWSER(GROUP=ev.top)
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;HELP,a,/st
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;END
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'Exit': WIDGET_CONTROL,ev.top,/DESTROY
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;ENDCASE
+   <br />
+   <br />
+   END
+   <br />
+   <br />
+   PRO BROWSER_EXAMPLE
+   <br />
+   <br />
+   &#160;&#160;&#160;a=WIDGET_BASE(/ROW)
+   <br />
+   &#160;&#160;&#160;b=WIDGET_BUTTON(a,VALUE='Browser')
+   <br />
+   &#160;&#160;&#160;c=WIDGET_BUTTON(a,VALUE='Exit')
+   <br />
+   &#160;&#160;&#160;WIDGET_CONTROL,a,/REALIZE
+   <br />
+   &#160;&#160;&#160;XMANAGER,'browser_example',a
+   <br />
+   <br />
+   END
+  </p>
+  <h3 class="Keyword">
+   <a name="HDF_1733484267_1006238">
+   </a>
+   <a name="HDF_1733484267_852209_Keywords_HDF_BROWSER__">
+   </a>
+   PREFIX
+  </h3>
+  <p>
+   When HDF_BROWSER reviews the contents of an HDF file, it creates default output names for the various data elements. By default these default names begin with a prefix derived from the filename. Set this keyword to a string value to be used in place of the default prefix.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1303599_PageTOC_HDF_BROWSER_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   template = HDF_BROWSER('test.hdf')
+   <br />
+   output_structure = HDF_READ(TEMPLATE=template)
+  </p>
+  <p>
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;or,
+  </p>
+  <p class="Code">
+   output_structure = HDF_READ('test.hdf', TEMPLATE=template)
+  </p>
+  <h3>
+   <a name="HDF_1733484267_12682">
+   </a>
+   Using the HDF Browser Interface
+  </h3>
+  <p class="indent">
+   When you call the HDF_BROWSER function from the command line or using the
+   <span class="Bold">
+    Import HDF
+   </span>
+   macro, the
+   <span class="Bold">
+    HDF Browser
+   </span>
+   window is displayed.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    HDF Browser Window
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p style="text-align: center;">
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Use the following steps when working with the
+   <span class="Bold">
+    HDF Browser
+   </span>
+   dialog:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     <span class="Bold">
+      Select the type of file you are opening.
+     </span>
+     The following table describes the
+     <span class="Bold">
+      Display
+     </span>
+     field options:
+    </td>
+   </tr>
+  </table>
+  <table style="width: 427px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="103px" class="Column-Column1" />
+   <col width="324px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <b>
+        Display
+       </b>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Select one of the following options to indicate the type of file you are reading:
+      </p>
+      <p>
+       <b>
+        HDF/NETCDF
+       </b>
+      </p>
+      <p>
+       <b>
+        HDF-EOS
+       </b>
+      </p>
+      <p>
+       This selection toggles the following droplist between
+       <span class="Bold">
+        HDF Summary
+       </span>
+       and
+       <span class="Bold">
+        HDF-EOS Summary
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       <b>
+        HDF Summary
+       </b>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Displays the number of items in each of the following categories:
+      </p>
+      <p>
+       <span class="Bold">
+        DF24 (24-bit Images)
+       </span>
+       — 24-bit images and their attributes
+      </p>
+      <p>
+       <span class="Bold">
+        DFR8 (8-bit Images)
+       </span>
+       — 8-bit images and their attributes
+      </p>
+      <p>
+       <span class="Bold">
+        DFP (Palettes)
+       </span>
+       — Image palettes
+      </p>
+      <p>
+       <span class="Bold">
+        SD (Variables/Attributes)
+       </span>
+       — Scientific Datasets and attributes
+      </p>
+      <p>
+       <span class="Bold">
+        AN (Annotations)
+       </span>
+       — Annotations
+      </p>
+      <p>
+       <span class="Bold">
+        GR (Generic Raster)
+       </span>
+       — Images
+      </p>
+      <p>
+       <span class="Bold">
+        GR Global (File) Attributes
+       </span>
+       — Image attributes
+      </p>
+      <p>
+       <span class="Bold">
+        VGroups
+       </span>
+       — Generic data groups
+      </p>
+      <p>
+       <span class="Bold">
+        VData
+       </span>
+       — Generic data and attributes
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       <b>
+        HDF-EOS Summary
+       </b>
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       Displays the number of items in each of the following categories:
+      </p>
+      <p>
+       <span class="Bold">
+        Point
+       </span>
+       — EOS point data and attributes
+      </p>
+      <p>
+       <span class="Bold">
+        Swath
+       </span>
+       — EOS swath data and attributes
+      </p>
+      <p>
+       <span class="Bold">
+        Grid
+       </span>
+       — EOS grid data and attributes
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     <span class="Bold">
+      Select any element that contains data.
+     </span>
+     Attributes of the selected data appear in the lower textbox. Use other dialog options as follows:
+    </td>
+   </tr>
+  </table>
+  <table style="width: 427px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="103px" class="Column-Column1" />
+   <col width="324px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <b>
+        Preview
+       </b>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Select an image, 2D data set, or 3x
+       <span class="Italic">
+        n
+       </span>
+       x
+       <span class="Italic">
+        m
+       </span>
+       data set from the pulldown menu. Make a selection from the following and click
+       <span class="Bold">
+        Preview
+       </span>
+       to create a display:
+      </p>
+      <p>
+       <span class="Bold">
+        Preview Image
+       </span>
+       — displays an image or a plot of a 2&#8209;D data set (the default)
+      </p>
+      <p>
+       <span class="Bold">
+        Preview Surface
+       </span>
+       — displays a surface plot
+      </p>
+      <p>
+       <span class="Bold">
+        Preview Contour
+       </span>
+       — displays a contour plot
+      </p>
+      <p>
+       <span class="Bold">
+        Preview Show3
+       </span>
+       — displays an image, surface, and contour plot
+      </p>
+      <p>
+       <span class="Bold">
+        Fit to Window
+       </span>
+       — fits the display to the visible area of window
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       <b>
+        Read
+       </b>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Import the selected data into IDL. Select this checkbox to extract the current data or metadata item from the HDF file.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <b>
+        Extract As
+       </b>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Enter name for the extracted data or metadata item. Default names are generated for all data items, but may be changed at any time.
+      </p>
+      <p>
+       The
+       <b>
+        Read
+       </b>
+       checkbox must be selected for the item to be extracted.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       <b>
+        Color Table
+       </b>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Select this option to apply a selected, pre-defined color table to the data.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       <b>
+        OK
+       </b>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Complete any selected import actions.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p>
+       <b>
+        Cancel
+       </b>
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       Dismiss the dialog without making changes.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     <span class="Bold">
+      Select additional data or complete the operation.
+     </span>
+     Continue selecting to read and name the data or metadata items you want to import into IDL and then select one of the following options:
+    </td>
+   </tr>
+  </table>
+  <table style="width: 427px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="103px" class="Column-Column1" />
+   <col width="324px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1" style="font-weight: normal;">
+      <p>
+       <b>
+        OK
+       </b>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Generate the template used to import HDF data.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2" style="font-weight: normal;">
+      <p>
+       <b>
+        Cancel
+       </b>
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       Dismiss the dialog without making changes.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="HDF_1733484267_1303687_PageTOC_HDF_BROWSER_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="HDF_1733484267_1303695_PageTOC_HDF_BROWSER_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="HDF_READ.html#HDF_1733484267_1010345">
+    HDF_READ
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

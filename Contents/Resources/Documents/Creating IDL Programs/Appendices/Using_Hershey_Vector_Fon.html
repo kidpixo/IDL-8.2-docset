@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Tasks|Fonts and Colors" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Using Hershey Vector Fonts
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Appendices/Using_Hershey_Vector_Fon.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Programming Tasks.html">
+    Tasks
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Fonts and Colors.html">
+    Fonts and Colors
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Using Hershey Vector Fonts
+   </span>
+  </div>
+  <h1>
+   <a name="fonts_2203613354_1049744">
+   </a>
+   <a name="fonts_2203613354_49128">
+   </a>
+   Using Hershey Vector Fonts
+  </h1>
+  <p>
+   The Hershey vector fonts used by IDL were digitized by Dr. A.V.
+   <a name="kanchor3585">
+   </a>
+   Hershey of the Naval Weapons Laboratory. Characters in the vector fonts are stored as equations, and can be scaled and rotated in three dimensions. They are drawn as lines on the current graphics device, and are displayed quickly and efficiently by IDL. The Hershey vector fonts are built into IDL itself, and are always available.
+  </p>
+  <p>
+   All the available fonts are illustrated below. The default Hershey vector font is Font 3, Simplex Roman.
+  </p>
+  <h2 class="API">
+   <a name="fonts_2203613354_25701">
+   </a>
+   Using Hershey Vector Fonts
+  </h2>
+  <p>
+   To use the Hershey vector font system with IDL Direct Graphics (this is the default behavior), either set the value of the IDL system variable !P.FONT to -1 (negative one), or set the FONT keyword of one of the Direct Graphics routines to -1. To use the vector font system with IDL Object Graphics, consult
+   <a href="../../Object Classes/Graphics/IDLgrFont.html" target="" title="" alt="" class="MCXref_0">
+    IDLgrFont
+   </a>
+   . To use the vectors fonts with IDL's Graphics functions, see the
+   <a href="../../Reference Material/T/TEXT.html" target="" title="" alt="" class="MCXref_0">
+    TEXT
+   </a>
+   function.
+  </p>
+  <p>
+   Once the vector font system is selected, use an embedded formatting command to select a vector font (or fonts) for each string (see
+   <a href="Embedded_Formatting_Comm.html" target="" title="" alt="" class="MCXref_0">
+    Embedded Formatting Commands
+   </a>
+   for details).
+  </p>
+  <p>
+   For example, to use the Complex Italic Hershey font for a direct graphics plot, you could use the following command:
+  </p>
+  <p class="Code">
+   PLOT, RANDOMU(seed,10), FONT=-1, TITLE="!8Title of my plot"
+  </p>
+  <p>
+   Similarly, to use the same font for an IDL Graphics function plot, you could use the following command:
+  </p>
+  <p class="Code">
+   p = PLOT(RANDOMU(seed,10), FONT_NAME="Hershey 8", TITLE="Title of my plot")
+  </p>
+  <h2 class="API">
+   <a name="fonts_2203613354_1049783">
+   </a>
+   <a name="kanchor3586">
+   </a>
+   <a name="fonts_2203613354_27508">
+   </a>
+   ISO Latin 1 Encoding
+  </h2>
+  <p>
+   The default Hershey vector font (Font 3, Simplex Roman) follows the ISO Latin 1 Encoding scheme and contains many international characters. The illustration of this font below can be used to find the codes for the special characters.
+  </p>
+  <p>
+   <a name="kanchor3587">
+   </a>
+   For example, suppose you
+   <a name="kanchor3588">
+   </a>
+   want to display
+   <a name="kanchor3589">
+   </a>
+   some text with an Angstrom symbol in it. Looking at the chart for font 3, we see that the Angstrom symbol has code 197. Non-printable characters can be represented in IDL using octal or hexadecimal notation and the STRING function (see Non-Printing Characters for details). So the Angstrom can be printed by inserting a
+   <span class="Courier">
+    STRING(197B)
+   </span>
+   character in a Direct Graphics text string as follows:
+  </p>
+  <p class="Code">
+   XYOUTS,.1, .5, 'Here is an Angstrom symbol: ' + STRING(197B), $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;/NORM, CHARSIZE=3
+  </p>
+  <h2 class="API">
+   Greek Fonts
+  </h2>
+  <p>
+   Different character sets map
+   <a name="kanchor3590">
+   </a>
+   Greek characters to keyboard keys differently. The Microsoft Windows Symbol font, for example, maps the capital letter Chi (
+   <span class="Symbol">
+    C
+   </span>
+   ) to the Latin capital C, whereas the Hershey Greek fonts map the capital Gamma (
+   <span class="Symbol">
+    G
+   </span>
+   ) to the latin capital C. Use the font tables under "Hershey Vector Font Samples" to determine the mapping between Greek and Latin character sets.
+  </p>
+  <h2 class="API">
+   <a name="fonts_2203613354_99802">
+   </a>
+   Customizing the Hershey Vector Fonts
+  </h2>
+  <p>
+   The
+   <a class="MCXref_Heading_0" href="../../Reference Material/E/EFONT.html#E_841667181_1033751" target="" title="" alt="">
+    EFONT
+   </a>
+   procedure is a widget application that allows you to edit the Hershey fonts and save the results. Use this routine to add special characters or completely new, custom fonts to the Hershey fonts.
+  </p>
+  <h2 class="API">
+   Hershey Vector Font Samples
+  </h2>
+  <p>
+   The following figures show samples of various Hershey vector-drawn fonts. The
+   <a href="../../Reference Material/S/SHOWFONT.html" target="" title="" alt="" class="MCXref_0">
+    SHOWFONT
+   </a>
+   command was used to create these figures. For example, to display the following figure on the screen, you would use the command:
+  </p>
+  <p class="Code">
+   SHOWFONT, 3, 'Simplex Roman'
+  </p>
+  <p>
+   To output this figure to a postscript file:
+  </p>
+  <p class="Code">
+   SET_PLOT, 'PS'
+  </p>
+  <p class="Code">
+   SHOWFONT, 3, 'Simplex Roman'
+  </p>
+  <p class="Code">
+   DEVICE, /CLOSE
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   To read the character number, add the column index (along the top) to the row index. For example, the capital letter "A" is 65, and the "+" symbol is 43.
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font03.gif" style="width: 50%;height: 50%;" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font04.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font05.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font06.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font07.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font08.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font09.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font11.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font12.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font13.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font14.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font15.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font16.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font17.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font18.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../../images/font20.gif" />
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

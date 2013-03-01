@@ -1,0 +1,815 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   COMPILE_OPT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/COMPILE_OPT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    COMPILE_OPT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_998462">
+   </a>
+   <a name="C_854643309_82933">
+   </a>
+   COMPILE_OPT
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_999586">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_999588">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1052152">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor333">
+   </a>
+   COMPILE_OPT statement allows you to give the IDL compiler information that changes some of the default rules for compiling the function or procedure within which the COMPILE_OPT statement appears.
+  </p>
+  <p>
+   We recommend the use of
+  </p>
+  <p class="Code">
+   COMPILE_OPT IDL2
+  </p>
+  <p>
+   in all new code intended for use in a reusable library. We further recommend the use of
+  </p>
+  <p class="Code">
+   COMPILE_OPT idl2, HIDDEN
+  </p>
+  <p>
+   in all such routines that are not intended to be called directly by regular users (e.g. helper routines that are part of a larger package).
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_999586">
+   </a>
+   <a name="C_854643309_999586_PageTOC_COMPILE_OPT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   COMPILE_OPT
+   <i>
+    opt
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   [,
+   <i>
+    opt
+   </i>
+   <sub class="italic">
+    2
+   </sub>
+   , ...,
+   <i>
+    opt
+   </i>
+   <sub class="italic">
+    n
+   </sub>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_999588">
+   </a>
+   <a name="C_854643309_999588_PageTOC_COMPILE_OPT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   opt
+   <sub class="italic">
+    n
+   </sub>
+  </h3>
+  <p>
+   This argument can be any of the following:
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    IDL2
+   </span>
+   — A shorthand way of saying:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;COMPILE_OPT DEFINT32, STRICTARR
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    DEFINT32
+   </span>
+   — IDL should assume that lexical integer constants default to the 32-bit type rather than the usual default of 16-bit integers. This takes effect from the point where the COMPILE_OPT statement appears in the routine being compiled and remains in effect until the end of the routine. The following table illustrates how the DEFINT32 argument changes the interpretation of integer constants.
+  </p>
+  <table style="width: 423px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Examples of the Effect of the DEFINT32 Argument
+   </p>
+   <col width="176px" />
+   <col width="113px" />
+   <col width="134px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Constant
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Normal Type
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       DEFINT32 Type
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Bold">
+        Without type specifier:
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        42
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       INT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       LONG
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '2a'x
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       INT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       LONG
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        42u
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       UINT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       ULONG
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '2a'xu
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       UINT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       ULONG
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Bold">
+        With type specifier:
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        0b
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       BYTE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       BYTE
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        0s
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       INT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       INT
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        0l
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       LONG
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       LONG
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        42.0
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       FLOAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       FLOAT
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        42d
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       DOUBLE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       DOUBLE
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        42us
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       UINT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       UINT
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        42ul
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ULONG
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       ULONG
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        42ll
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       LONG64
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       LONG64
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       <span class="Courier">
+        42ull
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       ULONG64
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       ULONG64
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Bullet">
+   <span class="Bold">
+    HIDDEN
+   </span>
+   — This routine should not be displayed by HELP, unless the FULL keyword to HELP is used. This directive can be used to hide helper routines that regular IDL users are not interested in seeing.
+  </p>
+  <p class="indent">
+   A side-effect of making a routine hidden is that IDL will not print a “Compile module” message for it when it is compiled from the library to satisfy a call to it. This makes hidden routines appear built-in to the user.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    LOGICAL_PREDICATE
+   </span>
+   — When running this routine, from the point where the COMPILE_OPT statement appears until the end of the routine, treat any non-zero or non-NULL predicate value as “true,” and any zero or NULL predicate value as “false.”
+  </p>
+  <p class="indent">
+   <span class="Helvetica_Bold">
+    Background
+   </span>
+  </p>
+  <p class="indent">
+   A predicate expression is an expression that is evaluated as being “true” or “false” as part of a statement that controls program execution. IDL evaluates such expressions in the following contexts:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Courier">
+      IF...THEN...ELSE
+     </span>
+     statements
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Courier">
+      ?&#160;:
+     </span>
+     inline conditional expressions
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Courier">
+      WHILE...DO
+     </span>
+     statements
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Courier">
+      REPEAT...UNTIL
+     </span>
+     statements
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     when evaluating the result from an INIT function method to determine if a call to OBJ_NEW successfully created a new object
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   By default, IDL uses the following rules to determine whether an expression is true or false:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Integer
+     </span>
+     — An integer is considered true if its least significant bit is 1, and false otherwise. Hence, odd integers are true and even integers (including zero) are false. This interpretation of integer truth values is sometimes referred to as “bitwise,” reflecting the fact that the value of the least significant bit determines the result.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Other
+     </span>
+     — Non-integer numeric types are true if they are non-zero, and false otherwise. String and heap variables (pointers and object references) are true if they are non-NULL, and false otherwise.
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   The LOGICAL_PREDICATE option alters the way IDL evaluates predicate expressions. When LOGICAL_PREDICATE is set for a routine, IDL uses the following rules to determine whether an expression is true or false:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Numeric Types
+     </span>
+     — A number is considered true if its value is non-zero, and false otherwise.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Other Types
+     </span>
+     — Strings and heap variables (pointers and object references) are considered true if they are non-NULL, or false otherwise.
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   <span class="Helvetica_Bold">
+    Note on the NOT Operator
+   </span>
+  </p>
+  <p class="indent">
+   When using the LOGICAL_PREDICATE compile option, you must be aware of the fact that applying the IDL NOT operator to integer data computes a
+   <i>
+    bitwise
+   </i>
+   negation (1’s complement), and is generally not applicable for use in logical computations. Consider the common construction:
+  </p>
+  <p class="Code_Indented">
+   WHILE (NOT EOF(lun)) DO BEGIN
+  </p>
+  <p class="Code_Indented">
+   ...
+  </p>
+  <p class="Code_Indented">
+   ENDWHILE
+  </p>
+  <p class="indent">
+   The EOF function returns 0 while the file specified by LUN has data left, and returns 1 when hits the end of file. However, the expression “NOT 1” has the numeric value &#8209;2. When the LOGICAL_PREDICATE option is not in use, the WHILE statement sees -2 as false; if the LOGICAL_PREDICATE is in use, &#8209;2 is a true value and the above loop will not terminate as desired.
+  </p>
+  <p class="indent">
+   The proper way to write the above loop uses the ~ logical negation operator:
+  </p>
+  <p class="Code_Indented">
+   WHILE (~ EOF(lun)) DO BEGIN
+  </p>
+  <p class="Code_Indented">
+   ...
+  </p>
+  <p class="Code_Indented">
+   ENDWHILE
+  </p>
+  <p class="indent">
+   Note that this version will work properly whether or not the LOGICAL_PREDICATE compile option is in use. Logical negation operations should always use the ~ operator in preference to the NOT operator, reserving NOT exclusively for bitwise computations.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    OBSOLETE
+   </span>
+   — If the user has !WARN.OBS_ROUTINES set to True, attempts to compile a call to this routine will generate warning messages that this routine is obsolete. This directive can be used to warn people that there may be better ways to perform the desired task.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    STRICTARR
+   </span>
+   — While compiling this routine, IDL will not allow the use of parentheses to index arrays, reserving their use only for functions. Square brackets are then the only way to index arrays. Use of this directive will prevent the addition of a new function in future versions of IDL, or new libraries of IDL code from any source, from changing the meaning of your code, and is an especially good idea for library functions.
+  </p>
+  <p class="indent">
+   Use of STRICTARR can eliminate many uses of the FORWARD_FUNCTION definition.
+  </p>
+  <p class="NoteIndented">
+   STRICTARR has no effect on the use of parentheses to reference structure tags using the tag index, which is not an array indexing operation. For example, no syntax error will occur when compiling the following code:
+   <br />
+  </p>
+  <p class="Code_Indented">
+   <span class="Courier">
+    COMPILE_OPT STRICTARR
+   </span>
+  </p>
+  <p class="Code_Indented">
+   <span class="Courier">
+    mystruct = {a:0, b:1}
+   </span>
+  </p>
+  <p class="Code_Indented">
+   <span class="Courier">
+    byindex_0 = mystruct.(0)
+   </span>
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    STRICTARRSUBS
+   </span>
+   — When IDL subscripts one array using another array as the source of array indices, the default behavior is to clip any out-of-range indices into range and then quietly use the resulting data without error. This behavior is described in
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Components of the IDL Language/Understanding_Array_Subs.html#arrays_3727706888_515270" target="" title="" alt="">
+    Understanding Array Subscripts
+   </a>
+   . Specifying STRICTARRSUBS will instead cause IDL to treat such out-of-range array subscripts within the body of the routine containing the COMPILE_OPT statement as an error. The position of the STRICTARRSUBS option within the module is not important: All subscripting operations within the entire body of the specified routine will be treated this way.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1052152">
+   </a>
+   <a name="C_854643309_1052152_PageTOC_COMPILE_OPT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Added STRICTARRSUBS option
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added LOGICAL_PREDICATE option
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

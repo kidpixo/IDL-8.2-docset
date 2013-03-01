@@ -1,0 +1,425 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Additional Topics|Medical Imaging in IDL|IDL DICOM Reference|IDLffDicomExCfg" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffDicomExCfg::Echo
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#DICOM_Medical/IDL DICOM Reference/IDLffDicomExCfg__Echo.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../OtherTopics.html">
+    Additional Topics
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Expanded DICOM Support in IDL/ExpandedDICOMFunctionality.html">
+    Medical Imaging in IDL
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="DICOMEX_GETCONFIGFILEPAT.html">
+    IDL DICOM Reference
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffDicomExCfg::Echo
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="dicom_ex_4010397576_1132651">
+   </a>
+   <a name="dicom_ex_4010397576_42676">
+   </a>
+   IDLffDicomExCfg::Echo
+  </h1>
+  <p>
+   The IDLffDicomExCfg::Echo function method lets you test the network connection to a remote machine that supports Query SCP or Storage SCP service types. See Returning Connection Status with Echo for additional information.
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1132656">
+   </a>
+   <a name="dicom_ex_4010397576_1132656_PageTOC_IDLffDicomExCfg">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   =
+   <span class="Italic">
+    Obj
+   </span>
+   -&gt;[
+   <a href="IDLffDicomExCfg.html#dicom_ex_4010397576_1132499" class="MCXref_0">
+    IDLffDicomExCfg
+   </a>
+   ::]Echo(
+   <span class="Italic">
+    ApplicationEntityName
+   </span>
+   [,&#160;
+   <a href="#dicom_ex_4010397576_1132765" class="MCXref_0">
+    COUNT
+   </a>
+   =
+   <span class="Italic">
+    variable
+   </span>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1132661">
+   </a>
+   <a name="dicom_ex_4010397576_1132661_PageTOC_IDLffDicomExCfg">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   An array of strings containing the results of the echo. The number of elements and information returned depends on whether the echo succeeded.
+  </p>
+  <table style="mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: auto;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <col style="width: 19px;" />
+   <col style="width: 19px;" />
+   <col style="width: 14px;" />
+   <thead>
+    <tr>
+     <th class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      &#160;
+     </th>
+     <th class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Contents
+      </p>
+     </th>
+     <th class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Example Value
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Success value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       Echo Succeeded:
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Application Entity Name
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       AE Name: (StorScp)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Application Entity Title
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       AE Title: (IDL_STORE_SCP)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Host Name
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       Host Name: (10.17.2.59)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       4
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       IP&#160;Address
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       IP Address: (10.17.2.59)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       5
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       TCP/IP&#160;Port
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       TCP/IP Port: (104)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       6
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Implementation Version
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       Implementation Version: (MergeCOM3_321)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       7
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       Implementation Class UID
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       Implementation Class UID: (2.16.840.1.114226)
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table style="mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: auto;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <col style="width: 19px;" />
+   <col style="width: 19px;" />
+   <col style="width: 14px;" />
+   <thead>
+    <tr>
+     <th class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      &#160;
+     </th>
+     <th class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Contents
+      </p>
+     </th>
+     <th class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Example Value
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Success value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       Echo Failed:
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Application Entity Name
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       AE Name: (StorScp)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Application Entity Title
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       AE Title: (IDL_STORE_SCP)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       Reason
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       Open Association Failed (Failed to connect to remote host)
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1132761">
+   </a>
+   <a name="dicom_ex_4010397576_1132761_PageTOC_IDLffDicomExCfg">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   ApplicationEntityName
+  </h3>
+  <p>
+   A string containing the name of a defined Application Entity.
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1132764">
+   </a>
+   <a name="dicom_ex_4010397576_1132764_PageTOC_IDLffDicomExCfg">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dicom_ex_4010397576_1132765">
+   </a>
+   <a name="dicom_ex_4010397576_1132765_Keywords_IDLffDicomExCfg">
+   </a>
+   COUNT
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain an integer representing the number of strings in the returned string array. COUNT will be 8 when the echo succeeds or 4 when the echo fails.
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1132767">
+   </a>
+   <a name="dicom_ex_4010397576_1132767_PageTOC_IDLffDicomExCfg">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

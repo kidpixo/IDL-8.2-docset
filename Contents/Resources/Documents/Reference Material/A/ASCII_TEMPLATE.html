@@ -1,0 +1,1480 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: A" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   ASCII_TEMPLATE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/A/ASCII_TEMPLATE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="A_list.html">
+    Routines: A
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    ASCII_TEMPLATE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="A_850317933_983117">
+   </a>
+   <a name="A_850317933_16502">
+   </a>
+   ASCII_TEMPLATE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#A_850317933_871240">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_992766">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_871000">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_871005">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_1025415">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_871035">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_991348">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor104">
+   </a>
+   ASCII_TEMPLATE function presents a graphical user interface (GUI) which generates a template defining an ASCII file format. Templates are IDL structure variables that may be used when reading ASCII files with the READ_ASCII routine. See
+   <a class="MCXref_Heading_0" href="../R/READ_ASCII.html#R_822202989_956701">
+    READ_ASCII
+   </a>
+   for details on reading ASCII files.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    ascii_template.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you want to view a text file in an existing project, simply drag it from the Project Explorer and drop it on an Editor. The file will open in a new Editor tab.
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_871240">
+   </a>
+   <a name="A_850317933_871240_PageTOC_ASCII_TEMPLATE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = ASCII_TEMPLATE( [
+   <i>
+    Filename
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#A_850317933_871007">
+    BROWSE_LINES
+   </a>
+   =
+   <i>
+    lines
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#A_850317933_871139">
+    CANCEL
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#A_850317933_884032">
+    GROUP
+   </a>
+   =
+   <i>
+    widget_id
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_992766">
+   </a>
+   <a name="A_850317933_89421">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a template defining an ASCII file format.
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_871000">
+   </a>
+   <a name="A_850317933_871000_PageTOC_ASCII_TEMPLATE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A string containing the name of a file to base the template on. If
+   <i>
+    Filename
+   </i>
+   is not specified, a dialog allows you to choose a file.
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_871005">
+   </a>
+   <a name="A_850317933_871005_PageTOC_ASCII_TEMPLATE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="A_850317933_871007">
+   </a>
+   <a name="A_850317933_871007_Keywords_ASCII_TEMPLATE__">
+   </a>
+   BROWSE_LINES
+  </h3>
+  <p>
+   Set this keyword equal to the number of lines that will be read in at a time when the “Browse” button is selected. The default is 50 lines.
+  </p>
+  <h3 class="Keyword">
+   <a name="A_850317933_871139">
+   </a>
+   <a name="A_850317933_871139_Keywords_ASCII_TEMPLATE__">
+   </a>
+   CANCEL
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain the byte value 1 if the user clicked the “Cancel” button, or 0 otherwise.
+  </p>
+  <h3 class="Keyword">
+   <a name="A_850317933_884032">
+   </a>
+   <a name="A_850317933_884032_Keywords_ASCII_TEMPLATE__">
+   </a>
+   GROUP
+  </h3>
+  <p>
+   The widget ID of an existing widget that serves as “group leader” for the ASCII_TEMPLATE graphical user interface. When a group leader is killed, for any reason, all widgets in the group are also destroyed.
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_1025415">
+   </a>
+   <a name="A_850317933_871330_PageTOC_ASCII_TEMPLATE_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Use the following command to generate a template structure from the file “myFile”:
+  </p>
+  <p class="Code">
+   myTemplate = ASCII_TEMPLATE(myFile)
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If no filename is supplied in the call to the ASCII_TEMPLATE function, a file selection dialog is displayed prior to the first ASCII_TEMPLATE screen.
+  </p>
+  <h3>
+   <a name="A_850317933_1025433">
+   </a>
+   <a name="A_850317933_96644">
+   </a>
+   Using the
+   <a name="kanchor105">
+   </a>
+   ASCII Template Dialog
+  </h3>
+  <p>
+   The ASCII_TEMPLATE function lets you describe the data organization of an ASCII file and generates a template that describes how to correctly import the ASCII data. The READ_ASCII function accesses the data in an ASCII file, using the template to determine how to import the data correctly. (You only have to explicitly call READ_ASCII when you call ASCII_TEMPLATE from the command line. When you start the
+   <span class="Bold">
+    ASCII Template
+   </span>
+   dialog from an iTool or the workbench, the READ_ASCII routine is called for you.) The template is an IDL variable that you can use to read other files with the same organization.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   At any time you are in the ASCII_TEMPLATE dialog and you want to view your data in the Workbench Editor, click the
+   <span class="Bold">
+    Open in Editor
+   </span>
+   button.
+  </p>
+  <p>
+   After starting the
+   <span class="Bold">
+    ASCII Template
+   </span>
+   dialog, complete the following steps to create the template:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     <span class="Bold">
+      Select the ASCII file
+     </span>
+     . In the
+     <span class="Bold">
+      Select File to Open
+     </span>
+     dialog, select
+     <span class="Courier">
+      sine_waves
+     </span>
+     .
+     <span class="Courier">
+      txt
+     </span>
+     from the
+     <span class="Courier">
+      examples\data
+     </span>
+     subdirectory of your IDL distribution. The ASCII Template window is displayed.
+    </td>
+   </tr>
+  </table>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    The ASCII Template Step 1, Defining Data Type and Range
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       <img src="../../images/ascii01.gif" style="margin-left: 3.6684px;margin-top: 3.2148px;margin-right: 2.331356px;width: 483px;height: 388px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     <a name="A_850317933_84846">
+     </a>
+     <span class="Bold">
+      Define ASCII data type and range
+     </span>
+     .
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   For this data set, make sure the following options are selected:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Field Type
+     </span>
+     of
+     <span class="Bold">
+      Delimited
+     </span>
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Comment String to Ignore
+     </span>
+     is blank as there are no file comments
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Data Starts at Line
+     </span>
+     value of
+     <span class="Courier">
+      1
+     </span>
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   The following table describes each of these options.
+  </p>
+  <table style="caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="109px" class="Column-Column1" />
+   <col width="313px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Field Type
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Choose from fixed width or delimited.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Comment String to Ignore
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Enter any character that indicates text sections to ignore.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Data Starts at Line
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Enter the line number containing the first line of data to be read.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p>
+       Selected Text File
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       Shows the real data from the selected text file. The option is also given to
+       <span class="Bold">
+        Get next 50 Lines
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     <span class="Bold">
+      Click Next
+     </span>
+     . The second ASCII_TEMPLATE dialog screen appears:
+    </td>
+   </tr>
+  </table>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    The ASCII Template Step 2, Defining Delimeters/Fields
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p style="text-align: center;">
+       <img src="../../images/ascii02.gif" style="margin-left: 6.20568px;margin-top: 5.99976px;margin-right: 5.793832px;margin-bottom: 3.121197px;width: 521px;height: 417px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     <span class="Bold">
+      Define ASCII data field characteristics
+     </span>
+     . For this data set, select the following options:
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Number of Fields Per Line
+     </span>
+     equals
+     <span class="Courier">
+      2
+     </span>
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Delimiter Between Data Elements
+     </span>
+     equals
+     <span class="Bold">
+      White space
+     </span>
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Value to Assign to Missing Data
+     </span>
+     option is
+     <span class="Bold">
+      IEEE NaN
+     </span>
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Selected Records
+     </span>
+     shows data in the file.
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   The following table describes each of these options:
+  </p>
+  <table style="caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="109px" class="Column-Column1" />
+   <col width="313px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Number of Fields Per Line
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Specify how many fields should appear per line.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Delimiter Between Data Elements
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Define the delimiter type between data elements.
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       If you selected a
+       <span class="Bold">
+        Field Type
+       </span>
+       of
+       <span class="Bold">
+        Fixed Width
+       </span>
+       on the previous dialog screen, this field is not visible.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Value to Assign Missing Data
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Choose a value to assign any missing data. Select
+       <span class="Bold">
+        IEEE Nan
+       </span>
+       or define a custom value.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p>
+       Selected Records
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       Shows the data itself in its desired column-delimited format.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     <span class="Bold">
+      Click Next
+     </span>
+     . The third ASCII_TEMPLATE dialog screen appears:
+    </td>
+   </tr>
+  </table>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    ASCII Template Step 3, Field Specifications
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p style="text-align: center;">
+       <img src="../../images/ascii03.gif" style="margin-left: 6.20568px;margin-top: 5.99976px;margin-right: 5.793832px;margin-bottom: 3.121197px;width: 523px;height: 420px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     <span class="Bold">
+      Specify field characteristics
+     </span>
+     . For this data set, define the following:
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     Name
+     <span class="Bold">
+      Field1
+     </span>
+     <span class="Courier">
+      SmoothSine
+     </span>
+     and
+     <span class="Bold">
+      Field2
+     </span>
+     <span class="Courier">
+      NoisySine
+     </span>
+     by selecting each field and entering the names in the
+     <span class="Bold">
+      Name
+     </span>
+     field. The
+     <span class="Bold">
+      Type
+     </span>
+     fields are correct and do not need to be changed.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     Accept the default
+     <span class="Bold">
+      Grouping
+     </span>
+     (none).
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   The following table describes each of these options:
+  </p>
+  <table style="caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="109px" class="Column-Column1" />
+   <col width="313px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Name
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Allows you to name your fields. Default values are
+       <span class="Bold">
+        Field1
+       </span>
+       ,
+       <span class="Bold">
+        Field2
+       </span>
+       , and so on. You can enter the name into the
+       <span class="Bold">
+        Name
+       </span>
+       field to the right.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Data Type
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Allows you to set the data type for your fields. You can enter a different type by selecting it from the
+       <span class="Bold">
+        Type
+       </span>
+       drop-down menu.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Location
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Allows you to specify the starting location (in columns) for each field when using fixed width fields. You can enter a new value in the
+       <span class="Bold">
+        Column
+       </span>
+       field to the right. (The
+       <span class="Bold">
+        Location
+       </span>
+       table column and
+       <span class="Bold">
+        Column
+       </span>
+       text field only appear when using fixed width fields.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Grouping
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Lets you join selected fields into a single field that is to be manipulated or displayed as a group. The default is no grouping.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       Selected Records
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       Shows a sample of the data with your defined configuration parameters.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     <span class="Bold">
+      Create the template.
+     </span>
+     Click
+     <span class="Bold">
+      Finish
+     </span>
+     .
+    </td>
+   </tr>
+  </table>
+  <p>
+   The result of these actions depends on the location from which you launched the
+   <span class="Bold">
+    ASCII Template
+   </span>
+   dialog. The READ_ASCII function, which reads data from a file according to the template specification, is automatically called when you access the
+   <span class="Bold">
+    ASCII Template
+   </span>
+   dialog from iTools. From the command line, you must explicitly read the ASCII data with the template specification. After defining the structure of your ASCII data using the
+   <span class="Bold">
+    ASCII Template
+   </span>
+   dialog, refer to the appropriate section:
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    iTools ASCII data access
+   </span>
+   — the ASCII data is read and placed in the Data Manager. You can display single or multiple fields of the data using the
+   <span class="Bold">
+    Insert Visualization
+   </span>
+   dialog.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    IOPEN ASCII data access
+   </span>
+   — when you call IOPEN with an ASCII data file, the
+   <span class="Bold">
+    ASCII Template
+   </span>
+   dialog is invoked. After you have defined the ASCII data file structure through the dialog, the IOPEN procedure opens the file, reads the ASCII data from it, and adds one or more variables containing the data to IDL's current scope.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Command line ASCII data access
+   </span>
+   — the template is a structure defining the format of the ASCII data. Access the data using READ_ASCII, and specify the template (or other characteristics) as parameters of the data access operation. See
+   <a class="MCXref_Heading_0" href="../R/READ_ASCII.html#R_822202989_1204665" target="" title="" alt="">
+    Working with a READ_ASCII Data Structure
+   </a>
+   for details.
+  </p>
+  <h3>
+   <a name="A_850317933_1024404">
+   </a>
+   <a name="A_850317933_25997">
+   </a>
+   Example: Create a SAVE File of a Custom ASCII Template
+  </h3>
+  <p>
+   When importing an ASCII data file into IDL, you must first describe the format of the data using the interactive ASCII_TEMPLATE function. If you have a number of ASCII files that have the same format, you can create and save a customized ASCII template using the
+   <a class="MCXref_Heading_0" href="../S/SAVE.html#S_820040301_678623">
+    SAVE
+   </a>
+   procedure. After creating a SAVE file of your custom template, you can avoid having to repeatedly define the same fields and records when reading in ASCII files that have the same structure.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     At the IDL command line, enter the following to create the variable
+     <span class="Courier">
+      plotTemplate
+     </span>
+     , which will contain your custom ASCII template:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   plotTemplate = ASCII_TEMPLATE(&#160;)
+  </p>
+  <p class="indent">
+   A dialog box appears, prompting you to select a file.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Select the
+     <span class="Courier">
+      plot.txt
+     </span>
+     file in the
+     <span class="Courier">
+      examples/data
+     </span>
+     subdirectory of the IDL distribution.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     After selecting the file, the
+     <span class="Bold">
+      Define Data Type/Range
+     </span>
+     dialog appears. First, choose the field type. Since the data file is delimited by tabs (or whitespace) select the
+     <span class="_Override" style="font-weight: bold;">
+      Delimited
+     </span>
+     button. In the
+     <span class="_Override" style="font-weight: bold;">
+      Data Starts at Line
+     </span>
+     field, specify to begin reading the data at line 3, not line 1, since there are two comment lines at the beginning of the file. Click
+     <span class="Bold">
+      Next
+     </span>
+     to continue.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     In the
+     <span class="Bold">
+      Define Delimiter/Fields
+     </span>
+     dialog box, select
+     <span class="_Override" style="font-weight: bold;">
+      Tab
+     </span>
+     as the delimiter between data elements since it is known that tabs were used in the original file. Click
+     <span class="Bold">
+      Next
+     </span>
+     .
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     In the
+     <span class="Bold">
+      Field Specification
+     </span>
+     dialog box, name each field as follows:
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     Click on the first row (row 1). In the
+     <span class="Bold">
+      Name
+     </span>
+     field, enter
+     <span class="Courier">
+      time
+     </span>
+     .
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     Select the second row and enter
+     <span class="Courier">
+      temperature1
+     </span>
+     .
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     Select the third row and enter
+     <span class="Courier">
+      temperature2
+     </span>
+     .
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Click
+     <span class="_Override" style="font-weight: bold;">
+      Finish
+     </span>
+     .
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Type the following line at the IDL command line to read in the
+     <span class="Courier">
+      plot.txt
+     </span>
+     file using the custom template,
+     <span class="Courier">
+      plotTemplate:
+     </span>
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   PLOT_ASCII = READ_ASCII(FILEPATH('plot.txt', SUBDIRECTORY = $
+   <br />
+   &#160;&#160;	&#160;['examples', 'data']), TEMPLATE = plotTemplate)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Enter the following line to print the
+     <span class="Courier">
+      plot.txt
+     </span>
+     file data:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   PRINT, PLOT_ASCII
+  </p>
+  <p class="indent">
+   The file contents are printed in the IDL&#160;console. Your output will resemble the following display.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    PLOT_ASCII Printout
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p style="text-align: center;">
+       <img src="../../images/ascii_template.gif" style="margin-left: 7.50024px;margin-top: 5.99976px;margin-right: 4.471928px;margin-bottom: 5.37479px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     <a name="kanchor106">
+     </a>
+     Create a SAVE file of your custom template by entering the following:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   SAVE, plotTemplate, FILENAME='myPlotTemplate.sav'
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     To restore the template so that you can read another ASCII file, enter:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   RESTORE, 'myPlotTemplate.sav'
+  </p>
+  <p class="indent">
+   This file contains your custom ASCII template information stored in the structure variable,
+   <span class="Courier">
+    plotTemplate
+   </span>
+   .
+  </p>
+  <p class="NoteIndented">
+   If you are attempting to restore a file that is not in your current working directory, you will need to specify a path to the file.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      11.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="11. " valign="top">
+     After restoring your custom template, you can read another ASCII file that is delimited in the same way as the original file by using the READ_ASCII function and specifying
+     <span class="Courier">
+      plotTemplate
+     </span>
+     for the TEMPLATE:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   PLOT_ASCII = READ_ASCII(FILEPATH('plot.txt', $
+   <br />
+   &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data']), $
+   <br />
+   &#160;&#160;&#160;TEMPLATE = plotTemplate)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      12.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="12. " valign="top">
+     Enter the following to display the contents of the file using the customized ASCII template structure previously defined using the dialog.
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   PRINT, PLOT_ASCII
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_871035">
+   </a>
+   <a name="A_850317933_871035_PageTOC_ASCII_TEMPLATE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       7.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added the
+       <span class="Bold">
+        Open in Editor
+       </span>
+       and
+       <span class="Bold">
+        Help
+       </span>
+       buttons.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="A_850317933_991348">
+   </a>
+   <a name="A_850317933_991348_PageTOC_ASCII_TEMPLATE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../Q/QUERY_ASCII.html#Q_815714925_1045490">
+    QUERY_ASCII
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/READ_ASCII.html#R_822202989_956701">
+    READ_ASCII
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../B/BINARY_TEMPLATE.html#B_856805997_985217">
+    BINARY_TEMPLATE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

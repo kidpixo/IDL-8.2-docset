@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   SET_PLOT Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/SET_PLOT_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    SET_PLOT Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_884907">
+   </a>
+   <a name="dg_routines_3604229493_54951">
+   </a>
+   SET_PLOT Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_884940">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_884949">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_884959">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_884971">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_884985">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2357">
+   </a>
+   SET_PLOT procedure sets the output device used by the IDL Direct Graphics procedures. Keyword parameters control how the color tables are transferred to the newly selected graphics device. SET_PLOT performs the following actions:
+  </p>
+  <p class="Bullet">
+   It sets the read-only system variable !D to reflect the configuration of the new device.
+  </p>
+  <p class="Bullet">
+   It sets the default color !P.COLOR to the maximum color index minus one or, in the case of devices with white backgrounds, such as PostScript, to 0 (black).
+  </p>
+  <p class="Bullet">
+   If the COPY keyword is set, the device color tables are copied directly from
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   ’s internal color tables. If the new device’s color tables contain more indices than those of the old device, the new device’s tables are not completely filled.
+  </p>
+  <p class="Bullet">
+   If the INTERPOLATE keyword is set, the internal color tables are interpolated to fill the range of the new device.
+  </p>
+  <p class="Bullet">
+   It sets the clipping rectangle to the entire device surface.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   After calling SET_PLOT to change graphics devices, the scaling contained in the axis structures !X, !Y, and !Z is invalid. Any routines that rely on data coordinates should not be called until a new data coordinate system has been established. Be careful when switching devices as the number of color indices frequently differs between devices. When in doubt, reload the color table of the new device explicitly.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_884940">
+   </a>
+   <a name="dg_routines_3604229493_862579_PageTOC_SET_PLOT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   SET_PLOT,
+   <i>
+    Device
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_884961">
+    COPY
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_884968">
+    INTERPOLATE
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_884949">
+   </a>
+   <a name="dg_routines_3604229493_862581_PageTOC_SET_PLOT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Device
+  </h3>
+  <p>
+   A scalar string containing the name of the device to use. The case of
+   <i>
+    Device
+   </i>
+   is ignored by
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   .
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_884959">
+   </a>
+   <a name="dg_routines_3604229493_862590_PageTOC_SET_PLOT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_884961">
+   </a>
+   <a name="dg_routines_3604229493_862592_Keywords_SET_PLOT__">
+   </a>
+   COPY
+  </h3>
+  <p>
+   Set this keyword to copy the device’s color table from the internal color table, preserving the current color mapping. The default is not to load the color table upon selection.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Unless this keyword is set,
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   ’s internal color tables will incorrectly reflect the state of the device’s color tables until they are reloaded by TVLCT or the LOADCT procedure. Assuming that the previously-selected device’s color table contains
+   <i>
+    M
+   </i>
+   elements, and the new device’s color table contains
+   <i>
+    N
+   </i>
+   elements, then the minimum of
+   <i>
+    M
+   </i>
+   and
+   <i>
+    N
+   </i>
+   elements are loaded.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_884968">
+   </a>
+   <a name="dg_routines_3604229493_862599_Keywords_SET_PLOT__">
+   </a>
+   INTERPOLATE
+  </h3>
+  <p>
+   Set this keyword to indicate that the current contents of the internal color table should be interpolated to cover the range of the newly-selected device. Otherwise, the internal color tables are not changed.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_884971">
+   </a>
+   <a name="dg_routines_3604229493_862601_PageTOC_SET_PLOT_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Change the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   graphics device to PostScript by entering:
+  </p>
+  <p class="Code">
+   SET_PLOT, 'PS'
+  </p>
+  <p>
+   After changing the plotting device, all graphics commands are sent to that device until changed again by another use of the SET_PLOT routine.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_884978">
+   </a>
+   Color Tables—Switching Between Devices
+  </h3>
+  <p>
+   Use the SET_PLOT procedure to direct the graphics output to different devices. Because devices have differing capabilities and not all are capable of representing the same number of colors, the treatment of color tables when switching devices is somewhat tricky.
+  </p>
+  <p>
+   After selecting a new graphics output device, SET_PLOT will perform one of the following color-table actions depending upon which keyword parameters are specified:
+  </p>
+  <p class="Bullet">
+   The default is to do nothing. The problem with this treatment is that the internal color tables incorrectly reflect the state of the device’s color tables until TVLCT is called (usually via LOADCT).
+  </p>
+  <p class="Bullet">
+   If the COPY keyword parameter is set, the internal color tables are copied into the device. This is straightforward if both devices have the same number of color indices. If the new device has more colors than the old device, some color indices will be invalid. If the new device has less colors than the old, not all the colors are saved. This is the preferred method if you are displaying graphics and each color index is explicitly loaded.
+  </p>
+  <p class="Bullet">
+   When the INTERPOLATE keyword is set, the new device’s table is loaded by interpolating the old color table to span the new number of color indices. This method works best when displaying images with continuous color ranges.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_884985">
+   </a>
+   <a name="dg_routines_3604229493_1110262_PageTOC_SET_PLOT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

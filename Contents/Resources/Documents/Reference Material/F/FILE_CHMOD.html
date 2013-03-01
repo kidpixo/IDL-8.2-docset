@@ -1,0 +1,844 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: F" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   FILE_CHMOD
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/F/FILE_CHMOD.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="F_list.html">
+    Routines: F
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    FILE_CHMOD
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="F_848155245_882076">
+   </a>
+   <a name="F_848155245_74167">
+   </a>
+   FILE_CHMOD
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#F_848155245_882091">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_882094">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_882190">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_882222">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_891262">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor916">
+   </a>
+   FILE_CHMOD procedure allows you to
+   <a name="kanchor917">
+   </a>
+   change the current access permissions (sometimes known as modes on
+   <a name="kanchor918">
+   </a>
+   UNIX
+   <a name="kanchor919">
+   </a>
+   platforms) associated with a
+   <a name="kanchor920">
+   </a>
+   file or
+   <a name="kanchor921">
+   </a>
+   directory. File modes are specified using the standard Posix convention of three
+   <a name="kanchor922">
+   </a>
+   protection classes (user, group, other), each containing three attributes (read, write, execute). These permissions can be specified as an octal bitmask in which desired permissions have their associated bit set and unwanted ones have their bits cleared. This is the same format familiar to users of the UNIX
+   <a name="kanchor923">
+   </a>
+   <span class="Courier">
+    chmod(1)
+   </span>
+   command).
+  </p>
+  <p>
+   Keywords are available to specify permissions without the requirement to specify a bitmask, providing a simpler way to handle many situations. All of the keywords share a similar behavior: Setting them to a non-zero value adds the specified permission to the
+   <i>
+    Mode
+   </i>
+   argument. Setting the keyword to 0 removes that permission.
+  </p>
+  <p>
+   To find the current protection settings for a given file, you can use the GET_MODE keyword to the FILE_TEST function.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_882091">
+   </a>
+   <a name="F_848155245_882091_PageTOC_FILE_CHMOD_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   FILE_CHMOD,
+   <i>
+    File
+   </i>
+   [,
+   <i>
+    Mode
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882191">
+    A_EXECUTE
+   </a>
+   &#160;|,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882193">
+    A_READ
+   </a>
+   &#160;|,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882195">
+    A_WRITE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882197">
+    G_EXECUTE
+   </a>
+   &#160;|&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882199">
+    G_READ
+   </a>
+   &#160;|&#160;,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882201">
+    G_WRITE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882956">
+    NOEXPAND_PATH
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882203">
+    O_EXECUTE
+   </a>
+   &#160;|&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882205">
+    O_READ
+   </a>
+   &#160;|&#160;,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882207">
+    O_WRITE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882209">
+    U_EXECUTE
+   </a>
+   &#160;|&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882211">
+    U_READ
+   </a>
+   &#160;|&#160;,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_882213">
+    U_WRITE
+   </a>
+   ]
+  </p>
+  <p>
+   <span class="Bold">
+    UNIX-Only Keywords:
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_900602">
+    SETGID
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_900604">
+    SETUID
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_900606">
+    STICKY_BIT
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_882094">
+   </a>
+   <a name="F_848155245_882094_PageTOC_FILE_CHMOD_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   File
+  </h3>
+  <p>
+   A scalar or array of file or directory names for which protection modes will be changed.
+  </p>
+  <h3 class="Argument">
+   Mode
+  </h3>
+  <p>
+   An optional bit mask specifying the absolute protection settings to be applied to the files. If
+   <i>
+    Mode
+   </i>
+   is not supplied, FILE_CHMOD looks up the current modes for the file and uses it instead. Any additional modes specified via keywords are applied relative to the value in
+   <i>
+    Mode
+   </i>
+   . Setting a keyword adds the necessary mode bits to
+   <i>
+    Mode
+   </i>
+   , and clearing it by explicitly setting a keyword to 0 removes those bits from
+   <i>
+    Mode
+   </i>
+   .
+  </p>
+  <p>
+   The values of the bits in these masks correspond to those used by the UNIX
+   <span class="Courier">
+    chmod(2)
+   </span>
+   system call and
+   <span class="Courier">
+    chmod(1)
+   </span>
+   user command, and are given in the following table. Since these bits are usually manipulated in groups of three, octal notation is commonly used when referring to them. When constructing a mode, the following platform specific considerations should be kept in mind:
+  </p>
+  <p class="Bullet">
+   The setuid, setgid, and sticky bits are specific to the UNIX operating system, and have no meaning elsewhere. FILE_CHMOD ignores them on non-UNIX systems. The UNIX kernel may quietly refuse to set the sticky bit if you are not the root user. Consult the chmod(2) man page for details.
+  </p>
+  <p class="Bullet">
+   The Microsoft Windows operating system does not have 3 permission classes like UNIX does. Therefore, setting for all three classes are combined into a single request.
+  </p>
+  <p class="Bullet">
+   The Microsoft Windows operating system always allows read access to any files visible to a program. FILE_CHMOD therefore ignores any requests to remove read access.
+  </p>
+  <p class="Bullet">
+   The Microsoft Windows operating system does not maintain an execute bit for files, but instead uses the file suffix to decide if a file is executable. FILE_CHMOD cannot change the execution status of a file in the Windows environment; such requests are quietly ignored.
+  </p>
+  <table style="width: 496px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    <span class="_Override" style="font-family: Helvetica;line-height: 13pt;">
+     UNIX chmod(2) mode bits
+    </span>
+   </p>
+   <col width="79px" />
+   <col width="118px" />
+   <col width="299px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Bit
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Octal Mask
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Meaning
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       12
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       4000
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Setuid: Set user ID on execution.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       11
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       2000
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Setgid: Set group ID on execution.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       10
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       1000
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Turn on sticky bit. See the UNIX documentation on chmod(2) for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       9
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       0400
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Allow read by owner.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       8
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       0200
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Allow write by owner.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       7
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       0100
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Allow execute by owner.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       6
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       0040
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Allow read by group.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       5
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       0020
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Allow write by group.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       4
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       0010
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Allow execute by group.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       0004
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Allow read by others.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       0002
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Allow write by others.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       <span class="Courier">
+        '
+       </span>
+       0001
+       <span class="Courier">
+        '
+       </span>
+       o
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Allow execute by others.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="F_848155245_882190">
+   </a>
+   <a name="F_848155245_882190_PageTOC_FILE_CHMOD_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="F_848155245_882191">
+   </a>
+   <a name="F_848155245_882191_Keywords_FILE_CHMOD__">
+   </a>
+   A_EXECUTE
+  </h3>
+  <p>
+   Execute access for all three (user, group, other) categories.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882193">
+   </a>
+   <a name="F_848155245_882193_Keywords_FILE_CHMOD__">
+   </a>
+   A_READ
+  </h3>
+  <p>
+   Read access for all three (user, group, other) categories.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882195">
+   </a>
+   <a name="F_848155245_882195_Keywords_FILE_CHMOD__">
+   </a>
+   A_WRITE
+  </h3>
+  <p>
+   Write access for all three (user, group, other) categories.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882197">
+   </a>
+   <a name="F_848155245_882197_Keywords_FILE_CHMOD__">
+   </a>
+   G_EXECUTE
+  </h3>
+  <p>
+   Execute access for the group category.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882199">
+   </a>
+   <a name="F_848155245_882199_Keywords_FILE_CHMOD__">
+   </a>
+   G_READ
+  </h3>
+  <p>
+   Read access for the group category.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882201">
+   </a>
+   <a name="F_848155245_882201_Keywords_FILE_CHMOD__">
+   </a>
+   G_WRITE
+  </h3>
+  <p>
+   Write access for the group category.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882956">
+   </a>
+   <a name="F_848155245_882956_Keywords_FILE_CHMOD__">
+   </a>
+   NOEXPAND_PATH
+  </h3>
+  <p>
+   Set this keyword to cause FILE_CHMOD to use the
+   <i>
+    File
+   </i>
+   argument exactly as specified, without applying the usual file path expansion.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882203">
+   </a>
+   <a name="F_848155245_882203_Keywords_FILE_CHMOD__">
+   </a>
+   O_EXECUTE
+  </h3>
+  <p>
+   Execute access for the other category.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882205">
+   </a>
+   <a name="F_848155245_882205_Keywords_FILE_CHMOD__">
+   </a>
+   O_READ
+  </h3>
+  <p>
+   Read access for the other category.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882207">
+   </a>
+   <a name="F_848155245_882207_Keywords_FILE_CHMOD__">
+   </a>
+   O_WRITE
+  </h3>
+  <p>
+   Write access for the other category.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_900602">
+   </a>
+   <a name="F_848155245_900602_Keywords_FILE_CHMOD__">
+   </a>
+   SETGID
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on UNIX platforms.
+   </i>
+  </p>
+  <p>
+   The Set Group ID bit.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_900604">
+   </a>
+   <a name="F_848155245_900604_Keywords_FILE_CHMOD__">
+   </a>
+   SETUID
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on UNIX platforms.
+   </i>
+  </p>
+  <p>
+   The Set User ID bit.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_900606">
+   </a>
+   <a name="F_848155245_900606_Keywords_FILE_CHMOD__">
+   </a>
+   STICKY_BIT
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on UNIX platforms.
+   </i>
+  </p>
+  <p>
+   Sets the sticky bit.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882209">
+   </a>
+   <a name="F_848155245_882209_Keywords_FILE_CHMOD__">
+   </a>
+   U_EXECUTE
+  </h3>
+  <p>
+   Execute access for the user category.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882211">
+   </a>
+   <a name="F_848155245_882211_Keywords_FILE_CHMOD__">
+   </a>
+   U_READ
+  </h3>
+  <p>
+   Read access for the user category.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_882213">
+   </a>
+   <a name="F_848155245_882213_Keywords_FILE_CHMOD__">
+   </a>
+   U_WRITE
+  </h3>
+  <p>
+   Write access for the user category.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_882222">
+   </a>
+   <a name="F_848155245_882222_PageTOC_FILE_CHMOD_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   In the first example, we make the file
+   <span class="Courier">
+    moose.dat
+   </span>
+   read only to everyone except the owner of the file, but not change any other settings:
+  </p>
+  <p class="Code">
+   FILE_CHMOD, 'moose.dat', /U_WRITE, G_WRITE=0, O_WRITE=0
+  </p>
+  <p>
+   In the next example, we make the file readable and writable to the owner and group, but read-only to anyone else, and remove any other modes:
+  </p>
+  <p class="Code">
+   FILE_CHMOD, 'moose.dat', '664'o
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   To find the current protection settings for a given file, you can use the GET_MODE keyword to the
+   <a class="MCXref_Heading_0" href="FILE_TEST.html#F_848155245_882359">
+    FILE_TEST
+   </a>
+   function.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_891262">
+   </a>
+   <a name="F_848155245_891262_PageTOC_FILE_CHMOD_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   See Also
+  </h2>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

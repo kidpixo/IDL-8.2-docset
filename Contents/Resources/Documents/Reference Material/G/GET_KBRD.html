@@ -1,0 +1,505 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: G" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   GET_KBRD
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/G/GET_KBRD.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="G_list.html">
+    Routines: G
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    GET_KBRD
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="G_845992557_876347">
+   </a>
+   <a name="G_845992557_65544">
+   </a>
+   GET_KBRD
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#G_845992557_677028">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_884517">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_677030">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_884530">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_677033">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_822908">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#G_845992557_881355">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1041">
+   </a>
+   GET_KBRD function
+   <a name="kanchor1042">
+   </a>
+   returns the next character available from the
+   <a name="kanchor1043">
+   </a>
+   standard input (IDL file unit 0). Depending on the value of the
+   <i>
+    Wait
+   </i>
+   argument, it will either return immediately or wait until a character is present in the terminal type-ahead buffer.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Use a GUI interface (e.g. WIDGET_BUTTON) instead of GET_KBRD where possible.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   Under Microsoft Windows, the GET_KBRD function can be used to return Windows special characters (in addition to the standard keyboard characters). To get a special character, hold down the
+   <span class="Bold">
+    Alt
+   </span>
+   key and type the character’s ANSI equivalent on the numeric keypad while GET_KBRD is waiting.
+   <span class="Bold">
+    Ctrl
+   </span>
+   +
+   <i>
+    key
+   </i>
+   combinations are not supported.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   GET_KBRD is intended for use in IDL’s command-line mode. While GET_KBRD will return values for some characters when run from the IDL Workbench (either UNIX or Microsoft Windows), other characters are treated as special cases by the underlying windowing system, and may not be returned by GET_KBRD. In addition, the event-handling mechanism used by the IDL Workbench may not respond to keyboard events in the way that you expect. Use caution when using GET_KBRD within a loop.
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_677028">
+   </a>
+   <a name="G_845992557_677028_PageTOC_GET_KBRD_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = GET_KBRD([
+   <i>
+    Wait
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#G_845992557_915381">
+    ESCAPE
+   </a>
+   | ,&#160;/
+   <a class="MCXref_Heading_0" href="#G_845992557_915384">
+    KEY_NAME
+   </a>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_884517">
+   </a>
+   <a name="G_845992557_50354">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a string containing the next available character that is input from the keyboard. If no keywords are specified, the result will always be a one-character string. If the ESCAPE or KEY_NAME keyword is specified, the result may contain multiple characters, as described below.
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_677030">
+   </a>
+   <a name="G_845992557_677030_PageTOC_GET_KBRD_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Wait
+  </h3>
+  <p>
+   If
+   <i>
+    Wait
+   </i>
+   is zero, GET_KBRD returns an empty string if there are no characters in the terminal
+   <a name="kanchor1044">
+   </a>
+   type-ahead buffer. If the
+   <i>
+    Wait
+   </i>
+   argument is either not present or present and non-zero, the function waits for a character to be typed before returning.
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_884530">
+   </a>
+   <a name="G_845992557_97975">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="G_845992557_915381">
+   </a>
+   <a name="G_845992557_915381_Keywords_GET_KBRD__">
+   </a>
+   ESCAPE
+  </h3>
+  <p>
+   This keyword is intended for use with IDL’s UNIX command line interface; it controls how the GET_KBRD function handles
+   <i>
+    escape sequences
+   </i>
+   . If ESCAPE is set and GET_KBRD encounters an escape sequence, the return value will be a string containing the entire sequence. See
+   <a class="MCXref_Heading_0" href="#G_845992557_915501">
+    Escape Sequences
+   </a>
+   below for more information.
+  </p>
+  <h3 class="Keyword">
+   <a name="G_845992557_915384">
+   </a>
+   <a name="G_845992557_915384_Keywords_GET_KBRD__">
+   </a>
+   KEY_NAME
+  </h3>
+  <p>
+   This keyword is intended for use with IDL’s command line mode; it controls how the GET_KBRD function handles
+   <i>
+    escape sequences
+   </i>
+   . If KEY_NAME is set and GET_KBRD encounters an escape sequence, it reads the complete sequence and compares it to IDL’s table of known function keys. If the escape sequence corresponds to a known function key, the return value will be a string containing the
+   <i>
+    name
+   </i>
+   of the key, or an empty string otherwise. See Escape Sequences below for more information.
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_915501">
+   </a>
+   <a name="G_845992557_61577">
+   </a>
+   Escape Sequences
+  </h2>
+  <p>
+   The command line version of IDL is usually used within the environment provided by a program called a
+   <i>
+    terminal emulator
+   </i>
+   . (The
+   <span class="Courier">
+    Xterm
+   </span>
+   program is the most common such emulator, but there are others.) When you press an alphanumeric key on the keyboard, the terminal emulator sends the ASCII code for that character to the running program (IDL, in this case). For example, if you press the lowercase
+   <span class="Bold">
+    a
+   </span>
+   key, the terminal emulator sends IDL the ASCII code for “a” (ASCII 97).
+  </p>
+  <p>
+   Some keys, including the arrow keys and the function keys on the top row of the keyboard, do not correspond directly to a single ASCII character. Instead, they send an
+   <i>
+    escape sequence
+   </i>
+   that the program can interpret and map to a useful meaning. An escape sequence consists of the ASCII ESC (ASCII 27) character, followed by one or more characters, following a special syntax that lets the reading program determine when a complete sequence has been seen. For example, when you press the up-arrow key, the vast majority of terminal emulators send the three-character sequence
+   <span class="Courier">
+    ESC[A
+   </span>
+   .
+  </p>
+  <p>
+   By default, GET_KBRD returns the next available single ASCII character entered at the command line. In this mode, it does not treat escape sequences as special characters. If you call GET_KBRD and press the up-arrow key, GET_KBRD will return the ASCII ESC character and ignore the characters following it. The ESCAPE and KEY_NAME keywords can be used to alter this behavior.
+  </p>
+  <p>
+   If the ESCAPE keyword is set and GET_KBRD sees an escape sequence, it will read and return the entire escape sequence. For example, if the up-arrow key is pressed, GET_KBRD would (with most terminal emulators) return a string containing the three characters
+   <span class="Courier">
+    ESC[A
+   </span>
+   (or, more specifically, the three characters defined by the ASCII codes&#160;&#160;
+   <span class="Courier">
+    27&#160;&#160;91&#160;&#160;65
+   </span>
+   &#160;&#160;).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Escape sequences are not printable characters. This means that in order to see the characters that make up the escape sequence, you must view their byte values. For example, entering the following at the IDL command line, followed by the up-arrow key, may not produce visible output, depending on the terminal emulator in use:
+   <br />
+   <br />
+   <span class="Courier">
+    PRINT, GET_KBRD(/ESCAPE)
+   </span>
+   <br />
+   <br />
+   If you enter the following at the IDL command line, followed by the up-arrow key:
+   <br />
+   <br />
+   <span class="Courier">
+    PRINT, BYTE(GET_KBRD(/ESCAPE))
+   </span>
+   <br />
+   <br />
+   IDL will print
+   <br />
+   <br />
+   <span class="Courier">
+    &#160;&#160;27&#160;&#160;91&#160;&#160;65
+   </span>
+   <br />
+   <br />
+   (or the values of the equivalent ASCII characters used by your terminal emulator).
+  </p>
+  <p>
+   If the KEY_NAME keyword is set and GET_KBRD sees an escape sequence, it will read the entire sequence. If the escape sequence is associated with a known function key, it will return the name of that key. If the sequence is not associated with a known function key, it will return an empty string. In the case of the up-arrow key example, GET_KBRD would return the string
+   <span class="Courier">
+    UP
+   </span>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The command HELP, /KEYS, /FULL can be used to see the full set of known keys and the escape sequences they are bound to. The DEFINE_KEY procedure can be used to add additional keys and/or escape sequences.
+  </p>
+  <p>
+   The ESCAPE and KEY_NAME keywords do not affect the way that GET_KBRD handles non-escape sequence characters. GET_KBRD always returns the single ASCII character seen in those situations.
+  </p>
+  <p>
+   The ESCAPE and KEY_NAME keywords are only applicable to command line mode. They are accepted, but ignored, when used with graphical mode.
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_677033">
+   </a>
+   <a name="G_845992557_677033_PageTOC_GET_KBRD_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To store the next character typed at the IDL prompt in the variable R, enter:
+  </p>
+  <p class="Code">
+   R = GET_KBRD()
+  </p>
+  <p>
+   Press any key. To see the character that was typed, enter:
+  </p>
+  <p class="Code">
+   PRINT, R
+  </p>
+  <p>
+   The following code fragment reads one character at a time and echoes that character’s numeric code (or codes, for keys that generate escape sequences). It quits when a “q” is entered:
+  </p>
+  <p class="Code">
+   REPEAT BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;A = GET_KBRD(/ESCAPE)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, BYTE(A)
+  </p>
+  <p class="Code">
+   ENDREP UNTIL A EQ 'q'
+  </p>
+  <p>
+   The following code fragment reads one character at a time and echoes that character (or the key’s name, for named keys). It quits when a “q” is entered:
+  </p>
+  <p class="Code">
+   REPEAT BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;A = GET_KBRD(/KEY_NAME)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, A
+  </p>
+  <p class="Code">
+   ENDREP UNTIL A EQ 'q'
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The GET_KBRD function can be used to return Windows special characters (in addition to standard keyboard characters), created by holding down the Alt key and entering the character’s ANSI equivalent. For example, to return the paragraph marker (¶), ANSI number 0182, enter:
+   <br />
+   <br />
+   <span class="Courier">
+    C = GET_KBRD()
+   </span>
+   <br />
+   <br />
+   While GET_KBRD is waiting, press and hold the Alt key and type 0182 on the numeric keypad. When the IDL prompt returns, enter:
+   <br />
+   <br />
+   <span class="Courier">
+    PRINT, C
+   </span>
+   <br />
+   <br />
+   IDL prints the paragraph marker,“¶”.
+   <br />
+   <br />
+   GET_KBRD
+   <span class="_Override" style="font-style: italic;">
+    cannot
+   </span>
+   be used to return control characters or other editing keys (e.g., Delete, Backspace, etc.). These characters are used for keyboard shortcuts and command line editing only. GET_KBRD can be used to return the Enter key.
+  </p>
+  <h2 class="API">
+   <a name="G_845992557_822908">
+   </a>
+   <a name="G_845992557_822908_PageTOC_GET_KBRD_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       <i>
+        Wait
+       </i>
+       argument became optional
+       <br />
+       ESCAPE and KEY_NAME keywords introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="G_845992557_881355">
+   </a>
+   <a name="G_845992557_881355_PageTOC_GET_KBRD_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../D/DEFINE_KEY.html#D_843829869_676492">
+    DEFINE_KEY
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../H/HELP.html#H_835179117_748700" target="" title="" alt="">
+    HELP
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/READ.html#R_822202989_863816">
+    READ/READF
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../W/WIDGET_BUTTON.html#W_811389549_36288">
+    WIDGET_BUTTON
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

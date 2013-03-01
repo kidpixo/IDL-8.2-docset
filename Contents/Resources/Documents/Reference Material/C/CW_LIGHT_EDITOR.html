@@ -1,0 +1,644 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CW_LIGHT_EDITOR
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CW_LIGHT_EDITOR.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CW_LIGHT_EDITOR
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_999690">
+   </a>
+   <a name="C_854643309_79129">
+   </a>
+   <a name="C_854643309_70844">
+   </a>
+   CW_LIGHT_EDITOR
+   <a name="kanchor471">
+   </a>
+   <![CDATA[ ]]>
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_1001414">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1001416">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1027070">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1001419">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1083254">
+     Widget Events Returned by the CW_LIGHT_EDITOR Widget
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1083249">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1052349">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The CW_LIGHT_EDITOR function creates a compound widget to edit properties of existing IDLgrLight objects in a view. Lights cannot be added or removed from a view using this widget. However, lights can be “turned off or on” by hiding or showing them (i.e., HIDE property).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Two routines associated with the CW_LIGHT_EDITOR compound widget — CW_LIGHT_EDITOR_GET and CW_LIGHT_EDITOR_SET — do not create compound widgets themselves, but act on an existing CW_LIGHT_EDITOR widget.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1001414">
+   </a>
+   <a name="C_854643309_1001414_PageTOC_CW_LIGHT_EDITOR_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="_Override" style="font-style: italic;">
+    Result
+   </span>
+   = CW_LIGHT_EDITOR (
+   <span class="_Override" style="font-style: italic;">
+    Parent
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_1001420">
+    DIRECTION_DISABLED
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_1001422">
+    DRAG_EVENTS
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1001426">
+    FRAME
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    width
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_1001428">
+    HIDE_DISABLED
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1001430">
+    LIGHT
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    objref(s)
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_1001432">
+    LOCATION_DISABLED
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1239092">
+    TAB_MODE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_1001434">
+    TYPE_DISABLED
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_1001436">
+    UNAME
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1001439">
+    UVALUE
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1001443">
+    XSIZE
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    pixels
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1001447">
+    YSIZE
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    pixels
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1001441">
+    XRANGE
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    vector
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1001445">
+    YRANGE
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    vector
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1001449">
+    ZRANGE
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    vector
+   </span>
+   ]&#160;)
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1001416">
+   </a>
+   <a name="C_854643309_1001416_PageTOC_CW_LIGHT_EDITOR_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This function returns the widget ID of a newly-created light editor.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1027070">
+   </a>
+   <a name="C_854643309_1027070_PageTOC_CW_LIGHT_EDITOR_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Parent
+  </h3>
+  <p>
+   The widget ID of the parent widget for the new light editor.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1001419">
+   </a>
+   <a name="C_854643309_1001419_PageTOC_CW_LIGHT_EDITOR_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001420">
+   </a>
+   <a name="C_854643309_1001420_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   DIRECTION_DISABLED
+  </h3>
+  <p>
+   Set this keyword to make the direction widget portion of the compound widget unchangeable by the user. It will appear insensitive and will not generate an event. The default is to allow this property to be changed.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001422">
+   </a>
+   <a name="C_854643309_1001422_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   DRAG_EVENTS
+  </h3>
+  <p>
+   Set this keyword to cause events to be generated continuously while a slider in the compound widget is being dragged or when the mouse cursor is being dragged across the draw widget portion of the compound widget. By default, events are only generated when the mouse comes to rest at its final position and the mouse button is released.
+  </p>
+  <p>
+   When this keyword is set, a large number of events can be generated. On slower machines, poor performance can result. Therefore, this option should only be used when detailed or truly interactive control is required.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Under Microsoft Windows, sliders do not generate these events, but behave just like regular sliders.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001426">
+   </a>
+   <a name="C_854643309_1001426_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   FRAME
+  </h3>
+  <p>
+   The value of this keyword specifies the width of a frame (in pixels) to be drawn around the borders of the widget. Note that this keyword is only a ‘hint’ to the toolkit, and may be ignored in some instances. The default is no frame.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001428">
+   </a>
+   <a name="C_854643309_1001428_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   HIDE_DISABLED
+  </h3>
+  <p>
+   Set this keyword to make the hide widget portion of the compound widget unchangeable by the user. It will appear insensitive and will not generate an event. The default is to allow this property to be changed.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001430">
+   </a>
+   <a name="C_854643309_1001430_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   LIGHT
+  </h3>
+  <p>
+   Set this keyword to one or more object references to IDLgrLight to edit. This will replace the current set of lights being edited with the list of lights from this keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001432">
+   </a>
+   <a name="C_854643309_1001432_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   LOCATION_DISABLED
+  </h3>
+  <p>
+   Set this keyword to make the location widget portion of the compound widget unchangeable by the user. It will appear insensitive and will not generate an event. The default is to allow this property to be changed.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1239092">
+   </a>
+   <a name="C_854643309_13594">
+   </a>
+   TAB_MODE
+  </h3>
+  <p>
+   Set this keyword to one of the values shown in the table below to determine how the widget hierarchy can be navigated using the
+   <span class="Bold">
+    Tab
+   </span>
+   key. The TAB_MODE setting is inherited by lower-level bases and child widgets unless it is explicitly set on an individual widget.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   It is not possible to tab to disabled (SENSITIVE=0) or hidden (MAP=0) widgets.
+  </p>
+  <p>
+   Valid settings are:
+  </p>
+  <table style="width: 500px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    TAB_MODE Keyword Options
+   </p>
+   <col width="103px" />
+   <col width="397px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Disable navigation onto or off of the widget. This is the default. Child widgets automatically inherit the tab mode of the parent base as described in
+       <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Enhancing_Widget_Applica.html#widget_techniques_4218446668_142828" target="" title="" alt="">
+        Inheriting the TAB_MODE Value
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Enable navigation onto and off of the widget.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Navigate only onto the widget.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Navigate only off of the widget.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   In widget applications on the UNIX platform, the Motif library controls what widgets are brought into and released from focus using tabbing. The TAB_MODE keyword value is always zero, and any attempt to change it is ignored when running a widget application on the UNIX platform. Tabbing behavior may vary significantly between UNIX platforms; do not rely on a particular behavior being duplicated on all UNIX systems.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001434">
+   </a>
+   <a name="C_854643309_1001434_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   TYPE_DISABLED
+  </h3>
+  <p>
+   Set this keyword to make the light type widget portion of the compound widget unchangeable by the user. It will appear insensitive and will not generate an event. The default is to allow this property to be changed.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001436">
+   </a>
+   <a name="C_854643309_1001436_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   UNAME
+  </h3>
+  <p>
+   Set this keyword to a string that can be used to identify the widget. You can associate a name with each widget in a specific hierarchy, and then use that name to query the widget hierarchy and get the correct widget ID.
+  </p>
+  <p>
+   To query the widget hierarchy, use the WIDGET_INFO function with the FIND_BY_UNAME keyword. The UNAME should be unique to the widget hierarchy because the FIND_BY_UNAME keyword returns the ID of the first widget with the specified name.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001439">
+   </a>
+   <a name="C_854643309_1001439_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   UVALUE
+  </h3>
+  <p>
+   The ‘user value’ to be assigned to the widget. Each widget can contain a user-specified value of any data type and organization. This value is not used by the widget in any way, but exists entirely for the convenience of the IDL programmer. This keyword allows you to set this value when the widget is first created. If UVALUE is not present, the widget's initial user value is undefined.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001441">
+   </a>
+   <a name="C_854643309_1001441_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   XRANGE
+  </h3>
+  <p>
+   A two-element vector defining the data range in the x direction. This keyword is used to determine the valid range for the light's location and direction properties
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001443">
+   </a>
+   <a name="C_854643309_1001443_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   XSIZE
+  </h3>
+  <p>
+   The width of the drawable area in pixels. The default width is 180.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001445">
+   </a>
+   <a name="C_854643309_1001445_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   YRANGE
+  </h3>
+  <p>
+   A two-element vector defining the data range in the y direction. This keyword is used to determine the valid range for the light's location and direction properties.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001447">
+   </a>
+   <a name="C_854643309_1001447_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   YSIZE
+  </h3>
+  <p>
+   The height of the drawable area in pixels. The default height is 180.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001449">
+   </a>
+   <a name="C_854643309_1001449_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   ZRANGE
+  </h3>
+  <p>
+   A two-element vector defining the data range in the z direction. This keyword is used to determine the valid range for the light's location and direction properties
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1001461_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   WIDGET_CONTROL Keywords
+  </h2>
+  <p>
+   The widget ID returned by this compound widget is actually the ID of the compound widget's base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with this compound widget (e.g., UNAME, UVALUE).
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001463_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   GET_VALUE
+  </h3>
+  <p>
+   Set this keyword to a named variable to contain the current value of the widget. An IDLgrLight object reference of the currently selected light is returned. The value of a widget can be set with the SET_VALUE keyword to this routine.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1001465_Keywords_CW_LIGHT_EDITOR__">
+   </a>
+   SET_VALUE
+  </h3>
+  <p>
+   Sets the value of the specified light editor compound widget. This widget accepts an IDLgrLight object reference of the light in the list of lights to make as the current selection. The property values are retrieved from the light object and the light editor controls are updated to reflect those properties.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1083254">
+   </a>
+   <a name="C_854643309_94813">
+   </a>
+   Widget Events Returned by the CW_LIGHT_EDITOR Widget
+  </h2>
+  <p>
+   There are variations of the light editor event structure depending on the specific event being reported. All of these structures contain the standard three fields (ID, TOP, and HANDLER). The different light editor event structures are described below.
+  </p>
+  <h4>
+   Light Selected
+  </h4>
+  <p>
+   This is the type of structure returned when the light selected in the light list box is modified by a user.
+  </p>
+  <p class="Code">
+   { CW_LIGHT_EDITOR_LS, ID:0L, TOP:0L, HANDLER:0L, LIGHT:OBJ_NEW()}
+  </p>
+  <p>
+   LIGHT specifies the object ID of the new light selection.
+  </p>
+  <h4>
+   Light Modified
+  </h4>
+  <p>
+   This is the type of structure returned when the user has modified a light property. This event maybe generated continuously if the DRAG_EVENTS keyword was set. See DRAG_EVENTS above.
+  </p>
+  <p class="Code">
+   { CW_LIGHT_EDITOR_LM, ID:0L, TOP:0L, HANDLER:0L}
+  </p>
+  <p>
+   The value of the light editor will need to be retrieved (i.e., CW_LIGHT_EDITOR_GET) in order to determine the extent of the actual user modification.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1083249">
+   </a>
+   <a name="C_854643309_1005426_PageTOC_CW_LIGHT_EDITOR_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added TAB_MODE keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1052349">
+   </a>
+   <a name="C_854643309_1052349_PageTOC_CW_LIGHT_EDITOR_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="CW_LIGHT_EDITOR_GET.html#C_854643309_999824">
+    CW_LIGHT_EDITOR_GET
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="CW_LIGHT_EDITOR_SET.html#C_854643309_999860">
+    CW_LIGHT_EDITOR_SET
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Object Classes/Graphics/IDLgrLight.html#objects_gr_2157407275_1010783" target="" title="" alt="">
+    IDLgrLight
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

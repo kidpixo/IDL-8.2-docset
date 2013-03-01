@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IMAGE_STATISTICS
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/IMAGE_STATISTICS.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IMAGE_STATISTICS
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="I_833016429_873550">
+   </a>
+   <a name="I_833016429_89474">
+   </a>
+   <span class="_Override">
+    <a name="I_833016429_42513">
+    </a>
+    <a name="I_833016429_13370">
+    </a>
+    I
+   </span>
+   MAGE_STATISTICS
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#I_833016429_873566">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_873568">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_873571">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_1013041">
+     IMAGE_STATISTICS
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_880805">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1536">
+   </a>
+   IMAGE_STATISTICS procedure computes sample statistics for a given array of values. An optional mask may be specified to restrict computations to a spatial subset of the input data.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_873566">
+   </a>
+   <a name="I_833016429_873566_PageTOC_IMAGE_STATISTICS_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   IMAGE_STATISTICS,
+   <i>
+    Data
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873572">
+    COUNT
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873574">
+    DATA_SUM
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_873576">
+    LABELED
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873582">
+    LUT
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873584">
+    MASK
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873586">
+    MAXIMUM
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873588">
+    MEAN
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873590">
+    MINIMUM
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873592">
+    STDDEV
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873594">
+    SUM_OF_SQUARES
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873596">
+    VARIANCE
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_873598">
+    VECTOR
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_873600">
+    WEIGHT_SUM
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    variable
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_873603">
+    WEIGHTED
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_873568">
+   </a>
+   <a name="I_833016429_873568_PageTOC_IMAGE_STATISTICS_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Data
+  </h3>
+  <p>
+   An
+   <i>
+    N
+   </i>
+   -dimensional input data array.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_873571">
+   </a>
+   <a name="I_833016429_873571_PageTOC_IMAGE_STATISTICS_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="I_833016429_873572">
+   </a>
+   <a name="I_833016429_873572_Keywords_IMAGE_STATISTICS__">
+   </a>
+   COUNT
+  </h3>
+  <p>
+   Set this keyword to a named variable to contain the number of samples that correspond to nonzero values within the mask.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873574">
+   </a>
+   <a name="I_833016429_873574_Keywords_IMAGE_STATISTICS__">
+   </a>
+   DATA_SUM
+  </h3>
+  <p>
+   Set this keyword to a named variable to contain the sum of the samples that lie within the mask.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873576">
+   </a>
+   <a name="I_833016429_873576_Keywords_IMAGE_STATISTICS__">
+   </a>
+   LABELED
+  </h3>
+  <p>
+   When set, this keyword indicates values in the mask representing region labels, where each pixel of the mask is set to the index of the region in which that pixel belongs (see the
+   <a href="../L/LABEL_REGION.html">
+    LABEL_REGION
+   </a>
+   function. If the LABELED keyword is set, each statistic’s value is computed for each region index. Thus, a vector containing the results is provided for each statistic with one element per region. By default, this keyword is set to zero, indicating that all samples with a corresponding nonzero mask value are used to form a scalar result for each statistic.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The LABELED keyword cannot be used with either the WEIGHT_SUM or the WEIGHTED keywords.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873582">
+   </a>
+   <a name="I_833016429_873582_Keywords_IMAGE_STATISTICS__">
+   </a>
+   LUT
+  </h3>
+  <p>
+   Set this keyword to a one-dimensional array. For non-floating point input
+   <i>
+    Data
+   </i>
+   , the pixel values are looked up through this table before being used in any of the statistical computations. This allows an integer image array to be calibrated to any user specified intensity range for the sake of calculations. The length of this array must include the range of the input array. This keyword may not be set with floating point input data. When signed input data types are used, they are first cast to the corresponding IDL unsigned type before being used to access this array. For example, the integer value –1 looks up the value 65535 in the LUT array.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873584">
+   </a>
+   <a name="I_833016429_873584_Keywords_IMAGE_STATISTICS__">
+   </a>
+   MASK
+  </h3>
+  <p>
+   An array of
+   <i>
+    N
+   </i>
+   , or
+   <i>
+    N
+   </i>
+   –1 (when the VECTOR keyword is used) dimensions representing the mask array. If the LABELED keyword is set, MASK contains the region indices of each pixel; otherwise statistics are only computed for data values where the MASK array is non-zero.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873586">
+   </a>
+   <a name="I_833016429_873586_Keywords_IMAGE_STATISTICS__">
+   </a>
+   MAXIMUM
+  </h3>
+  <p>
+   Set this keyword to a named variable to contain the maximum value of the samples that lie within the mask.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873588">
+   </a>
+   <a name="I_833016429_873588_Keywords_IMAGE_STATISTICS__">
+   </a>
+   MEAN
+  </h3>
+  <p>
+   Set this keyword to a named variable to contain the mean of the samples that lie within the mask.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873590">
+   </a>
+   <a name="I_833016429_873590_Keywords_IMAGE_STATISTICS__">
+   </a>
+   MINIMUM
+  </h3>
+  <p>
+   Set this keyword to a named variable to contain the minimum value of the samples that lie within the mask.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873592">
+   </a>
+   <a name="I_833016429_873592_Keywords_IMAGE_STATISTICS__">
+   </a>
+   STDDEV
+  </h3>
+  <p>
+   Set this keyword to a named variable to contain the standard deviation of the samples that lie within the mask.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873594">
+   </a>
+   <a name="I_833016429_873594_Keywords_IMAGE_STATISTICS__">
+   </a>
+   SUM_OF_SQUARES
+  </h3>
+  <p>
+   Set this keyword to a named variable to contain the sum of the squares of the samples that lie within the mask.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873596">
+   </a>
+   <a name="I_833016429_873596_Keywords_IMAGE_STATISTICS__">
+   </a>
+   VARIANCE
+  </h3>
+  <p>
+   Set this keyword to a named variable to contain the variance of the samples that lie within the mask.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873598">
+   </a>
+   <a name="I_833016429_873598_Keywords_IMAGE_STATISTICS__">
+   </a>
+   VECTOR
+  </h3>
+  <p>
+   Set this keyword to specify that the leading dimension of the input array is not to be considered spatial but consists of multiple data values at each pixel location. In this case, the leading dimension is treated as a vector of samples at the spatial location determined by the remainder of the array dimensions.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873600">
+   </a>
+   <a name="I_833016429_873600_Keywords_IMAGE_STATISTICS__">
+   </a>
+   WEIGHT_SUM
+  </h3>
+  <p>
+   Set the WEIGHT_SUM keyword to a named variable to contain the sum of the weights in the mask.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The WEIGHT_SUM keyword cannot be used if the LABELED keyword is specified.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_873603">
+   </a>
+   <a name="I_833016429_873603_Keywords_IMAGE_STATISTICS__">
+   </a>
+   WEIGHTED
+  </h3>
+  <p>
+   If the WEIGHTED keyword is set, the values in the MASK array are used to weight individual pixels with respect to their count value.  If a MASK array is not provided, all pixels are assigned a weight of 1.0.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The WEIGHTED keyword cannot be used if the LABELED keyword is specified.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_880805">
+   </a>
+   <a name="I_833016429_880805_PageTOC_IMAGE_STATISTICS_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

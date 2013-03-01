@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   ISCALE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/ISCALE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    ISCALE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="iTools_api_3860698369_1007251">
+   </a>
+   <a name="iTools_api_3860698369_69289">
+   </a>
+   ISCALE
+  </h1>
+  <p madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007276">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007294">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007300">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007317">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007321">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007329">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1007276">
+   </a>
+   <a name="iTools_api_3860698369_1062579_PageTOC_ISCALE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   ISCALE,
+   <span class="Italic">
+    Id&#160;
+   </span>
+   [,&#160;
+   <span class="Italic">
+    X
+   </span>
+   [,&#160;
+   <span class="Italic">
+    Y
+   </span>
+   [,&#160;
+   <span class="Italic">
+    Z
+   </span>
+   ]]] [,&#160;/
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007302">
+    RESET
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007305">
+    TOOL
+   </a>
+   =
+   <span class="Italic">
+    iToolID
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007308">
+    X
+   </a>
+   =
+   <span class="Italic">
+    Value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007311">
+    Y
+   </a>
+   =
+   <span class="Italic">
+    Value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1007314">
+    Z
+   </a>
+   =
+   <span class="Italic">
+    Value
+   </span>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1007294">
+   </a>
+   <a name="iTools_api_3860698369_1061781_PageTOC_ISCALE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Id
+  </h3>
+  <p>
+   The identifier of the object to scale. If you pass a partial identifier, the IGETID function is called to retrieve the full identifier string.
+  </p>
+  <h3 class="Argument">
+   X, Y, Z
+  </h3>
+  <p>
+   The scaling factor values for the X, Y, and Z axes.
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1007300">
+   </a>
+   <a name="iTools_api_3860698369_1061785_PageTOC_ISCALE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1007302">
+   </a>
+   <a name="iTools_api_3860698369_16070">
+   </a>
+   RESET
+  </h3>
+  <p>
+   Set this keyword to reset the scale factors to 1.0 before performing any scaling with supplied X, Y, or Z values.
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1007305">
+   </a>
+   <a name="iTools_api_3860698369_36812">
+   </a>
+   TOOL
+  </h3>
+  <p>
+   Set this keyword to the identifer of the iTool in which ID is found. If not supplied, the current iTool is used.
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1007308">
+   </a>
+   <a name="iTools_api_3860698369_42128">
+   </a>
+   X
+  </h3>
+  <p>
+   Set this keyword to the scaling factor to apply to the X axis. If this keyword is supplied, the value supercedes the
+   <span class="Italic">
+    X
+   </span>
+   argument.
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1007311">
+   </a>
+   <a name="iTools_api_3860698369_31071">
+   </a>
+   Y
+  </h3>
+  <p>
+   Set this keyword to the scaling factor to apply to the Y axis. If this keyword is supplied, the value supercedes the
+   <span class="Italic">
+    Y
+   </span>
+   argument.
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1007314">
+   </a>
+   <a name="iTools_api_3860698369_99994">
+   </a>
+   Z
+  </h3>
+  <p>
+   Set this keyword to the scaling factor to apply to the Z axis. If this keyword is supplied, the value supercedes the
+   <span class="Italic">
+    Z
+   </span>
+   argument.
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1007317">
+   </a>
+   <a name="iTools_api_3860698369_1061774_PageTOC_ISCALE_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   In the following example, we plot a sine wave and reduce the Y axis by 50%.
+  </p>
+  <p class="Code">
+   ; Plot a sine wave
+  </p>
+  <p class="Code">
+   X = 2*!PI/100 * FINDGEN(100)
+  </p>
+  <p class="Code">
+   IPLOT, SIN(X)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Insert a dialog box to pause the flow of action
+  </p>
+  <p class="Code">
+   result = DIALOG_MESSAGE('Click OK to squish the Y axis by 50%.', $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;/INFORMATION)
+  </p>
+  <p class="Code">
+   ISCALE, 'plot', Y = 0.5
+   <br />
+   <br />
+   <br />
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1007321">
+   </a>
+   <a name="iTools_api_3860698369_1062715_PageTOC_ISCALE_">
+   </a>
+   Version History
+  </h2>
+  <table cellpadding="0" cellspacing="0" class="Default" height="28px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr style="height: 13px;">
+     <td>
+      <p>
+       7.1
+      </p>
+     </td>
+     <td>
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1007329">
+   </a>
+   <a name="iTools_api_3860698369_1062713_PageTOC_ISCALE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="IGETID.html#iTools_api_3860698369_1001117">
+    IGETID
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IROTATE.html#iTools_api_3860698369_1007064">
+    IROTATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="ITRANSLATE.html#iTools_api_3860698369_1008843">
+    ITRANSLATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IZOOM.html#iTools_api_3860698369_1011644">
+    IZOOM
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

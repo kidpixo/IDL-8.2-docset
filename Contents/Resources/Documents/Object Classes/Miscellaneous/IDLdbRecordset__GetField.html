@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Miscellaneous Object Classes|IDLdbRecordset" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLdbRecordset::GetField
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDLdbRecordset__GetField.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_misc.html">
+    Miscellaneous Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLdbRecordset::GetField
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="DM_Import_2289256752_1007072">
+   </a>
+   <a name="kanchor4639">
+   </a>
+   <a name="DM_Import_2289256752_31843">
+   </a>
+   IDLdbRecordset::GetField
+  </h1>
+  <p>
+   Use the IDLdbRecordset::GetField function method to get the value of a field from the current record in the recordset.
+  </p>
+  <h2 class="API">
+   <a name="DM_Import_2289256752_1007776_PageTOC_IDLdbRecordset">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   value =
+   <span class="Italic">
+    RSobj
+   </span>
+   -&gt; [
+   <a class="MCXref_Heading_0" href="IDLdbRecordset.html#DM_Import_2289256752_1006420">
+    IDLdbRecordset
+   </a>
+   ::]GetField(
+   <span class="Italic">
+    iFieldNumber
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#DM_Import_2289256752_1007112">
+    IS_NULL
+   </a>
+   =
+   <span class="Italic">
+    variable
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#DM_Import_2289256752_1007115">
+    NULL_VALUE
+   </a>
+   =
+   <span class="Italic">
+    variable
+   </span>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="DM_Import_2289256752_1019450_PageTOC_IDLdbRecordset">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the specified field value or if the value of the field is NULL (as defined by SQL) a null value (zero or an empty string) is returned.
+  </p>
+  <h2 class="API">
+   <a name="DM_Import_2289256752_1007778_PageTOC_IDLdbRecordset">
+   </a>
+   Arguments
+  </h2>
+  <h3>
+   iFieldNumber
+  </h3>
+  <p>
+   The number of the field for which the value will be returned. Field numbers have a range of 0 &lt;=
+   <span class="Italic">
+    n
+   </span>
+   &lt; number of fields.
+  </p>
+  <h2 class="API">
+   <a name="DM_Import_2289256752_1013506_PageTOC_IDLdbRecordset">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="DM_Import_2289256752_1007112">
+   </a>
+   <a name="DM_Import_2289256752_1013507_Keywords_IDLdbRecordset">
+   </a>
+   IS_NULL
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain 1 (one) if the ODBC system returns a NULL value, or 0 (zero) if the value is non-NULL.
+  </p>
+  <h3 class="Keyword">
+   <a name="DM_Import_2289256752_1007115">
+   </a>
+   <a name="DM_Import_2289256752_1013559_Keywords_IDLdbRecordset">
+   </a>
+   NULL_VALUE
+  </h3>
+  <p>
+   Set this keyword equal to the value that should be returned by the GetField method if the value of the requested field is considered to be NULL by the ODBC system.
+  </p>
+  <h2 class="API">
+   <a name="DM_Import_2289256752_1037626_PageTOC_IDLdbRecordset">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

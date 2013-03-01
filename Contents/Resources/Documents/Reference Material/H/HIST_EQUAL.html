@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HIST_EQUAL
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/H/HIST_EQUAL.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    HIST_EQUAL
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="H_835179117_758147">
+   </a>
+   <a name="H_835179117_23334">
+   </a>
+   HIST_EQUAL
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#H_835179117_758153">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_758155">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_874797">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_758158">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_758171">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_758178">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_880174">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1496">
+   </a>
+   HIST_EQUAL
+   <a name="kanchor1497">
+   </a>
+   function returns a histogram-equalized byte array.
+  </p>
+  <p>
+   The HISTOGRAM function is used to obtain the density
+   <a name="kanchor1498">
+   </a>
+   distribution of the input array. The histogram is integrated to obtain the cumulative density-probability function and finally the lookup function is used to transform to the output image.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The first element of the histogram is always zeroed to remove the background.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    hist_equal.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758153">
+   </a>
+   <a name="H_835179117_758153_PageTOC_HIST_EQUAL_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = HIST_EQUAL(
+   <i>
+    A
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_871698">
+    BINSIZE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_876498">
+    FCN
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#H_835179117_874403">
+    HISTOGRAM_ONLY
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_874687">
+    MAXV
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_758160">
+    MINV
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_875087">
+    OMAX
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_875100">
+    OMIN
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_874600">
+    PERCENT
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_874602">
+    TOP
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758155">
+   </a>
+   <a name="H_835179117_758155_PageTOC_HIST_EQUAL_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This function returns a histogram-equalized array of type byte, with the same dimensions as the input array. If the HISTOGRAM_ONLY keyword is set, then the output will be a vector of type LONG.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_874797">
+   </a>
+   <a name="H_835179117_874797_PageTOC_HIST_EQUAL_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   A
+  </h3>
+  <p>
+   The array to be histogram-equalized.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758158">
+   </a>
+   <a name="H_835179117_758158_PageTOC_HIST_EQUAL_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="H_835179117_871698">
+   </a>
+   <a name="H_835179117_871698_Keywords_HIST_EQUAL__">
+   </a>
+   BINSIZE
+  </h3>
+  <p>
+   Set this keyword to the size of the bin to use. The default is BINSIZE=1 if
+   <i>
+    A
+   </i>
+   is a byte array, or, for other input types, the default is (MAXV&#160;–&#160;MINV)/5000.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_876498">
+   </a>
+   <a name="H_835179117_876498_Keywords_HIST_EQUAL__">
+   </a>
+   FCN
+  </h3>
+  <p>
+   Set this keyword to the desired cumulative probability distribution function in the form of a 256-element vector. If a probability distribution function is not supplied, IDL uses a linear ramp, which yields equal probability bin results. This function is later normalized, so magnitude is inconsequential; the function should, however, increase monotonically.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_874403">
+   </a>
+   <a name="H_835179117_874403_Keywords_HIST_EQUAL__">
+   </a>
+   HISTOGRAM_ONLY
+  </h3>
+  <p>
+   Set this keyword to return a vector of type LONG containing the cumulative distribution histogram, rather than the histogram equalized array.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_874687">
+   </a>
+   <a name="H_835179117_874687_Keywords_HIST_EQUAL__">
+   </a>
+   MAXV
+  </h3>
+  <p>
+   Set this keyword to the maximum value to consider. The default is 255 if
+   <i>
+    A
+   </i>
+   is a byte array, otherwise the maximum data value is used. Input elements greater than or equal to MAXV are output as 255.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_758160">
+   </a>
+   <a name="H_835179117_758160_Keywords_HIST_EQUAL__">
+   </a>
+   MINV
+  </h3>
+  <p>
+   Set this keyword to the minimum value to consider. The default is 0 if
+   <i>
+    A
+   </i>
+   is a byte array, otherwise the minimum data value is used. Input elements less than or equal to MINV are output as 0.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_875087">
+   </a>
+   <a name="H_835179117_875087_Keywords_HIST_EQUAL__">
+   </a>
+   OMAX
+  </h3>
+  <p>
+   Set this keyword to a named variable that, upon exit, will contain the maximum data value used in constructing the histogram.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_875100">
+   </a>
+   <a name="H_835179117_875100_Keywords_HIST_EQUAL__">
+   </a>
+   OMIN
+  </h3>
+  <p>
+   Set this keyword to a named variable that, upon exit, will contain the minimum data value used in constructing the histogram.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_874600">
+   </a>
+   <a name="H_835179117_874600_Keywords_HIST_EQUAL__">
+   </a>
+   PERCENT
+  </h3>
+  <p>
+   Set this keyword to a value between 0 and 100 to stretch the image histogram. The histogram will be stretched linearly between the limits that exclude the PERCENT fraction of the lowest values, and the PERCENT fraction of the highest values. This is an automatic, semi-robust method of contrast enhancement.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_874602">
+   </a>
+   <a name="H_835179117_874602_Keywords_HIST_EQUAL__">
+   </a>
+   TOP
+  </h3>
+  <p>
+   The maximum value of the scaled result. If TOP is not specified, 255 is used. Note that the minimum value of the scaled result is always 0.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758171">
+   </a>
+   <a name="H_835179117_758171_PageTOC_HIST_EQUAL_">
+   </a>
+   Example
+  </h2>
+  <p>
+   Create a sample image using the DIST function and display it:
+  </p>
+  <p class="Code">
+   image = DIST(100)
+   <br />
+   TV, image
+  </p>
+  <p>
+   Create a histogram-equalized version of the byte array,
+   <span class="Courier">
+    image
+   </span>
+   , and display the new version. Use a minimum input value of 10, a maximum input value of 200, and limit the top value of the output array to 220:
+  </p>
+  <p class="Code">
+   new = HIST_EQUAL(image, MINV = 10, MAXV = 200, TOP = 220)
+   <br />
+   TV, new
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   See “Working with Histograms” (Chapter 8,
+   <i>
+    Image Processing in IDL
+   </i>
+   ) in the
+   <code>
+    help/pdf
+   </code>
+   directory of the IDL installation.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758178">
+   </a>
+   <a name="H_835179117_758178_PageTOC_HIST_EQUAL_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="H_835179117_880174">
+   </a>
+   <a name="H_835179117_880174_PageTOC_HIST_EQUAL_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../A/ADAPT_HIST_EQUAL.html#A_850317933_985007">
+    ADAPT_HIST_EQUAL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="H_EQ_CT.html#H_835179117_931377">
+    H_EQ_CT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="H_EQ_INT.html#H_835179117_759200">
+    H_EQ_INT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HIST_2D.html#H_835179117_758132">
+    HIST_2D
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HISTOGRAM.html#H_835179117_677165">
+    HISTOGRAM
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

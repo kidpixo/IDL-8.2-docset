@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: F" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   FILE_SAME
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/F/FILE_SAME.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="F_list.html">
+    Routines: F
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    FILE_SAME
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="F_848155245_894412">
+   </a>
+   <a name="F_848155245_50738">
+   </a>
+   FILE_SAME
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#F_848155245_894422">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_900718">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_894424">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_894427">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_894432">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_894442">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_894444">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   It is common for a given file to be accessible via more than one name. For example, a relative path and a fully-qualified path to the same file are considered different names, since the strings that make up the paths are not lexically identical. In addition, under UNIX, the widespread use of links (hard and symbolic) makes multiple names for the same file very common.
+  </p>
+  <p>
+   The
+   <a name="kanchor952">
+   </a>
+   FILE_SAME function is used to dete
+   <a name="kanchor953">
+   </a>
+   rmine if two different file names refer to the same underlying file.
+  </p>
+  <p>
+   The mechanism used to determine whether two names refer to the same file depends on the operating system in use:
+  </p>
+  <p>
+   <span class="Bold">
+    UNIX
+   </span>
+   : Under UNIX, all files are uniquely identified by two integer values: the filesystem that contains the file and the
+   <i>
+    inode number
+   </i>
+   , which identifies the file within the filesystem. If the input arguments are lexically identical, FILE_SAME will return True, regardless of whether the file specified actually exists. Otherwise, FILE_SAME compares the device and inode numbers of the two files, and returns True if they are identical, or False otherwise.
+  </p>
+  <p>
+   <span class="Bold">
+    Windows
+   </span>
+   : Unlike UNIX, Microsoft Windows identifies files solely by their names. FILE_SAME therefore expands the two supplied paths to their fully qualified forms, converts any “8.3 short names” to their real names, and then performs a simple case insensitive string comparison to determine if the paths are identical. (See
+   <a class="MCXref_Heading_0" href="FILE_SEARCH.html#F_848155245_932659">
+    Microsoft Windows “8.3 Short Names”
+   </a>
+   for more information on this subject). This is reliable for local disk files, but can produce incorrect results under some circumstances:
+  </p>
+  <p class="Bullet">
+   UNC network paths can expand to different, but equivalent, paths. For example, a network server may be referred to by either a name or an IP address.
+  </p>
+  <p class="Bullet">
+   Network attached storage can have mechanisms for giving multiple names to the same file, but to the Windows client system the names will appear to refer to different files. For example, a UNIX server using Samba software to serve files to machines on a Windows network can use symbolic links to produce two names for the same file, but these will appear as two distinct files to a Windows machine.
+  </p>
+  <p>
+   For these reasons, FILE_SAME is primarily of interest on UNIX systems. Under Windows, use it only on local files.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_894422">
+   </a>
+   <a name="F_848155245_894422_PageTOC_FILE_SAME_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   Result = FILE_SAME(
+   <i>
+    Path1
+   </i>
+   ,
+   <i>
+    Path2
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_906717">
+    NOEXPAND_PATH
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_900718">
+   </a>
+   <a name="F_848155245_68094">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   FILE_SAME returns True (1) if two filenames refer to the same underlying file, or False (0) otherwise. If either or both of the input arguments are arrays of file names, the result is an array, following the same rules as standard IDL operators.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_894424">
+   </a>
+   <a name="F_848155245_894424_PageTOC_FILE_SAME_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Path1, Path2
+  </h3>
+  <p>
+   Scalar or array string values containing the two file paths to be compared.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_894427">
+   </a>
+   <a name="F_848155245_894427_PageTOC_FILE_SAME_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="F_848155245_906717">
+   </a>
+   <a name="F_848155245_906717_Keywords_FILE_SAME__">
+   </a>
+   NOEXPAND_PATH
+  </h3>
+  <p>
+   Set this keyword to cause FILE_SAME to use the
+   <i>
+    Path
+   </i>
+   arguments exactly as specified, without expanding any wildcard characters or environment variable names included in the paths. See
+   <a class="MCXref_Heading_0" href="FILE_SEARCH.html#F_848155245_893545">
+    FILE_SEARCH
+   </a>
+   for details on path expansion. The utility of doing this depends on the operating system in use:
+  </p>
+  <p>
+   <span class="Bold">
+    UNIX
+   </span>
+   : Under UNIX, path expansion is not necessary unless the
+   <i>
+    Path
+   </i>
+   arguments use shell meta characters or environment variables.
+  </p>
+  <p>
+   <span class="Bold">
+    Windows
+   </span>
+   : By default, FILE_SAME expands the supplied paths to their fully qualified forms in order to be able to compare them. Preventing this path expansion cripples its ability to make a useful comparison, and is not recommended.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_894432">
+   </a>
+   <a name="F_848155245_894432_PageTOC_FILE_SAME_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   UNIX command shells often provide the
+   <span class="Courier">
+    HOME
+   </span>
+   environment variable to point at the user’s home directory. Many shells also expand the
+   <span class="Courier">
+    '~'
+   </span>
+   character to point at the home directory. The following IDL statement determines if these two mechanisms refer to the same directory:
+  </p>
+  <p class="Code">
+   PRINT, FILE_SAME('~', '$HOME')
+  </p>
+  <p>
+   On a UNIX system, the following statement determines if the current working directory is the same as your home directory:
+  </p>
+  <p class="Code">
+   PRINT, FILE_SAME('.', '$HOME')
+  </p>
+  <p>
+   On some BSD-derived UNIX systems, the three commands
+   <span class="Courier">
+    /bin/cp
+   </span>
+   ,
+   <span class="Courier">
+    /bin/ln
+   </span>
+   , and
+   <span class="Courier">
+    /bin/mv
+   </span>
+   are actually three hard links to the same binary file. The following statement will print the number 1 if this is true on your system:
+  </p>
+  <p class="Code">
+   PRINT, TOTAL(FILE_SAME('/bin/cp', ['/bin/ln', '/bin/mv'])) EQ 2
+  </p>
+  <p>
+   Under Mac OS X, the
+   <span class="Courier">
+    /etc
+   </span>
+   directory is actually a symbolic link to
+   <span class="Courier">
+    /private/etc
+   </span>
+   . As a result, the following lines of code provide a simple test to determine whether Mac OS X is the current platform:
+  </p>
+  <p class="Code">
+   IF FILE_SAME('/etc', '/private/etc') THEN $
+   <br />
+   &#160;&#160;&#160;PRINT, 'Running Mac OS X' ELSE $
+   <br />
+   &#160;&#160;&#160;PRINT, 'Not Running Mac OS X'
+   <br />
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The above lines are shown simply as an example; checking the value of !VERSION.OS_FAMILY is a more reliable method of determining which operating system is in use.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_894442">
+   </a>
+   <a name="F_848155245_894442_PageTOC_FILE_SAME_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="F_848155245_894444">
+   </a>
+   <a name="F_848155245_894444_PageTOC_FILE_SAME_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="FILE_EXPAND_PATH.html#F_848155245_882278">
+    FILE_EXPAND_PATH
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="FILE_INFO.html#F_848155245_883779">
+    FILE_INFO
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="FILE_SEARCH.html#F_848155245_893545">
+    FILE_SEARCH
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="FILE_TEST.html#F_848155245_882359">
+    FILE_TEST
+   </a>
+   <a class="MCXref_Heading_0" href="../Functional List of IDL Routines/Input_Output.html#funclisting_2438760872_1213961">
+    General File Access
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

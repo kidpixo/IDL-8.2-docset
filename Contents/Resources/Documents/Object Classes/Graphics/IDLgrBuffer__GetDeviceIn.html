@@ -1,0 +1,344 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrBuffer" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrBuffer::GetDeviceInfo
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrBuffer__GetDeviceIn.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrBuffer::GetDeviceInfo
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1007932">
+   </a>
+   <a name="objects_gr_2157407275_38793">
+   </a>
+   IDLgrBuffer::GetDeviceInfo
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007950">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007953">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007956">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007975">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDL
+   <a name="kanchor4172">
+   </a>
+   grBuffer::GetDeviceInfo procedure method returns information which allows IDL applications to intelligently make decisions for optimal performance. For example, it allows an application to determine if RENDERER=1 is actually implemented in hardware. It also allows applications to make optimal quality decisions when dynamically building texture maps.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1007950">
+   </a>
+   <a name="objects_gr_2157407275_1354801_PageTOC_IDLgrBuffer">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrBuffer.html#objects_gr_2157407275_1007684">
+    IDLgrBuffer
+   </a>
+   ::]GetDeviceInfo [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007957">
+    ALL
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007959">
+    MAX_NUM_CLIP_PLANES
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007961">
+    MAX_TEXTURE_DIMENSIONS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1669886">
+    MAX_TILE_DIMENSIONS
+   </a>
+   =variable] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007963">
+    MAX_VIEWPORT_DIMENSIONS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007965">
+    NAME
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007967">
+    NUM_CPUS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007970">
+    VENDOR
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1007972">
+    VERSION
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1007953">
+   </a>
+   <a name="objects_gr_2157407275_1397225_PageTOC_IDLgrBuffer">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1007956">
+   </a>
+   <a name="objects_gr_2157407275_1396827_PageTOC_IDLgrBuffer">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1007957">
+   </a>
+   <a name="objects_gr_2157407275_1007957_Keywords_IDLgrBuffer">
+   </a>
+   ALL
+  </h3>
+  <p>
+   Set this keyword to a named variable which, upon return, contains a structure with the values of all the device information keywords as fields.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1007959">
+   </a>
+   <a name="objects_gr_2157407275_1007959_Keywords_IDLgrBuffer">
+   </a>
+   MAX_NUM_CLIP_PLANES
+  </h3>
+  <p>
+   Set this keyword to a named variable that upon return will contain an integer that specifies the maximum number of user-defined clipping planes supported by the device.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1007961">
+   </a>
+   <a name="objects_gr_2157407275_1007961_Keywords_IDLgrBuffer">
+   </a>
+   MAX_TEXTURE_DIMENSIONS
+  </h3>
+  <p>
+   Set this keyword equal to a named variable. Upon return, MAX_TEXTURE_DIMENSIONS contains a two-element integer array that specifies the maximum texture size supported by the device.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1669886">
+   </a>
+   <a name="objects_gr_2157407275_32303">
+   </a>
+   MAX_TILE_DIMENSIONS
+  </h3>
+  <p>
+   Set this keyword equal to a named variable. Upon return, MAX_TILE_DIMENSIONS contains a two element integer array that specifies the maximum tile size supported by the device.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1007963">
+   </a>
+   <a name="objects_gr_2157407275_1007963_Keywords_IDLgrBuffer">
+   </a>
+   MAX_VIEWPORT_DIMENSIONS
+  </h3>
+  <p>
+   Set this keyword equal to a named variable. Upon return, MAX_VIEWPORT_DIMENSIONS contains a two-element integer array that specifies the maximum size of a graphics display supported by the device.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1007965">
+   </a>
+   <a name="objects_gr_2157407275_1007965_Keywords_IDLgrBuffer">
+   </a>
+   NAME
+  </h3>
+  <p>
+   Set this keyword equal to a named variable. Upon return, NAME contains the name of the rendering device as a string.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1007967">
+   </a>
+   <a name="objects_gr_2157407275_1007967_Keywords_IDLgrBuffer">
+   </a>
+   NUM_CPUS
+  </h3>
+  <p>
+   Set this keyword equal to a named variable. Upon return, NUM_CPUS contains an integer that specifies the number of CPUs that are known to, and available to IDL.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The NUM_CPUS keyword accurately returns the number of CPUs for the SUN and Microsoft Windows platforms. For platforms other than these, the number returned may not reflect the actual number of CPUs available to IDL in the current system.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1007970">
+   </a>
+   <a name="objects_gr_2157407275_1007970_Keywords_IDLgrBuffer">
+   </a>
+   VENDOR
+  </h3>
+  <p>
+   Set this keyword equal to a named variable. Upon return, VENDOR contains the name of the rendering device creator as a string.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1007972">
+   </a>
+   <a name="objects_gr_2157407275_1007972_Keywords_IDLgrBuffer">
+   </a>
+   VERSION
+  </h3>
+  <p>
+   Set this keyword equal to a named variable. Upon return, VERSION contains the version of the rendering device driver as a string.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1007975">
+   </a>
+   <a name="objects_gr_2157407275_71401">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Added MAX_NUM_CLIP_PLANES keyword
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added MAX_TILE_DIMENSIONS keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

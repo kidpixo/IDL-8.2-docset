@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: J|Java-IDL Bridge Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   JIDLComponentListener
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/J/Java-IDL Bridge Routines/JIDLComponentListener.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../J_list.html">
+    Routines: J
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Java IDL Bridge Routines.html">
+    Java-IDL Bridge Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    JIDLComponentListener
+   </span>
+  </div>
+  <h1>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener">
+   </a>
+   <a name="JIDL_Import_1464128226_ClassHead">
+   </a>
+   JIDLComponentListener
+   <a name="kanchor1575">
+   </a>
+  </h1>
+  <h2 class="API">
+   Declaration
+  </h2>
+  <p class="Code">
+   public interface
+   <span class="Bold">
+    JIDLComponentListener
+   </span>
+  </p>
+  <h2 class="API">
+   All Known Implementing Classes:
+  </h2>
+  <p>
+   <span class="Link">
+    <a href="JIDLCanvas.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas">
+     JIDLCanvas
+    </a>
+   </span>
+  </p>
+  <h2 class="API">
+   Description
+  </h2>
+  <p>
+   The listener interface for receiving component events (expose, resize) on a JIDLCanvas.
+  </p>
+  <p>
+   The class that is interested in handling these events implements this interface (and all the methods it contains). The listener object created from that class is then registered with the JIDLCanvas using the add-IDLComponent-Listener method. The listener is unregistered with the remove-IDLComponent-Listener.
+  </p>
+  <p>
+   Component events are provided for notification purposes; the JIDLCanvas automatically handles component redraws and resizes internally whether a program registers an additional JIDLComponent-Listener or not. The JIDLCanvas is itself a JIDLComponent-Listener and provides default behavior for expose and resize. For an expose event, the default behavior is for the JIDLCanvas to call the IDL program’s On-Expose method. For a resize, the default is to call the IDL program’s On-Resize method.
+  </p>
+  <p>
+   Note that clients should not register to listen to JIDLCanvas Component-Events using a Component-Listener, preferring the JIDLComponent-Listener instead.
+  </p>
+  <h2 class="API">
+   See Also:
+  </h2>
+  <p class="Code">
+   <span class="Courier">
+    java.awt.event.ComponentEvent
+   </span>
+   ,
+   <span class="Courier">
+    java.awt.event.ComponentListener
+   </span>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 480px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="133px" />
+   <col width="347px" />
+   <thead>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Member Summary
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p style="font-family: Times;font-weight: bold;font-size: 11pt;letter-spacing: 0em;color: #000000;">
+       <span class="Bold">
+        Methods
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+         IDLcomponentExposed(JIDLObjectI obj)
+        </a>
+       </span>
+      </p>
+      <p>
+       The IDL component (JIDLCanvas) has been exposed.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener_IDLcomponentResized_com_idl_javaidl_JIDLObjectI__java_awt_event_ComponentEvent_">
+         IDLcomponentResized(JIDLObjectI obj
+        </a>
+       </span>
+       ,
+       <span class="Link">
+        java.awt.event.ComponentEvent event)
+       </span>
+      </p>
+      <p>
+       The IDL component (JIDLCanvas) has been resized.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   Methods
+  </h2>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener_IDLcomponentExposed_com_idl_javaidl_JIDLObjectI_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLcomponentExposed(JIDLObjectI)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLcomponentExposed
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj)
+  </p>
+  <p>
+   The IDL component (JIDLCanvas) has been exposed.
+  </p>
+  <p>
+   The default behavior of JIDLCanvas’s default IDLcomponent-Exposed is to the IDL program’s On-Expose method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    obj
+   </span>
+   - The object that has been resized
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLComponentListener_IDLcomponentResized_com_idl_javaidl_JIDLObjectI__java_awt_event_ComponentEvent_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   IDLcomponentResized(JIDLObjectI, ComponentEvent)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    IDLcomponentResized
+   </span>
+   (
+   <span class="Link">
+    <a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">
+     com.idl.javaidl.JIDLObjectI
+    </a>
+   </span>
+   obj,
+   <span class="Courier">
+    java.awt.event.ComponentEvent
+   </span>
+   &#160;event)
+  </p>
+  <p>
+   The IDL component (JIDLCanvas) has been resized.
+  </p>
+  <p>
+   The default behavior of JIDLCanvas’s default IDLcomponent-Resized is to call the IDL program’s On-Resize method.
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    obj
+   </span>
+   - The object that has been resized
+  </p>
+  <p>
+   <span class="Courier">
+    event
+   </span>
+   - The Component event
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

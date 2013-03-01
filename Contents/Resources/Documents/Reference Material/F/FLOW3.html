@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: F" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   FLOW3
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/F/FLOW3.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="F_list.html">
+    Routines: F
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    FLOW3
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="F_848155245_757290">
+   </a>
+   <a name="F_848155245_62250">
+   </a>
+   FLOW3
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#F_848155245_757297">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_757299">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_757302">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_757323">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_757332">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_891343">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor979">
+   </a>
+   FLOW3 procedure draws lines representing a 3D
+   <a name="kanchor980">
+   </a>
+   flow/
+   <a name="kanchor981">
+   </a>
+   velocity
+   <a name="kanchor982">
+   </a>
+   field. Note that the 3D scaling system must be in place before calling FLOW3. This procedure works best with Z buffer output device.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    flow3.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_757297">
+   </a>
+   <a name="F_848155245_757297_PageTOC_FLOW3_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   FLOW3,
+   <i>
+    Vx
+   </i>
+   ,
+   <i>
+    Vy
+   </i>
+   ,
+   <i>
+    Vz
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#F_848155245_757304">
+    ARROWSIZE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_757307">
+    BLOB
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#F_848155245_757310">
+    LEN
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#F_848155245_757313">
+    NSTEPS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#F_848155245_757316">
+    NVECS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#F_848155245_757321">
+    SX
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="#F_848155245_958889">
+    SY
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="#F_848155245_958890">
+    SZ
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_757299">
+   </a>
+   <a name="F_848155245_757299_PageTOC_FLOW3_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Vx, Vy, Vz
+  </h3>
+  <p>
+   3D arrays containing X, Y, and Z components of the field.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_757302">
+   </a>
+   <a name="F_848155245_757302_PageTOC_FLOW3_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="F_848155245_757304">
+   </a>
+   <a name="F_848155245_757304_Keywords_FLOW3__">
+   </a>
+   ARROWSIZE
+  </h3>
+  <p>
+   Size of arrowheads (default = 0.05).
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_757307">
+   </a>
+   <a name="F_848155245_757307_Keywords_FLOW3__">
+   </a>
+   BLOB
+  </h3>
+  <p>
+   Set this keyword to draw a blob at the beginning of each flow line and suppress the arrows.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_757310">
+   </a>
+   <a name="F_848155245_757310_Keywords_FLOW3__">
+   </a>
+   LEN
+  </h3>
+  <p>
+   Length of each step used to follow flow lines (default = 2.0). Expressed in units of largest field vector (i.e., the length of the longest step is set to len times the grid spacing.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_757313">
+   </a>
+   <a name="F_848155245_757313_Keywords_FLOW3__">
+   </a>
+   NSTEPS
+  </h3>
+  <p>
+   Number of steps used to follow the flow lines (default = largest dimension of
+   <i>
+    Vx
+   </i>
+   / 5).
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_757316">
+   </a>
+   <a name="F_848155245_757316_Keywords_FLOW3__">
+   </a>
+   NVECS
+  </h3>
+  <p>
+   Number of random flow lines to draw (default = 200). Only used if Sx, Sy, Sz are not present.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_757321">
+   </a>
+   <a name="F_848155245_757321_Keywords_FLOW3__">
+   </a>
+   SX
+  </h3>
+  <h3 class="Keyword">
+   <a name="F_848155245_958889">
+   </a>
+   <a name="F_848155245_958889_Keywords_FLOW3__">
+   </a>
+   SY
+  </h3>
+  <h3 class="Keyword">
+   <a name="F_848155245_958890">
+   </a>
+   <a name="F_848155245_958890_Keywords_FLOW3__">
+   </a>
+   SZ
+  </h3>
+  <p>
+   Optional vectors containing the starting coordinates of the flow lines. If any of SX, SY, and SZ are specified, all three vectors must be specified. If omitted random starting points are chosen.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_757323">
+   </a>
+   <a name="F_848155245_757323_PageTOC_FLOW3_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Create a set of random three-dimensional arrays to represent
+   <br />
+   ; the field:
+   <br />
+   vx = RANDOMU(seed, 5, 5, 5)
+   <br />
+   vy = RANDOMU(seed, 5, 5, 5)
+   <br />
+   vz = RANDOMU(seed, 5, 5, 5)
+   <br />
+   <br />
+   ; Set up the 3D scaling system:
+   <br />
+   SCALE3, xr=[0,4], yr=[0,4], zr = [0,4]
+   <br />
+   <br />
+   ; Plot the vector field:
+   <br />
+   FLOW3, vx, vy, vz
+   <br />
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_757332">
+   </a>
+   <a name="F_848155245_757332_PageTOC_FLOW3_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="F_848155245_891343">
+   </a>
+   <a name="F_848155245_891343_PageTOC_FLOW3_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../V/VERT_T3D.html#V_813552237_787612">
+    VERT_T3D
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../V/VERT_T3D.html#V_813552237_787612">
+    VERT_T3D
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

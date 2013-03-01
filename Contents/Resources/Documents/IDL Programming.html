@@ -1,0 +1,1417 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDL Programming
+  </title>
+  <link href="SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../idl_CSH.html#IDL Programming.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <span class="MCBreadcrumbs">
+    IDL Programming
+   </span>
+  </div>
+  <h1>
+   IDL Programming
+  </h1>
+  <div class="MCMiniTocBox_0">
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="ProgrammingConcepts.html">
+     Concepts
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Components of the IDL Language/IDL_Data_Types.html">
+     IDL Data Types
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Dynamic_Data_Typing.html">
+     Dynamic Data Typing
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Compound_Data_Types.html">
+     Compound Data Types
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Data_Type_and_Structure.html">
+     Data Type and Structure of Expressions
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/The_Null_Variable.html">
+     The Null Variable
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Type_Conversion_Function.html">
+     Type Conversion Functions
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Creating_and_Defining_St.html">
+     Creating and Defining Structures
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Relaxed_Structure_Assign.html">
+     Relaxed Structure Assignment
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Structure_References.html">
+     Structure References
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Defining_and_Using_Const.html">
+     Defining and Using Constants
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/IDL_Pointers.html">
+     IDL Pointers
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Freeing_Pointers.html">
+     Freeing Pointers
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Operations_on_Pointers.html">
+     Operations on Pointers
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Pointer_Examples.html">
+     Pointer Examples
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Arrays.html">
+     Arrays
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Array_Subscript_Ranges.html">
+     Array Subscript Ranges
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Columns__Rows__and_Array.html">
+     Columns, Rows, and Array Majority
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Combining_Array_Subscrip.html">
+     Combining Array Subscripts
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Manipulating_Arrays.html">
+     Manipulating Arrays
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Using_Scalar_Values_as_A.html">
+     Using Scalar Values as Array Subscripts
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Using_Arrays_as_Array_Su.html">
+     Using Arrays as Array Subscripts
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Understanding_Array_Subs.html">
+     Understanding Array Subscripts
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Conditionally_Altering_A.html">
+     Conditionally Altering Array Elements
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Concatenating_Arrays.html">
+     Concatenating Arrays
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Arrays_of_Structures.html">
+     Arrays of Structures
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Parameters.html">
+     Parameters
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Parameter_Passing_Mechan.html">
+     Parameter Passing Mechanism
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Operators.html">
+     Operators
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Logical_Operators.html">
+     Logical Operators
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Mathematical_Operators.html">
+     Mathematical Operators
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Relational_Operators.html">
+     Relational Operators
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Operator_Precedence.html">
+     Operator Precedence
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Matrix_Operators.html">
+     Matrix Operators
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Other_Operators.html">
+     Other Operators
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Minimum_and_Maximum_Oper.html">
+     Minimum and Maximum Operators
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Advice_for_Library_Autho.html">
+     Code Libraries
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Advice_for_Library_Autho.html">
+     Advice for Library Authors
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Converting_Existing_Libr.html">
+     Converting Existing Code Libraries
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/System Variables.html">
+     System Variables
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/IDL_Environment_System_V.html">
+     IDL Environment System Variables
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/Constant_System_Variable.html">
+     Constant System Variables
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/Error_Handling_System_Va.html">
+     Error Handling System Variables
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Variables.html">
+     Variables
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Monitoring_Variable_Valu.html">
+     Monitoring Variable Values
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Assignment_Operations_an.html">
+     Assignment Operations and Arrays
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Assignment_and_Compound.html">
+     Assignment and Compound Assignment
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Saving_Variables_from_an.html">
+     Saving Variables from an IDL Session
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Environment Variables.html">
+     Environment Variables
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Components of the IDL Language/String_Operations.html">
+     String Operations
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Comparing_Strings.html">
+     Comparing Strings
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Finding_the_Length_of_a.html">
+     Finding the Length of a String
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Case_Folding.html">
+     Case Folding
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Components of the IDL Language/Substrings.html">
+     Substrings
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/IDL Features to Help You Develop Code.html">
+     IDL Features to Help You Develop Code
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Automatic_Compilation_an.html">
+     Automatic Compilation and Execution
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Appendices/reswords.html">
+     Reserved Words
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Components of the IDL Language/Learning_About_Regular_E.html">
+     Learning About Regular Expressions
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Components of the IDL Language/Automatic_Garbage_Collec.html">
+     Automatic Garbage Collection
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Components of the IDL Language/Date_Time_Data.html">
+     Date/Time Data
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Direct Graphics/Supported_Devices.html">
+     Supported Devices
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Components of the IDL Language/Format_Codes.html">
+     Format Codes
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Components of the IDL Language/Using_Explicitly_Formatt.html">
+     Using Explicitly Formatted Input/Output
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Components of the IDL Language/Using_HELP_with_Structur.html">
+     Using HELP with Structures
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Virtual_Memory.html">
+     Virtual Memory
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="Creating IDL Programs/Programming Tasks.html">
+     Tasks
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/IDL Program Types.html">
+     Using Procedures, Functions, SAVE Files
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Overview_of_IDL_Program.html">
+     Overview of IDL Program Types
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Defining_a_Procedure.html">
+     Defining a Procedure
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Defining_a_Function.html">
+     Defining a Function
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Using_Keyword_Parameters.html">
+     Using Keyword Parameters
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Determining_if_a_Keyword.html">
+     Determining if a Keyword is Set
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Recognizing_Potential_Na.html">
+     Recognizing Potential Naming Conflicts
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Overview_of_SAVE_Files.html">
+     Overview of SAVE Files
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Creating_SAVE_Files_of_P.html">
+     Creating SAVE Files of Program Files
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Executing_SAVE_Files.html">
+     Executing SAVE Files
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Appendices/Setting Preferences.html">
+     Setting Preferences
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/About_IDL_System_Prefere.html">
+     About IDL System Preferences
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/prefs_cpu.html">
+     !CPU Settings Preferences
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/prefs_directory.html">
+     Directory and Search Path Preferences
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/prefs_general.html">
+     General User Environment Preferences
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/prefs_gr_win.html">
+     Windows Graphics Preferences
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/prefs_gr_x.html">
+     X Window System Graphics Preferences
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/prefs_graphics.html">
+     General Graphics Preferences
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/prefs_win_rt.html">
+     Windows Runtime Preferences
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Error Handling.html">
+     Error Handling
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Controlling_and_Recoveri.html">
+     Controlling and Recovering from Errors
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Creating_Custom_Error_Me.html">
+     Creating Custom Error Messages
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/Error_Handling_System_Va.html">
+     Error Handling System Variables
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Application Programming/Math_Errors.html">
+     Math Errors
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Fonts and Colors.html">
+     Fonts and Colors
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/Using_Device_Fonts.html">
+     Using Device Fonts
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/Using_Hershey_Vector_Fon.html">
+     Using Hershey Vector Fonts
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/Using_TrueType_Fonts.html">
+     Using TrueType Fonts
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Appendices/Embedded_Formatting_Comm.html">
+     Embedded Formatting Commands
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="LoadingDefaultColorTables.html">
+     Loading Default Color Tables
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="IDLdoc/IDLdoc.html">
+     Code Commenting with IDLdoc
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="IDLdoc/Code_Comments.html">
+     Code Comments
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="IDLdoc/Formatting_IDLdoc_Commen.html">
+     Formatting IDLdoc Comment Blocks
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="IDLdoc/IDLdoc_Comment_Tags.html">
+     IDLdoc Comment Tags
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="IDLdoc/IDLdoc_Resources.html">
+     IDLdoc Resources
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="IDLdoc/Using_IDLdoc_to_Generate.html">
+     Using IDLdoc to Generate Documentation
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Distributing IDL Applications/DistributingIDLApplications.html">
+     Distributing IDL Applications
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Distributing IDL Applications/RuntimeModeApplications/DistributingRuntimeModeApplicationsIntro.html">
+     Runtime Mode Applications
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Distributing IDL Applications/VirtualMachineApplications/VirtualMachineApplicationsIntro.html">
+     Virtual Machine Applications
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Distributing IDL Applications/CallableIDLApplications/CallableIDLApplicationsIntro.html">
+     Callable IDL Applications
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Distributing IDL Applications/CreateRuntimeDistribution/CreatingRuntimeDistributionIntro.html">
+     Creating a Runtime Distribution
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/CreatingVideo.html">
+     Creating Video
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Internationalizing Code.html">
+     Internationalizing Code
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Interrupting_or_Aborting.html">
+     Interrupting or Aborting Execution
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Controlling_the_IDL_Thre.html">
+     Controlling the IDL Thread Pool
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Extending ENVI with IDL.html">
+     Extending ENVI with IDL
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/IDL Projects/ENVIExtensionWizard.html">
+     ENVI Extension Wizard
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="Creating IDL Programs/Program Control.html">
+     Program Control
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Overview_of_Program_Cont.html">
+     Overview of Program Control
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Definition_of_True_and_F.html">
+     Definition of True and False
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/CASE_Versus_SWITCH.html">
+     CASE Versus SWITCH
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Components of the IDL Language/Bitwise_Operators.html">
+     Bitwise Operators
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Jump_Statements.html">
+     Jump Statements
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Compound_Statements.html">
+     Compound Statements
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="Object Classes/ref_part2.html">
+     Objects
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="Objects/Object_Oriented_Programm.html">
+     The Basics of Using IDL Objects
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="Objects/Overview_of_Object_Graph.html">
+     Creating an Object Graphics Display
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Objects/Creating Custom Objects.html">
+     Creating Custom Objects
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="Objects/Object_Operator_Overload.html">
+     Operator Overloading
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Object Classes/Analysis/objects_an.html">
+     Analysis Object Classes
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Analysis/IDLanROI.html">
+     IDLanROI
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Analysis/IDLanROIGroup.html">
+     IDLanROIGroup
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Object Classes/File Format/objects_ff.html">
+     File Format Object Classes
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffDICOM.html">
+     IDLffDICOM
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffDXF.html">
+     IDLffDXF
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffJPEG2000.html">
+     IDLffJPEG2000
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffLangCat.html">
+     IDLffLangCat
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffMJPEG2000.html">
+     IDLffMJPEG2000
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffMrSID.html">
+     IDLffMrSID
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffShape.html">
+     IDLffShape
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffVideoWrite.html">
+     IDLffVideoWrite
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOM_Classes.html">
+     IDLffXMLDOM Classes
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMAttr.html">
+     IDLffXMLDOMAttr
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMCDATASection.html">
+     IDLffXMLDOMCDATASection
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMCharacterData.html">
+     IDLffXMLDOMCharacterData
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMComment.html">
+     IDLffXMLDOMComment
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMDocument.html">
+     IDLffXMLDOMDocument
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMDocumentFragm.html">
+     IDLffXMLDOMDocumentFragment
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMDocumentType.html">
+     IDLffXMLDOMDocumentType
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMElement.html">
+     IDLffXMLDOMElement
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMEntity.html">
+     IDLffXMLDOMEntity
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMEntityReferen.html">
+     IDLffXMLDOMEntityReference
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMNamedNodeMap.html">
+     IDLffXMLDOMNamedNodeMap
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMNode.html">
+     IDLffXMLDOMNode
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMNodeIterator.html">
+     IDLffXMLDOMNodeIterator
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMNodeList.html">
+     IDLffXMLDOMNodeList
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMNotation.html">
+     IDLffXMLDOMNotation
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMProcessingIns.html">
+     IDLffXMLDOMProcessingInstruction
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMText.html">
+     IDLffXMLDOMText
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLDOMTreeWalker.html">
+     IDLffXMLDOMTreeWalker
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/File Format/IDLffXMLSAX.html">
+     IDLffXMLSAX
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Object Classes/Graphics/objects_gr.html">
+     Graphics Object Classes
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrAxis.html">
+     IDLgrAxis
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrBuffer.html">
+     IDLgrBuffer
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrClipboard.html">
+     IDLgrClipboard
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrColorbar.html">
+     IDLgrColorbar
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrContour.html">
+     IDLgrContour
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrFilterChain.html">
+     IDLgrFilterChain
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrFont.html">
+     IDLgrFont
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrImage.html">
+     IDLgrImage
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrLegend.html">
+     IDLgrLegend
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrLight.html">
+     IDLgrLight
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrModel.html">
+     IDLgrModel
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrPalette.html">
+     IDLgrPalette
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrPattern.html">
+     IDLgrPattern
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrPDF.html">
+     IDLgrPDF
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrPlot.html">
+     IDLgrPlot
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrPolygon.html">
+     IDLgrPolygon
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrPolyline.html">
+     IDLgrPolyline
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrPrinter.html">
+     IDLgrPrinter
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrROI.html">
+     IDLgrROI
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrROIGroup.html">
+     IDLgrROIGroup
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrScene.html">
+     IDLgrScene
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrShader.html">
+     IDLgrShader
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrShaderBytscl.html">
+     IDLgrShaderBytscl
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrShaderConvol3.html">
+     IDLgrShaderConvol3
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrSurface.html">
+     IDLgrSurface
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrSymbol.html">
+     IDLgrSymbol
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrTessellator.html">
+     IDLgrTessellator
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrText.html">
+     IDLgrText
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrTextEdit.html">
+     IDLgrTextEdit
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrView.html">
+     IDLgrView
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrViewgroup.html">
+     IDLgrViewgroup
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrVolume.html">
+     IDLgrVolume
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrVRML.html">
+     IDLgrVRML
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Graphics/IDLgrWindow.html">
+     IDLgrWindow
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Object Classes/Miscellaneous/objects_misc.html">
+     Miscellaneous Object Classes
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Reference Material/I/IDL_Container.html">
+     IDL_Container
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/IDLdbDatabase.html">
+     IDLdbDatabase
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/IDLdbRecordset.html">
+     IDLdbRecordset
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/IDL_IDLBridge.html">
+     IDL_IDLBridge
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/IDL_Object.html">
+     IDL_Object
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/IDL_Savefile.html">
+     IDL_Savefile
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/IDLcomIDispatch.html">
+     IDLcomIDispatch
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/IDLitComponent.html">
+     IDLitComponent
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/IDLitWindow.html">
+     IDLitWindow
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/IDLjavaObject.html">
+     IDLjavaObject
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/IDLsysMonitorInfo.html">
+     IDLsysMonitorInfo
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Miscellaneous/TrackBall.html">
+     TrackBall
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Object Classes/Network/objects_network.html">
+     Network Object Classes
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Network/About_Network_Objects.html">
+     About Network Objects
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Network/IDLnetOGCWCS.html">
+     IDLnetOGCWCS
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Network/IDLnetOGCWMS.html">
+     IDLnetOGCWMS
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Object Classes/Network/IDLnetURL.html">
+     IDLnetURL
+    </a>
+   </p>
+   <p class="MiniTOC1_0">
+    <a class="MiniTOC1" href="Creating IDL Programs/Creating Applications in IDL/Widget Application Techniques.html">
+     Interfaces (Widgets)
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Creating Applications in IDL/User_Interface_Options_i.html">
+     User Interface Options in IDL
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Application Programming/Creating Widget Applications.html">
+     Creating Widget Applications
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/About_Widgets.html">
+     About Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/About_Widget_Application.html">
+     About Widget Applications
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Widget_Programming_Conce.html">
+     Widget Programming Concepts
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Widget_Application_Lifec.html">
+     Widget Application Lifecycle
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Manipulating_Widgets.html">
+     Manipulating Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Working_With_Widget_IDs.html">
+     Working With Widget IDs
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Widget_Event_Processing.html">
+     Widget Event Processing
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Managing_Application_Sta.html">
+     Managing Application State
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Creating_a_Compound_Widg.html">
+     Creating a Compound Widget
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Example__Compound_Widget.html">
+     Example: Compound Widget
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Debugging_Widget_Applica.html">
+     Debugging Widget Applications
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Creating Applications in IDL/Widget Application Techniques.html">
+     Widget Application Techniques
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Working_with_Widget_Even.html">
+     Working with Widget Events
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Using_Multiple_Widget_Hi.html">
+     Using Multiple Widget Hierarchies
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Creating_Menus.html">
+     Creating Menus
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Tips_on_Creating_Widget.html">
+     Tips on Creating Widget Applications
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Enhancing_Widget_Applica.html">
+     Enhancing Widget Application Usability
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Creating Applications in IDL/About_Button_Widgets.html">
+     About Button Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Bitmap_Button_Labels.html">
+     Bitmap Button Labels
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Tooltips.html">
+     Tooltips
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Exclusive_and_Non_Exclus.html">
+     Exclusive and Non-Exclusive Buttons
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Creating Applications in IDL/About_Draw_Widgets.html">
+     About Draw Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Using_Direct_Graphics_in.html">
+     Using Direct Graphics in Draw Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Using_Object_Graphics_in.html">
+     Using Object Graphics in Draw Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Scrolling_Draw_Widgets.html">
+     Scrolling Draw Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Draw_Widget_Example.html">
+     Draw Widget Example
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Accessing_Draw_Widget_Ev.html">
+     Accessing Draw Widget Events
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Implementing_Drag_and_Dr.html">
+     Implementing Drag and Drop Functionality
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Creating Applications in IDL/About_Property_Sheet_Wid.html">
+     About Property Sheet Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Registering_Properties.html">
+     Registering Properties
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Selecting_Properties.html">
+     Selecting Properties
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Changing_Properties.html">
+     Changing Properties
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/User_defined_Properties.html">
+     User-defined Properties
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Property_Sheet_Sizing.html">
+     Property Sheet Sizing
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Property_Sheet_Example.html">
+     Property Sheet Example
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Multiple_Properties_Exam.html">
+     Multiple Properties Example
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Creating Applications in IDL/About_Table_Widgets.html">
+     About Table Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Default_Table_Size.html">
+     Default Table Size
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Table_Widget_Selection_M.html">
+     Table Widget Selection Modes
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Table_Widget_Data_Types.html">
+     Table Widget Data Types
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Table_Widget_Data_Retrie.html">
+     Table Widget Data Retrieval
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Table_Widget_Edit_Mode.html">
+     Table Widget Edit Mode
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Table_Widget_Cell_Attrib.html">
+     Table Widget Cell Attributes
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Example__Single_Data_Typ.html">
+     Example: Single Data Type Data in a Table Widget
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Example__Structure_Data.html">
+     Example: Structure Data in a Table Widget
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Creating Applications in IDL/About_Tab_Widgets.html">
+     About Tab Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Example__A_Simple_Tab_Wi.html">
+     Example: A Simple Tab Widget
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Tab_Sizing_and_Multiline.html">
+     Tab Sizing and Multiline Behavior
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Example__Retrieving_Valu.html">
+     Example: Retrieving Values
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Creating Applications in IDL/About_Tree_Widgets.html">
+     About Tree Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Types_of_Tree_Widgets.html">
+     Types of Tree Widgets
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Example__A_Simple_Tree.html">
+     Example: A Simple Tree
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Setting_the_Tree_Selecti.html">
+     Setting the Tree Selection State
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Making_a_Tree_Entry_Visi.html">
+     Making a Tree Entry Visible
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Replacing_the_Default_Bi.html">
+     Replacing the Default Bitmaps
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Dragging_and_Dropping_Tr.html">
+     Dragging and Dropping Tree Nodes
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Tree_Widget_Drag_and_Dro.html">
+     Tree Widget Drag and Drop Examples
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Positioning_Tree_Nodes.html">
+     Positioning Tree Nodes
+    </a>
+   </p>
+   <p class="MiniTOC3_0">
+    <a class="MiniTOC3" href="Creating IDL Programs/Creating Applications in IDL/Using_Tree_Widget_Checkboxes.html">
+     Using_Tree_Widget_Checkboxes
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Creating Applications in IDL/About_Runtime_Distributi.html">
+     About Runtime Distributions
+    </a>
+   </p>
+   <p class="MiniTOC2_0">
+    <a class="MiniTOC2" href="Creating IDL Programs/Creating Applications in IDL/Providing_Help_Within_th.html">
+     Providing Help Within the User Interface
+    </a>
+   </p>
+  </div>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

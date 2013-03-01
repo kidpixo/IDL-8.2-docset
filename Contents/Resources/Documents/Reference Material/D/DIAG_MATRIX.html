@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: D" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   DIAG_MATRIX
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/D/DIAG_MATRIX.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="D_list.html">
+    Routines: D
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    DIAG_MATRIX
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="D_843829869_997856">
+   </a>
+   <a name="D_843829869_88193">
+   </a>
+   DIAG_MATRIX
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#D_843829869_997861">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_1002801">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_997863">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_997869">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_997871">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_997895">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_997897">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor668">
+   </a>
+   DIAG_MATRIX f
+   <a name="kanchor669">
+   </a>
+   unction con
+   <a name="kanchor670">
+   </a>
+   structs a diagonal matrix from an input vector, or if given a matrix, then DIAG_MATRIX will extract a diagonal vector.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_997861">
+   </a>
+   <a name="D_843829869_997861_PageTOC_DIAG_MATRIX_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = DIAG_MATRIX(
+   <i>
+    A
+   </i>
+   [,&#160;
+   <i>
+    Diag
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_1002801">
+   </a>
+   <a name="D_843829869_95371">
+   </a>
+   Return Value
+  </h2>
+  <p class="Bullet">
+   If given an input vector with
+   <i>
+    n
+   </i>
+   values, the result is an
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    n
+   </i>
+   array of the same type. The DIAG_MATRIX function may also be used to construct subdiagonal or superdiagonal arrays.
+  </p>
+  <p class="Bullet">
+   If given an input
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    m
+   </i>
+   array, the result is a vector with MIN(
+   <i>
+    n
+   </i>
+   ,
+   <i>
+    m
+   </i>
+   ) elements containing the diagonal elements. The DIAG_MATRIX function may also be used to extract subdiagonals or superdiagonals.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_997863">
+   </a>
+   <a name="D_843829869_997863_PageTOC_DIAG_MATRIX_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   A
+  </h3>
+  <p>
+   Either an
+   <i>
+    n
+   </i>
+   -element input vector to convert to a diagonal matrix, or a
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    m
+   </i>
+   input array to extract a diagonal.
+   <i>
+    A
+   </i>
+   may be any numeric type.
+  </p>
+  <h3 class="Argument">
+   Diag
+  </h3>
+  <p>
+   An optional argument that specifies the subdiagonal (
+   <i>
+    Diag
+   </i>
+   &lt; 0) or superdiagonal (
+   <i>
+    Diag
+   </i>
+   &gt; 0) to fill or extract. The default is
+   <i>
+    Diag
+   </i>
+   =0 which puts or extracts the values along the diagonal. If
+   <i>
+    A
+   </i>
+   is a vector with the
+   <i>
+    m
+   </i>
+   elements, then the result is an
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    n
+   </i>
+   array, where
+   <i>
+    n
+   </i>
+   =
+   <i>
+    m
+   </i>
+   +
+   <i>
+    ABS
+   </i>
+   (
+   <i>
+    Diag
+   </i>
+   ). If
+   <i>
+    A
+   </i>
+   is an array, then the result is a vector whose length depends upon the number of elements remaining along the subdiagonal or superdiagonal.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   The
+   <i>
+    Diag
+   </i>
+   argument may be used to easily construct tridiagonal arrays. For example, the expression,
+   <br />
+   <br />
+   <span class="Courier">
+    DIAG_MATRIX(VL,-1) + DIAG_MATRIX(V) + DIAG_MATRIX(VU,1)
+   </span>
+   <br />
+   <br />
+   will create an
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    n
+   </i>
+   array, where
+   <i>
+    VL
+   </i>
+   is an (
+   <i>
+    n
+   </i>
+   - 1)-element vector containing the subdiagonal values,
+   <i>
+    V
+   </i>
+   is an
+   <i>
+    n
+   </i>
+   -element vector containing the diagonal values, and
+   <i>
+    VU
+   </i>
+   is an (
+   <i>
+    n
+   </i>
+   - 1)-element vector containing the superdiagonal values.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_997869">
+   </a>
+   <a name="D_843829869_997869_PageTOC_DIAG_MATRIX_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_997871">
+   </a>
+   <a name="D_843829869_997871_PageTOC_DIAG_MATRIX_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Create a tridiagonal matrix and extract the diagonal using the following program:
+  </p>
+  <p class="Code">
+   PRO ExDiagMatrix
+   <br />
+   ; Convert three input vectors to a tridiagonal matrix:
+   <br />
+   diag = [1, -2, 3, -4]
+   <br />
+   sub = [5, 10, 15]
+   <br />
+   super = [3, 6, 9]
+   <br />
+   array = DIAG_MATRIX(diag) + $
+   <br />
+   DIAG_MATRIX(super,&#160;1) + DIAG_MATRIX(sub,&#160;-1)
+   <br />
+   PRINT, 'DIAG_MATRIX array:'
+   <br />
+   PRINT, array
+   <br />
+   <br />
+   ; Extract the diagonal:
+   <br />
+   PRINT, 'DIAG_MATRIX diagonal:'
+   <br />
+   PRINT, DIAG_MATRIX(array)
+   <br />
+   END
+  </p>
+  <p>
+   When this program is compiled and run, IDL prints:
+  </p>
+  <p class="Code">
+   DIAG_MATRIX array:
+  </p>
+  <p class="Code">
+   1       3       0       0
+  </p>
+  <p class="Code">
+   5      -2       6       0
+  </p>
+  <p class="Code">
+   0      10       3       9
+  </p>
+  <p class="Code">
+   0       0      15      -4
+  </p>
+  <p class="Code">
+   DIAG_MATRIX diagonal:
+  </p>
+  <p class="Code">
+   1      -2       3      -4
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_997895">
+   </a>
+   <a name="D_843829869_997895_PageTOC_DIAG_MATRIX_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="D_843829869_997897">
+   </a>
+   <a name="D_843829869_997897_PageTOC_DIAG_MATRIX_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../I/IDENTITY.html#I_833016429_853755">
+    IDENTITY
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../M/MATRIX_MULTIPLY.html#M_824365677_960643">
+    MATRIX_MULTIPLY
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Components of the IDL Language/Manipulating_Arrays.html#arrays_3727706888_752335">
+    Manipulating Arrays
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

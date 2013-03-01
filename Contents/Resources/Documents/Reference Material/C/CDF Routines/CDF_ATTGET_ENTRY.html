@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C|CDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CDF_ATTGET_ENTRY
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/C/CDF Routines/CDF_ATTGET_ENTRY.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../CDF_Routines.html">
+    CDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CDF_ATTGET_ENTRY
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="CDF_1744428779_1005659">
+   </a>
+   <a name="CDF_1744428779_75636">
+   </a>
+   CDF_ATTGET_ENTRY
+  </h1>
+  <p>
+   The
+   <a name="kanchor221">
+   </a>
+   CDF_ATTGET_ENTRY procedure reads a variable attribute entry from a CDF file.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p>
+   CDF_ATTGET_ENTRY,
+   <span class="Italic">
+    Id
+   </span>
+   ,
+   <span class="Italic">
+    Attribute
+   </span>
+   ,
+   <span class="Italic">
+    EntryNum
+   </span>
+   ,
+   <span class="Italic">
+    AttributeEntryType
+   </span>
+   ,
+   <span class="Italic">
+    Value
+   </span>
+   ,
+   <span class="Italic">
+    Status
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#CDF_1744428779_1005688">
+    CDF_TYPE
+   </a>
+   =
+   <span class="Italic">
+    variable
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#CDF_1744428779_1005707">
+    ATTRIBUTE_NAME
+   </a>
+   =
+   <span class="Italic">
+    string
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#CDF_1744428779_1005710">
+    ZVARIABLE
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Id
+  </h3>
+  <p>
+   The CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE.
+  </p>
+  <h3 class="Argument">
+   Attribute
+  </h3>
+  <p>
+   A string containing the name of the attribute or the attribute number to be written.
+  </p>
+  <h3 class="Argument">
+   EntryNum
+  </h3>
+  <p>
+   The entry number. If the attribute is variable in scope, this is either the name or number of the variable the attribute is to be associated with. If the attribute is global in scope, this is the actual gEntry. It is the user's responsibility to keep track of valid gEntry numbers. Normally, gEntry numbers begin with 0 or 1 and increase to MAXGENTRY (as reported in the GET_ATTR_INFO structure returned by CDF_CONTROL), but this is not required.
+  </p>
+  <h3 class="Argument">
+   AttributeEntryType
+  </h3>
+  <p>
+   The data type of the requested attribute entry.
+  </p>
+  <h3 class="Argument">
+   Value
+  </h3>
+  <p>
+   A named variable that will contain the attribute value.
+  </p>
+  <h3 class="Argument">
+   Status
+  </h3>
+  <p>
+   The procedure return status. A value of 1 is returned if the requested attribute exists and its entry is retrieved. Otherwise, 0 is returned.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1005688">
+   </a>
+   <a name="CDF_1744428779_61510">
+   </a>
+   CDF_TYPE
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain the CDF type of the attribute entry, returned as a scalar string. The possible string values are:
+  </p>
+  <p>
+   CDF_CHAR
+  </p>
+  <p>
+   CDF_UCHAR
+  </p>
+  <p>
+   CDF_INT1
+  </p>
+  <p>
+   CDF_BYTE
+  </p>
+  <p>
+   CDF_UINT1
+  </p>
+  <p>
+   CDF_UINT2
+  </p>
+  <p>
+   CDF_INT2
+  </p>
+  <p>
+   CDF_UINT4
+  </p>
+  <p>
+   CDF_INT4
+  </p>
+  <p>
+   CDF_REAL4
+  </p>
+  <p>
+   CDF_FLOAT
+  </p>
+  <p>
+   CDF_REAL8
+  </p>
+  <p>
+   CDF_DOUBLE
+  </p>
+  <p>
+   CDF_EPOCH
+  </p>
+  <p>
+   CDF_EPOCH16
+  </p>
+  <p>
+   If the type cannot be determined, “UNKNOWN” is returned.
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1005707">
+   </a>
+   <a name="CDF_1744428779_99463">
+   </a>
+   ATTRIBUTE_NAME
+  </h3>
+  <p>
+   Set this keyword to a named variable that will hold the name of the requested attribute number.
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1005710">
+   </a>
+   <a name="CDF_1744428779_66637">
+   </a>
+   ZVARIABLE
+  </h3>
+  <p>
+   If
+   <span class="Italic">
+    EntryNum
+   </span>
+   is a variable ID (as opposed to a variable name) and the variable is a zVariable, set this flag to indicate that the variable ID is a zVariable ID. The default behavior is to assume that
+   <span class="Italic">
+    EntryNum
+   </span>
+   is an rVariable ID.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The attribute must have a scope of VARIABLE_SCOPE.
+  </p>
+  <h2 class="API">
+   Examples
+  </h2>
+  <p class="Code">
+   id = CDF_OPEN('test.cdf')
+  </p>
+  <p class="Code">
+   inq = CDF_INQUIRE(id)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Read all the variable attribute entries.
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Walk through all of the zVariables
+  </p>
+  <p class="Code">
+   FOR varNum = 0, inq.nzvars-1 DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Walk through all of the ZVariable attributes
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;FOR attrNum = 0, inq.natts-1 DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Read the variable attribute
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;CDF_ATTGET_ENTRY, id, attrNum, varNum, attType, value, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;status, /ZVARIABLE, CDF_TYPE=cdfType, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ATTRIBUTE_NAME=attName
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;IF STATUS NE 1 THEN CONTINUE
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, "attr_name = ", attName, ", ", cdfType, ", ", $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;value
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENDFOR
+  </p>
+  <p class="Code">
+   ENDFOR
+  </p>
+  <h2 class="API">
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="CDF_ATTGET.html#CDF_1744428779_1005585">
+    CDF_ATTGET
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

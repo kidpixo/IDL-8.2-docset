@@ -1,0 +1,427 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CANNY
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CANNY.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CANNY
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_1362211">
+   </a>
+   <a name="C_854643309_46024">
+   </a>
+   CANNY
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_1362223">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1362316">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1362321">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1362358">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1378568">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1362562">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor205">
+   </a>
+   CANNY function implements the Canny edge-detection algorithm.
+  </p>
+  <p>
+   The Canny edge-detection algorithm has the following steps:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Smooth the image with a Gaussian filter. A 5x5 kernel with a given sigma is used.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Compute the gradient orientation and magnitude. A pair of 3x3 convolution masks are used, one for estimating the gradient in the x-direction (
+     <i>
+      G
+     </i>
+     <sub class="italic">
+      x
+     </sub>
+     ):
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   <img src="../../images/9_26.jpg" />
+  </p>
+  <p class="indent">
+   and the other for estimating the gradient in the y-direction (
+   <i>
+    G
+   </i>
+   <sub class="italic">
+    y
+   </sub>
+   ):
+  </p>
+  <p class="indent">
+   <img src="../../images/9_28.jpg" />
+  </p>
+  <p class="indent">
+   The magnitude of the gradient is approximated using
+   <img src="../../images/9_27.jpg" />
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     The edge direction is calculated using ATAN(
+     <i>
+      G
+     </i>
+     <sub class="italic">
+      y
+     </sub>
+     ,
+     <i>
+      G
+     </i>
+     <sub class="italic">
+      x
+     </sub>
+     ).
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   This edge direction is then related to a direction that can be traced in an image, assigning each value to one of four sectors (0, 1, 2, or 3) as follows:
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Relating Edge Direction to Direction in an Image
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p style="text-align: center;">
+       <img src="../../images/9_18.jpg" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     An edge point is defined to be a point whose gradient magnitude is locally maximum in the direction of the gradient. This process, which results in ridges one pixel wide, is called
+     <i>
+      nonmaxima suppression
+     </i>
+     . After nonmaxima suppression one ends up with an image which is zero everywhere except at the local maxima points. At the local maxima points the value of the gradient magnitude is preserved.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Hysteresis is applied to eliminate gaps. Any pixel in the nonmaxima suppression image that has a value greater than T_HIGH (high threshold calculated from
+     <a class="MCXref_Heading_0" href="#C_854643309_1362362">
+      HIGH
+     </a>
+     ) is presumed to be an edge pixel, and is marked as such immediately. Then any pixels that are connected to this edge pixel and that have a value greater than T_LOW (low threshold calculated from
+     <a class="MCXref_Heading_0" href="#C_854643309_1362368">
+      LOW
+     </a>
+     ) are also selected as edge pixels. All edges are followed until the value drops below T_LOW.
+    </td>
+   </tr>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1362223">
+   </a>
+   <a name="C_854643309_1362223_PageTOC_CANNY_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = CANNY(
+   <i>
+    Image
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1362362">
+    HIGH
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1362368">
+    LOW
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1362372">
+    SIGMA
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1362316">
+   </a>
+   <a name="C_854643309_1362316_PageTOC_CANNY_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is a byte array containing the edges in the image.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1362321">
+   </a>
+   <a name="C_854643309_1362321_PageTOC_CANNY_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Image
+  </h3>
+  <p>
+   A 2D image array.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1362358">
+   </a>
+   <a name="C_854643309_1362358_PageTOC_CANNY_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="C_854643309_1362362">
+   </a>
+   <a name="C_854643309_25162">
+   </a>
+   HIGH
+  </h3>
+  <p>
+   The high value used to calculate the high threshold during edge detection, given as a factor of the histogram of the magnitude array. The input range is [0-1]. The default value is 0.8. If the input value is outside the allowable range of [
+   <a class="MCXref_Heading_0" href="#C_854643309_1362368">
+    LOW
+   </a>
+   -1], it is silently clipped to fall into that range.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1362368">
+   </a>
+   <a name="C_854643309_92541">
+   </a>
+   LOW
+  </h3>
+  <p>
+   The low value used to calculate the low threshold during edge detection, given as a factor of the
+   <a class="MCXref_Heading_0" href="#C_854643309_1362362">
+    HIGH
+   </a>
+   value. The input range is [0-1]. The default value is 0.4. If the input value is outside the allowable range of [0-1], it is clipped to fall into that range.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1362372">
+   </a>
+   <a name="C_854643309_69621">
+   </a>
+   SIGMA
+  </h3>
+  <p>
+   The sigma value used when creating the Gaussian kernel. The default value is 0.6
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1378568">
+   </a>
+   <a name="C_854643309_83956">
+   </a>
+   Example
+  </h2>
+  <p>
+   The following example peforms Canny edge detection on an image of Manhattan island, using the default values for the HIGH, LOW, and SIGMA keywords:
+  </p>
+  <p class="Code">
+   ; Read a greyscale image
+   <br />
+   nyny = READ_TIFF(FILEPATH('image.tif', $
+   <br />
+   &#160;&#160;&#160;SUBDIRECTORY=['examples', 'data']))
+   <br />
+   ; Resize the image
+   <br />
+   nyny = REBIN(nyny, 384, 256)
+   <br />
+   ; Perform edge detection using defaults
+   <br />
+   filtered = CANNY(nyny)
+   <br />
+   ; Create a window
+   <br />
+   WINDOW, XSIZE=384, YSIZE=512
+   <br />
+   ; Display the original and filtered images
+   <br />
+   TVSCL, nyny, 0
+   <br />
+   TVSCL, filtered, 1
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1362562">
+   </a>
+   <a name="C_854643309_1362562_PageTOC_CANNY_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

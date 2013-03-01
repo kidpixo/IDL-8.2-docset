@@ -1,0 +1,510 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Object-Oriented Programming|Creating Custom Objects" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Creating Custom Object Method Routines
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#Objects/Creating_Custom_Object_M_1.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Object Classes/ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbsSelf">
+    Object-Oriented Programming
+   </span>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Creating Custom Object Method Routines
+   </span>
+  </div>
+  <h1>
+   Creating Custom Object Method Routines
+  </h1>
+  <p>
+   IDL objects
+   <a name="kanchor3761">
+   </a>
+   can have associated procedures and functions called
+   <i>
+    methods
+   </i>
+   . Methods are called on objects via their object references using the method invocation operator.
+  </p>
+  <p>
+   While object methods are constructed in the same way as any other IDL procedure or function, they are different from other routines in the following ways:
+  </p>
+  <p class="Bullet">
+   Object methods are defined using a special naming convention that incorporates the name of the class to which the method belongs (see
+   <a href="#objects_custom_2374809850_1030537" target="" title="" alt="" class="MCXref_0">
+    Defining Method Routines
+   </a>
+   ).
+  </p>
+  <p class="Bullet">
+   All method routines automatically pass an implicit argument named
+   <i>
+    Self
+   </i>
+   , which contains the object reference of the object on which the method is called.
+  </p>
+  <p class="Bullet">
+   Object methods cannot be called on their own. You must use the method invocation operator and supply a valid object reference, either of the class the method belongs to or of one of that class’ subclasses.
+  </p>
+  <h2 class="API">
+   <a name="objects_custom_2374809850_1030537">
+   </a>
+   <a name="objects_custom_2374809850_86165">
+   </a>
+   Defining Method Routines
+  </h2>
+  <p>
+   Method routines are
+   <a name="kanchor3762">
+   </a>
+   defined in the same way as other IDL procedures and functions, with the exception that the name of the class to which they belong, along with two colons, is prepended to the method name:
+  </p>
+  <p class="Code">
+   PRO
+   <i>
+    ClassName
+   </i>
+   ::
+   <i>
+    Method
+   </i>
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;
+   <i>
+    IDL statements
+   </i>
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   or
+  </p>
+  <p class="Code">
+   FUNCTION
+   <i>
+    ClassName
+   </i>
+   ::
+   <i>
+    Method
+   </i>
+   , Argument1
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;
+   <i>
+    IDL statements
+   </i>
+  </p>
+  <p class="Code">
+   RETURN,
+   <i>
+    value
+   </i>
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   For example, suppose we create two objects, each with its own “print” method.
+  </p>
+  <p>
+   First, define two class structures:
+  </p>
+  <p class="Code">
+   struct = { class1, data1:0.0 }
+  </p>
+  <p class="Code">
+   struct = { class2, data2a:0, data2b:0L, INHERITS class1 }
+  </p>
+  <p>
+   Now we define two “print” methods to print the contents of any objects of either of these two classes. (If you are typing this at the IDL command line, enter the .RUN command before each of the following procedure definitions.)
+  </p>
+  <p class="Code">
+   PRO class1::Print1
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;PRINT, self.data1
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="Code">
+   PRO class2::Print2
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;PRINT, self.data1
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;PRINT, self.data2a, self.data2b
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   Once these procedures are defined, any objects of class1 have access to the method Print1, and any objects of class2 have access to both Print1 and Print2 (because class2 is a subclass of—it
+   <i>
+    inherits
+   </i>
+   from—class1). Note that the Print2 method prints the data1 field inherited from class1.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   It is not necessary to give different method names to methods from different classes, as we have done here with Print1 and Print2. In fact, in most cases both methods would have simply been called Print, with each object class knowing only about its own version of the method.
+  </p>
+  <h2 class="API">
+   <a name="objects_custom_2374809850_1030566">
+   </a>
+   <a name="objects_custom_2374809850_69802">
+   </a>
+   The Implicit
+   <i>
+    Self
+   </i>
+   Argument
+   <a name="kanchor3763">
+   </a>
+  </h2>
+  <p>
+   Every method routine has an implicit argument parameter named
+   <a name="kanchor3764">
+   </a>
+   <i>
+    Self
+   </i>
+   . The
+   <i>
+    Self
+   </i>
+   parameter always contains the object reference of the object on which the method is called. In the method routines created above,
+   <i>
+    Self
+   </i>
+   is used to specify which object the data fields should be printed from using the
+   <a name="kanchor3765">
+   </a>
+   structure dot operator:
+  </p>
+  <p class="Code">
+   PRINT, self.data1
+  </p>
+  <p>
+   You do not need to explicitly pass the
+   <i>
+    Self
+   </i>
+   argument; in fact, if you try to specify an argument called
+   <i>
+    Self
+   </i>
+   when defining a method routine, IDL will issue an error.
+  </p>
+  <h2 class="API">
+   <a name="objects_custom_2374809850_1030571">
+   </a>
+   <a name="objects_custom_2374809850_65765">
+   </a>
+   Calling Method Routines
+  </h2>
+  <p>
+   IDL recognizes two forms of the method invocation operator:
+  </p>
+  <table class="TableStyle-Keyword_Table" style="width: 409px;caption-side: top;mc-table-style: url('../Resources/TableStyles/Keyword_Table.css');" cellspacing="0">
+   <col width="81px" class="Column-Column1" />
+   <col width="164px" class="Column-Column1" />
+   <col width="164px" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <td class="HeadE-Column1-Header1">
+      <p style="text-align: center;">
+       Form
+      </p>
+     </td>
+     <td class="HeadE-Column1-Header1">
+      <p>
+       Syntax
+      </p>
+     </td>
+     <td class="HeadD-Column1-Header1">
+      <p>
+       Notes
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p style="text-align: center;">
+       .
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       Obj.Method_Name
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Introduced in IDL 8.0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p style="text-align: center;">
+       -&gt;
+      </p>
+     </td>
+     <td class="BodyB-Column1-Body2">
+      <p class="Code">
+       Obj-&gt;Method_Name
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       Introduced in IDL 5.0
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Beginning with IDL 8.0, you can use the . and -&gt; forms of the operator interchangeably; they are equivalent. Code intended to run on systems hosting versions of IDL prior to 8.0 should use the -&gt; form.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Discussion and example code in the IDL help system uses both forms of the method invocation operator. Discussion of object-oriented programming generally uses the older -&gt; form, while discussion of the IDL graphics API introduced in IDL 8.0 generally uses the . form.
+  </p>
+  <p>
+   where
+   <i>
+    Obj
+   </i>
+   is an object reference and
+   <i>
+    Method
+   </i>
+   is a method belonging either to the object’s class or to one of its superclasses.
+   <i>
+    Method
+   </i>
+   may be specified either partially (using only the method name) or completely using both the class name and method name, connected with two colons:
+  </p>
+  <p class="indent">
+   <i>
+    Obj.
+   </i>
+   <i>
+    Class::Method
+   </i>
+  </p>
+  <p>
+   See
+   <a href="Method_Overriding_1.html#objects_custom_2374809850_1030632" target="" title="" alt="" class="MCXref_0">
+    Specifying Class Names in Method Calls
+   </a>
+   for more information.
+  </p>
+  <p>
+   The exact method syntax is slightly different from other routine invocations:
+  </p>
+  <p class="Code">
+   ; For a procedure method.
+  </p>
+  <p class="Code">
+   ObjRef.Method
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; For a function method.
+  </p>
+  <p class="Code">
+   Result = ObjRef.Method()
+  </p>
+  <p>
+   Where
+   <i>
+    ObjRef
+   </i>
+   is an object reference belonging to the same class as the
+   <i>
+    Method
+   </i>
+   , or to one of that class’ subclasses. We can illustrate this behavior using the Print1 and Print2 methods defined above.
+  </p>
+  <p>
+   First, define two new objects:
+  </p>
+  <p class="Code">
+   A = class1([args])
+  </p>
+  <p class="Code">
+   B = class2([args])
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   or
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   A = OBJ_NEW('class1')
+  </p>
+  <p class="Code">
+   B = OBJ_NEW('class2')
+  </p>
+  <p>
+   We can call Print1 on the object A as follows:
+  </p>
+  <p class="Code">
+   A.Print1
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   0.00000
+  </p>
+  <p>
+   Similarly, we can call Print2 on the object B:
+  </p>
+  <p class="Code">
+   B-&gt;Print2
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   0.00000
+  </p>
+  <p class="Code">
+   0           0
+  </p>
+  <p>
+   Since the object B inherits its properties from class1, we can also call Print1 on the object B:
+  </p>
+  <p class="Code">
+   B.Print1
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   0.00000
+  </p>
+  <p>
+   We cannot, however, call Print2 on the object A, since class1 does not inherit the properties of class2:
+  </p>
+  <p class="Code">
+   A.Print2
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   % Attempt to call undefined method: 'CLASS1::PRINT2'.
+  </p>
+  <h2 class="API">
+   <a name="objects_custom_2374809850_28699">
+   </a>
+   Searching for Method Routines
+  </h2>
+  <p>
+   When a method is called on an object reference, IDL searches for it as with any procedure or function, and calls it if it can be found, following the naming convention established for structure definition routines (see
+   <a href="Creating_an_Object_Class_1.html#objects_custom_2374809850_1030303" target="" title="" alt="" class="MCXref_0">
+    Automatic Class Structure Definition
+   </a>
+   ). In other words, IDL discovers methods as it needs them in the same way as regular procedures and functions, with the exception that it searches for files named
+  </p>
+  <p class="Code">
+   <i>
+    classname__method
+   </i>
+   .pro
+  </p>
+  <p>
+   rather than simply
+  </p>
+  <p class="Code">
+   <i>
+    method
+   </i>
+   .pro
+  </p>
+  <p>
+   Remember that there are two
+   <i>
+    underscores
+   </i>
+   in the file name, and two
+   <i>
+    colons
+   </i>
+   in the method routine’s name.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

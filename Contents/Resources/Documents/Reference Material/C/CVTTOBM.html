@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CVTTOBM
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CVTTOBM.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CVTTOBM
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_871497">
+   </a>
+   <a name="C_854643309_14106">
+   </a>
+   CVTTOBM
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_871505">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1078485">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_871507">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_871508">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_871512">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_996442">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1052278">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor435">
+   </a>
+   CVTTOBM function converts a byte array in which each byte represents one pixel into a “
+   <a name="kanchor436">
+   </a>
+   bitmap byte array” in which each bit represents one pixel. This is useful when creating
+   <a name="kanchor437">
+   </a>
+   bitmap labels for buttons created with the WIDGET_BUTTON function.
+  </p>
+  <p>
+   Most of IDL’s image file format reading functions (READ_BMP, READ_PICT, etc.) return a byte array which must be converted before use as a button label. Note that there is one exception to this rule; the READ_X11_BITMAP routine returns a bitmap byte array that needs no conversion before use.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    cvttobm.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   IDL supports color bitmaps for button labels. The BITMAP keyword to WIDGET_BUTTON specifies that the button label is a color bitmap.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_871505">
+   </a>
+   <a name="C_854643309_871505_PageTOC_CVTTOBM_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = CVTTOBM(
+   <i>
+    Array
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_871509">
+    THRESHOLD
+   </a>
+   =
+   <i>
+    value
+   </i>
+   {0 to 255}] )
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1078485">
+   </a>
+   <a name="C_854643309_90527">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a bitmap byte array. Bitmap byte arrays are monochrome; by default, CVTTOBM converts pixels that are darker than the median value to black and pixels that are lighter than the median value to white. You can supply a different threshold value via the THRESHOLD keyword.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_871507">
+   </a>
+   <a name="C_854643309_871507_PageTOC_CVTTOBM_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Array
+  </h3>
+  <p>
+   A 2-dimensional pixel array, one byte per pixel.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_871508">
+   </a>
+   <a name="C_854643309_871508_PageTOC_CVTTOBM_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="C_854643309_871509">
+   </a>
+   <a name="C_854643309_871509_Keywords_CVTTOBM__">
+   </a>
+   THRESHOLD
+  </h3>
+  <p>
+   A byte value (or an integer value between 0 and 255) to be used as a threshold value when determining if a particular pixel is black or white. If THRESHOLD is not specified, the threshold is calculated to be the average of the input array.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_871512">
+   </a>
+   <a name="C_854643309_871512_PageTOC_CVTTOBM_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following example creates a bitmap button label from a byte array:
+  </p>
+  <p class="Code">
+   ; Create a byte array:
+   <br />
+   image = BYTSCL(DIST(100))
+   <br />
+   <br />
+   ; Create a widget base:
+   <br />
+   base = WIDGET_BASE(/COLUMN)
+   <br />
+   <br />
+   ; Use CVTTOBM to create a bitmap byte array for a button label:
+   <br />
+   button = WIDGET_BUTTON(base, VALUE = CVTTOBM(image))
+   <br />
+   <br />
+   ; Realize the widget:
+   <br />
+   WIDGET_CONTROL, base, /REALIZE
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_996442">
+   </a>
+   <a name="C_854643309_996442_PageTOC_CVTTOBM_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1052278">
+   </a>
+   <a name="C_854643309_1052278_PageTOC_CVTTOBM_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../W/WIDGET_BUTTON.html#W_811389549_36288">
+    WIDGET_BUTTON
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../X/XBM_EDIT.html#X_800576109_1046006">
+    XBM_EDIT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

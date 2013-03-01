@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Additional Topics|Medical Imaging in IDL|Using IDL DICOM Network Services|Configuring an Application Entity" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Default Application Entities
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#DICOM_Medical/Using IDL DICOM Network Services/DefaultApplicationEntities.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../OtherTopics.html">
+    Additional Topics
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Expanded DICOM Support in IDL/ExpandedDICOMFunctionality.html">
+    Medical Imaging in IDL
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Overview.html">
+    Using IDL DICOM Network Services
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Default Application Entities
+   </span>
+  </div>
+  <h2 class="API">
+   Default Application Entities
+  </h2>
+  <p>
+   The
+   <span class="Bold">
+    DICOM Network Services
+   </span>
+   utility defines four default
+   <a name="kanchor4972">
+   </a>
+   Application Entities:
+  </p>
+  <ul>
+   <li value="1">
+    <span class="Bold">
+     IDL_AE_QUERY_SCU
+    </span>
+    — uses the Query SCU service, which lets you ask a device (a file source) about DICOM files contained in its database. This service works in conjunction with the Query SCP service, which allows you retrieve DICOM files from the remote node. On the file source device (the server in this instance), the Query SCP service listens for and responds to queries. It also listens for requests and sends the specified DICOM files.
+   </li>
+   <li value="2">
+    <span class="Bold">
+     IDL_AE_STOR_SCP
+    </span>
+    — uses the Storage SCP service, which listens at the defined TCP/IP port for incoming DICOM files and writes them to a local disk directory.
+   </li>
+   <li value="3">
+    <span class="Bold">
+     IDL_AE_STOR_SCU
+    </span>
+    — uses the Storage SCU service, which lets you send local DICOM files to a remote node.
+   </li>
+   <li value="4">
+    <span class="Bold">
+     IDL_AE_ECHO_SCU
+    </span>
+    — uses the Echo SCU service, which lets you determine if a remote SCP node is accessible.
+   </li>
+  </ul>
+  <p>
+   The network characteristics of the default entities can be modified, but they cannot be deleted. You can also define new AEs. See the following section for details:
+  </p>
+  <ul>
+   <li value="1">
+    <a href="DefiningNewApplicationEntity.html">
+     Defining a New Application Entity
+    </a>
+   </li>
+   <li value="2">
+    <a href="ModifyingApplicationEntity.html">
+     Modifying an Application Entity
+    </a>
+   </li>
+   <li value="3">
+    <a href="DeletingApplicationEntity.html">
+     Deleting an Application Entity
+    </a>
+   </li>
+  </ul>
+  <h3>
+   Replacing a Default Entity
+  </h3>
+  <p>
+   You can use the default IDL_AE_ECHO_SCU, IDL_AE_QUERY_SCU, and IDL_AE_STOR_SCU Application Entities for echo, query and send operations without making any modifications. If you decide to define new entities to replace these, you will need to select the entity in the
+   <span class="Bold">
+    Configuration
+   </span>
+   tab.
+  </p>
+  <p>
+   After defining a new entity as described in
+   <a href="DefiningNewApplicationEntity.html">
+    Defining a New Application Entity
+   </a>
+   in the following section, complete the following steps:
+  </p>
+  <ol>
+   <li value="1">
+    <p>
+     Open the
+     <span class="Bold">
+      DICOM Network Services
+     </span>
+     utility by entering:
+    </p>
+    <p class="Code">
+     DICOMEX_NET
+    </p>
+   </li>
+   <li value="2">
+    In the upper right quadrant of the
+    <span class="Bold">
+     Configuration
+    </span>
+    tab, select the name of the new Application Entity in the
+    <span class="Bold">
+     Application Entity Name
+    </span>
+    droplist to indicate the entity to be associated with the Echo SCU, Query Retrieve SCU or Storage SCU services.
+   </li>
+   <li value="3">
+    Click
+    <span class="Bold">
+     Save
+    </span>
+    to record the changes.
+   </li>
+  </ol>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

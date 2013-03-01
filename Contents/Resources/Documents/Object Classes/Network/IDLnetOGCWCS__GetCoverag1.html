@@ -1,0 +1,2231 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Network Object Classes|IDLnetOGCWCS" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLnetOGCWCS::GetCoverageOffering
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Network/IDLnetOGCWCS__GetCoverag1.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_network.html">
+    Network Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLnetOGCWCS::GetCoverageOffering
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_network_1009015_1385325">
+   </a>
+   <a name="objects_network_1009015_28400">
+   </a>
+   I
+   <a name="kanchor4771">
+   </a>
+   DLnetOGCWCS::GetCoverageOffering
+  </h1>
+  <p>
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1385350">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1385358">
+     Return Value
+    </a>
+   </madcap:conditionaltext>
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1386053">
+     Arguments
+    </a>
+   </madcap:conditionaltext>
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1386055">
+     Keywords
+    </a>
+   </madcap:conditionaltext>
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1388684">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1388690">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1386071">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLnetOGCWCS::GetCoverageOffering function method returns a complex structure that contains the details of a single coverage offering, one that was returned by the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS__DescribeCo.html#objects_network_1009015_1384809">
+    IDLnetOGCWCS::DescribeCoverage
+   </a>
+   method request. You can return either the first coverage offering described in the XML file or a coverage identified by the INDEX keyword value.
+  </p>
+  <p>
+   This method will throw an error if the GetCoverageOffering call fails.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1385350">
+   </a>
+   <a name="objects_network_1009015_16440">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result = Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS.html#objects_network_1009015_1403015">
+    IDLnetOGCWCS
+   </a>
+   ::]GetCoverageOffering([&#160;
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1386057">
+    INDEX
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1385358">
+   </a>
+   <a name="objects_network_1009015_15930">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a structure containing the coverage offering details. The coverage offering structure contains strings, arrays of strings, structures, and arrays of structures.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   To return only the names of the coverage offerings that exist in the XML file see the DescribeCoverage method return value.
+  </p>
+  <h3>
+   Coverage Offering Structure
+  </h3>
+  <p>
+   The coverage offering structure is complex. Some elements in the main structure return other structures, as shown in the following figure:
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Coverage Offering Structures - Tree View
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/covereage_offering_structure.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999752px;margin-bottom: 6.000484px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_main_cov_struct">
+   </a>
+   <a name="objects_network_1009015_1385413">
+   </a>
+   <a name="objects_network_1009015_36075">
+   </a>
+   Main Coverage Offering Structure
+  </h3>
+  <p>
+   The following table contains a list of tags found in the main level structure. All items return string values unless otherwise noted.
+  </p>
+  <table style="width: 502px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Coverage Offering Brief Structure
+   </p>
+   <col width="213px" />
+   <col width="289px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field Name
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       INDEX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       A zero-based string index value provided as a convenience. This does not come from the XML file.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       VERSION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageDescription&gt;&lt;version&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       UPDATE_SEQ
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageDescription&gt;&lt;updateSequence&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385434">
+       </a>
+       <a name="objects_network_1009015_83589">
+       </a>
+       CO_NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;name&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       CO_LABEL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;label&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       CO_DESC
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;description&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385447">
+       </a>
+       <a name="objects_network_1009015_46763">
+       </a>
+       LONLATENV
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;lonLatEnvelope&gt;
+      </p>
+      <p>
+       Returns a structure. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1385580">
+        LonLatEnv Structure
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385456">
+       </a>
+       <a name="objects_network_1009015_42578">
+       </a>
+       NUM_SPAT_DOM_LLES
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Provides the number of
+       <span class="Courier">
+        gml:Envelop
+       </span>
+       e and
+       <span class="Courier">
+        gml:EnvelopeWithTimePeriod
+       </span>
+       spatial domain elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385461">
+       </a>
+       <a name="objects_network_1009015_42467">
+       </a>
+       SPAT_DOM_LONLATENV
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;&lt;gml:Envelope&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;&lt;gml:EnvelopeWithTimePeriod&gt;
+      </p>
+      <p>
+       Returns a structure. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1385624">
+        Spat_Dom_LonLatEnv Structure
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385474">
+       </a>
+       <a name="objects_network_1009015_64189">
+       </a>
+       NUM_SPAT_DOM_GRIDS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Provides the number of
+       <span class="Courier">
+        gml:Grid
+       </span>
+       and
+       <span class="Courier">
+        gml:RectifiedGrid
+       </span>
+       spatial domain elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385479">
+       </a>
+       <a name="objects_network_1009015_68237">
+       </a>
+       SPAT_DOM_GRID
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;&lt;gml:Grid&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;&lt;gml:RectifiedGrid&gt;
+      </p>
+      <p>
+       Returns an array of structures. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1385688">
+        Spat_Dom_Grid Structure
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385490">
+       </a>
+       <a name="objects_network_1009015_62571">
+       </a>
+       NUM_TEMP_TM_POSITIONS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Provides the number of temporal domain elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385495">
+       </a>
+       <a name="objects_network_1009015_10755">
+       </a>
+       TEMP_TM_POSITIONS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;&lt;temporalDomain&gt;
+       <br />
+       &lt;gml:timePosition&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;temporalDomain&gt; &lt;gml:timePosition&gt;
+      </p>
+      <p>
+       Returns an array of structures. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1385758">
+        Temp_Tm_Position Structure
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385506">
+       </a>
+       <a name="objects_network_1009015_22177">
+       </a>
+       NUM_TEMP_TM_PERIODS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Provides the number of time period elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385511">
+       </a>
+       <a name="objects_network_1009015_25472">
+       </a>
+       TEMP_TM_PERIOD
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;&lt;temporalDomain&gt;&lt;timePeriod&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;temporalDomain&gt;
+       <br />
+       &lt;timePeriod&gt;
+      </p>
+      <p>
+       Returns an array of structures. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1385804">
+        Temp_Tm_Period Structure
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385522">
+       </a>
+       <a name="objects_network_1009015_79385">
+       </a>
+       RANGE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;
+       <br />
+       &lt;RangeSet&gt;
+      </p>
+      <p>
+       Returns a structure. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1385864">
+        Range Structure
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NUM_RANGE_AXES
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of range set axis description elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385535">
+       </a>
+       <a name="objects_network_1009015_48369">
+       </a>
+       RANGE_AXIS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;
+       <br />
+       &lt;RangeSet&gt;&lt;axisDescription&gt;
+       <br />
+       &lt;AxisDescription&gt;
+      </p>
+      <p>
+       Returns an array of structures. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1385913">
+        Axis_Description Structure
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385544">
+       </a>
+       <a name="objects_network_1009015_41442">
+       </a>
+       CRS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;supportedCRSs&gt;
+      </p>
+      <p>
+       Returns a structure. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1386012">
+        CRS Structure
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385553">
+       </a>
+       <a name="objects_network_1009015_41178">
+       </a>
+       FORMATS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;supportedFormats&gt;
+      </p>
+      <p>
+       Returns an array of strings (0 to many).
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385559">
+       </a>
+       <a name="objects_network_1009015_71482">
+       </a>
+       NATIVE_FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;supportedFormats&gt;
+      </p>
+      <p class="Code">
+       &lt;nativeFormat&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       INTERPOLATION_METHOD
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;
+       <br />
+       &lt;supportedInterpolations&gt;
+      </p>
+      <p>
+       Returns an array of strings (0 to many).
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       NATIVE_INTERPOLATION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;
+       <br />
+       &lt;supportedInterpolations&gt;&lt;default&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_lonlatenv_struct">
+   </a>
+   <a name="objects_network_1009015_1385580">
+   </a>
+   <a name="objects_network_1009015_48299">
+   </a>
+   LonLatEnv Structure
+  </h3>
+  <p>
+   This structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385447">
+    LONLATENV
+   </a>
+   field of the main coverage offering structure and contains the fields defined in the following table. All elements are strings unless otherwise noted.
+  </p>
+  <table style="width: 494px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    LonLatEnv Structure Fields
+   </p>
+   <col width="120px" />
+   <col width="374px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       SRS_NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;lonLatEnvelope&gt;&lt;srsName&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       POS1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;lonlatEnvelope&gt;&lt;gml:pos&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       DIMS1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;lonlatEnvelope&gt;&lt;dimension&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       POS2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;lonlatEnvelope&gt;&lt;gml:pos&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       DIMS2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;lonlatEnvelope&gt;&lt;dimension&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       TM_POS1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;lonlatEnvelope&gt;
+       <br />
+       &lt;gml:timePosition&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       TM_POS2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;lonlatEnvelope&gt;
+       <br />
+       &lt;gml:timePosition&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_spat_dom_lonlatenv_struct">
+   </a>
+   <a name="objects_network_1009015_1385624">
+   </a>
+   <a name="objects_network_1009015_99766">
+   </a>
+   Spat_Dom_LonLatEnv Structure
+  </h3>
+  <p>
+   This structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385461">
+    SPAT_DOM_LONLATENV
+   </a>
+   field of the main coverage offering structure and can contain
+   <span class="Courier">
+    gml:Envelope
+   </span>
+   or
+   <span class="Courier">
+    gml:EnvelopeWithTimePeriod
+   </span>
+   information. Both of these are children of the
+   <span class="Courier">
+    spatialDomain
+   </span>
+   node. To determine the number of structures returned, use the main structure field,
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385456">
+    NUM_SPAT_DOM_LLES
+   </a>
+   . The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="width: 494px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Spat_Dom_LonLatEnv Structure Fields
+   </p>
+   <col width="120px" />
+   <col width="374px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       SRS_NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Envelope&gt;&lt;srsName&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:EnvelopeWithTimePeriod&gt;&lt;srsName&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385645">
+       </a>
+       <a name="objects_network_1009015_94661">
+       </a>
+       POS1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Envelope&gt;&lt;gml:pos&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:EnvelopeWithTimePeriod&gt;&lt;gml:pos&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       DIMS1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Envelope&gt;&lt;gml:pos&gt;&lt;dimension&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:EnvelopeWithTimePeriod&gt;&lt;gml:pos&gt;&lt;dimension&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385658">
+       </a>
+       <a name="objects_network_1009015_96254">
+       </a>
+       POS2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Envelope&gt;&lt;gml:pos&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:EnvelopeWithTimePeriod&gt;&lt;gml:pos&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       DIMS2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Envelope&gt;&lt;gml:pos&gt;&lt;dimension&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:EnvelopeWithTimePeriod&gt;&lt;gml:pos&gt;&lt;dimension&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385671">
+       </a>
+       <a name="objects_network_1009015_95833">
+       </a>
+       TM_POS1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:EnvelopeWithTimePeriod&gt;&lt;gml:timePosition&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385676">
+       </a>
+       <a name="objects_network_1009015_76325">
+       </a>
+       TM_POS2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:EnvelopeWithTimePeriod&gt;&lt;gml:timePosition&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_spat_dom_grid_struct">
+   </a>
+   <a name="objects_network_1009015_1385688">
+   </a>
+   <a name="objects_network_1009015_82394">
+   </a>
+   Spat_Dom_Grid Structure
+  </h3>
+  <p>
+   This structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385479">
+    SPAT_DOM_GRID
+   </a>
+   field of the main coverage offering structure and can contain
+   <span class="Courier">
+    gml:Grid
+   </span>
+   or
+   <span class="Courier">
+    gml:GridRectified
+   </span>
+   elements. Both of these are children of the
+   <span class="Courier">
+    spatialDomain
+   </span>
+   node. To determine the number of Spat_Dom_Grid structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385474">
+    NUM_SPAT_DOM_GRIDS
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="width: 501px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Spat_Dom_Grid and GridRectified Structure Fields
+   </p>
+   <col width="154px" />
+   <col width="347px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       RECTIFIED
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Indicates whether or not the grid is rectified in a value of “Yes” or “No”. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       DIMS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Grid&gt;&lt;dimensions&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:GridRectified&gt;&lt;dimensions&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       SRS_NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Grid&gt;&lt;srsName&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:GridRectified&gt;&lt;srsName&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       LIMITS_ENV_LOW
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Grid&gt;&lt;gml:limits&gt;&lt;gml:gridEnvelope&gt;
+       <br />
+       &lt;gml:low&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:GridRectified&gt;&lt;gml:limits&gt;
+       <br />
+       &lt;gml:gridEnvelope&gt;&lt;gml:low&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       LIMITS_ENV_HIGH
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Grid&gt;&lt;gml:limits&gt;&lt;gml:gridEnvelope&gt;
+       <br />
+       &lt;gml:high&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:GridRectified&gt;&lt;gml:limits&gt;
+       <br />
+       &lt;gml:gridEnvelope&gt;&lt;gml:high&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       AXIS_NAMES
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Grid&gt;&lt;axisName&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:GridRectified&gt;&lt;gml:origin&gt;&lt;gml:pos&gt;
+      </p>
+      <p>
+       Returns an array of strings, 0 to many.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ORIGIN_POS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Grid&gt;&lt;gml:origin&gt;&lt;gml:pos&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:GridRectified&gt;&lt;gml:origin&gt;&lt;gml:pos&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       OFFSET_VECTORS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:Grid&gt;&lt;gml:offsetVector&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:GridRectified&gt;&lt; gml:offsetVector&gt;
+      </p>
+      <p>
+       Returns an array of strings, 0 to many.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_temp_tm_position_struct">
+   </a>
+   <a name="objects_network_1009015_1385758">
+   </a>
+   <a name="objects_network_1009015_51359">
+   </a>
+   Temp_Tm_Position Structure
+  </h3>
+  <p>
+   This structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385495">
+    TEMP_TM_POSITIONS
+   </a>
+   field of the main coverage offering structure and contains
+   <span class="Courier">
+    gml:timePosition
+   </span>
+   elements, which are children of the
+   <span class="Courier">
+    temporalDomain
+   </span>
+   node. To determine the number of Temp_Tm_Position structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385490">
+    NUM_TEMP_TM_POSITIONS
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="width: 504px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Temp_Tm_Position Structure Fields
+   </p>
+   <col width="152px" />
+   <col width="352px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       POSITION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:temporalDomain&gt;&lt;gml:timePosition&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;gml:temporalDomain&gt;
+       <br />
+       &lt;gml:timePosition&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       FRAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:temporalDomain&gt;&lt;gml:timePosition&gt;&lt;frame&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;gml:temporalDomain&gt;
+       <br />
+       &lt;gml:timePosition&gt;&lt;frame&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       CALENDAR
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:temporalDomain&gt;&lt;gml:timePosition&gt; &lt;calendar&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;gml:temporalDomain&gt;
+       <br />
+       &lt;gml:timePosition&gt;&lt;calendar&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       INDETERMINATE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:temporalDomain&gt;&lt;gml:timePosition&gt;
+       <br />
+       &lt;indeterminate&gt;
+      </p>
+      <p>
+       and
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;gml:temporalDomain&gt;
+       <br />
+       &lt;gml:timePosition&gt;&lt;indeterminate&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_temp_tm_period_struct">
+   </a>
+   <a name="objects_network_1009015_1385804">
+   </a>
+   <a name="objects_network_1009015_96034">
+   </a>
+   Temp_Tm_Period Structure
+  </h3>
+  <p>
+   This structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385511">
+    TEMP_TM_PERIOD
+   </a>
+   field of the main coverage offering structure and contains
+   <span class="Courier">
+    gml:timePeriod
+   </span>
+   elements, which are children of the
+   <span class="Courier">
+    temporalDomain
+   </span>
+   node. In turn, the
+   <span class="Courier">
+    temporalDomain
+   </span>
+   node can be a child of the
+   <span class="Courier">
+    spatialDomain
+   </span>
+   node or the
+   <span class="Courier">
+    CoverageOffering
+   </span>
+   node. To determine the number of Temp_Tm_Period structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385506">
+    NUM_TEMP_TM_PERIODS
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="width: 503px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Temp_Tm_Period Structure Fields
+   </p>
+   <col width="137px" />
+   <col width="366px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       _BEGIN
+      </p>
+      <p>
+       (underscore avoids conflict with IDL BEGIN keyword)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:temporalDomain&gt;&lt;gml:timePeriod&gt;
+       <br />
+       &lt;beginPosition&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;gml:temporalDomain&gt;
+       <br />
+       &lt;gml:timePeriod&gt;&lt;beginPosition&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       _END
+      </p>
+      <p>
+       (underscore avoids conflict with IDL END keyword)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:temporalDomain&gt;&lt;gml:timePeriod&gt;
+       <br />
+       &lt;endPosition&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;gml:temporalDomain&gt;
+       <br />
+       &lt;gml:timePeriod&gt;&lt;endPosition&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       RESOLUTION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:temporalDomain&gt;&lt;gml:timePeriod&gt; &lt;timeResolution&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;gml:temporalDomain&gt;
+       <br />
+       &lt;gml:timePeriod&gt;&lt;timeResolution&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       FRAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:temporalDomain&gt;&lt;gml:timePeriod&gt;&lt;frame&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;gml:temporalDomain&gt;
+       <br />
+       &lt;gml:timePeriod&gt;&lt;frame&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       CALENDAR
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:temporalDomain&gt;&lt;gml:timePeriod&gt;&lt;calendar&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;gml:temporalDomain&gt;
+       <br />
+       &lt;gml: timePeriod&gt;&lt;calendar&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       INDETERMINATE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;domainSet&gt;&lt;spatialDomain&gt;
+       <br />
+       &lt;gml:temporalDomain&gt;&lt;gml:timePeriod&gt;
+       <br />
+       &lt;indeterminate&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;gml:temporalDomain&gt;
+       <br />
+       &lt;gml:timePeriod&gt;&lt;indeterminate&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_range_struct">
+   </a>
+   <a name="objects_network_1009015_1385864">
+   </a>
+   <a name="objects_network_1009015_32271">
+   </a>
+   Range Structure
+  </h3>
+  <p>
+   This structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385522">
+    RANGE
+   </a>
+   field of the main coverage offering structure. All elements are strings unless otherwise noted.
+  </p>
+  <table style="width: 501px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Range Structure Fields
+   </p>
+   <col width="185px" />
+   <col width="316px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;name&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       LABEL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;label&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       DESC
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;description&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       NULL_SINGLE_VALUES
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;nullValues&gt;&lt;singleValue&gt;
+      </p>
+      <p>
+       Returns an array of strings, 0 to many.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NUM_NULL_INTERVALS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of interval elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385897">
+       </a>
+       <a name="objects_network_1009015_48599">
+       </a>
+       NULL_INTERVAL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;nullValues&gt;&lt;interval&gt;
+      </p>
+      <p>
+       Returns an array of structures (0 to many) where each structure contains an interval definition. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1385966">
+        Null_Interval and Interval Structures
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_axis_description_struct">
+   </a>
+   <a name="objects_network_1009015_1385913">
+   </a>
+   <a name="objects_network_1009015_15286">
+   </a>
+   Axis_Description Structure
+  </h3>
+  <p>
+   This structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385535">
+    RANGE_AXIS
+   </a>
+   field of the main coverage offering structure. All elements are strings unless otherwise noted.
+  </p>
+  <table style="width: 503px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Axis_Description Structure Fields
+   </p>
+   <col width="145px" />
+   <col width="358px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;axisDescription&gt;&lt;AxisDescription&gt;&lt;name&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       LABEL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;axisDescription&gt;&lt;AxisDescription&gt;&lt;label&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       DESC
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;axisDescription&gt;&lt;AxisDescription&gt;&lt;description&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       SINGLE_VALUE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;axisDescription&gt;&lt;AxisDescription&gt;&lt;values&gt;
+       <br />
+       &lt;singleValue&gt;
+      </p>
+      <p>
+       Returns an array of strings, 0 to many.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NUM_INTERVALS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of interval elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1385946">
+       </a>
+       <a name="objects_network_1009015_32879">
+       </a>
+       INTERVAL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;axisDescription&gt;&lt;AxisDescription&gt;&lt;values&gt;
+       <br />
+       &lt;interval&gt;
+      </p>
+      <p>
+       Returns an array of structures (0 to many) where each structure contains an interval definition. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1385966">
+        Null_Interval and Interval Structures
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       DEFAULT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;axisDescription&gt;&lt;AxisDescription&gt;&lt;default&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_interval_struct">
+   </a>
+   <a name="objects_network_1009015_1385966">
+   </a>
+   <a name="objects_network_1009015_58433">
+   </a>
+   Null_Interval and Interval Structures
+  </h3>
+  <p>
+   These structure fields are accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385897">
+    NULL_INTERVAL
+   </a>
+   field of the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385864">
+    Range Structure
+   </a>
+   and the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385946">
+    INTERVAL
+   </a>
+   field of the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385913">
+    Axis_Description Structure
+   </a>
+   . All elements are strings unless otherwise noted.
+  </p>
+  <table style="width: 494px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Null_Interval and Interval Structure Fields
+   </p>
+   <col width="120px" />
+   <col width="374px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       MIN
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;nullValues&gt;&lt;interval&gt;&lt;min&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;axisDescription&gt;&lt;AxisDescription&gt;&lt;values&gt;
+       <br />
+       &lt;interval&gt;&lt;min&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       MAX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;nullValues&gt;&lt;interval&gt;&lt;max&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;axisDescription&gt;&lt;AxisDescription&gt;&lt;values&gt;
+       <br />
+       &lt;interval&gt;&lt;max&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       RES
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;nullValues&gt;&lt;interval&gt;&lt;res&gt;
+      </p>
+      <p>
+       or
+      </p>
+      <p class="Code">
+       &lt;CoverageOffering&gt;&lt;rangeSet&gt;&lt;RangeSet&gt;
+       <br />
+       &lt;axisDescription&gt;&lt;AxisDescription&gt;&lt;values&gt;
+       <br />
+       &lt;interval&gt;&lt;res&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_crs_struct">
+   </a>
+   <a name="objects_network_1009015_1386012">
+   </a>
+   <a name="objects_network_1009015_11204">
+   </a>
+   CRS Structure
+  </h3>
+  <p>
+   This structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1385544">
+    CRS
+   </a>
+   field of the main coverage offering structure and contains coordinate reference system fields.
+  </p>
+  <p>
+   All elements return an array of strings, 0 to many.
+  </p>
+  <table style="width: 500px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    CRS Structure Fields
+   </p>
+   <col width="172px" />
+   <col width="328px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1386024">
+       </a>
+       <a name="objects_network_1009015_16625">
+       </a>
+       REQUEST_RESPONSE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;supportedCRSs&gt;
+       <br />
+       &lt;requestResponseCRSs&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1386030">
+       </a>
+       <a name="objects_network_1009015_81206">
+       </a>
+       REQUEST
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;supportedCRSs&gt;
+       <br />
+       &lt;requestCRSs&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1386036">
+       </a>
+       <a name="objects_network_1009015_44704">
+       </a>
+       RESPONSE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;supportedCRSs&gt;
+       <br />
+       &lt;responseCRSs&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       <a name="objects_network_1009015_1386042">
+       </a>
+       <a name="objects_network_1009015_67158">
+       </a>
+       NATIVE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       XML source: &lt;CoverageOffering&gt;&lt;supportedCRSs&gt;
+       <br />
+       &lt;nativeCRSs&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_network_1009015_1386053">
+   </a>
+   <a name="objects_network_1009015_34829">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1386055">
+   </a>
+   <a name="objects_network_1009015_27830">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_network_1009015_1386057">
+   </a>
+   <a name="objects_network_1009015_39367">
+   </a>
+   INDEX
+  </h3>
+  <p>
+   Set this to a zero-based integer value indicating the coverage offering to retrieve. This is useful when the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS__DescribeCo.html#objects_network_1009015_1384809">
+    IDLnetOGCWCS::DescribeCoverage
+   </a>
+   request returns information for more than a single coverage offering.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1388684">
+   </a>
+   <a name="objects_network_1009015_98570">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See the GetCoverage method
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag.html#objects_network_1009015_1385308">
+    Examples
+   </a>
+   for sample code that extracts the elements of the GetCoverageOffering structure that are required for a successful query.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1388690">
+   </a>
+   <a name="objects_network_1009015_97974">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_network_1009015_1386071">
+   </a>
+   <a name="objects_network_1009015_86813">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS__DescribeCo.html#objects_network_1009015_1384809">
+    IDLnetOGCWCS::DescribeCoverage
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag.html#objects_network_1009015_1387554">
+    IDLnetOGCWCS::GetCoverage
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

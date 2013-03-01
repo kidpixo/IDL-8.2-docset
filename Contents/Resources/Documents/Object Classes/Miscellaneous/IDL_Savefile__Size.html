@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Miscellaneous Object Classes|IDL_Savefile" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDL_Savefile::Size
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDL_Savefile__Size.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_misc.html">
+    Miscellaneous Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDL_Savefile::Size
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_misc_904195448_1034989">
+   </a>
+   <a name="objects_misc_904195448_29889">
+   </a>
+   IDL_Savefile::Size
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1034993">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1034998">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1035005">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1035013">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1035021">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1035026">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1035028">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDL_Savefile::
+   <a name="kanchor4706">
+   </a>
+   Size function method returns the size and type information for the specified variable, system variable, or heap variable in the SAVE file associated with the savefile object, if no keywords are set. If a keyword is set, IDL_Savefile::Size returns only the specified quantity.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This method accepts the same keywords as the SIZE function, and returns the same information using the same formats. It differs only in that the argument is a string or integer identifier that specifies an item within a SAVE file, rather than an in-memory expression.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1034993">
+   </a>
+   <a name="objects_misc_904195448_1034993_PageTOC_IDL_Savefile">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDL_Savefile.html#objects_misc_904195448_1076956">
+    IDL_Savefile
+   </a>
+   ::]Size(
+   <i>
+    SaveItem
+   </i>
+   [,&#160;
+   <i>
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1035013">
+     Keywords
+    </a>
+    ])
+   </i>
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1034998">
+   </a>
+   <a name="objects_misc_904195448_1034998_PageTOC_IDL_Savefile">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   If no keywords are set, the Size method returns a vector of integer type. The first element is equal to the number of dimensions of
+   <i>
+    SaveItem
+   </i>
+   . This value is 0 (zero) if
+   <i>
+    SaveItem
+   </i>
+   is scalar or undefined. The next elements contain the size of each dimension, one element per dimension (none if
+   <i>
+    SaveItem
+   </i>
+   is scalar or undefined). After the dimension sizes, the last two elements contain the type code (zero if undefined) and the number of elements in
+   <i>
+    SaveItem
+   </i>
+   , respectively.
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="../../Reference Material/S/SIZE.html#S_820040301_678885" target="" title="" alt="">
+    SIZE
+   </a>
+   for a listing of IDL type codes.
+  </p>
+  <p>
+   If a keyword is set, the Size method returns the specified information.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1035005">
+   </a>
+   <a name="objects_misc_904195448_1035005_PageTOC_IDL_Savefile">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   SaveItem
+  </h3>
+  <p>
+   A scalar value that specifies the item within the SAVE file for which size information is requested. If
+   <i>
+    SaveItem
+   </i>
+   is a string, it is the name of a variable or system variable contained in the SAVE file. If
+   <i>
+    SaveItem
+   </i>
+   is an integer, it is the unique heap variable identifier for a heap variable contained in the SAVE file.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   Use the
+   <a class="MCXref_Heading_0" href="IDL_Savefile__Names.html#objects_misc_904195448_1034737">
+    IDL_Savefile::Names
+   </a>
+   function method to obtain the names or heap variable identifiers contained within a SAVE file before calling this method.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1035013">
+   </a>
+   <a name="objects_misc_904195448_1035013_PageTOC_IDL_Savefile">
+   </a>
+   <a name="objects_misc_904195448_55709">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   IDL_Savefile::Size method accepts all of the keywords accepted by the
+   <a class="MCXref_Heading_0" href="../../Reference Material/S/SIZE.html#S_820040301_678885" target="" title="" alt="">
+    SIZE
+   </a>
+   function.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1035021">
+   </a>
+   <a name="objects_misc_904195448_1035021_PageTOC_IDL_Savefile">
+   </a>
+   Example
+  </h2>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="IDL_Savefile.html#objects_misc_904195448_1034474">
+    Example
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1035026">
+   </a>
+   <a name="objects_misc_904195448_1035026_PageTOC_IDL_Savefile">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1035028">
+   </a>
+   <a name="objects_misc_904195448_1035028_PageTOC_IDL_Savefile">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../../Reference Material/S/SIZE.html#S_820040301_678885" target="" title="" alt="">
+    SIZE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

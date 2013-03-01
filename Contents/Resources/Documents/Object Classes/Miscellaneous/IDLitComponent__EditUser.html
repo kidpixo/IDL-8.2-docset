@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Miscellaneous Object Classes|IDLitComponent" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLitComponent::EditUserDefProperty
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDLitComponent__EditUser.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_misc.html">
+    Miscellaneous Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLitComponent::EditUserDefProperty
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_misc_904195448_1125828">
+   </a>
+   <a name="objects_misc_904195448_20658">
+   </a>
+   IDLitComponent::EditUserDefProperty
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    Syntax |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1125862">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1125866">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1125873">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1125876">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1125897">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor4720">
+   </a>
+   IDLitComponent::EditUserDefProperty function method defines the interface that is displayed when a user selects the “Edit” button on a user-defined property in the property sheet interface. Typically, this method will display an interactive dialog that allows the user to change the value of the property.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   An iTool object class that includes a user-defined property
+   <i>
+    must
+   </i>
+   implement this method if the property is displayed in a property sheet — that is, if the property is registered and not hidden. If an iTool object class has no user-defined properties that are displayed in a property sheet, there is no need to supply an EditUserDefProperty method.
+  </p>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLitComponent.html#objects_misc_904195448_1125353">
+    IDLitComponent
+   </a>
+   ::]EditUserDefProperty(
+   <i>
+    iTool
+   </i>
+   ,
+   <i>
+    PropertyIdentifier
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1125862">
+   </a>
+   <a name="objects_misc_904195448_21825">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a 1 if the property value was changed, or a 0 if the property value was not changed.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the return value is 1, the property sheet interface automatically updates the displayed property value using the value of the property’s USERDEF attribute. If the return value is 0, no update takes place.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1125866">
+   </a>
+   <a name="objects_misc_904195448_52099">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   iTool
+  </h3>
+  <p>
+   An object reference to the current iTool object.
+  </p>
+  <h3 class="Argument">
+   PropertyIdentifier
+  </h3>
+  <p>
+   A string containing the property identifier of the user-defined property.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   Since there can only be one EditUserDefProperty method for each class, you can use the
+   <i>
+    PropertyIdentifier
+   </i>
+   argument to determine which user-defined property is being edited.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1125873">
+   </a>
+   <a name="objects_misc_904195448_42092">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1125876">
+   </a>
+   <a name="objects_misc_904195448_82373">
+   </a>
+   Example
+  </h2>
+  <p>
+   The following is the EditUserDefProperty method of the IDLitOpConvolution operation class. Selecting and editing the Kernel property of this operation displays a dialog that allows the user to edit a convolution kernel.
+  </p>
+  <p class="Code">
+   FUNCTION IDLitopConvolution::EditUserDefProperty, oTool, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;identifier
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   CASE identifier OF
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;'KERNEL': RETURN, oTool-&gt;DoUIService('ConvolKernel', self)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ELSE:
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ENDCASE
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   RETURN, 0
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   This method simply checks the property identifier to determine whether it matches the string
+   <span class="Courier">
+    'KERNEL'
+   </span>
+   . If it does, it returns the value returned by the DoUIService method; otherwise it returns zero. In this case, the DoUIService method actually handles the modification of the property value.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1125897">
+   </a>
+   <a name="objects_misc_904195448_39751">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

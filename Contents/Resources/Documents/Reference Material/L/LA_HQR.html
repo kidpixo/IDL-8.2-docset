@@ -1,0 +1,485 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: L" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   LA_HQR
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/L/LA_HQR.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="L_list.html">
+    Routines: L
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    LA_HQR
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="L_826528365_959357">
+   </a>
+   <a name="L_826528365_15552">
+   </a>
+   LA_HQR
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#L_826528365_970256">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_970258">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_970260">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_970265">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_970275">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_970277">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_970279">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1639">
+   </a>
+   LA_HQR function uses the
+   <a name="kanchor1640">
+   </a>
+   multishift QR algorithm to compute all
+   <a name="kanchor1641">
+   </a>
+   eigenvalues of an
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    n
+   </i>
+   upper
+   <a name="kanchor1642">
+   </a>
+   Hessenberg array. The LA_ELMHES routine can be used to reduce a real or complex array to upper Hessenberg form suitable for input to this procedure. LA_HQR may also be used to compute the matrices
+   <i>
+    T
+   </i>
+   and
+   <i>
+    QZ
+   </i>
+   from the Schur decomposition
+   <i>
+    A
+   </i>
+   =
+   <i>
+    (QZ) T (QZ)
+   </i>
+   <sup class="italic">
+    H
+   </sup>
+   .
+  </p>
+  <p>
+   LA_HQR is based on the following LAPACK routines:
+  </p>
+  <table style="width: 327px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    LAPACK Routine Basis for LA_HQR
+   </p>
+   <col width="162px" />
+   <col width="165px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Output Type
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       LAPACK Routine
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Float
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       shseqr
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Double
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       dhseqr
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Complex
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       chseqr
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       Double complex
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       zhseqr
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   For details see Anderson et al.,
+   <i>
+    LAPACK Users' Guide
+   </i>
+   , 3rd ed., SIAM, 1999.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_970256">
+   </a>
+   <a name="L_826528365_82243">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = LA_HQR(
+   <i>
+    H
+   </i>
+   [,&#160;Q] [,&#160;/
+   <a class="MCXref_Heading_0" href="#L_826528365_970266">
+    DOUBLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_970268">
+    PERMUTE_RESULT
+   </a>
+   =[
+   <i>
+    ilo
+   </i>
+   ,
+   <i>
+    ihi
+   </i>
+   ]] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_970270">
+    STATUS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_970258">
+   </a>
+   <a name="L_826528365_32578">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is an
+   <i>
+    n
+   </i>
+   -element complex vector.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_970260">
+   </a>
+   <a name="L_826528365_32439">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   H
+  </h3>
+  <p>
+   An
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    n
+   </i>
+   upper Hessenberg array, created by the LA_ELMHES procedure. If argument
+   <i>
+    Q
+   </i>
+   is present, then on return
+   <i>
+    H
+   </i>
+   is replaced by the Schur form
+   <i>
+    T
+   </i>
+   . If argument
+   <i>
+    Q
+   </i>
+   is not present then
+   <i>
+    H
+   </i>
+   is unchanged.
+  </p>
+  <h3 class="Argument">
+   Q
+  </h3>
+  <p>
+   Set this optional argument to the array
+   <i>
+    Q
+   </i>
+   created by the LA_ELMHES procedure. If argument
+   <i>
+    Q
+   </i>
+   is present, then on return
+   <i>
+    Q
+   </i>
+   is replaced by the Schur vectors
+   <i>
+    QZ
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_970265">
+   </a>
+   <a name="L_826528365_86317">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="L_826528365_970266">
+   </a>
+   <a name="L_826528365_970266_Keywords_LA_HQR__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to use double-precision for computations and to return a double-precision (real or complex) result. Set DOUBLE = 0 to use single-precision for computations and to return a single-precision (real or complex) result. The default is /DOUBLE if
+   <i>
+    H
+   </i>
+   is double precision, otherwise the default is DOUBLE = 0.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_970268">
+   </a>
+   <a name="L_826528365_970268_Keywords_LA_HQR__">
+   </a>
+   PERMUTE_RESULT
+  </h3>
+  <p>
+   Set this keyword to a two-element vector containing the [
+   <i>
+    ilo
+   </i>
+   ,
+   <i>
+    ihi
+   </i>
+   ] permutation results from the LA_ELMHES procedure. The default is [1,
+   <i>
+    n
+   </i>
+   ], indicating that permute balancing was not done on
+   <i>
+    H
+   </i>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_970270">
+   </a>
+   <a name="L_826528365_970270_Keywords_LA_HQR__">
+   </a>
+   STATUS
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain the status of the computation. Possible values are:
+  </p>
+  <p class="Bullet">
+   STATUS = 0: The computation was successful.
+  </p>
+  <p class="Bullet">
+   STATUS &gt; 0: The algorithm failed to find all eigenvalues in
+   <i>
+    30
+   </i>
+   *(
+   <i>
+    ihi
+   </i>
+   -
+   <i>
+    ilo
+   </i>
+   +
+   <i>
+    1
+   </i>
+   ) iterations. The STATUS value indicates that eigenvalues ilo:STATUS (starting at index
+   <i>
+    1
+   </i>
+   ) did not converge; all other eigenvalues converged.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If STATUS is not specified, any error messages will output to the screen.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_970275">
+   </a>
+   <a name="L_826528365_18154">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See LA_EIGENVEC for an example of using this procedure.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_970277">
+   </a>
+   <a name="L_826528365_48342">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="L_826528365_970279">
+   </a>
+   <a name="L_826528365_84575">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../H/HQR.html#H_835179117_50733">
+    HQR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="LA_EIGENVEC.html#L_826528365_959039">
+    LA_EIGENVEC
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="LA_ELMHES.html#L_826528365_959174">
+    LA_ELMHES
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

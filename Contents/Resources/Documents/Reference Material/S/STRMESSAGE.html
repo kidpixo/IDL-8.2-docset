@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   STRMESSAGE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/STRMESSAGE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    STRMESSAGE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_1069479">
+   </a>
+   <a name="S_820040301_35359">
+   </a>
+   STRMESSAGE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_679110">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1135359">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_679112">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_923970">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_679115">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_795939">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110495">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2476">
+   </a>
+   STRMESSAGE function returns the text of the error message specified by
+   <i>
+    Err
+   </i>
+   . This function is especially useful in conjunction with the CODE field of the
+   <a name="kanchor2477">
+   </a>
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Appendices/Error_Handling_System_Va.html#sysvars_272074529_1003013">
+    !ERROR_STATE
+   </a>
+   system variable which always contains the error number of the last error. The
+   <a name="kanchor2478">
+   </a>
+   MSG field of the !ERROR_STATE system variable contains the text of the last error message.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679110">
+   </a>
+   <a name="S_820040301_679110_PageTOC_STRMESSAGE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = STRMESSAGE(
+   <i>
+    Err
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_923971">
+    BLOCK
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#S_820040301_923974">
+    CODE
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#S_820040301_923979">
+    NAME
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1135359">
+   </a>
+   <a name="S_820040301_32744">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the error message text.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679112">
+   </a>
+   <a name="S_820040301_679112_PageTOC_STRMESSAGE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Err
+  </h3>
+  <p>
+   The error number or text. Programs must not make the assumption that certain error numbers are always related to certain error messages—the actual correspondence changes over time as
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   is modified.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_923970">
+   </a>
+   <a name="S_820040301_923970_PageTOC_STRMESSAGE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="S_820040301_923971">
+   </a>
+   <a name="S_820040301_923971_Keywords_STRMESSAGE__">
+   </a>
+   BLOCK
+  </h3>
+  <p>
+   Set this keyword to return the name of the message block that defines
+   <i>
+    Err
+   </i>
+   . If this keyword is specified,
+   <i>
+    Err
+   </i>
+   must be an error code.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_923974">
+   </a>
+   <a name="S_820040301_923974_Keywords_STRMESSAGE__">
+   </a>
+   CODE
+  </h3>
+  <p>
+   Set this keyword to return the error code for the error message specified in
+   <i>
+    Err
+   </i>
+   . If this keyword is specified,
+   <i>
+    Err
+   </i>
+   must be an error name.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_923979">
+   </a>
+   <a name="S_820040301_923979_Keywords_STRMESSAGE__">
+   </a>
+   NAME
+  </h3>
+  <p>
+   Set this keyword to return a string containing the error message that goes with
+   <i>
+    Err
+   </i>
+   . If this keyword is specified,
+   <i>
+    Err
+   </i>
+   must be an error code.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679115">
+   </a>
+   <a name="S_820040301_679115_PageTOC_STRMESSAGE_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Print the error message associated with error number 4 by entering:
+  </p>
+  <p class="Code">
+   PRINT, STRMESSAGE(4)
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_795939">
+   </a>
+   <a name="S_820040301_795939_PageTOC_STRMESSAGE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110495">
+   </a>
+   <a name="S_820040301_1110495_PageTOC_STRMESSAGE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../M/MESSAGE.html#M_824365677_988498">
+    MESSAGE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

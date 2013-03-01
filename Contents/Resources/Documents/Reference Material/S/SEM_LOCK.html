@@ -1,0 +1,497 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   SEM_LOCK
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/SEM_LOCK.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    SEM_LOCK
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_1318522">
+   </a>
+   <a name="S_820040301_80311">
+   </a>
+   SEM_LOCK
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_1318524">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1318526">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1318528">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1318531">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1318533">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1318562">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1318569">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2355">
+   </a>
+   SEM_LOCK function attempts to gain the lock on an existing semaphore for the current IDL process. (Note that the semaphore could have been created by
+   <i>
+    any
+   </i>
+   process; IDL can lock semaphores created by other applications.) Once the lock has been obtained by an IDL process, other processes (including other IDL processes) will not be able to gain the lock until the SEM_RELEASE process is called within the IDL process that owns the lock. Similarly, an IDL process will not be able to obtain a lock on an existing semaphore if that semaphore is already locked by another process.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1318524">
+   </a>
+   <a name="S_820040301_1318524_PageTOC_SEM_LOCK_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = SEM_LOCK(
+   <i>
+    strName
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1318526">
+   </a>
+   <a name="S_820040301_1318526_PageTOC_SEM_LOCK_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is 1 (one) if the lock on the specified semaphore was successfully obtained, or 0 (zero) if the lock could not be obtained.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1318528">
+   </a>
+   <a name="S_820040301_1318528_PageTOC_SEM_LOCK_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   strName
+  </h3>
+  <p>
+   A scalar string containing the name associated with the semaphore. This is the name used when creating the semaphore with SEM_CREATE.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Semaphore names must be 24 characters or less on Macintosh platforms.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1318531">
+   </a>
+   <a name="S_820040301_1318531_PageTOC_SEM_LOCK_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1318533">
+   </a>
+   <a name="S_820040301_1318533_PageTOC_SEM_LOCK_">
+   </a>
+   Example
+  </h2>
+  <p>
+   This example illustrates the way semaphores operate using two independent IDL sessions on the same machine.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     The user starts IDL session 1.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     The user creates a semaphore using the following command:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   status = SEM_CREATE('semaphore1')
+  </p>
+  <p class="indent">
+   This creates a semaphore called “
+   <span class="Courier">
+    semaphore1
+   </span>
+   ”.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     The user sets a lock on the semaphore using the following command:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   status = SEM_LOCK('semaphore1')
+  </p>
+  <p class="indent">
+   If the lock is obtained,
+   <span class="Courier">
+    status
+   </span>
+   is set equal to 1.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     The user starts IDL session 2.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     In session 2, the user creates a reference to the same semaphore created in session 1:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   status = SEM_CREATE('semaphore1')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     In session 2, the user attempts to gain the lock on the semaphore with the following command:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   status = SEM_LOCK('semaphore1')
+  </p>
+  <p class="indent">
+   Since the lock is owned by session 1,
+   <span class="Courier">
+    status
+   </span>
+   is set equal to 0 (the lock was not obtained).
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     In session 1, the lock on the semaphore is released using the following command:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   SEM_RELEASE, 'semaphore1'
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Once the lock has been released in session 1, the user once again attempts to gain the lock on the semaphore in session 2:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   status = SEM_LOCK('semaphore1')
+  </p>
+  <p class="indent">
+   In this case,
+   <span class="Courier">
+    status
+   </span>
+   is set equal to 1, indicating session 2 now has the lock
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     In session 1, attempting to retrieve the lock will result in failure, since session 2 has the lock on the semaphore.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     In session 2, the user executes the following command:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   SEM_DELETE, 'semaphore1'
+  </p>
+  <p class="indent">
+   This removes the reference to the semaphore in session 2, but does not destroy the actual semaphore in the operating system.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      11.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="11. " valign="top">
+     In session 1, the user executes the following command:
+    </td>
+   </tr>
+  </table>
+  <p class="Code">
+   SEM_DELETE, 'semaphore1'
+  </p>
+  <p class="indent">
+   This removes both the reference to the semaphore in session 1 and the actual semaphore in the operating system, because:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     If the user is on a UNIX system, the semaphore itself is destroyed because it was created in session 1 and there are no other references it.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     If the user is on a Windows system, the semaphore itself is destroyed because session 1 has the last reference to it.
+    </td>
+   </tr>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1318562">
+   </a>
+   <a name="S_820040301_1318562_PageTOC_SEM_LOCK_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1318569">
+   </a>
+   <a name="S_820040301_1318569_PageTOC_SEM_LOCK_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="SEM_CREATE.html#S_820040301_1318441">
+    SEM_CREATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="SEM_DELETE.html#S_820040301_1318499">
+    SEM_DELETE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="SEM_RELEASE.html#S_820040301_1318571">
+    SEM_RELEASE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

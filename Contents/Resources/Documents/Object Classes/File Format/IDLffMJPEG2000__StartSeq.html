@@ -1,0 +1,651 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|File Format Object Classes|IDLffMJPEG2000" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffMJPEG2000::StartSequentialReading
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/File Format/IDLffMJPEG2000__StartSeq.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_ff.html">
+    File Format Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffMJPEG2000::StartSequentialReading
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_ff_3755668711_1325271">
+   </a>
+   <a name="objects_ff_3755668711_10933">
+   </a>
+   IDLffMJPEG2000::StartSequentialReading
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1325660">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326377">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1325667">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1325669">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1333505">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1325671">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLffMJPEG2000::
+   <a name="kanchor3876">
+   </a>
+   StartSequentialReading function method initiates a sequential playback of a large number of frames. This method lets you configure what data is to be decompressed from each frame of the MJ2 file (the entire frame or a component, tile or region of the frame).
+  </p>
+  <p>
+   Internally, this method starts a background processing thread that decompresses frames into a frame buffer. This background thread allows the UI to remain active as described in
+   <a class="MCXref_Heading_0" href="IDLffMJPEG2000.html#objects_ff_3755668711_1331119" target="" title="" alt="">
+    About Processing Threads
+   </a>
+   ).
+  </p>
+  <p>
+   The StartSequentialReading, GetSequentialData, ReleaseSequentialData and StopSequentialReading methods are used with a timer mechanism to create a sequential playback.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Always use a widget timer or IDLitWindow timer mechanism to control the playback rate. Avoid using the WAIT procedure with sequential playback methods as the interaction between the procedure and the background processing thread will cause adverse side effects on UNIX platforms.
+  </p>
+  <p>
+   This method will throw an error if the decompression fails. A CATCH statement can be used to trap these errors.
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1325660">
+   </a>
+   <a name="objects_ff_3755668711_30388">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result = Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLffMJPEG2000.html#objects_ff_3755668711_1324160">
+    IDLffMJPEG2000
+   </a>
+   ::]StartSequentialReading ([,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326383">
+    COMPONENT
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326388">
+    DISCARD_LEVELS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1331538">
+    MAX_LAYERS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326390">
+    N_COMPONENTS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1331906">
+    ORDER
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326392">
+    REGION
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326393">
+    RGB
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326394">
+    START_FRAME_NUMBER
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326395">
+    STOP_FRAME_NUMBER
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326396">
+    TILE_INDEX
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]&#160;)
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1326377">
+   </a>
+   <a name="objects_ff_3755668711_64272">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns an integer value indicating success (1) or failure (0).
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1325667">
+   </a>
+   <a name="objects_ff_3755668711_33596">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1325669">
+   </a>
+   <a name="objects_ff_3755668711_40438">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1326383">
+   </a>
+   <a name="objects_ff_3755668711_75696">
+   </a>
+   COMPONENT
+  </h3>
+  <p>
+   An integer value indicating the zero-based index number of the first component to be returned as follows:
+  </p>
+  <ul>
+   <li value="1">
+    This keyword is set and
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326390">
+     N_COMPONENTS
+    </a>
+    is not set — returns all the components from the starting COMPONENT
+   </li>
+   <li value="2">
+    This keyword is set and
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326390">
+     N_COMPONENTS
+    </a>
+    is set — returns the number of components specified by N_COMPONENTS from the starting compontent specified by COMPONENT
+   </li>
+  </ul>
+  <p>
+   If this keyword is not set, all the components are returned. The default is 0.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1326388">
+   </a>
+   <a name="objects_ff_3755668711_65593">
+   </a>
+   DISCARD_LEVELS
+  </h3>
+  <p>
+   An integer value specifying the number of resolution levels to be excluded from the result starting with the highest resolution level. For example, given a full-resolution frame that is 1024 by 1024 pixels:
+  </p>
+  <table style="width: 466px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="104px" />
+   <col width="362px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The default. No data is discarded.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Discard 1 level, the highest resolution data (e.g. discard the 1024 by 1024 level, leaving the 512 by 512 data)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Discard 2 levels of data (e.g. discard the 1024 by 1024 and 512 by 512 levels, leaving the 256 by 256 data)
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Determine the number of resolution levels by checking the
+   <a class="MCXref_Heading_0" href="IDLffMJPEG2000_Propertie.html#objects_ff_3755668711_1324801">
+    N_LEVELS
+   </a>
+   property.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1331538">
+   </a>
+   <a name="objects_ff_3755668711_27657">
+   </a>
+   MAX_LAYERS
+  </h3>
+  <p>
+   An integer value specifying the maximum number of quality layers to be read. Each layer contains the information required to represent the image at a higher quality, given the information from all the previous layers. A value of 0, the default, means all available layers should be returned. If MAX_LAYERS is 3, data from the first, second and third quality layers will be combined in the returned data. Determine the number of quality layers in a file by checking the value of the
+   <a class="MCXref_Heading_0" href="IDLffMJPEG2000_Propertie.html#objects_ff_3755668711_1324800">
+    N_LAYERS
+   </a>
+   property.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1326390">
+   </a>
+   <a name="objects_ff_3755668711_92288">
+   </a>
+   N_COMPONENTS
+  </h3>
+  <p>
+   An integer value specifying the number of components to return from the starting component specified by the
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326383">
+    COMPONENT
+   </a>
+   keyword. If this keyword is set, but COMPONENT is not set, the default COMPONENT value (0) will be used.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1331906">
+   </a>
+   <a name="objects_ff_3755668711_41089">
+   </a>
+   ORDER
+  </h3>
+  <p>
+   An integer value specifying the order in which to return data. Motion JPEG2000 frames are assumed to be stored in top-to-bottom order, while IDL usually assumes frames are in bottom-to-top order. By default (ORDER= 0), this method will automatically flip the result to match IDL's bottom-to-top order. Setting ORDER to a nonzero value will return the Motion JPEG2000 frames without doing the vertical flip.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1326392">
+   </a>
+   <a name="objects_ff_3755668711_75417">
+   </a>
+   REGION
+  </h3>
+  <p>
+   A four-element long vector containing the rectangular region of the frame to read. The region is specified as [
+   <i>
+    startX
+   </i>
+   ,
+   <i>
+    startY
+   </i>
+   ,
+   <i>
+    width
+   </i>
+   ,
+   <i>
+    height
+   </i>
+   ], where
+   <i>
+    startX
+   </i>
+   and
+   <i>
+    startY
+   </i>
+   must be in the range 0 ... 2
+   <sup>
+    32
+   </sup>
+   -2, and
+   <i>
+    width
+   </i>
+   and
+   <i>
+    height
+   </i>
+   must be in the range 1 ... 2
+   <sup>
+    32
+   </sup>
+   -1. The region must contain at least some portion of the frame, or an error will occur. If the region is larger than the frame, or extends beyond the frame, only that portion that lies within the frame will be returned. This keyword, in combination with the
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326383">
+    COMPONENT
+   </a>
+   keyword, lets you access any region from a particular component.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1326393">
+   </a>
+   <a name="objects_ff_3755668711_32821">
+   </a>
+   RGB
+  </h3>
+  <p>
+   If set, the resulting data stream will be interpreted as RGB frames. The returned array will always have three components (red, green, and blue) with the dimensions [3,
+   <i>
+    width
+   </i>
+   ,
+   <i>
+    height
+   </i>
+   ]. See the following table for information on what data will be read if fewer than or more than 3 components are specified, or if the keyword is not set.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The Motion JPEG2000 standard allows a decorrelating color transformation to be applied to the first three image components. This transformation is identical or similar to the conventional YCbCr color transformation. To determine if this transform has been applied, examine the
+   <a class="MCXref_Heading_0" href="IDLffMJPEG2000_Propertie.html#objects_ff_3755668711_1324813">
+    YCC
+   </a>
+   property.
+  </p>
+  <table style="width: 503px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="84px" />
+   <col width="186px" />
+   <col width="233px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       RGB Set?
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Number of Components
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Outcome
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td rowspan="2" class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       More than 3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Only the first three components are returned.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Less than 3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       An error is thrown.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td rowspan="2" class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       If a color transformation has been applied to the input stream, the three components which are encoded as
+       <a class="MCXref_Heading_0" href="IDLffMJPEG2000_Propertie.html#objects_ff_3755668711_1324813">
+        YCC
+       </a>
+       will automatically be converted to RGB. To avoid this conversion you must transfer more than or fewer than three components when using StartSequentialReading.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       Not equal to 3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Each component in the data stream will be placed in the result without interpretation. Result will have dimensions: [N_COMPONENTS,
+       <i>
+        width
+       </i>
+       ,
+       <i>
+        height
+       </i>
+       ].
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   You cannot specify RGB and
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326383">
+    COMPONENT
+   </a>
+   or
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326390">
+    N_COMPONENTS
+   </a>
+   at the same time. An error will be thrown in such cases.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1326394">
+   </a>
+   <a name="objects_ff_3755668711_65925">
+   </a>
+   START_FRAME_NUMBER
+  </h3>
+  <p>
+   A long value specifying the frame index with which to start the sequential playback. If not set, the default value, 0, will be used.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1326395">
+   </a>
+   <a name="objects_ff_3755668711_56340">
+   </a>
+   STOP_FRAME_NUMBER
+  </h3>
+  <p>
+   A long value specifying the frame index with which to stop the sequential playback. If not set, the stop frame will be the last frame in the file.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1326396">
+   </a>
+   <a name="objects_ff_3755668711_30449">
+   </a>
+   TILE_INDEX
+  </h3>
+  <p>
+   An integer value specifying the index of the tile to return. Tiles are numbered in raster scan fashion (from left to right starting at the top-left corner) starting with an index value of 0. This keyword, in combination with the
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326383">
+    COMPONENT
+   </a>
+   keyword, lets you access any tile from a particular component. When this keyword is set, the
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1326392">
+    REGION
+   </a>
+   keyword is ignored.
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1333505">
+   </a>
+   <a name="objects_ff_3755668711_18604">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See the
+   <a class="MCXref_Heading_0" href="IDLffMJPEG2000__GetSeque.html#objects_ff_3755668711_1333373">
+    Examples
+   </a>
+   section of IDLffMJPEG2000::GetSequentialData for a simple example that uses the four sequential playback methods.
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1325671">
+   </a>
+   <a name="objects_ff_3755668711_62242">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

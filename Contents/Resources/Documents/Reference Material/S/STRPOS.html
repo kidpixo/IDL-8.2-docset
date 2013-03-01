@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   STRPOS
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/STRPOS.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    STRPOS
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_679132">
+   </a>
+   <a name="S_820040301_37928">
+   </a>
+   STRPOS
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_679134">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1135390">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_679136">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_679143">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1074182">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_795943">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110503">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2480">
+   </a>
+   STRPOS function finds the first occurrence of a substring within an object string.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679134">
+   </a>
+   <a name="S_820040301_679134_PageTOC_STRPOS_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = STRPOS(
+   <i>
+    Expression
+   </i>
+   ,
+   <i>
+    Search_String
+   </i>
+   [,&#160;
+   <i>
+    Pos
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1074185">
+    REVERSE_OFFSET
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1074254">
+    REVERSE_SEARCH
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1135390">
+   </a>
+   <a name="S_820040301_13867">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   If
+   <i>
+    Search_String
+   </i>
+   occurs in
+   <i>
+    Expression
+   </i>
+   , STRPOS returns the character position of the match, otherwise it returns -1.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679136">
+   </a>
+   <a name="S_820040301_679136_PageTOC_STRPOS_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Expression
+  </h3>
+  <p>
+   The expression in which to search for the substring. If this argument is not a string, it is converted using IDL’s default formatting rules. If
+   <i>
+    Expression
+   </i>
+   is an array, the result is an array with the same structure, where each element contains the position of the substring within the corresponding element
+   <i>
+    Expression
+   </i>
+   . If
+   <i>
+    Expression
+   </i>
+   is an empty string, STRPOS returns the value -1.
+  </p>
+  <h3 class="Argument">
+   Search_String
+  </h3>
+  <p>
+   The substring to be searched for within
+   <i>
+    Expression
+   </i>
+   . If this argument is not a string, it is converted using IDL’s default formatting rules. If
+   <i>
+    Search_String
+   </i>
+   is an empty string, STRPOS returns the smaller of
+   <i>
+    Pos
+   </i>
+   or one less than the length of
+   <i>
+    Expression
+   </i>
+   .
+  </p>
+  <h3 class="Argument">
+   Pos
+  </h3>
+  <p>
+   The character position at which the search is begun. If
+   <i>
+    Pos
+   </i>
+   is omitted and the REVERSE_SEARCH keyword is not set, the search begins at the first character (character position 0). If REVERSE_SEARCH is set, the default is to start at the last character in the string. If
+   <i>
+    Pos
+   </i>
+   is less than zero, zero is used for the starting position.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679143">
+   </a>
+   <a name="S_820040301_679143_PageTOC_STRPOS_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="S_820040301_1074185">
+   </a>
+   <a name="S_820040301_1074185_Keywords_STRPOS__">
+   </a>
+   REVERSE_OFFSET
+  </h3>
+  <p>
+   Normally, the value of
+   <i>
+    Pos
+   </i>
+   is used as an offset from the beginning of the expression towards the end. Set REVERSE_OFFSET to use it as an offset from the last character of the string moving towards the beginning. This keyword makes it easy to position the starting point of the search at a fixed offset from the end of the string. If this keyword is set and
+   <i>
+    Pos
+   </i>
+   is not specified, STRPOS will return the value -1.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1074254">
+   </a>
+   <a name="S_820040301_1074254_Keywords_STRPOS__">
+   </a>
+   REVERSE_SEARCH
+  </h3>
+  <p>
+   STRPOS usually starts at
+   <i>
+    Pos
+   </i>
+   and moves toward the end of the string looking for a match. If REVERSE_SEARCH is set, the search instead moves towards the beginning of the string.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1074182">
+   </a>
+   <a name="S_820040301_1074182_PageTOC_STRPOS_">
+   </a>
+   Examples
+  </h2>
+  <h3>
+   <a name="S_820040301_1077840_Keywords_STRPOS__">
+   </a>
+   Example 1
+  </h3>
+  <p>
+   Find the position of the string “fun” within the string “
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   is fun” and print the result by entering:
+  </p>
+  <p class="Code">
+   PRINT, STRPOS('IDL is fun', 'fun')
+  </p>
+  <p>
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   prints:
+  </p>
+  <p class="Code">
+   &#160;&#160; 7
+  </p>
+  <h3>
+   <a name="S_820040301_1077841_Keywords_STRPOS__">
+   </a>
+   Example 2
+  </h3>
+  <p>
+   The REVERSE_SEARCH keyword to the STRPOS function makes it easy to find the last occurrence of a substring within a string. In the following example, we search for the last occurrence of the letter “I” (or “i”) in a sentence:
+  </p>
+  <p class="Code">
+   sentence = 'IDL is fun.'
+   <br />
+   sentence = STRUPCASE(sentence)
+   <br />
+   lasti = STRPOS(sentence, 'I', /REVERSE_SEARCH)
+   <br />
+   PRINT, lasti
+  </p>
+  <p>
+   This results in:
+  </p>
+  <p class="Code">
+   4
+  </p>
+  <p>
+   Note that although REVERSE_SEARCH tells STRPOS to begin searching from the end of the string, the STRPOS function still returns the position of the search string from the beginning of the string (where 0 is the position of the first character).
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_795943">
+   </a>
+   <a name="S_820040301_795943_PageTOC_STRPOS_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110503">
+   </a>
+   <a name="S_820040301_1110503_PageTOC_STRPOS_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="STRMID.html#S_820040301_1074010">
+    STRMID
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRPUT.html#S_820040301_679148">
+    STRPUT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRTRIM.html#S_820040301_1069489">
+    STRTRIM
+   </a>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

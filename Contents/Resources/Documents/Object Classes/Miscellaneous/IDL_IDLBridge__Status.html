@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Miscellaneous Object Classes|IDL_IDLBridge" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDL_IDLBridge::Status
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDL_IDLBridge__Status.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_misc.html">
+    Miscellaneous Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDL_IDLBridge::Status
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_misc_904195448_1077870">
+   </a>
+   <a name="objects_misc_904195448_94776">
+   </a>
+   IDL_IDLBridge::Status
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077892">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077976">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077978">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077904">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077907">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1088485">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDL_IDLBridge::
+   <a name="kanchor4666">
+   </a>
+   Status function method queries the state of an IDL_IDLBridge object. When the NOWAIT keyword is used with the
+   <a class="MCXref_Heading_0" href="IDL_IDLBridge__Execute.html#objects_misc_904195448_1077268">
+    IDL_IDLBridge::Execute
+   </a>
+   method to execute IDL commands asynchronously, IDL_IDLBridge::Status can track the state of the child process.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1077892">
+   </a>
+   <a name="objects_misc_904195448_40107">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result = Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDL_IDLBridge.html#objects_misc_904195448_1076300">
+    IDL_IDLBridge
+   </a>
+   ::]Status([
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077905">
+    ERROR
+   </a>
+   =
+   <i>
+    ErrorString
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1077976">
+   </a>
+   <a name="objects_misc_904195448_69788">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns an integer value indicating the status of the bridge object’s corresponding child process. Descriptive error messages are returned in the variable specified by the ERROR keyword. Possible values are:
+  </p>
+  <table style="width: 503px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="106px" />
+   <col width="163px" />
+   <col width="234px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Return Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Description
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       What ERROR Keyword Returns
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Idle
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Empty string
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Executing command
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Empty string
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Completed command
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Empty string
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Error halted execution
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Descriptive error string
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       4
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       Aborted execution (
+       <a class="MCXref_Heading_0" href="IDL_IDLBridge__Abort.html#objects_misc_904195448_1077116">
+        IDL_IDLBridge::Abort
+       </a>
+       )
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Abort message
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1077978">
+   </a>
+   <a name="objects_misc_904195448_54455">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1077904">
+   </a>
+   <a name="objects_misc_904195448_11299">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_misc_904195448_1077905">
+   </a>
+   <a name="objects_misc_904195448_29071">
+   </a>
+   ERROR
+  </h3>
+  <p>
+   A named variable that will contain a string value corresponding to the error that occurred while executing the command in the child process, if any. As shown in the
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077976">
+    Return Value
+   </a>
+   table above, if IDL_IDLBridge::Status returns an error state (3), the ERROR keyword returns a descriptive error string. If this method returns an aborted status (4), ERROR contains an abort message. If any other status is returned, the ERROR keyword sets its variable to an empty string.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1077907">
+   </a>
+   <a name="objects_misc_904195448_77247">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See the example,
+   <span class="Courier">
+    idlbridge_demo_object.pro
+   </span>
+   , which is located in the
+   <span class="Courier">
+    examples/doc/bridges
+   </span>
+   subdirectory of the IDL distribution. This example uses a CASE statement to determine what action to take based on information returned by the Status method. Run the example procedure by entering
+   <span class="Courier">
+    idlbridge_demo_object
+   </span>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <span class="Courier">
+    .EDIT idlbridge_demo_object.pro
+   </span>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For examples that use a callback procedure in addition to the Status method, see
+   <a class="MCXref_Heading_0" href="IDL_IDLBridge.html#objects_misc_904195448_1076887">
+    Examples
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1088485">
+   </a>
+   <a name="objects_misc_904195448_53854">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

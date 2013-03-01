@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDL_BASE64
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/IDL_BASE64.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDL_BASE64
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="I_833016429_1051258">
+   </a>
+   <a name="I_833016429_65415">
+   </a>
+   IDL_BASE64
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#I_833016429_1051277">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_1051280">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_1051283">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_1051287">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_1052324">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_1051329">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1526">
+   </a>
+   IDL_BASE64 function uses MIME Base64
+   <a name="kanchor1527">
+   </a>
+   encoding to convert a byte array into a Base64 encoded scalar string, or to convert a Base64-encoded scalar string into a byte array.
+  </p>
+  <p>
+   The MIME Base64 encoding uses 64 characters, consisting of “A-Z”, “a-z”, “0-9”, “+”, and “/”. Every 3 bytes of the original array are converted into 4 characters. If the length of the final encoded string is not a multiple of 4, then it is padded with “=” characters. The 64 characters used in Base64 encoding were chosen because they are common to most character encodings, are printable, and are unlikely to be modified in transit through systems such as electronic mail.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    idl_base64.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_1051277">
+   </a>
+   <a name="I_833016429_1051277_PageTOC_IDL_BASE64_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = IDL_BASE64(
+   <i>
+    Input
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_1051280">
+   </a>
+   <a name="I_833016429_1051280_PageTOC_IDL_BASE64_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   If
+   <i>
+    Input
+   </i>
+   is a byte array,
+   <i>
+    Result
+   </i>
+   is a scalar string containing the Base64 encoded data.
+  </p>
+  <p>
+   If
+   <i>
+    Input
+   </i>
+   is a Base64 encoded string,
+   <i>
+    Result
+   </i>
+   is a byte vector containing the decoded data.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_1051283">
+   </a>
+   <a name="I_833016429_1051283_PageTOC_IDL_BASE64_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Input
+  </h3>
+  <p>
+   Input must be either an array of type byte or a Base64 encoded scalar string.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_1051287">
+   </a>
+   <a name="I_833016429_1051287_PageTOC_IDL_BASE64_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_1052324">
+   </a>
+   <a name="I_833016429_1052324_PageTOC_IDL_BASE64_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   This example reads a JPEG image into a byte array, converts the array to a MIME Base64-encoded string, then converts the string back into a byte array and displays the two images side by side.
+  </p>
+  <p class="Code">
+   ; Read an image into a byte array
+   <br />
+   READ_JPEG, FILEPATH('rose.jpg', $
+   <br />
+   &#160;&#160;&#160;SUBDIRECTORY=['examples', 'data']), rose
+   <br />
+   <br />
+   ; View the size of the byte array
+   <br />
+   HELP, rose
+   <br />
+   <br />
+   ; Save the dimensions of the byte array
+   <br />
+   rs = SIZE(rose)
+   <br />
+   rose_dims = [rs[1], rs[2], rs[3]]
+   <br />
+   <br />
+   ; Encode the byte array as a scalar string
+   <br />
+   rose_encoded = IDL_BASE64(rose)
+   <br />
+   <br />
+   ; View information about the scalar string
+   <br />
+   HELP, rose_encoded
+   <br />
+   PRINT, 'rose_encoded is ' + STRING(STRLEN(rose_encoded)) $
+   <br />
+   &#160;&#160;&#160;+' characters long'
+   <br />
+   <br />
+   ;Decode the scalar string
+   <br />
+   rose2 = IDL_BASE64(rose_encoded)
+   <br />
+   <br />
+   ; Note that the returned value is a byte vector
+   <br />
+   HELP, rose2
+   <br />
+   <br />
+   ; Reform the byte vector into an array of the
+   <br />
+   ; same size as the original array
+   <br />
+   rose3 = REFORM(rose2, rose_dims)
+   <br />
+   HELP, rose3
+   <br />
+   <br />
+   ; Display the original and reconstituted images
+   <br />
+   WINDOW, XSIZE=rose_dims[1]*2, YSIZE=rose_dims[2], $
+   <br />
+   &#160;&#160;&#160;TITLE='Original and Reconstituted images', /FREE
+   <br />
+   TV, rose, 0, /TRUE
+   <br />
+   TV, rose3, 1,  /TRUE
+  </p>
+  <p>
+   This example converts an “ordinary” string into a Base64-encoded string:
+  </p>
+  <p class="Code">
+   ; Use any ordinary string, which can contain 'unsafe'
+   <br />
+   ; characters like spaces or exclamation marks:
+   <br />
+   orig_string = 'IDL is fun!'
+   <br />
+   <br />
+   ; Convert the string to a byte array
+   <br />
+   orig_bytes = BYTE(orig_string)
+   <br />
+   <br />
+   ; Note that the original string and byte array are the same size
+   <br />
+   HELP, orig_string
+   <br />
+   PRINT, STRLEN(orig_string)
+   <br />
+   HELP, orig_bytes
+   <br />
+   <br />
+   ; Convert the byte array into an encoded string
+   <br />
+   new_string = IDL_BASE64(orig_bytes)
+   <br />
+   <br />
+   ; Notice that the encoded string is larger than
+   <br />
+   ; the original, and contains only 'safe' characters
+   <br />
+   PRINT, new_string
+   <br />
+   <br />
+   ; To recover the original string:
+   <br />
+   PRINT, STRING(IDL_BASE64(new_string))
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_1051329">
+   </a>
+   <a name="I_833016429_1051329_PageTOC_IDL_BASE64_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       7.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

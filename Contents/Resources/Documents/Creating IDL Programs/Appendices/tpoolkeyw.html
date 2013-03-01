@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: T" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Thread Pool Keywords
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Appendices/tpoolkeyw.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../Reference Material/T/T_list.html">
+    Routines: T
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Thread Pool Keywords
+   </span>
+  </div>
+  <h1>
+   <a name="tpoolkeyw_2501860834_317209">
+   </a>
+   <a name="tpoolkeyw_2501860834_66940">
+   </a>
+   Thread Pool Keywords
+  </h1>
+  <p>
+   <a name="tpoolkeyw_2501860834_73616">
+   </a>
+   Many of the system routines documented in this manual make use of the IDL thread pool. System-wide use of the thread pool can be controlled with the
+   <a class="MCXref_Heading_0" href="../../Reference Material/C/CPU.html#C_854643309_1032355">
+    CPU
+   </a>
+   procedure, and the current system settings are visible via the
+   <a class="MCXref_Heading_0" href="IDL_Environment_System_V.html#sysvars_272074529_1014201">
+    !CPU
+   </a>
+   system variable.
+  </p>
+  <p>
+   All system routines that use the thread pool accept the following keywords, which can be used to modify the default behavior for the duration of a single call. This allows you to modify the settings for a particular computation without affecting the global default settings of the IDL session.
+  </p>
+  <h2 class="API">
+   Thread Pool Keywords
+  </h2>
+  <h3>
+   <a name="tpoolkeyw_2501860834_95491">
+   </a>
+   TPOOL_MAX_ELTS
+  </h3>
+  <p>
+   Set this keyword to a non-zero value to set the maximum number of data elements involved in a computation that uses the thread pool. If the number of elements in the computation exceeds the number you specify, IDL will not use the thread pool for the computation. Setting this value to 0 removes any limit on the maximum number of elements, and any computation with at least TPOOL_MIN_ELTS will use the thread pool.
+  </p>
+  <p>
+   This keyword overrides the default value, given by !CPU.TPOOL_MAX_ELTS.
+  </p>
+  <h3>
+   <a name="tpoolkeyw_2501860834_59989">
+   </a>
+   TPOOL_MIN_ELTS
+  </h3>
+  <p>
+   Set this keyword to a non-zero value to set the minimum number of data elements involved in a computation that uses the thread pool. If the number of elements in the computation is less than the number you specify, IDL will not use the thread pool for the computation. Use this keyword to prevent IDL from using the thread pool on tasks that are too small to benefit from it.
+  </p>
+  <p>
+   This keyword overrides the default value, given by !CPU.TPOOL_MIN_ELTS.
+  </p>
+  <h3>
+   <a name="tpoolkeyw_2501860834_69180">
+   </a>
+   TPOOL_NOTHREAD
+  </h3>
+  <p>
+   Set this keyword to explicitly prevent IDL from using the thread pool for the current computation. If this keyword is set, IDL will use the non-threaded implementation of the routine even if the current settings of the !CPU system variable would allow use of the threaded implementation.
+  </p>
+  <p>
+   This keyword overrides the default value, given by !CPU.TPOOL_NTHREADS.
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

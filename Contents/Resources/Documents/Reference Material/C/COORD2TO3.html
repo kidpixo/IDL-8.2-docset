@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   COORD2TO3
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/COORD2TO3.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    COORD2TO3
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_756832">
+   </a>
+   <a name="C_854643309_67373">
+   </a>
+   COORD2TO3
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_756838">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1075515">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_756840">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1075539">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_756849">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_756854">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor383">
+   </a>
+   COORD2TO3 function converts normalized X and Y screen coordinates to 3D data
+   <a name="kanchor384">
+   </a>
+   coordinates.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   A valid
+   <a name="kanchor385">
+   </a>
+   3D transform must exist in !P.T or be specified by the PTI keyword. The axis scaling variables, !X.S, !Y.S and !Z.S must be valid.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    coord2to3.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_756838">
+   </a>
+   <a name="C_854643309_756838_PageTOC_COORD2TO3_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = COORD2TO3(
+   <i>
+    Mx
+   </i>
+   ,
+   <i>
+    My
+   </i>
+   ,
+   <i>
+    Dim
+   </i>
+   ,
+   <i>
+    D0
+   </i>
+   [,&#160;
+   <i>
+    PTI
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1075515">
+   </a>
+   <a name="C_854643309_22147">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a three-element vector containing 3D data coordinates given the normalized X and Y screen coordinates and one of the three data coordinates.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_756840">
+   </a>
+   <a name="C_854643309_756840_PageTOC_COORD2TO3_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Mx, My
+  </h3>
+  <p>
+   The normalized X and Y screen coordinates.
+  </p>
+  <h3 class="Argument">
+   Dim
+  </h3>
+  <p>
+   A parameter used to specify which data coordinate is fixed. Use 0 for a fixed X data coordinate, 1 for a fixed Y data coordinate, or 2 for a fixed Z data coordinate.
+  </p>
+  <h3 class="Argument">
+   D0
+  </h3>
+  <p>
+   The value of the fixed data coordinate.
+  </p>
+  <h3 class="Argument">
+   PTI
+  </h3>
+  <p>
+   The inverse of !P.T. If this parameter is not supplied, or set to 0, COORD2TO3 computes the inverse. If this routine is to be used in a loop, the caller should supply PTI for highest efficiency.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1075539">
+   </a>
+   <a name="C_854643309_42974">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_756849">
+   </a>
+   <a name="C_854643309_756849_PageTOC_COORD2TO3_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To return the data coordinates of the mouse, fixing the data Z value at 10, enter the commands:
+  </p>
+  <p class="Code">
+   ;Make sure a transformation matrix exists.
+   <br />
+   CREATE_VIEW
+   <br />
+   <br />
+   XYOUTS, 0.5, [0.55, 0.50], ALIGNMENT=0.5, CHARSIZE=2.0, $
+   <br />
+   &#160;&#160;&#160;['Click in the window to display', $
+   <br />
+   &#160;&#160;&#160;'mouse position in data coordinates']
+   <br />
+   ;Get the normalized mouse coords.
+   <br />
+   CURSOR, X, Y, /NORM
+   <br />
+   <br />
+   ;Print the 3D coordinates.
+   <br />
+   PRINT, COORD2TO3(X, Y, 2, 10.0)
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_756854">
+   </a>
+   <a name="C_854643309_756854_PageTOC_COORD2TO3_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="CROSSP.html#C_854643309_757870" target="" title="" alt="">
+    CROSSP
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="CV_COORD.html#C_854643309_864570" target="" title="" alt="">
+    CV_COORD
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

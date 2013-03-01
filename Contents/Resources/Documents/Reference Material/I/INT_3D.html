@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   INT_3D
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/INT_3D.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    INT_3D
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="I_833016429_750234">
+   </a>
+   <a name="I_833016429_74581">
+   </a>
+   INT_3D
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#I_833016429_750240">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_884767">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_750242">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_813292">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_750270">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_816265">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_880824">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1544">
+   </a>
+   INT_3D function computes the
+   <a name="kanchor1545">
+   </a>
+   integral of a trivariate function using
+   <a name="kanchor1546">
+   </a>
+   iterated Gaussian quadrature. The algorithm’s transformation data is provided in tabulated form with 15 decimal accuracy.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    int_3d.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_750240">
+   </a>
+   <a name="I_833016429_750240_PageTOC_INT_3D_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = INT_3D(
+   <i>
+    Fxyz
+   </i>
+   ,
+   <i>
+    AB_Limits
+   </i>
+   ,
+   <i>
+    PQ_Limits
+   </i>
+   ,
+   <i>
+    UV_Limits
+   </i>
+   ,
+   <i>
+    Pts
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_813293">
+    DOUBLE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_884767">
+   </a>
+   <a name="I_833016429_42509">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the triple integral.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_750242">
+   </a>
+   <a name="I_833016429_750242_PageTOC_INT_3D_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Fxyz
+  </h3>
+  <p>
+   A scalar string specifying the name of a user-supplied IDL function that defines the trivariate function to be integrated. The function must accept X, Y, and Z, and return a scalar result.
+  </p>
+  <p>
+   For example, if we wish to integrate the following function:
+  </p>
+  <p style="text-align: center;">
+   <img src="../../images/15_6.jpg" />
+  </p>
+  <p>
+   We define a function FXY to express this relationship in the IDL language:
+  </p>
+  <p class="Code">
+   FUNCTION fxyz, X, Y, Z
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, z*(x^2+y^2+z^2)^1.5
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h3 class="Argument">
+   AB_Limits
+  </h3>
+  <p>
+   A two-element vector containing the lower (A) and upper (B) limits of integration with respect to the variable
+   <i>
+    x
+   </i>
+   .
+  </p>
+  <h3 class="Argument">
+   PQ_Limits
+  </h3>
+  <p>
+   A scalar string specifying the name of a user-supplied IDL function that defines the lower (P(
+   <i>
+    x
+   </i>
+   )) and upper (Q(
+   <i>
+    x
+   </i>
+   )) limits of integration with respect to the variable
+   <i>
+    y
+   </i>
+   . The function must accept
+   <i>
+    x
+   </i>
+   and return a two-element vector result.
+  </p>
+  <p>
+   For example, we might write the following IDL function to represent the limits of integration with respect to
+   <i>
+    y
+   </i>
+   :
+  </p>
+  <p class="Code">
+   FUNCTION PQ_limits, X
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, [-SQRT(4.0 - X^2), SQRT(4.0 - X^2)]
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h3 class="Argument">
+   UV_Limits
+  </h3>
+  <p>
+   A scalar string specifying the name of a user-supplied IDL function that defines the lower (U(
+   <i>
+    x,y
+   </i>
+   )) and upper (V(
+   <i>
+    x
+   </i>
+   ,y)) limits of integration with respect to the variable
+   <i>
+    z
+   </i>
+   . The function must accept
+   <i>
+    x
+   </i>
+   and
+   <i>
+    y
+   </i>
+   and return a two-element vector result.
+  </p>
+  <p>
+   For example, we might write the following IDL function to represent the limits of integration with respect to
+   <i>
+    z
+   </i>
+   :
+  </p>
+  <p class="Code">
+   FUNCTION UV_limits, X, Y
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, [0, SQRT(4.0 - X^2 - Y^2)]
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h3 class="Argument">
+   Pts
+  </h3>
+  <p>
+   The number of transformation points used in the computation. Possible values are: 6, 10, 20, 48, or 96.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_813292">
+   </a>
+   <a name="I_833016429_813292_PageTOC_INT_3D_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="I_833016429_813293">
+   </a>
+   <a name="I_833016429_813293_Keywords_INT_3D__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_750270">
+   </a>
+   <a name="I_833016429_750270_PageTOC_INT_3D_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Compute the triple integral of the trivariate function
+  </p>
+  <p style="text-align: center;">
+   <img src="../../images/15_7.jpg" />
+  </p>
+  <p>
+   Using the functions and limits defined above, integrate with 10, 20, 48, and 96 point formulas (using double-precision arithmetic):
+  </p>
+  <p class="Code">
+   PRINT, INT_3D('Fxyz', [-2.0, 2.0], 'PQ_Limits', 'UV_Limits', 10,$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;/D)
+  </p>
+  <p class="Code">
+   PRINT, INT_3D('Fxyz', [-2.0, 2.0], 'PQ_Limits', 'UV_Limits', 20,$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;/D)
+  </p>
+  <p class="Code">
+   PRINT, INT_3D('Fxyz', [-2.0, 2.0], 'PQ_Limits', 'UV_Limits', 48,$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;/D)
+  </p>
+  <p class="Code">
+   PRINT, INT_3D('Fxyz', [-2.0, 2.0], 'PQ_Limits', 'UV_Limits', 96,$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;/D)
+  </p>
+  <p>
+   INT_3D with 10 transformation points yields: 57.444248
+  </p>
+  <p>
+   INT_3D with 20 transformation points yields: 57.446201
+  </p>
+  <p>
+   INT_3D with 48 transformation points yields: 57.446265
+  </p>
+  <p>
+   INT_3D with 96 transformation points yields: 57.446266
+  </p>
+  <p>
+   The exact solution (6 decimal accuracy) is: 57.446267
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_816265">
+   </a>
+   <a name="I_833016429_816265_PageTOC_INT_3D_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="I_833016429_880824">
+   </a>
+   <a name="I_833016429_880824_PageTOC_INT_3D_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="INT_2D.html#I_833016429_883951">
+    INT_2D
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="INT_TABULATED.html#I_833016429_750296">
+    INT_TABULATED
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../Q/QROMB.html#Q_815714925_51508">
+    QROMB
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../Q/QROMO.html#Q_815714925_51569">
+    QROMO
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../Q/QSIMP.html#Q_815714925_51645">
+    QSIMP
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

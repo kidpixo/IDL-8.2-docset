@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: L" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   LOGICAL_TRUE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/L/LOGICAL_TRUE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="L_list.html">
+    Routines: L
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    LOGICAL_TRUE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="L_826528365_983139">
+   </a>
+   <a name="L_826528365_52105">
+   </a>
+   LOGICAL_TRUE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#L_826528365_999355">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_999358">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_999361">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_999365">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_999369">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_999375">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_999378">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1723">
+   </a>
+   LOGICAL_TRUE function returns
+   <a name="kanchor1724">
+   </a>
+   True (1) if its arguments are non-zero (non-NULL for strings and heap variables), and False (0) otherwise.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For a given argument, the value returned by LOGICAL_TRUE is the opposite of the value returned by the ~ operator.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_999355">
+   </a>
+   <a name="L_826528365_43653">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = LOGICAL_TRUE(
+   <i>
+    Arg
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_999358">
+   </a>
+   <a name="L_826528365_23245">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Integer zero (false) or one (true) if the argument is a scalar, or an array of zeroes and ones if the argument is an array.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_999361">
+   </a>
+   <a name="L_826528365_47566">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Arg
+  </h3>
+  <p>
+   The expression on which the logical truth evaluation is to be carried out. The argument can be a scalar or an array of any type other than structure.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_999365">
+   </a>
+   <a name="L_826528365_14382">
+   </a>
+   Keywords
+  </h2>
+  <h3>
+   Thread Pool Keywords
+  </h3>
+  <p>
+   This routine is written to make use of IDL’s
+   <i>
+    thread pool
+   </i>
+   , which can increase execution speed on systems with multiple CPUs. The values stored in the !CPU system variable control whether IDL uses the thread pool for a given computation. In addition, you can use the thread pool keywords TPOOL_MAX_ELTS, TPOOL_MIN_ELTS, and TPOOL_NOTHREAD to override the defaults established by !CPU for a single invocation of this routine. See Appendix D, “Thread Pool Keywords” for details.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_999369">
+   </a>
+   <a name="L_826528365_71682">
+   </a>
+   Example
+  </h2>
+  <p>
+   At the IDL Command Line, enter:
+  </p>
+  <p class="Code">
+   PRINT, LOGICAL_TRUE(2), LOGICAL_TRUE(0)
+  </p>
+  <p>
+   IDL Prints:
+  </p>
+  <p class="Code">
+   1   0
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_999375">
+   </a>
+   <a name="L_826528365_92105">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="L_826528365_999378">
+   </a>
+   <a name="L_826528365_70990">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../K/KEYWORD_SET.html#K_837341805_938653">
+    KEYWORD_SET
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="LOGICAL_AND.html#L_826528365_983100">
+    LOGICAL_AND
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="LOGICAL_OR.html#L_826528365_983101">
+    LOGICAL_OR
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

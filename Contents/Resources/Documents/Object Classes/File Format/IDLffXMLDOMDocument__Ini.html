@@ -1,0 +1,659 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|File Format Object Classes|IDLffXMLDOMDocument" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffXMLDOMDocument::Init
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/File Format/IDLffXMLDOMDocument__Ini.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_ff.html">
+    File Format Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffXMLDOMDocument::Init
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_ff_3755668711_1127974">
+   </a>
+   <a name="objects_ff_3755668711_25130">
+   </a>
+   IDLffXMLDOMDocument::Init
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1127979">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128032">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128035">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128037">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128082">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLffXMLDOMDocument::
+   <a name="kanchor3983">
+   </a>
+   Init function method initializes the object. It can also load and parse an XML document, using the same keywords that
+   <a class="MCXref_Heading_0" href="IDLffXMLDOMDocument__Loa.html#objects_ff_3755668711_1128085">
+    IDLffXMLDOMDocument::Load
+   </a>
+   does. (For more information on loading, see that method’s description.)
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1127979">
+   </a>
+   <a name="objects_ff_3755668711_1127979_PageTOC_IDLffXMLDOMDocument">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   = OBJ_NEW(‘IDLffXMLDOMDocument’ [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128039">
+    EXCLUDE_IGNORABLE_WHITESPACE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128048">
+    EXPAND_ENTITY_REFERENCES
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128051">
+    FILENAME
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    string&#160;|&#160;
+   </span>
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1366764">
+    STRING
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128054">
+    MSG_ERROR
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128061">
+    MSG_FATAL
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128067">
+    MSG_WARNING
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    string
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128073">
+    QUIET
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1263966">
+    SCHEMA_CHECKING
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128076">
+    VALIDATION_MODE
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    value
+   </span>
+   ])
+  </p>
+  <p>
+   or
+  </p>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLffXMLDOMDocument.html#objects_ff_3755668711_1104965">
+    IDLffXMLDOMDocument
+   </a>
+   ::]Init( [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128039">
+    EXCLUDE_IGNORABLE_WHITESPACE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128048">
+    EXPAND_ENTITY_REFERENCES
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128051">
+    FILENAME
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    string&#160;|
+   </span>
+   &#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1366764">
+    STRING
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128054">
+    MSG_ERROR
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128061">
+    MSG_FATAL
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    string
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128067">
+    MSG_WARNING
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    string
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128073">
+    QUIET
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1263966">
+    SCHEMA_CHECKING
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128076">
+    VALIDATION_MODE
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    value
+   </span>
+   ] )  &#160;&#160;&#160;
+   <i>
+    (In a lifecycle method only.
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1128032">
+   </a>
+   <a name="objects_ff_3755668711_1128032_PageTOC_IDLffXMLDOMDocument">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns an object reference to the newly created object when this method is called indirectly, as part of the call to the OBJ_NEW function.
+  </p>
+  <p>
+   Returns 1 if initialization was successful or 0 otherwise, when this method is called directly within a subclass Init method.
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1128035">
+   </a>
+   <a name="objects_ff_3755668711_1128035_PageTOC_IDLffXMLDOMDocument">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1128037">
+   </a>
+   <a name="objects_ff_3755668711_1128037_PageTOC_IDLffXMLDOMDocument">
+   </a>
+   Keywords
+  </h2>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Any property listed under
+   <a class="MCXref_Heading_0" href="IDLffXMLDOMDocument_Prop.html#objects_ff_3755668711_1127752" target="" title="" alt="">
+    IDLffXMLDOMDocument Properties
+   </a>
+   that contains the word “Yes” in the “Init” column of the property table can be initialized during object creation using this method. To initialize the value of a property, specify the property name as a keyword set equal to the appropriate property value.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1128039">
+   </a>
+   <a name="objects_ff_3755668711_76600">
+   </a>
+   EXCLUDE_IGNORABLE_WHITESPACE
+  </h3>
+  <p>
+   Set this keyword to prevent text nodes containing ignorable white space from being inserted into the DOM tree. The default action is to include these nodes in the DOM tree. Note that in order for the parser to distinguish between ignorable and non-ignorable white space, validation must be turned on with the
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128076">
+    VALIDATION_MODE
+   </a>
+   keyword and there must be a DTD. This keyword has no effect if
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128076">
+    VALIDATION_MODE
+   </a>
+   is 0 or if there is no DTD for the XML document.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1128048">
+   </a>
+   <a name="objects_ff_3755668711_69271">
+   </a>
+   EXPAND_ENTITY_REFERENCES
+  </h3>
+  <p>
+   Set this keyword to cause the parser to replace entity references with their fully expanded substitution text. If entity references are not expanded, the DOM parser creates entity-reference nodes in the DOM tree. The children of the entity-reference nodes are read-only and are elements containing the entity values. If entity references are expanded, the DOM parser creates no entity-reference nodes in the DOM tree and instead creates read-write nodes that correspond to the fully expanded substitution text.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1128051">
+   </a>
+   <a name="objects_ff_3755668711_71916">
+   </a>
+   FILENAME
+  </h3>
+  <p>
+   Set this keyword to a scalar string containing the name of the XML file to load and parse.
+  </p>
+  <p>
+   The FILENAME keyword can also specify a URL. In this case, the object reads the XML data from the specified URL over the network and builds the document tree without the XML data needing to be present in a local file.
+  </p>
+  <p>
+   Setting both the FILENAME and STRING keywords causes an error.
+  </p>
+  <p>
+   The following example reads XML from an RSS feed containing weather information for Denver, Colorado:
+  </p>
+  <p class="Code">
+   FUNCTION filter, oNode
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;name = oNode-&gt;getNodeName()
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;IF name EQ 'title' OR name EQ 'description' THEN $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;RETURN, 1 ; accept
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, 3 ;; skip
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   PRO weather
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;oDoc = OBJ_NEW( 'IDLffXMLDOMDocument', $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;FILENAME='http://weather.gov/data/current_obs/KDEN.rss' )
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;oNodeIterator = oDoc-&gt;createNodeIterator( OBJ_NEW(), $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;FILTER_NAME='filter' )
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;oNode = oNodeIterator-&gt;nextNode()
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;WHILE OBJ_VALID( oNode ) DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;; Assuming only one text node per element
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, (oNode-&gt;GetFirstChild())-&gt;getNodeValue()
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;oNode = oNodeIterator-&gt;nextNode()
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENDWHILE
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;OBJ_DESTROY, oDoc
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1128054">
+   </a>
+   <a name="objects_ff_3755668711_78208">
+   </a>
+   MSG_ERROR
+  </h3>
+  <p>
+   Set this keyword to a scalar string that contains the name of an IDL procedure that will be called when the parser generates an error message. The following procedure parameters are required:
+  </p>
+  <ul>
+   <li value="1">
+    Filename – A scalar string containing the name of the file being parsed
+   </li>
+   <li value="2">
+    Line number – A scalar integer containing the line number in the file where the parsing error occurred
+   </li>
+   <li value="3">
+    Column number – A scalar integer containing the column number in the file where the parsing error occurred
+   </li>
+   <li value="4">
+    Message – A scalar string containing the parser error message
+   </li>
+  </ul>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1128061">
+   </a>
+   <a name="objects_ff_3755668711_68601">
+   </a>
+   MSG_FATAL
+  </h3>
+  <p>
+   Set this keyword to a scalar string that contains the name of an IDL procedure that will be called when the parser generates a fatal error message. The required procedure parameters are the same as for
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128054">
+    MSG_ERROR
+   </a>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1128067">
+   </a>
+   <a name="objects_ff_3755668711_87663">
+   </a>
+   MSG_WARNING
+  </h3>
+  <p>
+   Set this keyword to a scalar string that contains the name of an IDL procedure that will be called when the parser generates a warning message. The required procedure parameters are the same as for
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1128054">
+    MSG_ERROR
+   </a>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1128073">
+   </a>
+   <a name="objects_ff_3755668711_47313">
+   </a>
+   QUIET
+  </h3>
+  <p>
+   Set this keyword to prevent IDL from printing out informational parser warnings and error messages. The default action is to report all parser warnings and errors with messages. If an error more severe than a warning is encountered, IDL issues an additional single message after parsing is complete and returns to the interpreter, regardless of this keyword’s setting.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1263966">
+   </a>
+   <a name="objects_ff_3755668711_15397">
+   </a>
+   SCHEMA_CHECKING
+  </h3>
+  <p>
+   Set this keyword to an integer value to indicate the type of validation the parser should perform. XML schemas describe the structure and allowed contents of an XML document. Schemas are more robust than, and are envisioned as a replacement for, DTDs. By default, the parser will validate the parsed XML file against the specified schema, if one is provided. If no schema is provided, no validation occurs. Possible values are:
+  </p>
+  <table style="width: 417px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="81px" class="Column-Column1" />
+   <col width="336px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       No schema checking is performed.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Schema checking is performed only if a schema is provided. This is the default value.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       Full schema constraint checking is performed if a schema is provided. This feature checks the schema grammar itself for additional errors.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1366764">
+   </a>
+   <a name="objects_ff_3755668711_21481">
+   </a>
+   STRING
+  </h3>
+  <p>
+   Set this keyword equal to a scalar string containing the XML Document text. Setting the STRING keyword avoids the need for file input/output operations. As a result, setting both the FILENAME and STRING keywords causes an error.
+  </p>
+  <p>
+   If the XML Document text contains references to local files, IDL’s current working directory should be set to the directory containing those files. To avoid the need to manage the current working directory, use this keyword with self-contained XML documents. For example, placing DTD information in a DOCTYPE element in the document text avoids the need for an external file reference.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1128076">
+   </a>
+   <a name="objects_ff_3755668711_56155">
+   </a>
+   VALIDATION_MODE
+  </h3>
+  <p>
+   Set this keyword to one of the following values:
+  </p>
+  <table style="width: 369px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="81px" class="Column-Column1" />
+   <col width="288px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       The parser does not report validation errors.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       The parser reports validation errors only if a DTD is specified. This is the default value.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       The parser always reports validation errors.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   This keyword ignores all other values.
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1128082">
+   </a>
+   <a name="objects_ff_3755668711_1128082_PageTOC_IDLffXMLDOMDocument">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Added SCHEMA_CHECKING keyword
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added STRING keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

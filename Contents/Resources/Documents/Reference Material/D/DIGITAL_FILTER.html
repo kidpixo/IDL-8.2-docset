@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: D" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   DIGITAL_FILTER
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/D/DIGITAL_FILTER.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="D_list.html">
+    Routines: D
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    DIGITAL_FILTER
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="D_843829869_985275">
+   </a>
+   <a name="D_843829869_25464">
+   </a>
+   DIGITAL_FILTER
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#D_843829869_757962">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_1021672">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_1021675">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_1002898">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_757979">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_981455">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#D_843829869_997353">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor686">
+   </a>
+   DIGITAL_FILTER
+   <a name="kanchor687">
+   </a>
+   function returns the coefficients of a non-recursive, digital filter for evenly spaced data points. Frequencies are expressed in terms of the Nyquist frequency, 1/2T, where T is the time between data samples. Highpass, lowpass, bandpass and bandstop
+   <a name="kanchor688">
+   </a>
+   filters may be constructed with this function.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    digital_filter.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_757962">
+   </a>
+   <a name="D_843829869_757962_PageTOC_DIGITAL_FILTER_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = DIGITAL_FILTER(
+   <i>
+    Flow
+   </i>
+   ,
+   <i>
+    Fhigh
+   </i>
+   ,
+   <i>
+    A
+   </i>
+   ,
+   <i>
+    Nterms
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#D_843829869_1002899">
+    DOUBLE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_1021672">
+   </a>
+   <a name="D_843829869_757964_PageTOC_DIGITAL_FILTER_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This function returns a vector of coefficients with (2 ∞
+   <i>
+    Nterms
+   </i>
+   + 1) elements.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_1021675">
+   </a>
+   <a name="D_843829869_990372_PageTOC_DIGITAL_FILTER_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Flow
+  </h3>
+  <p>
+   The lower frequency of the filter as a fraction of the Nyquist frequency
+  </p>
+  <h3 class="Argument">
+   Fhigh
+  </h3>
+  <p>
+   The upper frequency of the filter as a fraction of the Nyquist frequency. The following conditions are necessary for various types of filters:
+  </p>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 371px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="120px" class="Column-Column1" />
+   <col width="251px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       No Filtering
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       <i>
+        Flow
+       </i>
+       = 0,
+       <i>
+        Fhigh
+       </i>
+       = 1
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Low Pass
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       <i>
+        Flow
+       </i>
+       = 0, 0 &lt;
+       <i>
+        Fhigh
+       </i>
+       &lt; 1
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       High Pass
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       0 &lt;
+       <i>
+        Flow
+       </i>
+       &lt; 1,
+       <i>
+        Fhigh
+       </i>
+       =1
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Band Pass
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       0 &lt;
+       <i>
+        Flow
+       </i>
+       &lt;
+       <i>
+        Fhigh
+       </i>
+       &lt; 1
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       Band Stop
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       0 &lt;
+       <i>
+        Fhigh
+       </i>
+       &lt;
+       <i>
+        Flow
+       </i>
+       &lt; 1
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Argument">
+   A
+  </h3>
+  <p>
+   The filter power relative to the Gibbs phenomenon wiggles in decibels. 50 is a good choice.
+  </p>
+  <h3 class="Argument">
+   Nterms
+  </h3>
+  <p>
+   The number of terms used to construct the filter.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_1002898">
+   </a>
+   <a name="D_843829869_97765">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="D_843829869_1002899">
+   </a>
+   <a name="D_843829869_1002899_Keywords_DIGITAL_FILTER__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to use double-precision for computations and to return a double-precision result. Set DOUBLE=0 to use single-precision for computations and to return a single-precision result. The default is /DOUBLE if the
+   <i>
+    Flow
+   </i>
+   input is double precision, otherwise the default is DOUBLE=0.
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_757979">
+   </a>
+   <a name="D_843829869_757979_PageTOC_DIGITAL_FILTER_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Get coefficients:
+  </p>
+  <p class="Code">
+   Coeff = DIGITAL_FILTER(Flow, Fhigh, A, Nterms)
+  </p>
+  <p class="Code">
+   ; Apply the filter:
+  </p>
+  <p class="Code">
+   Yout = CONVOL(Yin, Coeff)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <h2 class="API">
+   <a name="D_843829869_981455">
+   </a>
+   <a name="D_843829869_981455_PageTOC_DIGITAL_FILTER_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added DOUBLE keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="D_843829869_997353">
+   </a>
+   <a name="D_843829869_997353_PageTOC_DIGITAL_FILTER_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/CONVOL.html#C_854643309_676395">
+    CONVOL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LEEFILT.html#L_826528365_758191">
+    LEEFILT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../M/MEDIAN.html#M_824365677_1160284">
+    MEDIAN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SMOOTH.html#S_820040301_1131767">
+    SMOOTH
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

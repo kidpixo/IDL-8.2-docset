@@ -1,0 +1,442 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: R" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   READ_BMP
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/R/READ_BMP.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="R_list.html">
+    Routines: R
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    READ_BMP
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="R_822202989_1071023">
+   </a>
+   <a name="R_822202989_75148">
+   </a>
+   READ_BMP
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#R_822202989_756097">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_1103771">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_756099">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_867599">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_843691">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_756110">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_1092924">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2220">
+   </a>
+   READ_BMP function reads a Microsoft Windows Version 3 device independent
+   <a name="kanchor2221">
+   </a>
+   bitmap file (.BMP) and returns the image.
+  </p>
+  <p>
+   READ_BMP does not handle 1-bit-images or compressed images.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    read_bmp.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   To find information about a potential BMP file before trying to read its data, use the
+   <a class="MCXref_Heading_0" href="../Q/QUERY_BMP.html#Q_815714925_1112741">
+    QUERY_BMP
+   </a>
+   function.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_756097">
+   </a>
+   <a name="R_822202989_756097_PageTOC_READ_BMP_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = READ_BMP(
+   <i>
+    Filename
+   </i>
+   , [,&#160;
+   <i>
+    R
+   </i>
+   ,
+   <i>
+    G
+   </i>
+   ,
+   <i>
+    B
+   </i>
+   ] [,&#160;
+   <i>
+    Ihdr
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#R_822202989_867600">
+    RGB
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_1103771">
+   </a>
+   <a name="R_822202989_95098">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a byte array containing the image. Dimensions are taken from the BITMAPINFOHEADER of the file. In the case of 4-bit or 8-bit images, the dimensions of the resulting array are (
+   <span class="Courier">
+    biWidth
+   </span>
+   ,
+   <span class="Courier">
+    biHeight
+   </span>
+   ).
+  </p>
+  <p>
+   For 24-bit images, the dimensions are (
+   <span class="Courier">
+    3
+   </span>
+   ,
+   <span class="Courier">
+    biWidth
+   </span>
+   ,
+   <span class="Courier">
+    biHeight
+   </span>
+   ). Color interleaving is blue, green, red; i.e., Result[
+   <i>
+    0,i,j
+   </i>
+   ] = blue, Result[
+   <i>
+    1,i,j
+   </i>
+   ] = green, etc. The RGB keyword can be used to change the interleaving.
+  </p>
+  <p>
+   For 32-bit images, the dimensions are (
+   <span class="Courier">
+    4
+   </span>
+   ,
+   <span class="Courier">
+    biWidth
+   </span>
+   ,
+   <span class="Courier">
+    biHeight
+   </span>
+   ). Color interleaving is blue, green, red, alpha; i.e., Result[
+   <i>
+    0,i,j
+   </i>
+   ] = blue, Result[
+   <i>
+    1,i,j
+   </i>
+   ] = green, Result[
+   <i>
+    2,i,j
+   </i>
+   ] = red, Result[
+   <i>
+    3,i,j
+   </i>
+   ] = alpha. The RGB keyword can be used to change the interleaving.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_756099">
+   </a>
+   <a name="R_822202989_756099_PageTOC_READ_BMP_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string specifying the full path name of the bitmap file to read.
+  </p>
+  <h3 class="Argument">
+   R, G, B
+  </h3>
+  <p>
+   Named variables that will contain the color tables from the file. There 16 elements each for 4 bit images, 256 elements each for 8 bit images. Color tables are not defined or used for 24-bit or 32-bit images.
+  </p>
+  <h3 class="Argument">
+   Ihdr
+  </h3>
+  <p>
+   A named variable that will contain a structure holding the BITMAPINFOHEADER from the file. Tag names are as defined in the Microsoft Developer Network Library; see
+   <span class="Link">
+    <a href="http://msdn.microsoft.com/en-us/library/ms532290.aspx">
+     http://msdn.microsoft.com/en-us/library/ms532290.aspx
+    </a>
+   </span>
+   for details.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_867599">
+   </a>
+   <a name="R_822202989_867599_PageTOC_READ_BMP_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="R_822202989_867600">
+   </a>
+   <a name="R_822202989_867600_Keywords_READ_BMP__">
+   </a>
+   RGB
+  </h3>
+  <p>
+   If this keyword is set, color interleaving of 16-, 24-, and 32-bit images will be R, G, B [, A] i.e., Result[
+   <i>
+    0,i,j
+   </i>
+   ] = red, Result[
+   <i>
+    1,i,j
+   </i>
+   ] = green, Result[2,
+   <i>
+    i
+   </i>
+   ,
+   <i>
+    j
+   </i>
+   ] = blue, and if there is an alpha channel, Result[3,
+   <i>
+    i
+   </i>
+   ,
+   <i>
+    j
+   </i>
+   ] = alpha.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_843691">
+   </a>
+   <a name="R_822202989_843691_PageTOC_READ_BMP_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To open, read, and display a BMP file named
+   <span class="Courier">
+    foo.bmp
+   </span>
+   in the current directory and store the color vectors in the variables R, G, and B, enter:
+  </p>
+  <p class="Code">
+   ; Read and display an image:
+  </p>
+  <p class="Code">
+   TV, READ_BMP('foo.bmp', R, G, B)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Load its colors:
+  </p>
+  <p class="Code">
+   TVLCT, R, G, B
+  </p>
+  <p>
+   Many applications that use 24-bit BMP files outside IDL expect BMP files to be stored as BGR. For example, enter the following commands.
+  </p>
+  <p class="Code">
+   ; Make a red square image:
+   <br />
+   a = BYTARR(3, 200, 200, /NOZERO)
+   <br />
+   a[0, *, *] = 255
+   <br />
+   <br />
+   ;View the image:
+   <br />
+   TV, a, /TRUE
+   <br />
+   WRITE_BMP, 'foo.bmp', a
+  </p>
+  <p>
+   If you open the
+   <span class="Courier">
+    .bmp
+   </span>
+   file in certain bitmap editors, you may find that the square is blue.
+  </p>
+  <p class="Code">
+   image = READ_BMP('foo.bmp')
+   <br />
+   <br />
+   ; IDL reads the image back in and interprets it as red:
+   <br />
+   TV, image, /TRUE
+   <br />
+   <br />
+   ; Reverse the order of the indices by adding the RGB keyword:
+   <br />
+   image = READ_BMP('foo.bmp', /RGB)
+   <br />
+   <br />
+   ; Displays the image in blue:
+   <br />
+   TV, image, /TRUE
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_756110">
+   </a>
+   <a name="R_822202989_756110_PageTOC_READ_BMP_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Pre-4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Add support for 32-bit (RGBA) bitmaps files
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="R_822202989_1092924">
+   </a>
+   <a name="R_822202989_1092924_PageTOC_READ_BMP_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../I/IOPEN.html">
+    IOPEN
+   </a>
+   ,
+   <a href="../W/WRITE_BMP.html#W_811389549_756424" target="" title="" alt="" class="MCXref_0">
+    WRITE_BMP
+   </a>
+   ,
+   <a href="../Q/QUERY_BMP.html#Q_815714925_1112741" target="" title="" alt="" class="MCXref_0">
+    QUERY_BMP
+   </a>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

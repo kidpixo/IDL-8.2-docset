@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Tasks|Setting Preferences" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Windows Runtime Preferences
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Appendices/prefs_win_rt.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Programming Tasks.html">
+    Tasks
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Setting Preferences.html">
+    Setting Preferences
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Windows Runtime Preferences
+   </span>
+  </div>
+  <h1>
+   <a name="preferences_2247882535_1024689">
+   </a>
+   <a name="preferences_2247882535_41306">
+   </a>
+   Windows Runtime Preferences
+  </h1>
+  <p>
+   These preferences exist to support the use of IDL runtime and the IDL Virtual Machine under Microsoft Windows. They are not present in non-Windows versions of IDL.o
+  </p>
+  <p>
+   Under Microsoft Windows, the
+   <span class="Courier">
+    idlrt.exe
+   </span>
+   program runs runtime or virtual-machine applications. The preferences described here provide default values for parameters to that program if they are not explicitly provided.
+  </p>
+  <p>
+   If IDL finds an IDL preference file named
+   <span class="Courier">
+    idl.pref
+   </span>
+   in the directory containing the IDL DLL, IDL treats it as a command-line preference file and automatically reads and processes it. This is the most likely way in which the preferences specified in this section are used.
+  </p>
+  <h2 class="API">
+   <a name="preferences_2247882535_1025886">
+   </a>
+   <a name="preferences_2247882535_52225">
+   </a>
+   IDL_WINRT_FILE
+   <a name="kanchor3241">
+   </a>
+  </h2>
+  <p>
+   If you run
+   <span class="Courier">
+    idlrt.exe
+   </span>
+   without specifying an IDL SAVE file, the IDL_WINRT_FILE preference supplies the name of the file to use.
+  </p>
+  <p>
+   Committed changes take effect at the next
+   <span class="Courier">
+    idlrt.exe
+   </span>
+   invocation. The default value is an empty string ('').
+  </p>
+  <p>
+   This preference cannot be set in the IDL Workbench
+   <span class="Bold">
+    Preferences
+   </span>
+   dialog.
+  </p>
+  <h2 class="API">
+   <a name="preferences_2247882535_1025891">
+   </a>
+   <a name="preferences_2247882535_83423">
+   </a>
+   IDL_WINRT_FILE_TYPE
+   <a name="kanchor3242">
+   </a>
+  </h2>
+  <p>
+   If you run
+   <span class="Courier">
+    idlrt.exe
+   </span>
+   without specifying the licensing mode under which it is expected to run, the IDL_WINRT_FILE_TYPE preference supplies the mode.
+  </p>
+  <table style="width: 240px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="96px" />
+   <col width="144px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Alias
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Runtime
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       EmbeddedRuntime
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       VirtualMachine
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Committed changes take effect at the next
+   <span class="Courier">
+    idlrt.exe
+   </span>
+   invocation. The default value is Runtime (0).
+  </p>
+  <p>
+   This preference cannot be set in the IDL Workbench
+   <span class="Bold">
+    Preferences
+   </span>
+   dialog.
+  </p>
+  <h2 class="API">
+   <a name="preferences_2247882535_1033093">
+   </a>
+   <a name="preferences_2247882535_71674">
+   </a>
+   IDL_WINRT_ICON
+   <a name="kanchor3243">
+   </a>
+  </h2>
+  <p>
+   The IDL_WINRT_ICON preference specifies the file containing the icon to use with a runtime or virtual-machine application.
+  </p>
+  <p>
+   Committed changes take effect at the next
+   <span class="Courier">
+    idlrt.exe
+   </span>
+   invocation. The default value is an empty string (''), indicating that the standard IDL icon should be used.
+  </p>
+  <p>
+   This preference cannot be set in the IDL Workbench
+   <span class="Bold">
+    Preferences
+   </span>
+   dialog.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

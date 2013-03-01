@@ -1,0 +1,580 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   SAVE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/SAVE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    SAVE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_678623">
+   </a>
+   <a name="S_820040301_30525">
+   </a>
+   SAVE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_862005">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_678627">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_678630">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_678648">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_795736">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110238">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2330">
+   </a>
+   SAVE procedure saves variables, system variables, and IDL routines in a SAVE file using the XDR (eXternal Data Representation) format for later recovery by RESTORE. Note that variables and routines cannot be saved in the same file.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   SAVE files containing routines may not be compatible between different versions of IDL, but that files containing data are always backwards-compatible. See
+   <a href="../../Creating IDL Programs/Application Programming/Creating_SAVE_Files_of_P.html">
+    Creating Save Files of Program Files
+   </a>
+   for details on version compatibility.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   While IDL routines or data can be saved in a file with any extension, it is common to use the extension
+   <span class="Courier">
+    .sav
+   </span>
+   for SAVE files. Using the
+   <span class="Courier">
+    .sav
+   </span>
+   extension has two benefits: it makes it clear to another IDL user that the file contains IDL routines or data that can be restored, and it allows IDL to locate routines with the same base name as the file in SAVE files located in IDL’s path.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Do not confuse the process of saving an
+   <i>
+    instance
+   </i>
+   of an object with saving its
+   <i>
+    definition
+   </i>
+   . A reference to an instantiated object is stored in an IDL variable, and must be saved in a SAVE file as a variable. An object definition, on the other hand, is an IDL routine, and must be saved in a SAVE file as a routine.
+   <i>
+    It is important to remember that restoring an instance of an object does not restore the object’s definition.
+   </i>
+   If the object is defined in
+   <span class="Courier">
+    .pro
+   </span>
+   code, you must save the object definition routine and the object instance variable in separate SAVE files, and restore both instance and definition in the target IDL session.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   IDL cannot save data objects that rely on state information stored in an external library. Examples of such objects include IDLffXMLDOM and IDLffJPEG2000. These objects are
+   <i>
+    not
+   </i>
+   stored in a SAVE file.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_862005">
+   </a>
+   <a name="S_820040301_862005_PageTOC_SAVE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   SAVE [,&#160;
+   <i>
+    Var
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   , ...,
+   <i>
+    Var
+   </i>
+   <sub class="italic">
+    n
+   </sub>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_678631">
+    ALL
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_678633">
+    COMM
+   </a>
+   ,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_678642">
+    VARIABLES
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1074405">
+    COMPRESS
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_678635">
+    DESCRIPTION
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1281488">
+    EMBEDDED
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_1281491">
+    FILENAME
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_678637">
+    ROUTINES
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_678639">
+    SYSTEM_VARIABLES
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_678644">
+    VERBOSE
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_678627">
+   </a>
+   <a name="S_820040301_678627_PageTOC_SAVE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Var
+   <sub class="italic">
+    n
+   </sub>
+  </h3>
+  <p>
+   The names of one or more variables that are to be saved. If the ROUTINES keyword is present, the
+   <i>
+    Var
+   </i>
+   arguments should be strings containing the names of the routines to be saved. If no
+   <i>
+    Var
+   </i>
+   arguments are provided, the items specified by the supplied keywords are saved.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_678630">
+   </a>
+   <a name="S_820040301_678630_PageTOC_SAVE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="S_820040301_678631">
+   </a>
+   <a name="S_820040301_678631_Keywords_SAVE__">
+   </a>
+   ALL
+  </h3>
+  <p>
+   Set this keyword to save all common blocks, system variables, and local variables from the current
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   session.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Routines and variables cannot be saved in the same file. Setting the ALL keyword does not save routines.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_678633">
+   </a>
+   <a name="S_820040301_678633_Keywords_SAVE__">
+   </a>
+   COMM
+  </h3>
+  <p>
+   Set this keyword to save all main level common block definitions. Note that setting this keyword does not cause the contents of the common block to be saved unless the VARIABLES keyword is also set.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1074405">
+   </a>
+   <a name="S_820040301_1074405_Keywords_SAVE__">
+   </a>
+   COMPRESS
+  </h3>
+  <p>
+   If COMPRESS is set, IDL writes all data to the SAVE file using the ZLIB compression library to reduce its size. IDL’s SAVE file compression support is based on the freely available ZLIB library by Mark Adler and Jean-loup Gailly.
+  </p>
+  <p>
+   Compressed SAVE files can be restored by the RESTORE procedure in exactly the same manner as any other SAVE file. The only visible differences are that the files will be smaller, and writing and reading them will be somewhat slower under typical conditions.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_678635">
+   </a>
+   <a name="S_820040301_678635_Keywords_SAVE_">
+   </a>
+   DESCRIPTION
+  </h3>
+  <p>
+   Set this keyword equal to a string that will be saved in the SAVE file:
+  </p>
+  <p class="Code">
+   SAVE, data, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;DESCRIPTION="Solar Obs: 2452884.9, 40 deg 0' N 105 deg 16' W"
+  </p>
+  <p>
+   This string can be later recovered using the
+   <a class="MCXref_Heading_0" href="../R/RESTORE.html#R_822202989_135743">
+    RESTORE
+   </a>
+   procedure or the
+   <a class="MCXref_Heading_0" href="../../Object Classes/Miscellaneous/IDL_Savefile.html#objects_misc_904195448_1076956">
+    IDL_Savefile
+   </a>
+   object class. The ability to associate a descriptive string to a SAVE file can be used by IDL programs to identify data, and can also be used as an aid in managing large collections of data.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1281488">
+   </a>
+   <a name="S_820040301_1281488_Keywords_SAVE__">
+   </a>
+   EMBEDDED
+  </h3>
+  <p>
+   Set this keyword to request that the generated SAVE file contain an embedded license. The SAVE procedure will add an embedded license to the SAVE file if the IDL session has access to a Developer’s Kit license. Use of this keyword is equivalent to selecting the
+   <span class="Bold">
+    Licensed Save File (.sav)
+   </span>
+   option on the
+   <span class="Bold">
+    IDL Project Properties
+   </span>
+   page of the
+   <span class="Bold">
+    Project Properties
+   </span>
+   dialog.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Use this keyword with the ROUTINES keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1281491">
+   </a>
+   <a name="S_820040301_678635_Keywords_SAVE__">
+   </a>
+   FILENAME
+  </h3>
+  <p>
+   A string containing the name of the file into which the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   objects should be saved. While there are no arbitrary limitations on the name of a file created with the SAVE procedure, use the
+   <span class="Courier">
+    .sav
+   </span>
+   extension for your files for consistency. If this keyword is not specified, the file
+   <span class="Courier">
+    idlsave.dat
+   </span>
+   is used.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_678637">
+   </a>
+   <a name="S_820040301_678637_Keywords_SAVE__">
+   </a>
+   ROUTINES
+  </h3>
+  <p>
+   Set this keyword to save user defined procedures and functions in a machine independent,
+   <a name="kanchor2331">
+   </a>
+   binary form. If parameters are present, they must be strings containing the names of the procedures and/or functions to be saved. If no parameters are present, all compiled routines are saved. Routines and variables cannot be saved in the same file.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   SAVE (
+   <span class="Courier">
+    .sav
+   </span>
+   ) files containing routines are not guaranteed to be compatible between successive versions of
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   . You will not be able to RESTORE SAVE files containing routines if they are made with incompatible versions of IDL. In this case, you should recompile your original code with the newer version of IDL. A SAVE file containing data will always be restorable.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_678639">
+   </a>
+   <a name="S_820040301_678639_Keywords_SAVE__">
+   </a>
+   SYSTEM_VARIABLES
+  </h3>
+  <p>
+   <a name="kanchor2332">
+   </a>
+   Set this keyword to save the current state of all system variables.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Saving system variables is not recommended, as the structure may change between versions of IDL.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_678642">
+   </a>
+   <a name="S_820040301_678642_Keywords_SAVE__">
+   </a>
+   VARIABLES
+  </h3>
+  <p>
+   <a name="kanchor2333">
+   </a>
+   Set this keyword to save all variables in the current program unit. This option is the default.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_678644">
+   </a>
+   <a name="S_820040301_678644_Keywords_SAVE__">
+   </a>
+   VERBOSE
+  </h3>
+  <p>
+   Set this keyword to print an informative message for each saved object.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_678648">
+   </a>
+   <a name="S_820040301_678648_PageTOC_SAVE_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Save the status of all currently-defined variables in the file
+   <span class="Courier">
+    variables1.sav
+   </span>
+   by entering:
+  </p>
+  <p class="Code">
+   SAVE, /VARIABLES, FILENAME = 'variables1.sav'
+  </p>
+  <p>
+   The variables can be restored with the RESTORE procedure.
+  </p>
+  <p>
+   Save the user procedures MYPROC and MYFUN:
+  </p>
+  <p class="Code">
+   SAVE, /ROUTINES, 'MYPROC', 'MYFUN', FILENAME = 'myroutines.sav'
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_795736">
+   </a>
+   <a name="S_820040301_795736_PageTOC_SAVE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Added DESCRIPTION keyword
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added EMBEDDED keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110238">
+   </a>
+   <a name="S_820040301_1110238_PageTOC_SAVE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../H/HEAP_NOSAVE.html#H_835179117_933553">
+    HEAP_NOSAVE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../H/HEAP_SAVE.html#H_835179117_924792">
+    HEAP_SAVE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../J/JOURNAL.html#J_839504493_875577">
+    JOURNAL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/RESOLVE_ALL.html#R_822202989_678560">
+    RESOLVE_ALL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/RESTORE.html#R_822202989_135743">
+    RESTORE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Object Classes/Miscellaneous/IDL_Savefile.html#objects_misc_904195448_1076956">
+    IDL_Savefile
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

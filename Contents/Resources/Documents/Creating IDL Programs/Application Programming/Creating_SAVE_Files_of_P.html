@@ -1,0 +1,1225 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Tasks|Using Procedures, Functions, SAVE Files" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Creating SAVE Files of Program Files
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Application Programming/Creating_SAVE_Files_of_P.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Programming Tasks.html">
+    Tasks
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Program Types.html">
+    Using Procedures, Functions, SAVE Files
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Creating SAVE Files of Program Files
+   </span>
+  </div>
+  <h1>
+   <a name="Save_3439793193_858234">
+   </a>
+   <a name="Save_3439793193_62787">
+   </a>
+   Creating SAVE Files of Program Files
+  </h1>
+  <p>
+   An IDL application created in IDL 6.0 or later that does not use the EXECUTE function can be saved in one or more SAVE files that will run in the IDL Virtual Machine. If an IDL application is to be run in the IDL Virtual Machine, it is not necessary to include an IDL distribution with the SAVE file because IDL Virtual Machine is installed on the user’s machine. The SAVE file need only include your own code, creating a smaller file that is easier to distribute.
+  </p>
+  <p>
+   To create SAVE files to run in the IDL Virtual Machine, do one of the following:
+  </p>
+  <ul>
+   <li value="1">
+    Create SAVE files from one or more compiled
+    <code>
+     .pro
+    </code>
+    files with the
+    <a href="../../Reference Material/S/SAVE.html">
+     SAVE
+    </a>
+    procedure.
+   </li>
+   <li value="2">
+    Create SAVE files from a project by selecting
+    <b>
+     Project &gt; Build Project
+    </b>
+    .
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Creating SAVE files of object-oriented programs requires the use of RESOLVE_ALL with the CLASS keyword.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you want your customers to run your application on a computer without IDL, you will need to include a runtime version of IDL with a runtime or embedded license in your application distribution.
+  </p>
+  <h2>
+   Single vs. Multiple SAVE Files
+  </h2>
+  <p>
+   There are several ways to include the necessary routines in your application:
+  </p>
+  <ul>
+   <li value="1">
+    For a native IDL application, include all routines in the main SAVE file that is restored when your application is started. This makes all routines available without having to restore any additional SAVE files, and reduces the number of SAVE files used by your application. The easiest way to do this is to add all
+    <code>
+     .pro
+    </code>
+    files to a project, and build the project.
+   </li>
+   <li value="2">
+    Create a separate SAVE file containing all your routines. You might use this method for a Callable application, if you want to keep certain routines separate from your main SAVE file in a native IDL application, or if your application includes routines provided to you as a SAVE file by another developer. To run any routines included in this SAVE file, you must restore the SAVE file by either calling a routine with the same name as the
+    <code>
+     .sav
+    </code>
+    file or restore it explicitly using RESTORE.
+   </li>
+   <li value="3">
+    Create a separate SAVE file for each routine used by your application. Assuming each
+    <code>
+     .sav
+    </code>
+    file uses the same name as the procedure or function it contains, this allows you to call each routine without having to explicitly restore its SAVE file because IDL will search the current directory and the defined !PATH for the
+    <code>
+     .sav
+    </code>
+    file and restore it automatically when it encounters the first call to the routine.
+   </li>
+  </ul>
+  <h2>
+   Version Compatibility of SAVE Files
+  </h2>
+  <p>
+   The IDL Virtual Machine will execute IDL routines stored in SAVE files created with IDL version 6.0 and later. Any SAVE files created with previous versions of IDL must be recompiled using IDL 6.0 or later for them to run with the Virtual Machine.
+  </p>
+  <p>
+   In addition, SAVE files created with a later version of IDL are not guaranteed to be compatible with older versions of IDL. In particular, each SAVE file contains a "revision level" which determines whether it can be restored by an older IDL version. If the revision level in the SAVE file is higher than the revision level for that version of IDL, then the file cannot be restored. The current revision levels are:
+  </p>
+  <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col style="width: 139px;" class="Column-Column1" />
+   <col style="width: 267px;" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <th class="HeadE-Column1-Header1" style="text-align: left;">
+      IDL Version
+     </th>
+     <th class="HeadD-Column1-Header1" style="text-align: left;">
+      Save File Revision Level
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1" style="text-align: left;">
+      5.0
+     </td>
+     <td class="BodyD-Column1-Body1" style="text-align: left;">
+      1
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2" style="text-align: left;">
+      5.1
+     </td>
+     <td class="BodyD-Column1-Body2" style="text-align: left;">
+      5
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1" style="text-align: left;">
+      5.3
+     </td>
+     <td class="BodyD-Column1-Body1" style="text-align: left;">
+      6
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2" style="text-align: left;">
+      5.6
+     </td>
+     <td class="BodyD-Column1-Body2" style="text-align: left;">
+      7
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1" style="text-align: left;">
+      6.0
+     </td>
+     <td class="BodyD-Column1-Body1" style="text-align: left;">
+      8
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2" style="text-align: left;">
+      6.1
+     </td>
+     <td class="BodyD-Column1-Body2" style="text-align: left;">
+      9
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1" style="text-align: left;">
+      8.0
+     </td>
+     <td class="BodyD-Column1-Body1" style="text-align: left;">
+      10
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2" style="text-align: left;">
+      8.2
+     </td>
+     <td class="BodyA-Column1-Body2" style="text-align: left;">
+      11
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   If you want to distribute an application that can be used by users with different IDL versions, you should compile your code on the oldest IDL version that you want to support.
+  </p>
+  <h2>
+   Examples
+  </h2>
+  <p>
+   The following examples create SAVE files that are stand-alone IDL applications that can be run on any Windows, UNIX or Mac OS&#160;X computer containing the IDL Virtual Machine or a licensed copy of IDL. See the following
+   <a name="kanchor3566">
+   </a>
+   examples:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="#Save_3439793193_857079" target="" title="" alt="">
+     Example: A SAVE File of a Simple Routine
+    </a>
+    creates two SAVE files. One SAVE file contains variable data, the other SAVE file contains a procedure uses RESTORE to access the variable data in the first SAVE file.
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="#Save_3439793193_858495" target="" title="" alt="">
+     Example: A Save File of a Simple Widget Application
+    </a>
+    displays an image in a simple widget application.
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="#Save_3439793193_858793" target="" title="" alt="">
+     Example: Creating a SAVE File of an Object Definition
+    </a>
+    shows the special steps that must be taken when creating a SAVE file of an object that has dependencies upon other objects.
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="#Save_3439793193_857136" target="" title="" alt="">
+     Example: A SAVE File of a Custom iPlot Display
+    </a>
+    restores variable data and plots it in an iPlot display.
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="Save_3439793193_857079">
+   </a>
+   <a name="Save_3439793193_48615">
+   </a>
+   Example: A SAVE File of a Simple Routine
+  </h2>
+  <p>
+   The following example creates two SAVE files. One SAVE file contains variable data, loaded from an image file. This SAVE file is then restored by the program in the main SAVE file, which uses a simple call to the ARROW procedure to point out an area of interest within the image.
+  </p>
+  <h3>
+   <a name="Save_3439793193_857222">
+   </a>
+   <a name="Save_3439793193_11910">
+   </a>
+   Save Image Variable Data
+  </h3>
+  <ol>
+   <li value="1">
+    <span class="Bold">
+     Start a fresh session of IDL.
+    </span>
+    This avoids saving unwanted session information.
+   </li>
+   <li value="2">
+    <p>
+     <span class="Bold">
+      Read image data into a variable.
+     </span>
+     Open an image file containing an MRI proton density scan of a human thorax, and read the data into a variable named
+     <span class="Courier">
+      image
+     </span>
+     <i style="font-family: Times;font-style: italic;line-height: 13pt;">
+      :
+     </i>
+    </p>
+    <p class="Code">
+     READ_JPEG, (FILEPATH('pdthorax124.jpg', SUBDIRECTORY= $
+    </p>
+    <p class="Code">
+     &#160;&#160;&#160;&#160;['examples', 'data'])), image
+    </p>
+   </li>
+   <li value="3">
+    <p>
+     <span class="Bold">
+      Create a SAVE file containing the image data.
+     </span>
+     Use the
+     <a class="MCXref_Heading_0" href="../../Reference Material/S/SAVE.html#S_820040301_678623" target="" title="" alt="">
+      SAVE
+     </a>
+     procedure to save the
+     <i>
+      image
+     </i>
+     variable in a SAVE file by entering the following:
+    </p>
+    <p class="Code">
+     SAVE, image, FILENAME='imagefile.sav'
+    </p>
+    <p class="indent">
+     This stores the SAVE file in your current working directory.
+    </p>
+   </li>
+  </ol>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When using the SAVE procedure, some users identify binary files containing variable data using a
+   <span class="Courier">
+    .dat
+   </span>
+   extension instead of a
+   <span class="Courier">
+    .sav
+   </span>
+   extension. While any extension can be used to identify files created with SAVE, it is recommended that you use the
+   <span class="Courier">
+    .sav
+   </span>
+   extension to easily identify files that can be restored.
+  </p>
+  <h3>
+   Save a Procedure that Restores Variable Data
+  </h3>
+  <ol>
+   <li value="1">
+    <p>
+     <span class="Bold">
+      Create the program file.
+     </span>
+     Create the following IDL program that first restores the
+     <i>
+      image
+     </i>
+     variable contained within the
+     <span class="Courier">
+      imagefile.sav
+     </span>
+     file. This variable is used in the following program statements defining the size of the window and in the TV routine which displays the image. The ARROW routine then draws an arrow within the window. Enter the following lines in a text editor.
+    </p>
+    <p class="Code">
+     PRO draw_arrow
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Restore image data.
+    </p>
+    <p class="Code">
+     RESTORE, 'imagefile.sav'
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Get the dimensions of the image file.
+    </p>
+    <p class="Code">
+     s = SIZE(image, /DIMENSIONS)
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Prepare display device and display image.
+    </p>
+    <p class="Code">
+     DEVICE, DECOMPOSED = 0
+    </p>
+    <p class="Code">
+     WINDOW, 0, XSIZE=s[0], YSIZE=s[1], TITLE="Point of Interest"
+    </p>
+    <p class="Code">
+     TV, image
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Draw the arrow.
+    </p>
+    <p class="Code">
+     ARROW, 40, 20, 165, 115
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; The IDL Virtual Manchine exits IDL when the end of a
+    </p>
+    <p class="Code">
+     ; program is reached if there are not internal events. The
+    </p>
+    <p class="Code">
+     ; WAIT statement here allows the user to view the .sav file
+    </p>
+    <p class="Code">
+     ; results for 10 seconds when executed through the IDL
+    </p>
+    <p class="Code">
+     ; Virtual Machine.
+    </p>
+    <p class="Code">
+     WAIT, 10
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     END
+    </p>
+   </li>
+   <li value="2">
+    <span class="Bold">
+     Save the file.
+    </span>
+    Name the saved file
+    <span class="Courier">
+     draw_arrow.pro
+    </span>
+    .
+   </li>
+   <li value="3">
+    <p>
+     <span class="Bold">
+      Reset the IDL session.
+     </span>
+     Enter the following at the IDL prompt to ensure that no unwanted session information is saved along with the program:
+    </p>
+    <p class="Code">
+     .FULL_RESET_SESSION
+    </p>
+   </li>
+   <li value="4">
+    <p>
+     <span class="Bold">
+      Compile the program.
+     </span>
+     Enter the following at the IDL prompt:
+    </p>
+    <p class="Code">
+     .COMPILE draw_arrow
+    </p>
+   </li>
+   <li value="5">
+    <p>
+     <span class="Bold">
+      Resolve dependencies.
+     </span>
+     Use
+     <a class="MCXref_Heading_0" href="../../Reference Material/R/RESOLVE_ALL.html#R_822202989_678560" target="" title="" alt="">
+      RESOLVE_ALL
+     </a>
+     (or
+     <a class="MCXref_Heading_0" href="../../Reference Material/I/IRESOLVE.html" target="" title="" alt="">
+      IRESOLVE
+     </a>
+     if the routine has any dependencies on iTools components) to iteratively compile any uncompiled user-written or library procedures or functions that are called in any already-compiled procedure or function:
+    </p>
+    <p class="Code">
+     RESOLVE_ALL
+    </p>
+    <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+     <span class="autonumber">
+      <span>
+       <b>
+        Note:
+       </b>
+      </span>
+     </span>
+     RESOLVE_ALL does not resolve procedures or functions that are called via quoted strings such as CALL_PROCEDURE, CALL_FUNCTION, or EXECUTE, or in keywords that can contain procedure names such as TICKFORMAT or EVENT_PRO. You must manually compile these routines.
+    </p>
+   </li>
+   <li value="6">
+    <p>
+     <span class="Bold">
+      Create the SAVE file.
+     </span>
+     Create a file called
+     <span class="Courier">
+      draw_arrow.sav
+     </span>
+     that contains the user-defined draw_arrow procedure. When the
+     <a class="MCXref_Heading_0" href="../../Reference Material/S/SAVE.html#S_820040301_678623" target="" title="" alt="">
+      SAVE
+     </a>
+     procedure is called with the ROUTINES keyword and no arguments, it create a SAVE file containing all currently compiled routines. Because the procedures within the
+     <span class="Courier">
+      draw_arrow
+     </span>
+     procedure are the only routines that are currently compiled in the IDL session, create the SAVE file as follows:
+    </p>
+    <p class="Code">
+     SAVE, /ROUTINES, FILENAME='draw_arrow.sav'
+    </p>
+    <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+     <span class="autonumber">
+      <span>
+       <b>
+        Note:
+       </b>
+      </span>
+     </span>
+     When the name of the SAVE file uses the
+     <span class="Courier">
+      .sav
+     </span>
+     extension and has the same base name as the main level program, it can be automatically compiled by IDL. This means that it can be called from another routine or restored from the IDL command line using only the name of the saved routine.
+    </p>
+   </li>
+   <li value="7">
+    <p>
+     <span class="Bold">
+      Test the SAVE file in the
+     </span>
+     <span class="Bold">
+      IDL Virtual Machine
+     </span>
+     . Click on the splash screen and open
+     <span class="Courier">
+      draw_arrow.sav
+     </span>
+     . You could also test the SAVE file from IDL, enter the following at the command prompt.
+    </p>
+    <p class="Code">
+     RESTORE, 'draw_arrow.sav'
+    </p>
+    <p class="Code">
+     draw_arrow
+    </p>
+   </li>
+  </ol>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="Executing_SAVE_Files.html#Save_3439793193_857652" target="" title="" alt="">
+    Executing SAVE Files
+   </a>
+   for all the available ways to run a SAVE file.
+  </p>
+  <h2 class="API">
+   <a name="Save_3439793193_858495">
+   </a>
+   <a name="Save_3439793193_19655">
+   </a>
+   Example: A Save File of a Simple Widget Application
+  </h2>
+  <p>
+   The following example creates a native IDL application that displays an image in a simple widget interface. When any application runs in the IDL Virtual Machine, there must some element (such as widget or interface events, or a WAIT statement) that keeps the application from immediately exiting with the END statement is reached. This example includes a Done button for this reason. The example in
+   <a class="MCXref_Heading_0" href="#Save_3439793193_857079" target="" title="" alt="">
+    Example: A SAVE File of a Simple Routine
+   </a>
+   includes a WAIT statement.
+  </p>
+  <ol>
+   <li value="1">
+    <p>
+     <span class="Bold">
+      Create a .pro file.
+     </span>
+     Enter the following in the IDL Editor, and save it as
+     <span class="Courier">
+      myApp.pro
+     </span>
+     :
+    </p>
+    <p class="Code">
+     PRO done_event, ev
+    </p>
+    <p class="Code">
+     ; When the 'Done' button is pressed, exit
+    </p>
+    <p class="Code">
+     ; the application.
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     WIDGET_CONTROL, ev.TOP, /DESTROY
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     END
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     PRO myApp
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Read an image file.
+    </p>
+    <p class="Code">
+     READ_JPEG, (FILEPATH('endocell.jpg', SUBDIRECTORY = $
+    </p>
+    <p class="Code">
+     &#160;&#160;&#160;['examples', 'data'])), image
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Find the dimensions of the image.
+    </p>
+    <p class="Code">
+     info = SIZE(image,/DIMENSIONS)
+    </p>
+    <p class="Code">
+     xdim = info[0]
+    </p>
+    <p class="Code">
+     ydim = info[1]
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Create a base widget containing a draw widget
+    </p>
+    <p class="Code">
+     ; and a 'Done' button.
+    </p>
+    <p class="Code">
+     wBase = WIDGET_BASE(/COLUMN)
+    </p>
+    <p class="Code">
+     wDraw = WIDGET_DRAW(wBase, XSIZE=xdim, YSIZE=ydim)
+    </p>
+    <p class="Code">
+     wButton = WIDGET_BUTTON(wBase, VALUE='Done', EVENT_PRO='done_event')
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Realize the widgets.
+    </p>
+    <p class="Code">
+     WIDGET_CONTROL, wBase, /REALIZE
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Retrieve the widget ID of the draw widget.
+    </p>
+    <p class="Code">
+     WIDGET_CONTROL, wDraw, GET_VALUE=index
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Set the current drawable area to the draw widget.
+    </p>
+    <p class="Code">
+     WSET, index
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Display some data.
+    </p>
+    <p class="Code">
+     TV, image
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Call XMANAGER to manage the event loop.
+    </p>
+    <p class="Code">
+     XMANAGER, 'myApp', wBase, /NO_BLOCK
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     END
+    </p>
+   </li>
+   <li value="2">
+    <p>
+     <span class="Bold">
+      Reset the IDL session.
+     </span>
+     Enter the following at the IDL prompt to ensure that no unwanted session information is saved along with the program:
+    </p>
+    <p class="Code">
+     .FULL_RESET_SESSION
+    </p>
+   </li>
+   <li value="3">
+    <span class="Bold">
+     Compile the application
+    </span>
+    . Select
+    <span class="Bold">
+     Run
+    </span>
+    &#160;&gt;&#160;
+    <span class="Bold">
+     Compile
+    </span>
+    to compile the
+    <span class="Courier">
+     .pro
+    </span>
+    file.
+   </li>
+   <li value="4">
+    <p>
+     <span class="Bold">
+      Resolve dependencies.
+     </span>
+     Type RESOLVE_ALL at the command line to resolve all procedures and functions that are called in the application:
+    </p>
+    <p class="Code">
+     RESOLVE_ALL
+    </p>
+    <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+     <span class="autonumber">
+      <span>
+       <b>
+        Note:
+       </b>
+      </span>
+     </span>
+     If your program relies on iTools components, use
+     <a class="MCXref_Heading_0" href="../../Reference Material/I/IRESOLVE.html" target="" title="" alt="">
+      IRESOLVE
+     </a>
+     instead of RESOLVE_ALL.
+    </p>
+   </li>
+   <li value="5">
+    <p>
+     <span class="Bold">
+      Create the SAVE file.
+     </span>
+     Enter the following to save the compiled application as a SAVE file:
+    </p>
+    <p class="Code">
+     SAVE, /ROUTINES, FILENAME = 'myApp.sav'
+    </p>
+   </li>
+  </ol>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="Executing_SAVE_Files.html#Save_3439793193_857652" target="" title="" alt="">
+    Executing SAVE Files
+   </a>
+   for ways to run the SAVE file.
+  </p>
+  <h2 class="API">
+   <a name="Save_3439793193_858793">
+   </a>
+   <a name="Save_3439793193_62036">
+   </a>
+   Example: Creating a SAVE File of an Object Definition
+  </h2>
+  <p>
+   When you create a SAVE file that contains an object defined in a
+   <span class="Courier">
+    .pro
+   </span>
+   file, you must save the
+   <span class="Courier">
+    .pro
+   </span>
+   file as a SAVE file, just like any other procedure you wish to distribute. However, it is important to note that if the object has any inherited properties from superclasses or other objects, and the object definitions exist in
+   <span class="Courier">
+    .pro
+   </span>
+   files, you must also compile and include these object definition files in your SAVE file. Objects using a
+   <span class="Courier">
+    .pro
+   </span>
+   extension typically exist in the IDL distribution’s
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory and its subdirectories.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Do not confuse the process of saving an
+   <i>
+    instance
+   </i>
+   of an object with saving its
+   <i>
+    definition
+   </i>
+   . A reference to an instantiated object is stored in an IDL variable, and must be saved in a SAVE file as a variable. An object definition, on the other hand, is an IDL routine, and must be saved in a SAVE file as a routine.
+   <i>
+    It is important to remember that restoring an instance of an object does not restore the object’s definition.
+   </i>
+   If the object is defined in
+   <span class="Courier">
+    .pro
+   </span>
+   code, you must save the object definition routine and the object instance variable in separate SAVE files, and restore both instance and definition in the target IDL session.
+  </p>
+  <p>
+   The IDL distribution includes and example of a composite object composed of an image, a surface, and a contour, which are combined into a single object called the IDLexShow3 object. To see this object being used in an application, run the
+   <span class="Courier">
+    show3_track.pro
+   </span>
+   file in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   directory. This procedure has dependencies on two objects (
+   <span class="Courier">
+    trackball.pro
+   </span>
+   and
+   <span class="Courier">
+    IDLexShow3__define.pro
+   </span>
+   ). You must use RESOLVE_ALL and explicitly include these two objects in the CLASS keyword string array in order to create a valid SAVE file.
+  </p>
+  <p>
+   If you fail to resolve all object dependencies, you will receive an error stating that there was an attempt to call and undefined procedure or function when you run the SAVE file. If the error references an object, add the object name to the CLASS keyword string array to resolve the problem. Undefined procedure or function errors are more likely to appear when you restore a SAVE file using the IDL Virtual Machine, which does not search !PATH to resolve routines. Using RESTORE at the command line does search !PATH. Therefore, a SAVE file that can be successfully executed using RESTORE may not succeed when called from the IDL Virtual Machine. If you are distributing SAVE files to users running the IDL Virtual Machine, make sure to test the SAVE file in the Virtual Machine.
+  </p>
+  <p>
+   Complete the following steps to create a save file of an object:
+  </p>
+  <ol>
+   <li value="1">
+    <p>
+     <span class="Bold">
+      Reset your session.
+     </span>
+     Either start a new IDL session or enter the following at the IDL prompt to ensure that no unwanted session information is saved along with the program:
+    </p>
+    <p class="Code">
+     .FULL_RESET_SESSION
+    </p>
+   </li>
+   <li value="2">
+    <p>
+     <span class="Bold">
+      Open the main procedure.
+     </span>
+     Open and compile
+     <span class="Courier">
+      show3_track.pro
+     </span>
+     file by entering the following at the IDL command prompt:
+    </p>
+    <p class="Code">
+     .COMPILE Show3_Track.pro
+    </p>
+   </li>
+   <li value="3">
+    <p>
+     <span class="Bold">
+      Resolve object dependencies.
+     </span>
+     Use the CLASS keyword to resolve dependencies to other object
+     <span class="Courier">
+      .pro
+     </span>
+     files by passing it a string or string array containing the name(s) of the objects:
+    </p>
+    <p class="Code">
+     RESOLVE_ALL, CLASS=['Trackball', 'IDLexShow3']
+    </p>
+   </li>
+   <li value="4">
+    <p>
+     <span class="Bold">
+      Create the SAVE file.
+     </span>
+     Enter the following at the IDL command prompt:
+    </p>
+    <p class="Code">
+     SAVE, /ROUTINES, FILENAME='show3_track.sav'
+    </p>
+   </li>
+   <li value="5">
+    <p>
+     <span class="Bold">
+      Test the SAVE file
+     </span>
+     . Select
+     <span class="Bold">
+      Start
+     </span>
+     &#160;&gt;&#160;
+     <span class="Bold">
+      Programs
+     </span>
+     &#160;&gt;&#160;
+     <span class="Bold">
+      IDL
+      <span class="DocumentTitleVersion">
+       8.2
+      </span>
+     </span>
+     &#160;&gt;&#160;
+     <span class="Bold">
+      IDL Virtual Machine
+     </span>
+     . Click on the splash screen and open
+     <span class="Courier">
+      show3_track.sav
+     </span>
+     . You could also test the SAVE file from IDL. Enter the following at the command prompt.
+    </p>
+    <p class="Code">
+     RESTORE, 'show3_track.sav'
+    </p>
+    <p class="Code">
+     show3_track
+    </p>
+   </li>
+  </ol>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="Executing_SAVE_Files.html#Save_3439793193_857652" target="" title="" alt="">
+    Executing SAVE Files
+   </a>
+   for all the available ways to run a SAVE file.
+  </p>
+  <h2 class="API">
+   <a name="Save_3439793193_857136">
+   </a>
+   <a name="Save_3439793193_67775">
+   </a>
+   Example: A SAVE File of a Custom iPlot Display
+  </h2>
+  <p>
+   The following example configures a custom iPlot display and stores the program in a SAVE file. Restoring the SAVE file opens iPlot with the specified data.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When working with iTools, you can create an iTool State (.isv) file that contains data and application state information.You can share this file with other IDL users who have the same version or a newer version of IDL. See the
+   <span class="Link">
+    <i>
+     Tool User’s Guid
+    </i>
+    e for details. This is not the same as packaging iTools functionality into a SAVE file, which is described in this example. When iTools functionality is packaged into a SAVE file, it can be accessed by IDL users or through the IDL Virtual Machine.
+   </span>
+  </p>
+  <ol>
+   <li value="1">
+    <p>
+     <span class="Bold">
+      Access and save data.
+     </span>
+     Save variable data from a batch file into a SAVE file:
+    </p>
+    <p class="Code">
+     @plot01
+    </p>
+    <p class="Code">
+     SAVE, FILENAME='plotdata01.sav'
+    </p>
+   </li>
+   <li value="2">
+    <p>
+     <span class="Bold">
+      Create the program file.
+     </span>
+     This program restores data, and creates a plot display in an iPlot display. Enter the following lines in a text editor:
+    </p>
+    <p class="Code">
+     PRO ex_saveiplot
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Define variables.
+    </p>
+    <p class="Code">
+     RESTORE, 'plotdata01.sav'
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Use the LINFIT function to fit the data to a line:
+    </p>
+    <p class="Code">
+     coeff = LINFIT(YEAR, SOCKEYE)
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ;YFIT is the fitted line:
+    </p>
+    <p class="Code">
+     YFIT = coeff[0] + coeff[1]*YEAR
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Plot the original data points with PSYM = 4, for diamonds:
+    </p>
+    <p class="Code">
+     iPLOT, YEAR, SOCKEYE, /YNOZERO, SYM_INDEX = 4, $
+    </p>
+    <p class="Code">
+     SYM_COLOR=[255,0,0], LINESTYLE=6, $
+    </p>
+    <p class="Code">
+     TITLE = 'Quadratic Fit', XTITLE = 'Year', $
+    </p>
+    <p class="Code">
+     YTITLE = 'Sockeye Population'
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     ; Overplot the smooth curve using a plain line:
+    </p>
+    <p class="Code">
+     iPLOT, YEAR, YFIT, /OVERPLOT
+    </p>
+    <p class="Code">
+     &#160;
+    </p>
+    <p class="Code">
+     END
+    </p>
+   </li>
+   <li value="3">
+    <p>
+     <span class="Bold">
+      Reset your session.
+     </span>
+     Enter the following at the IDL prompt to ensure that no unwanted session information is saved along with the program:
+    </p>
+    <p class="Code">
+     .FULL_RESET_SESSION
+    </p>
+   </li>
+   <li value="4">
+    <p>
+     <span class="Bold">
+      Compile the program.
+     </span>
+     Use the .COMPILE executive command as follows: Compile the main program file:
+    </p>
+    <p class="Code">
+     .COMPILE ex_saveiplot
+    </p>
+   </li>
+   <li value="5">
+    <p>
+     <span class="Bold">
+      Resolve dependencies.
+     </span>
+     Use
+     <a class="MCXref_Heading_0" href="../../Reference Material/I/IRESOLVE.html" target="" title="" alt="">
+      IRESOLVE
+     </a>
+     to resolve dependencies upon iTool components:
+    </p>
+    <p class="Code">
+     IRESOLVE
+    </p>
+   </li>
+   <li value="6">
+    <p>
+     <span class="Bold">
+      Create the SAVE file.
+     </span>
+     Use the /ROUTINES keyword to include all currently compiled routines:
+    </p>
+    <p class="Code">
+     SAVE, /ROUTINES, FILENAME='ex_saveiplot.sav'
+    </p>
+   </li>
+   <li value="7">
+    <p>
+     <span class="Bold">
+      Test the SAVE file
+     </span>
+     . Select
+     <span class="Bold">
+      Start
+     </span>
+     &#160;&gt;&#160;
+     <span class="Bold">
+      Programs
+     </span>
+     &#160;&gt;&#160;
+     <span class="Bold">
+      IDL
+      <span class="DocumentTitleVersion">
+       8.2
+      </span>
+     </span>
+     &#160;&gt;&#160;
+     <span class="Bold">
+      IDL Virtual Machine
+     </span>
+     . Click on the splash screen and open
+     <span class="Courier">
+      ex_saveiplot.sav
+     </span>
+     . You could also run the SAVE file from IDL. Enter the following at the command prompt.
+    </p>
+    <p class="Code">
+     RESTORE, 'ex_saveiplot.sav'
+    </p>
+    <p class="Code">
+     ex_saveiplot
+    </p>
+   </li>
+  </ol>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="Executing_SAVE_Files.html#Save_3439793193_857652" target="" title="" alt="">
+    Executing SAVE Files
+   </a>
+   for all the available ways to run a SAVE file.
+  </p>
+  <h2 class="API">
+   Other Exa
+   <a name="kanchor3567">
+   </a>
+   mples of SAVE File Creation
+  </h2>
+  <p>
+   See the following topics for additional SAVE file examples:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="../../Reference Material/A/ASCII_TEMPLATE.html#A_850317933_983117" target="" title="" alt="">
+     ASCII_TEMPLATE
+    </a>
+    contains
+    <a class="MCXref_Heading_0" href="../../Reference Material/A/ASCII_TEMPLATE.html#A_850317933_1024404" target="" title="" alt="">
+     Example: Create a SAVE File of a Custom ASCII Template
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="../../Reference Material/X/XROI.html#X_800576109_976751" target="" title="" alt="">
+     XROI
+    </a>
+    contains the following SAVE file examples:
+   </li>
+   <li class="Indent" value="3">
+    <a class="MCXref_Heading_0" href="../../Reference Material/X/XROI.html#X_800576109_984959" target="" title="" alt="">
+     Example: Save ROI Data
+    </a>
+   </li>
+   <li class="Indent" value="4">
+    <a class="MCXref_Heading_0" href="../../Reference Material/X/XROI.html#X_800576109_1031731" target="" title="" alt="">
+     Example: Save the XROI Utility with ROI Data
+    </a>
+   </li>
+  </ul>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

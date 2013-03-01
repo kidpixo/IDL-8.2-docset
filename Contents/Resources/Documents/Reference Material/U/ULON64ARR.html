@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: U" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   ULON64ARR
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/U/ULON64ARR.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="U_list.html">
+    Routines: U
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    ULON64ARR
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="U_807064173_950409">
+   </a>
+   <a name="U_807064173_35337">
+   </a>
+   ULON64ARR
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#U_807064173_950413">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#U_807064173_959289">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#U_807064173_950415">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#U_807064173_950418">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#U_807064173_950422">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#U_807064173_950425">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#U_807064173_957813">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2654">
+   </a>
+   ULON64ARR function returns an unsigned 64-bit integer vector or array.
+  </p>
+  <h2 class="API">
+   <a name="U_807064173_950413">
+   </a>
+   <a name="U_807064173_950413_PageTOC_ULON64ARR_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = ULON64ARR(
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   <i>
+    [
+   </i>
+   ,
+   <i>
+    ...
+   </i>
+   ,
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    8
+   </sub>
+   <i>
+    ]
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#U_807064173_950420">
+    NOZERO
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="U_807064173_959289">
+   </a>
+   <a name="U_807064173_32157">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a vector or array of the specified dimensions.
+  </p>
+  <h2 class="API">
+   <a name="U_807064173_950415">
+   </a>
+   <a name="U_807064173_950415_PageTOC_ULON64ARR_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   D
+   <sub class="italic">
+    i
+   </sub>
+  </h3>
+  <p>
+   Either an array or a series of scalar expressions specifying the dimensions of the result. If a single argument is specified, it can be either a scalar expression or an array of up to eight elements. If multiple arguments are specified, they must all be scalar expressions. Up to eight dimensions can be specified.
+  </p>
+  <h2 class="API">
+   <a name="U_807064173_950418">
+   </a>
+   <a name="U_807064173_950418_PageTOC_ULON64ARR_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="U_807064173_950420">
+   </a>
+   <a name="U_807064173_950420_Keywords_ULON64ARR__">
+   </a>
+   NOZERO
+  </h3>
+  <p>
+   Normally, ULON64ARR sets every element of the result to zero. If NOZERO is set, this zeroing is not performed and ULON64ARR executes faster.
+  </p>
+  <h2 class="API">
+   <a name="U_807064173_950422">
+   </a>
+   <a name="U_807064173_950422_PageTOC_ULON64ARR_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To create L, a 100-element, unsigned 64-bit vector with each element set to 0, enter:
+  </p>
+  <p class="Code">
+   L = ULON64ARR(100)
+  </p>
+  <h2 class="API">
+   <a name="U_807064173_950425">
+   </a>
+   <a name="U_807064173_950425_PageTOC_ULON64ARR_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="U_807064173_957813">
+   </a>
+   <a name="U_807064173_957813_PageTOC_ULON64ARR_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../B/BYTARR.html#B_856805997_675870">
+    BYTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../C/COMPLEXARR.html#C_854643309_676228">
+    COMPLEXARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../D/DBLARR.html#D_843829869_1060809">
+    DBLARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../D/DCOMPLEXARR.html#D_843829869_37687">
+    DCOMPLEXARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../F/FLTARR.html#F_848155245_676939">
+    FLTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../I/INTARR.html#I_833016429_677245">
+    INTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LON64ARR.html#L_826528365_983144">
+    LON64ARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LONARR.html#L_826528365_916547">
+    LONARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../M/MAKE_ARRAY.html#M_824365677_887420">
+    MAKE_ARRAY
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/STRARR.html#S_820040301_679026">
+    STRARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="UINTARR.html#U_807064173_950250">
+    UINTARR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="ULONARR.html#U_807064173_950466">
+    ULONARR
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

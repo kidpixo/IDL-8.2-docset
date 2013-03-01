@@ -1,0 +1,564 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: L" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   LINBCG
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/L/LINBCG.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="L_list.html">
+    Routines: L
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    LINBCG
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="L_826528365_937544">
+   </a>
+   <a name="L_826528365_41659">
+   </a>
+   LINBCG
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#L_826528365_50872">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_962314">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_50874">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_50881">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_50901">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_50915">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_952290">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1690">
+   </a>
+   LINBCG function is used in conjunction with
+   <a name="kanchor1691">
+   </a>
+   SPRSIN to solve a set of
+   <i>
+    n
+   </i>
+   sparse
+   <a name="kanchor1692">
+   </a>
+   linear equations with
+   <i>
+    n
+   </i>
+   unknowns using the
+   <a name="kanchor1693">
+   </a>
+   iterative biconjugate gradient method.
+  </p>
+  <p>
+   LINBCG is based on the routine
+   <span class="Courier">
+    linbcg
+   </span>
+   described in section 2.7 of
+   <i>
+    Numerical Recipes in C: The Art of Scientific Computing
+   </i>
+   (Second Edition), published by Cambridge University Press, and is used by permission.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <i>
+    Numerical Recipes
+   </i>
+   recommends using double-precision arithmetic to perform this computation.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_50872">
+   </a>
+   <a name="L_826528365_50872_PageTOC_LINBCG_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = LINBCG(
+   <i>
+    A
+   </i>
+   ,
+   <i>
+    B
+   </i>
+   ,
+   <i>
+    X
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#L_826528365_50883">
+    DOUBLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_50886">
+    ITOL
+   </a>
+   ={4 | 5 | 6 | 7}] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_50893">
+    TOL
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_50896">
+    ITER
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_50899">
+    ITMAX
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_962314">
+   </a>
+   <a name="L_826528365_20627">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is an
+   <i>
+    n
+   </i>
+   -element vector.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_50874">
+   </a>
+   <a name="L_826528365_50874_PageTOC_LINBCG_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   A
+  </h3>
+  <p>
+   A row-indexed sparse array created by the SPRSIN function.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If  LINBCG is complex then only the real part is used for the computation.
+  </p>
+  <h3 class="Argument">
+   B
+  </h3>
+  <p>
+   An
+   <i>
+    n
+   </i>
+   -element vector containing the right-hand side of the linear system
+   <span class="Bold">
+    Ax=b
+   </span>
+   .
+  </p>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   An
+   <i>
+    n
+   </i>
+   -element vector containing the initial solution of the linear system.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_50881">
+   </a>
+   <a name="L_826528365_50881_PageTOC_LINBCG_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="L_826528365_50883">
+   </a>
+   <a name="L_826528365_50883_Keywords_LINBCG__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_50886">
+   </a>
+   <a name="L_826528365_50886_Keywords_LINBCG__">
+   </a>
+   ITOL
+  </h3>
+  <p>
+   Use this keyword to specify which convergence test should be used. Set ITOL to one of the following:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Iteration stops when |
+     <i>
+      A
+     </i>
+     •
+     <i>
+      x
+     </i>
+     -
+     <i>
+      b
+     </i>
+     |/ |
+     <i style="font-family: Times;font-style: italic;">
+      b
+     </i>
+     | is less than the value specified by TOL.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Iteration stops when |Ã
+     <sup>
+      -1
+     </sup>
+     • (
+     <i>
+      A
+     </i>
+     •
+     <i>
+      x
+     </i>
+     -
+     <i>
+      b
+     </i>
+     )|/|Ã
+     <sup>
+      -1
+     </sup>
+     •
+     <i>
+      b
+     </i>
+     | (where Ã is a “preconditioning” matrix close to
+     <i>
+      A
+     </i>
+     ) is less than the value specified by TOL.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     The routine uses its own estimate of error in
+     <i>
+      x
+     </i>
+     . Iteration stops when the magnitude of the error divided by the magnitude of
+     <i>
+      x
+     </i>
+     is less than the value specified by TOL. This is the default setting.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     The same as 3, except that the routine uses the largest (in absolute value) component of the error and the largest component of
+     <i>
+      x
+     </i>
+     rather than the vector magnitudes.
+    </td>
+   </tr>
+  </table>
+  <h3 class="Keyword">
+   <a name="L_826528365_50893">
+   </a>
+   <a name="L_826528365_50893_Keywords_LINBCG__">
+   </a>
+   TOL
+  </h3>
+  <p>
+   Use this keyword to specify the desired convergence tolerance. For single-precision calculations, the default value is 1.0&#160;∞&#160;10
+   <sup>
+    -7
+   </sup>
+   . For double-precision values, the default is 1.0&#160;∞&#160;10
+   <sup>
+    -14
+   </sup>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_50896">
+   </a>
+   <a name="L_826528365_50896_Keywords_LINBCG__">
+   </a>
+   ITER
+  </h3>
+  <p>
+   Use this keyword to specify an output variable that will be set to the number of iterations performed.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_50899">
+   </a>
+   <a name="L_826528365_50899_Keywords_LINBCG__">
+   </a>
+   ITMAX
+  </h3>
+  <p>
+   The maximum allowed number of iterations. The default is
+   <i>
+    n
+   </i>
+   <sup>
+    2
+   </sup>
+   .
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_50901">
+   </a>
+   <a name="L_826528365_50901_PageTOC_LINBCG_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Begin with an array A:
+   <br />
+   A = [[ 5.0,  0.0, 0.0,  1.0, -2.0], $
+   <br />
+   &#160;&#160;&#160;[ 3.0, -2.0, 0.0,  1.0,  0.0], $
+   <br />
+   &#160;&#160;&#160;[ 4.0, -1.0, 0.0,  2.0,  0.0], $
+   <br />
+   &#160;&#160;&#160;[ 0.0,  3.0, 3.0,  1.0 ,  0.0], $
+   <br />
+   &#160;&#160;&#160;[-2.0,  0.0, 0.0, -1.0,  2.0]]
+   <br />
+   <br />
+   ; Define a right-hand side vector B:
+   <br />
+   B = [7.0, 1.0, 3.0, 3.0, -4.0]
+   <br />
+   <br />
+   ; Start with an initial guess at the solution:
+   <br />
+   X = REPLICATE(1.0, N_ELEMENTS(B))
+   <br />
+   <br />
+   ; Solve the linear system Ax=b:
+   <br />
+   result = LINBCG(SPRSIN(A), B, X)
+   <br />
+   <br />
+   ; Print the result:
+   <br />
+   PRINT, result
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;1.00000&#160;&#160;&#160;1.00000&#160;&#160;&#160;8.94134e-008&#160;&#160;&#160;-2.37107e-007&#160;&#160;&#160;-1.00000
+  </p>
+  <p>
+   The exact solution is [1, 1, 0, 0, -1].
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_50915">
+   </a>
+   <a name="L_826528365_50915_PageTOC_LINBCG_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="L_826528365_952290">
+   </a>
+   <a name="L_826528365_952290_PageTOC_LINBCG_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../F/FULSTR.html#F_848155245_888003">
+    FULSTR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/READ_SPR.html#R_822202989_753910">
+    READ_SPR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SPRSAB.html#S_820040301_51904">
+    SPRSAB
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SPRSAX.html#S_820040301_51970">
+    SPRSAX
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SPRSIN.html#S_820040301_1076561">
+    SPRSIN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SPRSTP.html#S_820040301_842892">
+    SPRSTP
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../W/WRITE_SPR.html#W_811389549_754256">
+    WRITE_SPR
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

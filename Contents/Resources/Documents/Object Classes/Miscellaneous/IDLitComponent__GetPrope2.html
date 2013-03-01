@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Miscellaneous Object Classes|IDLitComponent" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLitComponent::GetPropertyByIdentifier
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDLitComponent__GetPrope2.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_misc.html">
+    Miscellaneous Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLitComponent::GetPropertyByIdentifier
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_misc_904195448_1126055">
+   </a>
+   <a name="objects_misc_904195448_99163">
+   </a>
+   IDLitComponent::GetPropertyByIdentifier
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    Syntax | Return Value |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1126085">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1126091">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1126094">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor4724">
+   </a>
+   IDLitComponent::GetPropertyByIdentifier function method retrieves the value of an IDLitComponent property.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   The IDLitComponent::GetPropertyByIdentifier method is similar to the IDLitComponent::GetProperty method, but is useful for cases where the
+   <i>
+    property identifier
+   </i>
+   is defined at runtime.
+  </p>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLitComponent.html#objects_misc_904195448_1125353">
+    IDLitComponent
+   </a>
+   ::]GetPropertyByIdentifier(
+   <i>
+    PropertyIdentifier
+   </i>
+   ,
+   <i>
+    Value
+   </i>
+   )
+  </p>
+  <p>
+   Returns 1 if the property value is defined, or 0 if the property value is undefined.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1126085">
+   </a>
+   <a name="objects_misc_904195448_57888">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   PropertyIdentifier
+  </h3>
+  <p>
+   A string containing the property identifier of the property.
+   <i>
+    PropertyIdentifier
+   </i>
+   does not need to be a registered property, but must be a valid keyword name for the GetProperty method of the component.
+  </p>
+  <h3 class="Argument">
+   Value
+  </h3>
+  <p>
+   A named variable that will contain the value of the property. If the property value is currently undefined, then the contents of the variable specified by
+   <i>
+    Value
+   </i>
+   will not be modified.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1126091">
+   </a>
+   <a name="objects_misc_904195448_24013">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1126094">
+   </a>
+   <a name="objects_misc_904195448_63748">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

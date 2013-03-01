@@ -1,0 +1,727 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CW_ARCBALL
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CW_ARCBALL.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CW_ARCBALL
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_755040">
+   </a>
+   <a name="C_854643309_34446">
+   </a>
+   CW_ARCBALL
+   <a name="kanchor444">
+   </a>
+   <![CDATA[ ]]>
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_1024967">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_755050">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_755059">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_755062">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1083052">
+     Widget Events Returned by the CW_ARCBALL Widget
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_755121">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1053312">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1052306">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The CW_ARCBALL function creates a compound
+   <a name="kanchor445">
+   </a>
+   widget for intuitively specifying three-dimensional orientations.
+  </p>
+  <p>
+   The user drags a simulated track-ball with the mouse to interactively obtain arbitrary rotations. Sequences of rotations may be cascaded. The
+   <a name="kanchor446">
+   </a>
+   rotations may be unconstrained (about any axis), constrained to the view X, Y, or Z axes, or constrained to the object’s X, Y, or Z axis.
+  </p>
+  <p>
+   This widget is based on “ARCBALL: A User Interface for Specifying Three-Dimensional Orientation Using a Mouse,” by Ken Shoemake, Computer Graphics Laboratory, University of Pennsylvania, Philadelphia, PA 19104.
+  </p>
+  <p>
+   This widget can generate any rotation about any axis. Note, however, that not all rotations are compatible with the IDL SURFACE procedure, which is restricted to rotations that project the object Z axis parallel to the view Y axis.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    cw_arcball.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h3>
+   Using CW_ARCBALL
+  </h3>
+  <p>
+   Use the command:
+  </p>
+  <p class="Code">
+   WIDGET_CONTROL, id, GET_VALUE = matrix
+  </p>
+  <p>
+   to return the current 3x3 rotation matrix in the variable
+   <span class="Courier">
+    matrix
+   </span>
+   .
+  </p>
+  <p>
+   You can set the arcball to new rotation matrix using the command:
+  </p>
+  <p class="Code">
+   WIDGET_CONTROL, id, SET_VALUE = matrix
+  </p>
+  <p>
+   after the widget is initially realized.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1024967">
+   </a>
+   <a name="C_854643309_1024967_PageTOC_CW_ARCBALL_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = CW_ARCBALL(
+   <i>
+    Parent
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_755064">
+    COLORS
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_755074">
+    FRAME
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_755077">
+    LABEL
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_755080">
+    RETAIN
+   </a>
+   ={0 | 1 | 2}] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_755108">
+    SIZE
+   </a>
+   =
+   <i>
+    pixels
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1189488">
+    TAB_MODE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_1189483">
+    UPDATE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_996624">
+    UNAME
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_755114">
+    UVALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_755117">
+    VALUE
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_755050">
+   </a>
+   <a name="C_854643309_755050_PageTOC_CW_ARCBALL_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This function returns the widget ID of the newly-created ARCBALL widget.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_755059">
+   </a>
+   <a name="C_854643309_755059_PageTOC_CW_ARCBALL_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Parent
+  </h3>
+  <p>
+   The widget ID of the parent widget.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_755062">
+   </a>
+   <a name="C_854643309_755062_PageTOC_CW_ARCBALL_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="C_854643309_755064">
+   </a>
+   <a name="C_854643309_755064_Keywords_CW_ARCBALL__">
+   </a>
+   COLORS
+  </h3>
+  <p>
+   A 6-element array containing the color indices to be used:
+  </p>
+  <table style="width: 471px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="111px" class="Column-Column1" />
+   <col width="360px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Colors[0]
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       View axis color
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Colors[1]
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Object axis color
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Colors[2]
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       XZ plane +Y side (body top) color
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       Colors[3]
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       YZ plane (fin) color
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       Colors[4]
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       XZ plane -Y side (body bottom)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p>
+       Colors[5]
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       Background color
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   For devices that are using indexed color (i.e., DECOMPOSED=0), the default value for COLORS is
+   <span class="Courier">
+    [1,7,2,3,7,0]
+   </span>
+   , which yields good colors with the TEK_COLOR table: (white, yellow, red, green, yellow, black). For devices that are using decomposed color (i.e., DECOMPOSED=1), the default value is an array of corresponding decomposed (rather than indexed) colors: (white, yellow, red, green, yellow, black).
+  </p>
+  <p>
+   For more information on decomposed color, refer to the DECOMPOSED keyword to the DEVICE routine.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755074">
+   </a>
+   <a name="C_854643309_755074_Keywords_CW_ARCBALL__">
+   </a>
+   FRAME
+  </h3>
+  <p>
+   Set this keyword to draw a frame around the widget.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755077">
+   </a>
+   <a name="C_854643309_755077_Keywords_CW_ARCBALL__">
+   </a>
+   LABEL
+  </h3>
+  <p>
+   Set this keyword to a string containing the widget’s label.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You can use language catalogs to internationalize this value with strings in particular languages.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755080">
+   </a>
+   <a name="C_854643309_755080_Keywords_CW_ARCBALL__">
+   </a>
+   RETAIN
+  </h3>
+  <p>
+   <a name="kanchor447">
+   </a>
+   Set this keyword to zero, one, or two to specify how backing store should be handled for the draw widget. RETAIN=0 specifies no backing store. RETAIN=1 requests that the server or window system provide backing store. RETAIN=2 specifies that IDL provide backing store directly. See
+   <a href="../../Object Classes/Graphics/IDLgrWindow_Properties.html#objects_gr_2157407275_1060058">
+    Backing Store
+   </a>
+   for details.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755108">
+   </a>
+   <a name="C_854643309_755108_Keywords_CW_ARCBALL__">
+   </a>
+   SIZE
+  </h3>
+  <p>
+   The size of the square drawable area containing the arcball, in pixels. The default is 192.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1189488">
+   </a>
+   <a name="C_854643309_91230">
+   </a>
+   TAB_MODE
+  </h3>
+  <p>
+   Set this keyword to one of the values shown in the table below to determine how the widget hierarchy can be navigated using the
+   <span class="Bold">
+    Tab
+   </span>
+   key. The TAB_MODE setting is inherited by lower-level bases and child widgets unless it is explicitly set on an individual widget.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   It is not possible to tab to disabled (SENSITIVE=0) or hidden (MAP=0) widgets.
+  </p>
+  <p>
+   Valid settings are:
+  </p>
+  <table style="width: 500px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    TAB_MODE Keyword Options
+   </p>
+   <col width="103px" />
+   <col width="397px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Disable navigation onto or off of the widget. This is the default. Child widgets automatically inherit the tab mode of the parent base as described in
+       <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Enhancing_Widget_Applica.html#widget_techniques_4218446668_142828" target="" title="" alt="">
+        Inheriting the TAB_MODE Value
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Enable navigation onto and off of the widget.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Navigate only onto the widget.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Navigate only off of the widget.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   In widget applications on the UNIX platform, the Motif library controls what widgets are brought into and released from focus using tabbing. The TAB_MODE keyword value is always zero, and any attempt to change it is ignored when running a widget application on the UNIX platform. Tabbing behavior may vary significantly between UNIX platforms; do not rely on a particular behavior being duplicated on all UNIX systems.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1189483">
+   </a>
+   <a name="C_854643309_755111_Keywords_CW_ARCBALL__">
+   </a>
+   UPDATE
+  </h3>
+  <p>
+   Set this keyword to cause the widget will send an event each time the mouse button is released after a drag operation. By default, events are only sent when the “Update” button is pressed.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_996624">
+   </a>
+   <a name="C_854643309_996624_Keywords_CW_ARCBALL__">
+   </a>
+   UNAME
+  </h3>
+  <p>
+   Set this keyword to a string that can be used to identify the widget in your code. You can associate a name with each widget in a specific hierarchy, and then use that name to query the widget hierarchy and get the correct widget ID.
+  </p>
+  <p>
+   To query the widget hierarchy, use the
+   <a class="MCXref_Heading_0" href="../W/WIDGET_INFO.html#W_811389549_680333">
+    WIDGET_INFO
+   </a>
+   function with the FIND_BY_UNAME keyword. The UNAME should be unique to the widget hierarchy because the FIND_BY_UNAME keyword returns the ID of the first widget with the specified name.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755114">
+   </a>
+   <a name="C_854643309_755114_Keywords_CW_ARCBALL__">
+   </a>
+   UVALUE
+  </h3>
+  <p>
+   The “user value” to be assigned to the widget.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755117">
+   </a>
+   <a name="C_854643309_755117_Keywords_CW_ARCBALL__">
+   </a>
+   VALUE
+  </h3>
+  <p>
+   Set this keyword to a 3 x 3 array that will be the initial value for the rotation matrix. VALUE must be a valid rotation matrix (no translation or perspective) where TRANSPOSE(VALUE) = INVERSE(VALUE). This can be the upper-left corner of !P.T after executing the command
+  </p>
+  <p class="Code">
+   T3D, /RESET, ROTATE = [x,y,z].
+  </p>
+  <p>
+   The default is the identity matrix.
+  </p>
+  <h3>
+   <a name="C_854643309_837183_Keywords_CW_ARCBALL__">
+   </a>
+   Keywords to WIDGET_CONTROL and WIDGET_INFO
+  </h3>
+  <p>
+   The widget ID returned by most compound widgets is actually the ID of the compound widget’s base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.
+  </p>
+  <p>
+   In addition, you can use the
+   <a class="MCXref_Heading_0" href="../W/WIDGET_CONTROL.html#W_811389549_680122">
+    GET_VALUE
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="../W/WIDGET_CONTROL.html#W_811389549_680190">
+    SET_VALUE
+   </a>
+   keywords to WIDGET_CONTROL to obtain or set the 3 x 3 rotation matrix in the arcball widget.
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Creating_a_Compound_Widg.html#widget_apps_4063420628_1042476" target="" title="" alt="">
+    Creating a Compound Widget
+   </a>
+   for a more complete discussion of controlling compound widgets using WIDGET_CONTROL and WIDGET_INFO.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1083052">
+   </a>
+   <a name="C_854643309_87115">
+   </a>
+   Widget Events Returned by the CW_ARCBALL Widget
+  </h2>
+  <p>
+   Arcball widgets generate event structures with the following definition:
+  </p>
+  <p class="Code">
+   event = {ID:0L, TOP:0L, HANDLER:0L, VALUE:fltarr(3,3) }
+  </p>
+  <p>
+   The VALUE field contains the 3 x 3 array representing the new rotation matrix.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_755121">
+   </a>
+   <a name="C_854643309_755121_PageTOC_CW_ARCBALL_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See the procedure
+   <span class="Courier">
+    ARCBALL_TEST
+   </span>
+   , contained in the
+   <span class="Courier">
+    cw_arcball.pro
+   </span>
+   file. To test CW_ARCBALL, enter the following commands:
+  </p>
+  <p class="Code">
+   .RUN cw_arcball
+   <br />
+   ARCBALL_TEST
+  </p>
+  <p>
+   This results in the following:
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    The CW_ARCBALL widget.
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p style="text-align: center;">
+       <img src="../../images/cwarc1.gif" style="margin-left: 5.99976px;margin-top: 0.75024px;margin-right: 6.000484px;margin-bottom: 5.99976px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1053312">
+   </a>
+   <a name="C_854643309_1053312_PageTOC_CW_ARCBALL_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added TAB_MODE keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1052306">
+   </a>
+   <a name="C_854643309_1052306_PageTOC_CW_ARCBALL_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="CROSSP.html#C_854643309_757870">
+    CROSSP
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

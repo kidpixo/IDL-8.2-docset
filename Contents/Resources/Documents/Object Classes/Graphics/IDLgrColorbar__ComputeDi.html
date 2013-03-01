@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrColorbar" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrColorbar::ComputeDimensions
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrColorbar__ComputeDi.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrColorbar::ComputeDimensions
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1009058">
+   </a>
+   <a name="objects_gr_2157407275_29971">
+   </a>
+   IDLgrColorbar::ComputeDimensions
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1009076">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1205521">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1009083">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1009091">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLgrColorbar::
+   <a name="kanchor4199">
+   </a>
+   ComputeDimensions function method retrieves the dimensions of a colorbar object for the given destination object. In order to compute the effective dimensions, the object must be inserted into an object graphics hierarchy prior to using this method. The result is a three-element double-precision floating-point vector [
+   <i>
+    xDim, yDim, zDim
+   </i>
+   ] representing the dimensions of the colorbar object measured in data units.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1009076">
+   </a>
+   <a name="objects_gr_2157407275_1166394_PageTOC_IDLgrColorbar">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result = Obj-&gt;
+   </i>
+   [
+   <a class="MCXref_Heading_0" href="IDLgrColorbar.html#objects_gr_2157407275_1008962">
+    IDLgrColorbar
+   </a>
+   ::]ComputeDimensions(
+   <i>
+    DestinationObj
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1009084">
+    PATH
+   </a>
+   =
+   <i>
+    objref(s)
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns the dimensions of a colorbar object for the given destination object.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1205521">
+   </a>
+   <a name="objects_gr_2157407275_1166396_PageTOC_IDLgrColorbar">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   DestinationObject
+  </h3>
+  <p>
+   The object reference to a destination object (IDLgrBuffer, IDLgrClipboard, IDLgrPrinter, or IDLgrWindow) for which the dimensions of the colorbar are being requested.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1009083">
+   </a>
+   <a name="objects_gr_2157407275_1166399_PageTOC_IDLgrColorbar">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1009084">
+   </a>
+   <a name="objects_gr_2157407275_1009084_Keywords_IDLgrColorbar">
+   </a>
+   PATH
+  </h3>
+  <p>
+   Set this keyword to a single object reference or a vector of object references. This keyword specifies the path in the graphics hierarchy to compute the dimensions. Each path object reference specified with this keyword must contain an alias. The text dimensions are computed for the version of the object falling within that path. If this keyword is not set, the PARENT properties determine the path from the current object to the top of the graphics hierarchy and no alias paths are pursued. If IDLgrColorbar::ComputeDimensions is called from within a Draw method and the PATH keyword is not set, the alias path used to find the object during the draw is used, rather than the PARENT path.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For more information on aliases, refer to the
+   <a class="MCXref_Heading_0" href="IDLgrModel__Add.html#objects_gr_2157407275_1011206" target="" title="" alt="">
+    ALIAS
+   </a>
+   keyword in IDLgrModel::Add.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1009091">
+   </a>
+   <a name="objects_gr_2157407275_82368">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

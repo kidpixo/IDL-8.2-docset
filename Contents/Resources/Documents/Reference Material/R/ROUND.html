@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: R" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   ROUND
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/R/ROUND.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="R_list.html">
+    Routines: R
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    ROUND
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="R_822202989_678610">
+   </a>
+   <a name="R_822202989_57733">
+   </a>
+   ROUND
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#R_822202989_678612">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_1073213">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_678614">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_1073243">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_678617">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_795734">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_1093129">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2313">
+   </a>
+   ROUND function rounds the argument to its closest integer.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_678612">
+   </a>
+   <a name="R_822202989_678612_PageTOC_ROUND_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = ROUND(
+   <i>
+    X
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#R_822202989_1073244">
+    L64
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_1073213">
+   </a>
+   <a name="R_822202989_1073213_PageTOC_ROUND_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the integer closest to its argument. If the input value
+   <i>
+    X
+   </i>
+   is integer type,
+   <i>
+    Result
+   </i>
+   has the same value and type as
+   <i>
+    X
+   </i>
+   . Otherwise,
+   <i>
+    Result
+   </i>
+   is returned as a 32-bit longword integer with the same structure as
+   <i>
+    X
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_678614">
+   </a>
+   <a name="R_822202989_678614_PageTOC_ROUND_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   The value for which the ROUND function is to be evaluated. This value can be any numeric type (integer, floating, or complex). Note that only the real part of a complex argument is rounded and returned.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_1073243">
+   </a>
+   <a name="R_822202989_1073243_PageTOC_ROUND_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="R_822202989_1073244">
+   </a>
+   <a name="R_822202989_1073244_Keywords_ROUND__">
+   </a>
+   L64
+  </h3>
+  <p>
+   If set, the result type is 64-bit integer no matter what type the input has. This is useful for situations in which a floating point number contains a value too large to be represented in a 32-bit integer.
+  </p>
+  <h3>
+   <a name="R_822202989_1086790_PageTOC_ROUND_">
+   </a>
+   Thread Pool Keywords
+  </h3>
+  <p>
+   This routine is written to make use of IDL’s
+   <i>
+    thread pool
+   </i>
+   , which can increase execution speed on systems with multiple CPUs. The values stored in the !CPU system variable control whether IDL uses the thread pool for a given computation. In addition, you can use the thread pool keywords TPOOL_MAX_ELTS, TPOOL_MIN_ELTS, and TPOOL_NOTHREAD to override the defaults established by !CPU for a single invocation of this routine. See
+   <a class="MCXref_Chapter_Reference_0" href="../../Creating IDL Programs/Appendices/tpoolkeyw.html#tpoolkeyw_2501860834_317209">
+    Thread Pool Keywords
+   </a>
+   for details.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_678617">
+   </a>
+   <a name="R_822202989_678617_PageTOC_ROUND_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Print the rounded values of a 2-element vector:
+  </p>
+  <p class="Code">
+   PRINT, ROUND([5.1, 5.9])
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;5&#160;&#160;&#160;&#160;&#160; 6
+  </p>
+  <p>
+   Print the result of rounding 3000000000.1, a value that is too large to represent in a 32-bit integer:
+  </p>
+  <p class="Code">
+   PRINT, ROUND(3000000000.1D, /L64)
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   3000000000
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_795734">
+   </a>
+   <a name="R_822202989_795734_PageTOC_ROUND_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre-4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="R_822202989_1093129">
+   </a>
+   <a name="R_822202989_1093129_PageTOC_ROUND_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/CEIL.html#C_854643309_984392">
+    CEIL
+   </a>
+   ,&#160;
+   <a class="MCXref_Heading_0" href="../C/COMPLEXROUND.html#C_854643309_757808">
+    COMPLEXROUND
+   </a>
+   ,&#160;
+   <a class="MCXref_Heading_0" href="../F/FLOOR.html#F_848155245_676926">
+    FLOOR
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: Q" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   QUERY_JPEG2000
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/Q/QUERY_JPEG2000.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Q_list.html">
+    Routines: Q
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    QUERY_JPEG2000
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="Q_815714925_1095115">
+   </a>
+   <a name="Q_815714925_91186">
+   </a>
+   QUERY_JPEG2000
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#Q_815714925_1096828">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1096830">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1096832">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1096869">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1096871">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1096876">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1096878">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   <a name="Q_815714925_QUERY_JPEG2000_function">
+   </a>
+   The QUERY_JPEG2000
+   <a name="kanchor2162">
+   </a>
+   function allows you to obtain information about a JPEG2000 image file without having to read the file. It is a wrapper around the IDLffJPEG2000 object interface that presents JPEG2000 image loading in a way familiar to users of the QUERY_* image routines. (See
+   <a class="MCXref_Heading_0" href="QUERY___Routines.html#Q_815714925_982368" target="" title="" alt="">
+    QUERY_* Routines
+   </a>
+   for more information.) However this function is not as efficient as the object interface and the object interface should be used whenever possible. See
+   <a class="MCXref_Heading_0" href="../../Object Classes/File Format/IDLffJPEG2000.html#objects_ff_3755668711_1371624" target="" title="" alt="">
+    IDLffJPEG2000
+   </a>
+   for information about the object interface.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1096828">
+   </a>
+   <a name="Q_815714925_1096828_PageTOC_QUERY_JPEG2000_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = QUERY_JPEG2000(
+   <i>
+    Filename
+   </i>
+   [,&#160;
+   <i>
+    Info
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1096830">
+   </a>
+   <a name="Q_815714925_1096830_PageTOC_QUERY_JPEG2000_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This routine returns a long integer with the value of 1 if the query was successful (and the file type was correct) or 0 on failure.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1096832">
+   </a>
+   <a name="Q_815714925_1096832_PageTOC_QUERY_JPEG2000_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string containing the full path and filename of the JPEG2000 file to query.
+  </p>
+  <h3 class="Argument">
+   Info
+  </h3>
+  <p>
+   Returns an anonymous structure containing information about the image in the file. The Info.TYPE field will return the value 'JPEG2000'.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   See
+   <a class="MCXref_Heading_0" href="QUERY___Routines.html#Q_815714925_1072337" target="" title="" alt="">
+    General Query * Routine Info Structures
+   </a>
+   for detailed structure information.
+  </p>
+  <p>
+   In addition to the standard structure fields, the JPEG2000 query structure contains the following additional fields:
+  </p>
+  <table style="width: 499px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    JPEG2000 Query Structure
+   </p>
+   <col width="120px" />
+   <col width="134px" />
+   <col width="245px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       IDL Data Type
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       N_LAYERS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The number of quality layers.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       N_LEVELS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       The number of wavelet decomposition levels.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       OFFSET
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       Two-element vector
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       The X and Y offsets for all image components.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="Q_815714925_1096869">
+   </a>
+   <a name="Q_815714925_1096869_PageTOC_QUERY_JPEG2000_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1096871">
+   </a>
+   <a name="Q_815714925_1096871_PageTOC_QUERY_JPEG2000_">
+   </a>
+   Example
+  </h2>
+  <p>
+   For a relevant example, see
+   <a class="MCXref_Heading_0" href="../R/READ_JPEG2000.html#R_822202989_1168172" target="" title="" alt="">
+    READ_JPEG2000
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1096876">
+   </a>
+   <a name="Q_815714925_1096876_PageTOC_QUERY_JPEG2000_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="Q_815714925_1096878">
+   </a>
+   <a name="Q_815714925_1096878_PageTOC_QUERY_JPEG2000_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="QUERY___Routines.html#Q_815714925_982368" target="" title="" alt="">
+    QUERY_* Routines
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/READ_JPEG2000.html#R_822202989_1168172" target="" title="" alt="">
+    READ_JPEG2000
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../W/WRITE_JPEG2000.html#W_811389549_1077187" target="" title="" alt="">
+    WRITE_JPEG2000
+   </a>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

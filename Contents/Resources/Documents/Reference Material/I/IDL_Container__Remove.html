@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Miscellaneous Object Classes|IDL_Container" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDL_Container::Remove
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/IDL_Container__Remove.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../Object Classes/ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../Object Classes/Miscellaneous/objects_misc.html">
+    Miscellaneous Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDL_Container::Remove
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_misc_904195448_1010829">
+   </a>
+   <a name="objects_misc_904195448_20621">
+   </a>
+   IDL_Container::Remove
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1010847">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1010850">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1010854">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1010860">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDL_Container::
+   <a name="kanchor4621">
+   </a>
+   Remove procedure method removes an object from the container.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1010847">
+   </a>
+   <a name="objects_misc_904195448_1056160_PageTOC_IDL_Container">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj-&gt;
+   </i>
+   [
+   <a class="MCXref_Heading_0" href="IDL_Container.html#objects_misc_904195448_1010504">
+    IDL_Container
+   </a>
+   ::]Remove [,&#160;
+   <i>
+    Child_object
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1010857">
+    POSITION
+   </a>
+   =
+   <i>
+    index
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1010855">
+    ALL
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1010850">
+   </a>
+   <a name="objects_misc_904195448_1056162_PageTOC_IDL_Container">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Child_object
+  </h3>
+  <p>
+   An object reference or array of object references for the objects to be removed from the container. If
+   <i>
+    Child_object
+   </i>
+   is not provided (and neither the ALL nor POSITION keyword are set), the first object in the container will be removed. If
+   <i>
+    Child_object
+   </i>
+   is
+   <a href="../../Creating IDL Programs/Components of the IDL Language/The_Null_Variable.html">
+    !NULL
+   </a>
+   then nothing is removed and the method quietly returns.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1010854">
+   </a>
+   <a name="objects_misc_904195448_1056164_PageTOC_IDL_Container">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_misc_904195448_1010855">
+   </a>
+   <a name="objects_misc_904195448_1010855_Keywords_IDL_Container">
+   </a>
+   ALL
+  </h3>
+  <p>
+   Set this keyword to remove all objects from the container. If this keyword is set, the
+   <i>
+    Child_object
+   </i>
+   argument is not required.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_misc_904195448_1010857">
+   </a>
+   <a name="objects_misc_904195448_1010857_Keywords_IDL_Container">
+   </a>
+   POSITION
+  </h3>
+  <p>
+   Set this keyword equal to the zero-based index of the object to be removed. If the
+   <i>
+    Child_object
+   </i>
+   argument is supplied, this keyword is ignored.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1010860">
+   </a>
+   <a name="objects_misc_904195448_63439">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Allow !NULL as an input argument
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

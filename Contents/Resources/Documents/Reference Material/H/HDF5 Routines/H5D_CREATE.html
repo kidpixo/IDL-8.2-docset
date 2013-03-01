@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF5 Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   H5D_CREATE
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF5 Routines/H5D_CREATE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF5_Routines.html">
+    HDF5 Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    H5D_CREATE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF5_209170119_1006828">
+   </a>
+   <a name="HDF5_209170119_60552">
+   </a>
+   H5D_CREATE
+  </h1>
+  <p>
+   The H5D_CREATE
+   <a name="kanchor1366">
+   </a>
+   function creates a dataset at the specified location.
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_65488">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = H5D_CREATE(
+   <span class="Italic">
+    Loc_id
+   </span>
+   ,
+   <span class="Italic">
+    Name
+   </span>
+   ,
+   <span class="Italic">
+    Datatype_id
+   </span>
+   ,
+   <span class="Italic">
+    Dataspace_id
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#HDF5_209170119_1006881">
+    CHUNK_DIMENSIONS
+   </a>
+   =
+   <span class="Italic">
+    vector
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#HDF5_209170119_1006885">
+    GZIP
+   </a>
+   =
+   <span class="Italic">
+    value
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#HDF5_209170119_1006888">
+    SHUFFLE
+   </a>
+   ]]])
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_86142">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The
+   <span class="Italic">
+    Result
+   </span>
+   gives the dataset identifier. This identifier should be released with the H5D_CLOSE procedure.
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_70204">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Loc_id
+  </h3>
+  <p>
+   An integer giving the identifier of the file or group within which to create the dataset.
+  </p>
+  <h3 class="Argument">
+   Name
+  </h3>
+  <p>
+   A string giving the name of the dataset to create.
+  </p>
+  <h3 class="Argument">
+   Datatype_id
+  </h3>
+  <p>
+   An integer giving the datatype identifier to use when creating the dataset.
+  </p>
+  <h3 class="Argument">
+   Dataspace_id
+  </h3>
+  <p>
+   An integer giving the dataspace identifier to use when creating the dataset.
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_63328">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="HDF5_209170119_1006881">
+   </a>
+   <a name="HDF5_209170119_71139">
+   </a>
+   CHUNK_DIMENSIONS
+  </h3>
+  <p>
+   A vector containing the chunk dimensions for the dataset. CHUNK_DIMENSIONS must have the same number of elements as the number of dimensions in the dataspace specified in Dataspace_id. This keyword must be set if the dataspace specified in Dataspace_id has unlimited or extendable dimensions.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Choosing appropriate values for CHUNK_DIMENSIONS is not always straightforward and is dependent on the size of the dataspace, the size of the data, how the data will be read, the current operating system, and many other factors. Improper chunk sizes can drastically inflate the size of the resulting file or greatly slow the reading of the data. For a dimension that is immutable a good suggestion is to choose a value that is evenly divisible into the dimension size. Values of less than 100 for dataspaces with dimensions greater than 1000 can result in bloated file sizes.
+  </p>
+  <h3 class="Keyword">
+   <a name="HDF5_209170119_1006885">
+   </a>
+   <a name="HDF5_209170119_93668">
+   </a>
+   GZIP
+  </h3>
+  <p>
+   Specifies the level of gzip compression applied to the dataset, which should be a value from zero to nine, inclusive. Lower compression levels are faster but result in less compression. If CHUNK_DIMENSIONS is not specified this keyword is ignored.
+  </p>
+  <h3 class="Keyword">
+   <a name="HDF5_209170119_1006888">
+   </a>
+   <a name="HDF5_209170119_65899">
+   </a>
+   SHUFFLE
+  </h3>
+  <p>
+   If set the shuffle filter will be applied to the dataset. If GZIP is not specified this keyword is ignored.
+  </p>
+  <p>
+   The shuffle filter de-interlaces a block of data by reordering the bytes. All bytes from one consistent byte position of each data element are placed together in one block; all bytes from a second consistent byte position of each data element are placed together a second block; and so on. For example, given three data elements of a 4-byte datatype stored as 012301230123, shuffling will re-order data as 000111222333. This can be a valuable step in an effective compression algorithm because the bytes in each byte position are often closely related to each other and putting them together can increase the compression ratio. When the shuffle filter is applied to a dataset, the compression ratio achieved is often superior to that achieved without the shuffle filter.
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_83026">
+   </a>
+   Example
+  </h2>
+  <p>
+   See the example under
+   <a class="MCXref_Heading_0" href="H5F_CREATE.html#HDF5_209170119_1007521">
+    H5F_CREATE
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_89864">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="HDF5_209170119_59827">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="H5D_CLOSE.html#HDF5_209170119_1006781">
+    H5D_CLOSE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="H5S_CREATE_SIMPLE.html#HDF5_209170119_1009095">
+    H5S_CREATE_SIMPLE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="H5T_IDL_CREATE.html#HDF5_209170119_1012456">
+    H5T_IDL_CREATE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

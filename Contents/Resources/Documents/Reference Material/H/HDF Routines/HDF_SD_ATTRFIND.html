@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HDF_SD_ATTRFIND
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF Routines/HDF_SD_ATTRFIND.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF_Routines.html">
+    HDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    HDF_SD_ATTRFIND
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_1733484267_1010545">
+   </a>
+   <a name="HDF_1733484267_85081">
+   </a>
+   HDF_SD_ATTRFIND
+  </h1>
+  <p>
+   The
+   <a name="kanchor1258">
+   </a>
+   HDF_SD_ATTRFIND function locates the index of an HDF attribute given its name. The attribute can be global or from a specific dataset. If an attribute is located, its index is returned. Otherwise, -1 is returned. Once an attribute’s index is known, the HDF_SD_ATTRINFO function can be used to read that attribute.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1053652_PageTOC_HDF_SD_ATTRFIND_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = HDF_SD_ATTRFIND(
+   <span class="Italic">
+    SD_id
+   </span>
+   ,
+   <span class="Italic">
+    Name
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1053654_PageTOC_HDF_SD_ATTRFIND_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   SD_id
+  </h3>
+  <p>
+   An SD interface ID as returned by HDF_SD_START (i.e., a global attribute’s “SDinterface_id”), or HDF_SD_SELECT/HDF_SD_CREATE (i.e., a dataset’s “SDdataset_id”).
+  </p>
+  <h3 class="Argument">
+   Name
+  </h3>
+  <p>
+   A string containing the name of the attribute whose index is to be returned.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_85150">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1053659_PageTOC_HDF_SD_ATTRFIND_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Open an HDF file and start the SD interface:
+  </p>
+  <p class="Code">
+   SDinterface_id = HDF_SD_START('demo.hdf')
+  </p>
+  <p class="Code">
+   ; Find "TITLE", a global attribute:
+  </p>
+  <p class="Code">
+   gindex = HDF_SD_ATTRFIND(SDinterface_id, 'TITLE')
+  </p>
+  <p class="Code">
+   ; Get the ID for the first dataset:
+  </p>
+  <p class="Code">
+   SDdataset_id = HDF_SD_SELECT(SDinterface_id, 1)
+  </p>
+  <p class="Code">
+   ; Read attribute info:
+  </p>
+  <p class="Code">
+   HDF_SD_ATTRINFO,SDinterface_id,gindex, NAME=name, TYPE=type, COUNT=count
+  </p>
+  <p class="Code">
+   ; Print info about the returned variables:
+  </p>
+  <p class="Code">
+   HELP, type, count, name
+  </p>
+  <p class="Code">
+   ; Find the "LOCATION" dataset attribute:
+  </p>
+  <p class="Code">
+   dindex = HDF_SD_ATTRFIND(SDdataset_id, 'LOCATION')
+  </p>
+  <p class="Code">
+   ; Read attribute info:
+  </p>
+  <p class="Code">
+   HDF_SD_ATTRINFO,SDdataset_id,dindex,NAME=name,TYPE=type,COUNT=count
+  </p>
+  <h4>
+   IDL Output
+  </h4>
+  <p class="Code">
+   TYPE STRING = 'STRING'
+  </p>
+  <p class="Code">
+   COUNT LONG = 8
+  </p>
+  <p class="Code">
+   NAME STRING = 'TITLE'
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1053671_PageTOC_HDF_SD_ATTRFIND_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="HDF_1733484267_1117761_PageTOC_HDF_SD_ATTRFIND_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="HDF_SD_ATTRINFO.html#HDF_1733484267_1010620">
+    HDF_SD_ATTRINFO
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HDF_SD_ATTRSET.html#HDF_1733484267_1010744">
+    HDF_SD_ATTRSET
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HDF_SD_SELECT.html#HDF_1733484267_1012166">
+    HDF_SD_SELECT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

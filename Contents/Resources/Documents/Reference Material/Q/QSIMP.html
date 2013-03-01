@@ -1,0 +1,456 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: Q" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   QSIMP
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/Q/QSIMP.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Q_list.html">
+    Routines: Q
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    QSIMP
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="Q_815714925_51645">
+   </a>
+   <a name="Q_815714925_21978">
+   </a>
+   QSIMP
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#Q_815714925_51653">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1079052">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_51655">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_51669">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_51679">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_51693">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1076461">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2145">
+   </a>
+   QSIMP
+   <a name="kanchor2146">
+   </a>
+   function performs
+   <a name="kanchor2147">
+   </a>
+   numerical integration of a function over the closed interval [
+   <i>
+    A, B
+   </i>
+   ] using
+   <a name="kanchor2148">
+   </a>
+   Simpson’s rule.
+  </p>
+  <p>
+   QSIMP is based on the routine
+   <span class="Courier">
+    qsimp
+   </span>
+   described in section 4.2 of
+   <i>
+    Numerical Recipes in C: The Art of Scientific Computing
+   </i>
+   (Second Edition), published by Cambridge University Press, and is used by permission.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_51653">
+   </a>
+   <a name="Q_815714925_51653_PageTOC_QSIMP_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = QSIMP(
+   <i>
+    Func
+   </i>
+   ,
+   <i>
+    A
+   </i>
+   ,
+   <i>
+    B
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#Q_815714925_51671">
+    DOUBLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#Q_815714925_51674">
+    EPS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#Q_815714925_51677">
+    JMAX
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1079052">
+   </a>
+   <a name="Q_815714925_65580">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result will have the same structure as the smaller of
+   <i>
+    A
+   </i>
+   and
+   <i>
+    B
+   </i>
+   , and the resulting type will be single- or double-precision floating, depending on the input types.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_51655">
+   </a>
+   <a name="Q_815714925_51655_PageTOC_QSIMP_">
+   </a>
+   Arguments
+  </h2>
+  <h3>
+   Func
+  </h3>
+  <p>
+   A scalar string specifying the name of a user-supplied IDL function to be integrated. This function must accept a single scalar argument
+   <i>
+    X
+   </i>
+   and return a scalar result. It must be defined over the closed interval [
+   <i>
+    A, B
+   </i>
+   ].
+  </p>
+  <p>
+   For example, if we wish to integrate the fourth-order polynomial
+  </p>
+  <p class="indent">
+   y = (x
+   <sup>
+    4
+   </sup>
+   - 2x
+   <sup>
+    2
+   </sup>
+   ) sin(x)
+  </p>
+  <p>
+   we define a function SIMPSON to express this relationship in the IDL language:
+  </p>
+  <p class="Code">
+   FUNCTION simpson, X
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, (X^4 - 2.0 * X^2) * SIN(X)
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If  QSIMP is complex then only the real part is used for the computation.
+  </p>
+  <h3>
+   A
+  </h3>
+  <p>
+   The lower limit of the integration.
+   <i>
+    A
+   </i>
+   can be either a scalar or an array.
+  </p>
+  <h3>
+   B
+  </h3>
+  <p>
+   The upper limit of the integration.
+   <i>
+    B
+   </i>
+   can be either a scalar or an array.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If arrays are specified for
+   <i>
+    A
+   </i>
+   and
+   <i>
+    B
+   </i>
+   , then QSIMP integrates the user-supplied function over the interval [
+   <i>
+    A
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   ,
+   <i>
+    B
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   ] for each
+   <i>
+    i
+   </i>
+   . If either
+   <i>
+    A
+   </i>
+   or
+   <i>
+    B
+   </i>
+   is a scalar and the other an array, the scalar is paired with each array element in turn.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_51669">
+   </a>
+   <a name="Q_815714925_51669_PageTOC_QSIMP_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="Q_815714925_51671">
+   </a>
+   <a name="Q_815714925_51671_Keywords_QSIMP__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h3 class="Keyword">
+   <a name="Q_815714925_51674">
+   </a>
+   <a name="Q_815714925_51674_Keywords_QSIMP__">
+   </a>
+   EPS
+  </h3>
+  <p>
+   The desired fractional accuracy. For single-precision calculations, the default value is 1.0 x 10
+   <sup>
+    -6
+   </sup>
+   . For double-precision calculations, the default value is 1.0 x 10
+   <sup>
+    -12
+   </sup>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="Q_815714925_51677">
+   </a>
+   <a name="Q_815714925_51677_Keywords_QSIMP__">
+   </a>
+   JMAX
+  </h3>
+  <p>
+   2
+   <sup>
+    (JMAX - 1)
+   </sup>
+   is the maximum allowed number of steps. If not specified, a default of 20 is used.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_51679">
+   </a>
+   <a name="Q_815714925_51679_PageTOC_QSIMP_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To integrate the SIMPSON function (listed above) over the interval [0, π/2] and print the result:
+  </p>
+  <p class="Code">
+   ; Define lower limit of integration:
+   <br />
+   A = 0.0
+   <br />
+   <br />
+   ; Define upper limit of integration:
+   <br />
+   B = !PI/2.0
+   <br />
+   <br />
+   PRINT, QSIMP('simpson', A, B)
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   &#160;-0.479158
+  </p>
+  <p>
+   The exact solution can be found using the integration-by-parts formula:
+  </p>
+  <p class="Code">
+   FB = 4.*B*(B^2-7.)*SIN(B) - (B^4-14.*B^2+28.)*COS(B)
+   <br />
+   FA = 4.*A*(A^2-7.)*SIN(A) - (A^4-14.*A^2+28.)*COS(A)
+   <br />
+   exact = FB - FA
+   <br />
+   PRINT, exact
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   &#160;-0.479156
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_51693">
+   </a>
+   <a name="Q_815714925_51693_PageTOC_QSIMP_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="Q_815714925_1076461">
+   </a>
+   <a name="Q_815714925_1076461_PageTOC_QSIMP_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../I/INT_2D.html#I_833016429_883951">
+    INT_2D
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../I/INT_3D.html#I_833016429_750234">
+    INT_3D
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../I/INT_TABULATED.html#I_833016429_750296">
+    INT_TABULATED
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="QROMB.html#Q_815714925_51508">
+    QROMB
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="QROMO.html#Q_815714925_51569">
+    QROMO
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,1159 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|File Format Object Classes|IDLffShape" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffShape Properties
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Property_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/File Format/IDLffShape_Properties.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_ff.html">
+    File Format Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffShape Properties
+   </span>
+  </div>
+  <h1 class="ObjProperties">
+   <a name="objects_ff_3755668711_1026998">
+   </a>
+   <a name="objects_ff_3755668711_91041">
+   </a>
+   IDLffShape Properties
+  </h1>
+  <p>
+   IDLffShape
+   <a name="kanchor3905">
+   </a>
+   objects have the following properties in addition to properties inherited from any superclasses. Properties with the word “Yes” in the “Get” column of the property table can be retrieved via
+   <a class="MCXref_Heading_0" href="IDLffShape__GetProperty.html#objects_ff_3755668711_1007887">
+    IDLffShape::GetProperty
+   </a>
+   . Properties with the word “Yes” in the “Init” column of the property table can be set via
+   <a class="MCXref_Heading_0" href="IDLffShape__Init.html#objects_ff_3755668711_1008047">
+    IDLffShape::Init
+   </a>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For a discussion of the property description tables shown below, see
+   <a class="MCXref_Heading_0" href="../IDL Object Class Overview/Object_Properties.html#objects_intro_4100679965_1538569" target="" title="" alt="">
+    Modifying Object Properties
+   </a>
+   .
+  </p>
+  <p>
+   Objects of this class have the following properties.
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1027034">
+     ATTRIBUTE_INFO
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1027309">
+     ATTRIBUTE_NAMES
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1027319">
+     DBF_ONLY
+    </a>
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1027088">
+     ENTITY_TYPE
+    </a>
+   </li>
+   <li value="5">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1027353">
+     FILENAME
+    </a>
+   </li>
+   <li value="6">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1027563">
+     IS_OPEN
+    </a>
+   </li>
+   <li value="7">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1027361">
+     N_ATTRIBUTES
+    </a>
+   </li>
+   <li value="8">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1027330">
+     N_ENTITIES
+    </a>
+   </li>
+   <li value="9">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1027328">
+     N_RECORDS
+    </a>
+   </li>
+   <li value="10">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1027071">
+     UPDATE
+    </a>
+   </li>
+  </ul>
+  <h3 class="Property">
+   <a name="objects_ff_3755668711_1027034">
+   </a>
+   <a name="objects_ff_3755668711_27416">
+   </a>
+   ATTRIBUTE_INFO
+  </h3>
+  <p>
+   A array of structures containing the attribute information for each attribute. The attribute information structures have the following fields:
+  </p>
+  <table style="width: 408px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Attribute Information Fields
+   </p>
+   <col width="120px" />
+   <col width="288px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       A string that contains the name of the attribute
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       TYPE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       The IDL type code of the attribute
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       WIDTH
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The width of the attribute
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       PRECISION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       The precision of the attribute
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   The file must be open to obtain this information.
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        Property Type
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Structure
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        not displayed
+       </i>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       No
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Property">
+   <a name="objects_ff_3755668711_1027309">
+   </a>
+   <a name="objects_ff_3755668711_55378">
+   </a>
+   ATTRIBUTE_NAMES
+  </h3>
+  <p>
+   A string array containing the names of each attribute in the Shapefile object.
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        Property Type
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       String array
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        not displayed
+       </i>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       No
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Property">
+   <a name="objects_ff_3755668711_1027319">
+   </a>
+   <a name="objects_ff_3755668711_25733">
+   </a>
+   DBF_ONLY
+  </h3>
+  <p>
+   A non-zero, positive integer value indicating whether the underlying dBASE table (.
+   <span class="Courier">
+    dbf
+   </span>
+   ) component of the shapefile is opened while all other entity related files are left closed. The following two values are accepted for this property:
+  </p>
+  <ul>
+   <li value="1">
+    1 - Open an existing .
+    <span class="Courier">
+     dbf
+    </span>
+    file,
+   </li>
+   <li value="2">
+    Greater than 1 - Create a new .
+    <span class="Courier">
+     dbf
+    </span>
+    file
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The UPDATE keyword is required to open the .
+   <span class="Courier">
+    dbf
+   </span>
+   file for updating.
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        Property Type
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Integer
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        not displayed
+       </i>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       No
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Property">
+   <a name="objects_ff_3755668711_1027088">
+   </a>
+   <a name="objects_ff_3755668711_66111">
+   </a>
+   ENTITY_TYPE
+  </h3>
+  <p>
+   If retrieving this property, its value is an integer representing the type code for the entities contained in the Shapefile object. If the value is unknown, this method returns -1. For more information on entity type codes, see
+   <a class="MCXref_Heading_0" href="IDLffShape.html#objects_ff_3755668711_1007085" target="" title="" alt="">
+    Entities
+   </a>
+   .
+  </p>
+  <p>
+   If setting this property, its value is an integer representing the entity type of a new Shapefile. Use this setting only when creating a new Shapefile. For more information on entity types, see
+   <a class="MCXref_Heading_0" href="IDLffShape.html#objects_ff_3755668711_1007085" target="" title="" alt="">
+    Entities
+   </a>
+   .
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        Property Type
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Integer
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        not displayed
+       </i>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       No
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Property">
+   <a name="objects_ff_3755668711_1027353">
+   </a>
+   <a name="objects_ff_3755668711_29847">
+   </a>
+   FILENAME
+  </h3>
+  <p>
+   A string representing the fully qualified path name of the Shapefile in the current Shapefile object.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   FILENAME can only be set via an argument to the
+   <a class="MCXref_Heading_0" href="IDLffShape__Init.html#objects_ff_3755668711_1008047">
+    IDLffShape::Init
+   </a>
+   method.
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        Property Type
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        String
+       </b>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        not displayed
+       </i>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       No
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Property">
+   <a name="objects_ff_3755668711_1027563">
+   </a>
+   <a name="objects_ff_3755668711_81358">
+   </a>
+   IS_OPEN
+  </h3>
+  <p>
+   An integer value representing information about the status of a Shapefile. The following values can be returned:
+  </p>
+  <table style="width: 311px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="110px" class="Column-Column1" />
+   <col width="201px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       File is not open
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       File is open in read-only mode
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       File is open in update mode
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        Property Type
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Integer
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        not displayed
+       </i>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       No
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Property">
+   <a name="objects_ff_3755668711_1027361">
+   </a>
+   <a name="objects_ff_3755668711_74665">
+   </a>
+   N_ATTRIBUTES
+  </h3>
+  <p>
+   A longword integer representing the number of attributes associated with a Shapefile object. If the number of attributes is unknown, this property returns 0.
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        Property Type
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        not displayed
+       </i>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       No
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Property">
+   <a name="objects_ff_3755668711_1027330">
+   </a>
+   <a name="objects_ff_3755668711_38077">
+   </a>
+   N_ENTITIES
+  </h3>
+  <p>
+   A longword integer representing the number of entities contained in Shapefile object. If the number of entities is unknown, this property returns 0.
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        Property Type
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        not displayed
+       </i>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       No
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Property">
+   <a name="objects_ff_3755668711_1027328">
+   </a>
+   <a name="objects_ff_3755668711_61982">
+   </a>
+   N_RECORDS
+  </h3>
+  <p>
+   A longword integer representing the number of records in the dBASE table (.
+   <span class="Courier">
+    dbf
+   </span>
+   ) component of the Shapefile. In a normal operating mode, this process is accomplished by getting the number of entities. However, in DBF_ONLY mode, no entity file exits.
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        Property Type
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        not displayed
+       </i>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       No
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Property">
+   <a name="objects_ff_3755668711_1027071">
+   </a>
+   <a name="objects_ff_3755668711_14126">
+   </a>
+   UPDATE
+  </h3>
+  <p>
+   A Boolean value indicating whether the file opened for writing. The file is opened for writing if this property is set to true. The default is read-only.
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <b>
+        Property Type
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Boolean
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        not displayed
+       </i>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       No
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

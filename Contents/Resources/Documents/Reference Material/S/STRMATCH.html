@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   STRMATCH
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/STRMATCH.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    STRMATCH
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_679108">
+   </a>
+   <a name="S_820040301_23154">
+   </a>
+   STRMATCH
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_1075267">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1135336">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1071237">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1071245">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1071251">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1073219">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110491">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2475">
+   </a>
+   STRMATCH function compares its search string, which can contain wildcard characters, against the input string expression. The result is an array with the same structure as the input string expression. Those elements that match the corresponding input string are set to True (1), and those that do not match are set to False (0).
+  </p>
+  <p>
+   The wildcards understood by STRMATCH are similar to those used by the standard UNIX shell:
+  </p>
+  <table style="width: 482px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Wildcard Characters used by STRMATCH
+   </p>
+   <col width="100px" />
+   <col width="382px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Wildcard Character
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       *
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Matches any string, including empty strings.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       ?
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Matches any single character.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       [...]
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Matches any one of the enclosed characters. A pair of characters separated by “-” matches any character lexically between the pair, inclusive. If the first character following the opening [ is a !, any character not enclosed is matched.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       To prevent one of these characters from acting as a wildcard, precede it with a backslash character (e.g. "\*" matches the asterisk character). Quoting any other (non-wildcard) character (including \ itself) is equivalent to the character (e.g. "\a" is the same as "a").
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1075267">
+   </a>
+   <a name="S_820040301_87681">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = STRMATCH(
+   <i>
+    String
+   </i>
+   ,
+   <i>
+    SearchString
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1071246">
+    FOLD_CASE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1135336">
+   </a>
+   <a name="S_820040301_37748">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns 1 if the pattern specified by
+   <i>
+    SearchString
+   </i>
+   exists in
+   <i>
+    String
+   </i>
+   , or 0 otherwise. If the
+   <i>
+    String
+   </i>
+   argument contains an array of strings, the result is an array of 1s and 0s with the same number of elements as
+   <i>
+    String
+   </i>
+   , indicating which elements contain
+   <i>
+    SearchString
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1071237">
+   </a>
+   <a name="S_820040301_1071237_PageTOC_STRMATCH_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   String
+  </h3>
+  <p>
+   A scalar string or string array to be searched.
+  </p>
+  <h3 class="Argument">
+   SearchString
+  </h3>
+  <p>
+   A scalar string containing the pattern to search for in
+   <i>
+    String
+   </i>
+   . The pattern string can contain wildcard characters as discussed above.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1071245">
+   </a>
+   <a name="S_820040301_1071245_PageTOC_STRMATCH_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="S_820040301_1071246">
+   </a>
+   <a name="S_820040301_1071246_Keywords_STRMATCH__">
+   </a>
+   FOLD_CASE
+  </h3>
+  <p>
+   The comparison is usually case sensitive. Setting the FOLD_CASE keyword causes a case insensitive match to be done instead.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1071251">
+   </a>
+   <a name="S_820040301_1071251_PageTOC_STRMATCH_">
+   </a>
+   Examples
+  </h2>
+  <h3>
+   <a name="S_820040301_1077932_Keywords_STRMATCH__">
+   </a>
+   Example 1
+  </h3>
+  <p>
+   Find all 4-letter words in a string array that begin with “f” or “F” and end with “t” or “T”:
+  </p>
+  <p class="Code">
+   str = ['foot', 'Feet', 'fate', 'FAST', 'ferret', 'fort']
+   <br />
+   PRINT, str[WHERE(STRMATCH(str, 'f??t', /FOLD_CASE) EQ 1)]
+  </p>
+  <p>
+   This results in:
+  </p>
+  <p class="Code">
+   foot Feet FAST fort
+  </p>
+  <h3>
+   <a name="S_820040301_1077937_Keywords_STRMATCH__">
+   </a>
+   Example 2
+  </h3>
+  <p>
+   Find words of any length that begin with “f” and end with “t”:
+  </p>
+  <p class="Code">
+   str = ['foot', 'Feet', 'fate', 'FAST', 'ferret', 'fort']
+   <br />
+   PRINT, str[WHERE(STRMATCH(str, 'f*t', /FOLD_CASE) EQ 1)]
+  </p>
+  <p>
+   This results in:
+  </p>
+  <p class="Code">
+   foot Feet FAST ferret fort
+  </p>
+  <h3>
+   <a name="S_820040301_1077942_Keywords_STRMATCH__">
+   </a>
+   Example 3
+  </h3>
+  <p>
+   Find 4-letter words beginning with “f” and ending with “t”, with any combination of “o” and “e” in between:
+  </p>
+  <p class="Code">
+   str = ['foot', 'Feet', 'fate', 'FAST', 'ferret', 'fort']
+   <br />
+   PRINT, str[WHERE(STRMATCH(str, 'f[eo][eo]t', /FOLD_CASE) EQ 1)]
+  </p>
+  <p>
+   This results in:
+  </p>
+  <p class="Code">
+   foot Feet
+  </p>
+  <h3>
+   <a name="S_820040301_1077947_Keywords_STRMATCH__">
+   </a>
+   Example 4
+  </h3>
+  <p>
+   Find all words beginning with “f” and ending with “t” whose second character is not the letter “o”:
+  </p>
+  <p class="Code">
+   str = ['foot', 'Feet', 'fate', 'FAST', 'ferret', 'fort']
+   <br />
+   PRINT, str[WHERE(STRMATCH(str, 'f[!o]*t', /FOLD_CASE) EQ 1)]
+  </p>
+  <p>
+   This results in:
+  </p>
+  <p class="Code">
+   Feet FAST ferret
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1073219">
+   </a>
+   <a name="S_820040301_1073219_PageTOC_STRMATCH_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110491">
+   </a>
+   <a name="S_820040301_1110491_PageTOC_STRMATCH_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="STRCMP.html#S_820040301_679036">
+    STRCMP
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRJOIN.html#S_820040301_1076861">
+    STRJOIN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STREGEX.html#S_820040301_1077065">
+    STREGEX
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRMID.html#S_820040301_1074010">
+    STRMID
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRPOS.html#S_820040301_679132">
+    STRPOS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRSPLIT.html#S_820040301_679167">
+    STRSPLIT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

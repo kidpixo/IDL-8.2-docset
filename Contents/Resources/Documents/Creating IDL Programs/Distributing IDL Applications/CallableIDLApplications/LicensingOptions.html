@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Tasks|Distributing IDL Applications|Callable IDL Applications" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Licensing Options for Callable IDL&#160;Applications
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Creating IDL Programs/Distributing IDL Applications/CallableIDLApplications/LicensingOptions.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../Programming Tasks.html">
+    Tasks
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../DistributingIDLApplications.html">
+    Distributing IDL Applications
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Licensing Options for Callable IDL&#160;Applications
+   </span>
+  </div>
+  <h1>
+   Licensing Options for Callable IDL&#160;Applications
+  </h1>
+  <p>
+   Refer to
+   <a href="../RuntimeModeApplications/LicensingOptions.html">
+    Licensing Options for Runtime Mode Applications
+   </a>
+   . The licensing options and steps are the same for callable IDL applications, with the following exception that applies to embedded licensing:
+  </p>
+  <ol>
+   <li value="1">
+    After you receive your license information, make the following changes to your application code, in the module from which you are initializing IDL. These instructions assume your code is written in C.
+   </li>
+   <p>
+    Define the licensing information for your application. Although your licensing information is individualized, it will resemble the following:
+   </p>
+   <pre xml:space="preserve">
+    /* Callable Application license for: myapp, My App */
+/* License built for IDL Version 7.1 */
+static char *initStr[] = {
+&#160;&#160;&#160;"12345678abcdabcd",
+&#160;&#160;&#160;"12345678abcdabcd",
+&#160;&#160;&#160;"12345678abcdabcd",
+&#160;&#160;&#160;"12345678abcdabcd",
+&#160;&#160;&#160;"12345678abcdabcd",
+&#160;&#160;&#160;"" };
+   </pre>
+   <li value="2">
+    Allocate the following structure in the callable application.:
+   </li>
+   <pre xml:space="preserve">
+    IDL_INIT_DATA init_data;
+   </pre>
+   <li value="3">
+    Initialize the structure in the callable application before IDL initialization:
+   </li>
+   <pre xml:space="preserve">
+    init_data.applic = initStr;
+init_data.options |= IDL_INIT_APPLIC;
+   </pre>
+   <li value="4">
+    Initialize IDL with the following statement (all platforms):
+   </li>
+   <pre xml:space="preserve">
+    if (!IDL_Initialize(&amp;init_data))
+&#160;&#160;&#160;return(FALSE);
+   </pre>
+  </ol>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

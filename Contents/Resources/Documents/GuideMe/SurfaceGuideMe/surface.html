@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Graphics|Surfaces" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Surfaces
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#GuideMe/SurfaceGuideMe/surface.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../GUInavigation/visualize.html">
+    Graphics
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../GUInavigation/visualize.html#Surface">
+    Surfaces
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Surfaces
+   </span>
+  </div>
+  <h1>
+   <a name="kanchor30">
+   </a>
+   Surfaces
+  </h1>
+  <p>
+   You can create surface graphics using the SURFACE function. In this topic, we will use the SURFACE&#160;function  using elevation data taken from the Maroon Bells area of the Rocky Mountains in Colorado.
+  </p>
+  <p>
+   The following example displays a very simple surface graphic:
+  </p>
+  <p>
+   <img src="../../Resources/Images/surface_simple.png" />
+  </p>
+  <p>
+   To reproduce this surface, enter the following lines on the IDL&#160;command line:
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   RESTORE, FILEPATH('marbells.dat', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;&#160;SUBDIRECTORY=['examples', 'data'])
+  </p>
+  <p class="Code_Indented">
+   s = SURFACE(elev, COLOR='burlywood')
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   The following simple example uses data that you create at the command line:
+  </p>
+  <p>
+   <img src="../../Resources/Images/surface_hanning.png" />
+  </p>
+  <p class="Code">
+   hanning=hanning(500,500)
+  </p>
+  <p class="Code">
+   surf_hann = SURFACE(hanning, COLOR='light_blue')
+  </p>
+  <h2 class="API">
+   Resources
+  </h2>
+  <ul>
+   <li value="1">
+    <a href="../propChanges.html" target="" title="" alt="" class="MCXref_0">
+     Change Graphics Properties
+    </a>
+   </li>
+   <li value="2">
+    <a href="../MultiViz.html" class="MCXref_0">
+     Multiple Graphics in One Window
+    </a>
+   </li>
+   <li value="3">
+    <a href="../ImageGuideMe/SaveImage.html" class="MCXref_0">
+     Saving Graphics
+    </a>
+   </li>
+   <li value="4">
+    <a href="surfaceContour.html" class="MCXref_0">
+     Surface with Contour Lines
+    </a>
+   </li>
+   <li value="5">
+    <a href="../../Reference Material/S/SURFACE.html" class="MCXref_0">
+     SURFACE
+    </a>
+   </li>
+   <li value="6">
+    <a href="../../Reference Material/Functional List of IDL Routines/Graphics.html" class="MCXref_0">
+     Graphics
+    </a>
+   </li>
+   <li value="7">
+    <a href="../../IDL Graphics/FormattingSymsAndLines.html" class="MCXref_0">
+     Formatting IDL&#160;Graphics Symbols and Lines
+    </a>
+   </li>
+  </ul>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

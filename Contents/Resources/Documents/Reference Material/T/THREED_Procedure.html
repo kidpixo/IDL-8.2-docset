@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: T" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   THREED Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/T/THREED_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="T_list.html">
+    Routines: T
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    THREED Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_887776">
+   </a>
+   <a name="dg_routines_3604229493_83933">
+   </a>
+   THREED Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_887799">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_887811">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_887817">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_887828">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_887831">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_887839">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2547">
+   </a>
+   THREED procedure plots a 2-D array as a pseudo 3-D plot. The orientation of the data is fixed. This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    threed.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_887799">
+   </a>
+   <a name="dg_routines_3604229493_787506_PageTOC_THREED_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   THREED,
+   <i>
+    A
+   </i>
+   [,&#160;
+   <i>
+    Sp
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_887819">
+    TITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_887822">
+    XTITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_887825">
+    YTITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_887811">
+   </a>
+   <a name="dg_routines_3604229493_787508_PageTOC_THREED_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   A
+  </h3>
+  <p>
+   The two-dimensional array to plot.
+  </p>
+  <h3 class="Argument">
+   Sp
+  </h3>
+  <p>
+   The spacing between plot lines. If
+   <i>
+    Sp
+   </i>
+   is omitted, the spacing is set to: (MAX(
+   <i>
+    A
+   </i>
+   )-MIN(
+   <i>
+    A
+   </i>
+   ))/ROWS. If
+   <i>
+    Sp
+   </i>
+   is negative, hidden lines are not removed.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_887817">
+   </a>
+   <a name="dg_routines_3604229493_787513_PageTOC_THREED_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_887819">
+   </a>
+   <a name="dg_routines_3604229493_787515_Keywords_THREED__">
+   </a>
+   TITLE
+  </h3>
+  <p>
+   Set this keyword to the main plot title.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_887822">
+   </a>
+   <a name="dg_routines_3604229493_787518_Keywords_THREED__">
+   </a>
+   XTITLE
+  </h3>
+  <p>
+   Set this keyword to the X axis title.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_887825">
+   </a>
+   <a name="dg_routines_3604229493_787521_Keywords_THREED__">
+   </a>
+   YTITLE
+  </h3>
+  <p>
+   Set this keyword to the Y axis title.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_887828">
+   </a>
+   <a name="dg_routines_3604229493_787523_PageTOC_THREED_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Create a 2-D dataset:
+   <br />
+   A = -SHIFT(DIST(30), 15, 15)
+   <br />
+   ; Make a THREED plot:
+   <br />
+   THREED, A
+   <br />
+   ; Compare to SURFACE:
+   <br />
+   SURFACE, A
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_887831">
+   </a>
+   <a name="dg_routines_3604229493_787524_PageTOC_THREED_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_887839">
+   </a>
+   <a name="dg_routines_3604229493_1086475_PageTOC_THREED_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../S/SURFACE_Procedure.html">
+    SURFACE Procedure
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

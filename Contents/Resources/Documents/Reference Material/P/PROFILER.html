@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: P" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   PROFILER
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/P/PROFILER.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="P_list.html">
+    Routines: P
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    PROFILER
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="P_817877613_900496">
+   </a>
+   <a name="P_817877613_97667">
+   </a>
+   <a name="P_817877613_36237">
+   </a>
+   PROFILER
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#P_817877613_900152">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_900153">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_900154">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_900261">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_900333">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_1079214">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2109">
+   </a>
+   PROFILER procedure allows you to access the IDL Code Profiler. The IDL Code Profiler helps you analyze the performance of your applications. You can easily monitor the calling frequency and execution time for procedures and functions.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_900152">
+   </a>
+   <a name="P_817877613_900152_PageTOC_PROFILER_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   PROFILER [,&#160;
+   <i>
+    Module
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#P_817877613_900205">
+    CLEAR
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#P_817877613_1088814">
+    DATA
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#P_817877613_1189238">
+    FILENAME
+   </a>
+   =
+   <i>
+    path
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#P_817877613_900155">
+    OUTPUT
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#P_817877613_900194">
+    REPORT
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#P_817877613_900195">
+    RESET
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#P_817877613_900159">
+    SYSTEM
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_900153">
+   </a>
+   <a name="P_817877613_900153_PageTOC_PROFILER_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Module
+  </h3>
+  <p>
+   The program to which changes in profiling will be applied. If
+   <i>
+    Module
+   </i>
+   is not specified, profiling changes will be applied to all currently-compiled programs.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The
+   <i>
+    Module
+   </i>
+   is often named with respect to the file in which it is stored. For example, the file
+   <span class="Courier">
+    build_it.pro
+   </span>
+   may contain the module,
+   <span class="Courier">
+    build_it
+   </span>
+   . If you specify the file name, you will incur a syntax error.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_900154">
+   </a>
+   <a name="P_817877613_900154_PageTOC_PROFILER_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="P_817877613_900205">
+   </a>
+   <a name="P_817877613_900205_Keywords_PROFILER__">
+   </a>
+   CLEAR
+  </h3>
+  <p>
+   Set this keyword to disable profiling of
+   <i>
+    Module
+   </i>
+   or of all compiled modules if
+   <i>
+    Module
+   </i>
+   is not specified. If the
+   <i>
+    Module
+   </i>
+   is a system routine then the SYSTEM keyword must also be set.
+  </p>
+  <h3 class="Keyword">
+   <a name="P_817877613_1088814">
+   </a>
+   <a name="P_817877613_1088814_Keywords_PROFILER__">
+   </a>
+   DATA
+  </h3>
+  <p>
+   If the REPORT keyword is set, then set this keyword to a specified variable containing output of the report as an unnamed structure with the following tags and data types:
+  </p>
+  <p class="Code">
+   {NAME:char, COUNT:long, ONLY_TIME:double, TIME:double, SYSTEM:byte}
+  </p>
+  <h3 class="Keyword">
+   <a name="P_817877613_1189238">
+   </a>
+   <a name="P_817877613_1189238_Keywords_PROFILER__">
+   </a>
+   FILENAME
+  </h3>
+  <p>
+   If the REPORT keyword is set, then set this keyword to the name of a file in which to write the profile results.
+  </p>
+  <h3 class="Keyword">
+   <a name="P_817877613_900155">
+   </a>
+   <a name="P_817877613_900155_Keywords_PROFILER__">
+   </a>
+   OUTPUT
+  </h3>
+  <p>
+   If the REPORT keyword is set, then set this keyword to a specified variable in which to store the results of the REPORT keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="P_817877613_900194">
+   </a>
+   <a name="P_817877613_900194_Keywords_PROFILER__">
+   </a>
+   REPORT
+  </h3>
+  <p>
+   Set this keyword to report the results of profiling. If DATA or OUTPUT are present then the results are returned in the specified variables. Otherwise the results are output to the IDL output log.
+  </p>
+  <h3 class="Keyword">
+   <a name="P_817877613_900195">
+   </a>
+   <a name="P_817877613_900195_Keywords_PROFILER__">
+   </a>
+   RESET
+  </h3>
+  <p>
+   Set this keyword to reset the results of profiling. If this keyword is present then all other arguments and keywords are ignored.
+  </p>
+  <h3 class="Keyword">
+   <a name="P_817877613_900159">
+   </a>
+   <a name="P_817877613_900159_Keywords_PROFILER__">
+   </a>
+   SYSTEM
+  </h3>
+  <p>
+   Set this keyword to apply profiling changes to IDL system procedures and functions. By default, changes are only applied to user-written or library files.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Using the profiler incurs a small overhead for each call to a routine. For routines which execute quickly, this overhead may be a significant fraction of the total execution time. Because of this, when you turn on profiling for all system routines, the following routines are not included: ARG_PRESENT, KEYWORD_SET, N_ELEMENTS, OBJ_ISA, OBJ_VALID, PTR_VALID, and SIZE. You can manually turn on profiling for these routines using the
+   <i>
+    Module
+   </i>
+   argument.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_900261">
+   </a>
+   <a name="P_817877613_900261_PageTOC_PROFILER_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; First ensure that the routine you want to profile is compiled.
+   <br />
+   void = DIST(500)
+   <br />
+   <br />
+   ; Now include both user routines and system routines.
+   <br />
+   PROFILER
+   <br />
+   PROFILER, /SYSTEM
+   <br />
+   <br />
+   ; Now perform the actual commands to profile.
+   <br />
+   a = DIST(500)
+   <br />
+   TV, a
+   <br />
+   <br />
+   ; Retrieve the profiling results.
+   <br />
+   PROFILER, /REPORT
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   Module &#160;&#160;&#160;&#160;Type  Count     Only(s)   Avg.(s)     Time(s)   Avg.(s)
+  </p>
+  <p class="Code">
+   DIST &#160;&#160;&#160;&#160;&#160;&#160;&#160;(U)       1    0.004473  0.004473    0.014675  0.014675
+  </p>
+  <p class="Code">
+   FINDGEN &#160;&#160;&#160;&#160;(S)       1    0.000015  0.000015    0.000015  0.000015
+  </p>
+  <p class="Code">
+   FLTARR &#160;&#160;&#160;&#160;&#160;(S)       1    0.000036  0.000036    0.000036  0.000036
+  </p>
+  <p class="Code">
+   N_ELEMENTS &#160;(S)       1    0.000004  0.000004    0.000004  0.000004
+  </p>
+  <p class="Code">
+   ON_ERROR &#160;&#160;&#160;(S)       1    0.000003  0.000003    0.000003  0.000003
+  </p>
+  <p class="Code">
+   SQRT &#160;&#160;&#160;&#160;&#160;&#160;&#160;(S)     251    0.010144  0.000040    0.010144  0.000040
+  </p>
+  <p class="Code">
+   TV &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(S)       1    0.089689  0.089689    0.089689  0.089689
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_900333">
+   </a>
+   <a name="P_817877613_900333_PageTOC_PROFILER_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       7.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added FILENAME keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="P_817877613_1079214">
+   </a>
+   <a name="P_817877613_1079214_PageTOC_PROFILER_">
+   </a>
+   See Also
+  </h2>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

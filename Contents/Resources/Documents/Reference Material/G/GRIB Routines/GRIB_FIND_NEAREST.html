@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: G|GRIB Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   GRIB_FIND_NEAREST
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/G/GRIB Routines/GRIB_FIND_NEAREST.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../G_list.html">
+    Routines: G
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../GRIB Routines.html">
+    GRIB Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    GRIB_FIND_NEAREST
+   </span>
+  </div>
+  <h1 class="Routine">
+   GRIB_FIND_NEAREST
+  </h1>
+  <p>
+   The
+   <a name="kanchor1058">
+   </a>
+   GRIB_FIND_NEAREST procedure finds the four nearest points of a latitude/longitude point.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   GRIB_FIND_NEAREST,
+   <i>
+    Ghandle, Lon, Lat
+   </i>
+   [,
+   <a href="#MODE4" target="" title="" alt="" class="MCXref_0">
+    MODE
+   </a>
+   =
+   <i>
+   </i>
+   <i>
+    Array
+   </i>
+   ] [,
+   <a href="#LATITUDE" target="" title="" alt="" class="MCXref_0">
+    LATITUDES
+   </a>
+   =
+   <i>
+   </i>
+   <i>
+    Array
+   </i>
+   ] [,
+   <a href="#LONGITUD" target="" title="" alt="" class="MCXref_0">
+    LONGITUDES
+   </a>
+   =
+   <i>
+   </i>
+   <i>
+    Array
+   </i>
+   ] [,
+   <a href="#INDEXES" target="" title="" alt="" class="MCXref_0">
+    INDEXES
+   </a>
+   =
+   <i>
+    Array
+   </i>
+   ] [,
+   <a href="#VALUES" target="" title="" alt="" class="MCXref_0">
+    VALUES
+   </a>
+   <i>
+    =
+   </i>
+   <i>
+    Array
+   </i>
+   ] [,&#160;
+   <a href="#DISTANCE" target="" title="" alt="" class="MCXref_0">
+    DISTANCES
+   </a>
+   =
+   <i>
+    Array
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Ghandle
+  </h3>
+  <p>
+   A GRIB handle.
+  </p>
+  <h3 class="Argument">
+   Lon
+  </h3>
+  <p>
+   Longitude of the point for which to search.
+  </p>
+  <h3 class="Argument">
+   Lat
+  </h3>
+  <p>
+   Latitude of the point for which to search.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="MODE4">
+   </a>
+   MODE
+  </h3>
+  <p>
+   Set this keyword to the numeric mode. The default value is 4 (GRIB_NEAREST_SAME_POINT).
+  </p>
+  <table class="TableStyle-Keyword_Table" style="mc-table-style: url('../../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+   <col style="width: 149px;" class="Column-Column1" />
+   <col style="width: 204px;" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <th class="HeadE-Column1-Header1">
+      <p>
+       Mode Values
+      </p>
+     </th>
+     <th class="HeadD-Column1-Header1">
+      Description
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      1
+     </td>
+     <td class="BodyD-Column1-Body1">
+      GRIB_NEAREST_SAME_GRID
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      4
+     </td>
+     <td class="BodyA-Column1-Body2">
+      GRIB_NEAREST_SAME_POINT
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   The value can be ORed together. For example, MODE=5 sets both modes.
+  </p>
+  <h3 class="Keyword">
+   <a name="LATITUDE">
+   </a>
+   LATITUDES
+  </h3>
+  <p>
+   Returns an array of latitude values of the nearest points.
+  </p>
+  <h3 class="Keyword">
+   <a name="LONGITUD">
+   </a>
+   LONGITUDES
+  </h3>
+  <p>
+   Returns an array of longitude values of the nearest points.
+  </p>
+  <h3 class="Keyword">
+   <a name="INDEXES">
+   </a>
+   INDEXES
+  </h3>
+  <p>
+   Returns an array of indexes of the nearest points.
+  </p>
+  <h3 class="Keyword">
+   <a name="VALUES">
+   </a>
+   VALUES
+  </h3>
+  <p>
+   Returns an array of values of the nearest points.
+  </p>
+  <h3 class="Keyword">
+   <a name="DISTANCE">
+   </a>
+   DISTANCES
+  </h3>
+  <p>
+   Returns an array of distance values from the nearest points.
+  </p>
+  <h2 class="API">
+   Examples
+  </h2>
+  <p>
+   See
+   <a href="GRIB_GET_VALUES.html#top" target="" title="" alt="" class="MCXref_0">
+    GRIB_GET_VALUES
+   </a>
+   for a general example using the GRIB routines.
+  </p>
+  <h2 class="API">
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

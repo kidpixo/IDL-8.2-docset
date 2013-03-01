@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Concepts|Variables" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Assignment Operations and Arrays
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/Assignment_Operations_an.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">
+    Concepts
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Variables.html">
+    Variables
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Assignment Operations and Arrays
+   </span>
+  </div>
+  <h1>
+   <a name="arrays_3727706888_762440">
+   </a>
+   Assignment Operations and Arrays
+  </h1>
+  <p>
+   The following table shows the variations possible in expressions containing array and scalar subscripts. The result of the assignment operation depends upon the dimensionality of the subscript.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   A subscript structure can also be composed of a range of elements. If expression is scalar, it is inserted into the subarray. If
+   <i>
+    Variable
+   </i>
+   [
+   <i>
+    Range
+   </i>
+   ] and Array are the same size, elements of Array specified by
+   <i>
+    Range
+   </i>
+   are inserted in
+   <i>
+    Variable
+   </i>
+   . It is illegal if
+   <i>
+    Variable
+   </i>
+   [
+   <i>
+    Range
+   </i>
+   ] and Array are different sizes. See
+   <a class="MCXref_Heading_0" href="Array_Subscript_Ranges.html#arrays_3727706888_762145" target="" title="" alt="">
+    Array Subscript Ranges
+   </a>
+   for complete details. For information on when you should not use subscript ranges, see
+   <a class="MCXref_Heading_0" href="Array_Subscript_Ranges.html#arrays_3727706888_762264" target="" title="" alt="">
+    Avoid Using Range Subscripts for Assignment
+   </a>
+   .
+  </p>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Introduction to Subscript Expression Structures
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Syntax Structure
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       <i>
+        Variable
+       </i>
+       [Scalar
+       <i>
+        Subscripts
+       </i>
+       ] =
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;Scalar
+       <i>
+        Expression
+       </i>
+      </p>
+      <p>
+       &#160;
+      </p>
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <i>
+        Expression
+       </i>
+       is stored in a single element of
+       <i>
+        Variable.
+       </i>
+      </p>
+      <p class="Code">
+       arrOne = [1, 2, 3, 4, 5]
+      </p>
+      <p class="Code">
+       arrOne[2] = 9
+      </p>
+      <p class="Code">
+       PRINT, arrOne
+      </p>
+      <p class="Code">
+       1&#160;&#160;&#160;2&#160;&#160;&#160;9&#160;&#160;&#160;4&#160;&#160;&#160;5
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       <i>
+        Variable
+       </i>
+       [Scalar
+       <i>
+        Subscripts
+       </i>
+       ] =
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;Array
+       <i>
+        Expression
+       </i>
+      </p>
+      <p>
+       &#160;
+      </p>
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <i>
+        Expression
+       </i>
+       array is inserted in
+       <i>
+        Variable
+       </i>
+       array beginning at point indicated by subscript.
+      </p>
+      <p class="Code">
+       arrOne = [1, 2, 3, 4, 5]
+      </p>
+      <p class="Code">
+       arrTwo = [11, 12]
+      </p>
+      <p class="Code">
+       arrOne[1] = ArrTwo
+      </p>
+      <p class="Code">
+       PRINT, arrOne
+      </p>
+      <p class="Code">
+       1&#160;&#160;&#160;11&#160;&#160;&#160;12&#160;&#160;&#160;4&#160;&#160;&#160;5
+       <br />
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       <a name="kanchor3456">
+       </a>
+       An “out of range subscript” error will occur if you attempt to insert
+       <span class="Courier">
+        arrTwo
+       </span>
+       elements into non-existent elements of
+       <span class="Courier">
+        arrOne
+       </span>
+       . For example
+       <span class="Courier">
+        arrOne[4] = ArrTwo
+       </span>
+       fails.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       <i>
+        Variable
+       </i>
+       [Array
+       <i>
+        Subscripts
+       </i>
+       ] =
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;Scalar
+       <i>
+        Expression
+       </i>
+      </p>
+      <p>
+       &#160;
+      </p>
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <i>
+        Expression
+       </i>
+       scalar is stored in designated elements of
+       <i>
+        Variable.
+       </i>
+       Other array elements are unchanged.
+      </p>
+      <p class="Code">
+       arrOne = [1, 2, 3, 4, 5]
+      </p>
+      <p class="Code">
+       arrOne[[2, 4]] = 0
+      </p>
+      <p class="Code">
+       PRINT, arrOne
+      </p>
+      <p class="Code">
+       1&#160;&#160;&#160;2&#160;&#160;&#160;0&#160;&#160;&#160;4&#160;&#160;&#160;0
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       Note the use of the double brackets. Attempting to assign zeros to the 3rd and 5th element of the array using
+       <br />
+       <span class="Courier">
+        arrOne[2, 4] = 0
+       </span>
+       <br />
+       results in an error: “
+       <span class="Courier">
+        Attempt to subscript ARRONE with &lt;INT(4)&gt; is out of range.
+       </span>
+       ” IDL interprets this as attempting to modify a single element in the 3rd column and 5th row, which does not exist.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p class="Code">
+       <i>
+        Variable
+       </i>
+       [Array
+       <i>
+        Subscripts
+       </i>
+       ] =
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;
+       <i>
+        ArrayExpression
+       </i>
+      </p>
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Elements of
+       <i>
+        Expression
+       </i>
+       are stored in designated elements of
+       <i>
+        Variable.
+       </i>
+      </p>
+      <p class="Code">
+       arrOne = [1, 2, 3, 4, 5]
+      </p>
+      <p class="Code">
+       arrOne[[0, 2]] = [111,333]
+      </p>
+      <p class="Code">
+       PRINT, arrOne
+      </p>
+      <p class="Code">
+       111&#160;&#160;&#160;2&#160;&#160;&#160;333&#160;&#160;&#160;4&#160;&#160;&#160;5
+       <br />
+      </p>
+      <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+       <span class="autonumber">
+        <span>
+         <b>
+          Note:
+         </b>
+        </span>
+       </span>
+       Elements of the subscript array that are negative, or greater than the highest subscript of the subscripted array, are clipped to the target array boundaries. For example,
+       <br />
+       <span class="Courier">
+        arrOne[[-1, 2]] = [111,333]
+       </span>
+       <br />
+       has the same result as
+       <span class="Courier">
+        arrOne[[0,2]]
+       </span>
+       . See
+       <a class="MCXref_Heading_0" href="Using_Arrays_as_Array_Su.html#arrays_3727706888_753120" target="" title="" alt="">
+        Array Subscripts and Clipping
+       </a>
+       for details.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

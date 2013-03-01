@@ -1,0 +1,732 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: L" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   LA_EIGENVEC
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/L/LA_EIGENVEC.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="L_list.html">
+    Routines: L
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    LA_EIGENVEC
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="L_826528365_959039">
+   </a>
+   <a name="L_826528365_75935">
+   </a>
+   LA_EIGENVEC
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#L_826528365_969888">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_969890">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_969892">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_969897">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_969921">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_969951">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#L_826528365_969953">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1630">
+   </a>
+   LA_EIGENVEC function
+   <a name="kanchor1631">
+   </a>
+   uses the QR algorithm to compute all or some of the eigenvectors
+   <i>
+    v
+   </i>
+   ≠ 0 of an
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    n
+   </i>
+   real
+   <a name="kanchor1632">
+   </a>
+   nonsymmetric or complex non-Hermitian array
+   <i>
+    A
+   </i>
+   , for the eigenproblem
+   <i>
+    Av
+   </i>
+   &#160;=&#160;λ
+   <i style="font-family: Times;font-style: italic;">
+    v
+   </i>
+   . The routine can also compute the left eigenvectors
+   <i>
+    u
+   </i>
+   &#160;≠&#160;0, which satisfy
+   <i>
+    u
+   </i>
+   <sup class="italic">
+    H
+   </sup>
+   <i>
+    A
+   </i>
+   &#160;=&#160;λ
+   <i style="font-family: Times;font-style: italic;">
+    u
+   </i>
+   <sup class="italic">
+    H
+   </sup>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The left and right eigenvectors returned by LA_EIGENVEC are normalized to norm 1. Unlike the
+   <a class="MCXref_Heading_0" href="LA_EIGENPROBLEM.html#L_826528365_958746">
+    LA_EIGENPROBLEM
+   </a>
+   , they are not rotated to have largest component real. Therefore, you may notice slight differences in results between LA_EIGENVEC and LA_EIGENPROBLEM.
+  </p>
+  <p>
+   LA_EIGENVEC is based on the following LAPACK routines:
+  </p>
+  <table style="width: 494px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    LAPACK Routine Basis for LA_EIGENVEC
+   </p>
+   <col width="120px" />
+   <col width="129px" />
+   <col width="125px" />
+   <col width="120px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Output Type
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Eigenvectors
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Condition Numbers
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Undo Balancing
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Float
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       strevc
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       strsna
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       sgebak
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Double
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       dtrevc
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       dtrsna
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       dgebak
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Complex
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ctrevc
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ctrsna
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       cgebak
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       Double complex
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       ztrevc
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       ztrsna
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       zgebak
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   For details see Anderson et al.,
+   <i>
+    LAPACK Users' Guide
+   </i>
+   , 3rd ed., SIAM, 1999.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_969888">
+   </a>
+   <a name="L_826528365_49388">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = LA_EIGENVEC(
+   <i>
+    T
+   </i>
+   ,
+   <i>
+    QZ
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_969898">
+    BALANCE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#L_826528365_969901">
+    DOUBLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_969903">
+    EIGENINDEX
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_969906">
+    LEFT_EIGENVECTORS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_969908">
+    PERMUTE_RESULT
+   </a>
+   =[
+   <i>
+    ilo
+   </i>
+   ,
+   <i>
+    ihi
+   </i>
+   ]] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_969914">
+    SCALE_RESULT
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_969910">
+    RCOND_VALUE
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_969912">
+    RCOND_VECTOR
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#L_826528365_969916">
+    SELECT
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_969890">
+   </a>
+   <a name="L_826528365_23547">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is a complex array containing the eigenvectors as a set of row vectors.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_969892">
+   </a>
+   <a name="L_826528365_12921">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   T
+  </h3>
+  <p>
+   The upper quasi-triangular array containing the Schur form, created by LA_HQR.
+  </p>
+  <h3 class="Argument">
+   QZ
+  </h3>
+  <p>
+   The array of Schur vectors, created by LA_HQR.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_969897">
+   </a>
+   <a name="L_826528365_50976">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="L_826528365_969898">
+   </a>
+   <a name="L_826528365_969898_Keywords_LA_EIGENVEC_">
+   </a>
+   BALANCE
+  </h3>
+  <p>
+   If balancing was applied in the call to LA_ELMHES, then set this keyword to the same value that was used, in order to apply the backward balancing transform to the eigenvectors. If BALANCE is not specified, then the default is BALANCE = 1.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If BALANCE is not zero, then both PERMUTE_RESULT and SCALE_RESULT must be supplied.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_969901">
+   </a>
+   <a name="L_826528365_969901_Keywords_LA_EIGENVEC_">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to use double-precision for computations and to return a double-precision (real or complex) result. Set DOUBLE = 0 to use single-precision for computations and to return a single-precision (real or complex) result. The default is /DOUBLE if
+   <i>
+    T
+   </i>
+   is double precision, otherwise the default is DOUBLE = 0.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_969903">
+   </a>
+   <a name="L_826528365_969903_Keywords_LA_EIGENVEC_">
+   </a>
+   EIGENINDEX
+  </h3>
+  <p>
+   If keyword SELECT is used, then set this keyword to a named variable in which the indices of the eigenvalues that correspond to the selected eigenvectors will be returned. If the SELECT keyword is not used then EIGENINDEX will be set to LINDGEN(
+   <i>
+    n
+   </i>
+   ).
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   This keyword is most useful for real input arrays when the SELECT keyword is present. In this case, a value of SELECT[
+   <i>
+    j
+   </i>
+   ] equal to 1 may produce two eigenvectors if the eigenvalue is part of a complex-conjugate pair.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_969906">
+   </a>
+   <a name="L_826528365_969906_Keywords_LA_EIGENVEC_">
+   </a>
+   LEFT_EIGENVECTORS
+  </h3>
+  <p>
+   Set this keyword to a named variable in which the left eigenvectors will be returned as a set of row vectors. If this variable is omitted then left eigenvectors will not be computed unless the RCOND_VALUE keyword is present.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_969908">
+   </a>
+   <a name="L_826528365_969908_Keywords_LA_EIGENVEC_">
+   </a>
+   PERMUTE_RESULT
+  </h3>
+  <p>
+   Set this keyword to a two-element vector containing the [
+   <i>
+    ilo
+   </i>
+   ,
+   <i>
+    ihi
+   </i>
+   ] permutation results from the LA_ELMHES procedure. This keyword must be present if BALANCE = 1 or BALANCE = 2.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_969910">
+   </a>
+   <a name="L_826528365_969910_Keywords_LA_EIGENVEC_">
+   </a>
+   RCOND_VALUE
+  </h3>
+  <p>
+   Set this keyword to a named variable in which the reciprocal condition numbers for the eigenvalues will be returned as an
+   <i>
+    n
+   </i>
+   -element vector. If RCOND_VALUE is present then left and right eigenvectors must be computed.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_969912">
+   </a>
+   <a name="L_826528365_969912_Keywords_LA_EIGENVEC_">
+   </a>
+   RCOND_VECTOR
+  </h3>
+  <p>
+   Set this keyword to a named variable in which the reciprocal condition numbers for the eigenvectors will be returned as an
+   <i>
+    n
+   </i>
+   -element vector.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_969914">
+   </a>
+   <a name="L_826528365_969914_Keywords_LA_EIGENVEC_">
+   </a>
+   SCALE_RESULT
+  </h3>
+  <p>
+   Set this keyword to an n-element vector containing the permute and scale balancing results from the LA_ELMHES procedure. This keyword must be present if BALANCE is not zero.
+  </p>
+  <h3 class="Keyword">
+   <a name="L_826528365_969916">
+   </a>
+   <a name="L_826528365_969916_Keywords_LA_EIGENVEC_">
+   </a>
+   SELECT
+  </h3>
+  <p>
+   Set this keyword to an
+   <i>
+    n
+   </i>
+   -element vector of zeroes or ones that indicates which eigenvectors to compute. There are two cases:
+  </p>
+  <p class="Bullet">
+   The original array was real: If the
+   <i>
+    j
+   </i>
+   -th eigenvalue (as created by LA_HQR) is real, then if SELECT[
+   <i>
+    j
+   </i>
+   ] is set to 1, then the
+   <i>
+    j
+   </i>
+   -th eigenvector will be computed. If the
+   <i>
+    j
+   </i>
+   -th and (
+   <i>
+    j
+   </i>
+   +1) eigenvalues form a complex-conjugate pair, then if either SELECT[
+   <i>
+    j
+   </i>
+   ] or SELECT[
+   <i>
+    j
+   </i>
+   +1] is set to 1, then the complex-conjugate pair of
+   <i>
+    j
+   </i>
+   -th and (
+   <i>
+    j
+   </i>
+   +1) eigenvectors will be computed.
+  </p>
+  <p class="Bullet">
+   The original array was complex: If SELECT[
+   <i>
+    j
+   </i>
+   ] is set to 1, then the
+   <i>
+    j
+   </i>
+   -th eigenvector will be computed.
+  </p>
+  <p>
+   If SELECT is omitted then all eigenvectors are returned.
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_969921">
+   </a>
+   <a name="L_826528365_40714">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Compute the eigenvalues and selected eigenvectors of a random array using the following program:
+  </p>
+  <p class="Code">
+   ; Create a random array:
+   <br />
+   n = 10
+   <br />
+   seed = 12321
+   <br />
+   array = RANDOMN(seed, n, n)
+   <br />
+   <br />
+   ; Reduce to upper Hessenberg and compute Q:
+   <br />
+   H = LA_ELMHES(array, q, $
+   <br />
+   &#160;&#160;&#160;PERMUTE_RESULT = permute, SCALE_RESULT = scale)
+   <br />
+   <br />
+   ; Compute eigenvalues, T, and QZ arrays:
+   <br />
+   eigenvalues = LA_HQR(h, q, PERMUTE_RESULT = permute)
+   <br />
+   <br />
+   ; Compute eigenvectors corresponding to
+   <br />
+   ; the first 3 eigenvalues.
+   <br />
+   select = [1, 1, 1, REPLICATE(0, n - 3)]
+   <br />
+   eigenvectors = LA_EIGENVEC(H, Q, $
+   <br />
+   &#160;&#160;&#160;EIGENINDEX = eigenindex, $
+   <br />
+   &#160;&#160;&#160;PERMUTE_RESULT = permute, SCALE_RESULT = scale, $
+   <br />
+   &#160;&#160;&#160;SELECT = select)
+   <br />
+   <br />
+   PRINT, 'LA_EIGENVEC eigenvalues:'
+   <br />
+   PRINT, eigenvalues[eigenindex]
+  </p>
+  <p>
+   When this program is compiled and run, IDL prints:
+  </p>
+  <p class="Code">
+   LA_EIGENVEC eigenvalues:
+  </p>
+  <p class="Code">
+   (-0.278633, 2.55055) ( -0.278633, -2.55055)
+  </p>
+  <p class="Code">
+   (2.31208,     0.000000)
+  </p>
+  <h2 class="API">
+   <a name="L_826528365_969951">
+   </a>
+   <a name="L_826528365_83559">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="L_826528365_969953">
+   </a>
+   <a name="L_826528365_91609">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../E/EIGENVEC.html#E_841667181_47274">
+    EIGENVEC
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="LA_ELMHES.html#L_826528365_959174">
+    LA_ELMHES
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="LA_HQR.html#L_826528365_959357">
+    LA_HQR
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

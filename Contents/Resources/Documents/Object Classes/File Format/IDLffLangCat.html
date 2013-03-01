@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|File Format Object Classes" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffLangCat
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/File Format/IDLffLangCat.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_ff.html">
+    File Format Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffLangCat
+   </span>
+  </div>
+  <h1 class="ObjClass">
+   <a name="objects_ff_3755668711_1105086">
+   </a>
+   <a name="objects_ff_3755668711_99090">
+   </a>
+   IDLffLangCat
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1126610">
+     Superclasses
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1126612">
+     Creation
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1126618">
+     Properties
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1126668">
+     Methods
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1126694">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor3847">
+   </a>
+   IDLffLangCat class is used to find and load an XML language catalog. A language catalog is composed of key names and key values. The key value of the specified key name can be retrieved to support internationalization. For example:
+  </p>
+  <p class="Code">
+   &lt;KEY NAME='Menu:File:Open'&gt;Open...&lt;/KEY&gt;
+  </p>
+  <p>
+   in an English language catalog would appear as the following in a French language catalog:
+  </p>
+  <p class="Code">
+   &lt;KEY NAME='Menu:File:Open'&gt;Ouvrir...&lt;/KEY&gt;
+  </p>
+  <p>
+   By handling files that contain keys and values like these, the IDLffLangCat class supports internationalization of user interfaces and other applications that need to display the same strings in more than one language.
+  </p>
+  <p>
+   The language catalogs included with IDL are in the
+   <span class="Courier">
+    &lt;IDL_DIR&gt;/resource/langcat
+   </span>
+   directory and end in a
+   <span class="Courier">
+    .cat
+   </span>
+   extension. You can use other catalogs, but all catalogs must end with the
+   <span class="Courier">
+    .cat
+   </span>
+   extension.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The IDLffLangCat class supports catalog files written in 8-bit strings (which can be encoded for languages using special marks; see below). Also, you must have the corresponding fonts installed on your machine before you can use a particular language.
+  </p>
+  <p>
+   A language-catalog file can support accent marks such as those in French (which stray from the first 128 character codes defined by ASCII into the ISO-8859 encodings) if you do one of the following actions:
+  </p>
+  <ul>
+   <li value="1">
+    Add
+    <span class="Courier">
+     encoding='ISO8859-1'
+    </span>
+    to the XML tag element at the beginning of the file (e.g.,
+    <span class="Courier">
+     &lt;xml version='1.0' encoding='ISO8859-1'?&gt;)
+    </span>
+   </li>
+   <li value="2">
+    Save the XML file as Unicode
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1126610">
+   </a>
+   <a name="objects_ff_3755668711_1126610_PageTOC_IDLffLangCat_">
+   </a>
+   Superclasses
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1126612">
+   </a>
+   <a name="objects_ff_3755668711_1126612_PageTOC_IDLffLangCat_">
+   </a>
+   Creation
+  </h2>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="IDLffLangCat__Init.html#objects_ff_3755668711_1127099">
+    IDLffLangCat::Init
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1126618">
+   </a>
+   <a name="objects_ff_3755668711_1126618_PageTOC_IDLffLangCat_">
+   </a>
+   <a name="objects_ff_3755668711_57585">
+   </a>
+   Properties
+  </h2>
+  <p>
+   Objects of this class have the following properties. See
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1126697" target="" title="" alt="">
+    IDLffLangCat
+   </a>
+   for individual properties.
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126713">
+     APP_NAME
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126741">
+     APP_PATH
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126769">
+     AVAILABLE_LANGUAGES
+    </a>
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126797">
+     DEFAULT_KEYS
+    </a>
+   </li>
+   <li value="5">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126825">
+     DEFAULT_LANGUAGE
+    </a>
+   </li>
+   <li value="6">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126853">
+     DEFAULT_N_KEYS
+    </a>
+   </li>
+   <li value="7">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126881">
+     FILENAME
+    </a>
+   </li>
+   <li value="8">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126909">
+     KEYS
+    </a>
+   </li>
+   <li value="9">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126937">
+     LANGUAGE
+    </a>
+   </li>
+   <li value="10">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126965">
+     N_KEYS
+    </a>
+   </li>
+   <li value="11">
+    <a class="MCXref_Heading_0" href="IDLffLangCat_Properties.html#objects_ff_3755668711_1126993">
+     VERBOSE
+    </a>
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1126668">
+   </a>
+   <a name="objects_ff_3755668711_1126668_PageTOC_IDLffLangCat_">
+   </a>
+   Methods
+   <a name="kanchor3848">
+   </a>
+  </h2>
+  <p>
+   This class has the following methods:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="IDLffLangCat__AppendCata.html#objects_ff_3755668711_1127021">
+     IDLffLangCat::AppendCatalog
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="IDLffLangCat__Cleanup.html#objects_ff_3755668711_1127067">
+     IDLffLangCat::Cleanup
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="IDLffLangCat__GetPropert.html#objects_ff_3755668711_1127081">
+     IDLffLangCat::GetProperty
+    </a>
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="IDLffLangCat__Init.html#objects_ff_3755668711_1127099">
+     IDLffLangCat::Init
+    </a>
+   </li>
+   <li value="5">
+    <a class="MCXref_Heading_0" href="IDLffLangCat__Query.html#objects_ff_3755668711_1127140">
+     IDLffLangCat::Query
+    </a>
+   </li>
+   <li value="6">
+    <a class="MCXref_Heading_0" href="IDLffLangCat__SetPropert.html#objects_ff_3755668711_1127159">
+     IDLffLangCat::SetProperty
+    </a>
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="objects_ff_3755668711_1126694">
+   </a>
+   <a name="objects_ff_3755668711_1126694_PageTOC_IDLffLangCat_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

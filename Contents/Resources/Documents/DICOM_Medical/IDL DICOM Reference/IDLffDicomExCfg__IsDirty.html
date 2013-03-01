@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Additional Topics|Medical Imaging in IDL|IDL DICOM Reference|IDLffDicomExCfg" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffDicomExCfg::IsDirty
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#DICOM_Medical/IDL DICOM Reference/IDLffDicomExCfg__IsDirty.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../OtherTopics.html">
+    Additional Topics
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Expanded DICOM Support in IDL/ExpandedDICOMFunctionality.html">
+    Medical Imaging in IDL
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="DICOMEX_GETCONFIGFILEPAT.html">
+    IDL DICOM Reference
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffDicomExCfg::IsDirty
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="dicom_ex_4010397576_1133028">
+   </a>
+   <a name="dicom_ex_4010397576_80130">
+   </a>
+   IDLffDicomExCfg::IsDirty
+  </h1>
+  <p>
+   The IDLffDicomExCfg::IsDirty function method can be used to determine if configuration values have been changed since the configuration file was read into the configuration object. This information is useful if you are creating a user interface and want to warn the user to save the configuration values prior to exiting.
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133030">
+   </a>
+   <a name="dicom_ex_4010397576_1133030_PageTOC_IDLffDicomExCfg">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   =
+   <span class="Italic">
+    Obj
+   </span>
+   -&gt;[
+   <a href="IDLffDicomExCfg.html#dicom_ex_4010397576_1132499" class="MCXref_0">
+    IDLffDicomExCfg
+   </a>
+   ::]IsDirty( )
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133035">
+   </a>
+   <a name="dicom_ex_4010397576_1133035_PageTOC_IDLffDicomExCfg">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns one of the following:
+  </p>
+  <table style="mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: auto;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <col style="width: 24px;" />
+   <col />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The configuration in memory has not been changed since it was read in from the configuration file.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       The configuration in memory has been changed since it was read in from the configuration file.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133046">
+   </a>
+   <a name="dicom_ex_4010397576_1133046_PageTOC_IDLffDicomExCfg">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133048">
+   </a>
+   <a name="dicom_ex_4010397576_1133048_PageTOC_IDLffDicomExCfg">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133050">
+   </a>
+   <a name="dicom_ex_4010397576_1133050_PageTOC_IDLffDicomExCfg">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

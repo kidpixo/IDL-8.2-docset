@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDL_VALIDNAME
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/IDL_VALIDNAME.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDL_VALIDNAME
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="I_833016429_893464">
+   </a>
+   <a name="I_833016429_82284">
+   </a>
+   IDL_VALIDNAME
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#I_833016429_937148">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_937151">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_937154">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_937158">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_937170">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_937210">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_937213">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1528">
+   </a>
+   IDL_VALIDNAME function determines whether a string may be used as a
+   <a name="kanchor1529">
+   </a>
+   valid IDL variable name or structure tag name. Optionally, the routine can convert non-valid characters into underscores, returning a valid name string.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_937148">
+   </a>
+   <a name="I_833016429_85304">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = IDL_VALIDNAME(
+   <i>
+    String
+   </i>
+   [, /
+   <a class="MCXref_Heading_0" href="#I_833016429_937159">
+    CONVERT_ALL
+   </a>
+   ] [, /
+   <a class="MCXref_Heading_0" href="#I_833016429_937166">
+    CONVERT_SPACES
+   </a>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_937151">
+   </a>
+   <a name="I_833016429_26383">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the input string or strings, optionally converting all spaces or non-alphanumeric characters to underscores. If an input string cannot be used as a valid variable or structure tag name, an empty string is returned.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_937154">
+   </a>
+   <a name="I_833016429_30126">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   String
+  </h3>
+  <p>
+   A scalar string or string array or representing the IDL variable or structure tag names to be checked.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_937158">
+   </a>
+   <a name="I_833016429_25970">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="I_833016429_937159">
+   </a>
+   <a name="I_833016429_937159_Keywords_IDL_VALIDNAME_">
+   </a>
+   CONVERT_ALL
+  </h3>
+  <p>
+   If this keyword is set, then each element of
+   <span class="_Override" style="font-style: italic;">
+    String
+   </span>
+   is converted into a valid IDL variable name using the following rules:
+  </p>
+  <ul>
+   <li value="1">
+    All non-alphanumeric characters (except “_”, “!” and “$”) are converted to underscores
+   </li>
+   <li value="2">
+    If the first character is a number or a “$”, then an underscore is prepended to the string
+   </li>
+   <li value="3">
+    If the first character is not a valid character (“_”, “!”, “A”…“Z”) then that character is converted to an underscore
+   </li>
+   <li value="4">
+    If the element of
+    <span class="_Override" style="font-style: italic;">
+     String
+    </span>
+    is an empty string or a reserved word (such as “AND”) then an underscore is prepended to the string
+   </li>
+  </ul>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   The CONVERT_ALL keyword guarantees that a valid variable name is returned. It is useful in converting user-supplied strings into valid IDL variable names.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_937166">
+   </a>
+   <a name="I_833016429_937166_Keywords_IDL_VALIDNAME_">
+   </a>
+   CONVERT_SPACES
+  </h3>
+  <p>
+   If this keyword is set, then all spaces within each element of
+   <span class="_Override" style="font-style: italic;">
+    String
+   </span>
+   are converted to underscores. If an element of
+   <span class="_Override" style="font-style: italic;">
+    String
+   </span>
+   contains any other non-alphanumeric characters, then an empty string is returned, indicating that the string cannot be used as a valid variable name.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   CONVERT_SPACES behaves the same as CREATE_STRUCT when checking structure tag names.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_937170">
+   </a>
+   <a name="I_833016429_99719">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following table provides IDL_VALIDNAME examples and their results.
+  </p>
+  <table style="width: 505px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    IDL_VALIDNAME Examples
+   </p>
+   <col width="362px" />
+   <col width="143px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Example
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Result
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       IDL_VALIDNAME('abc')
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       'abc'
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       IDL_VALIDNAME(' a b c ')
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       ''
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       IDL_VALIDNAME(' a b c ', /CONVERT_SPACES)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       '_a_b_c_'
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       IDL_VALIDNAME('$var')
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       ''
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       IDL_VALIDNAME('$var', /CONVERT_ALL)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       '_$VAR'
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       IDL_VALIDNAME('and')
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       ''
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       IDL_VALIDNAME('and', /CONVERT_ALL)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       '_AND'
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p class="Code">
+       IDL_VALIDNAME(['and', 'or'], /CONVERT_ALL)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       ['_AND', '_OR']
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="I_833016429_937210">
+   </a>
+   <a name="I_833016429_82252">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       6.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Modified to accept string arrays as well as scalar strings
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="I_833016429_937213">
+   </a>
+   <a name="I_833016429_95532">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/CREATE_STRUCT.html#C_854643309_676445">
+    CREATE_STRUCT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

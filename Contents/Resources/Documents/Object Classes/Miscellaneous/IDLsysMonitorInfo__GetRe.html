@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Miscellaneous Object Classes|IDLsysMonitorInfo" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLsysMonitorInfo::GetRectangles
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDLsysMonitorInfo__GetRe.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_misc.html">
+    Miscellaneous Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLsysMonitorInfo::GetRectangles
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_misc_904195448_1078444">
+   </a>
+   <a name="objects_misc_904195448_71690">
+   </a>
+   IDLsysMonitorInfo::GetRectangles
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1078446">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1081922">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1078451">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1078453">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1084253">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor4751">
+   </a>
+   IDLsysMonitorInfo::GetRectangles function method retrieves the monitor coordinate rectangles.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1078446">
+   </a>
+   <a name="objects_misc_904195448_1078446_PageTOC_IDLsysMonitorInfo">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLsysMonitorInfo.html#objects_misc_904195448_1078241">
+    IDLsysMonitorInfo
+   </a>
+   ::]GetRectangles( [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1078454">
+    EXCLUDE_TASKBAR
+   </a>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1081922">
+   </a>
+   <a name="objects_misc_904195448_1081922_PageTOC_IDLsysMonitorInfo">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the monitors’ coordinate rectangles. A coordinate rectangle refers to a 4-element array of the form [
+   <i>
+    x
+   </i>
+   ,
+   <i>
+    y
+   </i>
+   ,
+   <i>
+    w
+   </i>
+   ,
+   <i>
+    h
+   </i>
+   ], where
+   <i>
+    x
+   </i>
+   and
+   <i>
+    y
+   </i>
+   are the origin at the upper-left corner of the rectangle and where
+   <i>
+    w
+   </i>
+   and
+   <i>
+    h
+   </i>
+   are the width and height of the rectangle.
+  </p>
+  <p>
+   There is one row returned in the array for each monitor, each column in the array contains a value for a component of each monitor (see Table 10-3 for the array columns).
+  </p>
+  <table style="width: 367px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Array Columns of the Monitor’s Coordinate Rectangles
+   </p>
+   <col width="134px" />
+   <col width="233px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Array Column
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Content
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       First Column
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Contains the
+       <i>
+        x
+       </i>
+       coordinate of the upper-left pixel of the monitor
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Second Column
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Contains the
+       <i>
+        y
+       </i>
+       coordinate of the upper-left pixel
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Third Column
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Contains the monitor width (
+       <i>
+        w
+       </i>
+       ) in pixels
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       Fourth Column
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Contains the monitor height (
+       <i>
+        h
+       </i>
+       ) in pixels
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   If no monitors are available on the system, or if the DISPLAY_NAME property does not refer to a valid X server connection, IDLsysMonitorInfo::GetRectangles returns a four-element IDL long array containing zero values.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1078451">
+   </a>
+   <a name="objects_misc_904195448_1078451_PageTOC_IDLsysMonitorInfo">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1078453">
+   </a>
+   <a name="objects_misc_904195448_1078453_PageTOC_IDLsysMonitorInfo">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_misc_904195448_1078454">
+   </a>
+   <a name="objects_misc_904195448_72832">
+   </a>
+   EXCLUDE_TASKBAR
+  </h3>
+  <p>
+   Set this keyword to cause the returned monitor rectangle information to
+   <i>
+    not
+   </i>
+   include the region of the monitor occupied by the Windows task bar. This keyword is supported on the Windows platform only and is ignored on all other platforms.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1084253">
+   </a>
+   <a name="objects_misc_904195448_1084253_PageTOC_IDLsysMonitorInfo">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

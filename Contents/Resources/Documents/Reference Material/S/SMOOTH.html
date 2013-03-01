@@ -1,0 +1,786 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   SMOOTH
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/SMOOTH.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    SMOOTH
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_1131767">
+   </a>
+   <a name="S_820040301_12925">
+   </a>
+   <a name="S_820040301_43465">
+   </a>
+   SMOOTH
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_1070506">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1133747">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1070508">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_47235">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1345989">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_820995">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110346">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2413">
+   </a>
+   SMO
+   <a name="kanchor2414">
+   </a>
+   OTH
+   <a name="kanchor2415">
+   </a>
+   function returns a copy of
+   <i>
+    Array
+   </i>
+   <a name="kanchor2416">
+   </a>
+   smoothed with a
+   <a name="kanchor2417">
+   </a>
+   boxcar average of the specified width. The result has the same type and dimensions as
+   <i>
+    Array
+   </i>
+   . The algorithm used by SMOOTH is:
+  </p>
+  <p>
+   <img src="../images/smooth_equation_2.gif" style="width: 461px;height: 105px;" />
+  </p>
+  <p>
+   where
+   <i>
+    N
+   </i>
+   is the number of elements in A.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1070506">
+   </a>
+   <a name="S_820040301_1070506_PageTOC_SMOOTH_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = SMOOTH(
+   <i>
+    Array
+   </i>
+   ,
+   <i>
+    Width
+   </i>
+   [, /
+   <a href="#EDGE_MIR" target="" title="" alt="" class="MCXref_0">
+    EDGE_MIRROR
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_113915">
+    EDGE_TRUNCATE
+   </a>
+   ] [, /
+   <a href="#EDGE_WRA" target="" title="" alt="" class="MCXref_0">
+    EDGE_WRAP
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_1101098">
+    MISSING
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1101095">
+    NAN
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1133747">
+   </a>
+   <a name="S_820040301_38369">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the smoothed array, which has the same dimensions as the input array.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1070508">
+   </a>
+   <a name="S_820040301_1070508_PageTOC_SMOOTH_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Array
+  </h3>
+  <p>
+   The array to be smoothed.
+   <i>
+    Array
+   </i>
+   can have any number of dimensions.
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="#S_820040301_1082296" target="" title="" alt="">
+    Note on Smoothing Over Large Data Ranges
+   </a>
+   if
+   <i>
+    Array
+   </i>
+   contains data from a very wide range of data values.
+  </p>
+  <h3 class="Argument">
+   Width
+  </h3>
+  <p>
+   The width of the smoothing window.
+   <i>
+    Width
+   </i>
+   can either be a scalar or a vector with length equal to the number of dimensions of
+   <i>
+    Array
+   </i>
+   . If
+   <i>
+    Width
+   </i>
+   is a scalar then the same width is applied for each dimension that has length greater than 1 (dimensions of length 1 are skipped). If
+   <i>
+    Width
+   </i>
+   is a vector, then each element of
+   <i>
+    Width
+   </i>
+   is used to specify the smoothing width for each dimension of
+   <i>
+    Array
+   </i>
+   . Values for
+   <i>
+    Width
+   </i>
+   must be smaller than the corresponding
+   <i>
+    Array
+   </i>
+   dimension. If a
+   <i>
+    Width
+   </i>
+   value is even, then
+   <i>
+    Width
+   </i>
+   +1 will be used instead. The value of
+   <i>
+    Width
+   </i>
+   does not affect the running time of SMOOTH to a great extent.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   A Width value of zero or 1 implies no smoothing. However, if the NAN keyword is set, then any NaN values within the Array will be treated as missing data and will be replaced.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   For a multi-dimensional array, set widths to 1 within the Width vector for dimensions that you don't want smoothed.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_47235">
+   </a>
+   <a name="S_820040301_47235_PageTOC_SMOOTH_">
+   </a>
+   Keywords
+  </h2>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If none of the EDGE_* keywords are set, the end points are copied from the original array to the result with no smoothing.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Normally, two-dimensional floating-point arrays are smoothed in one pass. If any of the EDGE_* keywords are specified for a two-dimensional floating-point array, the result is obtained in two passes, first for all of the rows, and second for all of the columns. Therefore, the results for points in the interior of the array may differ slightly when any of the EDGE_* keywords are set. This difference will be most pronounced if the array contains NaN values.
+  </p>
+  <h3 class="Keyword">
+   <a name="EDGE_MIR">
+   </a>
+   EDGE_MIRROR
+  </h3>
+  <p>
+   Set this keyword to apply the smoothing function to all points. If the neighborhood around a point includes a point outside the array, a "mirrored" edge point is used to compute the smoothed result.
+  </p>
+  <p>
+   For example, when smoothing an n-element vector with a five-point-wide smoothing window, the second point of the result R
+   <sub>
+    0
+   </sub>
+   is equal to A
+   <sub>
+    0
+   </sub>
+   if no EDGE_* keywords are set, but is equal to (A
+   <sub>
+    1
+   </sub>
+   +A
+   <sub>
+    0
+   </sub>
+   +A
+   <sub>
+    0
+   </sub>
+   +A
+   <sub>
+    1
+   </sub>
+   +A
+   <sub>
+    2
+   </sub>
+   )/5 if the EDGE_MIRROR keyword is set. In the same manner, point R
+   <sub>
+    n-1
+   </sub>
+   is set to A
+   <sub>
+    n-1
+   </sub>
+   if no EDGE_* keywords are set, or to (A
+   <sub>
+    n-3
+   </sub>
+   +A
+   <sub>
+    n-2
+   </sub>
+   +A
+   <sub>
+    n-1
+   </sub>
+   +A
+   <sub>
+    n-1
+   </sub>
+   +A
+   <sub>
+    n-2
+   </sub>
+   )/5 if EDGE_MIRROR is set.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_113915">
+   </a>
+   <a name="S_820040301_113915_Keywords_SMOOTH__">
+   </a>
+   EDGE_TRUNCATE
+  </h3>
+  <p>
+   Set this keyword to apply the smoothing function to all points. If the neighborhood around a point includes a point outside the array, the nearest edge point is used to compute the smoothed result.
+  </p>
+  <p>
+   For example, when smoothing an
+   <i>
+    n
+   </i>
+   -element vector with a three-point-wide smoothing window, the first point of the result R
+   <sub>
+    0
+   </sub>
+   is equal to A
+   <sub>
+    0
+   </sub>
+   if no EDGE_* keywords are set, but is equal to (A
+   <sub>
+    0
+   </sub>
+   +A
+   <sub>
+    0
+   </sub>
+   +A
+   <sub>
+    1
+   </sub>
+   )/3 if the EDGE_TRUNCATE keyword is set. In the same manner, point R
+   <sub>
+    n-1
+   </sub>
+   is set to A
+   <sub>
+    n-1
+   </sub>
+   if no EDGE_* keywords are set, or to (A
+   <sub>
+    n-2
+   </sub>
+   +A
+   <sub>
+    n-1
+   </sub>
+   +A
+   <sub>
+    n-1
+   </sub>
+   )/3 if EDGE_TRUNCATE is set.
+  </p>
+  <h3 class="Keyword">
+   <a name="EDGE_WRA">
+   </a>
+   EDGE_WRAP
+  </h3>
+  <p>
+   Set this keyword to apply the smoothing function to all points. If the neighborhood around a point includes a point outside the array, a "wrapped" edge point is used to compute the smoothed result.
+  </p>
+  <p>
+   For example, when smoothing an
+   <i>
+    n
+   </i>
+   -element vector with a three-point-wide smoothing window, the first point of the result R
+   <sub>
+    0
+   </sub>
+   is equal to A
+   <sub>
+    0
+   </sub>
+   if no EDGE_* keywords are set, but is equal to (A
+   <sub>
+    n-1
+   </sub>
+   +A
+   <sub>
+    0
+   </sub>
+   +A
+   <sub>
+    1
+   </sub>
+   )/3 if the EDGE_WRAP keyword is set. In the same manner, point R
+   <sub>
+    n-1
+   </sub>
+   is set to A
+   <sub>
+    n-1
+   </sub>
+   if no EDGE_* keywords are set, or to (A
+   <sub>
+    n-2
+   </sub>
+   +A
+   <sub>
+    n-1
+   </sub>
+   +A
+   <sub>
+    0
+   </sub>
+   )/3 if EDGE_WRAP is set.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1101098">
+   </a>
+   <a name="S_820040301_1101098_Keywords_SMOOTH__">
+   </a>
+   MISSING
+  </h3>
+  <p>
+   The value to return for elements that contain no valid points within the kernel. The default is the IEEE floating-point value NaN. This keyword is only used if the NAN keyword is set.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1101095">
+   </a>
+   <a name="S_820040301_1101095_Keywords_SMOOTH__">
+   </a>
+   NAN
+  </h3>
+  <p>
+   Set this keyword to cause the routine to check for occurrences of the IEEE floating-point values
+   <i>
+    NaN
+   </i>
+   or
+   <i>
+    Infinity
+   </i>
+   in the input data. Elements with the value
+   <i>
+    NaN
+   </i>
+   or
+   <i>
+    Infinity
+   </i>
+   are treated as missing data. In the
+   <i>
+    Result
+   </i>
+   , missing elements are replaced by the smoothed value of all other valid points within the smoothing window. If all points within the window are missing, then the result at that point is given by the MISSING keyword.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   SMOOTH should never be called without the NAN keyword if the input array may possibly contain
+   <i>
+    NaN
+   </i>
+   values.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1082296">
+   </a>
+   <a name="S_820040301_68416">
+   </a>
+   Note on Smoothing Over Large Data Ranges
+  </h2>
+  <p>
+   The smallest resolvable difference between two double-precision numbers is about 10
+   <sup>
+    15
+   </sup>
+   . If your data include numbers that span a large range, such as 1 and 10
+   <sup>
+    15
+   </sup>
+   or greater, numerical roundoff effects will degrade the accuracy of the computation.
+  </p>
+  <p>
+   For efficiency, SMOOTH computes a running total using the difference between neighboring values, and then divides by the smooth width. Because of this, if the input data contain data representing a range of values larger than 10
+   <sup>
+    15
+   </sup>
+   , the results may not appear symmetric following the large values. For example:
+  </p>
+  <p class="Code">
+   a = [1.0, 1.0, 2.0, 3.0, 4.0, 1.d18, 4.0, 3.0, 2.0, 1.0, 1.0]
+   <br />
+   PRINT, SMOOTH(a, 3)
+  </p>
+  <p>
+   IDL Prints:
+  </p>
+  <p class="Code">
+   &#160;1.0000000&#160;&#160;&#160;&#160;&#160;&#160;&#160;1.3333333&#160;&#160;&#160;&#160;&#160;&#160;&#160;2.0000000&#160;&#160;&#160;&#160;&#160;&#160;&#160;3.0000000
+  </p>
+  <p class="Code">
+   &#160;3.3333333e+017&#160;&#160;3.3333333e+017&#160;&#160;3.3333333e+017&#160;&#160;0.00000000
+  </p>
+  <p class="Code">
+   -1.0000000&#160;&#160;&#160;&#160;&#160;&#160;-1.6666667&#160;&#160;&#160;&#160;&#160;&#160;&#160;1.0000000
+  </p>
+  <p>
+   A different way to compute the smoothed array is to use the SHIFT operation, which won’t pollute the downstream values. For example:
+  </p>
+  <p class="Code">
+   a = [1.0, 1.0, 2.0, 3.0, 4.0, 1.d18, 4.0, 3.0, 2.0, 1.0, 1.0]
+   <br />
+   PRINT, (a+SHIFT(a,-1)+SHIFT(a,1))/3
+  </p>
+  <p>
+   IDL Prints:
+  </p>
+  <p class="Code">
+   1.0000000&#160;&#160;&#160;&#160;&#160;&#160;&#160;1.3333333&#160;&#160;&#160;&#160;&#160;&#160;&#160;2.0000000&#160;&#160;&#160;&#160;&#160;&#160;&#160;3.0000000
+  </p>
+  <p class="Code">
+   3.3333333e+017&#160;&#160;3.3333333e+017&#160;&#160;3.3333333e+017&#160;&#160;3.0000000
+  </p>
+  <p class="Code">
+   2.0000000&#160;&#160;&#160;&#160;&#160;&#160;&#160;1.3333333&#160;&#160;&#160;&#160;&#160;&#160;&#160;1.0000000
+  </p>
+  <p>
+   This method has the same roundoff errors as using SMOOTH, and uses more memory, but does give symmetric results.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1345989">
+   </a>
+   <a name="S_820040301_1082296_PageTOC_SMOOTH_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following example smoothes a dataset in two different ways.
+  </p>
+  <p class="Code">
+   ; Create and display a simple image
+  </p>
+  <p class="Code">
+   data = SIN(DIST(256)/3)
+  </p>
+  <p class="Code">
+   im1 = image(data, LAYOUT=[3,1,1], DIMENSIONS=[768,400], MARGIN=0)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Display the same dataset smoothed with a width of 9 in each dimension
+  </p>
+  <p class="Code">
+   im2 = image(SMOOTH(data,9), LAYOUT=[3,1,2], /CURRENT, MARGIN=0)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Smooth only in the vertical direction with a width of 15
+  </p>
+  <p class="Code">
+   im3 = image(SMOOTH(data,[1,15]), LAYOUT=[3,1,3], /CURRENT, MARGIN=0)
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../images/smooth_example1.gif" />
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   The following example smoothes an RGB image with the multidimensional width argument.
+  </p>
+  <p class="Code">
+   ; Determine the path to the file.
+  </p>
+  <p class="Code">
+   file = FILEPATH('rose.jpg', $
+  </p>
+  <p class="Code">
+   &#160;&#160;SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Import in the RGB image from the file.
+  </p>
+  <p class="Code">
+   img = READ_IMAGE(file)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Display the original image on the top.
+  </p>
+  <p class="Code">
+   im1 = image(img, LAYOUT=[3,2,2], DIMENSIONS=[800,400])
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Smooth the RGB image in just the width dimension.
+  </p>
+  <p class="Code">
+   im2 = image(SMOOTH(img,[1,1,21]), LAYOUT=[3,2,4], /CURRENT)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Smooth the RGB image in just the height dimension.
+  </p>
+  <p class="Code">
+   im3 = image(SMOOTH(img,[1,21,1]), LAYOUT=[3,2,5], /CURRENT)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Smooth the RGB image in both the width and height dimensions.
+  </p>
+  <p class="Code">
+   im4 = image(SMOOTH(img,[1,5,5]), LAYOUT=[3,2,6], /CURRENT)
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   <img src="../images/smooth_example2.gif" />
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_820995">
+   </a>
+   <a name="S_820040301_820995_PageTOC_SMOOTH_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added EDGE_MIRROR and EDGE_WRAP keywords
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110346">
+   </a>
+   <a name="S_820040301_1110346_PageTOC_SMOOTH_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../D/DIGITAL_FILTER.html#D_843829869_985275">
+    DIGITAL_FILTER
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LEEFILT.html#L_826528365_758191">
+    LEEFILT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../M/MEDIAN.html#M_824365677_1160284">
+    MEDIAN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/TS_DIFF.html#T_809226861_106001">
+    TS_DIFF
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/TS_FCAST.html#T_809226861_54749">
+    TS_FCAST
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/TS_SMOOTH.html#T_809226861_223083">
+    TS_SMOOTH
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

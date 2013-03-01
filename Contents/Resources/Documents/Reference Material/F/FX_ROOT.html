@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: F" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   FX_ROOT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/F/FX_ROOT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="F_list.html">
+    Routines: F
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    FX_ROOT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="F_848155245_749869">
+   </a>
+   <a name="F_848155245_97846">
+   </a>
+   FX_ROOT
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#F_848155245_749876">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_902481">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_749878">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_749892">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_749906">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_35182">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_891406">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1010">
+   </a>
+   FX_ROOT
+   <a name="kanchor1011">
+   </a>
+   function computes a real or complex
+   <a name="kanchor1012">
+   </a>
+   root of a univariate nonlinear function using an optimal
+   <a name="kanchor1013">
+   </a>
+   Müller’s method.
+  </p>
+  <p>
+   FX_ROOT uses an algorithm that is described in section 9.5 of
+   <i>
+    Numerical Recipes in C: The Art of Scientific Computing
+   </i>
+   (Second Edition), published by Cambridge University Press, and is used by permission.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    fx_root.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_749876">
+   </a>
+   <a name="F_848155245_749876_PageTOC_FX_ROOT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = FX_ROOT(
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Func
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_749893">
+    DOUBLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#F_848155245_749897">
+    ITMAX
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_749899">
+    STOP
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#F_848155245_749901">
+    TOL
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_902481">
+   </a>
+   <a name="F_848155245_98718">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The return value is the real or complex root of a univariate nonlinear function. Which root results depends on the initial guess provided for this routine.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_749878">
+   </a>
+   <a name="F_848155245_749878_PageTOC_FX_ROOT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   A 3-element real or complex initial guess vector. Real initial guesses may result in real or complex roots. Complex initial guesses will result in complex roots.
+  </p>
+  <h3 class="Argument">
+   Func
+  </h3>
+  <p>
+   A scalar string specifying the name of a user-supplied IDL function that defines the univariate nonlinear function. This function must accept the argument X, and must return a three-element vector containing the function value at the three points in X.
+  </p>
+  <p>
+   For example, suppose we wish to find a root of the following function:
+  </p>
+  <p style="text-align: center;">
+   <img src="../../images/12_6.jpg" />
+  </p>
+  <p>
+   We write a function FUNC to express the function in the IDL language:
+  </p>
+  <p class="Code">
+   FUNCTION func, X
+   <br />
+   &#160;&#160;RETURN, EXP(SIN(X)^2 + COS(X)^2 - 1) - 1
+   <br />
+   END
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_749892">
+   </a>
+   <a name="F_848155245_749892_PageTOC_FX_ROOT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="F_848155245_749893">
+   </a>
+   <a name="F_848155245_749893_Keywords_FX_ROOT__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_749897">
+   </a>
+   <a name="F_848155245_749897_Keywords_FX_ROOT__">
+   </a>
+   ITMAX
+  </h3>
+  <p>
+   The maximum allowed number of iterations. The default is 100.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_749899">
+   </a>
+   <a name="F_848155245_749899_Keywords_FX_ROOT__">
+   </a>
+   STOP
+  </h3>
+  <p>
+   Use this keyword to specify the stopping criterion used to judge the accuracy of a computed root r(
+   <i>
+    k
+   </i>
+   ). Setting STOP = 0 (the default) checks whether the absolute value of the difference between two successively-computed roots, | r(
+   <i>
+    k
+   </i>
+   ) - r(
+   <i>
+    k
+   </i>
+   +1) | is less than the stopping tolerance TOL. Setting STOP = 1 checks whether the absolute value of the function FUNC at the current root, | FUNC(r(
+   <i>
+    k
+   </i>
+   )) |, is less than TOL.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_749901">
+   </a>
+   <a name="F_848155245_749901_Keywords_FX_ROOT__">
+   </a>
+   TOL
+  </h3>
+  <p>
+   Use this keyword to specify the stopping error tolerance. The default is 1.0&#160;x&#160;10
+   <sup>
+    -4
+   </sup>
+   .
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_749906">
+   </a>
+   <a name="F_848155245_749906_PageTOC_FX_ROOT_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   This example finds the roots of the function FUNC defined above:
+  </p>
+  <p class="Code">
+   ; First define a real 3-element initial guess vector:
+   <br />
+   x = [0.0, -!pi/2, !pi]
+   <br />
+   <br />
+   ; Compute a root of the function using double-precision
+   <br />
+   ; arithmetic:
+   <br />
+   root = FX_ROOT(X, 'FUNC', /DOUBLE)
+   <br />
+   <br />
+   ; Check the accuracy of the computed root:
+   <br />
+   PRINT, EXP(SIN(ROOT)^2 + COS(ROOT)^2 - 1) - 1
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   0.0000000
+  </p>
+  <p>
+   We can also define a complex 3-element initial guess vector:
+  </p>
+  <p class="Code">
+   x = [COMPLEX(-!PI/3, 0), COMPLEX(0, !PI), COMPLEX(0, -!PI/6)]
+   <br />
+   <br />
+   ; Compute the root of the function:
+   <br />
+   root = FX_ROOT(x, 'FUNC')
+   <br />
+   <br />
+   ; Check the accuracy of the computed complex root:
+   <br />
+   PRINT, EXP(SIN(ROOT)^2 + COS(ROOT)^2 - 1) - 1
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   (      0.00000,      0.00000)
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_35182">
+   </a>
+   <a name="F_848155245_35182_PageTOC_FX_ROOT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="F_848155245_891406">
+   </a>
+   <a name="F_848155245_891406_PageTOC_FX_ROOT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../B/BROYDEN.html#B_856805997_50255">
+    BROYDEN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../N/NEWTON.html#N_830853741_927550">
+    NEWTON
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="FZ_ROOTS.html#F_848155245_52509">
+    FZ_ROOTS
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

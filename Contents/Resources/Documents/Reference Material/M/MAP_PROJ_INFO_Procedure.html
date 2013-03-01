@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: M" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   MAP_PROJ_INFO Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/M/MAP_PROJ_INFO_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="M_list.html">
+    Routines: M
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    MAP_PROJ_INFO Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_916372">
+   </a>
+   MAP_PROJ_INFO Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916400">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916430">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916434">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916463">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916471">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916479">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1802">
+   </a>
+   MAP_PROJ_INFO procedure returns information about the current map and/or the available projections.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The MAP_PROJ_INFO procedure is compiled along with the MAP_SET procedure. You
+   <i>
+    must
+   </i>
+   call the
+   <a class="MCXref_Heading_0" href="MAP_SET_Procedure.html#dg_routines_3604229493_892044">
+    MAP_SET Procedure
+   </a>
+   procedure to set up mapping parameters before calling MAP_PROJ_INFO.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in
+   <span class="Courier">
+    map_proj_info.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <p class="API">
+   <a name="dg_routines_3604229493_916400">
+   </a>
+   <a name="dg_routines_3604229493_928037_PageTOC_MAP_PROJ_INFO_">
+   </a>
+   Syntax
+  </p>
+  <p class="Syntax">
+   MAP_PROJ_INFO [,&#160;
+   <i>
+    iproj
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916436">
+    AZIMUTHAL
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916439">
+    CIRCLE
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916445">
+    CYLINDRICAL
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916442">
+    CURRENT
+   </a>
+   ]  [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916448">
+    LL_LIMITS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916451">
+    NAME
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916454">
+    PROJ_NAMES
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916457">
+    UV_LIMITS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_916460">
+    UV_RANGE
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ]
+  </p>
+  <p class="API">
+   <a name="dg_routines_3604229493_916430">
+   </a>
+   <a name="dg_routines_3604229493_918991_PageTOC_MAP_PROJ_INFO_">
+   </a>
+   Arguments
+  </p>
+  <h3 class="Argument">
+   Iproj
+  </h3>
+  <p>
+   The projection index. If the CURRENT keyword is set, then the index of the current map projection is returned in Iproj.
+  </p>
+  <p class="API">
+   <a name="dg_routines_3604229493_916434">
+   </a>
+   <a name="dg_routines_3604229493_918994_PageTOC_MAP_PROJ_INFO_">
+   </a>
+   Keywords
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_916436">
+   </a>
+   <a name="dg_routines_3604229493_918995_Keywords_MAP_PROJ_INFO__">
+   </a>
+   AZIMUTHAL
+  </h3>
+  <p>
+   Set this keyword to a named variable that, upon return, will be set to 1 if the projection is azimuthal and 0 otherwise.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_916439">
+   </a>
+   <a name="dg_routines_3604229493_928077_Keywords_MAP_PROJ_INFO__">
+   </a>
+   CIRCLE
+  </h3>
+  <p>
+   Set this keyword to a named variable that, upon return, will be set to 1 if the projection is circular or elliptical and 0 otherwise.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_916442">
+   </a>
+   <a name="dg_routines_3604229493_918999_Keywords_MAP_PROJ_INFO__">
+   </a>
+   CURRENT
+  </h3>
+  <p>
+   Set this keyword to use the current projection index and return that index in
+   <i>
+    Iproj
+   </i>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_916445">
+   </a>
+   <a name="dg_routines_3604229493_919001_Keywords_MAP_PROJ_INFO__">
+   </a>
+   CYLINDRICAL
+  </h3>
+  <p>
+   Set this keyword to a named variable that, upon return, will be set to 1 if the projection is cylindrical and 0 otherwise.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_916448">
+   </a>
+   <a name="dg_routines_3604229493_919003_Keywords_MAP_PROJ_INFO__">
+   </a>
+   LL_LIMITS
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain the geocoordinate rectangle of the current map in degrees, [Latmin, Lonmin, Latmax, Lonmax]. This range may not always be available, especially if the LIMIT keyword was not specified in the call to MAP_SET. If either or both the longitude and latitude range are not available, the minimum and maximum values will be set to zero.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_916451">
+   </a>
+   <a name="dg_routines_3604229493_919005_Keywords_MAP_PROJ_INFO__">
+   </a>
+   NAME
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain the name of the projection.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_916454">
+   </a>
+   <a name="dg_routines_3604229493_919007_Keywords_MAP_PROJ_INFO__">
+   </a>
+   PROJ_NAMES
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain a string array containing the names of the available projections, ordered by their indices. The first projection name is stored in element one.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_916457">
+   </a>
+   <a name="dg_routines_3604229493_919011_Keywords_MAP_PROJ_INFO__">
+   </a>
+   UV_LIMITS
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain the UV bounding box of the current map, [Umin, Vmin, Umax, Vmax].
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_916460">
+   </a>
+   <a name="dg_routines_3604229493_928995_Keywords_MAP_PROJ_INFO__">
+   </a>
+   UV_RANGE
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain the UV coordinate limits of the selected map projection, [Umin, Vmin, Umax, Vmax]. UV coordinates are mapped to normalized coordinates using the system variables !X.S and !Y.S. These limits are dependent upon the selected projection, but independent of the current map.
+  </p>
+  <p class="API">
+   <a name="dg_routines_3604229493_916463">
+   </a>
+   <a name="dg_routines_3604229493_918984_PageTOC_MAP_PROJ_INFO_">
+   </a>
+   Examples
+  </p>
+  <p class="Code">
+   ; Establish a projection
+   <br />
+   MAP_SET, /MERCATOR
+   <br />
+   <br />
+   ;Obtain projection characteristics
+   <br />
+   MAP_PROJ_INFO, /CURRENT, NAME=name, AZIMUTHAL=az, $
+   <br />
+   CYLINDRICAL=cyl, CIRCLE=cir
+  </p>
+  <p>
+   On return, the variables will be set as follows:
+  </p>
+  <p class="Code">
+   AZ&#160;&#160;&#160;&#160;&#160;INT&#160;&#160;=&#160;&#160;0
+  </p>
+  <p class="Code">
+   CIR&#160;&#160;&#160;&#160;&#160;INT&#160;&#160;=&#160;&#160;0
+  </p>
+  <p class="Code">
+   CYL&#160;&#160;&#160;&#160;&#160;&#160;INT&#160;&#160;=&#160;&#160;1
+  </p>
+  <p class="Code">
+   NAME&#160;&#160;&#160;&#160;&#160;STRING&#160;&#160;'Mercator'
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_916471">
+   </a>
+   <a name="dg_routines_3604229493_948364_PageTOC_MAP_PROJ_INFO_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="API">
+   <a name="dg_routines_3604229493_916479">
+   </a>
+   <a name="dg_routines_3604229493_972912_PageTOC_MAP_PROJ_INFO_">
+   </a>
+   See Also
+  </p>
+  <p>
+   <a class="MCXref_Heading_0" href="MAP_SET_Procedure.html#dg_routines_3604229493_892044">
+    MAP_SET Procedure
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

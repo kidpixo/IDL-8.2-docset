@@ -1,0 +1,413 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: B" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   BESELY
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/B/BESELY.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="B_list.html">
+    Routines: B
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    BESELY
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="B_856805997_986872">
+   </a>
+   <a name="B_856805997_26394">
+   </a>
+   BESELY
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#B_856805997_675826">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_675828">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_986466">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_986525">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_769729">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_986653">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_993410">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor135">
+   </a>
+   BESELY function returns the Y Bessel function of order
+   <i>
+    N
+   </i>
+   for the argument
+   <i>
+    X
+   </i>
+   . The BESELY function is adapted from “SPECFUN - A Portable FORTRAN Package of Special Functions and Test Drivers”, W. J. Cody, Algorithm 715,
+   <i>
+    ACM Transactions on Mathematical Software
+   </i>
+   , Vol 19, No. 1, March 1993.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_675826">
+   </a>
+   <a name="B_856805997_675826_PageTOC_BESELY_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = BESELY(
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    N
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#B_856805997_998720">
+    DOUBLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#B_856805997_998722">
+    ITER
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_675828">
+   </a>
+   <a name="B_856805997_675828_PageTOC_BESELY_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   If both arguments are scalars, the function returns a scalar. If both arguments are arrays, the function matches up the corresponding elements of
+   <i>
+    X
+   </i>
+   and
+   <i>
+    N
+   </i>
+   , returning an array with the same dimensions as the smallest array. If one argument is a scalar and the other argument is an array, the function uses the scalar value with each element of the array, and returns an array with the same dimensions as the smallest input array.
+  </p>
+  <p>
+   If
+   <i>
+    X
+   </i>
+   is double-precision, the result is double-precision, otherwise the result is single-precision.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the function does not converge for an element of
+   <i>
+    X
+   </i>
+   , the corresponding element of the
+   <i>
+    Result
+   </i>
+   array will be set to the IEEE floating-point value NaN.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_986466">
+   </a>
+   <a name="B_856805997_986466_PageTOC_BESELY_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   A scalar or array specifying the values for which the Bessel function is required. Values for
+   <i>
+    X
+   </i>
+   must be in the range 0 to 10
+   <sup>
+    8
+   </sup>
+   .
+  </p>
+  <h3 class="Argument">
+   N
+  </h3>
+  <p>
+   A scalar or array specifying the order of the Bessel function to calculate. Values for
+   <i>
+    N
+   </i>
+   can be integers or real numbers. If
+   <i>
+    N
+   </i>
+   is negative then it must be an integer.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_986525">
+   </a>
+   <a name="B_856805997_986525_PageTOC_BESELY_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="B_856805997_998720">
+   </a>
+   <a name="B_856805997_998720_Keywords_BESELY__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword equal to one to return a double-precision result, or to zero to return a single-precision result. The computations will always be done using double precision. The default is to return a single-precision result if both inputs are single precision, and to return a double-precision result in all other cases.
+  </p>
+  <h3 class="Keyword">
+   <a name="B_856805997_998722">
+   </a>
+   <a name="B_856805997_998722_Keywords_BESELY__">
+   </a>
+   ITER
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain the number of iterations performed. If the routine converged, the stored value will be equal to the order
+   <i>
+    N
+   </i>
+   . If
+   <i>
+    X
+   </i>
+   or
+   <i>
+    N
+   </i>
+   are arrays, ITER will contain a scalar representing the maximum number of iterations.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the routine did not converge for an element of
+   <i>
+    X
+   </i>
+   , the corresponding element of the
+   <i>
+    Result
+   </i>
+   array will be set to the IEEE floating-point value NaN, and ITER will contain the largest order that
+   <i>
+    would have converged
+   </i>
+   for that
+   <i>
+    X
+   </i>
+   value.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_769729">
+   </a>
+   <a name="B_856805997_769729_PageTOC_BESELY_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following example plots the J and Y Bessel functions for orders 0, 1, and 2:
+  </p>
+  <p class="Code">
+   X = FINDGEN(100)/10
+   <br />
+   <br />
+   ;Plot J and Y Bessel Functions:
+   <br />
+   PLOT, X, BESELJ(X, 0), TITLE = 'J and Y Bessel Functions'
+   <br />
+   OPLOT, X, BESELJ(X, 1)
+   <br />
+   OPLOT, X, BESELJ(X, 2)
+   <br />
+   OPLOT, X, BESELY(X, 0), LINESTYLE=2
+   <br />
+   OPLOT, X, BESELY(X, 1), LINESTYLE=2
+   <br />
+   OPLOT, X, BESELY(X, 2), LINESTYLE=2
+   <br />
+   <br />
+   ;Annotate plot:
+   <br />
+   xcoords = [1, 1.66, 3, .7, 1.7, 2.65]
+   <br />
+   ycoords = [.8, .62,.52, -.42, -.42, -.42]
+   <br />
+   labels = ['!8J!X!D0','!8J!X!D1','!8J!X!D2','!8Y!X!D0', $
+   <br />
+   &#160;&#160;&#160;'!8Y!X!D1','!8Y!X!D2']
+   <br />
+   XYOUTS, xcoords, ycoords, labels, /DATA
+  </p>
+  <p>
+   This results in the following plot:
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    The J and Y Bessel Functions.
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p style="text-align: center;">
+       <img src="../../images/beselj1.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999783px;margin-bottom: 5.999752px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   For an example calculating the accuracy of the Bessel function, see Example 2 for the
+   <a class="MCXref_Heading_0" href="BESELJ.html#B_856805997_675815">
+    BESELJ
+   </a>
+   routine.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_986653">
+   </a>
+   <a name="B_856805997_986653_PageTOC_BESELY_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added DOUBLE and ITER keywords
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="B_856805997_993410">
+   </a>
+   <a name="B_856805997_993410_PageTOC_BESELY_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="BESELI.html#B_856805997_983730">
+    BESELI
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="BESELJ.html#B_856805997_675815">
+    BESELJ
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="BESELK.html#B_856805997_989439">
+    BESELK
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

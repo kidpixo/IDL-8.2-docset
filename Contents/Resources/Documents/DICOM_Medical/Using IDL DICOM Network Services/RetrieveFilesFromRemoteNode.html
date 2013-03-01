@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Additional Topics|Medical Imaging in IDL|Using IDL DICOM Network Services|Querying a Remote Machine" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Retrieve Files from a Remote Node
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#DICOM_Medical/Using IDL DICOM Network Services/RetrieveFilesFromRemoteNode.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../OtherTopics.html">
+    Additional Topics
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Expanded DICOM Support in IDL/ExpandedDICOMFunctionality.html">
+    Medical Imaging in IDL
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Overview.html">
+    Using IDL DICOM Network Services
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Retrieve Files from a Remote Node
+   </span>
+  </div>
+  <h2 class="API">
+   Retrieve Files from a Remote Node
+  </h2>
+  <p>
+   <a name="kanchor4988">
+   </a>
+   The
+   <span class="Bold">
+    DICOM Network Services
+   </span>
+   utility lets you retrieve selected DICOM data from a remote machine, and store the files in the directory you associated with the Storage SCP service. To retrieve data, complete the following steps:
+  </p>
+  <ol>
+   <li value="1">
+    Click on the
+    <span class="Bold">
+     Query Retrieve SCU
+    </span>
+    tab of the
+    <span class="Bold">
+     DICOM Network Services
+    </span>
+    utility if it is not already selected.
+   </li>
+   <li value="2">
+    Perform a query against a remote database. See
+    <a class="MCXref_Heading_0" href="#dicom_net_1225099434_1125950">
+     Retrieve Files from a Remote Node
+    </a>
+    for instructions.
+   </li>
+   <li value="3">
+    In the
+    <span class="Bold">
+     Destination Node
+    </span>
+    droplist, select the Application Entity name associated with the current Storage SCP service. If there is more than one Application Entity that supports Storage SCP, you can locate the name of the current entity on the
+    <span class="Bold">
+     Configuration
+    </span>
+    tab in the grayed out
+    <span class="Bold">
+     Storage SCP Application Entity
+    </span>
+    area.
+   </li>
+   <li value="4">
+    <p>
+     In the Navigation Tree portion of the
+     <span class="Bold">
+      Results
+     </span>
+     area, select the patient, study, series or image that you want to retrieve.
+    </p>
+    <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+     <span class="autonumber">
+      <span>
+       <b>
+        Note:
+       </b>
+      </span>
+     </span>
+     If you have selected
+     <span class="Bold">
+      Study Root
+     </span>
+     in the
+     <span class="Bold">
+      Query Model
+     </span>
+     area of the
+     <span class="Bold">
+      Query Fields
+     </span>
+     dialog (described in
+     <a class="MCXref_Heading_0" href="#dicom_net_1225099434_1124618">
+      Retrieve Files from a Remote Node
+     </a>
+     ), you cannot retrieve data at a patient level. You will need to select a study, series or image in the Navigation Tree.
+    </p>
+   </li>
+   <li value="5">
+    Click
+    <span class="Bold">
+     Retrieve
+    </span>
+    to return the selected data. This retrieves all images associated with a selected patient, study or series, or retrieves the selected image. Files are stored in the directory you associated with the Storage SCP Application Entity. The directory location is shown in the grayed out
+    <span class="Bold">
+     Storage SCP Application Entity
+    </span>
+    area on the
+    <span class="Bold">
+     Configuration
+    </span>
+    tab. Retrieve status information is available in the
+    <span class="Bold">
+     Status
+    </span>
+    window.
+   </li>
+  </ol>
+  <p class="NoteIndented">
+   There is a
+   <code>
+    Depot
+   </code>
+   subdirectory located in the directory you specified when configuring the Storage SCP Application Entity. This directory is used in the process of file retrieval and can be ignored. See
+   <a href="AboutStorageSCPServer.html">
+    About the Storage SCP Server
+   </a>
+   for details.
+  </p>
+  <p class="NoteIndented">
+   Existing files with duplicate names are overwritten. See
+   <a href="AboutStorageSCPServer.html">
+    About the Storage SCP Service
+   </a>
+   for details.
+  </p>
+  <h3>
+   Cancelling a Retrieval Operation
+  </h3>
+  <p>
+   To halt the retrieval of data, click the
+   <span class="Bold">
+    Cancel
+   </span>
+   button. This sends a cancel request to the remote node and halts file transfers.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

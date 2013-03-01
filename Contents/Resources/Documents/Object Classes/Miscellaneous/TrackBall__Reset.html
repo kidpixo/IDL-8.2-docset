@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Miscellaneous Object Classes|TrackBall" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   TrackBall::Reset
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Miscellaneous/TrackBall__Reset.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_misc.html">
+    Miscellaneous Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    TrackBall::Reset
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_misc_904195448_1004117">
+   </a>
+   <a name="objects_misc_904195448_28259">
+   </a>
+   TrackBall::Reset
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1004135">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1004138">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1004144">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1004158">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The TrackBall::
+   <a name="kanchor4760">
+   </a>
+   Reset procedure method resets the state of the TrackBall object.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1004135">
+   </a>
+   <a name="objects_misc_904195448_1164875_PageTOC_TrackBall">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="TrackBall.html#objects_misc_904195448_1083177">
+    TrackBall
+   </a>
+   ::]Reset,
+   <i>
+    Center
+   </i>
+   ,
+   <i>
+    Radius
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1004145">
+    AXIS
+   </a>
+   ={0 | 1 | 2}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1004150">
+    CONSTRAIN
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1004152">
+    MOUSE
+   </a>
+   ={1 | 2 | 4}]
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1004138">
+   </a>
+   <a name="objects_misc_904195448_1164877_PageTOC_TrackBall">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Center
+  </h3>
+  <p>
+   A two-element vector, [
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   ], specifying the center coordinates of the trackball.
+   <i>
+    X
+   </i>
+   and
+   <i>
+    Y
+   </i>
+   should be specified in device units.
+  </p>
+  <h3 class="Argument">
+   Radius
+  </h3>
+  <p>
+   The radius of the trackball, specified in device units.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1004144">
+   </a>
+   <a name="objects_misc_904195448_1164882_PageTOC_TrackBall">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_misc_904195448_1004145">
+   </a>
+   <a name="objects_misc_904195448_1004145_Keywords_TrackBall">
+   </a>
+   <a name="objects_misc_904195448_99678">
+   </a>
+   AXIS
+  </h3>
+  <p>
+   Set this keyword to an integer value to indicate the axis about which rotations are to be constrained if the CONSTRAIN keyword is set. Valid values include:
+  </p>
+  <p class="Bullet">
+   0 = Rotate only around the
+   <i>
+    X
+   </i>
+   axis.
+  </p>
+  <p class="Bullet">
+   1 = Rotate only around the
+   <i>
+    Y
+   </i>
+   axis.s
+  </p>
+  <p class="Bullet">
+   2 = Rotate only around the
+   <i>
+    Z
+   </i>
+   axis (this is the default).
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_misc_904195448_1004150">
+   </a>
+   <a name="objects_misc_904195448_1004150_Keywords_TrackBall">
+   </a>
+   <a name="objects_misc_904195448_13547">
+   </a>
+   CONSTRAIN
+  </h3>
+  <p>
+   Set this keyword to indicate that the trackball transformations are to be constrained about the axis specified by the AXIS keyword. The default is not to constrain the transformations.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_misc_904195448_1004152">
+   </a>
+   <a name="objects_misc_904195448_1004152_Keywords_TrackBall">
+   </a>
+   <a name="objects_misc_904195448_30653">
+   </a>
+   MOUSE
+  </h3>
+  <p>
+   Set this keyword to an integer value to indicate which mouse button to honor for trackball events. Valid values include:
+  </p>
+  <p class="Bullet">
+   1 = Left mouse button (the default)
+  </p>
+  <p class="Bullet">
+   2 = Middle mouse button
+  </p>
+  <p class="Bullet">
+   4 = Right mouse button
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1004158">
+   </a>
+   <a name="objects_misc_904195448_31377">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

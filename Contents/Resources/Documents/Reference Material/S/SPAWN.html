@@ -1,0 +1,915 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   SPAWN
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/SPAWN.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    SPAWN
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_1076218">
+   </a>
+   <a name="S_820040301_35911">
+   </a>
+   SPAWN
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_1134182">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_678961">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_678968">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1335552">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_820975">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110369">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2432">
+   </a>
+   SPAWN procedure spawns a child process to execute a command or series of commands. The result of calling SPAWN depends on the platform on which it is being used:
+  </p>
+  <ul>
+   <li value="1">
+    Under UNIX, the shell used (if any) is obtained from the SHELL environment variable. The NOSHELL keyword can be used to execute a command directly as a child process without starting a shell process.
+   </li>
+   <li value="2">
+    Under Windows, a Command Shell is opened. The NOSHELL keyword can be used to execute the specified command directly without starting an intermediate command interpreter shell.
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   See
+   <a class="MCXref_Heading_0" href="#S_820040301_1134447" target="" title="" alt="">
+    Using SPAWN Without a Shell Under UNIX
+   </a>
+   for notes on executing commands without using a shell process under UNIX. See
+   <a class="MCXref_Heading_0" href="#S_820040301_1156033" target="" title="" alt="">
+    Execution Directory under Microsoft Windows
+   </a>
+   for a caution regarding Windows network paths.
+  </p>
+  <p>
+   If SPAWN is called without arguments, an interactive command interpreter process is started, in which you can enter one or more operating system commands.
+  </p>
+  <p>
+   By default, IDL waits for the child process started by SPAWN to finish before it continues. It is possible to have IDL instead continue execution in parallel with the child process. The syntax for this depends on the operating system on your system:
+  </p>
+  <ul>
+   <li value="1">
+    Under UNIX, include an ampersand (&amp;) at the end of your shell command.
+   </li>
+   <li value="2">
+    Under Windows, specify the NOWAIT keyword to SPAWN.
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="S_820040301_1134182">
+   </a>
+   <a name="S_820040301_678959_PageTOC_SPAWN_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   SPAWN [,&#160;
+   <i>
+    Command
+   </i>
+   [,&#160;
+   <i>
+    Result
+   </i>
+   ] [,
+   <i>
+    ErrResult
+   </i>
+   ]&#160;]
+  </p>
+  <p class="Syntax">
+   <span class="Bold">
+    Keywords (all platforms):
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_678969">
+    COUNT
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_678971">
+    EXIT_STATUS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [&#160;,/
+   <a class="MCXref_Heading_0" href="#S_820040301_1108410">
+    NOSHELL
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1134151">
+    NULL_STDIN
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_1084167">
+    PID
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1133968">
+    STDERR
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_1133975">
+    UNIT
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   &#160;{
+   <i>
+    Command
+   </i>
+   &#160;required,&#160;
+   <i>
+    Result
+   </i>
+   &#160;and&#160;
+   <i>
+    ErrResult
+   </i>
+   &#160;not&#160;allowed}]
+  </p>
+  <p class="Syntax">
+   <span class="Bold">
+    UNIX-Only Keywords:
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1134017">
+    NOTTYRESET
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1133965">
+    SH
+   </a>
+   ]
+  </p>
+  <p>
+   <span class="Bold">
+    Windows-Only Keywords:
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1133996">
+    HIDE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1134006">
+    LOG_OUTPUT
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1134051">
+    NOWAIT
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_678961">
+   </a>
+   <a name="S_820040301_678961_PageTOC_SPAWN_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Command
+  </h3>
+  <p>
+   A string containing the commands to be executed.
+  </p>
+  <p>
+   If
+   <i>
+    Command
+   </i>
+   is present, it must be specified as follows:
+  </p>
+  <ul>
+   <li value="1">
+    On UNIX,
+    <i>
+     Command
+    </i>
+    is expected to be scalar unless used in conjunction with the NOSHELL keyword, in which case
+    <i>
+     Command
+    </i>
+    is expected to be a string array where each element is passed to the child process as a separate argument.
+   </li>
+   <li value="2">
+    On Windows,
+    <i>
+     Command
+    </i>
+    can be a scalar string or string array. If it is a string array, SPAWN glues together each element of the string array, with each element separated by whitespace.
+   </li>
+  </ul>
+  <p>
+   If
+   <i>
+    Command
+   </i>
+   is not present, SPAWN starts an interactive command interpreter process, which you can use to enter one or more operating system commands. While you use the command interpreter process, IDL is suspended. Under Windows, an interactive command shell window is created for this purpose. UNIX spawn does not create a separate window, but simply runs on the user’s current tty, using the default shell (as specified by the SHELL environment variable). The SH keyword can be used to force use of the Bourne shell (
+   <span class="Courier">
+    /bin/sh
+   </span>
+   ).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Using SPAWN in this manner is equivalent to using the IDL $ command. The difference between these two is that $ can only be used interactively while SPAWN can be used interactively or in IDL programs
+  </p>
+  <h3 class="Argument">
+   Result
+  </h3>
+  <p>
+   A named variable in which to place the output from the child process. Each line of output becomes a single array element. If
+   <i>
+    Result
+   </i>
+   is not present, the output from the child shell process goes to the standard output (usually the terminal).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <i>
+    Result
+   </i>
+   will be an empty string if the NOWAIT keyword is specified (Windows) or if
+   <i>
+    Command
+   </i>
+   ends in an ampersand (
+   <span class="Courier">
+    &amp;
+   </span>
+   ) (UNIX).
+  </p>
+  <h3 class="Argument">
+   ErrResult
+  </h3>
+  <p>
+   A named variable in which to place the error output (stderr) from the child process. Each line of output becomes a single array element. If
+   <i>
+    ErrResult
+   </i>
+   is not present, the error output from the child shell process goes to the standard error file.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   See the
+   <a class="MCXref_Heading_0" href="#S_820040301_1133968">
+    STDERR
+   </a>
+   keyword for another error stream option.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   <i>
+    ErrResult
+   </i>
+   will be an empty string if the NOWAIT keyword is specified (Windows). If
+   <i>
+    Command
+   </i>
+   ends in an ampersand (
+   <span class="Courier">
+    &amp;
+   </span>
+   ) (UNIX),
+   <i>
+    ErrResult
+   </i>
+   may contain an error string generated by the shell.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_678968">
+   </a>
+   <a name="S_820040301_678968_PageTOC_SPAWN_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="S_820040301_678969">
+   </a>
+   <a name="S_820040301_678969_Keywords_SPAWN__">
+   </a>
+   COUNT
+  </h3>
+  <p>
+   If
+   <i>
+    Result
+   </i>
+   is present and this keyword is also specified, COUNT specifies a named variable into which the number of lines of output is placed. This value gives the number of elements placed into
+   <i>
+    Result
+   </i>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_678971">
+   </a>
+   <a name="S_820040301_678971_Keywords_SPAWN__">
+   </a>
+   EXIT_STATUS
+  </h3>
+  <p>
+   Set this keyword to a named variable in which the exit status for the child process is returned. The meaning of this value is operating system dependent:
+  </p>
+  <ul>
+   <li value="1">
+    Under UNIX, it is the value passed by the child to exit(2), and is analogous to the value returned by $? under most UNIX shells.
+   </li>
+   <li value="2">
+    Under Windows, it is the value returned by the Windows GetExitCodeProcess() system function. If the NOWAIT keyword is set, EXIT_STATUS returns 0.
+   </li>
+  </ul>
+  <p>
+   If the UNIT keyword is used, this keyword always returns 0. In this case, use the EXIT_STATUS keyword to FREE_LUN or CLOSE to determine the final exit status of the process.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1133996">
+   </a>
+   <a name="S_820040301_1133996_Keywords_SPAWN__">
+   </a>
+   HIDE
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on Windows platforms.
+   </i>
+  </p>
+  <p>
+   If HIDE is set, the command interpreter shell window is minimized to prevent the user from seeing it.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1134006">
+   </a>
+   <a name="S_820040301_1134006_Keywords_SPAWN__">
+   </a>
+   LOG_OUTPUT
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on Windows platforms.
+   </i>
+  </p>
+  <p>
+   Normally, IDL starts a command interpreter shell, and output from the child process is displayed in the command interpreter’s window. If LOG_OUTPUT is set, the command interpreter window is minimized (as with HIDE) and all output is diverted to the workbench log window. If the
+   <i>
+    Result
+   </i>
+   or
+   <i>
+    ErrResult
+   </i>
+   arguments are present, they take precedence over LOG_OUTPUT.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1108410">
+   </a>
+   <a name="S_820040301_1108410_Keywords_SPAWN__">
+   </a>
+   NOSHELL
+  </h3>
+  <p>
+   Set this keyword to specify that
+   <i>
+    Command
+   </i>
+   should execute directly as a child process without an intervening shell process.
+  </p>
+  <ul>
+   <li value="1">
+    UNIX – When using the NOSHELL keyword under UNIX, you must specify
+    <i>
+     Command
+    </i>
+    as a string array in which the first element is the name of the command to execute and the following arguments are the arguments to be passed to the command. See
+    <a class="MCXref_Heading_0" href="#S_820040301_1134447" target="" title="" alt="">
+     Using SPAWN Without a Shell Under UNIX
+    </a>
+    for notes on executing commands without using a shell process.
+   </li>
+   <li value="2">
+    Windows – Use this keyword to start the specified
+    <i>
+     Command
+    </i>
+    directly, without the use of an intervening command shell. This is useful for Windows programs that do not require a console, such as Notepad.
+   </li>
+  </ul>
+  <p class="indent">
+   Many common DOS commands (e.g. DIR) are not distinct programs, and are instead implemented as part of the command interpreter. Specifying NOSHELL with such commands results in the command not being found. In such cases, the HIDE keyword might be useful.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1134017">
+   </a>
+   <a name="S_820040301_1134017_Keywords_SPAWN__">
+   </a>
+   NOTTYRESET
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on UNIX platforms.
+   </i>
+  </p>
+  <p>
+   Some UNIX systems drop characters when the tty mode is switched between normal and raw modes.
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   switches between these modes when reading command input and when using the GET_KBRD function. On such systems,
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   avoids losing characters by delaying the switch back to normal mode until it is truly needed. This method has the benefit of avoiding the large number of mode changes that would otherwise be necessary. Routines that cause output to be sent to the standard output (e.g., I/O operations, user interaction and SPAWN) ensure that the tty is in its normal mode before performing their operations.
+  </p>
+  <p>
+   If the NOTTYRESET keyword is set, SPAWN does not switch the tty back to normal mode before launching the child process assuming instead that the child will not send output to the tty. Use this keyword to avoid characters being dropped in a loop of the form:
+  </p>
+  <p class="Code">
+   WHILE (GET_KBRD(0) NE 'q') SPAWN,
+   <i style="font-family: Times;font-style: italic;line-height: 12pt;">
+    command
+   </i>
+  </p>
+  <p>
+   This keyword has no effect on systems that don’t suffer from dropped characters.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1134051">
+   </a>
+   <a name="S_820040301_1134051_Keywords_SPAWN__">
+   </a>
+   NOWAIT
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on Windows platforms.
+   </i>
+  </p>
+  <p>
+   If this keyword is set, the IDL process continues executing in parallel with the subprocess. Normally, the IDL process suspends execution until the subprocess completes.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1134151">
+   </a>
+   <a name="S_820040301_1134151_Keywords_SPAWN__">
+   </a>
+   NULL_STDIN
+  </h3>
+  <p>
+   If set, the null device is connected to the standard input of the child process. The null device is either
+   <span class="Courier">
+    /dev/null
+   </span>
+   (under UNIX) or NUL (under Windows).
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1084167">
+   </a>
+   <a name="S_820040301_1084167_Keywords_SPAWN__">
+   </a>
+   PID
+  </h3>
+  <p>
+   A named variable into which the Process Identification number of the child process is stored.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1133965">
+   </a>
+   <a name="S_820040301_1133965_Keywords_SPAWN__">
+   </a>
+   SH
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on UNIX platforms.
+   </i>
+  </p>
+  <p>
+   Set this keyword to force the use of the Bourne shell (
+   <span class="Courier">
+    /bin/sh
+   </span>
+   ). Usually, the shell used is determined by the SHELL environment variable.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1133968">
+   </a>
+   <a name="S_820040301_1133968_Keywords_SPAWN__">
+   </a>
+   <a name="S_820040301_17766">
+   </a>
+   STDERR
+  </h3>
+  <p>
+   If set, the child’s error output (stderr) is combined with the standard output and returned in
+   <i>
+    Result
+   </i>
+   . STDERR and the
+   <i>
+    ErrResult
+   </i>
+   argument are mutually exclusive. You should use one or the other, but not both.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1133975">
+   </a>
+   <a name="S_820040301_1133975_Keywords_SPAWN__">
+   </a>
+   UNIT
+  </h3>
+  <p>
+   If UNIT is present, SPAWN creates a child process in the usual manner, but instead of waiting for the specified command to finish, it attaches a bidirectional pipe between the child process and
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   . From the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   session, the pipe appears as a logical file unit. The other end of the pipe is attached to the child process standard input and output. The UNIT keyword specifies a named variable into which the number of the file unit is stored.
+  </p>
+  <p>
+   Once the child process is started, the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   session can communicate with it through the usual input/output facilities. After the child process has done its task, the CLOSE procedure can be used to kill the process and close the pipe. Since SPAWN uses GET_LUN to allocate the file unit, FREE_LUN should be used to free the unit.
+  </p>
+  <p>
+   If UNIT is present,
+   <i>
+    Command
+   </i>
+   must be present, and neither
+   <i>
+    Result
+   </i>
+   or
+   <i>
+    ErrResult
+   </i>
+   are allowed.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1134447">
+   </a>
+   <a name="S_820040301_678996_PageTOC_SPAWN_">
+   </a>
+   <a name="S_820040301_56784">
+   </a>
+   Using SPAWN Without a Shell Under UNIX
+  </h2>
+  <p>
+   When a Unix program is run, its name and arguments are provided to it as an array of strings, one string per argument. The first string is the name of the program, and the remainder (if any) are the arguments. C programmers will recognize this as the standard (argc, argv) arguments passed to the main() function when the program is run. When you execute a command via a Unix shell, one of the operations that the shell carries out for you is to split the command and arguments apart on whitespace boundaries (blanks and tabs) to create this array of arguments. It then runs the program for you, using one of the Unix system exec() functions.
+  </p>
+  <p>
+   By default, SPAWN creates a shell process and passes the command to this shell instead of simply creating a child process to directly execute the command. Use of a shell is the default because the shell provides useful facilities such as wildcard expansion and argument processing (described above). Although this is usually desirable, it has the drawback of being slower than necessary, and of using an additional process for the shell.
+  </p>
+  <p>
+   When SPAWN is called with the NOSHELL keyword set, the command is executed as a direct child process, avoiding the extra overhead of starting a shell. This is faster, but since there is no shell, you must specify the arguments in the standard form required by Unix programs. When you specify the NOSHELL keyword, the Command argument should be a string array. The first element of the array is the name of the command to use, and the following elements contain the arguments.
+  </p>
+  <p>
+   For example, consider the command,
+  </p>
+  <p class="Code">
+   SPAWN, 'ps ax'
+  </p>
+  <p>
+   that uses the UNIX
+   <i>
+    ps
+   </i>
+   command to show running processes on the computer. To issue this command without a shell, you would write it as follows:
+  </p>
+  <p class="Code">
+   SPAWN, ['ps', 'ax'], /NOSHELL
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1156033">
+   </a>
+   <a name="S_820040301_70463">
+   </a>
+   Execution Directory under Microsoft Windows
+  </h2>
+  <p>
+   SPAWN attempts to use IDL’s current working directory as the current directory for the spawned process. However, Microsoft Windows does not support the specification of a UNC path as the current directory for a Command Shell. Issuing a SPAWN command when IDL’s current working directory is set to a UNC path will cause Windows to generate an error that looks something like:
+  </p>
+  <p class="Code">
+   CMD.EXE was started with '\\host\dir' as the current directory path. UNC paths are not supported.  Defaulting to Windows directory.
+  </p>
+  <p>
+   If your application requires that you be able to use SPAWN when IDL’s current working directory is set to a directory on a Windows network, consider mapping the UNC path to a Windows drive letter and setting that to be IDL’s working directory.
+  </p>
+  <p>
+   If your SPAWN command contains a directory name with spaces and you are using the
+   <span class="Courier">
+    &lt;
+   </span>
+   or
+   <span class="Courier">
+    &gt;
+   </span>
+   redirect tokens in a DOS window, you may receive an error. If so, you can create a temporary environment variable containing the command as follows:
+  </p>
+  <p class="Code">
+   setenv, 'MYARG="C:\test dir\ins" &lt;  "C:\test dir\refs" &gt;  ^
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;"C:\test dir\outs"'
+  </p>
+  <p class="Code">
+   SPAWN, '%MYARG%'
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1335552">
+   </a>
+   <a name="S_820040301_1108358_PageTOC_SPAWN_">
+   </a>
+   Examples
+  </h2>
+  <h3>
+   <a name="S_820040301_1092413_Keywords_SPAWN__">
+   </a>
+   Example 1: Interactive use of SPAWN
+  </h3>
+  <p>
+   To simply spawn a shell process from within IDL, enter the command:
+  </p>
+  <p class="Code">
+   SPAWN
+  </p>
+  <p>
+   To execute the UNIX
+   <span class="Courier">
+    ls
+   </span>
+   command and return to the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   prompt, enter:
+  </p>
+  <p class="Code">
+   SPAWN, 'ls'
+  </p>
+  <p>
+   To execute the UNIX
+   <span class="Courier">
+    ls
+   </span>
+   command and store the result in the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   string variable
+   <span class="Courier">
+    listing
+   </span>
+   , enter:
+  </p>
+  <p class="Code">
+   SPAWN, 'ls', listing
+  </p>
+  <h3>
+   <a name="S_820040301_1085670_Keywords_SPAWN__">
+   </a>
+   Example 2: Noninteractive use of SPAWN
+  </h3>
+  <p>
+   It is sometimes useful to create a temporary scratch file, removing the file when it is no longer needed. SPAWN could be used as shown below to manage the removal of the scratch file.
+  </p>
+  <p class="Code">
+   OPENW, UNIT, 'scratch.dat', /GET_LUN
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;...IDL commands go here.
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;Deallocate the file unit and close the file.
+  </p>
+  <p class="Code">
+   FREE_LUN, UNIT
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;Use the !VERSION system variable to determine the proper file
+  </p>
+  <p class="Code">
+   ;deletion command for the current operating system.
+  </p>
+  <p class="Code">
+   CASE !VERSION.OS OF
+  </p>
+  <p class="Code">
+   &#160;&#160;'Windows': CMD = 'DEL'
+  </p>
+  <p class="Code">
+   &#160;&#160;ELSE: CMD = 'rm'
+  </p>
+  <p class="Code">
+   ENDCASE
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;Delete the file using SPAWN.
+  </p>
+  <p class="Code">
+   SPAWN, CMD + ' scratch.dat'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The DELETE keyword to the
+   <a class="MCXref_Heading_0" href="../O/OPEN.html#O_828691053_932624">
+    OPENR/OPENU/OPENW
+   </a>
+   procedure or the
+   <a class="MCXref_Heading_0" href="../F/FILE_DELETE.html#F_848155245_882238">
+    FILE_DELETE
+   </a>
+   procedure more efficiently handles this job. The above example should serve only to demonstrate use of the SPAWN procedure.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_820975">
+   </a>
+   <a name="S_820040301_820975_PageTOC_SPAWN_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre-6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Deprecated FORCE, MACCREATOR, NOCLISYM, NOLOGNAME, and NOTIFY keywords
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110369">
+   </a>
+   <a name="S_820040301_1110369_PageTOC_SPAWN_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Appendices/specchars.html#specchars_4267724080_997141">
+    Dollar Sign ($)
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

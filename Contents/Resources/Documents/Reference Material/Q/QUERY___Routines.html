@@ -1,0 +1,717 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: Q" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   QUERY_* Routines
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/NoLines.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/Q/QUERY___Routines.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Q_list.html">
+    Routines: Q
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    QUERY_* Routines
+   </span>
+  </div>
+  <h1>
+   <a name="Q_815714925_982368">
+   </a>
+   <a name="Q_815714925_39107">
+   </a>
+   QUERY_* Routines
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#Q_815714925_1116446">
+     Return Values
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1072337">
+     General Query * Routine Info Structures
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1072333">
+     QUERY_TIFF-Specific Routine Info Structures
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   Query ro
+   <a name="kanchor2149">
+   </a>
+   utines allow users to obtain information about an image or ASCII file without having to read the file. The following QUERY_* routines are available in IDL:
+  </p>
+  <table style="mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="168px" />
+   <col width="168px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_BMP.html#Q_815714925_1112741">
+        QUERY_BMP
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_PICT.html#Q_815714925_1112001">
+        QUERY_PICT
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_DICOM.html#Q_815714925_1045913">
+        QUERY_DICOM
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_PNG.html#Q_815714925_1045630">
+        QUERY_PNG
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_GIF.html#Q_815714925_1093956">
+        QUERY_GIF
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_PPM.html#Q_815714925_1045693">
+        QUERY_PPM
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_IMAGE.html#Q_815714925_1095965" target="" title="" alt="">
+        QUERY_IMAGE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_SRF.html#Q_815714925_1045731">
+        QUERY_SRF
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_JPEG.html#Q_815714925_1068561">
+        QUERY_JPEG
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_TIFF.html#Q_815714925_1045766">
+        QUERY_TIFF
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_MRSID.html#Q_815714925_1073572">
+        QUERY_MRSID
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="QUERY_WAV.html#Q_815714925_1068539">
+        QUERY_WAV
+       </a>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="Q_815714925_1116446">
+   </a>
+   <a name="Q_815714925_15502">
+   </a>
+   Return Values
+  </h2>
+  <p>
+   All of the QUERY_* routines return a result, which is a long with the value of 1 if the query was successful (and the file type was correct) or 0 on failure. If the query was successful, the return argument is an anonymous structure containing all of the available information for that format.
+  </p>
+  <p>
+   The status is intended to be used to determine if it is appropriate to use the corresponding READ_ routine for a given file. The return status of the QUERY_* will indicate success if the corresponding READ_ routine is likely to be able to read the file. The return status will indicate failure for cases that contain formats that are not supported by the READ_ routines, even though the files may be valid outside of the IDL environment. For example, IDL’s READ_BMP does not support 1-bit-deep images and so the QUERY_BMP function would return failure in the case of a monochrome BMP file.
+  </p>
+  <p>
+   For image formats, the returned anonymous structure has (minimally) the following fields. If the file does not support multiple images in a single file, the NUM_IMAGES field will always be 1 and the IMAGE_INDEX field will always be 0. Individual routines document additional fields which are returned for a specific format.
+  </p>
+  <p>
+   The
+   <a class="MCXref_Heading_0" href="QUERY_ASCII.html#Q_815714925_1045490">
+    QUERY_ASCII
+   </a>
+   routine has its own return structure; for more information, see its documentation.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1072337">
+   </a>
+   <a name="Q_815714925_1072337_PageTOC_QUERY___Routines_">
+   </a>
+   General Query * Routine Info Structures
+   <a name="kanchor2150">
+   </a>
+  </h2>
+  <table style="width: 502px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Query Routines Info Structure
+   </p>
+   <col width="144px" />
+   <col width="115px" />
+   <col width="552px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       IDL data type
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       CHANNELS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Number of samples per pixel
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       DIMENSIONS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       2-D long array
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Size of the image in pixels
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       HAS_PALETTE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Integer
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       True if a palette is present
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       NUM_IMAGES
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Number of images in the file
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       IMAGE_INDEX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Image number for which this structure is valid
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       PIXEL_TYPE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Integer
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       IDL basic type code for a pixel sample
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      SBIT_VALUES
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      Byte array
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The values 
+[red, green, blue, gray, alpha] of the original image, if they were set.
+      </p>
+      <p>
+       0 = Grayscale - the sBIT chunk contains a single byte
+      </p>
+      <p>
+       2 = True Color- the SBIT chunk contains three bytes for the red, green and blue channels
+      </p>
+      <p>
+       3 = Indexed Color- the sBIT&#160;chunk contains three bytes for the red, green and blue palette entries
+      </p>
+      <p>
+       4 = Grayscale with Alpha Channel - the sBIT&#160;chunk contains two bytes, for the source grayscale data and source alpha data
+      </p>
+      <p>
+       6 = True Color with Alpha Channel - the sBIT&#160;chunk contains four bytes, for the red, green, blue and alpha channels
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       TYPE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        String
+       </b>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       String identifying the file format
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   All the routines accept the IMAGE_INDEX keyword although formats which do not support multiple images in a single file will ignore this keyword.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1072333">
+   </a>
+   <a name="Q_815714925_1072333_PageTOC_QUERY___Routines_">
+   </a>
+   <a name="Q_815714925_14315">
+   </a>
+   QUERY_TIFF-Specific Routine Info Structures
+  </h2>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    QUERY_TIFF Routine Info Structure
+   </caption>
+   <col />
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       IDL data type
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       BITS_PER_SAMPLE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Number of bits per channel. Possible values are 1, 4, 8, 16, or 32.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       DESCRIPTION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <b>
+        String
+       </b>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       The contents of the TIFF ImageDescription tag, or an empty string of undefined.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       DOCUMENT_NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        String
+       </b>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The contents of the TIFF DocumentName tag, or an empty string if undefined.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       DATE_TIME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <b>
+        String
+       </b>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       The contents of the TIFF DateTime tag, or an empty string if undefined.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ORIENTATION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Image orientation (columns, rows):
+      </p>
+      <p>
+       1 = Left to right, top to bottom (default)
+      </p>
+      <p>
+       2 = Right to left, top to bottom
+      </p>
+      <p>
+       3 = Right to left, bottom to top
+      </p>
+      <p>
+       4 = Left to right, bottom to top
+      </p>
+      <p>
+       5 = Top to bottom, left to right
+      </p>
+      <p>
+       6 = Top to bottom, right to left
+      </p>
+      <p>
+       7 = Bottom to top, right to left
+      </p>
+      <p>
+       8 = Bottom to top, left to right
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       PLANAR_CONFIG
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       How the components of each pixel are stored. Possible values are:
+      </p>
+      <p>
+       1 = Pixel interleaved RGB image or a two-dimensional image (no interleaving exists). Pixel components (such as RGB) are stored contiguously.
+      </p>
+      <p>
+       2 = Image interleaved. Pixel components are stored in separate planes.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       POSITION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Float array
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Two-element vector [X position, Y position] containing the X and Y offsets in the same units as reported in the UNITS field. The X position is relative to the left side of the image. The Y position is relative to the top of the image, with positive Y increasing downwards. If the XPosition or YPosition tag is not defined in the file then a value of 0.0 is returned for that element.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       PHOTOMETRIC
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Color mode used for the image data. Possible values are:
+      </p>
+      <p>
+       0 = White is zero
+      </p>
+      <p>
+       1 = Black is zero
+      </p>
+      <p>
+       2 = RGB color model
+      </p>
+      <p>
+       3 = Palette color model
+      </p>
+      <p>
+       4 = Transparency mask
+      </p>
+      <p>
+       5 = Separated (usually CMYK)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       RESOLUTION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Float array
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Two-element vector [
+       <i>
+        X resolution
+       </i>
+       ,
+       <i>
+        Y resolution
+       </i>
+       ] containing the number of pixels per
+       <i>
+        unit
+       </i>
+       (as reported in the UNITS field).
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       UNITS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Units of measurement for RESOLUTION:
+      </p>
+      <p>
+       1 = No units
+      </p>
+      <p>
+       2 = Inches (the default)
+      </p>
+      <p>
+       3 = Centimeters
+      </p>
+      <p>
+       For example, if the UNITS field contains the value 2, then the values in the RESOLUTION field represent pixels per inch.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       TILE_SIZE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       Long array
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Two-element vector [
+       <i>
+        Tile width
+       </i>
+       ,
+       <i>
+        Tile height
+       </i>
+       ]. Non-tiled images will contain [
+       <i>
+        Image width
+       </i>
+       , 1]
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

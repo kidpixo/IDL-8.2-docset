@@ -1,0 +1,684 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: T" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   TIMEGEN
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/T/TIMEGEN.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="T_list.html">
+    Routines: T
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    TIMEGEN
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="T_809226861_1077128">
+   </a>
+   <a name="T_809226861_20189">
+   </a>
+   TIMEGEN
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#T_809226861_1077142">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1094720">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1077144">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1077147">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1077213">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1077228">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1086485">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2551">
+   </a>
+   TIMEGEN function returns an array, with specified dimensions, of double-precision floating-point values that represent times in terms of Julian
+   <a name="kanchor2552">
+   </a>
+   dates.
+  </p>
+  <p>
+   The Julian date is the number of days elapsed since Jan. 1, 4713 B.C.E., plus the time expressed as a day fraction. Following the astronomical convention, the day is defined to start at 12 PM (noon). Julian
+   <a name="kanchor2553">
+   </a>
+   date 0.0d is therefore Jan. 1, 4713 B.C.E. at 12:00:00.
+  </p>
+  <p>
+   The first value of the returned array corresponds to a Julian date start time, and each subsequent value corresponds to the next Julian date in the sequence. The sequence is determined by specifying the time unit (such as months or seconds) and the step size, or spacing, between the units. You can also construct more complicated arrays by including smaller time units within each major time interval.
+  </p>
+  <p>
+   A small offset is added to each Julian date to eliminate roundoff errors when calculating the day fraction from the hour, minute, second. This offset is given by the larger of EPS and EPS*Julian, where Julian is the integer portion of the Julian date and EPS is the double-precision floating-point precision parameter from
+   <a class="MCXref_Heading_0" href="../M/MACHAR.html#M_824365677_887317">
+    MACHAR
+   </a>
+   . For typical Julian dates the offset is approximately 6x10
+   <sup>
+    -10
+   </sup>
+   (which corresponds to 5x10
+   <sup>
+    -5
+   </sup>
+   seconds). This offset ensures that when the Julian date is converted back to the hour, minute, and second, the hour, minute, and second will have the same integer values.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   Because of the large magnitude of the Julian date (1 Jan 2000 is Julian day 2451545), the precision of most Julian dates is limited to 1 millisecond (0.001 seconds). If you are not interested in the date itself, you can improve the precision by subtracting a large offset or setting the START keyword to zero.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Julian values must be in the range -1095 to 1827933925, which corresponds to calendar dates 1 Jan 4716 B.C.E. and 31 Dec 5000000, respectively.
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1077142">
+   </a>
+   <a name="T_809226861_1077142_PageTOC_TIMEGEN_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = TIMEGEN( [
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   <i>
+    ,...,D
+   </i>
+   <sub class="italic">
+    8
+   </sub>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#T_809226861_1077151">
+    FINAL
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#T_809226861_1077148">
+    DAYS
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#T_809226861_1077154">
+    HOURS
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#T_809226861_1077156">
+    MINUTES
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#T_809226861_1077158">
+    MONTHS
+   </a>
+   =
+   <i style="font-size: 10pt;line-height: 12pt;">
+    vector
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#T_809226861_1077160">
+    SECONDS
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#T_809226861_1077162">
+    START
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#T_809226861_1077166">
+    STEP_SIZE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#T_809226861_1077168">
+    UNITS
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#T_809226861_1077211">
+    YEAR
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1094720">
+   </a>
+   <a name="T_809226861_15537">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the specified time values.
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1077144">
+   </a>
+   <a name="T_809226861_1077144_PageTOC_TIMEGEN_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   D
+   <sub class="italic">
+    i
+   </sub>
+  </h3>
+  <p>
+   The dimensions of the result. The dimension parameters may be any scalar expression. Up to eight dimensions may be specified. If the dimension arguments are not integer values, IDL will truncate them to integer values before creating the new array. The dimension arguments are required unless keyword FINAL is set, in which case they are ignored.
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1077147">
+   </a>
+   <a name="T_809226861_1077147_PageTOC_TIMEGEN_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="T_809226861_1077148">
+   </a>
+   <a name="T_809226861_1077148_Keywords_TIMEGEN__">
+   </a>
+   DAYS
+  </h3>
+  <p>
+   Set this keyword to a scalar or a vector giving the day values that should be included within each month. This keyword is ignored if the UNITS keyword is set to “Days”, “Hours”, “Minutes”, or “Seconds”.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Day values that are beyond the end of the month will be set equal to the last day for that month. For example, setting
+   <span class="Courier">
+    DAY=[31]
+   </span>
+   will automatically return the last day in each month.
+  </p>
+  <h3 class="Keyword">
+   <a name="T_809226861_1077151">
+   </a>
+   <a name="T_809226861_1077151_Keywords_TIMEGEN__">
+   </a>
+   FINAL
+  </h3>
+  <p>
+   Set this keyword to a double-precision value representing the Julian date/time to use as the last value in the returned array. In this case, the dimension arguments are ignored and
+   <i>
+    Result
+   </i>
+   is a one-dimensional array, with the number of elements depending upon the step size. The FINAL time may be less than the START time, in which case STEP_SIZE should be negative.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the step size is not an integer then the last element may not be equal to the FINAL time. In this case, TIMEGEN will return enough elements such that the last element is less than or equal to FINAL.
+  </p>
+  <h3 class="Keyword">
+   <a name="T_809226861_1077154">
+   </a>
+   <a name="T_809226861_1077154_Keywords_TIMEGEN__">
+   </a>
+   HOURS
+  </h3>
+  <p>
+   Set this keyword to a scalar or a vector giving the hour values that should be included within each day. This keyword is ignored if UNITS is set to “Hours”, “Minutes”, or “Seconds”.
+  </p>
+  <h3 class="Keyword">
+   <a name="T_809226861_1077156">
+   </a>
+   <a name="T_809226861_1077156_Keywords_TIMEGEN__">
+   </a>
+   MINUTES
+  </h3>
+  <p>
+   Set this keyword to a scalar or a vector giving the minute values that should be included within each hour. This keyword is ignored if UNITS is set to “Minutes” or “Seconds”.
+  </p>
+  <h3 class="Keyword">
+   <a name="T_809226861_1077158">
+   </a>
+   <a name="T_809226861_1077158_Keywords_TIMEGEN__">
+   </a>
+   MONTHS
+  </h3>
+  <p>
+   Set this keyword to a scalar or a vector giving the month values that should be included within each year. This keyword is ignored if UNITS is set to “Months”, “Days”, “Hours”, “Minutes”, or “Seconds”.
+  </p>
+  <h3 class="Keyword">
+   <a name="T_809226861_1077160">
+   </a>
+   <a name="T_809226861_1077160_Keywords_TIMEGEN__">
+   </a>
+   SECONDS
+  </h3>
+  <p>
+   Set this keyword to a scalar or a vector giving the second values that should be included within each minute. This keyword is ignored if UNITS is set to “Seconds”.
+  </p>
+  <h3 class="Keyword">
+   <a name="T_809226861_1077162">
+   </a>
+   <a name="T_809226861_1077162_Keywords_TIMEGEN__">
+   </a>
+   START
+  </h3>
+  <p>
+   Set this keyword to a double-precision value representing the Julian date/time to use as the first value in the returned array. The default is 0.0d [corresponding to January 1, 4713 B.C.E. at 12 pm (noon)].
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If subintervals are provided by MONTHS, DAYS, HOURS, MINUTES, or SECONDS, then the first element may not be equal to the START time. In this case the first element in the returned array will be greater than or equal to START.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   Other array generation routines in IDL (such as FINDGEN) do not allow you to specify a starting value because the resulting array can be added to a scalar representing the start value. For TIMEGEN it is correct to add a scalar to the array if the units are days, hours, minutes, seconds, or sub-seconds. For example:
+   <br />
+   <span class="Courier">
+    MyTimes = TIMEGEN(365, UNITS="Days") + SYSTIME(/JULIAN)
+   </span>
+   <br />
+   <br />
+   <br />
+   However, if the units are months or years, the start value is necessary because the number of days in a month or year can vary depending upon the year in which they fall (for instance, consider leap years). For example:
+   <br />
+   <span class="Courier">
+    MyTimes = TIMEGEN(12, UNITS="Months", START=JULDAY(1,1,2000))
+   </span>
+   <br />
+  </p>
+  <h3 class="Keyword">
+   <a name="T_809226861_1077166">
+   </a>
+   <a name="T_809226861_1077166_Keywords_TIMEGEN__">
+   </a>
+   STEP_SIZE
+  </h3>
+  <p>
+   Set this keyword to a scalar value representing the step size between the major intervals of the returned array. The step size may be negative. The default step size is 1. When the UNITS keyword is set to “Years” or “Months”, the STEP_SIZE value is rounded to the nearest integer.
+  </p>
+  <h3 class="Keyword">
+   <a name="T_809226861_1077168">
+   </a>
+   <a name="T_809226861_1077168_Keywords_TIMEGEN__">
+   </a>
+   UNITS
+  </h3>
+  <p>
+   Set this keyword to a scalar string indicating the time units to be used for the major intervals for the generated array. Valid values include:
+  </p>
+  <p class="Bullet">
+   “Years” or “Y”
+  </p>
+  <p class="Bullet">
+   “Months” or “M”
+  </p>
+  <p class="Bullet">
+   “Days” or “D”
+  </p>
+  <p class="Bullet">
+   “Hours” or “H”
+  </p>
+  <p class="Bullet">
+   “Minutes” or “I”
+  </p>
+  <p class="Bullet">
+   “Seconds” or “S”
+  </p>
+  <p>
+   The case (upper or lower) is ignored. If this keyword is not specified, then the default for UNITS is the time unit that is larger than the largest keyword present:
+  </p>
+  <table style="width: 309px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Defaults for the UNITS keyword
+   </p>
+   <col width="150px" />
+   <col width="159px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Largest Keyword Present
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Default UNITS
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       SECONDS=
+       <i>
+        vector
+       </i>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       “Minutes”
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       MINUTES=
+       <i>
+        vector
+       </i>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       “Hours”
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       HOURS=
+       <i>
+        vector
+       </i>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       “Days”
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       DAYS=
+       <i>
+        vector
+       </i>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       “Months”
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       MONTHS=
+       <i>
+        vector
+       </i>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       “Years”
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       YEAR=
+       <i>
+        value
+       </i>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       “Years”
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   If none of the above keywords are present, the default is UNITS=“Days”.
+  </p>
+  <h3 class="Keyword">
+   <a name="T_809226861_1077211">
+   </a>
+   <a name="T_809226861_1077211_Keywords_TIMEGEN__">
+   </a>
+   YEAR
+  </h3>
+  <p>
+   Set this keyword to a scalar giving the starting year. If YEAR is specified then the starting year from START is ignored.
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1077213">
+   </a>
+   <a name="T_809226861_1077213_PageTOC_TIMEGEN_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Generate an array of 366 time values that are one day apart starting with January 1, 2000:
+  </p>
+  <p class="Code">
+   MyDates = TIMEGEN(366, START=JULDAY(1,1,2000))
+  </p>
+  <p>
+   Generate an array of 20 time values that are 12 hours apart starting with the current time:
+  </p>
+  <p class="Code">
+   MyTimes = TIMEGEN(20, UNITS='Hours', STEP_SIZE=12, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;START=SYSTIME(/JULIAN))
+  </p>
+  <p>
+   Generate an array of time values that are 1 hour apart from 1 January 2000 until the current time:
+  </p>
+  <p class="Code">
+   MyTimes = TIMEGEN(START=JULDAY(1,1,2000), $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;FINAL=SYSTIME(/JULIAN), UNITS='Hours')
+  </p>
+  <p>
+   Generate an array of time values composed of seconds, minutes, and hours that start from the current hour:
+  </p>
+  <p class="Code">
+   MyTimes = TIMEGEN(60, 60, 24, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;START=FLOOR(SYSTIME(/JULIAN)*24)/24d, UNITS='S')
+  </p>
+  <p>
+   Generate an array of 24 time values with monthly intervals, but with subintervals at 5 PM on the first and fifteenth of each month:
+  </p>
+  <p class="Code">
+   MyTimes = TIMEGEN(24, START=FLOOR(SYSTIME(/JULIAN)), $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;DAYS=[1,15], HOURS=17)
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1077228">
+   </a>
+   <a name="T_809226861_1077228_PageTOC_TIMEGEN_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="T_809226861_1086485">
+   </a>
+   <a name="T_809226861_87834">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Components of the IDL Language/Format_Codes.html#files_2839720996_168633" target="" title="" alt="">
+    Format Codes
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../C/CALDAT.html#C_854643309_1083750">
+    CALDAT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../J/JULDAY.html#J_839504493_762378">
+    JULDAY
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SYSTIME.html#S_820040301_762665">
+    SYSTIME
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

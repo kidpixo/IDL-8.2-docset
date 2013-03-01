@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF-EOS Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   EOS_SW_INQMAPS
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF-EOS Routines/EOS_SW_INQMAPS.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF-EOS Routines.html">
+    HDF-EOS Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    EOS_SW_INQMAPS
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_EOS_3103509269_1012588">
+   </a>
+   <a name="HDF_EOS_3103509269_85181">
+   </a>
+   EOS_SW_INQMAPS
+  </h1>
+  <p>
+   This function
+   <a name="kanchor852">
+   </a>
+   retrieves information about all of the (non-indexed) geolocation relations defined in swath. The dimension mapping list is returned as a string with each mapping separated by commas. The two dimensions in each mapping are separated by a slash (/).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   See
+   <a href="../../S/STRSPLIT.html">
+    STRSPLIT
+   </a>
+   to separate the mapping list.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018629_PageTOC_EOS_SW_INQMAPS_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = EOS_SW_INQMAPS(
+   <span class="_Override" style="font-style: italic;">
+    swathID
+   </span>
+   ,
+   <span class="_Override" style="font-style: italic;">
+    dimmap
+   </span>
+   ,
+   <span class="_Override" style="font-style: italic;">
+    offset
+   </span>
+   ,
+   <span class="_Override" style="font-style: italic;">
+    increment
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018632_PageTOC_EOS_SW_INQMAPS_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Number of geolocation relation entries found. If –1, could signify an improper swath id.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018634_PageTOC_EOS_SW_INQMAPS_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   swathID
+  </h3>
+  <p>
+   Swath id (long) returned by
+   <a class="MCXref_Heading_0" href="EOS_SW_CREATE.html#HDF_EOS_3103509269_1011130">
+    EOS_SW_CREATE
+   </a>
+   or
+   <a class="MCXref_Heading_0" href="EOS_SW_ATTACH.html#HDF_EOS_3103509269_1010903">
+    EOS_SW_ATTACH
+   </a>
+   .
+  </p>
+  <h3 class="Argument">
+   dimmap
+  </h3>
+  <p>
+   A named variable that will contain the dimension mapping list (string) with entries separated by commas.
+  </p>
+  <h3 class="Argument">
+   offset
+  </h3>
+  <p>
+   A named variable that will contain an array (long) of the offset of each geolocation relation.
+  </p>
+  <h3 class="Argument">
+   increment
+  </h3>
+  <p>
+   A named variable that contain an array (long) of the increment of each geolocation relation.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1064323_PageTOC_EOS_SW_INQMAPS_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018645_PageTOC_EOS_SW_INQMAPS_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   nmaps = EOS_SW_INQMAPS(swathID, dimmap, offset, increment)
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1052951_PageTOC_EOS_SW_INQMAPS_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,531 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Network Object Classes|IDLnetOGCWMS" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLnetOGCWMS::GetFeatureInfo
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Network/IDLnetOGCWMS__GetFeature.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_network.html">
+    Network Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLnetOGCWMS::GetFeatureInfo
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_network_1009015_1394332">
+   </a>
+   <a name="objects_network_1009015_20212">
+   </a>
+   I
+   <a name="kanchor4783">
+   </a>
+   DLnetOGCWMS::GetFeatureInfo
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1394395">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1394401">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1394404">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1394510">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1394513">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1394517">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1394525">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLnetOGCWMS::GetFeatureInfo function method retrieves a feature information file from a remote OGC WMS server and writes the file to disk. This file contains information about a specific feature. The value of the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetLayers.html#objects_network_1009015_1394914">
+    QUERYABLE
+   </a>
+   tag in the structure returned by
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetLayers.html#objects_network_1009015_1394533">
+    IDLnetOGCWMS::GetLayers
+   </a>
+   can be used to determine if the server supports GetFeatureInfo for a particular layer. The OGC WMS server may not offer this support for every layer.
+  </p>
+  <p>
+   The feature file location is specified by the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS_Properties.html#objects_network_1009015_1392964">
+    FEATURE_INFO_FILENAME
+   </a>
+   property, and will be overwritten if this property value remains unchanged between GetFeatureInfo requests.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS_Properties.html#objects_network_1009015_1393513">
+    URL_PATH
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS_Properties.html#objects_network_1009015_1393474">
+    URL_HOSTNAME
+   </a>
+   properties must be set before requesting information from a remote WMS server. You can either set these properties manually or pass a URL to the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__ParseUrl.html#objects_network_1009015_1396203">
+    IDLnetOGCWMS::ParseUrl
+   </a>
+   method prior to making a request. If you are dealing with a proxy server, you must also set the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS_Properties.html#objects_network_1009015_1393188">
+    PROXY_HOSTNAME
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS_Properties.html#objects_network_1009015_1393244">
+    PROXY_PORT
+   </a>
+   properties to the correct values.
+  </p>
+  <p>
+   This method returns only when one of the following occur:
+  </p>
+  <ul>
+   <li value="1">
+    Completes retrieval of information from server
+   </li>
+   <li value="2">
+    Encounters an HTTP error
+   </li>
+   <li value="3">
+    Encounters an OGC exception
+   </li>
+   <li value="4">
+    Responds to a cancel request as specified in a callback return value
+   </li>
+  </ul>
+  <p>
+   You can implement a callback to return status information during the request by setting the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS_Properties.html#objects_network_1009015_1392783">
+    CALLBACK_FUNCTION
+   </a>
+   property. You can also use a callback to cancel a request. See
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS.html#objects_network_1009015_1402107">
+    Using Callbacks with the IDLnetOGCWMS Object
+   </a>
+   for details. This method will throw an error if the GetFeatureInfo request fails.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1394395">
+   </a>
+   <a name="objects_network_1009015_86135">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result = Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS.html#objects_network_1009015_1392001">
+    IDLnetOGCWMS
+   </a>
+   ::]GetFeatureInfo(
+   <i>
+    Feature_Info_Request
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1394401">
+   </a>
+   <a name="objects_network_1009015_57255">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The return value is a string containing the path to the file returned by this request or an empty string if no file was returned.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1394404">
+   </a>
+   <a name="objects_network_1009015_91565">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Feature_Info_Request
+  </h3>
+  <p>
+   The
+   <i>
+    Feature_Info_Request
+   </i>
+   argument must be a string that contains the required request parameters separated by the &amp; character. These elements can be extracted from the structures returned by the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetLayers.html#objects_network_1009015_1394533">
+    IDLnetOGCWMS::GetLayers
+   </a>
+   method, and many are the same parameters used in the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetMap.html#objects_network_1009015_1395569">
+    IDLnetOGCWMS::GetMap
+   </a>
+   request. The required elements are shown in the following table, and match those described in the OGC Web Map Service (WMS) specification. See the OGC web site (
+   <a href="http://www.opengeospatial.org">
+    www.opengeospatial.org
+   </a>
+   ) for specification details.
+  </p>
+  <table style="mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom">
+   </caption>
+   <p class="TableTitle">
+    Required Elements of a GetFeatureInfo Request
+   </p>
+   <col width="219px" />
+   <col width="280px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Parameter
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_64609">
+       </a>
+       SRS=namespace:identifier
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Spatial Reference System used in 1.1.1 requests. Required.
+      </p>
+      <p>
+       Source — the GetMap request parameter,
+       <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetMap.html#objects_network_1009015_1395674">
+        SRS= namespace:identifier
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       CRS=namespace:identifier
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Spatial Reference System used in 1.3.0 requests. Required.
+      </p>
+      <p>
+       Source — the GetMap request parameter,
+       <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetMap.html#objects_network_1009015_1395686">
+        CRS= namespace:identifier
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       BBOX=minx, miny, maxx, maxy
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       A coverage subset as defined by the bounding box coordinate pairs defining corners (lower left, upper right), in SRS units. Required.
+      </p>
+      <p>
+       Source — the GetMap request parameter,
+       <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetMap.html#objects_network_1009015_1395698">
+        BBOX=minx, miny, maxx, maxy
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       WIDTH=output_width
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Width of map image in pixels. Required.
+      </p>
+      <p>
+       Source — the GetMap request parameter,
+       <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetMap.html#objects_network_1009015_1395719">
+        WIDTH=output_width
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       HEIGHT=output_height
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Height of map image in pixels. Required.
+      </p>
+      <p>
+       Source — the GetMap request parameter,
+       <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetMap.html#objects_network_1009015_1395724">
+        HEIGHT=output_height
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       QUERY_LAYERS=layer_list
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Comma-separated list of one or more map layers. Required.
+      </p>
+      <p>
+       Source — layer names must be one or more of the layer names specified in the
+       <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetMap.html#objects_network_1009015_1395648">
+        LAYERS=layer_list
+       </a>
+       parameter of the
+       <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetMap.html#objects_network_1009015_1395569">
+        IDLnetOGCWMS::GetMap
+       </a>
+       call.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       INFO_FORMAT=format
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Return format information of feature. Required.
+      </p>
+      <p>
+       Source — in the
+       <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetLayers.html#objects_network_1009015_1394651">
+        Main Layer Structure
+       </a>
+       , see
+       <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetLayers.html#objects_network_1009015_1394711">
+        FEATURE_FORMAT
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       X=pixel_column
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       X-coordinate of feature in pixels in map coordinate system. Valid in version 1.1.1 only. Required.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Y=pixel_row
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Y-coordinate of feature in pixels in map coordinate system. Valid in version 1.1.1 only. Required.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       I=pixel_column
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       I-coordinate of feature in pixels in map coordinate system. Valid in version 1.3.0 only. Required.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       J=pixel_row
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       J-coordinate of feature in pixels in map coordinate system. Valid in version 1.3.0 only. Required.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       FEATURE_COUNT=number
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Number of features about which to return information (defaults to 1). Optional
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_network_1009015_1394510">
+   </a>
+   <a name="objects_network_1009015_67816">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1394513">
+   </a>
+   <a name="objects_network_1009015_39050">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS.html#objects_network_1009015_1397425">
+    Sample WMS Browser
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1394517">
+   </a>
+   <a name="objects_network_1009015_84548">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_network_1009015_1394525">
+   </a>
+   <a name="objects_network_1009015_54603">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetLayers.html#objects_network_1009015_1394533">
+    IDLnetOGCWMS::GetLayers
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetMap.html#objects_network_1009015_1395569">
+    IDLnetOGCWMS::GetMap
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

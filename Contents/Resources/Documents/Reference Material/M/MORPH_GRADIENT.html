@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: M" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   MORPH_GRADIENT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/M/MORPH_GRADIENT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="M_list.html">
+    Routines: M
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    MORPH_GRADIENT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="M_824365677_948880">
+   </a>
+   <a name="M_824365677_70879">
+   </a>
+   MORPH_GRADIENT
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#M_824365677_948975">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_993190">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_948977">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_948982">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_948991">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_954247">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_973029">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1908">
+   </a>
+   MORPH_GRADIENT function applies the morphological gradient operator to a grayscale image. MORPH_GRADIENT is the subtraction of an eroded version of the original image from a dilated version of the original image.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    morph_gradient.pro
+   </span>
+   in the lib subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_948975">
+   </a>
+   <a name="M_824365677_948975_PageTOC_MORPH_GRADIENT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = MORPH_GRADIENT (
+   <i>
+    Image
+   </i>
+   ,
+   <i>
+    Structure
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_948983">
+    PRESERVE_TYPE
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    bytearray
+   </span>
+   | /
+   <a class="MCXref_Heading_0" href="#M_824365677_948985">
+    UINT
+   </a>
+   | /
+   <a class="MCXref_Heading_0" href="#M_824365677_948987">
+    ULONG
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_948989">
+    VALUES
+   </a>
+   =
+   <i>
+    array
+   </i>
+   ]&#160;)
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_993190">
+   </a>
+   <a name="M_824365677_24188">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The practical result of a morphological gradient operation is that the boundaries of features are highlighted.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_948977">
+   </a>
+   <a name="M_824365677_948977_PageTOC_MORPH_GRADIENT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Image
+  </h3>
+  <p>
+   A one-, two-, or three-dimensional array upon which the morphological gradient operation is to be performed.
+  </p>
+  <h3 class="Argument">
+   Structure
+  </h3>
+  <p>
+   A one-, two-, or three-dimensional array to be used as the structuring element. The elements are interpreted as binary values - either zero or nonzero. The structuring element must have the same number of dimensions as the
+   <i>
+    Image
+   </i>
+   argument.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_948982">
+   </a>
+   <a name="M_824365677_948982_PageTOC_MORPH_GRADIENT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="M_824365677_948983">
+   </a>
+   <a name="M_824365677_948983_Keywords_MORPH_GRADIENT__">
+   </a>
+   PRESERVE_TYPE
+  </h3>
+  <p>
+   Set this keyword to return the same type as the input array. The input array must be of type BYTE, UINT, or ULONG. This keyword only applies for grayscale erosion/dilation, and is mutually exclusive of the UINT and ULONG keywords.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_948985">
+   </a>
+   <a name="M_824365677_948985_Keywords_MORPH_GRADIENT__">
+   </a>
+   UINT
+  </h3>
+  <p>
+   Set this keyword to return an unsigned integer array. This keyword is mutually exclusive of the ULONG and PRESERVE_TYPE keywords.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_948987">
+   </a>
+   <a name="M_824365677_948987_Keywords_MORPH_GRADIENT__">
+   </a>
+   ULONG
+  </h3>
+  <p>
+   Set this keyword to return an unsigned longword integer array. This keyword is mutually exclusive of the UINT and PRESERVE_TYPE keywords.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_948989">
+   </a>
+   <a name="M_824365677_948989_Keywords_MORPH_GRADIENT__">
+   </a>
+   VALUES
+  </h3>
+  <p>
+   An array of the same dimensions as the
+   <i>
+    Structure
+   </i>
+   argument providing the values of the structuring element. If the VALUES keyword is not present, all elements of the structuring element are 0.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_948991">
+   </a>
+   <a name="M_824365677_948991_PageTOC_MORPH_GRADIENT_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following code reads a data file in the IDL Demo data directory containing a magnified image of grains of pollen. It then creates disc of radius 2, in a 5 by 5 array, with all elements within a radius of 2 from the center set to 1. This disc is used as the structuring element for the morphological gradient which is then displayed as both a gray scale image, and as a thresholded image.
+  </p>
+  <p class="Code">
+   ;Handle TrueColor displays:
+   <br />
+   DEVICE, DECOMPOSED=0
+   <br />
+   <br />
+   ;Read the image
+   <br />
+   path=FILEPATH('pollens.jpg',SUBDIR=['examples','demo','demodata'])
+   <br />
+   READ_JPEG, path, img
+   <br />
+   <br />
+   ; Create window:
+   <br />
+   WINDOW, 0, XSIZE=700, YSIZE=540
+   <br />
+   <br />
+   ;Show original image
+   <br />
+   XYOUTS, 180, 525, 'Original Image', ALIGNMENT=.5, /DEVICE
+   <br />
+   TVSCL, img, 20, 280
+   <br />
+   <br />
+   ;Define disc radius
+   <br />
+   r = 2
+   <br />
+   <br />
+   ;Create a binary disc of given radius.
+   <br />
+   disc = SHIFT(DIST(2*r+1), r, r) LE r
+   <br />
+   <br />
+   bdisc = MORPH_GRADIENT(img, disc)
+   <br />
+   <br />
+   ;Show edges
+   <br />
+   XYOUTS, 520, 525, 'Edges', ALIGNMENT=.5, /DEVICE
+   <br />
+   TVSCL, bdisc, 360, 280
+   <br />
+   <br />
+   ;Show thresholded edges
+   <br />
+   XYOUTS, 180, 265, 'Threshold Edges', ALIGNMENT=.5, /DEVICE
+   <br />
+   TVSCL, bdisc ge 100, 20, 20
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_954247">
+   </a>
+   <a name="M_824365677_954247_PageTOC_MORPH_GRADIENT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="M_824365677_973029">
+   </a>
+   <a name="M_824365677_973029_PageTOC_MORPH_GRADIENT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../D/DILATE.html#D_843829869_747869">
+    DILATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../E/ERODE.html#E_841667181_989418">
+    ERODE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_CLOSE.html#M_824365677_1117238">
+    MORPH_CLOSE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_DISTANCE.html#M_824365677_948885">
+    MORPH_DISTANCE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_HITORMISS.html#M_824365677_930030">
+    MORPH_HITORMISS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_OPEN.html#M_824365677_930051">
+    MORPH_OPEN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_THIN.html#M_824365677_930961">
+    MORPH_THIN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_TOPHAT.html#M_824365677_930077">
+    MORPH_TOPHAT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

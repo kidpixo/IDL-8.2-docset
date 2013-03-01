@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: F" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   FILE_POLL_INPUT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/F/FILE_POLL_INPUT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="F_list.html">
+    Routines: F
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    FILE_POLL_INPUT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="F_848155245_957168">
+   </a>
+   <a name="F_848155245_20115">
+   </a>
+   FILE_POLL_INPUT
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#F_848155245_957337">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_957339">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_957341">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_957344">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_957362">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_957369">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   Given a list of file logical units (LUNs), the
+   <a name="kanchor949">
+   </a>
+   FILE_POLL_INPUT function will
+   <i>
+    block
+   </i>
+   (not return) until it detects that a read operation for a byte of data from at least one of the specified files will succeed. On return, FILE_POLL_INPUT reports True (1) for each file for which a read operation will succeed, or False (0) for those that will not succeed.
+  </p>
+  <p>
+   This operation is of particular interest when using internet socket files opened with the SOCKET procedure. If a program opens multiple sockets and reads from any one of them, the read operation will block until data becomes available from the server on the other end of the connection. While blocked in an input operation, the program is unable to respond to data that might become available on any of the other sockets. This can be a serious problem, since latencies on internet connections can be large, and response times inconsistent. The solution to this problem is to block in FILE_POLL_INPUT, giving it the file LUNs of all the open socket files. FILE_POLL_INPUT will wait until one or more of the specified files has data available, and then return the blocking status of each file.
+  </p>
+  <p>
+   If FILE_POLL_INPUT returns False for a given file, your program can safely assume that a read operation on that file will block for an arbitrary amount of time until data becomes available. If it returns True, the current situation is one of the following:
+  </p>
+  <p class="Bullet">
+   There is at least one byte of data immediately available
+  </p>
+  <p class="Bullet">
+   An input operation on that file will immediately generate an error. For example, a file that is at EOF (end of file) will be reported as True
+  </p>
+  <p>
+   In other words, a True value from FILE_POLL_INPUT ensures that an input operation will not block, not that it will necessarily succeed.
+  </p>
+  <p>
+   In the case where a True value from FILE_POLL_INPUT means that there is data available, the guarantee only applies to a single byte of data. If your program is expecting to read more than a single byte, the possibility exists that your program will still block while waiting for data beyond the first byte. In cases where this is a critical concern, you may need to use repeated calls to FILE_POLL_INPUT, reading your data one byte at a time. In the vast majority of cases this is unnecessary — the presence of the first byte of data is a strong indication that the rest of the data is either present or will be present in the very near future. For example, if you are reading a 4-byte integer, the presence of the 1st byte is a fairly safe indication that the following 3 bytes are also available.
+  </p>
+  <p>
+   FILE_POLL_INPUT will return immediately if used with any of the following types of files:
+  </p>
+  <p class="Bullet">
+   A regular disk file (even if it physically resides on network based storage)
+  </p>
+  <p class="Bullet">
+   The standard input LUN, if IDL is running with the workbench graphical user interface
+  </p>
+  <p>
+   Since these file types always return True, there is no reason to ever pass one to FILE_POLL_INPUT. FILE_POLL_INPUT is therefore of primary interest when used with sockets. Under UNIX operating systems, it can also be used with ttys, pipes, and other device special files.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_957337">
+   </a>
+   <a name="F_848155245_957337_PageTOC_FILE_POLL_INPUT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = FILE_POLL_INPUT(
+   <i>
+    Units
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#F_848155245_957345">
+    COUNT
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#F_848155245_957347">
+    TIMEOUT
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_957339">
+   </a>
+   <a name="F_848155245_957339_PageTOC_FILE_POLL_INPUT_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is an array of byte values with the same structure as
+   <i>
+    Units
+   </i>
+   . Each element of the returned array is set to True (1) or False (0), reflecting whether an input operation on the corresponding LUN in
+   <i>
+    Units
+   </i>
+   will succeed or not.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_957341">
+   </a>
+   <a name="F_848155245_957341_PageTOC_FILE_POLL_INPUT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Units
+  </h3>
+  <p>
+   A scalar or array of IDL logical file units (LUNs) to be tested. All specified files must be open for input.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_957344">
+   </a>
+   <a name="F_848155245_957344_PageTOC_FILE_POLL_INPUT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="F_848155245_957345">
+   </a>
+   <a name="F_848155245_957345_Keywords_FILE_POLL_INPUT_">
+   </a>
+   COUNT
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain the number of True results. If none of the specified files returns True, the variable will contain zero (0).
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_957347">
+   </a>
+   <a name="F_848155245_957347_Keywords_FILE_POLL_INPUT_">
+   </a>
+   TIMEOUT
+  </h3>
+  <p>
+   By default, FILE_POLL_INPUT does not return until at least one of the specified files will yield a True value. To change this behavior, set the TIMEOUT keyword equal to a double-precision floating-point value specifying the number of seconds to wait (at most) before the function will return. If TIMEOUT is specified, its value is interpreted as follows:
+  </p>
+  <table style="width: 502px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="58px" class="Column-Column1" />
+   <col width="444px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       &lt; 0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Do not return until at least one file yields True (the default behavior).
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Test the files and return immediately.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       &gt; 0
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p>
+       Wait until at least one file yields True
+       <i>
+        or
+       </i>
+       until the specified timeout period expires. In this form, the TIMEOUT keyword places a worst-case bound on the amount of time that will elapse before FILE_POLL_INPUT returns.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="F_848155245_957362">
+   </a>
+   <a name="F_848155245_957362_PageTOC_FILE_POLL_INPUT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="F_848155245_957369">
+   </a>
+   <a name="F_848155245_957369_PageTOC_FILE_POLL_INPUT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../S/SOCKET.html#S_820040301_1098126">
+    SOCKET
+   </a>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,1158 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: X" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   XVOLUME
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/X/XVOLUME.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="X_list.html">
+    Routines: X
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    XVOLUME
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="X_800576109_977077">
+   </a>
+   <a name="X_800576109_21848">
+   </a>
+   XVOLUME
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#X_800576109_977084">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#X_800576109_977086">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#X_800576109_977089">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#X_800576109_997456">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#X_800576109_977269">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#X_800576109_991508">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor3067">
+   </a>
+   XVOLUME procedure is a utility for viewing and interactively manipulating volumes and isosurfaces. The utility provides a graphical interface for manipulating the volume orientation, adjusting the color table and opacity, viewing image planes and contours, and adjusting the color, opacity, and threshold value of an isosurface.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    xvolume.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib/utilities
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   The XVOLUME_ROTATE and XVOLUME_WRITE_IMAGE procedures, which can be called only after a call to XVOLUME, can be used to easily create
+   <a name="kanchor3068">
+   </a>
+   animations of volumes and isosurfaces displayed in XVOLUME. See
+   <a class="MCXref_Heading_0" href="XVOLUME_ROTATE.html#X_800576109_1033823">
+    XVOLUME_ROTATE
+   </a>
+   for an example.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   IDL converts and stores volume data in a BYTE array.  Thus, all incoming volume data is converted to BYTE type. This could alter the volume data values if the incoming data cannot accurately be stored as BYTE data.
+  </p>
+  <h3>
+   <a name="X_800576109_977132_PageTOC_XVOLUME_">
+   </a>
+   Using XVOLUME
+  </h3>
+  <p>
+   XVOLUME displays a resizeable top-level base with a toolbar, a menu, a graphical interface for controlling volume and isosurface properties, and a draw widget for displaying and manipulating the volume:
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    The XVOLUME Utility
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/xvolume1.gif" style="margin-left: 5.99976px;margin-top: 2.25px;margin-right: 5.639767px;margin-bottom: 0.4795074px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   The XVOLUME Toolbar
+  </h3>
+  <p>
+   The XVOLUME toolbar contains the following buttons.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you have the
+   <span class="Bold">
+    Auto-Render
+   </span>
+   option selected, the Rotate, Zoom, and Pan features may be more difficult to use. For the best performance while manipulating the orientation of a volume using these features, uncheck the
+   <span class="Bold">
+    Auto-Render
+   </span>
+   option.
+  </p>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 500px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    XVOLUME Toolbar Buttons
+   </p>
+   <col width="61px" />
+   <col width="110px" />
+   <col width="329px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Button
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Tool Name
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <img src="../../images/xobjview_reset.gif" style="margin-left: 0.92808px;margin-top: 0.92808px;margin-right: 0.9287983px;margin-bottom: 0.9287983px;" />
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Bold">
+        Reset
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Resets rotation, scaling, and panning.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <img src="../../images/xobjview_rotate.gif" style="margin-left: 0.92808px;margin-top: 0.92808px;margin-right: 0.9287983px;margin-bottom: 0.9287983px;" />
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Bold">
+        Rotate
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Click the left mouse button on the object and drag to rotate.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <img src="../../images/xobjview_pan.gif" style="margin-left: 0.92808px;margin-top: 0.92808px;margin-right: 0.9287983px;margin-bottom: 0.9287983px;" />
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Bold">
+        Pan
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Click the left mouse button on the object and drag to pan.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <img src="../../images/xobjview_zoom.gif" style="margin-left: 0.92808px;margin-top: 0.92808px;margin-right: 0.9287983px;margin-bottom: 0.9287983px;" />
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Bold">
+        Zoom
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Click the left mouse button on the object and drag to zoom in or out.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       <img src="../../images/xobjview_select.gif" style="margin-left: 0.92808px;margin-top: 0.92808px;margin-right: 0.9287983px;margin-bottom: 0.9287983px;" />
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       <span class="Bold">
+        Select
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Click on the object. The name of the selected object is displayed, if the object has a name, otherwise its class is displayed.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="X_800576109_977237_PageTOC_XVOLUME_">
+   </a>
+   The XVOLUME Interface
+  </h3>
+  <p>
+   The XVOLUME interface provides the following elements for controlling the display of image planes and contours, volumes, and isosurfaces:
+  </p>
+  <h4>
+   Image Planes and Contours
+  </h4>
+  <p>
+   Image planes and contours allow you to visualize the values associated with the volume or isosurface at a specified X, Y, or Z plane.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Image Planes
+   </span>
+   — Select one of the following options from the drop-down list for each dimension to control the display of image planes:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Off
+     </span>
+     : Turns off the image plane display.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Opaque
+     </span>
+     : Displays an opaque image plane at the location specified by the corresponding plane slider.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     <span class="Bold">
+      Transparent
+     </span>
+     : Displays a transparent image plane at the location specified by the corresponding plane slider. The transparency value of the plane is taken from the volume at the current location of the image plane.
+    </td>
+   </tr>
+  </table>
+  <p class="Bullet">
+   <span class="Bold">
+    Contours
+   </span>
+   — Check this option to display contours on the specified plane at the location specified by corresponding the plane slider.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Plane Sliders
+   </span>
+   — Move these sliders to change the position of the plane in each dimension.
+  </p>
+  <h4>
+   Volume
+  </h4>
+  <p class="Bullet">
+   <span class="Bold">
+    Color and Opacity
+   </span>
+   : Click this button to change the color and/or opacity of the current volume. This opens a CW_PALETTE_EDITOR dialog, which is a compound widget used to edit color palettes. See
+   <a class="MCXref_Heading_0" href="../C/CW_PALETTE_EDITOR.html#C_854643309_755661">
+    CW_PALETTE_EDITOR
+   </a>
+   for more information.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Auto-Render
+   </span>
+   : Select this option to have rendering executed automatically after each change you make to the volume. If
+   <span class="Bold">
+    Auto-Render
+   </span>
+   is unchecked, you must manually click the
+   <span class="Bold">
+    Render
+   </span>
+   button to see changes you have made to the volume. If
+   <span class="Bold">
+    Auto-Render
+   </span>
+   is checked, the
+   <span class="Bold">
+    Render
+   </span>
+   button will be grayed out.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Render
+   </span>
+   : Click on this button to execute rendering computations and display the current volume. If
+   <span class="Bold">
+    Auto-Render
+   </span>
+   is checked, this button will be grayed out.
+  </p>
+  <h4>
+   Isosurface
+  </h4>
+  <p>
+   An isosurface is a 3-D surface on which the data values are constant along the entire surface. Use the following elements to control the appearance of the isosurface:
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Color
+   </span>
+   : Click this button to change the color system and/or values for the current isosurface. This opens a CW_RGBSLIDER dialog, which is a compound widget that provides a drop-down list for selecting the RGB, CMY, HSV, or HLS color system, and three sliders for adjusting the values associated with each color system.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Isosurface Off
+   </span>
+   : Select this option to turn off the isosurface display.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Opaque Isosurface
+   </span>
+   : Select this option to display an opaque isosurface.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Semi-transparent Isosurface
+   </span>
+   : Select this option to display a semi-transparent isosurface.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Level
+   </span>
+   : Use this slider to adjust the threshold value of the isosurface.
+  </p>
+  <h2 class="API">
+   <a name="X_800576109_977084">
+   </a>
+   <a name="X_800576109_977084_PageTOC_XVOLUME_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   XVOLUME,
+   <i>
+    Vol
+   </i>
+   , [,&#160;/
+   <a class="MCXref_Heading_0" href="#X_800576109_977093">
+    BLOCK
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#X_800576109_977102">
+    GROUP
+   </a>
+   =
+   <i>
+    widget_id
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#X_800576109_977104">
+    INTERPOLATE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#X_800576109_977106">
+    MODAL
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#X_800576109_977112">
+    RENDERER
+   </a>
+   ={0 | 1}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#X_800576109_977116">
+    REPLACE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#X_800576109_977121">
+    SCALE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#X_800576109_977123">
+    TEST
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#X_800576109_977128">
+    XSIZE
+   </a>
+   =
+   <i>
+    pixels
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#X_800576109_977130">
+    YSIZE
+   </a>
+   =
+   <i>
+    pixels
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="X_800576109_977086">
+   </a>
+   <a name="X_800576109_977086_PageTOC_XVOLUME_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Vol
+  </h3>
+  <p>
+   A 3-dimensional array of the form [
+   <i>
+    x
+   </i>
+   ,
+   <i>
+    y
+   </i>
+   ,
+   <i>
+    z
+   </i>
+   ] that specifies a data volume.
+  </p>
+  <h2 class="API">
+   <a name="X_800576109_977089">
+   </a>
+   <a name="X_800576109_977089_PageTOC_XVOLUME_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="X_800576109_977093">
+   </a>
+   <a name="X_800576109_977093_Keywords_XVOLUME__">
+   </a>
+   BLOCK
+  </h3>
+  <p>
+   Set this keyword to have XMANAGER block when this application is registered. By default, BLOCK is set equal to zero, providing access to the command line if active command line processing is available. Note that setting the BLOCK keyword causes all widget applications to block, not just this application. For more information, see the documentation for the
+   <a class="MCXref_Heading_0" href="XMANAGER.html#X_800576109_921241">
+    NO_BLOCK
+   </a>
+   keyword to XMANAGER.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Only the outermost call to XMANAGER can block. Therefore, to have XVOLUME block, any earlier calls to XMANAGER must have been called with the NO_BLOCK keyword. See the documentation for the
+   <a class="MCXref_Heading_0" href="XMANAGER.html#X_800576109_921241">
+    NO_BLOCK
+   </a>
+   keyword to XMANAGER for an example.
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_977102">
+   </a>
+   <a name="X_800576109_977102_Keywords_XVOLUME__">
+   </a>
+   GROUP
+  </h3>
+  <p>
+   Set this keyword to the widget ID of the widget that calls XVOLUME. When this keyword is specified, the death of the caller results in the death of XVOLUME.
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_977104">
+   </a>
+   <a name="X_800576109_977104_Keywords_XVOLUME__">
+   </a>
+   INTERPOLATE
+  </h3>
+  <p>
+   Set this keyword to indicate that trilinear interpolation is to be used when rendering the volume and the image planes. Setting this keyword improves the quality of images produced, at the cost of more computing time, especially when the volume has low resolution with respect to the size of the viewing plane. Nearest neighbor sampling is used by default.
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_977106">
+   </a>
+   <a name="X_800576109_977106_Keywords_XVOLUME__">
+   </a>
+   MODAL
+  </h3>
+  <p>
+   Set this keyword to block processing of events from other widgets until the user quits XVOLUME. The MODAL keyword does not require a group leader to be specified. If no group leader is specified, and the MODAL keyword is set, XVOLUME fabricates an invisible group leader for you.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   To be modal, XVOLUME does not require that its caller specify a group leader. This is unlike other IDL widget procedures such as XLOADCT, which, to be modal, do require that their caller specify a group leader. These other procedures were implemented this way to encourage the caller to create a modal widget that will be well-behaved with respect to layering and iconizing. (See
+   <a class="MCXref_Heading_0" href="../W/WIDGET_BASE.html#W_811389549_1221767">
+    Iconizing, Layering, and Destroying Groups of Top-Level Bases
+   </a>
+   for more information.)
+   <br />
+   <br />
+   To provide a simple means of invoking XVOLUME as a modal widget in applications that contain no other widgets, XVOLUME can be invoked as MODAL without specifying a group leader, in which case XVOLUME fabricates an invisible group leader for you. For applications that contain multiple widgets, however, it is good programming practice to supply an appropriate group leader when invoking XVOLUME, /MODAL. As with other IDL widget procedures with names prefixed with “X”, specify the group leader via the GROUP keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_977112">
+   </a>
+   <a name="X_800576109_977112_Keywords_XVOLUME__">
+   </a>
+   RENDERER
+  </h3>
+  <p>
+   Set this keyword to an integer value indicating which graphics renderer to use when drawing objects within the window. Valid values are:
+  </p>
+  <p class="Bullet">
+   0 = Platform native OpenGL (the default)
+  </p>
+  <p class="Bullet">
+   1 = IDL’s software implementation
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_977116">
+   </a>
+   <a name="X_800576109_977116_Keywords_XVOLUME__">
+   </a>
+   REPLACE
+  </h3>
+  <p>
+   If this keyword is set, and there is a current instance of XVOLUME running, the volume displayed in XVOLUME is replaced with the volume specified by
+   <i>
+    Vol
+   </i>
+   . For example, display volume1 using the command
+  </p>
+  <p class="Code">
+   XVOLUME, volume1
+  </p>
+  <p>
+   To replace volume1 with volume2, you would use the command
+  </p>
+  <p class="Code">
+   XVOLUME, volume2, /REPLACE
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_977121">
+   </a>
+   <a name="X_800576109_977121_Keywords_XVOLUME__">
+   </a>
+   SCALE
+  </h3>
+  <p>
+   Set this keyword to the zoom factor for the initial view. The default is 1/SQRT(3). This default value provides the largest possible view of the volume, while ensuring that no portion of the volume will be clipped by the XVOLUME window, regardless of the volume’s orientation.
+  </p>
+  <p>
+   When using the SCALE keyword for XVOLUME, you can scale with a 3-element array of values [x, y, z].
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_977123">
+   </a>
+   <a name="X_800576109_977123_Keywords_XVOLUME__">
+   </a>
+   TEST
+  </h3>
+  <p>
+   If set, the
+   <i>
+    Vol
+   </i>
+   argument is not required (and is ignored if provided). A volume of random numbers is displayed instead. This allows you to test code that uses XVOLUME without having to specify volume data.
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_977128">
+   </a>
+   <a name="X_800576109_977128_Keywords_XVOLUME__">
+   </a>
+   XSIZE
+  </h3>
+  <p>
+   The width of the drawable area in pixels.
+  </p>
+  <h3 class="Keyword">
+   <a name="X_800576109_977130">
+   </a>
+   <a name="X_800576109_977130_Keywords_XVOLUME__">
+   </a>
+   YSIZE
+  </h3>
+  <p>
+   The height of the drawable area in pixels.
+  </p>
+  <h2 class="API">
+   <a name="X_800576109_997456">
+   </a>
+   <a name="X_800576109_977261_PageTOC_XVOLUME_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Create a volume and display using XVOLUME:
+  </p>
+  <p class="Code">
+   ; Create a volume:
+  </p>
+  <p class="Code">
+   vol = BYTSCL(RANDOMU((SEED=0),5,5,5))
+  </p>
+  <p class="Code">
+   vol = CONGRID(vol, 30,30,30)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Display volume:
+  </p>
+  <p class="Code">
+   XVOLUME, vol
+  </p>
+  <h3>
+   <a name="X_800576109_58705">
+   </a>
+   Displaying Volumes Using XVOLUME
+  </h3>
+  <p>
+   Unlike SLICER3, the IDL Object Graphics procedure,
+   <a class="MCXref_Heading_0" href="#X_800576109_977077">
+    XVOLUME
+   </a>
+   , allows you to interactively manipulate 3
+   <a name="kanchor3069">
+   </a>
+   D volumes and isosurfaces. While the following example requires more processing time to display the same data (
+   <span class="Courier">
+    head.dat
+   </span>
+   ) as that previously displayed with SLICER3, remember that the output is not the same. The XVOLUME example is rendering an opaque volume of the data set whereas the previous SLICER3 example simply displayed an isosurface. Although Object Graphics display methods can require more processing time, they also offer significant advantages including greater interactivity, true volume rendering with the ability to specify opacities, and finer control over image and volumetric data.
+  </p>
+  <p>
+   Complete the following steps to load the
+   <span class="Courier">
+    head.dat
+   </span>
+   volume into the XVOLUME application.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    displayxvolume.
+    <a name="kanchor3070">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/image
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <span class="Courier">
+    displayxvolume
+   </span>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <span class="Courier">
+    .EDIT displayxvolume.pro
+   </span>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Select the file and read in the data, specifying known data dimensions:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   file = FILEPATH('head.dat', SUBDIRECTORY=['examples','data'])
+  </p>
+  <p class="Code_Indented">
+   volume = READ_BINARY(file, DATA_DIMS = [80, 100, 57])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Reduce the size of the original array to speed up processing:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   smallVol = CONGRID(volume, 40, 50, 27)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Using the INTERPOLATE keyword to smooth the data, display the volume using the XVOLUME procedure:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   XVOLUME, smallVol, /INTERPOLATE
+  </p>
+  <p class="indent">
+   After the data is passed to the XVOLUME application, an image similar to the following figure appears.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Visualizing a Volume with XVOLUME
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imggeom19.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 6.000484px;margin-bottom: 6.000484px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="X_800576109_21294">
+   </a>
+   Manipulating Volumetric Data Using XVOLUME
+  </h3>
+  <p>
+   Once data has been loaded into the XVOLUME application, you can create color coded contoured slices of data. Complete the following steps to create x-, y- and z&#8209;dimensional contours of the
+   <span class="Courier">
+    head.dat
+   </span>
+   volume.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Rotate the image of the head so that the nose is facing toward the right. Click in the display window and, with your mouse button depressed, drag the mouse cursor to reposition the image display.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Select the
+     <span class="Bold">
+      X
+     </span>
+     ,
+     <span class="Bold">
+      Y
+     </span>
+     , and
+     <span class="Bold">
+      Z
+     </span>
+     “Contours” options, located on the upper-left portion of the XVOLUME interface.
+    </td>
+   </tr>
+  </table>
+  <p class="NoteIndented">
+   Turning off the XVOLUME “Auto-Render” feature produces faster responses to processing requests.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Move the
+     <span class="Bold">
+      X Plane
+     </span>
+     slider to a value of 22. A contour line appears in the display window, running down the center of the image of the head. When you click in the display window, the planar slice is visible.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Move the
+     <span class="Bold">
+      Y Plane
+     </span>
+     slider to a value of 27. A contour line appears along the middle of the y-dimension.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Move the
+     <span class="Bold">
+      Z Plane
+     </span>
+     slider to a value of 12. Another contour line appears near the middle of the z-dimension.
+    </td>
+   </tr>
+  </table>
+  <p>
+   The XVOLUME interface should appear similar to the following figure.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Creating Dimensional Contours Using XVOLUME
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imggeom20.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 7.932964px;margin-bottom: 4.810329px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Click in the image display window to show the contour lines.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Displaying Contours of Planar Slices Using XVOLUME
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imggeom21.gif" style="margin-left: 5.99976px;margin-top: 8.24976px;margin-right: 5.25024px;margin-bottom: 3.749767px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   After a volumetric array has been loaded into the XVOLUME application, it can be animated using the XVOLUME_ROTATE procedure. To rotate the image above, run the example program for
+   <a class="MCXref_Heading_0" href="XVOLUME_ROTATE.html#X_800576109_1033823">
+    XVOLUME_ROTATE
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="X_800576109_977269">
+   </a>
+   <a name="X_800576109_977269_PageTOC_XVOLUME_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="X_800576109_991508">
+   </a>
+   <a name="X_800576109_991508_PageTOC_XVOLUME_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="XVOLUME_ROTATE.html#X_800576109_1033823">
+    XVOLUME_ROTATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="XVOLUME_WRITE_IMAGE.html#X_800576109_977386">
+    XVOLUME_WRITE_IMAGE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Object Classes/Graphics/IDLgrVolume.html#objects_gr_2157407275_1017393">
+    IDLgrVolume
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../I/INTERPOLATE.html#I_833016429_677258">
+    INTERPOLATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../I/ISOSURFACE.html#I_833016429_873692">
+    ISOSURFACE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

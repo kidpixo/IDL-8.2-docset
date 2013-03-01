@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HDF_DFAN_GETDESC
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF Routines/HDF_DFAN_GETDESC.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF_Routines.html">
+    HDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    HDF_DFAN_GETDESC
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_1733484267_1006997">
+   </a>
+   <a name="HDF_1733484267_75461">
+   </a>
+   HDF_DFAN_GETDESC
+  </h1>
+  <p>
+   The
+   <a name="kanchor1163">
+   </a>
+   HDF_DFAN_GETDESC procedure reads the
+   <a name="kanchor1164">
+   </a>
+   description for the given tag and reference number in an HDF file.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_997191_PageTOC_HDF_DFAN_GETDESC_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   HDF_DFAN_GETDESC,
+   <span class="Italic">
+    Filename
+   </span>
+   ,
+   <span class="Italic">
+    Tag
+   </span>
+   ,
+   <span class="Italic">
+    Ref
+   </span>
+   ,
+   <span class="Italic">
+    Description
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#HDF_1733484267_1007040">
+    STRING
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_997193_PageTOC_HDF_DFAN_GETDESC_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string containing the name of the file to be read.
+  </p>
+  <h3 class="Argument">
+   Tag
+  </h3>
+  <p>
+   The tag number.
+  </p>
+  <h3 class="Argument">
+   Reference
+  </h3>
+  <p>
+   The reference number.
+  </p>
+  <h3 class="Argument">
+   Description
+  </h3>
+  <p>
+   A named variable in which the description is returned as a vector of bytes.
+  </p>
+  <p>
+   If a description does not exist, the
+   <span class="Italic">
+    Description
+   </span>
+   variable will contain either a 0L (long-integer zero) or a blank string, and a warning message will be printed. Warning messages can be suppressed by setting the !QUIET system variable to a non-zero value.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_997203_PageTOC_HDF_DFAN_GETDESC_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="HDF_1733484267_1007040">
+   </a>
+   <a name="HDF_1733484267_997205_Keywords_HDF_DFAN_GETDESC_">
+   </a>
+   STRING
+  </h3>
+  <p>
+   Set this keyword to return the description as a string rather than a vector of bytes.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_997207_PageTOC_HDF_DFAN_GETDESC_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   desc1 = 'FILE DESCRIPTION NUMBER 1'
+  </p>
+  <p class="Code">
+   tag_image = 302
+  </p>
+  <p class="Code">
+   file = 'DEMOdesc.hdf'
+  </p>
+  <p class="Code">
+   fid = HDF_OPEN(file, /CREATE)
+  </p>
+  <p class="Code">
+   HDF_DFR8_ADDIMAGE, file, DIST(10)
+  </p>
+  <p class="Code">
+   HDF_DFAN_PUTDESC, file, tag_image, HDF_DFR8_LASTREF(), desc1
+  </p>
+  <p class="Code">
+   ; Read the description and return a vector of bytes:
+  </p>
+  <p class="Code">
+   HDF_DFAN_GETDESC, file, tag_image, HDF_DFR8_LASTREF(), out_desc1
+  </p>
+  <p class="Code">
+   HELP, out_desc1
+  </p>
+  <p class="Code">
+   PRINT, STRING(out_desc1)
+  </p>
+  <p class="Code">
+   ; Read the description and return an IDL string variable:
+  </p>
+  <p class="Code">
+   HDF_DFAN_GETDESC, file, tag_image, HDF_DFR8_LASTREF(), $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;out_desc2, /STRING
+  </p>
+  <p class="Code">
+   HELP, out_desc2
+  </p>
+  <p class="Code">
+   HDF_CLOSE, fid
+  </p>
+  <h4>
+   IDL Output
+  </h4>
+  <p class="Code">
+   OUT_DESC1       BYTE      = Array(25)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   FILE DESCRIPTION NUMBER 1
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   OUT_DESC2       STRING    = 'FILE DESCRIPTION NUMBER 1'
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_997229_PageTOC_HDF_DFAN_GETDESC_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="HDF_1733484267_1117461_PageTOC_HDF_DFAN_GETDESC_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="HDF_DFAN_PUTDESC.html#HDF_1733484267_1007454">
+    HDF_DFAN_PUTDESC
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

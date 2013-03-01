@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C|CDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CDF_ATTINQ
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/C/CDF Routines/CDF_ATTINQ.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../CDF_Routines.html">
+    CDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CDF_ATTINQ
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="CDF_1744428779_1005871">
+   </a>
+   <a name="CDF_1744428779_28162">
+   </a>
+   CDF_ATTINQ
+  </h1>
+  <p>
+   The
+   <a name="kanchor222">
+   </a>
+   CDF_ATTINQ procedure obtains information about a specified attribute in a Common Data Format file.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997090_PageTOC_CDF_ATTINQ_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   CDF_ATTINQ,
+   <span class="Italic">
+    Id
+   </span>
+   ,
+   <span class="Italic">
+    Attribute
+   </span>
+   ,
+   <span class="Italic">
+    Name
+   </span>
+   ,
+   <span class="Italic">
+    Scope
+   </span>
+   ,
+   <span class="Italic">
+    MaxEntry
+   </span>
+   [,&#160;
+   <span class="Italic">
+    MaxZEntry
+   </span>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997092_PageTOC_CDF_ATTINQ_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Id
+  </h3>
+  <p>
+   The CDF ID of the file containing the desired attribute, returned from a previous call to CDF_OPEN or CDF_CREATE.
+  </p>
+  <h3 class="Argument">
+   Attribute
+  </h3>
+  <p>
+   A string containing either the name or number of the attribute to be inquired.
+  </p>
+  <h3 class="Argument">
+   Name
+  </h3>
+  <p>
+   A named variable in which the name of the attribute is returned.
+  </p>
+  <h3 class="Argument">
+   Scope
+  </h3>
+  <p>
+   A named variable in which a string, describing the scope of the attribute, is returned. This string will have one of the following values:
+   <span class="_Override" style="letter-spacing: -0.04em;">
+    “GLOBAL_SCOPE”, “VARIABLE_SCOPE”, “GLOBAL_SCOPE_ASSUMED”, or “VARIABLE_SCOPE_ASSUMED”.
+   </span>
+  </p>
+  <h3 class="Argument">
+   MaxEntry
+  </h3>
+  <p>
+   A named variable in which the maximum rVariable entry number for this attribute is returned.
+  </p>
+  <h3 class="Argument">
+   MaxZEntry
+  </h3>
+  <p>
+   A named variable in which the maximum zVariable entry number for this attribute is returned.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_56068">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997105_PageTOC_CDF_ATTINQ_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   cdfid= CDF_OPEN('/cdrom/ozone.8.20.92')
+  </p>
+  <p class="Code">
+   CDF_ATTINQ, cdfid, 0, name, scope, maxentry, maxzentry
+  </p>
+  <p class="Code">
+   PRINT, name, scope, maxentry, maxzentry
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1028582_PageTOC_CDF_ATTINQ_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

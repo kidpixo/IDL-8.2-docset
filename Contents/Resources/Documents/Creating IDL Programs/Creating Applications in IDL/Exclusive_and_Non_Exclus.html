@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Interfaces (Widgets)|About Button Widgets" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Exclusive and Non-Exclusive Buttons
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Creating Applications in IDL/Exclusive_and_Non_Exclus.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Widget Application Techniques.html">
+    Interfaces (Widgets)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="About_Button_Widgets.html">
+    About Button Widgets
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Exclusive and Non-Exclusive Buttons
+   </span>
+  </div>
+  <h1>
+   <a name="widget_button_2309937164_97586">
+   </a>
+   <a name="widget_button_2309937164_23677">
+   </a>
+   Exclusive and Non-Exclusive Buttons
+  </h1>
+  <p>
+   <a name="kanchor4904">
+   </a>
+   By default, when a user clicks on a button widget, the
+   <a name="kanchor4905">
+   </a>
+   button
+   <a name="kanchor4906">
+   </a>
+   appears to be depressed while the user holds down the mouse button, but the button returns to the undepressed appearance when the user releases the mouse button. While such “normal” buttons visually reflect the state of the button (depressed or undepressed), normal buttons are used to gather a single piece of information: whether the user clicked on the button or not.
+  </p>
+  <p>
+   Buttons placed into exclusive or non-exclusive bases (created via the EXCLUSIVE or NONEXCLUSIVE keywords to WIDGET_BASE procedure) are created as two-state
+   <a name="kanchor4907">
+   </a>
+   “toggle” buttons—
+   <a name="kanchor4908">
+   </a>
+   radi
+   <a name="kanchor4909">
+   </a>
+   o buttons (exclusive) or
+   <a name="kanchor4910">
+   </a>
+   checkboxes (nonexclusive). Visually, when a user clicks on an exclusive or nonexclusive button, it remains in the depressed state, either until the user clicks on it again or (in the case of exclusive buttons) until another button in the group is depressed. Buttons that toggle in this manner can be used to gather information about a quantity that has two possible states.
+  </p>
+  <p>
+   Exclusive and nonexclusive buttons differ in the following way:
+  </p>
+  <ul>
+   <li value="1">
+    If a base is created with the EXCLUSIVE keyword, only one button on the base can be selected at a given time. If one button is selected and another button pressed, the first button becomes unselected.
+   </li>
+   <li value="2">
+    If a base is created with the NONEXCLUSIVE keyword, any number of buttons can be selected at a given time. Pressing one button has no effect on the selected/unselected state of other buttons on the base.
+   </li>
+  </ul>
+  <p>
+   Exclusive and nonexclusive buttons take on different appearances, depending on the type of button and on the windowing toolkit in use (Microsoft Windows or Motif).
+  </p>
+  <p>
+   Often, it is easier to create groups of buttons (normal, exclusive, or nonexclusive) using the CW_BGROUP compound widget than it is to program them yourself from base and button widgets and manage the events from each button individually. See
+   <a class="MCXref_Heading_0" href="Creating_Menus.html#widget_techniques_4218446668_95464" target="" title="" alt="">
+    Button Groups
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="../../Reference Material/C/CW_BGROUP.html#C_854643309_755132" target="" title="" alt="">
+    CW_BGROUP
+   </a>
+   for additional information on using button groups.
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

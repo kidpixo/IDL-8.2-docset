@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CLOSE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CLOSE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CLOSE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_676114">
+   </a>
+   <a name="C_854643309_57858">
+   </a>
+   CLOSE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_676116">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_676118">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_676121">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_676126">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_818695">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1052110">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor295">
+   </a>
+   CLOSE procedure closes the
+   <a name="kanchor296">
+   </a>
+   file units specified as arguments. All
+   <a name="kanchor297">
+   </a>
+   open files are also closed when
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   exits.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_676116">
+   </a>
+   <a name="C_854643309_676116_PageTOC_CLOSE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   CLOSE[,&#160;
+   <i>
+    Unit
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   , ...,
+   <i>
+    Unit
+   </i>
+   <sub class="italic">
+    n
+   </sub>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_676122">
+    ALL
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1017312">
+    EXIT_STATUS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_1017618">
+    FILE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_1017321">
+    FORCE
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_676118">
+   </a>
+   <a name="C_854643309_676118_PageTOC_CLOSE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Unit
+   <sub class="italic">
+    i
+   </sub>
+  </h3>
+  <p>
+   The
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   file units to close.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_676121">
+   </a>
+   <a name="C_854643309_676121_PageTOC_CLOSE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="C_854643309_676122">
+   </a>
+   <a name="C_854643309_676122_Keywords_CLOSE__">
+   </a>
+   ALL
+  </h3>
+  <p>
+   Set this keyword to close all open file units. In addition, any file units that were allocated via GET_LUN are freed.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1017312">
+   </a>
+   <a name="C_854643309_1017312_Keywords_CLOSE__">
+   </a>
+   EXIT_STATUS
+  </h3>
+  <p>
+   Set this keyword to a named variable that will contain the exit status reported by a UNIX child process started via the UNIT keyword to SPAWN. This value is the exit value reported by the process by calling EXIT, and is analogous to the value returned by $? under most UNIX shells. If used with any other type of file, 0 is returned. EXIT_STATUS is not allowed in conjunction with the ALL or FILE keywords.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1017618">
+   </a>
+   <a name="C_854643309_1017618_Keywords_CLOSE__">
+   </a>
+   FILE
+  </h3>
+  <p>
+   Set this keyword to close all file units from 1 to 99. File units greater than 99, which are associated with the GET_LUN and FREE_LUN procedures, are not affected.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1017321">
+   </a>
+   <a name="C_854643309_1017321_Keywords_CLOSE__">
+   </a>
+   FORCE
+  </h3>
+  <p>
+   Overrides the IDL file output buffer and forces the file to be closed no matter what errors occur in the process.
+  </p>
+  <p>
+   IDL buffers file output for performance reasons. If it is not possible to properly flush this data when a file close is requested, an error is normally issued and the file remains open. An example of this might be that your disk does not have room to write the remaining data. This default behavior prevents data from being lost. To override it and force the file to be closed no matter what errors occur in the process, specify FORCE.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_676126">
+   </a>
+   <a name="C_854643309_676126_PageTOC_CLOSE_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   If file units 1 and 3 are open, they can both be closed at the same time by entering the command:
+  </p>
+  <p class="Code">
+   CLOSE, 1, 3
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_818695">
+   </a>
+   <a name="C_854643309_818695_PageTOC_CLOSE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1052110">
+   </a>
+   <a name="C_854643309_1052110_PageTOC_CLOSE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../O/OPEN.html#O_828691053_932624">
+    OPENR/OPENU/OPENW
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

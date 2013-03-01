@@ -1,0 +1,1292 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|File Format Object Classes" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffVideoWrite
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/NoLines.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/File Format/IDLffVideoWrite.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_ff.html">
+    File Format Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffVideoWrite
+   </span>
+  </div>
+  <h1 class="ObjClass">
+   <a name="top">
+   </a>
+   IDLffVideoWrite
+  </h1>
+  <p>
+   The
+   <a name="kanchor3931">
+   </a>
+   IDLffVideoWrite object creates a video file with an optional soundtrack. The process for creating a video file is:
+  </p>
+  <ul>
+   <li value="1">
+    Create the object and associated video file with
+    <a href="#IDLffVid" target="" title="" alt="" class="MCXref_0">
+     IDLffVideoWrite::Init
+    </a>
+    .
+   </li>
+   <li value="2">
+    Open a video stream with
+    <a href="#IDLffVid2" target="" title="" alt="" class="MCXref_0">
+     IDLffVideoWrite::AddVideoStream
+    </a>
+    .
+   </li>
+   <li value="3">
+    Open an (optional) audio stream with
+    <a href="#IDLffVid3" target="" title="" alt="" class="MCXref_0">
+     IDLffVideoWrite::AddAudioStream
+    </a>
+    .
+   </li>
+   <li value="4">
+    Write the video and audio data to the individual streams with
+    <a href="#IDLffVid4" target="" title="" alt="" class="MCXref_0">
+     IDLffVideoWrite::Put
+    </a>
+    . Video data is written one frame at a time, (each frame consisting of an array of pixels). Audio data is written as an array of integers.
+   </li>
+   <li value="5">
+    Destroy the object and close the file with
+    <a href="#IDLffVid5" target="" title="" alt="" class="MCXref_0">
+     IDLffVideoWrite::Cleanup
+    </a>
+    .
+   </li>
+  </ul>
+  <h2 class="API">
+   Superclasses
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   Creation
+  </h2>
+  <p>
+   See
+   <a href="#IDLffVid" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::Init
+   </a>
+  </p>
+  <h2 class="API">
+   Methods
+  </h2>
+  <p>
+   This class has the following methods:
+  </p>
+  <p>
+   <a href="#IDLffVid" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::Init
+   </a>
+  </p>
+  <p>
+   <a href="#IDLffVid2" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::AddVideoStream
+   </a>
+  </p>
+  <p>
+   <a href="#IDLffVid3" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::AddAudioStream
+   </a>
+  </p>
+  <p>
+   <a href="#IDLffVid7" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::GetCodecs
+   </a>
+  </p>
+  <p>
+   <a href="#IDLffVid8" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::GetFormats
+   </a>
+  </p>
+  <p>
+   <a href="#IDLffVid6" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::GetStreams
+   </a>
+  </p>
+  <p>
+   <a href="#IDLffVid4" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::Put
+   </a>
+  </p>
+  <p>
+   <a href="#IDLffVid9" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::SetMetadata
+   </a>
+  </p>
+  <p>
+   <a href="#IDLffVid5" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::Cleanup
+   </a>
+  </p>
+  <p>
+   In addition, this class inherits the methods of its superclasses (if any).
+  </p>
+  <h2 class="API">
+   Examples
+  </h2>
+  <p>
+   This example creates an MP4 video of a rotating surface graphic, and includes an audio track.
+  </p>
+  <p class="Code">
+   PRO surfaceVideo_ex
+  </p>
+  <p class="Code">
+   &#160;&#160;file        = FILEPATH('surface.mp4', /TMP)
+  </p>
+  <p class="Code">
+   &#160;&#160;width       = 500
+  </p>
+  <p class="Code">
+   &#160;&#160;height      = 500
+  </p>
+  <p class="Code">
+   &#160;&#160;frames      = 180
+  </p>
+  <p class="Code">
+   &#160;&#160;fps         = 30
+  </p>
+  <p class="Code">
+   &#160;&#160;speed       = 2
+  </p>
+  <p class="Code">
+   &#160;&#160;samplerate  = 22050L
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;; Create object and initialize video/audio streams
+  </p>
+  <p class="Code">
+   &#160;&#160;oVid = IDLffVideoWrite(file)
+  </p>
+  <p class="Code">
+   &#160;&#160;vidStream = oVid.AddVideoStream(width, height, fps)
+  </p>
+  <p class="Code">
+   &#160;&#160;audStream = oVid.AddAudioStream(samplerate)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;; Generate some audio
+  </p>
+  <p class="Code">
+   &#160;&#160;audio  = FINDGEN(samplerate * frames / fps)
+  </p>
+  <p class="Code">
+   &#160;&#160;audio = SIN(audio * 2 * !PI / samplerate) * samplerate / 22
+  </p>
+  <p class="Code">
+   &#160;&#160;audio  = SIN(audio * 2 * !PI / samplerate * 1000)
+  </p>
+  <p class="Code">
+   &#160;&#160;audio  = FIX(30000 * audio)
+  </p>
+  <p class="Code">
+   &#160;&#160;time = oVid.Put(audStream, audio)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;; Generate video frames
+  </p>
+  <p class="Code">
+   &#160;&#160;surf = SURFACE(/TEST, DIMENSIONS=[width,height])
+  </p>
+  <p class="Code">
+   &#160;&#160;FOR i = 0, frames-1 DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;time = oVid.Put(vidStream, surf.CopyWindow())
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;surf.Rotate, speed
+  </p>
+  <p class="Code">
+   &#160;&#160;ENDFOR
+  </p>
+  <p class="Code">
+   &#160;&#160;surf.Close
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;; Close the file
+  </p>
+  <p class="Code">
+   &#160;&#160;oVid.Cleanup
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h1 class="ObjMethod">
+   <a name="IDLffVid">
+   </a>
+   IDLffVideoWrite::Init
+  </h1>
+  <p>
+   Initializes the object and creates the video file.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="_Override" style="font-style: italic;">
+    Result
+   </span>
+   = IDLffVideoWrite(
+   <span class="_Override" style="font-style: italic;">
+    Filename
+   </span>
+   <![CDATA[ ]]>
+   [,
+   <a href="#FORMAT" target="" title="" alt="" class="MCXref_0">
+    FORMAT
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   When this method is called indirectly, as in the previous syntax, the return value is an object reference to the newly-created object.
+  </p>
+  <p>
+   When called directly within a subclass Init method, the return value is 1 if initialization was successful, or zero otherwise.
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A string that specifies the full path and name of the video file (container format) to create. If the file already exists, it will be overwritten. You can specify the file type by including a filename extension or by setting the optional FORMAT keyword. The IDL-supported file type extensions are:
+  </p>
+  <table class="TableStyle-Keyword_Table" style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+   <col style="width: 137px;" class="Column-Column1" />
+   <col style="width: 162px;" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <th class="HeadE-Column1-Header1">
+      Extension
+     </th>
+     <th class="HeadD-Column1-Header1">
+      File Type
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      .avi
+     </td>
+     <td class="BodyD-Column1-Body1">
+      Audio Video Interleave
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      .mp4
+     </td>
+     <td class="BodyA-Column1-Body2">
+      MPEG-4
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For a list of all available file types, call
+   <a href="#IDLffVid8" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::GetFormats
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="CODEC2">
+   </a>
+   <a name="FORMAT">
+   </a>
+   FORMAT
+  </h3>
+  <p>
+   Set this keyword to a string that specifies the file type (container format) to create. You can also specify the file type by including a filename extension when setting
+   <i>
+    Filename
+   </i>
+   .The IDL-supported strings are:
+  </p>
+  <table class="TableStyle-Keyword_Table" style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+   <col style="width: 137px;" class="Column-Column1" />
+   <col style="width: 162px;" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <th class="HeadE-Column1-Header1">
+      String
+     </th>
+     <th class="HeadD-Column1-Header1">
+      File Type
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      'avi'
+     </td>
+     <td class="BodyD-Column1-Body1">
+      Audio Video Interleave
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      'mp4'
+     </td>
+     <td class="BodyA-Column1-Body2">
+      MPEG-4
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For a list of all available file types, call
+   <a href="#IDLffVid8" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::GetFormats
+   </a>
+   .
+  </p>
+  <h1 class="ObjMethod">
+   <a name="IDLffVid2">
+   </a>
+   IDLffVideoWrite::AddVideoStream
+  </h1>
+  <p>
+   This function method adds a new video stream to the file.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   .[IDLffVideoWrite::]AddVideoStream(
+   <i>
+    Width
+   </i>
+   ,
+   <i>
+    Height
+   </i>
+   ,
+   <i>
+    Fps
+   </i>
+   [,
+   <a href="#BIT_RATE" target="" title="" alt="" class="MCXref_0">
+    BIT_RATE
+   </a>
+   =
+   <i>
+    Value
+   </i>
+   ]
+   <i>
+    &#160;
+   </i>
+   [,
+   <a href="#CODEC" target="" title="" alt="" class="MCXref_0">
+    CODEC
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ]  [,
+   <a href="#PRESET">
+    PRESET
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns the index of the new stream.
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Width
+  </h3>
+  <p>
+   The frame width in pixels.
+  </p>
+  <h3 class="Argument">
+   Height
+  </h3>
+  <p>
+   The frame height in pixels.
+  </p>
+  <h3 class="Argument">
+   Fps
+  </h3>
+  <p>
+   The frames per second at which the video file is meant to be  played back.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Very low frame rates (&lt;5 FPS) can be problematic for many codecs and players.  Rather than setting FPS this low, it is recommended that you set some multiple of the desired frame rate and output each frame several times.  Because of the way most codecs encode video, the increase in file size is usually negligible.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword" style="font-weight: normal;">
+   <a name="BIT_RATE">
+   </a>
+   BIT_RATE
+  </h3>
+  <p>
+   The target output data rate of the video encoder, in bits per second. Larger values produce higher quality video, but larger files. Actual results may be slightly larger or smaller.
+  </p>
+  <h3 class="Keyword">
+   <a name="CODEC">
+   </a>
+   CODEC
+  </h3>
+  <p>
+   Set this keyword to the codec to use for encoding the data. For a video stream in a MP4-format file, the default value is 'MP4'.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For a list of all available codecs, call
+   <a href="#IDLffVid7" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::GetCodecs
+   </a>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="PRESET">
+   </a>
+   PRESET
+  </h3>
+  <p>
+   Set this keyword to a string that selects one of the built-in encoding presets for the H.264 video codec.  Because the version of FFmpeg included with IDL&#160;does not support H.264, this argument is useful only if you have replaced the FFmpeg version.  See
+   <a href="../../Creating IDL Programs/Application Programming/CreatingVideo.html#Replacin">
+    Replacing the FFmpeg Version
+   </a>
+   .
+  </p>
+  <p>
+   This argument is equivalent to the
+   <code>
+    -vpre
+   </code>
+   argument to the command-line FFmpeg utility.  Valid values are:
+  </p>
+  <table class="TableStyle_NoLines" style="margin-left: 0;margin-right: auto;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0">
+   <col style="width: 126px;" />
+   <col />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       ultrafast
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       slower
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       superfast
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       veryslow
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       veryfast
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       max
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       faster
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       placebo
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       fast
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       lossless_ultrafast
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       normal
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       lossless_fast
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       default
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       lossless_medium
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       medium
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       lossless_slow
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       hq
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       lossless_slower
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       slow
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       lossless_max
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h1 class="ObjMethod">
+   <a name="IDLffVid3">
+   </a>
+   IDLffVideoWrite::AddAudioStream
+  </h1>
+  <p>
+   This function method adds a new audio stream to the file.
+  </p>
+  <h2 class="API">
+   Interlacing Video and Audio
+  </h2>
+  <p>
+   Nearly all video formats require audio (if any) to be interlaced in the file with video frames, but IDLffVideoWrite does not require the user to output audio and video data this way.  To permit this behavior, video and audio data is kept in memory until it can be interlaced and written out to a file.
+  </p>
+  <p>
+   The key to minimizing memory use is to keep all of the streams in the video synchronized--alternately write out a frame of video and some fraction of a second of audio.  If you must do all of one and then the other, outputting audio first requires less memory.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   .[IDLffVideoWrite::]AddAudioStream(
+   <i>
+    Rate
+   </i>
+   [,
+   <a href="#BIT_RATE2" target="" title="" alt="" class="MCXref_0">
+    BIT_RATE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]
+   <i>
+    <![CDATA[ ]]>
+   </i>
+   [,
+   <a href="#CHANNELS" target="" title="" alt="" class="MCXref_0">
+    CHANNELS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,
+   <a href="#CODEC3" target="" title="" alt="" class="MCXref_0">
+    CODEC
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns the index of the new stream.
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Rate
+  </h3>
+  <p>
+   The audio sample rate in Hertz. Not all values are guaranteed to work, depending upon the codec used. Suggested values are 44100 (CD quality), 22050, and 11025.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="BIT_RATE2">
+   </a>
+   BIT_RATE
+  </h3>
+  <p>
+   The target output data rate of the audio encoder, in bits per second. Larger values produce higher quality audio, but larger files. Actual results may be slightly larger or smaller.
+  </p>
+  <h3 class="Keyword">
+   <a name="CHANNELS">
+   </a>
+   CHANNELS
+  </h3>
+  <p>
+   Set this keyword to the number of audio channels in the stream. For example, 1 = mono, 2 = stereo.
+  </p>
+  <h3 class="Keyword">
+   <a name="CODEC3">
+   </a>
+   CODEC
+  </h3>
+  <p>
+   Set this keyword to the codec to use for encoding the data. For an audio stream  in a MP4-format file, the default value is 'AAC'.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you add only audio streams to an IDLffVideoWrite object, you can only use the MPEG-4 container format (file type).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For a list of all available codecs, call
+   <a href="#IDLffVid7" target="" title="" alt="" class="MCXref_0">
+    IDLffVideoWrite::GetCodecs
+   </a>
+   .
+  </p>
+  <h1 class="ObjMethod">
+   <a name="IDLffVid7">
+   </a>
+   IDLffVideoWrite::GetCodecs
+  </h1>
+  <p>
+   This function method returns the list of codecs you may use to encode a video or audio stream.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   .[IDLffVideoWrite::]GetCodecs([/
+   <a href="#AUDIO" target="" title="" alt="" class="MCXref_0">
+    AUDIO
+   </a>
+   ] [, /
+   <a href="#LONG_NAM" target="" title="" alt="" class="MCXref_0">
+    LONG_NAMES
+   </a>
+   ] [, /
+   <a href="#VIDEO" target="" title="" alt="" class="MCXref_0">
+    VIDEO
+   </a>
+   ])
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns the available codecs as an array of strings. These strings are the same names accepted by the CODEC keyword of the AddVideoStream and AddAudioStream methods (unless the LONG_NAMES keyword is set).
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="AUDIO">
+   </a>
+   AUDIO
+  </h3>
+  <p>
+   Set this keyword to return only available audio codecs.
+  </p>
+  <h3 class="Keyword">
+   <a name="LONG_NAM">
+   </a>
+   LONG_NAMES
+  </h3>
+  <p>
+   Set this keyword to return longer, more descriptive names.
+  </p>
+  <h3 class="Keyword">
+   <a name="VIDEO">
+   </a>
+   VIDEO
+  </h3>
+  <p>
+   Set this keyword to return only available video codecs.
+  </p>
+  <h1 class="ObjMethod">
+   <a name="IDLffVid8">
+   </a>
+   IDLffVideoWrite::GetFormats
+  </h1>
+  <p>
+   This function method returns the video file types (container formats) you can create.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   .[IDLffVideoWrite::]GetFormats(/
+   <a href="#LONG_NAM2" target="" title="" alt="" class="MCXref_0">
+    LONG_NAMES
+   </a>
+   )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns a list of available file formats as an array of strings. These strings are the same names accepted by the FORMAT keyword of the Init method (unless the LONG_NAMES keyword is set).
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="LONG_NAM2">
+   </a>
+   LONG_NAMES
+  </h3>
+  <p>
+   Set this keyword to return longer, more descriptive format names.
+  </p>
+  <h1 class="ObjMethod">
+   <a name="STEREO">
+   </a>
+   <a name="IDLffVid4">
+   </a>
+   IDLffVideoWrite::Put
+  </h1>
+  <p>
+   This function method writes data into the stream identified by
+   <i>
+    Index
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <em>
+    Result
+   </em>
+   =
+   <em>
+    Obj
+   </em>
+   .[IDLffVideoWrite::]Put(
+   <i>
+    Index
+   </i>
+   ,
+   <i>
+    Data
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   A floating-point value giving the point in the timeline (in seconds) that was assigned to the given data.
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Index
+  </h3>
+  <p>
+   The data stream index returned by the AddVideoStream or AddAudioStream methods.
+  </p>
+  <h3 class="Argument">
+   Data
+  </h3>
+  <p>
+   The data to be written to the stream.
+  </p>
+  <p>
+   For video, the data must be represented as bytes in the format [3,
+   <i>
+    w
+   </i>
+   ,
+   <i>
+    h
+   </i>
+   ] with
+   <i>
+    w
+   </i>
+   and
+   <i>
+    h
+   </i>
+   matching the stream's original width and height.
+  </p>
+  <p>
+   For audio, the data must be represented as 16-bit integers and arranged in an array of the format [
+   <i>
+    n
+   </i>
+   ,
+   <i>
+    s
+   </i>
+   ] to write
+   <i>
+    s
+   </i>
+   samples (as many as desired) into
+   <i>
+    n
+   </i>
+   channels (
+   <i>
+    n
+   </i>
+   must match the number of channels in the stream). If you are writing one channel, [1,
+   <i>
+    s
+   </i>
+   ] and [
+   <i>
+    s
+   </i>
+   ] are functionally equivalent, and both formats are accepted.
+  </p>
+  <h1 class="ObjMethod">
+   <a name="IDLffVid6">
+   </a>
+   IDLffVideoWrite::GetStreams
+  </h1>
+  <p>
+   This function method returns an array of structures describing each of the streams contained in the video file.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p>
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   .[IDLffVideoWrite::]GetStreams( )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns an array of structures describing each of the streams contained in the video file. These structures are of the following format:
+  </p>
+  <p class="Code">
+   {
+  </p>
+  <p class="Code">
+   PID, &#160;&#160;&#160;&#160;&#160;; Program ID - The internal identifier for the stream
+  </p>
+  <p class="Code">
+   type, &#160;&#160;&#160;&#160;; 0=unknown, 1=video, 2=audio, 3=data
+  </p>
+  <p class="Code">
+   rate, &#160;&#160;&#160;&#160;; Rate in Hertz.  For example, 25 FPS for video, or 44100 Hz for audio
+  </p>
+  <p class="Code">
+   width, &#160;&#160;&#160;; Video only.  Width in pixels
+  </p>
+  <p class="Code">
+   height, &#160;&#160;; Video only.  Height in pixels
+  </p>
+  <p class="Code">
+   channels, ; Audio only. Number of audio channels
+  </p>
+  <p class="Code">
+   codec, &#160;&#160;&#160;; String identifying the codec used
+  </p>
+  <p class="Code">
+   length, &#160;&#160;; Stream length in seconds
+  </p>
+  <p class="Code">
+   }
+  </p>
+  <h1 class="ObjMethod">
+   <a name="IDLffVid9">
+   </a>
+   IDLffVideoWrite::SetMetadata
+  </h1>
+  <p>
+   This method embeds a metadata string in the video file.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You can not call the SetMetadata method after you call the Put method.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   .[IDLffVideoWrite::]SetMetadata,
+   <i>
+    Key
+   </i>
+   ,
+   <i>
+    Value
+   </i>
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Key
+  </h3>
+  <p>
+   A case-insensitive string value. Keys unsupported by the file format are ignored.
+  </p>
+  <p>
+   The following table lists the metadata keys recognized by the IDL-supported video file formats. Other formats may have their own list of recognized metadata keys.
+  </p>
+  <table class="TableStyle-Keyword_Table" style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+   <col style="width: 100px;" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <th class="HeadD-Column1-Header1">
+      <p>
+       Key
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyD-Column1-Body1">
+      <p>
+       album
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyD-Column1-Body2">
+      <p>
+       artist
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyD-Column1-Body1">
+      <p>
+       comment
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyD-Column1-Body2">
+      <p>
+       copyright
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyD-Column1-Body1">
+      <p>
+       genre
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyA-Column1-Body2">
+      <p>
+       title
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Argument">
+   Value
+  </h3>
+  <p>
+   A string value.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   Example
+  </h2>
+  <p class="Code">
+   oVid.SetMetadata, 'title', 'Yeti photographed by wildlife cam'
+  </p>
+  <h1 class="ObjMethod">
+   <a name="IDLffVid5">
+   </a>
+   IDLffVideoWrite::Cleanup
+  </h1>
+  <p>
+   This method finalizes and closes the file, and then destroys the object. The file is not playable until you destroy the object.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <em>
+    Obj
+   </em>
+   .[IDLffVideoWrite::]Cleanup
+  </p>
+  <h2 class="API">
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       8.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      8.2
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      Added PRESET keyword to ::AddVideoStream method.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

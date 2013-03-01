@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Overview: Optimization
+  </title>
+  <link href="SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../idl_CSH.html#EquationTest.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   This content is taken from the Adv Math and Stats book as a test of Flare 7 equation editor functionality.
+  </p>
+  <h1>
+   Overview: Optimization
+  </h1>
+  <p>
+   This section introduces some of the mathematical concepts used with IDL Advanced Math and Stats.
+  </p>
+  <h2 class="API">
+   Unconstrained Minimization
+  </h2>
+  <p>
+   The unconstrained minimization problem can be stated as follows:
+  </p>
+  <p>
+   min f(x)
+  </p>
+  <p>
+   <img src="GeneratedImages/Equations/Equation1.png" style="width: 41px;height: 13px;" class="MCEquation mcReset" />
+  </p>
+  <p>
+   where
+   <img src="GeneratedImages/Equations/Equation2.png" style="width: 65px;height: 13px;" class="MCEquation mcReset" />
+   is continuous and has derivatives of all orders required by the algorithms. The functions for unconstrained minimization are grouped into three categories: univariate functions, multivariate functions, and nonlinear least-squares functions.
+  </p>
+  <p>
+   For the univariate functions, it is assumed that the function is unimodal within the specified interval. For discussion on unimodality, see Brent (1973).
+  </p>
+  <p>
+   A quasi-Newton method is used for the multivariate IMSL_FMINV function. The default is to use a finite-difference approximation of the gradient of f(x). Here, the gradient is defined to be the following vector:
+  </p>
+  <p>
+   <img src="GeneratedImages/Equations/Equation3.png" style="width: 208px;height: 45px;" class="MCEquation mcReset" />
+  </p>
+  <p>
+   When the exact gradient can be easily provided, the grad argument should be used.
+  </p>
+  <p>
+   The nonlinear least-squares function uses a modified Levenberg-Marquardt algorithm. The most common application of the function is the nonlinear data-fitting problem where the user is trying to fit the data with a nonlinear model.
+  </p>
+  <p>
+   These functions are designed to find only a local minimum point. However, a function may have many local minima. Try different initial points and intervals to obtain a better local solution.
+  </p>
+  <p>
+   Double-precision arithmetic is recommended for the functions when the user provides only the function values.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

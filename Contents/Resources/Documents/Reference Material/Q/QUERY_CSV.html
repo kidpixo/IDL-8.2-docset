@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: Q" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   QUERY_CSV
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/Q/QUERY_CSV.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Q_list.html">
+    Routines: Q
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    QUERY_CSV
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="Q_815714925_1125522">
+   </a>
+   <a name="Q_815714925_54151">
+   </a>
+   QUERY_CSV
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#Q_815714925_1125539">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1125541">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1125542">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1125555">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1125613">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1125558">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   <a name="Q_815714925_QUERY_CSV_function">
+   </a>
+   The QUERY_CSV function tests a file for compatibility with
+   <a class="MCXref_Heading_0" href="../R/READ_CSV.html#R_822202989_1233548" target="" title="" alt="">
+    READ_CSV
+   </a>
+   and returns an optional structure containing information about the file.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    query_csv.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1125539">
+   </a>
+   <a name="Q_815714925_1125539_PageTOC_QUERY_CSV_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = QUERY_CSV(
+   <i>
+    Filename
+   </i>
+   [,&#160;
+   <i>
+    Info
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1125541">
+   </a>
+   <a name="Q_815714925_1125541_PageTOC_QUERY_CSV_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This routine returns a long with the value of 1 (one) if the query was successful (and the file type was correct) or 0 (zero) on failure.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1125542">
+   </a>
+   <a name="Q_815714925_1125542_PageTOC_QUERY_CSV_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string containing the full pathname of the file to query.
+  </p>
+  <h3 class="Argument">
+   Info
+  </h3>
+  <p>
+   A named variable in which to return an anonymous structure containing information about the file. This structure is valid only when the return value of the function is 1. The structure has the following fields:
+  </p>
+  <table style="width: 432px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    The Info Argument’s Anonymous Structure
+   </p>
+   <col width="120px" />
+   <col width="120px" />
+   <col width="192px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       IDL Type
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        String
+       </b>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       File name, including full path
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       TYPE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <b>
+        String
+       </b>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       File format (always
+       <span class="Courier">
+        'CSV'
+       </span>
+       )
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       LINES
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Long64
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Number of lines
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       NFIELDS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Number of columns
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="Q_815714925_1125555">
+   </a>
+   <a name="Q_815714925_1125555_PageTOC_QUERY_CSV_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1125613">
+   </a>
+   <a name="Q_815714925_1125613_PageTOC_QUERY_CSV_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       7.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="Q_815714925_1125558">
+   </a>
+   <a name="Q_815714925_1125558_PageTOC_QUERY_CSV_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="QUERY_ASCII.html#Q_815714925_1045490">
+    QUERY_ASCII
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/READ_ASCII.html#R_822202989_956701" target="" title="" alt="">
+    READ_ASCII
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/READ_CSV.html#R_822202989_1233548" target="" title="" alt="">
+    READ_CSV
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../W/WRITE_CSV.html#W_811389549_1249436">
+    WRITE_CSV
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

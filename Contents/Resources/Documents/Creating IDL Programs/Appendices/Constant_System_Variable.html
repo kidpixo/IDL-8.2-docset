@@ -1,0 +1,3005 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Concepts|System Variables" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Constant System Variables
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Appendices/Constant_System_Variable.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">
+    Concepts
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../System Variables.html">
+    System Variables
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Constant System Variables
+   </span>
+  </div>
+  <h1>
+   <a name="sysvars_272074529_1009288">
+   </a>
+   <a name="sysvars_272074529_70585">
+   </a>
+   Constant System Variables
+  </h1>
+  <p>
+   The following system variables contain predefined constants or values for use by IDL routines. System variables can be used just like other variables. For example, the command:
+  </p>
+  <p class="Code">
+   PRINT, ACOS(A) * !RADEG
+  </p>
+  <p>
+   converts a result expressed in radians to one expressed in degrees.
+  </p>
+  <h3 class="Sysvar">
+   <a name="kanchor3089">
+   </a>
+   <a name="sysvars_272074529_1036303">
+   </a>
+   <a name="!COLOR">
+   </a>
+   !COLOR
+  </h3>
+  <p>
+   A read-only structure variable that allows you to retrieve color values [
+   <i>
+    red
+   </i>
+   ,
+   <i>
+    green
+   </i>
+   ,
+   <i>
+    blue
+   </i>
+   ] by providing one of the color name strings listed in the
+   <a class="MCXref_Heading_0" href="#sysvars_272074529_1048182" target="" title="" alt="">
+    Constant System Variables
+   </a>
+   : table.
+  </p>
+  <p class="Code">
+   PRINT, !COLOR.burlywood
+  </p>
+  <p>
+   The following table lists !COLOR names and values (these are essentially the same as those in W3C’s list of web colors):
+  </p>
+  <table class="TableStyle-Keyword_Table" style="width: 398px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+   <caption>
+    !COLOR Color Names and Values
+   </caption>
+   <col class="Column-Column1" />
+   <col class="Column-Column1" />
+   <col class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <td class="HeadE-Column1-Header1">
+      <p>
+       Color Name
+      </p>
+     </td>
+     <td class="HeadE-Column1-Header1">
+      <p>
+       Hex Value
+      </p>
+     </td>
+     <td class="HeadD-Column1-Header1">
+      <p>
+       Decimal Value
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       alice_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #F0F8FF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       240,248,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       antique_white
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FAEBD7
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       250,235,215
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       aqua
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #00FFFF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       0,255,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       aquamarine
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #7FFFD4
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       127,255,212
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       azure
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #F0FFFF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       240,255,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       beige
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #F5F5DC
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       245,245,220
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       bisque
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FFE4C4
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,228,196
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       black
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #000000
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       0,0,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       blanched_almond
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FFEBCD
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,235,205
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #0000FF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       0,0,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       blue_violet
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #8A2BE2
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       138,43,226
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       brown
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #A52A2A
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       165,42,42
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       burlywood
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #DEB887
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       222,184,135
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       cadet_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #5F9EA0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       95,158,160
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       chartreuse
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #7FFF00
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       127,255,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       chocolate
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #D2691E
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       210,105,30
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       coral
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FF7F50
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,127,80
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       cornflower
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #6495ED
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       100,149,237
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       cornsilk
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FFF8DC
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,248,220
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       crimson
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #DC143C
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       220,20,60
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       cyan
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #00FFFF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       0,255,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dark_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #00008B
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       0,0,139
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dark_cyan
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #008B8B
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       0,139,139
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dark_goldenrod
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #B8860B
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       184,134,11
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dark_gray
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #A9A9A9
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       169,169,169
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dark_grey
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #A9A9A9
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       169,169,169
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dark_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #006400
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       0,100,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dark_khaki
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #BDB76B
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       189,183,107
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dark_magenta
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #8B008B
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       139,0,139
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dark_olive_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #556B2F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       85,107,47
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dark_orange
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FF8C00
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,140,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dark_orchid
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #9932CC
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       153,50,204
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dark_red
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #8B0000
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       139,0,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dark_salmon
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #E9967A
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       233,150,122
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dark_sea_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #8FBC8F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       143,188,143
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dark_slate_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #483D8B
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       72,61,139
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dark_slate_gray
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #2F4F4F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       47,79,79
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dark_slate_grey
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #2F4F4F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       47,79,79
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dark_turquoise
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #00CED1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       0,206,209
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dark_violet
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #9400D3
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       148,0,211
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       deep_pink
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FF1493
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,20,147
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       deep_sky_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #00BFFF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       0,191,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dim_gray
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #696969
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       105,105,105
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       dim_grey
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #696969
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       105,105,105
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       dodger_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #1E90FF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       30,144,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       firebrick
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #B22222
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       178,34,34
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       floral_white
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FFFAF0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,250,240
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       forest_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #228B22
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       34,139,34
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       fuchsia
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FF00FF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,0,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       gainsboro
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #DCDCDC
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       220,220,220
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       ghost_white
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #F8F8FF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       248,248,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       gold
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFD700
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,215,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       goldenrod
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #DAA520
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       218,165,32
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       gray
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #7F7F7F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       127,127,127
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       grey
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #7F7F7F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       127,127,127
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #007F00
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       0,127,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       green_yellow
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #ADFF2F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       173,255,47
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       gray
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #808080
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       128,128,128
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       honeydew
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #F0FFF0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       240,255,240
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       hot_pink
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FF69B4
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,105,180
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       indian_red
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #CD5C5C
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       205,92,92
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       indigo
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #4B0082
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       75,0,130
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       ivory
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FFFFF0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,255,240
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       khaki
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #F0E68C
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       240,230,140
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       lavender
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #E6E6FA
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       230,230,250
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       lavender_blush
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFF0F5
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,240,245
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       lawn_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #7CFC00
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       124,252,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       lemon_chiffon
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFFACD
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,250,205
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       light_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #ADD8E6
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       173,216,230
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       light_coral
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #F08080
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       240,128,128
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       light_cyan
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #E0FFFF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       224,255,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       light_goldenrod
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FAFAD2
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       250,250,210
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       light_gray
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #D3D3D3
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       211,211,211
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       light_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #90EE90
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       144,238,144
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       light_gray
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #D3D3D3
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       211,211,211
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       light_grey
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #D3D3D3
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       211,211,211
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       light_pink
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FFB6C1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,182,193
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       light_salmon
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFA07A
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,160,122
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       light_sea_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #20B2AA
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       32,178,170
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       light_sky_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #87CEFA
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       135,206,250
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       light_slate_gray
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #778899
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       119,136,153
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       light_slate_grey
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #778899
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       119,136,153
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       light_steel_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #B0C4DE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       176,196,222
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       light_yellow
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFFFE0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,255,224
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       lime
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #00FF00
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       0,255,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       lime_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #32CD32
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       50,205,50
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       linen
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FAF0E6
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       250,240,230
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       magenta
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FF00FF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,0,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       maroon
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #7F0000
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       127,0,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       medium_aquamarine
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #66CDAA
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       102,205,170
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       medium_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #0000CD
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       0,0,205
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       medium_orchid
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #BA55D3
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       186,85,211
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       medium_purple
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #9370DB
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       147,112,219
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       medium_sea_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #3CB371
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       60,179,113
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       medium_slate_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #7B68EE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       123,104,238
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       medium_spring_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #00FA9A
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       0,250,154
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       medium_turquoise
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #48D1CC
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       72,209,204
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       medium_violet_red
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #C71585
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       199,21,133
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       midnight_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #191970
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       25,25,112
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       mint_cream
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #F5FFFA
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       245,255,250
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       misty_rose
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FFE4E1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,228,225
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       moccasin
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFE4B5
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,228,181
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       navajo_white
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FFDEAD
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,222,173
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       navy
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #000080
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       0,0,128
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       old_lace
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FDF5E6
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       253,245,230
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       olive
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #808000
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       128,128,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       olive_drab
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #6B8E23
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       107,142,35
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       orange
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFA500
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,165,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       orange_red
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FF4500
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,69,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       orchid
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #DA70D6
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       218,112,214
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       pale_goldenrod
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #EEE8AA
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       238,232,170
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       pale_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #98FB98
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       152,251,152
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       pale_turquoise
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #AFEEEE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       175,238,238
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       pale_violet_red
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #DB7093
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       219,112,147
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       papaya_whip
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FFEFD5
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,239,213
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       peach_puff
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFDAB9
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,218,185
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       peru
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #CD853F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       205,133,63
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       pink
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFC0CB
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,192,203
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       plum
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #DDA0DD
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       221,160,221
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       powder_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #B0E0E6
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       176,224,230
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       purple
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #7F007F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       127,0,127
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       red
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FF0000
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,0,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       rosy_brown
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #BC8F8F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       188,143,143
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       royal_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #4169E1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       65,105,225
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       saddle_brown
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #8B4513
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       139,69,19
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       salmon
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FA8072
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       250,128,114
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       sandy_brown
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #F4A460
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       244,164,96
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       sea_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #2E8B57
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       46,139,87
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       seashell
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #FFF5EE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       255,245,238
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       sienna
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #A0522D
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       160,82,45
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       silver
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #C0C0C0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       192,192,192
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       sky_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #87CEEB
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       135,206,235
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       slate_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #6A5ACD
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       106,90,205
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       slate_gray
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #708090
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       112,128,144
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       slate_grey
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #708090
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       112,128,144
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       snow
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFFAFA
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,250,250
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       spring_green
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #00FF7F
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       0,255,127
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       steel_blue
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #4682B4
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       70,130,180
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       tan
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #D2B48C
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       210,180,140
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       teal
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #008080
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       0,128,128
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       thistle
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #D8BFD8
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       216,191,216
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       tomato
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FF6347
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,99,71
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       turquoise
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #40E0D0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       64,224,208
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       violet
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #EE82EE
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       238,130,238
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       wheat
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #F5DEB3
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       245,222,179
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       white
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFFFFF
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,255,255
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       white_smoke
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body1">
+      <p class="Code">
+       #F5F5F5
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p class="Code">
+       245,245,245
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       yellow
+      </p>
+     </td>
+     <td class="BodyE-Column1-Body2">
+      <p class="Code">
+       #FFFF00
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p class="Code">
+       255,255,0
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyB-Column1-Body1">
+      <p>
+       yellow_green
+      </p>
+     </td>
+     <td class="BodyB-Column1-Body1">
+      <p class="Code">
+       #9ACD32
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body1">
+      <p class="Code">
+       154,205,50
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 class="Sysvar">
+   <a name="kanchor3090">
+   </a>
+   <a name="!DPI">
+   </a>
+   !DPI
+  </h3>
+  <p>
+   A read-only variable containing the double-precision value of pi (π).
+  </p>
+  <h3 class="Sysvar">
+   <a name="kanchor3091">
+   </a>
+   <a name="!DTOR">
+   </a>
+   !DTOR
+  </h3>
+  <p>
+   A read-only variable containing the floating-point value used to convert degrees to radians (π/180&#160;
+   <span class="Symbol">
+    @
+   </span>
+   &#160; 0.01745).
+  </p>
+  <h3 class="Sysvar">
+   <a name="kanchor3092">
+   </a>
+   <a name="!MAP">
+   </a>
+   !MAP
+  </h3>
+  <p>
+   A variable containing the information needed to effect coordinate conversions between points of latitude and longitude and map coordinates. The values in this structure are established by the MAP_SET procedure; the user should not change them directly.
+  </p>
+  <p>
+   The !MAP structure contains the following fields:
+  </p>
+  <h4 class="SysvarField">
+   A
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the equatorial radius or semimajor axis in meters. (The default is 6370997 m.)
+  </p>
+  <h4 class="SysvarField">
+   COSO
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the cosine of the center latitude in degrees.
+  </p>
+  <h4 class="SysvarField">
+   COSR
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the cosine of the rotation angle.
+  </p>
+  <h4 class="SysvarField">
+   E2
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the eccentricity squared of the ellipsoid.
+  </p>
+  <h4 class="SysvarField">
+   FILL_METHOD
+  </h4>
+  <p>
+   A long-integer variable that indicates the fill order. True (1) fills counterclockwise, False (0) fills starting with the closest polygons.
+  </p>
+  <h4 class="SysvarField">
+   LL_BOX
+  </h4>
+  <p>
+   A four-element, double-precision floating point array that specifies the map range in degrees (latmin, lonmin, latmax, lonmax).
+  </p>
+  <h4 class="SysvarField">
+   P
+  </h4>
+  <p>
+   A 16-element, double-precision floating point array indicating additional projection parameters.
+  </p>
+  <h4 class="SysvarField">
+   P0LAT
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the center latitude in degrees.
+  </p>
+  <h4 class="SysvarField">
+   P0LON
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the center longitude in degrees.
+  </p>
+  <h4 class="SysvarField">
+   PIPELINE
+  </h4>
+  <p>
+   A four by four, double-precision floating point array specifying the graphics clipping and splitting pipeline.
+  </p>
+  <h4 class="SysvarField">
+   POLE
+  </h4>
+  <p>
+   A seven-element, double-precision floating point array that indicates Pole location parameters. Longitude and latitude are given in radians, sine and cosine of polar latitude, and X,Y,Z coordinates.
+  </p>
+  <h4 class="SysvarField">
+   PROJECTION
+  </h4>
+  <p>
+   A long-integer variable indicating the projection number (for GCTP only).
+  </p>
+  <h4 class="SysvarField">
+   ROTATION
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the rotation angle in degrees, clockwise of pole.
+  </p>
+  <h4 class="SysvarField">
+   SEGMENT_LENGTH
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the maximum segment length.
+  </p>
+  <h4 class="SysvarField">
+   SIMPLE
+  </h4>
+  <p>
+   A long-integer variable indicating the projection number. For IDL projections, True (1) indicates the projection is centered on the Equator or no rotation. For GCTP, this number is the GCTP projection number.
+  </p>
+  <h4 class="SysvarField">
+   SINO
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the sine of the center latitude.
+  </p>
+  <h4 class="SysvarField">
+   SINR
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the sine of the rotation angle.
+  </p>
+  <h4 class="SysvarField">
+   U0
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the center longitude in radians.
+  </p>
+  <h4 class="SysvarField">
+   UP_FLAGS
+  </h4>
+  <p>
+   A double-precision floating point integer that sets the user projection flags (currently unused).
+  </p>
+  <h4 class="SysvarField">
+   UP_NAME
+  </h4>
+  <p>
+   A string that specifies the projection name (used only for GCTP).
+  </p>
+  <h4 class="SysvarField">
+   UV
+  </h4>
+  <p>
+   A two-element, double-precision floating point array specifying the U,V coordinates of the last point.
+  </p>
+  <h4 class="SysvarField">
+   UV_BOX
+  </h4>
+  <p>
+   A four-element, double-precision floating point array that contains the map range in meters (xmin, ymin, xmax, ymax).
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The UV_BOX values are not simply the LL_BOX values converted into the map projection. For most projections, converting the UV_BOX values back into lat/lon coordinates will not return the same values as LL_BOX. Instead, the UV_BOX gives the approximate maximum extent of the map projection. Values that lie outside of the UV_BOX are assumed to be invalid as map coordinates. UV_BOX is used primarily for internal computations, and should not be used in user-written code.
+  </p>
+  <h4 class="SysvarField">
+   V0
+  </h4>
+  <p>
+   A double-precision floating point integer specifying the center latitude in radians.
+  </p>
+  <h3 class="Sysvar">
+   <a name="!NULL">
+   </a>
+   <a name="kanchor3093">
+   </a>
+   !NULL
+  </h3>
+  <p>
+   A variable of type
+   <i>
+    Undefined
+   </i>
+   . The value of !NULL can be:
+  </p>
+  <ul>
+   <li value="1">
+    Assigned to another variable:
+    <span class="Courier">
+     var = !NULL
+    </span>
+   </li>
+   <li value="2">
+    Used to test whether a variable exists:
+    <span class="Courier">
+     IF var NE !NULL THEN...
+    </span>
+   </li>
+  </ul>
+  <p>
+   In addition, variables with the value !NULL are ignored when added to an array. That is:
+  </p>
+  <p class="Code">
+   array = [1, !NULL, 2, !NULL, 3]
+  </p>
+  <p>
+   is the same as
+  </p>
+  <p class="Code">
+   array = [1, 2, 3]
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="../Components of the IDL Language/The_Null_Variable.html#constants_818058343_695602" target="" title="" alt="">
+    The Null Variable
+   </a>
+   for additional information.
+  </p>
+  <h3 class="Sysvar">
+   <a name="kanchor3094">
+   </a>
+   <a name="!PI">
+   </a>
+   !PI
+  </h3>
+  <p>
+   A read-only variable containing the single-precision value of pi (π).
+  </p>
+  <h3 class="Sysvar">
+   <a name="kanchor3095">
+   </a>
+   <a name="!RADEG">
+   </a>
+   !RADEG
+  </h3>
+  <p>
+   A read-only variable containing the floating-point value used to convert radians to degrees (180/π&#160;
+   <span class="Symbol">
+    @
+   </span>
+   &#160;57.2958).
+  </p>
+  <h3 class="Sysvar">
+   <a name="sysvars_272074529_996962">
+   </a>
+   <a name="kanchor3096">
+   </a>
+   !VALUES
+  </h3>
+  <p>
+   A read-only variable containing the IEEE single- and double-precision floating-point values
+   <i>
+    Infinity
+   </i>
+   and
+   <i>
+    NaN
+   </i>
+   (Not A Number). !VALUES is a structure variable with the following fields:
+  </p>
+  <p class="Code">
+   ** Structure !VALUES, 4 tags, length=24:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;F_INFINITY&#160;&#160;&#160;&#160;&#160;&#160;FLOAT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Infinity
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;F_NAN&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FLOAT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;NaN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;D_INFINITY&#160;&#160;&#160;&#160;&#160;&#160;DOUBLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Infinity
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;D_NAN&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;DOUBLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;NaN
+  </p>
+  <p>
+   where the meaning of the fields as follows:
+  </p>
+  <h4 class="SysvarField">
+   F_INFINITY
+  </h4>
+  <p>
+   The single-precision floating point value
+   <i>
+    Infinity
+   </i>
+   .
+  </p>
+  <h4 class="SysvarField">
+   F_NAN
+  </h4>
+  <p>
+   The single-precision floating point value
+   <i>
+    NaN
+   </i>
+   (Not a Number).
+  </p>
+  <h4 class="SysvarField">
+   D_INFINITY
+  </h4>
+  <p>
+   The double-precision floating point value
+   <i>
+    Infinity
+   </i>
+   .
+  </p>
+  <h4 class="SysvarField">
+   D_NAN
+  </h4>
+  <p>
+   The double-precision floating point value
+   <i>
+    NaN
+   </i>
+   (Not a Number).
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

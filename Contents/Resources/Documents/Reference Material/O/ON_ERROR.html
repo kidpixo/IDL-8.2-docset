@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: O" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   ON_ERROR
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/O/ON_ERROR.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="O_list.html">
+    Routines: O
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    ON_ERROR
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="O_828691053_889555">
+   </a>
+   <a name="O_828691053_17797">
+   </a>
+   ON_ERROR
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#O_828691053_889564">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#O_828691053_949649">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#O_828691053_934131">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#O_828691053_949702">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#O_828691053_889573">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#O_828691053_931669">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1992">
+   </a>
+   ON_ERROR procedure
+   <a name="kanchor1993">
+   </a>
+   determines the action taken when an error is detected inside an
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   user procedure or function by setting state information applying to the current routine and all nested routines. If an override exists within the nested routine, it takes precedence over the ON_ERROR call. ON_ERROR determines the action when no error handlers established with the CATCH procedure are found.
+  </p>
+  <h2 class="API">
+   <a name="O_828691053_889564">
+   </a>
+   <a name="O_828691053_889564_PageTOC_ON_ERROR_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   ON_ERROR,
+   <i>
+    N
+   </i>
+  </p>
+  <h2 class="API">
+   <a name="O_828691053_949649">
+   </a>
+   <a name="O_828691053_889566_PageTOC_ON_ERROR_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   N
+  </h3>
+  <p>
+   An integer that specifies the action to take. Valid values for
+   <i>
+    N
+   </i>
+   are:
+  </p>
+  <table style="caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="100px" class="Column-Column1" />
+   <col width="399px" class="Column-Column1" />
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Stop immediately at the statement that caused the error and print the current program stack. This is the default action.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       Print the current program stack,  return to the main program level and stop.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       Return to the caller of the program unit that called ON_ERROR, then stop and print the program stack from the caller up to the main program level.
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       Return to the program unit that called ON_ERROR, then stop and print the program stack from this program unit up to the main program level.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="O_828691053_934131">
+   </a>
+   <a name="O_828691053_17044">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="O_828691053_949702">
+   </a>
+   <a name="O_828691053_80830">
+   </a>
+   Example
+  </h2>
+  <p>
+   One useful option is to use ON_ERROR to cause control to be returned to the caller of a procedure in the event of an error. The statement:
+  </p>
+  <p class="Code">
+   ON_ERROR, 2
+  </p>
+  <p>
+   placed at the beginning of a procedure will have this effect. Include this statement in library procedures and other routines that will be used by others once the routines have been debugged. This form of error recovery makes debugging a routine difficult because the routine is exited as soon as an error occurs; therefore, it should be added once the code is completely tested.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Error handlers established by CATCH supersede calls to ON_ERROR made in the same procedure.
+  </p>
+  <h2 class="API">
+   <a name="O_828691053_889573">
+   </a>
+   <a name="O_828691053_889573_PageTOC_ON_ERROR_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="O_828691053_931669">
+   </a>
+   <a name="O_828691053_931669_PageTOC_ON_ERROR_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/CATCH.html#C_854643309_985147">
+    CATCH
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../M/MESSAGE.html#M_824365677_988498">
+    MESSAGE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

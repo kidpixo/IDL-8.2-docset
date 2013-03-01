@@ -1,0 +1,1380 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Object-Oriented Programming|Operator Overloading" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Overloadable Operators
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/TableStyles/Property_Table.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#Objects/Overloadable_Operators.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Object Classes/ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbsSelf">
+    Object-Oriented Programming
+   </span>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Overloadable Operators
+   </span>
+  </div>
+  <h1>
+   <a name="obj_operators_3013489070_998698">
+   </a>
+   <a name="obj_operators_3013489070_62206">
+   </a>
+   Overloadable Operators
+  </h1>
+  <p>
+   The following table describes IDL’s operators and provides information on the object method you must implement in order to override each for a custom object class.
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 577px;caption-side: bottom;mc-table-style: url('../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    <a name="obj_operators_3013489070_999066">
+    </a>
+    <a name="obj_operators_3013489070_25237">
+    </a>
+    Overloaded Object Operator Method Names
+   </p>
+   <col width="77px" />
+   <col width="151px" />
+   <col width="76px" />
+   <col width="156px" />
+   <col width="117px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColSep">
+      <p>
+       Operator
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColSep">
+      <p>
+       Non-Overloaded Operation
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColSep">
+      <p>
+       Operator Type
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColSep">
+      <p>
+       Object Method Name
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColEnd">
+      <p>
+       Function or Procedure
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       ++
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Increment
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Not overloadable
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       --
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Decrement
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Not overloadable
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       [ ]
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Indexing, right side
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       _overloadBracketsRightSide (see
+       <a href="Overloading_the_Array_In.html#obj_operators_3013489070_1007239" target="" title="" alt="" class="MCXref_0">
+        Overloading the Array Indexing Operator
+       </a>
+       for additional details)
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       [ ]
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Indexing, left side
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       _overloadBracketsLeftSide (see
+       <a class="MCXref_Heading_0" href="Overloading_the_Array_In.html#obj_operators_3013489070_1007239" target="" title="" alt="">
+        Overloading the Array Indexing Operator
+       </a>
+       for additional details)
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       Procedure
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       -
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Negate
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       _overloadMinusUnary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       NOT
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Bitwise NOT
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       _overloadNOT
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       ~
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Logical NOT
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       _overloadTilde
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       +
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Addition
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       _overloadPlus
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       -
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Subtraction
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       _overloadMinus
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       *
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Multiplication
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       _overloadAsterisk
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       /
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Division
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       _overloadSlash
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       ^
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Exponentiation
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       _overloadCaret
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       MOD
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Modulo
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       _overloadMOD
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       &lt;
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Minimum
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       _overloadLessThan
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       &gt;
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Maximum
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       _overloadGreaterThan
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       AND
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Bitwise AND
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       _overloadAND
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       OR
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Bitwise OR
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       _overloadOR
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       XOR
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Bitwise XOR
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       _overloadXOR
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       EQ
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Relational Equal
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       _overloadEQ
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       NE
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Relational Not Equal
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       _overloadNE
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       GE
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Greater Than or Equal
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       _overloadGE
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       GT
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Greater Than
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       _overloadGT
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       LE
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Less Than or Equal
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       _overloadLE
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       LT
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Less Than
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       _overloadLT
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       #
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Matrix multiplication
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       _overloadPound
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       ##
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Matrix Multiplication
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       _overloadPoundPound
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       &amp;&amp;
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Logical AND
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Not overloadable, but respects truth value returned by
+       <br />
+       <span class="Link">
+        <a href="#obj_operators_3013489070__overloadIsTrue">
+         _overloadIsTrue
+        </a>
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       ||
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Logical OR
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Not overloadable, but respects truth value returned by
+       <br />
+       <span class="Link">
+        <a href="#obj_operators_3013489070__overloadIsTrue">
+         _overloadIsTrue
+        </a>
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       if (obj)...
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Logical: obj_valid(obj)
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Not overloadable, but respects truth value returned by
+       <br />
+       <span class="Link">
+        <a href="#obj_operators_3013489070__overloadIsTrue">
+         _overloadIsTrue
+        </a>
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       Function
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       (? : )
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Conditional expression
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Not overloadable, but respects truth value returned by
+       <br />
+       <span class="Link">
+        <a href="#obj_operators_3013489070__overloadIsTrue">
+         _overloadIsTrue
+        </a>
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       *
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Pointer dereference
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Not overloadable
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       =
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Assignment operator
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       Not overloadable
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       [ ]
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Array concatenation
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Not overloadable
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       (
+       <i>
+        exp
+       </i>
+       )
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Grouping of expressions with parentheses
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Unary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Not overloadable
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       .
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Method invocation
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Not overloadable
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       .
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       Property invocation
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       Binary
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       Not overloadable, but will call GetProperty or SetProperty
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       N/A
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The behavior of the
+   <a href="../Reference Material/L/LOGICAL_AND.html#L_826528365_983100" target="" title="" alt="" class="MCXref_0">
+    LOGICAL_AND
+   </a>
+   ,
+   <a href="../Reference Material/L/LOGICAL_OR.html#L_826528365_983101" target="" title="" alt="" class="MCXref_0">
+    LOGICAL_OR
+   </a>
+   , and
+   <a href="../Reference Material/L/LOGICAL_TRUE.html#L_826528365_983139" target="" title="" alt="" class="MCXref_0">
+    LOGICAL_TRUE
+   </a>
+   functions is not affected by object operator overloading, but it does respect the truth values returned by the _overloadIsTrue function (see
+   <a class="MCXref_Heading_0" href="#obj_operators_3013489070_1006106">
+    The _overloadIsTrue Function
+   </a>
+   for more information).
+  </p>
+  <h2 class="API">
+   Overloading Compound Assignment Operators
+  </h2>
+  <p>
+   Compound assignment operators cannot be overloaded directly. They will be overloaded if the operator that is compounded is overloaded. For example, if the addition operator “+” is overloaded, “+=” will also be overloaded using the same user method.
+  </p>
+  <h2 class="API">
+   <a name="obj_operators_3013489070__overloadIsTrue">
+   </a>
+   <a name="obj_operators_3013489070_1006106">
+   </a>
+   <a name="obj_operators_3013489070_98478">
+   </a>
+   The _overloadIsTrue Function
+  </h2>
+  <p>
+   By default, evaluating an object reference for TRUE or FALSE (as in an IF block) yields TRUE if the object reference is valid, and FALSE for null objects. However, you can change this default behavior by implementing the _overloadIsTrue function method. This method allows you to evaluate an object and use your own criteria to determine if its state is TRUE (1) or FALSE (0).
+  </p>
+  <p>
+   The signature of the
+   <span class="Courier">
+    _overloadIsTrue
+   </span>
+   object method is:
+  </p>
+  <p class="Code">
+   FUNCTION className::_overloadIsTrue
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Determine whether the specified object meets the true
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; criteria, and place a 1 or a 0 in truth_value
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, truth_value
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   For example, you could create an object class called
+   <span class="Courier">
+    highVoltage
+   </span>
+   , with a VOLTAGE property. You could implement the object’s _overloadIsTrue function to check the VOLTAGE property, and return TRUE if VOLTAGE is greater than or equal to 220 volts. The method definition might look something like this:
+  </p>
+  <p class="Code">
+   FUNCTION highVoltage::_overloadIsTrue
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;high_or_low = self-&gt;VOLTAGE GE 220 ? 1 : 0
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, high_or_low
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   Supposing you instantiated an object of the
+   <span class="Courier">
+    highVoltage
+   </span>
+   class in
+   <span class="Courier">
+    ohighVoltage
+   </span>
+   , the evaluation code would look like this:
+  </p>
+  <p class="Code">
+   IF (ohighVoltage) THEN ...
+  </p>
+  <p>
+   Note that the _overloadIsTrue function is a unary routine. In an expression such as (obj1 || obj2) where both objects enable overloading, the _overloadIsTrue function of obj1 is called. If the first object’s _overloadIsTrue function returns TRUE, the logical OR operator short-circuits and the expression evaluates as TRUE. If the first object’s _overloadIsTrue function returns FALSE, the logical OR does not short-circuit, and the second object’s _overloadIsTrue function is called, whose result is used as the value of the entire expression.
+  </p>
+  <p>
+   The _overloadIsTrue method is called whenever an overloaded object’s truth value must be evaluated. Specifically, when an overloaded object appears in any of the following constructions:
+  </p>
+  <p class="Bullet">
+   IF...THEN...ELSE statement
+  </p>
+  <p class="Bullet">
+   WHILE...DO statement
+  </p>
+  <p class="Bullet">
+   REPEAT...UNTIL statement
+  </p>
+  <p class="Bullet">
+   Logical AND (
+   <span class="Courier">
+    &amp;&amp;
+   </span>
+   )
+  </p>
+  <p class="Bullet">
+   Logical OR (
+   <span class="Courier">
+    ||
+   </span>
+   )
+  </p>
+  <p class="Bullet">
+   Conditional expression (
+   <span class="Courier">
+    ?:
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   Overloadable Information Routines
+  </h2>
+  <p>
+   In addition to the standard operators listed in
+   <a class="MCXref_Table_Reference_0" href="#obj_operators_3013489070_999066">
+    Table
+   </a>
+   , object classes that inherit from the IDL_Object class can customize the information returned by the following IDL routines:
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 576px;caption-side: bottom;mc-table-style: url('../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Overloaded Information Routine Method Names
+   </p>
+   <col width="120px" />
+   <col width="300px" />
+   <col width="156px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColSep">
+      <p>
+       Routine
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColSep">
+      <p>
+       Default Behavior
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Head_0_0_RowSep_ColEnd">
+      <p>
+       Object Method Name
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       HELP
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Prints heap variable ID and object class name.
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       _overloadHelp
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       N_ELEMENTS
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Always reports 1 for a scalar object.
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       _overloadSize
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       PRINT/PRINTF
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       Prints heap variable ID and object class name.
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       _overloadPrint
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       SIZE
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       Always reports information for a scalar object.
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       _overloadSize
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   Overloadable Program Control Statements
+  </h2>
+  <p>
+   If your object inherits from the IDL_Object class, you can iterate through the elements of your object using the FOREACH statement. You are responsible for writing your object’s
+   <span class="Courier">
+    ::_overloadForeach
+   </span>
+   function method, which retrieves the value of the next object element in the iteration.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

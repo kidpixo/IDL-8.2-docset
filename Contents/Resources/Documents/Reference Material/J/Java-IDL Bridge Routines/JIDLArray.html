@@ -1,0 +1,586 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: J|Java-IDL Bridge Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   JIDLArray
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/J/Java-IDL Bridge Routines/JIDLArray.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../J_list.html">
+    Routines: J
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Java IDL Bridge Routines.html">
+    Java-IDL Bridge Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    JIDLArray
+   </span>
+  </div>
+  <h1>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLArray">
+   </a>
+   <a name="JIDL_Import_1464128226_1005347">
+   </a>
+   <a name="JIDL_Import_1464128226_ClassHead">
+   </a>
+   JIDLArray
+   <a name="kanchor1569">
+   </a>
+  </h1>
+  <h2 class="API">
+   Declaration
+  </h2>
+  <p class="Code">
+   public class
+   <span class="Bold">
+    JIDLArray
+   </span>
+   implements
+   <span class="Courier">
+    java.io.Serializable
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   <span class="Courier">
+    java.lang.Object
+   </span>
+  </p>
+  <p class="Code">
+   &#160;&#160;|
+  </p>
+  <p class="Code">
+   &#160;&#160;+--
+   <span class="Bold">
+    com.idl.javaidl.JIDLArray
+   </span>
+  </p>
+  <h2 class="API">
+   All Implemented Interfaces:
+  </h2>
+  <p class="Code">
+   java.io.Serializable
+  </p>
+  <h2 class="API">
+   Description
+  </h2>
+  <p>
+   The JIDLArray class wraps a Java array as an object usable by the Java-IDL Export bridge.
+  </p>
+  <p>
+   Wraps arrays of type boolean, byte, char, short, int, long, float, double, String, and JIDLObject-I.
+  </p>
+  <p>
+   When retrieving the object, the calling code must cast the Object wrapped by JIDLArray to the proper * array type. For example:
+  </p>
+  <p class="Code">
+   &#160;int[]&#160;my-Native-Array&#160;=&#160;...;
+  </p>
+  <p class="Code">
+   &#160;//&#160;Create&#160;a&#160;wrapped&#160;array&#160;so&#160;it&#160;may&#160;be&#160;used&#160;in&#160;the&#160;bridge
+  </p>
+  <p class="Code">
+   &#160;JIDLArray&#160;arr&#160;=&#160;new&#160;JIDLArray(my-Native-Array)&#160;
+  </p>
+  <p class="Code">
+   &#160;//&#160;...&#160;do&#160;something&#160;in&#160;the&#160;bridge&#160;to&#160;modify&#160;the&#160;array&#160;...
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;//&#160;Now&#160;cast&#160;the&#160;resultant&#160;array&#160;to&#160;the&#160;expected&#160;type
+  </p>
+  <p class="Code">
+   &#160;int[]&#160;new-Native&#160;=&#160;(int[])arr.array-Value();
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 477px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="143px" />
+   <col width="334px" />
+   <thead>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Member Summary
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p style="font-family: Times;font-weight: bold;font-size: 11pt;letter-spacing: 0em;color: #000000;">
+       <span class="Bold">
+        Constructors
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       &#160;
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_JIDLArray_java_lang_Object_">
+         JIDLArray(java.lang.Object arr)
+        </a>
+       </span>
+      </p>
+      <p>
+       Construct a JIDLArray from a native array
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p style="font-family: Times;font-weight: bold;font-size: 11pt;letter-spacing: 0em;color: #000000;">
+       <span class="Bold">
+        Methods
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.Object
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_arrayValue__">
+         arrayValue()
+        </a>
+       </span>
+      </p>
+      <p>
+       Get the native array that is wrapped by this object
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.String
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_getClassName__">
+         getClassName()
+        </a>
+       </span>
+      </p>
+      <p>
+       Get the classname of the wrapped array.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       java.lang.Object
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_getValue__">
+         getValue()
+        </a>
+       </span>
+      </p>
+      <p>
+       Get the native array that is wrapped by this object
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_setValue_com_idl_javaidl_JIDLArray_">
+         setValue(JIDLArray arr)
+        </a>
+       </span>
+      </p>
+      <p>
+       Set the native array that is wrapped by this object
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       void
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_setValue_java_lang_Object_">
+         setValue(java.lang.Object arr)
+        </a>
+       </span>
+      </p>
+      <p>
+       Set the native array that is wrapped by this object
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p class="Code">
+       java.lang.String
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       <span class="Link">
+        <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_toString__">
+         toString()
+        </a>
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 480px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="480px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Inherited Member Summary
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span class="Bold">
+        Methods inherited from class
+       </span>
+       <![CDATA[ ]]>
+       <span class="Courier">
+        Object
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       <span class="Courier">
+        equals(Object)
+       </span>
+       ,
+       <span class="Courier">
+        getClass()
+       </span>
+       ,
+       <span class="Courier">
+        hashCode()
+       </span>
+       ,
+       <span class="Courier">
+        notify()
+       </span>
+       ,
+       <span class="Courier">
+        notifyAll()
+       </span>
+       ,
+       <span class="Courier">
+        wait(long, int)
+       </span>
+       ,
+       <span class="Courier">
+        wait(long, int)
+       </span>
+       ,
+       <span class="Courier">
+        wait(long, int)
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   Constructors
+  </h2>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_JIDLArray_java_lang_Object_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   JIDLArray(Object)
+  </h3>
+  <p class="Code">
+   public
+   <span class="Bold">
+    JIDLArray
+   </span>
+   (
+   <span class="Courier">
+    java.lang.Object
+   </span>
+   arr)
+  </p>
+  <p>
+   Construct a JIDLArray from a native array
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    arr
+   </span>
+   - the native array to wrap for use in the export bridge (Must be an array of type boolean, byte, char, short, int, long, float, double, String, or JIDLObject-I.)
+  </p>
+  <h2 class="API">
+   Methods
+  </h2>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_arrayValue__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   arrayValue()
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.Object
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    arrayValue
+   </span>
+   ()
+  </p>
+  <p>
+   Get the native array that is wrapped by this object
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   the native array to wrap for use in the export bridge returned as an object. The array will be of type boolean, byte, char, short, int, long, float, double, String, or JIDLObject-I.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_getClassName__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   getClassName()
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.String
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    getClassName
+   </span>
+   ()
+  </p>
+  <p>
+   Get the classname of the wrapped array.
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   The classname of the wrapped array.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_getValue__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   getValue()
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.Object
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    getValue
+   </span>
+   ()
+  </p>
+  <p>
+   Get the native array that is wrapped by this object
+  </p>
+  <h4>
+   Returns:
+  </h4>
+  <p>
+   the native array to wrap for use in the export bridge returned as an object. The array will be of type boolean, byte, char, short, int, long, float, double, String, or JIDLObject-I.
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_setValue_com_idl_javaidl_JIDLArray_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   setValue(JIDLArray)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    setValue
+   </span>
+   (
+   <span class="Link">
+    <a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLArray">
+     com.idl.javaidl.JIDLArray
+    </a>
+   </span>
+   arr)
+  </p>
+  <p>
+   Set the native array that is wrapped by this object
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    arr
+   </span>
+   - the native array to wrap for use in the export bridge (Must be an array of type boolean, byte, char, short, int, long, float, double, String, or JIDLObject-I.)
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_setValue_java_lang_Object_">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   setValue(Object)
+  </h3>
+  <p class="Code">
+   public void
+   <span class="Bold">
+    setValue
+   </span>
+   (
+   <span class="Courier">
+    java.lang.Object
+   </span>
+   arr)
+  </p>
+  <p>
+   Set the native array that is wrapped by this object
+  </p>
+  <h4>
+   Parameters:
+  </h4>
+  <p>
+   <span class="Courier">
+    arr
+   </span>
+   - the native array to wrap for use in the export bridge (Must be an array of type boolean, byte, char, short, int, long, float, double, String, or JIDLObject-I.)
+  </p>
+  <h3>
+   <a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLArray_toString__">
+   </a>
+   <a name="JIDL_Import_1464128226_MemberHead">
+   </a>
+   toString()
+  </h3>
+  <p class="Code">
+   public
+   <span class="Courier">
+    java.lang.String
+   </span>
+   <![CDATA[ ]]>
+   <span class="Bold">
+    toString
+   </span>
+   ()
+  </p>
+  <h4>
+   Overrides:
+  </h4>
+  <p>
+   <span class="Courier">
+    toString
+   </span>
+   in class
+   <span class="Courier">
+    Object
+   </span>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

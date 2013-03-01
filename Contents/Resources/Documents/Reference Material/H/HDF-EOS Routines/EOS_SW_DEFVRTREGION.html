@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF-EOS Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   EOS_SW_DEFVRTREGION
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF-EOS Routines/EOS_SW_DEFVRTREGION.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF-EOS Routines.html">
+    HDF-EOS Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    EOS_SW_DEFVRTREGION
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_EOS_3103509269_1011725">
+   </a>
+   <a name="HDF_EOS_3103509269_68783">
+   </a>
+   EOS_SW_DEFVRTREGION
+  </h1>
+  <p>
+   Whereas the EOS_SW_DEFBOXREGION and EOS_SW_DEFTIMEPERIOD functions perform subsetting along the “Track” dimension, this function
+   <a name="kanchor838">
+   </a>
+   allows the user to subset along any dimension. The region is specified by a set of minimum and maximum values and can represent either a dimension index (case 1) or field value range (case 2). In the second case, the field must be one-dimensional and the values must be monotonic (strictly increasing or decreasing) in order that the resulting dimension index range be contiguous. (For the current version of this function, the second option is restricted to fields with one of the following HDF data types: 22, 24, 5, 6.)
+  </p>
+  <p>
+   This function may be called after EOS_SW_DEFBOXREGION or EOS_SW_DEFTIMEPERIOD to provide both geographic or time and “vertical” subsetting. In this case the user provides the id from the previous subset call. (This same id is then returned by the function.) This function may also be called “stand-alone” by setting the input id to (–1).
+  </p>
+  <p>
+   This function may be called up to eight times with the same region ID. It this way a region can be subsetted along a number of dimensions.
+  </p>
+  <p>
+   The EOS_SW_REGIONINFO and EOS_SW_EXTRACTREGION functions work as before, however, because there is no mapping performed between geolocation dimensions and data dimensions the field to be subsetted, (the field specified in the call to EOS_SW_REGIONINFO and EOS_SW_EXTRACTREGION) must contain the dimension used explicitly in the call to EOS_SW_DEFVRTREGION (case 1) or the dimension of the one-dimensional field (case 2).
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018178_PageTOC_EOS_SW_DEFVRTREGION_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = EOS_SW_DEFVRTREGION(
+   <span class="_Override" style="font-style: italic;">
+    swathID
+   </span>
+   ,
+   <span class="_Override" style="font-style: italic;">
+    regionID
+   </span>
+   ,
+   <span class="_Override" style="font-style: italic;">
+    vertObj
+   </span>
+   ,
+   <span class="_Override" style="font-style: italic;">
+    range
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018181_PageTOC_EOS_SW_DEFVRTREGION_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the swath region ID if successful and FAIL (–1) otherwise.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018183_PageTOC_EOS_SW_DEFVRTREGION_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   swathID
+  </h3>
+  <p>
+   Swath id (long) returned by
+   <a class="MCXref_Heading_0" href="EOS_SW_CREATE.html#HDF_EOS_3103509269_1011130">
+    EOS_SW_CREATE
+   </a>
+   or
+   <a class="MCXref_Heading_0" href="EOS_SW_ATTACH.html#HDF_EOS_3103509269_1010903">
+    EOS_SW_ATTACH
+   </a>
+   .
+  </p>
+  <h3 class="Argument">
+   regionID
+  </h3>
+  <p>
+   Region or period id (long) from previous subset call, or –1 to create a new region within the entire dataset.
+  </p>
+  <h3 class="Argument">
+   vertObj
+  </h3>
+  <p>
+   Dimension or field (string) to subset by.
+  </p>
+  <h3 class="Argument">
+   range
+  </h3>
+  <p>
+   Minimum and maximum range (double) for subset.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1064223_PageTOC_EOS_SW_DEFVRTREGION_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1018194_PageTOC_EOS_SW_DEFVRTREGION_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Suppose we have a field called Pressure of dimension Height whose values increase from 100 to1000, and we desire all the elements with values between 500 and 800:
+  </p>
+  <p class="Code">
+   range[0] = 500.d
+  </p>
+  <p class="Code">
+   range[1] = 800.d
+  </p>
+  <p class="Code">
+   regionID = EOS_SW_DEFVRTREGION(swathID, -1, "Pressure", range)
+  </p>
+  <p>
+   The function determines the elements in the Height dimension that correspond to the values of the Pressure field between 500 and 800.
+  </p>
+  <p>
+   If we wish to specify the subset as elements 2 through 5 (0 - based) of the Height dimension, the call would be:
+  </p>
+  <p class="Code">
+   range[0] = 2.d
+  </p>
+  <p class="Code">
+   range[1] = 5.d
+  </p>
+  <p class="Code">
+   regionID = EOS_SW_DEFVRTREGION(swathID, -1, "DIM:Height", range)
+  </p>
+  <p>
+   The “DIM:” prefix tells the routine that the range corresponds to elements of a dimension rather than values of a field. In this example, any field to be subsetted must contain the Height dimension.
+  </p>
+  <p>
+   If a previous subset region or period was defined with an id of subsetID that we wish to refine further with the vertical subsetting defined above, we make the call:
+  </p>
+  <p class="Code">
+   regionID = EOS_SW_DEFVRTREGION(swathID, subsetID, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;"Pressure", range)
+  </p>
+  <p>
+   The return value, regionID, is set equal to subsetID. That is, the subset region is modified rather than a new one created. We can further refine the subset region with another call to the function:
+  </p>
+  <p class="Code">
+   freq[0] = 1540.3d
+  </p>
+  <p class="Code">
+   freq[1] = 1652.8d
+  </p>
+  <p class="Code">
+   regionID = EOS_SW_DEFVRTREGION(swathID, regionID, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;"FreqRange", freq)
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1052869_PageTOC_EOS_SW_DEFVRTREGION_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

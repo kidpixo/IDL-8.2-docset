@@ -1,0 +1,473 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IOCTL
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/IOCTL.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IOCTL
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="I_833016429_677310">
+   </a>
+   <a name="I_833016429_61154">
+   </a>
+   IOCTL
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#I_833016429_677314">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_884865">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_677316">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_677323">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_677339">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_822399">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_880856">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1559">
+   </a>
+   IOCTL function provides a thin wrapper over the UNIX
+   <span class="Courier">
+    ioctl(2)
+   </span>
+   system call. IOTCL performs special functions on the specified
+   <a name="kanchor1560">
+   </a>
+   file. The set of functions actually available depends on your version of UNIX and the type of file (tty, tape, disk file, etc.) referred to.
+  </p>
+  <p>
+   To use IOCTL, read the C programmer’s documentation describing the
+   <span class="Courier">
+    ioctl(2)
+   </span>
+   function for the desired device and convert all constants and data to their
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   equivalents.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677314">
+   </a>
+   <a name="I_833016429_677314_PageTOC_IOCTL_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = IOCTL(
+   <i>
+    File_Unit
+   </i>
+   [,&#160;
+   <i>
+    Request
+   </i>
+   ,
+   <i>
+    Arg
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_677325">
+    BY_VALUE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_677327">
+    MT_OFFLINE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_677329">
+    MT_REWIND
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_677331">
+    MT_SKIP_FILE
+   </a>
+   =[-]
+   <i>
+    number_of_files
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#I_833016429_677333">
+    MT_SKIP_RECORD
+   </a>
+   =[-]
+   <i>
+    number_of_records
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_677335">
+    MT_WEOF
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#I_833016429_677337">
+    SUPPRESS_ERROR
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_884865">
+   </a>
+   <a name="I_833016429_25634">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The value returned by the system
+   <span class="Courier">
+    ioctl
+   </span>
+   function is returned as the value of the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   IOCTL function.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677316">
+   </a>
+   <a name="I_833016429_677316_PageTOC_IOCTL_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   File_Unit
+  </h3>
+  <p>
+   The
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   logical unit number (LUN) for the open file on which the
+   <span class="Courier">
+    ioctl
+   </span>
+   request is made.
+  </p>
+  <h3 class="Argument">
+   Request
+  </h3>
+  <p>
+   A longword integer that specifies the ioctl request code. These codes are usually contained in C language header files provided by the operating system, and are not generally portable between UNIX versions. If one of the “MT” keywords is used, this argument can be omitted.
+  </p>
+  <h3 class="Argument">
+   Arg
+  </h3>
+  <p>
+   A named variable through which data if passed to and from ioctl. IOCTL requests usually request data from the system or supply the system with information. The user must make
+   <i>
+    Arg
+   </i>
+   the correct type and size. Errors in typing or sizing
+   <i>
+    Arg
+   </i>
+   can corrupt the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   address space and/or make
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   crash. If one of the MT keywords is used, this argument can be omitted.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677323">
+   </a>
+   <a name="I_833016429_677323_PageTOC_IOCTL_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   Note that the keywords below that start with “MT” can be used to issue commonly used magnetic tape ioctl() calls. When these keywords are used, the
+   <i>
+    Request
+   </i>
+   and
+   <i>
+    Arg
+   </i>
+   arguments are ignored and an be omitted. Magnetic tape operations not available via these keywords can still be executed by supplying the appropriate
+   <i>
+    Request
+   </i>
+   and
+   <i>
+    Arg
+   </i>
+   values. When issuing magnetic tape IOCTL calls, be aware that different devices have different rules for which ioctl calls are allowed, and when. The documentation for your computer system explains those rules.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_677325">
+   </a>
+   <a name="I_833016429_677325_Keywords_IOCTL__">
+   </a>
+   BY_VALUE
+  </h3>
+  <p>
+   If this keyword is set,
+   <i>
+    Arg
+   </i>
+   is converted to a scalar longword and this longword is passed by value. Normally,
+   <i>
+    Arg
+   </i>
+   is passed to ioctl by reference (i.e., by address).
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_677327">
+   </a>
+   <a name="I_833016429_677327_Keywords_IOCTL__">
+   </a>
+   MT_OFFLINE
+  </h3>
+  <p>
+   Set this keyword to rewind and unload a tape.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_677329">
+   </a>
+   <a name="I_833016429_677329_Keywords_IOCTL__">
+   </a>
+   MT_REWIND
+  </h3>
+  <p>
+   Set this keyword to rewind a tape.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_677331">
+   </a>
+   <a name="I_833016429_677331_Keywords_IOCTL__">
+   </a>
+   MT_SKIP_FILE
+  </h3>
+  <p>
+   Use this keyword to skip files on a tape. A positive value skips forward that number of files. A negative value skips backward.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_677333">
+   </a>
+   <a name="I_833016429_677333_Keywords_IOCTL__">
+   </a>
+   MT_SKIP_RECORD
+  </h3>
+  <p>
+   Use this keyword to skip records on tape. A positive value skips forward that number of files. A negative value skips backward.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_677335">
+   </a>
+   <a name="I_833016429_677335_Keywords_IOCTL__">
+   </a>
+   MT_WEOF
+  </h3>
+  <p>
+   Set this keyword to write an EOF (“tape mark”) on the tape at the current location.
+  </p>
+  <h3 class="Keyword">
+   <a name="I_833016429_677337">
+   </a>
+   <a name="I_833016429_677337_Keywords_IOCTL__">
+   </a>
+   SUPPRESS_ERROR
+  </h3>
+  <p>
+   Set this keyword to log errors quietly and cause a value of -1 to be returned. The default is for
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   to notice any failures associated with the use of
+   <span class="Courier">
+    ioctl
+   </span>
+   and issue the appropriate
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   error and halt execution.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677339">
+   </a>
+   <a name="I_833016429_677339_PageTOC_IOCTL_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following example prints the size of the terminal being used by the current
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   session. It is known to work under SunOS 4.1.2. Changes may be necessary for other operating systems or even other versions of SunOS.
+  </p>
+  <p class="Code">
+   ; Variable to receive result. This structure is described in
+   <br />
+   ; Section 4 of the SunOS manual pages under termios(4):
+   <br />
+   winsize = {row:0u, col:0u, xpixel:0u, ypixel:0u}
+   <br />
+   <br />
+   ; The request code for obtaining the tty size, as determined by
+   <br />
+   ; reading the termios(4) documentation, and reading the system
+   <br />
+   ; include files in the /usr/include/sys directory:
+   <br />
+   TIOCGWINSZ = 21608L
+   <br />
+   <br />
+   ; Make the information request. -1 is the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   logical file unit for
+   <br />
+   ; the standard output:
+   <br />
+   ret = IOCTL(-1, TIOCGWINSZ, winsize)
+   <br />
+   <br />
+   ; Output the results:
+   <br />
+   PRINT,winsize.row, winsize.col, $
+   <br />
+   &#160;&#160;&#160;format='("TTY has ", I0," rows and ", I0," columns.")'
+  </p>
+  <p>
+   The following points should be noted in this example:
+  </p>
+  <ul>
+   <li value="1">
+    Even though we only want the number of rows and columns, we must include all the fields required by the TIOCGWINSIZ
+    <span class="Courier">
+     ioctl
+    </span>
+    in the winsize variable (as documented in the
+    <span class="Courier">
+     termio(4)
+    </span>
+    manual page). Not providing a large enough result buffer would cause
+    <span class="DocumentTitleProductName">
+     IDL
+    </span>
+    ’s memory to be corrupted.
+   </li>
+   <li value="2">
+    The value of TIOCGWINSZ was determined by examining the system header files provided in the
+    <span class="Courier">
+     /usr/include/sys
+    </span>
+    directory. Such values are not always portable between major operating system releases.
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="I_833016429_822399">
+   </a>
+   <a name="I_833016429_822399_PageTOC_IOCTL_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="I_833016429_880856">
+   </a>
+   <a name="I_833016429_880856_PageTOC_IOCTL_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../O/OPEN.html#O_828691053_932624">
+    OPENR/OPENU/OPENW
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

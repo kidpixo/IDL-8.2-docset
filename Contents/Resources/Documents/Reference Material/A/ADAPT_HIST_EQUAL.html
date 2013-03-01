@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: A" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   ADAPT_HIST_EQUAL
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/A/ADAPT_HIST_EQUAL.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="A_list.html">
+    Routines: A
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    ADAPT_HIST_EQUAL
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="A_850317933_985007">
+   </a>
+   <a name="A_850317933_67514">
+   </a>
+   ADAPT_HIST_EQUAL
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#A_850317933_985037">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_985039">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_985041">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_985044">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_985051">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_985162">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#A_850317933_991313">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor78">
+   </a>
+   ADAPT_HIST_EQUAL function performs adaptive histogram equalization, a form of automatic image contrast enhancement. The algorithm is described in Pizer et. al., “Adaptive Histogram Equalization and its Variations.”, Computer Vision, Graphics and Image Processing, 39:355-368. Adaptive histogram equalization involves applying contrast enhancement based on the local region surrounding each pixel. Each pixel is mapped to an intensity proportional to its rank within the surrounding neighborhood. This method of automatic contrast enhancement has proven to be broadly applicable to a wide range of images and to have demonstrated effectiveness.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    adapt_hist_equal.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_985037">
+   </a>
+   <a name="A_850317933_985037_PageTOC_ADAPT_HIST_EQUAL_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = ADAPT_HIST_EQUAL (
+   <i>
+    Image
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#A_850317933_985045">
+    CLIP
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#A_850317933_987804">
+    FCN
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    vector
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#A_850317933_985047">
+    NREGIONS
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    nregions
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#A_850317933_985049">
+    TOP
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    value
+   </span>
+   ]&#160;)
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_985039">
+   </a>
+   <a name="A_850317933_985039_PageTOC_ADAPT_HIST_EQUAL_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result of the function is a byte image with the same dimensions as the input image parameter.
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_985041">
+   </a>
+   <a name="A_850317933_985041_PageTOC_ADAPT_HIST_EQUAL_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Image
+  </h3>
+  <p>
+   A two-dimensional array representing the image for which adaptive histogram equalization is to be performed. This parameter is interpreted as unsigned 8-bit data, so be sure that the input values are properly scaled into the range of 0 to 255.
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_985044">
+   </a>
+   <a name="A_850317933_985044_PageTOC_ADAPT_HIST_EQUAL_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="A_850317933_985045">
+   </a>
+   <a name="A_850317933_985045_Keywords_ADAPT_HIST_EQUAL__">
+   </a>
+   CLIP
+  </h3>
+  <p>
+   Set this keyword to a nonzero value to clip the histogram by limiting its slope to the given CLIP value, thereby limiting contrast. For example, if CLIP is set to 3, the slope of the histogram is limited to 3. By default, the slope and/or contrast is not limited. Noise over-enhancement in nearly homogeneous regions is reduced by setting this parameter to values larger than 1.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="A_850317933_987804">
+   </a>
+   <a name="A_850317933_987804_Keywords_ADAPT_HIST_EQUAL__">
+   </a>
+   FCN
+  </h3>
+  <p>
+   Set this keyword to the desired cumulative probability distribution function in the form of a 256 element vector.  If omitted, a linear ramp, which yields equal probability bins results.  This function is later normalized, so magnitude is inconsequential, though should increase monotonically.
+  </p>
+  <h3 class="Keyword">
+   <a name="A_850317933_985047">
+   </a>
+   <a name="A_850317933_985047_Keywords_ADAPT_HIST_EQUAL__">
+   </a>
+   NREGIONS
+  </h3>
+  <p>
+   Set this keyword to the size of the overlapped tiles, as a fraction of the largest dimensions of the image size. The default is 12, which makes each tile 1/12 the size of the largest image dimension.
+  </p>
+  <h3 class="Keyword">
+   <a name="A_850317933_985049">
+   </a>
+   <a name="A_850317933_985049_Keywords_ADAPT_HIST_EQUAL__">
+   </a>
+   TOP
+  </h3>
+  <p>
+   Set this keyword to the maximum value of the scaled output array. The default is 255.
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_985051">
+   </a>
+   <a name="A_850317933_985051_PageTOC_ADAPT_HIST_EQUAL_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following code snippet reads a data file in the
+   <span class="Courier">
+    examples/data
+   </span>
+   subdirectory of the IDL distribution containing a cerebral angiogram, and then displays both the original image and the adaptive histogram equalized image:
+  </p>
+  <p class="Code">
+   OPENR, 1, FILEPATH('cereb.dat', $
+   <br />
+   &#160;&#160;&#160;SUBDIRECTORY=['examples','data'])
+   <br />
+   <br />
+   ;Image size = 512 x 512
+   <br />
+   a = BYTARR(512,512, /NOZERO)
+   <br />
+   <br />
+   ;Read it
+   <br />
+   READU, 1, a
+   <br />
+   CLOSE, 1
+   <br />
+   <br />
+   ; Reduce size of image for comparison
+   <br />
+   a = CONGRID(a, 256,256)
+   <br />
+   <br />
+   ;Show original
+   <br />
+   TVSCL, a, 0
+   <br />
+   <br />
+   ;Show processed
+   <br />
+   TV, ADAPT_HIST_EQUAL(a, TOP=!D.TABLE_SIZE-1), 1
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Also see “Working with Histograms” (Chapter 8,
+   <i>
+    Image Processing in IDL
+   </i>
+   in .pdf format in the
+   <code>
+    help
+   </code>
+   directory of your IDL installation).
+  </p>
+  <h2 class="API">
+   <a name="A_850317933_985162">
+   </a>
+   <a name="A_850317933_985162_PageTOC_ADAPT_HIST_EQUAL_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="A_850317933_991313">
+   </a>
+   <a name="A_850317933_991313_PageTOC_ADAPT_HIST_EQUAL_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../H/H_EQ_CT.html#H_835179117_931377">
+    H_EQ_CT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../H/H_EQ_INT.html#H_835179117_759200">
+    H_EQ_INT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../H/HIST_2D.html#H_835179117_758132">
+    HIST_2D
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../H/HIST_EQUAL.html#H_835179117_758147">
+    HIST_EQUAL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../H/HISTOGRAM.html#H_835179117_677165">
+    HISTOGRAM
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

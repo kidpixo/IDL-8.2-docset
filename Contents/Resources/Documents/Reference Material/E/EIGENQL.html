@@ -1,0 +1,458 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: E" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   EIGENQL
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/E/EIGENQL.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="E_list.html">
+    Routines: E
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    EIGENQL
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="E_841667181_862888">
+   </a>
+   <a name="E_841667181_18584">
+   </a>
+   EIGENQL
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#E_841667181_862891">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_862893">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_988331">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_862896">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_862906">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_862924">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_992720">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor719">
+   </a>
+   EIGENQL function computes the
+   <a name="kanchor720">
+   </a>
+   eigenvalues and eigenvectors of an
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    n
+   </i>
+   real, symmetric array using
+   <a name="kanchor721">
+   </a>
+   Householder reductions and the
+   <a name="kanchor722">
+   </a>
+   QL method with implicit shifts.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    eigenql.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you are working with complex inputs, use the LA_EIGENQL function instead.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_862891">
+   </a>
+   <a name="E_841667181_862891_PageTOC_EIGENQL_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = EIGENQL(
+   <i>
+    A
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#E_841667181_870576">
+    ABSOLUTE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#E_841667181_862897">
+    ASCENDING
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#E_841667181_862899">
+    DOUBLE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#E_841667181_870583">
+    EIGENVECTORS
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#E_841667181_862901">
+    OVERWRITE
+   </a>
+   | ,
+   <a class="MCXref_Heading_0" href="#E_841667181_862903">
+    RESIDUAL
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_862893">
+   </a>
+   <a name="E_841667181_862893_PageTOC_EIGENQL_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This function returns an
+   <i>
+    n
+   </i>
+   -element vector containing the eigenvalues.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_988331">
+   </a>
+   <a name="E_841667181_988331_PageTOC_EIGENQL_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   A
+  </h3>
+  <p>
+   An
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    n
+   </i>
+   symmetric single- or double-precision floating-point array.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_862896">
+   </a>
+   <a name="E_841667181_862896_PageTOC_EIGENQL_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="E_841667181_870576">
+   </a>
+   <a name="E_841667181_870576_Keywords_EIGENQL__">
+   </a>
+   ABSOLUTE
+  </h3>
+  <p>
+   Set this keyword to sort the eigenvalues by their absolute value (their magnitude) rather than by their signed value.
+  </p>
+  <h3 class="Keyword">
+   <a name="E_841667181_862897">
+   </a>
+   <a name="E_841667181_862897_Keywords_EIGENQL__">
+   </a>
+   ASCENDING
+  </h3>
+  <p>
+   Set this keyword to return eigenvalues in ascending order (smallest to largest). If not set or set to zero, eigenvalues are returned in descending order (largest to smallest). The eigenvectors are correspondingly reordered.
+  </p>
+  <h3 class="Keyword">
+   <a name="E_841667181_862899">
+   </a>
+   <a name="E_841667181_862899_Keywords_EIGENQL__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h3 class="Keyword">
+   <a name="E_841667181_870583">
+   </a>
+   <a name="E_841667181_870583_Keywords_EIGENQL__">
+   </a>
+   EIGENVECTORS
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain the computed eigenvectors in an
+   <i>
+    n
+   </i>
+   -by-
+   <i>
+    n
+   </i>
+   array. The
+   <i>
+    i
+   </i>
+   <sup class="italic">
+    th
+   </sup>
+   row of the returned array contains the
+   <i>
+    i
+   </i>
+   <sup class="italic">
+    th
+   </sup>
+   eigenvalue. If no variable is supplied, the array will not be computed.
+  </p>
+  <h3 class="Keyword">
+   <a name="E_841667181_862901">
+   </a>
+   <a name="E_841667181_862901_Keywords_EIGENQL__">
+   </a>
+   OVERWRITE
+  </h3>
+  <p>
+   Set this keyword to use the input array for internal storage and to overwrite its previous contents.
+  </p>
+  <h3 class="Keyword">
+   <a name="E_841667181_862903">
+   </a>
+   <a name="E_841667181_862903_Keywords_EIGENQL__">
+   </a>
+   RESIDUAL
+  </h3>
+  <p>
+   Use this keyword to specify a named variable that will contain the residuals for each eigenvalue/eigenvector (λ/
+   <i>
+    x
+   </i>
+   ) pair. The residual is based on the definition A
+   <i>
+    x
+   </i>
+   &#160;–&#160;(λ)
+   <i>
+    x
+   </i>
+   &#160;=&#160;0 and is an array of the same size as A and the same type as
+   <i>
+    Result
+   </i>
+   . The rows of this array correspond to the residuals for each eigenvalue/eigenvector pair.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the OVERWRITE keyword is set, the RESIDUAL keyword has no effect.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_862906">
+   </a>
+   <a name="E_841667181_862906_PageTOC_EIGENQL_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Define an n-by-n real, symmetric array:
+   <br />
+   A = [[ 5.0,  4.0,  0.0, -3.0], $
+   <br />
+   [ 4.0,  5.0,  0.0, -3.0], $
+   <br />
+   [ 0.0,  0.0,  5.0, -3.0], $
+   <br />
+   [-3.0, -3.0, -3.0,  5.0]]
+   <br />
+   <br />
+   ; Compute the eigenvalues and eigenvectors:
+   <br />
+   eigenvalues = EIGENQL(A, EIGENVECTORS = evecs, $
+   <br />
+   &#160;&#160;&#160;RESIDUAL = residual)
+   <br />
+   <br />
+   ;Print the eigenvalues and eigenvectors:
+   <br />
+   PRINT, 'Eigenvalues: '
+   <br />
+   PRINT, eigenvalues
+   <br />
+   PRINT, 'Eigenvectors: '
+   <br />
+   PRINT, evecs
+   <br />
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   Eigenvalues:
+  </p>
+  <p class="Code">
+   12.0915&#160;&#160;&#160;&#160;6.18662&#160;&#160;&#160;&#160;1.00000&#160;&#160;&#160;&#160;0.721870
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   Eigenvectors:
+  </p>
+  <p class="Code">
+   -0.554531&#160;&#160;&#160;&#160;-0.554531&#160;&#160;&#160;-0.241745&#160;&#160;&#160;&#160;&#160;0.571446
+  </p>
+  <p class="Code">
+   -0.342981&#160;&#160;&#160;&#160;-0.342981&#160;&#160;&#160;&#160;0.813186&#160;&#160;&#160;&#160;-0.321646
+  </p>
+  <p class="Code">
+   &#160;0.707107&#160;&#160;&#160;&#160;-0.707107&#160;&#160;&#160;-6.13503e-008-6.46503e-008
+  </p>
+  <p class="Code">
+   &#160;0.273605&#160;&#160;&#160;&#160;&#160;0.273605&#160;&#160;&#160;&#160;0.529422&#160;&#160;&#160;&#160;&#160;0.754979
+  </p>
+  <p>
+   The accuracy of each eigenvalue/eigenvector (λ/
+   <i>
+    x
+   </i>
+   ) pair may be checked by printing the residual array:
+  </p>
+  <p class="Code">
+   PRINT, residual
+  </p>
+  <p>
+   The RESIDUAL array has the same dimensions as the input array and the same type as the result. The residuals are contained in the rows of the RESIDUAL array. All residual values should be floating-point zeros.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_862924">
+   </a>
+   <a name="E_841667181_862924_PageTOC_EIGENQL_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="E_841667181_992720">
+   </a>
+   <a name="E_841667181_992720_PageTOC_EIGENQL_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="EIGENVEC.html#E_841667181_47274">
+    EIGENVEC
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LA_EIGENQL.html#L_826528365_958889">
+    LA_EIGENQL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/TRIQL.html#T_809226861_52198">
+    TRIQL
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

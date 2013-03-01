@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|File Format Object Classes|IDLffJPEG2000" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffJPEG2000::GetUUID
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/File Format/IDLffJPEG2000__GetUUID.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_ff.html">
+    File Format Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffJPEG2000::GetUUID
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_ff_3755668711_1270293">
+   </a>
+   <a name="objects_ff_3755668711_36862">
+   </a>
+   IDLffJPEG2000::GetUUID
+  </h1>
+  <p>
+   The IDLffJPEG2000::GetUUI
+   <a name="kanchor3842">
+   </a>
+   D function method allows you to get the data field from the specified UUID box.
+  </p>
+  <p>
+   A JPEG2000 file can contain 0-
+   <i>
+    n
+   </i>
+   number of UUID boxes. Each UUID box in a JPEG2000 file is made up of a UUID field and a user data field. A UUID box allows the user to store application specific data inside a JPEG2000 file using a universally unique identifier.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Data
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLffJPEG2000.html#objects_ff_3755668711_1371624">
+    IDLffJPEG2000
+   </a>
+   ::]GetUUID(
+   <i>
+    UUID
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_ff_3755668711_1270314">
+    LENGTH
+   </a>
+   =
+   <i>
+    length
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns one of the following:
+  </p>
+  <ul>
+   <li value="1">
+    a scalar zero when the passed in UUID is not found in the file
+   </li>
+   <li value="2">
+    a byte array containing the data found in the data field of the UUID box.
+   </li>
+   <li value="3">
+    a scalar zero when the passed UUID is found in the file but does not contain any data (i.e. the data field is empty).
+   </li>
+  </ul>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   UUID
+  </h3>
+  <p>
+   The UUID argument is required. The UUID argument must be a 16 byte array.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_ff_3755668711_1270314">
+   </a>
+   <a name="objects_ff_3755668711_43910">
+   </a>
+   LENGTH
+  </h3>
+  <p>
+   Length is an optional keyword.  If present, the length variable will be set to the number of bytes in the returned data array.  If present and the requested UUID is not found, length will be 0.  If present and the requested UUID is found but does not contain any data (i.e. the data field is empty), the length will be -1.
+  </p>
+  <h2 class="API">
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

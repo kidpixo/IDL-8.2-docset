@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF5 Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   H5T_ENUM_SET_DATA
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF5 Routines/H5T_ENUM_SET_DATA.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF5_Routines.html">
+    HDF5 Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    H5T_ENUM_SET_DATA
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF5_209170119_1010831">
+   </a>
+   <a name="HDF5_209170119_38005">
+   </a>
+   H5T_ENUM_SET_DATA
+  </h1>
+  <p>
+   The
+   <a name="kanchor1431">
+   </a>
+   H5T_ENUM_SET_DATA procedure sets all the name/value pairs on an enumeration datatype object.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    h5t_enum_set_data.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_1264165_PageTOC_H5T_ENUM_SET_DATA_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   H5T_ENUM_SET_DATA,
+   <span class="Italic">
+    Datatype_id
+   </span>
+   ,
+   <span class="Italic">
+    Data
+   </span>
+   ,
+   <span class="Italic">
+    Values
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_1264167_PageTOC_H5T_ENUM_SET_DATA_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Datatype_id
+  </h3>
+  <p>
+   A long integer containing the identifier of the enumeration datatype.
+  </p>
+  <h3 class="Argument">
+   Data
+  </h3>
+  <p>
+   A string array or array of named structures:
+  </p>
+  <p class="Bullet">
+   If
+   <span class="Italic">
+    Data
+   </span>
+   is a string array, it contains the
+   <span class="Italic">
+    names
+   </span>
+   of the members of the enumeration datatype, and the
+   <span class="Italic">
+    Values
+   </span>
+   argument is required.
+  </p>
+  <p class="Bullet">
+   If
+   <span class="Italic">
+    Data
+   </span>
+   is an array of named structures, the
+   <span class="Italic">
+    Values
+   </span>
+   argument is ignored. The structures that make up
+   <span class="Italic">
+    Data
+   </span>
+   must be of type IDL_H5_ENUM, which has the following signature:
+  </p>
+  <p class="Code_Indented">
+   {IDL_H5_ENUM, NAME:'', VALUE:0}
+  </p>
+  <h3 class="Argument">
+   Values
+  </h3>
+  <p>
+   An integer array containing the
+   <span class="Italic">
+    values
+   </span>
+   of the members of the enumeration datatype. The
+   <span class="Italic">
+    Values
+   </span>
+   array must have the same number of elements as the string array specified by
+   <span class="Italic">
+    Data
+   </span>
+   . This argument is ignored if
+   <span class="Italic">
+    Data
+   </span>
+   is an array of structures.
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_1264177_PageTOC_H5T_ENUM_SET_DATA_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_1264179_PageTOC_H5T_ENUM_SET_DATA_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="HDF5_209170119_1264186_PageTOC_H5T_ENUM_SET_DATA_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="H5T_ENUM_CREATE.html#HDF5_209170119_1010595">
+    H5T_ENUM_CREATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="H5T_ENUM_GET_DATA.html#HDF5_209170119_1010662">
+    H5T_ENUM_GET_DATA
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="H5T_ENUM_INSERT.html#HDF5_209170119_1010728">
+    H5T_ENUM_INSERT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

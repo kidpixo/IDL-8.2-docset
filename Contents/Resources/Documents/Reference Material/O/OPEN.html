@@ -1,0 +1,893 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: O" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   OPENR/OPENU/OPENW
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/O/OPEN.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="O_list.html">
+    Routines: O
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    OPENR/OPENU/OPENW
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="O_828691053_932624">
+   </a>
+   <a name="O_828691053_59773">
+   </a>
+   OPENR/OPENU/OPENW
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#O_828691053_889688">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#O_828691053_889693">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#O_828691053_889706">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#O_828691053_889916">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#O_828691053_950310">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#O_828691053_931681">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The three
+   <a name="kanchor1999">
+   </a>
+   OPEN procedures open a specified
+   <a name="kanchor2000">
+   </a>
+   file for input and/or output.
+  </p>
+  <p class="Bullet">
+   OPENR (OPEN Read) opens an existing file for input only.
+  </p>
+  <p class="Bullet">
+   OPENW (OPEN Write) opens a new file for input and output. If the file exists, it is truncated and its old contents are destroyed.
+  </p>
+  <p class="Bullet">
+   OPENU (OPEN Update) opens an existing file for input and output.
+  </p>
+  <h3>
+   Logical Unit Numbers and Application Development
+  </h3>
+  <p>
+   Logical Unit Numbers (LUNs) are assigned to individual files when the files are opened by the IDL OPENR/OPENU/OPENW commands, and are used to specify which file IDL should read from or write to. There are a total of 128 LUNs available for assignment to files. While it is possible to assign any of the integers between 1-99 to a given file, when writing applications for others it is good programming practice to let IDL assign and manage the LUNs itself. By using the GET_LUN keyword to the OPEN routines, you can ask IDL to assign a free Logical Unit Number between 100-128 to the specified file. Letting IDL assign the LUN from the list of free unit numbers ensures that your application does not attempt to use a LUN already in use by someone else’s application. See the GET_LUN keyword for details. See
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Components of the IDL Language/Understanding__LUNs_.html#files_2839720996_168544" target="" title="" alt="">
+    Understanding (LUNs)
+   </a>
+   for additional information on LUNs.
+  </p>
+  <h2 class="API">
+   <a name="O_828691053_889688">
+   </a>
+   <a name="O_828691053_889688_PageTOC_OPEN__">
+   </a>
+   Syntax
+  </h2>
+  <p>
+   There are three forms of the OPEN procedure:
+  </p>
+  <p class="Syntax">
+   OPENR,
+   <i>
+    Unit
+   </i>
+   ,
+   <i>
+    File
+   </i>
+  </p>
+  <p class="Syntax">
+   OPENW,
+   <i>
+    Unit
+   </i>
+   ,
+   <i>
+    File
+   </i>
+  </p>
+  <p class="Syntax">
+   OPENU,
+   <i>
+    Unit
+   </i>
+   ,
+   <i>
+    File
+   </i>
+  </p>
+  <p class="Syntax">
+   <span class="Bold">
+    Keywords (all platforms):
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_889709">
+    APPEND
+   </a>
+   | ,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_928372">
+    COMPRESS
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#O_828691053_889712">
+    BUFSIZE
+   </a>
+   ={0&#160;|&#160;1&#160;|&#160;
+   <i>
+    value&gt;
+   </i>
+   512}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_928370">
+    DELETE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#O_828691053_889720">
+    ERROR
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_889729">
+    F77_UNFORMATTED
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_889739">
+    GET_LUN
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_889747">
+    MORE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_929441">
+    NOEXPAND_PATH
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_930929">
+    STDIO
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_889764">
+    SWAP_ENDIAN
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_889767">
+    SWAP_IF_BIG_ENDIAN
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_889770">
+    SWAP_IF_LITTLE_ENDIAN
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_889773">
+    VAX_FLOAT
+   </a>
+   ] [,&#160;
+   <a href="#O_828691053_889787">
+    WIDTH
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_889796">
+    XDR
+   </a>
+   ]
+  </p>
+  <p class="Syntax">
+   <span class="Bold">
+    UNIX-Only Keywords:
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#O_828691053_934244">
+    RAWIO
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="O_828691053_889693">
+   </a>
+   <a name="O_828691053_889693_PageTOC_OPEN__">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Unit
+  </h3>
+  <p>
+   The unit number to be associated with the opened file.
+  </p>
+  <h3 class="Argument">
+   File
+  </h3>
+  <p>
+   A string containing the name of the file to be opened. Under UNIX, the filename can contain any wildcard characters recognized by the shell specified by the SHELL environment variable. However, it is faster not to use wildcards because
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   doesn’t use the shell to expand file names unless it has to.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The optional
+   <i>
+    Record_Length
+   </i>
+   argument is obsolete, and should not be used in new code.
+  </p>
+  <h2 class="API">
+   <a name="O_828691053_889706">
+   </a>
+   <a name="O_828691053_889706_PageTOC_OPEN__">
+   </a>
+   Keywords
+  </h2>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Platform-specific keywords are listed at the end of this section.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889709">
+   </a>
+   <a name="O_828691053_889709_Keywords_OPEN__">
+   </a>
+   APPEND
+  </h3>
+  <p>
+   Set this keyword to open the file with the file pointer at the end of the file, ready for data to be appended. Normally, the file is opened with the file pointer at the beginning of the file. Under UNIX, use of APPEND prevents OPENW from truncating existing file contents. The APPEND and COMPRESS keywords are mutually exclusive and cannot be specified together.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889712">
+   </a>
+   <a name="O_828691053_889712_Keywords_OPEN__">
+   </a>
+   BUFSIZE
+  </h3>
+  <p>
+   Set this keyword to a value greater than 512 to specify the size of the I/O buffer (in bytes) used when reading and writing files. Setting BUFSIZE=1 (or any other value less than 512) sets the buffer to the default size, which is platform-specific. Set BUFSIZE=0 to disable I/O buffering.
+  </p>
+  <p>
+   Note that the buffer size is only changeable when reading and writing stream files. Under UNIX, the RAWIO keyword must not be set. Also note that the system stdio may choose to ignore the buffer size setting.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_928372">
+   </a>
+   <a name="O_828691053_928372_Keywords_OPEN__">
+   </a>
+   COMPRESS
+  </h3>
+  <p>
+   If COMPRESS is set, IDL reads and writes all data to the file in the standard GZIP format. IDL's GZIP support is based on the freely available ZLIB library by Mark Adler and Jean-loup Gailly (see www.zlib.org for details). This means that IDL's compressed files are 100% compatible with the widely available gzip and gunzip programs. COMPRESS cannot be used with the APPEND keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_928370">
+   </a>
+   <a name="O_828691053_928370_Keywords_OPEN__">
+   </a>
+   DELETE
+  </h3>
+  <p>
+   Set this keyword to delete the file when it is closed.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Setting the DELETE keyword
+   <i>
+    causes the file to be deleted
+   </i>
+   even if it was opened for read-only access. In addition, once a file is opened with this keyword, there is no way to cancel its operation.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889720">
+   </a>
+   <a name="O_828691053_889720_Keywords_OPEN__">
+   </a>
+   <a name="kanchor2001">
+   </a>
+   ERROR
+  </h3>
+  <p>
+   A named variable to place the error status in. If an error occurs in the attempt to open
+   <i>
+    File
+   </i>
+   ,
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   normally takes the error handling action defined by the ON_ERROR and/or ON_IOERROR procedures. OPEN always returns to the caller without generating an error message when ERROR is present. A nonzero error status indicates that an error occurred. The error message can then be found in
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Appendices/Error_Handling_System_Va.html#sysvars_272074529_1003013">
+    !ERROR_STATE
+   </a>
+   .MSG.
+  </p>
+  <p>
+   For example, statements similar to the following can be used to detect errors:
+  </p>
+  <p class="Code">
+   ; Try to open the file demo.dat:
+  </p>
+  <p class="Code">
+   OPENR, 1, 'demo.dat', ERROR = err
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; If err is nonzero, something happened. Print the error message to
+  </p>
+  <p class="Code">
+   ; the standard error file (logical unit -2):
+  </p>
+  <p class="Code">
+   IF (err NE 0) then PRINTF, -2, !ERROR_STATE.MSG
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889729">
+   </a>
+   <a name="O_828691053_889729_Keywords_OPEN__">
+   </a>
+   <a name="kanchor2002">
+   </a>
+   F77_UNFORMATTED
+  </h3>
+  <p>
+   Unformatted variable-length record files produced by FORTRAN programs running on platforms that use stream files (UNIX and Microsoft Windows) contain extra information along with the data in order to allow the data to be properly recovered. This method is necessary because FORTRAN input/output is based on record-oriented files, while files that are simple byte streams do not impose any record structure. Set the F77_UNFORMATTED keyword to read and write this extra information in the same manner as
+   <span class="Courier">
+    f77(1)
+   </span>
+   , so that data can be processed by both
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   and FORTRAN. See
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Components of the IDL Language/Reading_and_Writing_FORT.html#files_2839720996_2885327" target="" title="" alt="">
+    Reading and Writing FORTRAN Data
+   </a>
+   for further details.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   On 64-bit machines, some Fortran compilers will insert record markers that are 64-bit integers instead of the standard 32-bit integers. When reading FORTRAN data, IDL will attempt to recognize the presence of 64-bit record markers and switch to the appropriate format. When writing unformatted Fortran files, IDL will continue to use 32-bit record markers.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889739">
+   </a>
+   <a name="O_828691053_889739_Keywords_OPEN__">
+   </a>
+   GET_LUN
+  </h3>
+  <p>
+   Set this keyword to
+   <a name="kanchor2003">
+   </a>
+   use the GET_LUN procedure to set the value of
+   <i>
+    Unit
+   </i>
+   before the file is opened. Instead of using the two statements:
+  </p>
+  <p class="Code">
+   GET_LUN, Unit
+  </p>
+  <p class="Code">
+   OPENR, Unit, 'data.dat'
+  </p>
+  <p>
+   you can use the single statement:
+  </p>
+  <p class="Code">
+   OPENR, Unit, 'data.dat', /GET_LUN
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889747">
+   </a>
+   <a name="O_828691053_889747_Keywords_OPEN__">
+   </a>
+   MORE
+  </h3>
+  <p>
+   If MORE is set, and the specified
+   <i>
+    File
+   </i>
+   is a terminal, then all output to this unit is formatted in a manner similar to the UNIX
+   <span class="Courier">
+    more(1)
+   </span>
+   command and sent to the standard output stream. Output pauses at the bottom of each screen, at which point the user can press one of the following keys:
+  </p>
+  <p class="Bullet">
+   Space: Display the next page of text.
+  </p>
+  <p class="Bullet">
+   Return: Display the next line of text.
+  </p>
+  <p class="Bullet">
+   ‘q’ or ‘Q’: Suppress all remaining output.
+  </p>
+  <p class="Bullet">
+   ‘h’ or ‘H’: Display this list of options.
+  </p>
+  <p>
+   For example, the following statements show how to output a file named text.dat to the terminal:
+  </p>
+  <p class="Code">
+   ; Open the text file:
+  </p>
+  <p class="Code">
+   OPENR, inunit, 'text.dat', /GET_LUN
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Open the terminal as a file:
+  </p>
+  <p class="Code">
+   OPENW, outunit, '/dev/tty', /GET_LUN, /MORE
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Read the first line:
+  </p>
+  <p class="Code">
+   line = '' &amp; READF, inunit, line
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; While there is text left, output it:
+  </p>
+  <p class="Code">
+   WHILE ~ EOF(inunit) DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINTF, outunit, line
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;READF, inunit, line
+  </p>
+  <p class="Code">
+   ENDWHILE
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Close the files and deallocate the units:
+  </p>
+  <p class="Code">
+   FREE_LUN, inunit &amp; FREE_LUN, outunit
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_929441">
+   </a>
+   <a name="O_828691053_929441_Keywords_OPEN__">
+   </a>
+   NOEXPAND_PATH
+  </h3>
+  <p>
+   Set this keyword to specify that the
+   <i>
+    File
+   </i>
+   argument be used exactly as supplied, without applying the usual file path expansion.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_934244">
+   </a>
+   <a name="O_828691053_934244_Keywords_OPEN__">
+   </a>
+   RAWIO
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on UNIX platforms.
+   </i>
+  </p>
+  <p>
+   Set this keyword to disable all use of the standard UNIX I/O for the file, in favor of direct calls to the operating system. This allows direct access to devices, such as tape drives, that are difficult or impossible to use effectively through the standard I/O. Using this keyword has the following implications:
+  </p>
+  <p class="Bullet">
+   No formatted or associated (ASSOC) I/O is allowed on the file. Only READU and WRITEU are allowed.
+  </p>
+  <p class="Bullet">
+   Normally, attempting to read more data than is available from a file causes the unfilled space to be set to zero and an error to be issued. This does not happen with files opened with RAWIO. When using RAWIO, the programmer must check the transfer count, either via the TRANSFER_COUNT keywords to READU and WRITEU, or the FSTAT function.
+  </p>
+  <p class="Bullet">
+   The EOF and POINT_LUN functions cannot be used with a file opened with RAWIO.
+  </p>
+  <p class="Bullet">
+   Each call to READU or WRITEU maps directly to UNIX read(2) and write(2) system calls. The programmer must read the UNIX system documentation for these calls and documentation on the target device to determine if there are any special rules for I/O to that device. For example, the size of data that can be transferred to many cartridge tape drives is often forced to be a multiple of 512 bytes.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_930929">
+   </a>
+   <a name="O_828691053_930929_Keywords_OPEN__">
+   </a>
+   STDIO
+  </h3>
+  <p>
+   Forces the file to be opened via the standard C I/O library (stdio) rather than any other more native OS API that might usually be used. This is primarily of interest to those who intend to access the file from external code, and is not necessary for most files.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you intend to use the opened file with the READ_JPEG or WRITE_JPEG procedures using their UNIT keyword, you must specify the STDIO keyword to OPEN to ensure that the file is compatible.
+   <br />
+   <br />
+   The only exception to this rule is if the filename ends in
+   <span class="Courier">
+    .jpg
+   </span>
+   or
+   <span class="Courier">
+    .jpeg
+   </span>
+   and the STDIO keyword is not present in the call to OPEN. In this case OPEN uses stdio by default, covering most uses of jpeg files without requiring you to take special steps.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889764">
+   </a>
+   <a name="O_828691053_889764_Keywords_OPEN__">
+   </a>
+   SWAP_ENDIAN
+  </h3>
+  <p>
+   Set this keyword to swap byte ordering for multi-byte data when performing binary I/O on the specified file. This is useful when accessing files also used by another system with byte ordering different than that of the current host.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889767">
+   </a>
+   <a name="O_828691053_889767_Keywords_OPEN__">
+   </a>
+   SWAP_IF_BIG_ENDIAN
+  </h3>
+  <p>
+   Setting this keyword is equivalent to setting SWAP_ENDIAN; it only takes effect if the current system has big endian byte ordering. This keyword does not refer to the byte ordering of the input data, but to the computer hardware.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889770">
+   </a>
+   <a name="O_828691053_889770_Keywords_OPEN__">
+   </a>
+   SWAP_IF_LITTLE_ENDIAN
+  </h3>
+  <p>
+   Setting this keyword is equivalent to setting SWAP_ENDIAN; it only takes effect if the current system has little endian byte ordering. This keyword does not refer to the byte ordering of the input data, but to the computer hardware.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889773">
+   </a>
+   <a name="O_828691053_889773_Keywords_OPEN__">
+   </a>
+   VAX_FLOAT
+  </h3>
+  <p>
+   The opened file contains VAX format floating point values. This keyword implies little endian byte ordering for all data contained in the file, and supersedes any setting of the SWAP_ENDIAN, SWAP_IF_BIG_ENDIAN, or
+   <span class="_Override" style="letter-spacing: -0.02em;">
+    SWAP_IF_LITTLE_ENDIAN
+   </span>
+   keywords.
+  </p>
+  <p>
+   The default setting for this keyword is FALSE.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Please read
+   <a class="MCXref_Heading_0" href="#O_828691053_930326">
+    Note on Accessing Data in VAX Floating Point Format
+   </a>
+   before using this feature.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889787">
+   </a>
+   <a name="O_828691053_889787_Keywords_OPEN__">
+   </a>
+   WIDTH
+  </h3>
+  <p>
+   The desired output width. If no output width is specified,
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   uses the following rules to determine where to break lines:
+  </p>
+  <p class="Bullet">
+   If the output file is a terminal, the terminal width is used.
+  </p>
+  <p class="Bullet">
+   Otherwise, a default of 80 columns is used.
+  </p>
+  <h3 class="Keyword">
+   <a name="O_828691053_889796">
+   </a>
+   <a name="O_828691053_889796_Keywords_OPEN__">
+   </a>
+   XDR
+  </h3>
+  <p>
+   Set this keyword to open the file for unformatted XDR (eXternal Data Representation) I/O via the READU and WRITEU procedures. Use XDR to make binary data portable between different machine architectures by reading and writing all data in a standard format. When a file is open for XDR access, the only I/O data transfer procedures that can be used with it are READU and WRITEU. XDR is described in Portable Unformatted Input/Output.
+  </p>
+  <h2 class="API">
+   <a name="O_828691053_930326">
+   </a>
+   <a name="O_828691053_930326_PageTOC_OPEN__">
+   </a>
+   <a name="O_828691053_34856">
+   </a>
+   Note on Accessing Data in VAX Floating Point Format
+  </h2>
+  <p>
+   The floating-point number format used by a program such as IDL is determined entirely by the computer hardware upon which it runs. In the early years of computing it was common for different machines to have incompatible floating-point formats. In the 1970s and 1980s, PDP-11 and VAX minicomputers were widely used for scientific computation, and their floating-point format (known as VAX F and D floating) became the
+   <i>
+    de facto
+   </i>
+   standard for science. Early versions of IDL used these formats.
+  </p>
+  <p>
+   In ensuing years, the computing industry has converged upon a floating-point standard known as IEEE 754, commonly referred to as “IEEE floating” or “IEEE arithmetic.” Other formats (including the VAX formats) have diminished in importance. Now, all common computing hardware uses the IEEE format, which has significant advantages over earlier formats:
+  </p>
+  <p class="Bullet">
+   Binary data is portable to almost all current and foreseeable computing hardware and operating systems, requiring at most simple byte-swapping.
+  </p>
+  <p class="Bullet">
+   Special
+   <i>
+    Infinity
+   </i>
+   and
+   <i>
+    Not A Number (NaN)
+   </i>
+   values for undefined computations allow exceptional computations to be carried out in a well-defined manner (and at full speed) by modern pipelined computer architectures.
+  </p>
+  <p>
+   This convergence gained momentum in the 1980s as workstations and personal computers came into prominence. As a result, almost all versions of IDL since 1987 have used IEEE floating point arithmetic, and all current versions of IDL use this format.
+  </p>
+  <p>
+   Despite the almost universal current use of the IEEE format, valuable older data stored in the VAX floating-point formats exists at various scientific institutions around the world. In order to allow access to this data, IDL is able to read and write data in these formats. The VAX_FLOAT keyword to the OPEN procedure is used to enable this feature.
+  </p>
+  <p>
+   When converting between VAX and IEEE formats, you should be aware of the following basic numerical issues in order to get the best results. Translation of floating-point values from IDL’s native IEEE format to the VAX format and back (that is, VAX to IEEE to VAX) is not a completely reversible operation, and should be avoided when possible. There are many cases where the recovered values will differ from the original values, including:
+  </p>
+  <p class="Bullet">
+   The VAX floating-point format lacks support for the IEEE special values (
+   <i>
+    NaN
+   </i>
+   and
+   <i>
+    Infinity
+   </i>
+   ). Hence, their special meaning is lost when they are converted to VAX format and cannot be recovered.
+  </p>
+  <p class="Bullet">
+   The IEEE and VAX floating formats have intrinsic differences in precision and range, which can cause information to be lost in both directions. When converting from one format to another, IDL rounds the value to the nearest representable value in the target format.
+  </p>
+  <p>
+   As a practical matter, an initial conversion of existing VAX format data to IEEE cannot be avoided if the data is to be used on modern machines. However, each format conversion can add a small amount of error to the resulting values, so it is important to minimize the number of such conversions. Use IEEE/VAX conversions only to read existing VAX format data. Create all new files using the native IEEE format. This introduces only a single unavoidable conversion, and minimizes the resulting conversion error.
+  </p>
+  <h2 class="API">
+   <a name="O_828691053_889916">
+   </a>
+   <a name="O_828691053_889916_PageTOC_OPEN__">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following example opens the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   distribution file
+   <span class="Courier">
+    people.dat
+   </span>
+   and reads an image from that file:
+  </p>
+  <p class="Code">
+   ; Open 'people.dat' on file unit number 1. The FILEPATH
+   <br />
+   ; function is used to return the full path name to this
+   <br />
+   ; distribution file.
+   <br />
+   OPENR, 1, FILEPATH('people.dat', SUBDIR = ['examples','data'])
+   <br />
+   <br />
+   ; Define a variable into which the image will be read:
+   <br />
+   image=BYTARR(192, 192, /NOZERO)
+   <br />
+   <br />
+   ; Read the data:
+   <br />
+   READU, 1, image
+   <br />
+   <br />
+   ; Display the image:
+   <br />
+   TV, image
+  </p>
+  <h2 class="API">
+   <a name="O_828691053_950310">
+   </a>
+   <a name="O_828691053_889926_PageTOC_OPEN__">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre-6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Deprecated BINARY, BLOCK, DEFAULT, EXTENDSIZE, FIXED, FORTRAN, INITIALSIZE, KEYED, LIST, MACCREATOR, MACTYPE, NON, NOAUTOMODE, NOSTDIO, PRINT, SEGMENTED, SHARED, STREAM, SUBMIT, SUPERSEDE, TRUNCATE_ON_CLOSE, UDF_BLOCK, and VARIABLE keywords
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="O_828691053_931681">
+   </a>
+   <a name="O_828691053_931681_PageTOC_OPEN__">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/CLOSE.html#C_854643309_676114">
+    CLOSE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../G/GET_LUN.html#G_845992557_922610">
+    GET_LUN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/POINT_LUN.html#P_817877613_678184" target="" title="" alt="">
+    POINT_LUN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PRINT.html#P_817877613_1152289" target="" title="" alt="">
+    PRINT/PRINTF
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/READ.html#R_822202989_863816" target="" title="" alt="">
+    READ/READF
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/READU.html#R_822202989_678459" target="" title="" alt="">
+    READU
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../W/WRITEU.html#W_811389549_756607">
+    WRITEU
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../Functional List of IDL Routines/Input_Output.html#funclisting_2438760872_1213961" target="" title="" alt="">
+    General File Access
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: M" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   MORPH_HITORMISS
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/M/MORPH_HITORMISS.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="M_list.html">
+    Routines: M
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    MORPH_HITORMISS
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="M_824365677_930030">
+   </a>
+   <a name="M_824365677_93029">
+   </a>
+   MORPH_HITORMISS
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#M_824365677_949019">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_993232">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_949021">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_949029">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_949031">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_954279">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_973033">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1909">
+   </a>
+   MORPH_HITORMISS function applies the hit-or-miss operator to a binary image. The hit-or-miss operator is implemented by first applying an erosion operator with a
+   <i>
+    hit
+   </i>
+   structuring element to the original image. Then an erosion operator is applied to the complement of the original image with a secondary
+   <i>
+    miss
+   </i>
+   structuring element. The result is the intersection of the two results.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    morph_hitormiss.pro
+   </span>
+   in the lib subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_949019">
+   </a>
+   <a name="M_824365677_949019_PageTOC_MORPH_HITORMISS_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="_Override" style="font-style: italic;">
+    Result
+   </span>
+   = MORPH_HITORMISS (
+   <span class="_Override" style="font-style: italic;">
+    Image, HitStructure, MissStructure
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_993232">
+   </a>
+   <a name="M_824365677_89426">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The resulting image corresponds to the positions where the hit structuring element lies within the image, and the miss structure lies completely outside the image. The two structures must not overlap.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_949021">
+   </a>
+   <a name="M_824365677_949021_PageTOC_MORPH_HITORMISS_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Image
+  </h3>
+  <p>
+   A one-, two-, or three-dimensional array upon which the morphological operation is to be performed. The image is treated as a binary image with all nonzero pixels considered as 1.
+  </p>
+  <h3 class="Argument">
+   HitStructure
+  </h3>
+  <p>
+   A one-, two-, or three-dimensional array to be used as the hit structuring element. The elements are interpreted as binary values — either zero or nonzero. This structuring element must have the same number of dimensions as the
+   <i>
+    Image
+   </i>
+   argument.
+  </p>
+  <h3 class="Argument">
+   MissStructure
+  </h3>
+  <p>
+   A one-, two-, or three-dimensional array to be used as the miss structuring element. The elements are interpreted as binary values — either zero or nonzero. This structuring element must have the same number of dimensions as the
+   <i>
+    Image
+   </i>
+   argument.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   It is assumed that the HitStructure and the MissStructure arguments are disjoint.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_949029">
+   </a>
+   <a name="M_824365677_949029_PageTOC_MORPH_HITORMISS_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_949031">
+   </a>
+   <a name="M_824365677_949031_PageTOC_MORPH_HITORMISS_">
+   </a>
+   Example
+  </h2>
+  <p>
+   The following code snippet identifies blobs with a radius of at least 2, but less than 4 in the pollen image. These regions totally enclose a disc of radius 2, contained in the 5 x 5 kernel named “hit”, and in turn, fit within a hole of radius 4, contained in the 9 x 9 array named “miss”. Executing this specific example identifies four blobs in the image with these attributes.
+  </p>
+  <p>
+   The example code is broken into several sections; click on all the sections to execute the code in IDL.
+  </p>
+  <p class="Code">
+   ;Handle TrueColor displays:
+   <br />
+   DEVICE, DECOMPOSED=0
+   <br />
+   <br />
+   ;Read the image
+   <br />
+   path=FILEPATH('pollens.jpg',SUBDIR=['examples','demo','demodata'])
+   <br />
+   READ_JPEG, path, img
+   <br />
+   <br />
+   WINDOW, 0, XSIZE=700, YSIZE=540
+  </p>
+  <p>
+   Next, display the original image:
+  </p>
+  <p class="Code">
+   ; Display the original image
+   <br />
+   XYOUTS, 180, 525, 'Original Image', ALIGNMENT=.5, /DEVICE
+   <br />
+   TV, img, 20, 280
+   <br />
+   <br />
+   rh = 2 ;Radius of hit disc
+   <br />
+   rm = 4 ;Radius of miss disc
+   <br />
+   <br />
+   ;Create a binary disc of given radius.
+   <br />
+   hit = SHIFT(DIST(2*rh+1), rh, rh) LE rh
+   <br />
+   <br />
+   ;Complement of disc for miss
+   <br />
+   miss = SHIFT(DIST(2*rm+1), rm, rm) GT rm
+   <br />
+   <br />
+   ;Load discrete color table
+   <br />
+   TEK_COLOR
+   <br />
+   <br />
+   ;Apply the threshold
+   <br />
+   thresh = img GE 140B
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p>
+   Display the thresholded image and compute the matches and display them:
+  </p>
+  <p class="Code">
+   ; Display the thresholded image
+   <br />
+   XYOUTS, 520, 525, 'Thresholded Image', ALIGNMENT=.5, /DEVICE
+   <br />
+   TV, thresh, 360, 280
+   <br />
+   <br />
+   ;Compute matches
+   <br />
+   matches = MORPH_HITORMISS(thresh, hit, miss)
+   <br />
+   <br />
+   ;Expand matches to size of hit disc
+   <br />
+   matches = DILATE(matches, hit)
+   <br />
+   <br />
+   ;Show matches.
+   <br />
+   XYOUTS, 180, 265, 'Matches', ALIGNMENT=.5, /DEVICE
+   <br />
+   TV, matches, 20, 20
+   <br />
+   <br />
+   ;Superimpose, showing hit regions in blue.
+   <br />
+   ;(Blue = color index 4 for tek_color.)
+   <br />
+   XYOUTS, 520, 265, 'Superimposed, hit regions in blue',$
+   <br />
+   &#160;&#160;&#160;ALIGNMENT=.5, /DEVICE
+   <br />
+   TV, thresh + 3*matches, 360, 20
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_954279">
+   </a>
+   <a name="M_824365677_954279_PageTOC_MORPH_HITORMISS_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="M_824365677_973033">
+   </a>
+   <a name="M_824365677_973033_PageTOC_MORPH_HITORMISS_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../D/DILATE.html#D_843829869_747869">
+    DILATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../E/ERODE.html#E_841667181_989418">
+    ERODE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_CLOSE.html#M_824365677_1117238">
+    MORPH_CLOSE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_DISTANCE.html#M_824365677_948885">
+    MORPH_DISTANCE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_GRADIENT.html#M_824365677_948880">
+    MORPH_GRADIENT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_OPEN.html#M_824365677_930051">
+    MORPH_OPEN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_THIN.html#M_824365677_930961">
+    MORPH_THIN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MORPH_TOPHAT.html#M_824365677_930077">
+    MORPH_TOPHAT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

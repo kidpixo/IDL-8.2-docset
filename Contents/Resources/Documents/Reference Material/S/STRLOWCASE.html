@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   STRLOWCASE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/STRLOWCASE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    STRLOWCASE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_679096">
+   </a>
+   <a name="S_820040301_84107">
+   </a>
+   STRLOWCASE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_679098">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1135297">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_679100">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1135299">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_679103">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_795937">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110487">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2474">
+   </a>
+   STRLOWCASE function returns a copy of
+   <i>
+    String
+   </i>
+   converted to lowercase characters. Only uppercase characters are modified—lowercase and non-alphabetic characters are copied without change.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679098">
+   </a>
+   <a name="S_820040301_679098_PageTOC_STRLOWCASE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = STRLOWCASE(
+   <i>
+    String
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1135297">
+   </a>
+   <a name="S_820040301_73331">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a string composed of lowercase characters.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679100">
+   </a>
+   <a name="S_820040301_679100_PageTOC_STRLOWCASE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   String
+  </h3>
+  <p>
+   The string to be converted. If this argument is not a string, it is converted using
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   ’s default formatting rules. If
+   <i>
+    String
+   </i>
+   is an array, the result is an array with the same structure—each element contains a lower case copy of the corresponding element of
+   <i>
+    String
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1135299">
+   </a>
+   <a name="S_820040301_58578">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_679103">
+   </a>
+   <a name="S_820040301_679103_PageTOC_STRLOWCASE_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To convert the string “
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   is fun” to all lowercase characters and print the result, enter:
+  </p>
+  <p class="Code">
+   PRINT, STRLOWCASE('
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   is fun')
+  </p>
+  <p>
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   prints:
+  </p>
+  <p class="Code">
+   idl is fun
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_795937">
+   </a>
+   <a name="S_820040301_795937_PageTOC_STRLOWCASE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110487">
+   </a>
+   <a name="S_820040301_1110487_PageTOC_STRLOWCASE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="STRUPCASE.html#S_820040301_1073590">
+    STRUPCASE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

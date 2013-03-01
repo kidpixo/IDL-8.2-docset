@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C|CDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CDF_EPOCH_DIFF
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/C/CDF Routines/CDF_EPOCH_DIFF.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../CDF_Routines.html">
+    CDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CDF_EPOCH_DIFF
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="CDF_1744428779_1007559">
+   </a>
+   <a name="CDF_1744428779_70598">
+   </a>
+   CDF_EPOCH_DIFF
+  </h1>
+  <p>
+   The
+   <a name="kanchor242">
+   </a>
+   CDF_EPOCH_DIFF function
+   <a name="kanchor243">
+   </a>
+   compares two epoch (date and time) values and returns the difference in milliseconds (default) or microseconds.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1084772_PageTOC_CDF_EPOCH_DIFF_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = CDF_EPOCH_DIFF(
+   <span class="Italic">
+    epoch1
+   </span>
+   ,
+   <span class="Italic">
+    epoch2
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#CDF_1744428779_1007595">
+    MILLI_SECONDS
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#CDF_1744428779_1007598">
+    MICRO_SECONDS
+   </a>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1084780_PageTOC_CDF_EPOCH_DIFF_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   epoch1
+   <br />
+   epoch2
+  </h3>
+  <p>
+   An epoch value returned from CDF_EPOCH or CDF_EPOCH16 with the COMPUTE keyword set, or from CDF_VARGET or CDF_VARGET1.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1084784_PageTOC_CDF_EPOCH_DIFF_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1007595">
+   </a>
+   <a name="CDF_1744428779_26053">
+   </a>
+   MILLI_SECONDS
+  </h3>
+  <p>
+   Set this keyword to return the difference in milliseconds. This is the default.
+  </p>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1007598">
+   </a>
+   <a name="CDF_1744428779_86917">
+   </a>
+   MICRO_SECONDS
+  </h3>
+  <p>
+   Set this keyword to return the difference in microseconds.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1084791_PageTOC_CDF_EPOCH_DIFF_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   CDF_EPOCH, epoch, 2005,6,1,10,18,17,2,/COMPUTE
+  </p>
+  <p class="Code">
+   CDF_EPOCH, epoch1, 2005,6,1,10,18,17,2,3,4,5,/COMPUTE
+  </p>
+  <p class="Code">
+   CDF_EPOCH, epoch2, 2005,6,1,10,18,17,2,1,4,5,/COMPUTE
+  </p>
+  <p class="Code">
+   CDF_EPOCH, epoch3, 2005,6,1,10,18,17,1,/COMPUTE
+  </p>
+  <p class="Code">
+   PRINT, 'Difference between epoch1 and epoch, in milliseconds: ',$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;CDF_EPOCH_DIFF(epoch1,epoch)
+  </p>
+  <p class="Code">
+   PRINT, 'Difference between epoch1 and epoch, in microseconds: ',$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;CDF_EPOCH_DIFF(epoch1,epoch,/MICRO_SECONDS)
+  </p>
+  <p class="Code">
+   PRINT, 'Difference between epoch1 and epoch2, in microseconds: ',$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;CDF_EPOCH_DIFF(epoch1,epoch2,/MICRO_SECONDS)
+  </p>
+  <p class="Code">
+   PRINT, 'Difference between epoch1 and epoch3, in microseconds: ',$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;CDF_EPOCH_DIFF(epoch1,epoch3,/MILLI_SECONDS)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1084805_PageTOC_CDF_EPOCH_DIFF_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

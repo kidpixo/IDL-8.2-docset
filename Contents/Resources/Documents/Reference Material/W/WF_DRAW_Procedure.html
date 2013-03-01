@@ -1,0 +1,516 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WF_DRAW Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WF_DRAW_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WF_DRAW Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_890069">
+   </a>
+   WF_DRAW Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890095">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890155">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890159">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890209">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890215">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890223">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2690">
+   </a>
+   WF_DRAW procedure draws
+   <a name="kanchor2691">
+   </a>
+   weather fronts of various types using parametric spline interpolation to smooth the lines. WF_DRAW uses the POLYFILL routine to make the annotations on the front lines.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    wf_draw.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890095">
+   </a>
+   <a name="dg_routines_3604229493_787674_PageTOC_WF_DRAW_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   WF_DRAW,
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   [[,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890161">
+    COLD
+   </a>
+   | ,
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890176">
+    FRONT_TYPE
+   </a>
+   =1] | [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890206">
+    WARM
+   </a>
+   | ,
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890176">
+    FRONT_TYPE
+   </a>
+   =2] | [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890185">
+    OCCLUDED
+   </a>
+   | ,
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890176">
+    FRONT_TYPE
+   </a>
+   =3] | [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890194">
+    STATIONARY
+   </a>
+   | ,
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890176">
+    FRONT_TYPE
+   </a>
+   =4] | [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890167">
+    CONVERGENCE
+   </a>
+   | ,
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890176">
+    FRONT_TYPE
+   </a>
+   =5]] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890164">
+    COLOR
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]  [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890170">
+    DATA
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890173">
+    DEVICE
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890182">
+    NORMAL
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890179">
+    INTERVAL
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]  [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890188">
+    PSYM
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]  [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890197">
+    SYM_HT
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890200">
+    SYM_LEN
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890203">
+    THICK
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890155">
+   </a>
+   <a name="dg_routines_3604229493_787676_PageTOC_WF_DRAW_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   X, Y
+  </h3>
+  <p>
+   Vectors of abscissae and ordinates defining the front to be drawn.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890159">
+   </a>
+   <a name="dg_routines_3604229493_787679_PageTOC_WF_DRAW_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890161">
+   </a>
+   <a name="dg_routines_3604229493_787681_Keywords_WF_DRAW__">
+   </a>
+   COLD
+  </h3>
+  <p>
+   Set this keyword to draw a cold front. The default is a plain line with no annotations. A cold front can also be specified by setting the keyword FRONT_TYPE = 1.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890164">
+   </a>
+   <a name="dg_routines_3604229493_787684_Keywords_WF_DRAW__">
+   </a>
+   COLOR
+  </h3>
+  <p>
+   Use this keyword to specify the color to use. The default = !P.COLOR.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890167">
+   </a>
+   <a name="dg_routines_3604229493_787687_Keywords_WF_DRAW__">
+   </a>
+   CONVERGENCE
+  </h3>
+  <p>
+   Set this keyword to draw a convergence line. A convergence line can also be specified by setting the keyword FRONT_TYPE = 5.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890170">
+   </a>
+   <a name="dg_routines_3604229493_787690_Keywords_WF_DRAW__">
+   </a>
+   DATA
+  </h3>
+  <p>
+   Set this keyword if X and Y are specified in data coordinates.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890173">
+   </a>
+   <a name="dg_routines_3604229493_787693_Keywords_WF_DRAW__">
+   </a>
+   DEVICE
+  </h3>
+  <p>
+   Set this keyword if X and Y are specified in device coordinates.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890176">
+   </a>
+   <a name="dg_routines_3604229493_787696_Keywords_WF_DRAW__">
+   </a>
+   FRONT_TYPE
+  </h3>
+  <p>
+   Set this keyword equal to the numeric index of type of front to draw. Front type indices are as follows: COLD=1, WARM=2, OCCLUDED=3, STATIONARY=4, CONVERGENCE = 5. Not required if plain line is desired or if an explicit front type keyword is specified.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890179">
+   </a>
+   <a name="dg_routines_3604229493_787699_Keywords_WF_DRAW__">
+   </a>
+   INTERVAL
+  </h3>
+  <p>
+   Use this keyword to specify the spline interpolation interval, in normalized units. The default = 0.01. Larger values give coarser approximations to curves, smaller values make more interpolated points.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890182">
+   </a>
+   <a name="dg_routines_3604229493_787702_Keywords_WF_DRAW__">
+   </a>
+   NORMAL
+  </h3>
+  <p>
+   Set this keyword if X and Y are specified in normalized coordinates. This is the default.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890185">
+   </a>
+   <a name="dg_routines_3604229493_787705_Keywords_WF_DRAW__">
+   </a>
+   OCCLUDED
+  </h3>
+  <p>
+   Set this keyword to draw an occluded front. An occluded front can also be specified by setting the keyword FRONT_TYPE = 3.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890188">
+   </a>
+   <a name="dg_routines_3604229493_787708_Keywords_WF_DRAW__">
+   </a>
+   PSYM
+  </h3>
+  <p>
+   Set this keyword a standard PSYM value to draw a marker on each actual (
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   ) data point. See
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_367154">
+    PSYM
+   </a>
+   for a list of the symbol types.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890194">
+   </a>
+   <a name="dg_routines_3604229493_787714_Keywords_WF_DRAW__">
+   </a>
+   STATIONARY
+  </h3>
+  <p>
+   Set this keyword to draw a stationary front. A stationary front can also be specified by setting the keyword FRONT_TYPE = 4.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890197">
+   </a>
+   <a name="dg_routines_3604229493_787717_Keywords_WF_DRAW__">
+   </a>
+   SYM_HT
+  </h3>
+  <p>
+   Use this keyword to specify the height of front symbols, in normalized units. The default = 0.02.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890200">
+   </a>
+   <a name="dg_routines_3604229493_787720_Keywords_WF_DRAW__">
+   </a>
+   SYM_LEN
+  </h3>
+  <p>
+   Use this keyword to specify the length and spacing factor for front symbols, in normalized units. The default = 0.15.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890203">
+   </a>
+   <a name="dg_routines_3604229493_787723_Keywords_WF_DRAW__">
+   </a>
+   THICK
+  </h3>
+  <p>
+   Use this keyword to specify the line thickness. The default = 1.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890206">
+   </a>
+   <a name="dg_routines_3604229493_787726_Keywords_WF_DRAW__">
+   </a>
+   WARM
+  </h3>
+  <p>
+   Set this keyword to draw a warm front. A warm front can also be specified by setting the keyword FRONT_TYPE = 2.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890209">
+   </a>
+   <a name="dg_routines_3604229493_787728_PageTOC_WF_DRAW_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   This example draws various fronts on a map of the United States. To draw the map, first define the
+   <span class="Courier">
+    test_wf_draw
+   </span>
+   procedure by pasting the following code into a file named
+   <span class="Courier">
+    test_wf_draw.pro
+   </span>
+   and saving the file in a directory in IDL’s path. (If you are using the IDL Workbench, you can compile the procedure by clicking on the code.)
+  </p>
+  <p class="Code">
+   PRO test_wf_draw
+   <br />
+   <br />
+   &#160;MAP_SET, LIMIT = [25, -125, 50, -70], /GRID, /USA
+   <br />
+   &#160;WF_DRAW, [ -120, -110, -100], [30, 50, 45], /COLD, /DATA, THICK=2
+   <br />
+   &#160;WF_DRAW, [ -80, -80, -75], [ 50, 40, 35], /WARM, /DATA, THICK=2
+   <br />
+   &#160;WF_DRAW, [ -80, -80, -75]-10., [ 50, 40, 35], /OCCLUDED, /DATA,$
+   <br />
+   &#160;&#160;&#160;&#160;THICK=2
+   <br />
+   &#160;WF_DRAW, [ -120, -105], [ 40,35], /STATION, /DATA, THICK=2
+   <br />
+   &#160;WF_DRAW, [ -100, -90, -90], [ 30,35,40], /CONVERG, /DATA, THICK=2
+   <br />
+   <br />
+   &#160;names=['None','Cold','Warm','Occluded','Stationary','Convergent']
+   <br />
+   &#160;x = [.015, .30]
+   <br />
+   &#160;y = 0.04
+   <br />
+   &#160;dy = 0.05
+   <br />
+   &#160;ty = N_ELEMENTS(names) * dy + y
+   <br />
+   &#160;POLYFILL, x[[0,1,1,0]],[0, 0, ty, ty],/NORM, COLOR=!P.BACKGROUND
+   <br />
+   &#160;FOR i=0, N_ELEMENTS(names)-1 DO BEGIN
+   <br />
+   &#160;&#160;&#160;&#160;WF_DRAW, x, y, /NORM, FRONT_TYPE=i, THICK=2
+   <br />
+   &#160;&#160;&#160;&#160;XYOUTS, x[1]+0.015, y[0], names[i], /NORM, CHARS=1.5
+   <br />
+   &#160;&#160;&#160;&#160;y = y + dy
+   <br />
+   &#160;ENDFOR
+   <br />
+   <br />
+   END
+  </p>
+  <p>
+   Next, execute the procedure:
+  </p>
+  <p class="Code">
+   test_wf_draw
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890215">
+   </a>
+   <a name="dg_routines_3604229493_787731_PageTOC_WF_DRAW_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre-4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890223">
+   </a>
+   <a name="dg_routines_3604229493_983392_PageTOC_WF_DRAW_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../A/ANNOTATE.html#dg_routines_3604229493_878155">
+    ANNOTATE Procedure
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../X/XYOUTS_Procedure.html#dg_routines_3604229493_890672" target="" title="" alt="">
+    XYOUTS Procedure
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

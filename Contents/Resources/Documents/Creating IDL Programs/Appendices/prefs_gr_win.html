@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Tasks|Setting Preferences" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Windows Graphics Preferences
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Appendices/prefs_gr_win.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Programming Tasks.html">
+    Tasks
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Setting Preferences.html">
+    Setting Preferences
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Windows Graphics Preferences
+   </span>
+  </div>
+  <h1>
+   <a name="preferences_2247882535_1024581">
+   </a>
+   <a name="preferences_2247882535_74464">
+   </a>
+   Windows Graphics Preferences
+  </h1>
+  <p>
+   Preferences in this section control the default behavior of graphics produced by the Microsoft Windows window system.
+  </p>
+  <h2 class="API">
+   <a name="preferences_2247882535_1032870">
+   </a>
+   <a name="preferences_2247882535_30770">
+   </a>
+   IDL_GR_WIN_HEIGHT
+   <a name="kanchor3235">
+   </a>
+  </h2>
+  <p>
+   The IDL_GR_WIN_HEIGHT preference sets the default height of graphics windows on Windows platforms. Set IDL_GR_WIN_HEIGHT to a value greater than or equal to 1. Committed changes take effect immediately. The default value is 512. You can set this preference in the IDL Workbench
+   <b>
+    Preferences
+   </b>
+   dialog.
+  </p>
+  <h2 class="API">
+   <a name="preferences_2247882535_86040">
+   </a>
+   IDL_GR_WIN_LAYOUT
+   <a name="kanchor3236">
+   </a>
+  </h2>
+  <p>
+   The IDL_GR_WIN_LAYOUT preference specifies the default placement of graphics windows created by the Microsoft Windows direct graphics device (
+   <span class="Courier">
+    'WIN'
+   </span>
+   ). A value of Tile (0) causes windows to be created side-by-side with no overlap. A value of Cascade (1) causes them to be created overlapping.
+  </p>
+  <table style="width: 240px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="96px" />
+   <col width="144px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Alias
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Tile
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Cascade
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Committed changes take effect immediately. The default value is Tile (0).
+  </p>
+  <p>
+   This preference can be set in the IDL Workbench
+   <span class="Bold">
+    Preferences
+   </span>
+   dialog. See “Direct graphics layout” in
+   <span class="Link">
+    Graphics
+   </span>
+   .
+  </p>
+  <h2 class="API">
+   <a name="preferences_2247882535_1025657">
+   </a>
+   <a name="preferences_2247882535_79891">
+   </a>
+   IDL_GR_WIN_QSCREEN
+   <a name="kanchor3237">
+   </a>
+  </h2>
+  <p>
+   If the IDL_GR_WIN_QSCREEN preference is set to True (1), the
+   <a class="MCXref_Heading_0" href="#preferences_2247882535_1032870">
+    IDL_GR_WIN_HEIGHT
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="#preferences_2247882535_1025672">
+    IDL_GR_WIN_WIDTH
+   </a>
+   preferences are ignored. Instead, the default size of a graphics window created by the Microsoft Windows direct graphics device (
+   <span class="Courier">
+    'WIN'
+   </span>
+   ) is one-fourth the size of the screen.
+  </p>
+  <table style="width: 240px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="96px" />
+   <col width="144px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Aliases
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       False, No, Off
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       True, Yes, On
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Committed changes take effect immediately. The default value is True (1).
+  </p>
+  <p>
+   This preference can be set in the IDL Workbench
+   <span class="Bold">
+    Preferences
+   </span>
+   dialog. See “Default size” in
+   <span class="Link">
+    Graphics
+   </span>
+   .
+  </p>
+  <h2 class="API">
+   <a name="preferences_2247882535_1025662">
+   </a>
+   <a name="preferences_2247882535_12603">
+   </a>
+   IDL_GR_WIN_RENDERER
+   <a name="kanchor3238">
+   </a>
+  </h2>
+  <p>
+   IDL supports two methods of rendering object graphics: with a hardware graphics accelerator or with a software rendering package. The IDL_GR_WIN_RENDERER preference determines the default method used for volume rendering.
+  </p>
+  <table style="width: 240px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="96px" />
+   <col width="144px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Alias
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Hardware
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Software
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Committed changes take effect immediately. The default value is Hardware (0).
+  </p>
+  <p>
+   This preference can be set in the IDL Workbench
+   <span class="Bold">
+    Preferences
+   </span>
+   dialog. See “Rendering method for object graphics” in
+   <span class="Link">
+    Graphics
+   </span>
+   .
+  </p>
+  <h2 class="API">
+   <a name="preferences_2247882535_15675">
+   </a>
+   IDL_GR_WIN_RETAIN
+   <a name="kanchor3239">
+   </a>
+  </h2>
+  <p>
+   The IDL_GR_WIN_RETAIN preference sets the default method used to provide backing store for windows. When backing store is enabled, a copy of each graphics window is kept in memory; the copy is used to refresh the window when it has been covered and uncovered. IDL's performance might increase when no backing store is used because the amount of memory required to provide backing store can affect the speed at which IDL will run. Settings of this preference correspond to settings of the RETAIN keyword to the DEVICE procedure. See
+   <span class="Link">
+    “Keywords Accepted by the IDL Devices”
+   </span>
+   for more information
+  </p>
+  <table style="width: 240px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <col width="96px" />
+   <col width="144px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Aliases
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       None
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Server, System
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       IDLPixmap
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Committed changes take effect immediately. The default value is Server (1).
+  </p>
+  <p>
+   This preference can be set in the IDL Workbench
+   <span class="Bold">
+    Preferences
+   </span>
+   dialog. See “Backing store method for window contents” in
+   <span class="Link">
+    Graphics
+   </span>
+   .
+  </p>
+  <h2 class="API">
+   <a name="preferences_2247882535_1025672">
+   </a>
+   <a name="preferences_2247882535_52724">
+   </a>
+   IDL_GR_WIN_WIDTH
+   <a name="kanchor3240">
+   </a>
+  </h2>
+  <p>
+   The IDL_GR_WIN_WIDTH preference sets the default width of graphics windows on Windows platforms. Set IDL_GR_WIN_WIDTH to a value greater than or equal to 1. Committed changes take effect immediately. The default value is 640. You can set this preference in the IDL Workbench
+   <b>
+    Preferences
+   </b>
+   dialog.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

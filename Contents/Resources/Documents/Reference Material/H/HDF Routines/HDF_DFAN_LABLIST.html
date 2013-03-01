@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HDF_DFAN_LABLIST
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF Routines/HDF_DFAN_LABLIST.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF_Routines.html">
+    HDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    HDF_DFAN_LABLIST
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_1733484267_1007304">
+   </a>
+   <a name="HDF_1733484267_14991">
+   </a>
+   HDF_DFAN_LABLIST
+  </h1>
+  <p>
+   The
+   <a name="kanchor1170">
+   </a>
+   HDF_DFAN_LABLIST function retrieves a list of the reference numbers and the corresponding labels for a given
+   <a name="kanchor1171">
+   </a>
+   tag in an HDF file.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_997361_PageTOC_HDF_DFAN_LABLIST_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = HDF_DFAN_LABLIST(
+   <span class="Italic">
+    Filename
+   </span>
+   ,
+   <span class="Italic">
+    Tag
+   </span>
+   ,
+   <span class="Italic">
+    Reflist
+   </span>
+   ,
+   <span class="Italic">
+    Labellist
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#HDF_1733484267_1007361">
+    LISTSIZE
+   </a>
+   =
+   <span class="Italic">
+    value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#HDF_1733484267_1007364">
+    MAXLABEL
+   </a>
+   =
+   <span class="Italic">
+    value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#HDF_1733484267_1007367">
+    STARTPOS
+   </a>
+   =
+   <span class="Italic">
+    value
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#HDF_1733484267_1007370">
+    STRING
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_86666">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   If successful, the number of entries found is returned.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_997363_PageTOC_HDF_DFAN_LABLIST_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string containing the name of the file to be read.
+  </p>
+  <h3 class="Argument">
+   Tag
+  </h3>
+  <p>
+   The tag number.
+  </p>
+  <h3 class="Argument">
+   Reflist
+  </h3>
+  <p>
+   A named variable in which an array of reference numbers associated with the given tag is returned.
+  </p>
+  <h3 class="Argument">
+   Labellist
+  </h3>
+  <p>
+   A named variable in which an array of labels is returned. Unless the STRING keyword is set,
+   <span class="Italic">
+    Labellist
+   </span>
+   will contain an N_ELEMENTS(
+   <span class="Italic">
+    Reflist
+   </span>
+   ) by MAXLABEL array of bytes. Note that array elements containing labels that are shorter than MAXLABEL will be padded with zeroes.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_997372_PageTOC_HDF_DFAN_LABLIST_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="HDF_1733484267_1007361">
+   </a>
+   <a name="HDF_1733484267_997374_Keywords_HDF_DFAN_LABLIST_">
+   </a>
+   LISTSIZE
+  </h3>
+  <p>
+   Set the maximum size of the
+   <span class="Italic">
+    Reflist
+   </span>
+   and
+   <span class="Italic">
+    Labellist
+   </span>
+   returned. The default is to read all references present, or 20 if the inquiry to obtain the number of references fails.
+  </p>
+  <h3 class="Keyword">
+   <a name="HDF_1733484267_1007364">
+   </a>
+   <a name="HDF_1733484267_997377_Keywords_HDF_DFAN_LABLIST_">
+   </a>
+   MAXLABEL
+  </h3>
+  <p>
+   Use this keyword to override the default label length of 16.
+  </p>
+  <h3 class="Keyword">
+   <a name="HDF_1733484267_1007367">
+   </a>
+   <a name="HDF_1733484267_997380_Keywords_HDF_DFAN_LABLIST_">
+   </a>
+   STARTPOS
+  </h3>
+  <p>
+   Use this keyword to set the default starting position in the
+   <span class="Italic">
+    Reflist
+   </span>
+   array.
+  </p>
+  <h3 class="Keyword">
+   <a name="HDF_1733484267_1007370">
+   </a>
+   <a name="HDF_1733484267_997383_Keywords_HDF_DFAN_LABLIST_">
+   </a>
+   STRING
+  </h3>
+  <p>
+   Set this keyword to return an array of strings rather than an array of bytes. If STRING is set, the MAXLABEL keyword is ignored and full-length strings are returned.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_997385_PageTOC_HDF_DFAN_LABLIST_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   tag_image = 302
+  </p>
+  <p class="Code">
+   file = 'DEMOlablist.hdf'
+  </p>
+  <p class="Code">
+   n_images = HDF_DFAN_LABLIST(file, tag_image, refs, list, /STRING)
+  </p>
+  <p class="Code">
+   help, n_images, refs, list
+  </p>
+  <p class="Code">
+   PRINT, list(0)
+  </p>
+  <p class="Code">
+   ; Find all the compressed images:
+  </p>
+  <p class="Code">
+   tag_image_comp = 303
+  </p>
+  <p class="Code">
+   n_comp_images = HDF_DFAN_LABLIST(file, tag_image_comp, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;refs, list, MAXLABEL=5)
+  </p>
+  <p class="Code">
+   HELP, n_comp_images, refs, list
+  </p>
+  <h4>
+   IDL Output
+  </h4>
+  <p class="Code">
+   N_IMAGES        LONG      =            2
+  </p>
+  <p class="Code">
+   REFS            INT       = Array(2)
+  </p>
+  <p class="Code">
+   LIST            STRING    = Array(2)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   SAMPLE IMAGE LABEL
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   N_COMP_IMAGES   LONG      =            3
+  </p>
+  <p class="Code">
+   REFS            INT       = Array(3)
+  </p>
+  <p class="Code">
+   LIST            BYTE      = Array(5, 3)
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_997406_PageTOC_HDF_DFAN_LABLIST_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="HDF_1733484267_1117472_PageTOC_HDF_DFAN_LABLIST_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="HDF_DFAN_GETLABEL.html#HDF_1733484267_1007228">
+    HDF_DFAN_GETLABEL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HDF_DFAN_PUTLABEL.html#HDF_1733484267_1007506">
+    HDF_DFAN_PUTLABEL
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

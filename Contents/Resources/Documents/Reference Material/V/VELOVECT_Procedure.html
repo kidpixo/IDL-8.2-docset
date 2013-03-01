@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: V" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   VELOVECT Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/V/VELOVECT_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="V_list.html">
+    Routines: V
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    VELOVECT Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_889635">
+   </a>
+   <a name="dg_routines_3604229493_79201">
+   </a>
+   VELOVECT Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889661">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889679">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889689">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889743">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889746">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889754">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2674">
+   </a>
+   VELOVECT procedure produces a two-dimensional
+   <a name="kanchor2675">
+   </a>
+   velocity field plot. A directed arrow is drawn at each point showing the direction and magnitude of the field.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    velovect.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889661">
+   </a>
+   <a name="dg_routines_3604229493_787578_PageTOC_VELOVECT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   VELOVECT,
+   <i>
+    U
+   </i>
+   ,
+   <i>
+    V
+   </i>
+   [,&#160;
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889692">
+    COLOR
+   </a>
+   =
+   <i>
+    index
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889701">
+    MISSING
+   </a>
+   =
+   <i>
+    value
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889695">
+    DOTS
+   </a>
+   ]] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889698">
+    LENGTH
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_889705">
+    OVERPLOT
+   </a>
+   ] [Also accepts all PLOT keywords]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889679">
+   </a>
+   <a name="dg_routines_3604229493_787580_PageTOC_VELOVECT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   U
+  </h3>
+  <p>
+   The X component of the two-dimensional field.
+   <i>
+    U
+   </i>
+   must be a two-dimensional array.
+  </p>
+  <h3 class="Argument">
+   V
+  </h3>
+  <p>
+   The Y component of the two dimensional field.
+   <i>
+    V
+   </i>
+   must have the same dimensions as
+   <i>
+    U
+   </i>
+   .
+  </p>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   Optional abscissae values.
+   <i>
+    X
+   </i>
+   must be a vector with a length equal to the first dimension of
+   <i>
+    U
+   </i>
+   and
+   <i>
+    V
+   </i>
+   .
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   Optional ordinate values.
+   <i>
+    Y
+   </i>
+   must be a vector with a length equal to the second dimension of
+   <i>
+    U
+   </i>
+   and
+   <i>
+    V
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889689">
+   </a>
+   <a name="dg_routines_3604229493_787589_PageTOC_VELOVECT_">
+   </a>
+   Keywords
+  </h2>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Keywords not described here are passed directly to the PLOT procedure and may be used to set options such as TITLE, POSITION, NOERASE, etc.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_889692">
+   </a>
+   <a name="dg_routines_3604229493_787592_Keywords_VELOVECT__">
+   </a>
+   COLOR
+  </h3>
+  <p>
+   Set this keyword equal to the color index used for the plot.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_889695">
+   </a>
+   <a name="dg_routines_3604229493_787595_Keywords_VELOVECT__">
+   </a>
+   DOTS
+  </h3>
+  <p>
+   Set this keyword to 1 to place a dot at each missing point. Set this keyword to 0 or omit it to draw nothing for missing points. Has effect only if MISSING is specified.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_889698">
+   </a>
+   <a name="dg_routines_3604229493_787598_Keywords_VELOVECT__">
+   </a>
+   LENGTH
+  </h3>
+  <p>
+   Set this keyword equal to the length factor. The default of 1.0 makes the longest (
+   <i>
+    U
+   </i>
+   ,
+   <i>
+    V
+   </i>
+   ) vector the length of a cell.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_889701">
+   </a>
+   <a name="dg_routines_3604229493_787601_Keywords_VELOVECT__">
+   </a>
+   MISSING
+  </h3>
+  <p>
+   <a name="kanchor2676">
+   </a>
+   Set this keyword equal to the missing data value. Vectors with a length greater than MISSING are ignored.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_889705">
+   </a>
+   <a name="dg_routines_3604229493_957555_Keywords_VELOVECT__">
+   </a>
+   OVERPLOT
+  </h3>
+  <p>
+   Set this keyword to make VELOVECT “overplot”. That is, the current graphics screen is not erased, no axes are drawn, and the previously established scaling remains in effect.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_889709">
+   </a>
+   <a name="dg_routines_3604229493_196912_Keywords_VELOVECT__">
+   </a>
+   <a name="dg_routines_3604229493_196912_PageTOC_VELOVECT_">
+   </a>
+   PLOT Keywords Accepted
+  </h3>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_883230">
+    PLOT Procedure
+   </a>
+   for the description of the following plotting keywords:
+  </p>
+  <p>
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_875767">
+    ISOTROPIC
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_875775">
+    MAX_VALUE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_875782">
+    MIN_VALUE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_875788">
+    NSUM
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_875794">
+    POLAR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_875803">
+    THICK
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_875807">
+    XLOG
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_875812">
+    YLOG
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_875816">
+    YNOZERO
+   </a>
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889743">
+   </a>
+   <a name="dg_routines_3604229493_787603_PageTOC_VELOVECT_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   ; Create some random data:
+   <br />
+   U = RANDOMN(S, 20, 20)
+   <br />
+   V = RANDOMN(S, 20, 20)
+   <br />
+   <br />
+   ; Plot the vector field:
+   <br />
+   VELOVECT, U, V
+   <br />
+   <br />
+   ; Plot the field, using dots to represent vectors with values
+   <br />
+   ; greater than 18:
+   <br />
+   VELOVECT, U, V, MISSING=18, /DOTS
+   <br />
+   <br />
+   ; Plot with a title. Note that the XTITLE keyword is passed
+   <br />
+   ; directly to the PLOT procedure:
+   <br />
+   VELOVECT, U, V, MISSING=18, /DOTS, XTITLE='Random Vectors'
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889746">
+   </a>
+   <a name="dg_routines_3604229493_787609_PageTOC_VELOVECT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_889754">
+   </a>
+   <a name="dg_routines_3604229493_958759_PageTOC_VELOVECT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a href="../F/FLOW3.html">
+    FLOW3
+   </a>
+   ,
+   <a href="../P/PLOT_Procedure.html">
+    PLOT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../P/PLOT_FIELD_Procedure.html#dg_routines_3604229493_876844">
+    PLOT_FIELD Procedure
+   </a>
+   ,
+   <a href="VEL_Procedure.html">
+    VEL
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

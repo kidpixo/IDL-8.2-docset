@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Object-Oriented Programming|Creating an Object Graphics Display" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Color and Destination Objects
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#Objects/Color_and_Destination_Ob.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Object Classes/ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbsSelf">
+    Object-Oriented Programming
+   </span>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Color and Destination Objects
+   </span>
+  </div>
+  <h1>
+   <a name="obj_graphics_348174843_1018893">
+   </a>
+   <a name="obj_graphics_348174843_29387">
+   </a>
+   Color and Destination Objects
+  </h1>
+  <p>
+   Each
+   <a name="kanchor3740">
+   </a>
+   destination object has one of the two color models associated with it (an Indexed Color Model, and the RGB Color Model), shown in the following table.Once a destination object has been created, you cannot change the associated color model. You can, however, create destination objects that use different color models in the same IDL session. That is, it is possible to have two window objects—one using the Indexed color model and one using the RGB color model—on your computer screen at the same time.
+  </p>
+  <table style="width: 499px;caption-side: bottom;mc-table-style: url('../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Destination Object Color Models
+   </p>
+   <col width="120px" />
+   <col width="379px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Color Model
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Keyword Value
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       INDEXED
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       COLOR_MODEL=1
+      </p>
+      <p>
+       See
+       <a class="MCXref_Heading_0" href="#obj_graphics_348174843_1018710" target="" title="" alt="">
+        Indexed Color Model in Object Graphics
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       RGB
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       COLOR_MODEL=0 (default)
+      </p>
+      <p>
+       See
+       <a class="MCXref_Heading_0" href="#obj_graphics_348174843_1018722" target="" title="" alt="">
+        RGB Color Model in Object Graphics
+       </a>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   You can specify the color of any graphic object using either a color index or an RGB value, regardless of the color model used by the destination object or the physical destination device. The main distinction between the two color models lies in how IDL manages the color lookup table (if any) of the physical destination device. See
+   <a class="MCXref_Heading_0" href="How_IDL_Interprets_Color.html#obj_graphics_348174843_1018788" target="" title="" alt="">
+    How IDL Interprets Color Values
+   </a>
+   for details.
+  </p>
+  <h2 class="API">
+   A Note about Draw Widgets
+  </h2>
+  <p>
+   Drawable areas created with the WIDGET_DRAW function deserve a special mention. When a
+   <a name="kanchor3741">
+   </a>
+   draw widget is created with the GRAPHICS_LEVEL keyword set equal to 2, the widget contains an instance of an IDLgrWindow object rather than an IDL Direct Graphics drawable window. By default, the window object uses the RGB color model; to use the indexed color model, set the COLOR_MODEL keyword to WIDGET_DRAW equal to 1 (one).
+  </p>
+  <h2 class="API">
+   <a name="obj_graphics_348174843_1018710">
+   </a>
+   <a name="obj_graphics_348174843_39227">
+   </a>
+   Indexed Color Model in Object Graphics
+  </h2>
+  <p>
+   In the
+   <a name="kanchor3742">
+   </a>
+   Indexed color model, you have control over how colors are loaded into a color lookup table. If the Indexed Color Model is used, a color value (or individual image pixel) is expected to be an index into the palette associated with the destination object. To load a particular color table, create a palette object, then set it as a property of the destination object in which the graphics are to be drawn (using the PALETTE keyword in the SetProperty method of the destination object). If a palette is not explicitly provided for a given destination object, a gray scale ramp is loaded by default.
+  </p>
+  <p>
+   When the contents of your destination object are rendered on the physical device (that is, when you call the Draw method for the destination object), the RGB values from the palette are either:
+  </p>
+  <p class="Bullet">
+   passed directly through to the physical device (if it uses RGB values), or
+  </p>
+  <p class="Bullet">
+   loaded into the physical device’s lookup table (if it uses Indexed values).
+  </p>
+  <p>
+   Specify that a destination object should use the Indexed color model by setting the COLOR_MODEL property of the object equal to 1 (one):
+  </p>
+  <p class="Code">
+   myWindow = OBJ_NEW('IDLgrWindow', COLOR_MODEL = 1)
+  </p>
+  <p>
+   Specify a palette object by setting the PALETTE property equal to a palette object:
+  </p>
+  <p class="Code">
+   myWindow-&gt;SetProperty, PALETTE=myPalette
+  </p>
+  <p>
+   When you assign a color index to a visualization object that is drawn on the destination device, the color index is used to look up an RGB value in the specified palette. When you assign an RGB value to an object that is drawn on the destination device, the nearest match within the destination object’s palette is found and used to represent that color.
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="How_IDL_Interprets_Color.html#obj_graphics_348174843_1018788" target="" title="" alt="">
+    How IDL Interprets Color Values
+   </a>
+   for information on how a color assignment to a visualization object is interpreted by a destination object using either an RGB or Indexed color mode.
+  </p>
+  <h2 class="API">
+   <a name="obj_graphics_348174843_1018722">
+   </a>
+   <a name="obj_graphics_348174843_30655">
+   </a>
+   RGB Color Model in Object Graphics
+  </h2>
+  <p>
+   In the
+   <a name="kanchor3743">
+   </a>
+   RGB color model, IDL takes responsibility for filling the color lookup table on the destination device (if necessary). When the contents of your destination object are rendered on the physical device (that is, when you call the Draw method for the destination object), the RGB values are either:
+  </p>
+  <p class="Bullet">
+   passed directly through to the physical device (if it uses RGB values), or
+  </p>
+  <p class="Bullet">
+   matched as nearly as possible with colors loaded in the physical device’s lookup table (if it uses Indexed values).
+  </p>
+  <p>
+   Specify that a destination object should use the RGB color model by setting the COLOR_MODEL property of the object equal to 0 (zero). This is the default color model value for newly created destination objects.
+  </p>
+  <p class="Code">
+   myWindow = OBJ_NEW('IDLgrWindow', COLOR_MODEL = 0)
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

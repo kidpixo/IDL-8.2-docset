@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrContour" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrContour::Init
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrContour__Init.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrContour::Init
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1009567">
+   </a>
+   <a name="objects_gr_2157407275_40475">
+   </a>
+   IDLgrContour::Init
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1009586">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1051866">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1009592">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1009596">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1009773">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLgrContour::
+   <a name="kanchor4211">
+   </a>
+   Init function method initializes the contour object.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Init methods are special
+   <i>
+    lifecycle methods
+   </i>
+   , and as such cannot be called outside the context of object creation. This means that in most cases, you cannot call the Init method directly. There is one exception to this rule: if you write your own subclass of this class, you can call the Init method from within the Init method of the subclass.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1009586">
+   </a>
+   <a name="objects_gr_2157407275_1144537_PageTOC_IDLgrContour">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   = OBJ_NEW('IDLgrContour' [,&#160;
+   <i>
+    Values
+   </i>
+   ] [,
+   <i>
+    PROPERTY
+   </i>
+   =
+   <i>
+    value
+   </i>
+   ])
+  </p>
+  <p>
+   or
+  </p>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   =
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrContour.html#objects_gr_2157407275_1009298">
+    IDLgrContour
+   </a>
+   ::]Init([
+   <i>
+    Values
+   </i>
+   ] [,
+   <i>
+    PROPERTY
+   </i>
+   =
+   <i>
+    value
+   </i>
+   ])  &#160;&#160;&#160;
+   <i>
+    (In a lifecycle method only.
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1051866">
+   </a>
+   <a name="objects_gr_2157407275_44852">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   When this method is called indirectly, as part of the call to the OBJ_NEW function, the return value is an object reference to the newly-created object.
+  </p>
+  <p>
+   When called directly within a subclass Init method, the return value is 1 if initialization was successful, or zero otherwise.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1009592">
+   </a>
+   <a name="objects_gr_2157407275_1144541_PageTOC_IDLgrContour">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Values
+  </h3>
+  <p>
+   A vector or two-dimensional array of values to be contoured. If no values are provided, the values will be derived from the GEOMZ property value (if set and the PLANAR property is not set). In this case, the values to be contoured will match the Z coordinates of the provided geometry. IDL converts and maintains this data as double-precision floating-point if the argument is of type DOUBLE or if the DOUBLE_DATA keyword is set. Otherwise, the data is stored in single-precision. IDL returns the data as double-precision if it was stored in double-precision.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1009596">
+   </a>
+   <a name="objects_gr_2157407275_1144544_PageTOC_IDLgrContour">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   Any property listed under
+   <a class="MCXref_Heading_0" href="IDLgrContour_Properties.html#objects_gr_2157407275_1044398" target="" title="" alt="">
+    IDLgrContour Properties
+   </a>
+   that contains the word “Yes” in the “Init” column of the properties table can be initialized during object creation using this method. To initialize the value of a property, specify the property name as a keyword set equal to the appropriate property value.
+  </p>
+  <p>
+   All other keywords are passed to the superclass of this object.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1009773">
+   </a>
+   <a name="objects_gr_2157407275_48506">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

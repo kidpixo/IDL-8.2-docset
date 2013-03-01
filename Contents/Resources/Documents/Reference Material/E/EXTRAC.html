@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: E" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   EXTRAC
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/E/EXTRAC.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="E_list.html">
+    Routines: E
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    EXTRAC
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="E_841667181_36106">
+   </a>
+   <a name="E_841667181_72615">
+   </a>
+   EXTRAC
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#E_841667181_758767">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_997323">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_758769">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_997357">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_758776">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_795844">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_992804">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor896">
+   </a>
+   EXTRAC function
+   <a name="kanchor897">
+   </a>
+   returns a defined portion of an array or vector. The main advantage to EXTRAC is that, when parts of the specified subsection lie outside the bounds of the array, zeros are returned for these outlying elements. It is usually more efficient to use the array subscript ranges (the “:” operator; see
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Components of the IDL Language/Array_Subscript_Ranges.html#arrays_3727706888_762145">
+    Array Subscript Ranges
+   </a>
+   ) to perform such operations.
+  </p>
+  <p>
+   EXTRAC was originally a built-in system procedure in the PDP-11 version of IDL, and was retained in that form in the original VAX/VMS IDL for compatibility. Most applications of the EXTRAC function are more concisely written using subscript ranges (e.g., X(10:15)). EXTRAC has been rewritten as a library function that provides the same interface as the previous versions.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you know that the subarray will never lie beyond the edges of the array, it is more efficient to use array subscript ranges (the “:” operator) to extract the data instead of EXTRAC.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    extrac.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_758767">
+   </a>
+   <a name="E_841667181_758767_PageTOC_EXTRAC_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = EXTRAC(
+   <i>
+    Array
+   </i>
+   ,
+   <i>
+    C
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   ,
+   <i>
+    C
+   </i>
+   <sub class="italic">
+    2
+   </sub>
+   , ...,
+   <i>
+    C
+   </i>
+   <sub class="italic">
+    n
+   </sub>
+   ,
+   <i>
+    S
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   ,
+   <i>
+    S
+   </i>
+   <sub class="italic">
+    2
+   </sub>
+   , ...,
+   <i>
+    S
+   </i>
+   <sub class="italic">
+    n
+   </sub>
+   )
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_997323">
+   </a>
+   <a name="E_841667181_63581">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns any rectangular sub-matrix or portion of the parameter array.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_758769">
+   </a>
+   <a name="E_841667181_758769_PageTOC_EXTRAC_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Array
+  </h3>
+  <p>
+   The array from which the subarray will be copied.
+  </p>
+  <h3 class="Argument">
+   C
+   <sub class="italic">
+    i
+   </sub>
+  </h3>
+  <p>
+   The starting subscript in
+   <i>
+    Array
+   </i>
+   for the subarray. There should be one
+   <i>
+    C
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   for each dimension of
+   <i>
+    Array
+   </i>
+   . These arguments must be integers.
+  </p>
+  <h3 class="Argument">
+   S
+   <sub class="italic">
+    i
+   </sub>
+  </h3>
+  <p>
+   The size of each dimension. The result will have dimensions of (
+   <i>
+    S
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   ,
+   <i>
+    S
+   </i>
+   <sub class="italic">
+    2
+   </sub>
+   , ...,
+   <i>
+    S
+   </i>
+   <sub class="italic">
+    n
+   </sub>
+   ). There should be one
+   <i>
+    S
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   for each dimension of
+   <i>
+    Array
+   </i>
+   . These arguments must be non-negative.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_997357">
+   </a>
+   <a name="E_841667181_43129">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_758776">
+   </a>
+   <a name="E_841667181_758776_PageTOC_EXTRAC_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Extracting elements from a vector:
+  </p>
+  <p class="Code">
+   ; Create a 1000 element floating-point vector with each element set
+  </p>
+  <p class="Code">
+   ; to the value of its subscript:
+  </p>
+  <p class="Code">
+   A = FINDGEN(1000)
+  </p>
+  <p class="Code">
+   ; Extract 300 points starting at A[200] and extending to A[499]:
+  </p>
+  <p class="Code">
+   B = EXTRAC(A, 200, 300)
+  </p>
+  <p>
+   In the next example, the first 50 elements extracted —
+   <span class="Courier">
+    B[0]
+   </span>
+   to
+   <span class="Courier">
+    B[49]
+   </span>
+   — lie outside the bounds of the vector and are set to 0. The value of
+   <span class="Courier">
+    B[50]
+   </span>
+   is the same as the value of
+   <span class="Courier">
+    A[0]
+   </span>
+   , and the value of
+   <span class="Courier">
+    B[51]
+   </span>
+   is equal to
+   <span class="Courier">
+    A[1]
+   </span>
+   which is 1. Enter:
+  </p>
+  <p class="Code">
+   ; Create a 1000 element vector:
+  </p>
+  <p class="Code">
+   A = FINDGEN(1000)
+  </p>
+  <p class="Code">
+   ; Extract 50 elements, 49 of which lie outside the bounds of A:
+  </p>
+  <p class="Code">
+   B = EXTRAC(A, -50, 100)
+  </p>
+  <p>
+   The following commands illustrate the use of EXTRAC with multi-dimensional arrays:
+  </p>
+  <p class="Code">
+   ; Make a 64 by 64 array:
+  </p>
+  <p class="Code">
+   A = INTARR(64,64)
+  </p>
+  <p class="Code">
+   ; Extract a 32 by 32 portion starting at A(20,30):
+  </p>
+  <p class="Code">
+   B = EXTRAC(A, 20, 30, 32, 32)
+  </p>
+  <p>
+   As suggested in the discussion above, a better way to perform the same operation as the previous line is:
+  </p>
+  <p class="Code">
+   ; Use the array subscript operator instead of EXTRAC:
+  </p>
+  <p class="Code">
+   B = A(20:51, 30:61)
+  </p>
+  <p>
+   Extract the 20th column and 32nd row of A:
+  </p>
+  <p class="Code">
+   ; Extract 20th column of A:
+  </p>
+  <p class="Code">
+   B = EXTRAC(A, 19, 0, 1, 64)
+  </p>
+  <p class="Code">
+   ; Extract 32nd row of A:
+  </p>
+  <p class="Code">
+   B = EXTRAC(A, 0, 31, 64, 1)
+  </p>
+  <p>
+   Take a 32 BY 32 matrix from A starting at A(40,50):
+  </p>
+  <p class="Code">
+   ; Note that those points beyond the boundaries of A are set to 0:
+  </p>
+  <p class="Code">
+   B = EXTRAC(A, 40, 50, 32, 32)
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_795844">
+   </a>
+   <a name="E_841667181_795844_PageTOC_EXTRAC_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="E_841667181_992804">
+   </a>
+   <a name="E_841667181_992804_PageTOC_EXTRAC_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Components of the IDL Language/Array_Subscript_Ranges.html#arrays_3727706888_762145">
+    Array Subscript Ranges
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

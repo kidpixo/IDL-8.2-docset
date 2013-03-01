@@ -1,0 +1,504 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   SHMVAR
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/SHMVAR.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    SHMVAR
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_1120867">
+   </a>
+   <a name="S_820040301_62054">
+   </a>
+   SHMVAR
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_1120871">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1120873">
+     Return Value
+    </a>
+    <a class="MCXref_Heading_0" href="#S_820040301_1143608">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1120878">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1120915">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1120920">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1120922">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2389">
+   </a>
+   SHMVAR function creates an IDL array variable that uses the memory from a current mapped memory segment created by the SHMMAP procedure. Variables created by SHMVAR are used in much the same way as any other IDL variable, and provide the IDL user with the ability to alter the contents of anonymous shared memory or memory mapped files.
+  </p>
+  <p>
+   By default, the variable created by SHMVAR is given the type and dimensions that were specified to SHMMAP when the memory segment was created. However, this default can be changed by SHMVAR via a variety of keywords as well as via the
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   arguments. The created array can be of any type except for pointer, object reference, or string. Structure types are allowed as long as they do not contain any pointers, object references, or strings.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When assigning values to the returned array variable, explicitly make the assignment to the first element of the returned array. For example, the following creates a shared memory segment of 1000000 double-precision data elements, and then fills it with a DINDGEN ramp
+   <br />
+   <br />
+   <span class="Courier">
+    SHMMAP, 'MYSEG', /DOUBLE, 1000000z = SHMVAR('MYSEG')z[0] = DINDGEN(1000000)
+   </span>
+   <br />
+   <br />
+   <br />
+   This technique maintains the array variable’s connection with the shared memory segment.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1120871">
+   </a>
+   <a name="S_820040301_1120871_PageTOC_SHMVAR_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = SHMVAR(
+   <i>
+    SegmentName
+   </i>
+   [,
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   , ...,
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    8
+   </sub>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143650">
+    BYTE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143652">
+    COMPLEX
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143654">
+    DCOMPLEX
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_1143656">
+    DIMENSION
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143658">
+    DOUBLE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143660">
+    FLOAT
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143662">
+    INTEGER
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143664">
+    L64
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143666">
+    LONG
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_1143668">
+    SIZE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_1143673">
+    TEMPLATE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#S_820040301_1143675">
+    TYPE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143680">
+    UINT
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143684">
+    UL64
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1143682">
+    ULONG
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1120873">
+   </a>
+   <a name="S_820040301_65742">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   An IDL array variable that uses memory from the specified mapped memory segment.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1143608">
+   </a>
+   <a name="S_820040301_1120873_PageTOC_SHMVAR_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   SegmentName
+  </h3>
+  <p>
+   A scalar string supplying the IDL name for the shared memory segment, as assigned by SHMMAP.
+  </p>
+  <h3 class="Argument">
+   D
+   <sub class="italic" style="font-size: 10pt;line-height: 12pt;">
+    i
+   </sub>
+  </h3>
+  <p>
+   The dimensions of the result. The
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   arguments can be either a single array containing the dimensions or a sequence of scalar dimensions. Up to eight dimensions can be specified. If no dimensions are specified, the parameters specified to SHMMAP are used.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1120878">
+   </a>
+   <a name="S_820040301_1120878_PageTOC_SHMVAR_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143650">
+   </a>
+   <a name="S_820040301_1143650_Keywords_SHMVAR__">
+   </a>
+   BYTE
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as a byte array.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143652">
+   </a>
+   <a name="S_820040301_1143652_Keywords_SHMVAR__">
+   </a>
+   COMPLEX
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as a complex, single-precision floating-point array.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143654">
+   </a>
+   <a name="S_820040301_1143654_Keywords_SHMVAR__">
+   </a>
+   DCOMPLEX
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as a complex, double-precision floating-point array.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143656">
+   </a>
+   <a name="S_820040301_1143656_Keywords_SHMVAR__">
+   </a>
+   DIMENSION
+  </h3>
+  <p>
+   Set this keyword equal to a vector of 1 to 8 elements specifying the dimensions of the result. This is equivalent to the array form of the
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   plain arguments. If no dimensions are specified, the parameters specified to SHMMAP are used.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143658">
+   </a>
+   <a name="S_820040301_1143658_Keywords_SHMVAR__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as a double-precision floating-point array.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143660">
+   </a>
+   <a name="S_820040301_1143660_Keywords_SHMVAR__">
+   </a>
+   FLOAT
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as a single-precision floating-point array.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143662">
+   </a>
+   <a name="S_820040301_1143662_Keywords_SHMVAR__">
+   </a>
+   INTEGER
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as an integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143664">
+   </a>
+   <a name="S_820040301_1143664_Keywords_SHMVAR__">
+   </a>
+   L64
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as a 64-bit integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143666">
+   </a>
+   <a name="S_820040301_1143666_Keywords_SHMVAR__">
+   </a>
+   LONG
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as a longword integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143668">
+   </a>
+   <a name="S_820040301_1143668_Keywords_SHMVAR__">
+   </a>
+   SIZE
+  </h3>
+  <p>
+   Set this keyword equal to a size vector specifying the type and dimensions to be associated with the memory segment. The format of a size vector is given in the description of the
+   <a class="MCXref_Heading_0" href="SIZE.html#S_820040301_678885">
+    SIZE
+   </a>
+   function. If no dimensions are specified, the parameters specified to SHMMAP are used.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143673">
+   </a>
+   <a name="S_820040301_1143673_Keywords_SHMVAR__">
+   </a>
+   TEMPLATE
+  </h3>
+  <p>
+   Set this keyword equal to a variable of the type and dimensions to be associated with the memory segment. If no dimensions are specified, the parameters specified to SHMMAP are used.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143675">
+   </a>
+   <a name="S_820040301_1143675_Keywords_SHMVAR__">
+   </a>
+   TYPE
+  </h3>
+  <p>
+   Set this keyword to specify the type code for the memory segment. See the description of the
+   <a class="MCXref_Heading_0" href="SIZE.html#S_820040301_678885">
+    SIZE
+   </a>
+   function for a list of IDL type codes.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143680">
+   </a>
+   <a name="S_820040301_1143680_Keywords_SHMVAR__">
+   </a>
+   UINT
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as an unsigned integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143682">
+   </a>
+   <a name="S_820040301_1143682_Keywords_SHMVAR__">
+   </a>
+   ULONG
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as an unsigned longword integer array.
+  </p>
+  <h3 class="Keyword">
+   <a name="S_820040301_1143684">
+   </a>
+   <a name="S_820040301_1143684_Keywords_SHMVAR__">
+   </a>
+   UL64
+  </h3>
+  <p>
+   Set this keyword to specify that the memory segment should be treated as an unsigned 64-bit integer array.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1120915">
+   </a>
+   <a name="S_820040301_1120915_PageTOC_SHMVAR_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See the examples given for the
+   <a class="MCXref_Heading_0" href="SHMMAP.html#S_820040301_1120658">
+    SHMMAP
+   </a>
+   procedure.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1120920">
+   </a>
+   <a name="S_820040301_1120920_PageTOC_SHMVAR_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1120922">
+   </a>
+   <a name="S_820040301_1120922_PageTOC_SHMVAR_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="SHMDEBUG.html#S_820040301_1121052">
+    SHMDEBUG
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="SHMMAP.html#S_820040301_1120658">
+    SHMMAP
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="SHMUNMAP.html#S_820040301_1121093">
+    SHMUNMAP
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

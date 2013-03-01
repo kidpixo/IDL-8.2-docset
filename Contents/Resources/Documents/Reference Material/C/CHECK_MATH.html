@@ -1,0 +1,683 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CHECK_MATH
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CHECK_MATH.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CHECK_MATH
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_676079">
+   </a>
+   <a name="C_854643309_92570">
+   </a>
+   CHECK_MATH
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_1024132">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1024129">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_676088">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_676095">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_219615">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1052078">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor277">
+   </a>
+   CHECK_MATH function returns and clears the accumulated math error status.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1024132">
+   </a>
+   <a name="C_854643309_1024132_PageTOC_CHECK_MATH_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = CHECK_MATH( [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_993110">
+    MASK
+   </a>
+   =
+   <i>
+    bitmask
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_993190">
+    NOCLEAR
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_993188">
+    PRINT
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1024129">
+   </a>
+   <a name="C_854643309_1024129_PageTOC_CHECK_MATH_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The returned value is the sum of the bit values (described in the following table) of the accumulated errors.
+  </p>
+  <table style="width: 444px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    <a name="C_854643309_54471">
+    </a>
+    Math Error Status Values
+   </p>
+   <col width="72px" />
+   <col width="372px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Condition
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       No errors detected since the last interactive prompt or call to CHECK_MATH
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Integer divided by zero
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Integer overflow
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       16
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Floating-point divided by zero
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       32
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Floating-point underflow
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       64
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Floating-point overflow
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       128
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Floating-point operand error. An illegal operand was encountered, such as a negative operand to the SQRT or ALOG functions, or an attempt to convert to integer a number whose absolute value is greater than 2
+       <sup>
+        31
+       </sup>
+       - 1
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   CHECK_MATH can only relay information reported by the underlying hardware. Some hardware/operating system combinations may not report all of the math errors listed.
+  </p>
+  <p>
+   Each type of error is only represented once in the return value—any number of “Integer divided by zero” errors will result in a return value of 1.
+  </p>
+  <p>
+   The math error status is cleared (reset to zero) when CHECK_MATH is called, or when errors are reported. Math errors are reported either never, when the interpreter returns to an interactive prompt, or after execution of each IDL statement, depending on the value of the !EXCEPT system variable (see
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Appendices/Error_Handling_System_Va.html#sysvars_272074529_1002623" target="" title="" alt="">
+    !EXCEPT
+   </a>
+   ). See Examples below for further discussion.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_676088">
+   </a>
+   <a name="C_854643309_676088_PageTOC_CHECK_MATH_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="C_854643309_993110">
+   </a>
+   <a name="C_854643309_993110_Keywords_CHECK_MATH__">
+   </a>
+   MASK
+  </h3>
+  <p>
+   If present, the mask of exceptions to check. Otherwise, all exceptions are checked. Exceptions that are pending but not specified by MASK are not reported, and not cleared. Set this keyword equal to the sum of the bit values for each exception to be checked. For a list of the bit values corresponding to various exceptions, see
+   <a class="MCXref_Heading_0" href="#C_854643309_676079">
+    CHECK_MATH
+   </a>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_993190">
+   </a>
+   <a name="C_854643309_993190_Keywords_CHECK_MATH__">
+   </a>
+   NOCLEAR
+  </h3>
+  <p>
+   By default, CHECK_MATH returns the pending exceptions (as specified via the MASK keyword) and clears them from its list of pending exceptions. If NOCLEAR is set, the exceptions are not cleared and remain pending.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_993188">
+   </a>
+   <a name="C_854643309_993188_Keywords_CHECK_MATH__">
+   </a>
+   PRINT
+  </h3>
+  <p>
+   Set this keyword to print an error message to the IDL command log if any accumulated math errors exist. If this keyword is not present, CHECK_MATH executes silently.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_676095">
+   </a>
+   <a name="C_854643309_676095_PageTOC_CHECK_MATH_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To simply check and clear the accumulated math error status using all the defaults, enter:
+  </p>
+  <p class="Code">
+   PRINT, CHECK_MATH()
+  </p>
+  <p>
+   IDL prints the accumulated math error status code and resets to zero.
+  </p>
+  <h3>
+   <a name="C_854643309_219464_Keywords_CHECK_MATH__">
+   </a>
+   CHECK_MATH and !EXCEPT
+  </h3>
+  <p>
+   Because the accumulated math error status is cleared when it is reported, the behavior and appropriate use of CHECK_MATH depends on the value of the system variable !EXCEPT.
+  </p>
+  <p class="Bullet">
+   If !EXCEPT is set equal to 0, math exceptions are not reported automatically, and thus CHECK_MATH will always return the error status accumulated since the last time it was called.
+  </p>
+  <p class="Bullet">
+   If !EXCEPT is set equal to 1, math exceptions are reported when IDL returns to the interactive command prompt. In this case, CHECK_MATH will return appropriate error codes when used
+   <i>
+    within
+   </i>
+   an IDL procedure, but will always return zero when called at the IDL prompt.
+  </p>
+  <p class="Bullet">
+   If !EXCEPT is set equal to 2, math exceptions are reported after each IDL statement. In this case, CHECK_MATH will return appropriate error codes only when used
+   <i>
+    within an IDL statement
+   </i>
+   , and will always return zero otherwise.
+  </p>
+  <p>
+   For example, if !EXCEPT is set equal to zero and we cause both floating-point and integer math errors:
+  </p>
+  <p class="Code">
+   !EXCEPT=0
+   <br />
+   PRINT, 1./0., 1/0
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   Inf&#160;&#160;&#160;&#160;1
+  </p>
+  <p>
+   The special floating-point value Inf is returned for 1./0. There is no integer analogue to the floating-point
+   <i>
+    Inf
+   </i>
+   . If we check the accumulated error status:
+  </p>
+  <p class="Code">
+   PRINT, CHECK_MATH()
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;17
+  </p>
+  <p>
+   CHECK_MATH reports floating-point and integer divide-by-zero errors.
+  </p>
+  <p>
+   If !EXCEPT is set equal to one and we cause both floating-point and integer math errors:
+  </p>
+  <p class="Code">
+   !EXCEPT=1
+   <br />
+   PRINT, 1./0., 1/0
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   Inf&#160;&#160;&#160;&#160;1
+  </p>
+  <p class="Code">
+   % Program caused arithmetic error: Integer divide by 0
+  </p>
+  <p class="Code">
+   % Program caused arithmetic error: Floating divide by 0
+  </p>
+  <p>
+   This time IDL also prints error messages when returning to the command prompt. If we check the accumulated error status:
+  </p>
+  <p class="Code">
+   PRINT, CHECK_MATH()
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;0
+  </p>
+  <p>
+   because the status was reset.
+  </p>
+  <p>
+   However, if we do not allow IDL to return to an interactive prompt before checking the math error status:
+  </p>
+  <p class="Code">
+   !EXCEPT=1
+   <br />
+   PRINT, 1./0., 1/0 &amp; PRINT, CHECK_MATH()
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   Inf&#160;&#160;&#160;&#160;1
+  </p>
+  <p class="Code">
+   17
+  </p>
+  <p>
+   In this case, the math error status code (17) is printed, but because the error status has been cleared by the call to CHECK_MATH, no error messages are printed when IDL returns to the interactive command prompt.
+  </p>
+  <p>
+   Finally, if !EXCEPT is set equal to two and we cause both floating-point and integer math errors:
+  </p>
+  <p class="Code">
+   !EXCEPT=2
+   <br />
+   PRINT, 1./0., 1/0 &amp; PRINT, CHECK_MATH()
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   Inf       1
+  </p>
+  <p class="Code">
+   % Program caused arithmetic error: Integer divide by 0
+  </p>
+  <p class="Code">
+   % Program caused arithmetic error: Floating divide by 0
+  </p>
+  <p class="Code">
+   % Detected at  $MAIN$
+  </p>
+  <p class="Code">
+   0
+  </p>
+  <p>
+   In this case, errors are printed before executing the CHECK_MATH function, so CHECK_MATH reports no errors. However, if we include the call to CHECK_MATH in the first PRINT command, we see the following:
+  </p>
+  <p class="Code">
+   PRINT, 1./0., 1/0, CHECK_MATH()
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   Inf&#160;&#160;&#160;&#160;1&#160;&#160;&#160;&#160;17
+  </p>
+  <h3>
+   <a name="C_854643309_219602_Keywords_CHECK_MATH__">
+   </a>
+   Printing Error Messages
+  </h3>
+  <p>
+   The following code fragment prints abbreviated names of errors that have occurred:
+  </p>
+  <p class="Code">
+   ;Create a string array of error names.
+   <br />
+   ERRS = ['Divide by 0', 'Underflow', 'Overflow', $
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'Illegal Operand']
+   <br />
+   <br />
+   ;Get math error status.
+   <br />
+   J = CHECK_MATH()
+   <br />
+   FOR I = 4, 7 DO IF ISHFT(J, -I) AND 1 THEN $
+   <br />
+   &#160;&#160;&#160;;Check to see if an error occurred and print the
+   <br />
+   &#160;&#160;&#160;;corresponding error message.
+   <br />
+   &#160;&#160;&#160;PRINT, ERRS(I-4), ' Occurred'
+  </p>
+  <h3>
+   <a name="C_854643309_219619_Keywords_CHECK_MATH__">
+   </a>
+   Testing Critical Code
+  </h3>
+  <h4>
+   Example 1
+  </h4>
+  <p>
+   Assume you have a critical section of code that is likely to produce an error. The following example shows how to check for errors, and if one is detected, how to repeat the code with different parameters.
+  </p>
+  <p class="Code">
+   ; Clear error status from previous operations, and print error
+  </p>
+  <p class="Code">
+   ; messages if an error exists:
+  </p>
+  <p class="Code">
+   JUNK = CHECK_MATH(/PRINT)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Disable automatic printing of subsequent math errors:
+  </p>
+  <p class="Code">
+   !EXCEPT=0
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;Critical section goes here.
+  </p>
+  <p class="Code">
+   AGAIN: ...
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Did an arithmetic error occur? If so, print error message and
+  </p>
+  <p class="Code">
+   ; request new values:
+  </p>
+  <p class="Code">
+   IF CHECK_MATH() NE 0 THEN BEGIN
+  </p>
+  <p class="Code">
+   PRINT, 'Math error occurred in critical section.'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Get new parameters from user:
+  </p>
+  <p class="Code">
+   READ, 'Enter new values.',...
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Enable automatic printing of math errors:
+  </p>
+  <p class="Code">
+   !EXCEPT=2
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;And retry:
+  </p>
+  <p class="Code">
+   GOTO, AGAIN
+  </p>
+  <p class="Code">
+   ENDIF
+  </p>
+  <h4>
+   Example 2
+  </h4>
+  <p>
+   This example demonstrates the use of the MASK keyword to check for a specific error, and the NOCLEAR keyword to prevent exceptions from being cleared:
+  </p>
+  <p class="Code">
+   PRO EXAMPLE2_CHECKMATH
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;!EXCEPT=0
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, 1./0
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, CHECK_MATH(MASK=16,/NOCLEAR)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, CHECK_MATH(MASK=2,/NOCLEAR)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   Inf
+  </p>
+  <p class="Code">
+   16
+  </p>
+  <p class="Code">
+   0
+  </p>
+  <p class="Code">
+   % Program caused arithmetic error: Floating divide by 0
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_219615">
+   </a>
+   <a name="C_854643309_219615_PageTOC_CHECK_MATH_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1052078">
+   </a>
+   <a name="C_854643309_1052078_PageTOC_CHECK_MATH_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../F/FINITE.html#F_848155245_676884" target="" title="" alt="">
+    FINITE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../I/ISHFT.html#I_833016429_1054787">
+    ISHFT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../M/MACHAR.html#M_824365677_887317">
+    MACHAR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Appendices/Error_Handling_System_Va.html#sysvars_272074529_1002623" target="" title="" alt="">
+    !EXCEPT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

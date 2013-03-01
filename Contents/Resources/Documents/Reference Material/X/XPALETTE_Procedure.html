@@ -1,0 +1,842 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: X" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   XPALETTE Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/X/XPALETTE_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="X_list.html">
+    Routines: X
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    XPALETTE Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_917243">
+   </a>
+   <a name="dg_routines_3604229493_10360">
+   </a>
+   XPALETTE Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_917301">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_917316">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_917319">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_917340">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_917452">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_917460">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor3034">
+   </a>
+   XPALETTE procedure is a u
+   <a name="kanchor3035">
+   </a>
+   tility that displays a widget interface that allows interactive creation and modification of color tables using the RGB, CMY, HSV, or HLS color systems. This procedure can interpolate the space between color indices (to create smooth color transitions) or edit individual colors.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    xpalette.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib/utilities
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_917269">
+   </a>
+   <a name="dg_routines_3604229493_761943_PageTOC_XPALETTE_">
+   </a>
+   Using the XPALETTE Interface
+  </h3>
+  <p>
+   Calling XPALETTE causes a graphical interface to appear. The elements of this interface are described below.
+  </p>
+  <h4>
+   Plots on Left Side of Interface
+  </h4>
+  <p>
+   Three plots show the current red, green, and blue vectors.
+  </p>
+  <h4>
+   Status Region
+  </h4>
+  <p>
+   The center of the XPALETTE widget is a status region containing:
+  </p>
+  <p class="Bullet">
+   The total number of colors.
+  </p>
+  <p class="Bullet">
+   The current color index. XPALETTE allows changing one color at a time. This color is known as the “current color” and is indicated in the color spectrum display with a special marker.
+  </p>
+  <p class="Bullet">
+   The current mark index. The mark is used to remember a color index. Click the “Set Mark Button” to make the current color index the mark index.
+  </p>
+  <p class="Bullet">
+   A sample of the current color. The special marker used in the color spectrum display prevents the user from seeing the color of the current index, but it is visible here.
+  </p>
+  <h4>
+   Control Panel
+  </h4>
+  <p>
+   A panel of 8 buttons control common XPALETTE functions:
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Done:
+   </span>
+   Click this button to exit XPALETTE. The new color tables are saved in the COLORS common block and loaded to the display.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Predefined:
+   </span>
+   Click this button to start XLOADCT, allowing selection of one of the predefined color tables. Note that when you change the color map via XLOADCT, XPALETTE is not always able to keep its display accurate. This problem can be overcome by pressing the XPALETTE “Redraw” button after changing the colortable via XLOADCT.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Help:
+   </span>
+   Click this button to display help information.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Redraw:
+   </span>
+   Click this button to redraw the display using the current state of the color map.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Set Mark:
+   </span>
+   Click this button to set the value of the mark index to the current color index.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Switch Mark:
+   </span>
+   Click this button to exchange the mark and the current index.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Copy Current:
+   </span>
+   Click this button to make every color lying between the current index and the mark index (inclusive) the same color as the current color.
+  </p>
+  <p class="Bullet">
+   <span class="Bold">
+    Interpolate:
+   </span>
+   Click this button to smoothly interpolate colors between the current index and the mark index.
+  </p>
+  <h4>
+   Color System Control
+  </h4>
+  <p>
+   This section of the interface allows you to select the color system used to modify individual colors. The “Select Color System” pulldown menu lets you select from four different systems—RGB, CMY, HSV, and HLS. Depending upon the current system, 3 sliders below the pulldown menu allow you to alter the current color.
+  </p>
+  <h4>
+   Right Side Color Spectrum Display
+  </h4>
+  <p>
+   A display on the right side of the XPALETTE interface shows the current color map as a series of squares. Color index 0 is at the upper left. The color index increases monotonically by rows going left to right and top to bottom. The current color index is indicated by a special marker symbol. There are 4 ways to change the current color:
+  </p>
+  <p class="Bullet">
+   Click on any square in the color map display.
+  </p>
+  <p class="Bullet">
+   Use the “By Index” slider to move to the desired color index.
+  </p>
+  <p class="Bullet">
+   Use the “Row” Slider to move the marker vertically.
+  </p>
+  <p class="Bullet">
+   Use the “Column” Slider to move the marker horizontally.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_917298">
+   </a>
+   <a name="dg_routines_3604229493_761971_PageTOC_XPALETTE_">
+   </a>
+   A Note about the Colors Used in the Interface
+  </h3>
+  <p>
+   XPALETTE uses two colors from the current color table as drawing foreground and background colors. These are used for the RGB plots on the left, and the current index marker on the right. This means that if the user set these two colors to the same value, the XPALETTE display could become unreadable (like writing on black paper with black ink). XPALETTE minimizes this possibility by noting changes to the color map and always using the brightest available color for the foreground color and the darkest for the background. Thus, the only way to make XPALETTE’s display unreadable is to set the entire color map to a single color, which is highly unlikely. The only side effect of this policy is that you may notice XPALETTE redrawing the entire display after you’ve modified the current color. This simply means that the change has made XPALETTE pick new drawing colors.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_917301">
+   </a>
+   <a name="dg_routines_3604229493_761937_PageTOC_XPALETTE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   XPALETTE [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_917321">
+    BLOCK
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_917331">
+    GROUP
+   </a>
+   =
+   <i>
+    widget_id
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_917334">
+    UPDATECALLBACK
+   </a>
+   =‘
+   <i>
+    procedure_name
+   </i>
+   ’ [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_917337">
+    UPDATECBDATA
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_917316">
+   </a>
+   <a name="dg_routines_3604229493_25990">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_917319">
+   </a>
+   <a name="dg_routines_3604229493_761939_PageTOC_XPALETTE_">
+   </a>
+   Keywords
+  </h2>
+  <h3>
+   <a name="dg_routines_3604229493_917321">
+   </a>
+   <a name="dg_routines_3604229493_937555_Keywords_XPALETTE__">
+   </a>
+   BLOCK
+  </h3>
+  <p>
+   Set this keyword to have XMANAGER
+   <i>
+    block
+   </i>
+   when this application is registered. By default, BLOCK is set equal to zero, providing access to the command line if active command line processing is available. Note that setting BLOCK=1 will cause
+   <i>
+    all
+   </i>
+   widget applications to block, not just this application. For more information, see the documentation for the NO_BLOCK keyword to XMANAGER.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Only the outermost call to XMANAGER can block. Therefore, to have XPALETTE block, any earlier calls to XMANAGER must have been called with the NO_BLOCK keyword. See the documentation for the NO_BLOCK keyword to XMANAGER for an example.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_917331">
+   </a>
+   <a name="dg_routines_3604229493_761941_Keywords_XPALETTE__">
+   </a>
+   GROUP
+  </h3>
+  <p>
+   The widget ID of the widget that calls XPALETTE. When this ID is specified, a death of the caller results in a death of XPALETTE.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_917334">
+   </a>
+   <a name="dg_routines_3604229493_949914_Keywords_XPALETTE__">
+   </a>
+   UPDATECALLBACK
+  </h3>
+  <p>
+   Set this keyword to a string containing the name of a user-supplied procedure that will be called when the color table is updated by XLOADCT. The procedure may optionally accept a keyword called DATA, which will be automatically set to the value specified by the optional UPDATECBDATA keyword.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_917337">
+   </a>
+   <a name="dg_routines_3604229493_949916_Keywords_XPALETTE__">
+   </a>
+   UPDATECBDATA
+  </h3>
+  <p>
+   Set this keyword to a value of any type. It will be passed via the DATA keyword to the user-supplied procedure specified via the UPDATECALLBACK keyword, if any. If the UPDATECBDATA keyword is not set the value accepted by the DATA keyword to the procedure specified by UPDATECALLBACK will be undefined.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_917340">
+   </a>
+   <a name="dg_routines_3604229493_70496">
+   </a>
+   Examples
+  </h2>
+  <p>
+   This example uses a single color (orange) to highlight pixels within the spine of the CT scan image. Then, starting with the entry that was changed to orange, a range of entries is selected and replaced with a ramp from orange to white to highlight the bones within this image. Complete the following steps for a detailed description of the process.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    usingxpalette.
+    <a name="kanchor3036">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/image
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <span class="Courier">
+    usingxpalette
+   </span>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <span class="Courier">
+    .EDIT usingxpalette.pro
+   </span>
+   . The BLOCK keyword is set when using XPALETTE to force the example routine to wait until the
+   <span class="Bold">
+    Done
+   </span>
+   button is pressed to continue. If the BLOCK keyword was not set, the example routine would produce all of the displays at once and then end.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Determine the path to the
+     <span class="Courier">
+      ctscan.dat
+     </span>
+     binary file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   ctscanFile = FILEPATH('ctscan.dat', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Initialize the image size parameter:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   ctscanSize = [256, 256]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Import the image from the file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   ctscanImage = READ_BINARY(ctscanFile, $
+  </p>
+  <p class="Code_Indented">
+   DATA_DIMS = ctscanSize)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     If you are running IDL on a TrueColor display, set the DECOMPOSED keyword to the DEVICE command to zero before your first color table related routine is used within an IDL session or program.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   DEVICE, DECOMPOSED = 0
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     <madcap:conditionaltext madcap:conditions="Direct Graphics.Comment">
+      If you are running IDL on X Windows, set the RETAIN keyword to the DEVICE command to two before displaying your first IDL window within an IDL session or program.
+     </madcap:conditionaltext>
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented" madcap:conditions="Direct Graphics.Comment">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Comment">
+    DEVICE, RETAIN = 2
+   </madcap:conditionaltext>
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Display the image from the
+     <span class="Courier">
+      ctscan.dat
+     </span>
+     file with the B-W LINEAR color table:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   LOADCT, 0
+  </p>
+  <p class="Code_Indented">
+   WINDOW, 0, TITLE = 'ctscan.dat', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;XSIZE = ctscanSize[0], YSIZE = ctscanSize[1]
+  </p>
+  <p class="Code_Indented">
+   TV, ctscanImage
+  </p>
+  <p class="indent">
+   As shown in the following figure, the B-W LINEAR color table does not distinguish all of the aspects of this image. The XPALETTE utility can be used to change the color table.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    CT Scan Image with Grayscale Color Table
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/imgcolor10.gif" style="margin-left: 5.99976px;margin-right: 6.000469px;margin-bottom: 6.000473px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Open the XPALETTE utility:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   XPALETTE
+  </p>
+  <p class="indent">
+   Select the
+   <span class="Bold">
+    Predefined
+   </span>
+   button in the XPALETTE utility to change the color table to Rainbow + white.
+  </p>
+  <p class="indent">
+   Click on the
+   <span class="Bold">
+    Done
+   </span>
+   button after you select the Rainbow + white color table in XLOADCT and then click on the
+   <span class="Bold">
+    Done
+   </span>
+   button in XPALETTE.
+  </p>
+  <p class="indent">
+   The following figure shows the resulting XPALETTE and XLOADCT displays.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Selecting Rainbow + white Color Table in XPALETTE Utility
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/imgcolor11.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999783px;margin-bottom: 5.999767px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Now redisplay the image to show it with the Rainbow + white color table:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   TV, ctscanImage
+  </p>
+  <p class="indent">
+   Your display should be similar to the following figure.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    CT Scan Image with the Rainbow + white Color Table
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/imgcolor12.gif" style="margin-left: 9.750239px;margin-top: 15.74712px;margin-right: 8.969762px;margin-bottom: 17.05536px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="indent">
+   You can use XPALETTE to change a single color within the current color table. For example, you can change the color at index number 115 to orange.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     Open XPALETTE and click on the 115th index (in column 3 and row 7):
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   XPALETTE
+  </p>
+  <p class="indent">
+   Change its color to orange by moving the RGB (red, green, and blue) sliders (Orange is made up of 255 red, 128 green, and 0 blue)
+  </p>
+  <p class="indent">
+   Click on the
+   <span class="Bold">
+    Done
+   </span>
+   button after changing the
+   <span class="Bold">
+    Red
+   </span>
+   ,
+   <span class="Bold">
+    Green
+   </span>
+   , and
+   <span class="Bold">
+    Blue
+   </span>
+   sliders.
+  </p>
+  <p class="indent">
+   Use TV to redisplay the image to include the last changes made in the XPALETTE utility:
+  </p>
+  <p class="Code_Indented">
+   TV, ctscanImage
+  </p>
+  <p class="indent">
+   The orange values now highlight some areas of the spine, kidney, and bones as shown in the following figure.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    CT Scan Image with Orange Added to the Color Table
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/imgcolor13.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999783px;margin-bottom: 5.999767px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="indent">
+   You can highlight the bones even further by interpolating a new range in between the orange and white indices.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     Open XPALETTE:
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   Click on the 115th index and select the S
+   <span class="Bold">
+    et Mark
+   </span>
+   button.
+  </p>
+  <p class="indent">
+   Click on the highest index (which is usually 255 but it could be less) and then select the
+   <span class="Bold">
+    Interpolate
+   </span>
+   button.
+  </p>
+  <p class="indent">
+   To see the result of this interpolation within XPALETTE, click on the
+   <span class="Bold">
+    Redraw
+   </span>
+   button.
+  </p>
+  <p class="indent">
+   Click
+   <span class="Bold">
+    Done
+   </span>
+   and redisplay the image:
+  </p>
+  <p class="Code_Indented">
+   TV, ctscanImage
+  </p>
+  <p class="indent">
+   The following figure displays the image using the modified color table.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    CT Scan Image with Orange to White Range Added
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../Resources/Images/imgcolor14.gif" style="margin-left: 26.47944px;margin-top: 17.95248px;margin-right: 4.818962px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_917452">
+   </a>
+   <a name="dg_routines_3604229493_761973_PageTOC_XPALETTE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre-4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_917460">
+   </a>
+   <a name="dg_routines_3604229493_991459_PageTOC_XPALETTE_">
+   </a>
+   See Also
+  </h2>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

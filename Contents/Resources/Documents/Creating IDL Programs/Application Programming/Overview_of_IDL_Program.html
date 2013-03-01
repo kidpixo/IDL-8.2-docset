@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Tasks|Using Procedures, Functions, SAVE Files" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Overview of IDL Program Types
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Application Programming/Overview_of_IDL_Program.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Programming Tasks.html">
+    Tasks
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Program Types.html">
+    Using Procedures, Functions, SAVE Files
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Overview of IDL Program Types
+   </span>
+  </div>
+  <h1>
+   <a name="CreateRunProgram_2541038872_828892">
+   </a>
+   <a name="CreateRunProgram_2541038872_37689">
+   </a>
+   Overview of IDL Program Types
+  </h1>
+  <p>
+   In addition to being a useful interactive data analysis tool, IDL is a powerful programming language. Many of IDL’s programming language features and constructs can be used either interactively at the IDL command line or as part of a larger program — which can itself be invoked at the IDL command line or by other programs. A program may or may not be compiled before execution. The type of programs you use in IDL will depend upon your tasks.
+  </p>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    IDL Program Types
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Program Type
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       iTools State File (
+       <span class="Courier">
+        .isv
+       </span>
+       )
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Restore or share an iTools session — you can save the current state of an iTool as an
+       <i>
+        iT
+        <a name="kanchor3548">
+        </a>
+        ools State
+       </i>
+       (*.
+       <span class="Courier">
+        isv
+       </span>
+       ) file. Whenever you close an iTool window, you are prompted to save the current state as an *.
+       <span class="Courier">
+        isv
+       </span>
+       file so that you can return to the current state of the data later when you open the *.
+       <span class="Courier">
+        isv
+       </span>
+       file. Other IDL users running the same version or a newer version of IDL can open *.
+       <span class="Courier">
+        isv
+       </span>
+       files. The iTool State file includes the data visualized at the time it was created. There is no need to provide a separate data file to support the visualization.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       $MAIN$ Program
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Repeat a series of command line statements or interactively change variable values in a program file. These short programs or procedures are called $MAIN$ (main-level) programs. They are not explicitly named, and cannot be called from other programs. See Creating $MAIN$ Programs for details.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Named Program File (
+       <span class="Courier">
+        .pro
+       </span>
+       )
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Create programs and applications — you can create programs for data analysis or visualization using one or more
+       <i>
+        named program files
+       </i>
+       (*.pro). Program files are created in the IDL Editor or a text editor of your choice.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Batch File
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Automate processing tasks — you can automate routine or lengthy processing tasks using a
+       <i>
+        <a name="kanchor3549">
+        </a>
+        batch file
+       </i>
+       , which contains one or more IDL statements or commands. Each line of the file is read and executed before proceeding to the next line.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       SAVE File (
+       <span class="Courier">
+        .sav
+       </span>
+       )
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Share programs and distribute applications — you can create a SAVE file containing data or named program files in a
+       <span class="Courier">
+        .
+        <a name="kanchor3550">
+        </a>
+        sav
+       </span>
+       file to share with other users who may or may not have a full IDL installation.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: J" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   JULDAY
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/J/JULDAY.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="J_list.html">
+    Routines: J
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    JULDAY
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="J_839504493_762378">
+   </a>
+   <a name="J_839504493_52189">
+   </a>
+   JULDAY
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#J_839504493_870141">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#J_839504493_870055">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#J_839504493_762385">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#J_839504493_829342">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#J_839504493_870280">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#J_839504493_870904">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1599">
+   </a>
+   JULDAY function calculates the Julian Day Number (which begins at noon) for the specified date. This is the inverse of the CALDAT procedure.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The Julian calendar, established by Julius Caesar in the year 45 BCE, was corrected by Pope Gregory XIII in 1582, excising ten days from the calendar. The CALDAT procedure reflects the adjustment for dates after October 4, 1582. See the example below for an illustration.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   A small offset is added to the returned Julian date to eliminate roundoff errors when calculating the day fraction from hours, minutes, seconds. This offset is given by the larger of EPS and EPS*Julian, where Julian is the integer portion of the Julian date, and EPS is the EPS field from MACHAR (using double precision). For typical Julian dates, this offset is approximately 6x10
+   <sup>
+    –10
+   </sup>
+   (which corresponds to 5x10
+   <sup>
+    –5
+   </sup>
+   seconds). This offset ensures that if the Julian date is converted back to hour, minute, and second, then the hour, minute, and second will have the same integer values as were originally input.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Calendar dates must be in the range 1 Jan 4716 B.C.E. to 31 Dec 5000000, which corresponds to Julian values -1095 and 1827933925, respectively.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    julday.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="J_839504493_870141">
+   </a>
+   <a name="J_839504493_870141_PageTOC_JULDAY_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = JULDAY(
+   <i>
+    Month, Day, Year, Hour, Minute, Second
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="J_839504493_870055">
+   </a>
+   <a name="J_839504493_870055_PageTOC_JULDAY_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   <i>
+    Result
+   </i>
+   is of type double-precision if Hour, Minute, or Second is specified, otherwise
+   <i>
+    Result
+   </i>
+   is of type long integer. If all arguments are scalar, the function returns a scalar. If all arguments are arrays, the function matches up the corresponding elements of the arrays, returning an array with the same dimensions as the smallest array. If the inputs contain both scalars and arrays, the function uses the scalar value with each element of the arrays, and returns an array with the same dimensions as the smallest input array.
+  </p>
+  <h2 class="API">
+   <a name="J_839504493_762385">
+   </a>
+   <a name="J_839504493_762385_PageTOC_JULDAY_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Month
+  </h3>
+  <p>
+   Number of the desired month (1 = January, ..., 12 = December).
+   <i>
+    Month
+   </i>
+   can be either a scalar or an array.
+  </p>
+  <h3 class="Argument">
+   Day
+  </h3>
+  <p>
+   Number of the day of the month (1-31).
+   <i>
+    Day
+   </i>
+   can be either a scalar or an array.
+  </p>
+  <h3 class="Argument">
+   Year
+  </h3>
+  <p>
+   Number of the desired year (e.g., 1994).
+   <i>
+    Year
+   </i>
+   can be either a scalar or an array.
+  </p>
+  <h3 class="Argument">
+   Hour
+  </h3>
+  <p>
+   Number of the hour of the day (0-23).
+   <i>
+    Hour
+   </i>
+   can be either a scalar or an array.
+  </p>
+  <h3 class="Argument">
+   Minute
+  </h3>
+  <p>
+   Number of the minute of the hour (0-59).
+   <i>
+    Minute
+   </i>
+   can be either a scalar or an array.
+  </p>
+  <h3 class="Argument">
+   Second
+  </h3>
+  <p>
+   Number of the second of the minute (0-59).
+   <i>
+    Second
+   </i>
+   can be either a scalar or an array.
+  </p>
+  <h2 class="API">
+   <a name="J_839504493_829342">
+   </a>
+   <a name="J_839504493_829342_PageTOC_JULDAY_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   In 1582, Pope Gregory XIII adjusted the Julian calendar to correct for its inaccuracy of slightly more than 11 minutes per year. As a result, the day following October 4, 1582 was October 15, 1582. JULDAY follows this convention, as illustrated by the following commands:
+  </p>
+  <p class="Code">
+   PRINT, JULDAY(10,4,1582), JULDAY(10,5,1582), JULDAY(10,15,1582)
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   2299160&#160;&#160;&#160;&#160;2299161&#160;&#160;&#160;&#160;2299161
+  </p>
+  <p>
+   Using arrays, this can also be calculated as follows:
+  </p>
+  <p class="Code">
+   PRINT, JULDAY(10, [4, 5, 15], 1582)
+  </p>
+  <p>
+   If you are using JULDAY to calculate an absolute number of days elapsed, be sure to account for the Gregorian adjustment.
+  </p>
+  <h2 class="API">
+   <a name="J_839504493_870280">
+   </a>
+   <a name="J_839504493_870280_PageTOC_JULDAY_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="J_839504493_870904">
+   </a>
+   <a name="J_839504493_870904_PageTOC_JULDAY_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../B/BIN_DATE.html#B_856805997_762117">
+    BIN_DATE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../C/CALDAT.html#C_854643309_1083750">
+    CALDAT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SYSTIME.html#S_820040301_762665">
+    SYSTIME
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

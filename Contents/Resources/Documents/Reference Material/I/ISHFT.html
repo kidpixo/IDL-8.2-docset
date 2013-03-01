@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   ISHFT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/ISHFT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    ISHFT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="I_833016429_1054787">
+   </a>
+   <a name="I_833016429_41330">
+   </a>
+   <span class="_Override">
+    I
+   </span>
+   SHFT
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#I_833016429_677351">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_884887">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_677353">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_878032">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_677358">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_822394">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#I_833016429_880860">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1563">
+   </a>
+   ISHFT function performs the
+   <a name="kanchor1564">
+   </a>
+   bit
+   <a name="kanchor1565">
+   </a>
+   shift operation on bytes, integers and longwords.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677351">
+   </a>
+   <a name="I_833016429_677351_PageTOC_ISHFT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = ISHFT(
+   <i>
+    P
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   ,
+   <i>
+    P
+   </i>
+   <sub class="italic">
+    2
+   </sub>
+   )
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_884887">
+   </a>
+   <a name="I_833016429_10910">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   If
+   <i>
+    P
+   </i>
+   <sub class="italic">
+    2
+   </sub>
+   is positive,
+   <i>
+    P
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   is left shifted
+   <i>
+    P
+   </i>
+   <sub class="italic">
+    2
+   </sub>
+   bit positions with 0 bits filling vacated positions. If
+   <i>
+    P
+   </i>
+   <sub class="italic">
+    2
+   </sub>
+   is negative,
+   <i>
+    P
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   is right shifted with 0 bits filling vacated positions.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677353">
+   </a>
+   <a name="I_833016429_677353_PageTOC_ISHFT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   P
+   <sub class="italic">
+    1
+   </sub>
+  </h3>
+  <p>
+   The scalar or array to be shifted.
+  </p>
+  <h3 class="Argument">
+   P
+   <sub class="italic">
+    2
+   </sub>
+  </h3>
+  <p>
+   The scalar or array containing the number of bit positions and direction of the shift.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_878032">
+   </a>
+   <a name="I_833016429_878032_PageTOC_ISHFT_">
+   </a>
+   Keywords
+  </h2>
+  <h3>
+   Thread Pool Keywords
+  </h3>
+  <p>
+   This routine is written to make use of IDL’s
+   <i>
+    thread pool
+   </i>
+   , which can increase execution speed on systems with multiple CPUs. The values stored in the !CPU system variable control whether IDL uses the thread pool for a given computation. In addition, you can use the thread pool keywords TPOOL_MAX_ELTS, TPOOL_MIN_ELTS, and TPOOL_NOTHREAD to override the defaults established by !CPU for a single invocation of this routine. See
+   <a class="MCXref_Chapter_Reference_0" href="../../Creating IDL Programs/Appendices/tpoolkeyw.html#tpoolkeyw_2501860834_317209">
+    Thread Pool Keywords
+   </a>
+   for details.
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_677358">
+   </a>
+   <a name="I_833016429_677358_PageTOC_ISHFT_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Bit shift each element of the integer array [1, 2, 3, 4, 5] three bits to the left and store the result in B by entering:
+  </p>
+  <p class="Code">
+   B = ISHFT([1,2,3,4,5], 3)
+  </p>
+  <p>
+   The resulting array B is [8, 16, 24, 32, 40].
+  </p>
+  <h2 class="API">
+   <a name="I_833016429_822394">
+   </a>
+   <a name="I_833016429_822394_PageTOC_ISHFT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="I_833016429_880860">
+   </a>
+   <a name="I_833016429_880860_PageTOC_ISHFT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../S/SHIFT.html#S_820040301_678824">
+    SHIFT
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

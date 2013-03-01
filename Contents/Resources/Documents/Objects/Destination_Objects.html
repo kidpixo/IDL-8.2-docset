@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Object-Oriented Programming|Creating an Object Graphics Display" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Destination Objects
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#Objects/Destination_Objects.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Object Classes/ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbsSelf">
+    Object-Oriented Programming
+   </span>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Destination Objects
+   </span>
+  </div>
+  <h1>
+   <a name="obj_graphics_348174843_1018144">
+   </a>
+   <a name="obj_graphics_348174843_40104">
+   </a>
+   Destination Objects
+  </h1>
+  <p>
+   <a name="kanchor3705">
+   </a>
+   Destination objects are objects on which object trees can be rendered (displayed on a screen or printed on a printer).
+  </p>
+  <table style="width: 499px;caption-side: bottom;mc-table-style: url('../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Destination Objects
+   </p>
+   <col width="120px" />
+   <col width="379px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Destination
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Buffer
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a name="kanchor3706">
+       </a>
+       Objects of the
+       <a href="../Object Classes/Graphics/IDLgrBuffer.html#objects_gr_2157407275_1007684" target="" title="" alt="" class="MCXref_0">
+        IDLgrBuffer
+       </a>
+       class represent an off-screen, in-memory data area that may serve as a graphics source or destination.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Clipboard
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <a name="kanchor3707">
+       </a>
+       Objects of the
+       <a href="../Object Classes/Graphics/IDLgrClipboard.html#objects_gr_2157407275_1008370" target="" title="" alt="" class="MCXref_0">
+        IDLgrClipboard
+       </a>
+       class send Object Graphics to the operating system’s native clipboard or to a file in bitmap or vector format.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Printer
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a name="kanchor3708">
+       </a>
+       Objects of the
+       <a href="../Object Classes/Graphics/IDLgrPrinter.html#objects_gr_2157407275_1013825" target="" title="" alt="" class="MCXref_0">
+        IDLgrPrinter
+       </a>
+       class represent a hardcopy graphics destination. By default, printer objects represent the default system printer; you can use the IDL routines DIALOG_PRINTJOB and DIALOG_PRINTERSETUP to change the printer associated with a printer object.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       Window
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <a name="kanchor3709">
+       </a>
+       Objects of the
+       <a href="../Object Classes/Graphics/IDLgrWindow.html#objects_gr_2157407275_1018335" target="" title="" alt="" class="MCXref_0">
+        IDLgrWindow
+       </a>
+       class represent an on-screen area on a display device in which graphic objects can be rendered.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When creating an iTool display, there is no need to manually configure a window object or destination objects. This is automatically done for you.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

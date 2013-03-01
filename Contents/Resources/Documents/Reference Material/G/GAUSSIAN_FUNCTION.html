@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: G" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   GAUSSIAN_FUNCTION
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/G/GAUSSIAN_FUNCTION.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="G_list.html">
+    Routines: G
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    GAUSSIAN_FUNCTION
+   </span>
+  </div>
+  <h1 class="Routine">
+   GAUSSIAN_FUNCTION
+  </h1>
+  <p>
+   The
+   <a name="kanchor1036">
+   </a>
+   GAUSSIAN_FUNCTION function  creates a Gaussian kernel used in convolution.
+  </p>
+  <h2 class="API">
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = GAUSSIAN_FUNCTION(
+   <i>
+    Sigma
+   </i>
+   [, /
+   <a href="#DOUBLE" target="" title="" alt="" class="MCXref_0">
+    DOUBLE
+   </a>
+   ] [,
+   <a href="#MAXIMUM" target="" title="" alt="" class="MCXref_0">
+    MAXIMUM
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [, /
+   <a href="#NORMALIZ" target="" title="" alt="" class="MCXref_0">
+    NORMALIZE
+   </a>
+   ] [,
+   <a href="#WIDTH" target="" title="" alt="" class="MCXref_0">
+    WIDTH
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   Return Value
+  </h2>
+  <p>
+   Returns the Gaussian array.
+  </p>
+  <h2 class="API">
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Sigma
+  </h3>
+  <p>
+   The sigma value used to calculate the Gaussian kernel.
+   <i>
+    Sigma
+   </i>
+   can either be a scalar or a vector of up to eight elements. The number of dimensions in the resulting kernel is equal to the number of elements in
+   <i>
+    Sigma
+   </i>
+   . Each element of
+   <i>
+    Sigma
+   </i>
+   is used to specify the sigma value for each dimension of the result.  Unless the WIDTH keyword is set, the width of the kernel is determined by
+   <i>
+    Sigma
+   </i>
+   such that the kernel contains approximately three standard deviations in each dimension.
+  </p>
+  <h2 class="API">
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="DOUBLE">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computations to be done in double-precision arithmetic.
+  </p>
+  <h3 class="Keyword">
+   <a name="MAXIMUM">
+   </a>
+   MAXIMUM
+  </h3>
+  <p>
+   Set this keyword to the maximum value of the resulting array. If neither MAXIMUM or NORMALIZE is set, the default maximum value is set to 1.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="NORMALIZ">
+   </a>
+   NORMALIZE
+  </h3>
+  <p>
+   If this keyword is set the peak height is calculated such that the Gaussian sum is 1.0. This keyword is ignored if MAXIMUM is set. If neither MAXIMUM nor NORMALIZE is set, the default maximum value will be set to 1.0.
+  </p>
+  <h3 class="Keyword">
+   <a name="WIDTH">
+   </a>
+   WIDTH
+  </h3>
+  <p>
+   The width of the Gaussian array. This value can be used to override the value calculated from
+   <i>
+    Sigma
+   </i>
+   . WIDTH can be either a scalar or vector value. If WIDTH is a scalar, the same width is applied for every dimension. If WIDTH is a vector, each element of WIDTH is used to specify the width for each dimension in the Gaussian.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The Gaussian is always symmetric. For even widths, the actual maximum of the array will be slightly less than the MAXIMUM value.
+  </p>
+  <h2 class="API">
+   Examples
+   <img src="../images/gaussian_function.gif" class="ImgFloatRight" style="width: 449px;height: 246px;" />
+  </h2>
+  <p class="Code">
+   ; Create a 2-D Gaussian with a sigma of 1
+  </p>
+  <p class="Code">
+   gauss1 = GAUSSIAN_FUNCTION([1,1])
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Create a 2-D Gaussian with a sigma of 3, a width of 20,
+  </p>
+  <p class="Code">
+   ; and a peak height of 5
+  </p>
+  <p class="Code">
+   gauss2 = GAUSSIAN_FUNCTION([3,3], WIDTH=20, MAXIMUM=5)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Display the curves
+  </p>
+  <p class="Code">
+   s1 = SURFACE(gauss1, LAYOUT=[2,1,1], STYLE=1)
+  </p>
+  <p class="Code">
+   s2 = SURFACE(gauss2, LAYOUT=[2,1,2], STYLE=1, /CURRENT)
+  </p>
+  <h2 class="API">
+   Version History&#160;
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   See Also
+  </h2>
+  <p>
+   <a href="GAUSS_SMOOTH.html" target="" title="" alt="" class="MCXref_0">
+    GAUSS_SMOOTH
+   </a>
+   ,
+   <a href="../C/CONVOL_FFT.html" target="" title="" alt="" class="MCXref_0">
+    CONVOL_FFT
+   </a>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

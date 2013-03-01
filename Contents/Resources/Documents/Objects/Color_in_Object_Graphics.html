@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Object-Oriented Programming|Creating an Object Graphics Display" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Color in Object Graphics
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#Objects/Color_in_Object_Graphics.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Object Classes/ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbsSelf">
+    Object-Oriented Programming
+   </span>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Color in Object Graphics
+   </span>
+  </div>
+  <h1>
+   <a name="obj_graphics_348174843_1018560">
+   </a>
+   <a name="obj_graphics_348174843_38785">
+   </a>
+   Color in Object Graphics
+  </h1>
+  <p>
+   <span class="_Override" style="font-family: Helvetica;font-weight: bold;font-size: 13pt;line-height: 15pt;">
+    <a name="kanchor3737">
+    </a>
+   </span>
+   Color in an Object Graphics display is the result of interaction between the color model defined for the destination object (e.g. window or printer), the destination object’s inherent color model, and the color assigned to any visualization objects (e.g. plot, text or image objects) being displayed. This section explains how to specify color when using Object Graphics and how IDL interacts with the destination devices on which graphics are finally displayed.
+  </p>
+  <p>
+   Object Graphics supports two color models for newly created destination objects (such as an IDLgrWindow): an
+   <a name="kanchor3738">
+   </a>
+   Indexed Color Model and an
+   <a name="kanchor3739">
+   </a>
+   RGB Color Model. Indexed color allows you to map data values to color values using a color palette. RGB color allows you to specify color values explicitly, using an RGB triple. See
+   <a class="MCXref_Heading_0" href="How_IDL_Interprets_Color.html#obj_graphics_348174843_1018790" target="" title="" alt="">
+    Indexed Color Model
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="Color_and_Destination_Ob.html#obj_graphics_348174843_1018722" target="" title="" alt="">
+    RGB Color Model in Object Graphics
+   </a>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For some X11 display situations, IDL may not be able to support a color index model destination object in object graphics. We do, however, guarantee that an RGB color model destination will be available for all display situations.
+  </p>
+  <p>
+   The devices on which graphics are rendered—computer displays, printers, plotters, frame buffers, etc.—also support one or more color models. IDL performs any conversions necessary to support either the Indexed or RGB color model on any physical device. That is, the color model used by IDL is entirely independent of the color model used by the physical device.
+   <span class="Link">
+    <a class="MCXref_Heading_0" href="How_IDL_Interprets_Color.html#obj_graphics_348174843_1018788" target="" title="" alt="">
+     How IDL Interprets Color Values
+    </a>
+   </span>
+   explains how IDL’s Object System color models interact with different device color models.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You can specify the color of any graphic object using either a color index or red, green, and blue (RGB) value, regardless of the color model used by the destination object or the physical destination device. See
+   <span class="Link">
+    <a class="MCXref_Heading_0" href="Specifying_Object_Color.html#obj_graphics_348174843_1018760" target="" title="" alt="">
+     Specifying Object Color
+    </a>
+   </span>
+   for details.
+  </p>
+  <p>
+   The majority of graphic visualization objects have a COLOR property that can be set to an indexed value or an RGB triple. You can set the color of any visualization object when it is first created and later change it using this property. In addition to the COLOR property, you can also associate a palette object (an instance of the IDLgrPalette class) with many visualization objects using the PALETTE property.
+  </p>
+  <p>
+   One exception is the IDLgrImage object, which does not have a COLOR property. Instead, you use the PALETTE property to specify a related color table for an indexed image, or set the INTERLEAVE property to define the arrangement of the image channels in a RGB image. Palette objects can also be associated with destination objects. See
+   <a class="MCXref_Heading_0" href="Palette_Objects.html#obj_graphics_348174843_1018743" target="" title="" alt="">
+    Palette Objects
+   </a>
+   for more information.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

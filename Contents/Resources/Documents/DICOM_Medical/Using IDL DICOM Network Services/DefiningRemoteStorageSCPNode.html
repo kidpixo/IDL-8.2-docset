@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Additional Topics|Medical Imaging in IDL|Using IDL DICOM Network Services|Sending Files to a Remote Destination" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Defining the Remote Storage SCP Node
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#DICOM_Medical/Using IDL DICOM Network Services/DefiningRemoteStorageSCPNode.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../OtherTopics.html">
+    Additional Topics
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Expanded DICOM Support in IDL/ExpandedDICOMFunctionality.html">
+    Medical Imaging in IDL
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Overview.html">
+    Using IDL DICOM Network Services
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Defining the Remote Storage SCP Node
+   </span>
+  </div>
+  <h2 class="API">
+   Defining the Remote Storage SCP Node
+   <a name="kanchor4990">
+   </a>
+  </h2>
+  <p>
+   You need to configure an Application Entity for the remote machine to which you will send DICOM files. (Once an Application Entity has been defined, you do not need to re-execute the following steps.) Record the Application Entity name, host name or IP address, and port number of the remote machine’s Storage SCP service. You need this information to configure the network properties of the Application Entity as follows:
+  </p>
+  <ol>
+   <li value="1">
+    <p>
+     Open the
+     <b>
+      DICOM Network Services
+     </b>
+     utility by entering the following at the IDL command prompt:
+    </p>
+    <p class="Code">
+     DICOMEX_NET
+    </p>
+   </li>
+   <li value="2">
+    Click on the
+    <b>
+     Configuration
+    </b>
+    tab and create a new Application Entity. Enter the network parameters for the remote machine. Additionally, this Application Entity must support:
+   </li>
+   <ul>
+    <li value="1">
+     <b>
+      Service List Name
+     </b>
+     — Storage_SCP_Service_List
+    </li>
+    <li value="2">
+     <b>
+      Service Type
+     </b>
+     — Storage_SCP
+    </li>
+   </ul>
+   <p>
+    See
+    <a class="MCXref_Heading_0" xrefformat="{paratext}">
+     Defining a New Application Entity
+    </a>
+    for further instructions.
+   </p>
+   <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+    <span class="autonumber">
+     <span>
+      <b>
+       Note:
+      </b>
+     </span>
+    </span>
+    You can verify a connection to the remote machine using the Echo SCU functionality. See
+    <a class="MCXref_Heading_0" href="ReturningConnectionStatusWithEcho.html#dicom_net_1225099434_1126746">
+     Returning Connection Status with Echo
+    </a>
+    .
+   </p>
+   <p>
+    Once the Application Entity has been defined, you can send files to the remote node, described in the following section.
+   </p>
+  </ol>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

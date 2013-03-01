@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Object-Oriented Programming|Creating an Object Graphics Display" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Performance Tuning Object Graphics
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#Objects/Performance_Tuning_Objec.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Object Classes/ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbsSelf">
+    Object-Oriented Programming
+   </span>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Performance Tuning Object Graphics
+   </span>
+  </div>
+  <h1>
+   <a name="obj_graphics_348174843_1018420">
+   </a>
+   <a name="obj_graphics_348174843_61590">
+   </a>
+   Performance Tuning Object Graphics
+  </h1>
+  <p>
+   The
+   <a name="kanchor3751">
+   </a>
+   Object Graphics subsystem is designed to provide a rich set of graphical functionality that can be displayed in reasonable time. This section offers suggestions on how to adjust your system and programs to achieve the best rendering performance.
+  </p>
+  <h2 class="API">
+   <a name="obj_graphics_348174843_1020294">
+   </a>
+   <a name="obj_graphics_348174843_34873">
+   </a>
+   Hardware vs. Software Rendering
+  </h2>
+  <p>
+   The RENDERER property to the IDLgrWindow object (or associated platform-specific preferences in the IDL Preference system) allows you to select between the operating system’s native (hardware) rendering system and a platform independent (software)
+   <a name="kanchor3752">
+   </a>
+   rendering system for IDL Object Graphics displays.
+  </p>
+  <p>
+   Hardware rendering allows IDL to make use of 3D graphics accelerators that support OpenGL, if any are installed in the system. In general, such accelerators will provide better rendering performance for many object graphics displays. This is typically true for images rendered using texture-mapped polygons (the default behavior for IDLgrImage beginning with IDL 6.2).
+  </p>
+  <p>
+   The software rendering system will generally run more slowly than the hardware rendering system. However, use of the software rendering system has a few important advantages:
+  </p>
+  <p class="Bullet">
+   Software rendering is available in situations where hardware rendering is not (remote display to non-OpenGL capable X servers, for example).
+  </p>
+  <p class="Bullet">
+   The number of expose events an IDL application will have to respond to is much smaller when software rendering is used.
+  </p>
+  <p class="Bullet">
+   The software rendering system is generally much faster than the hardware rendering system for Instancing.
+  </p>
+  <p class="Bullet">
+   Software rendering can be used to avoid bugs in third-party hardware rendering system driver software.
+  </p>
+  <p class="Bullet">
+   Finally, on some displays (most notably SGI systems with 24 or fewer bitplanes), the quality of the screen display will be better when using the software rendering system because its design allows more bitplanes to be used.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   By default, IDL uses the renderer specified by the
+   <a class="MCXref_Heading_0" href="../Creating IDL Programs/Appendices/prefs_gr_win.html#preferences_2247882535_1025662" target="" title="" alt="">
+    IDL_GR_WIN_RENDERER
+   </a>
+   preference (Microsoft Windows) or the
+   <a class="MCXref_Heading_0" href="../Creating IDL Programs/Appendices/prefs_gr_x.html#preferences_2247882535_1025701" target="" title="" alt="">
+    IDL_GR_X_RENDERER
+   </a>
+   preference (UNIX). If your platform does not have a native OpenGL implementation, IDL uses its own software implementation regardless of the preference value or the value of the RENDERER property.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

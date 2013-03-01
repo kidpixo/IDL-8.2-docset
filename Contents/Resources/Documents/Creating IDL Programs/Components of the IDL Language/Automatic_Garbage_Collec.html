@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Concepts" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Automatic Garbage Collection
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/Automatic_Garbage_Collec.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">
+    Concepts
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Automatic Garbage Collection
+   </span>
+  </div>
+  <h1>
+   <a name="pointers_3224653378_1018570">
+   </a>
+   <a name="pointers_3224653378_18342">
+   </a>
+   Automatic Garbage Collection
+  </h1>
+  <p>
+   The term
+   <i>
+    garbage collection
+   </i>
+   refers to the process of finding heap variables that have become inaccessible, and de-allocating the memory storing the data. IDL performs automatic garbage collection on all data types so that when a variable is destroyed or goes out of scope, the variable’s memory is automatically reclaimed.
+  </p>
+  <p>
+   IDL garbage collection is implemented using a reference counting scheme. In reference counting, each heap variable keeps track of the number of references to it. In general, the reference count increases when a new reference to the underlying heap variable is created, and decreases when a reference is removed. When the reference count reaches zero, the object or pointer is destroyed. You can call the
+   <a href="../../Reference Material/H/HEAP_REFCOUNT.html" target="" title="" alt="" class="MCXref_0">
+    HEAP_REFCOUNT
+   </a>
+   function to return the reference count for a pointer or object reference. You can also call the HELP procedure with the /FULL keyword to retrieve the same information.
+  </p>
+  <p>
+   An object or heap variable can have multiple references to it. When the last reference to an object is removed, the object’s Cleanup method is called and the heap variable is automatically destroyed. When the last pointer to a heap variable is removed, the associated heap variable is automatically destroyed.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Automatic garbage collection is unable to destroy the objects in a cyclic reference (where two objects or pointers refer to each other, but no other object or pointer refers to either).
+  </p>
+  <p>
+   In addition to automatic garbage collection, users have several options for explicitly de-allocating heap variables. Users can call
+   <a class="MCXref_Heading_0" href="../../Reference Material/P/PTR_FREE.html#P_817877613_845045" target="" title="" alt="">
+    PTR_FREE
+   </a>
+   or
+   <a class="MCXref_Heading_0" href="../../Reference Material/O/OBJ_DESTROY.html#O_828691053_889421" target="" title="" alt="">
+    OBJ_DESTROY
+   </a>
+   to explicitly free associated pointers and objects. A user can also call
+   <a class="MCXref_Heading_0" href="../../Reference Material/H/HEAP_FREE.html#H_835179117_877451" target="" title="" alt="">
+    HEAP_FREE
+   </a>
+   to recursively free all heap variables that are contained within an input variable. Finally, the
+   <a class="MCXref_Heading_0" href="../../Reference Material/H/HEAP_GC.html#H_835179117_852187" target="" title="" alt="">
+    HEAP_GC
+   </a>
+   function can be called to perform garbage collection on all inaccessible heap variables.
+  </p>
+  <h2 class="API">
+   Enabling and Disabling Automatic Garbage Collection
+  </h2>
+  <p>
+   By default, automatic garbage collection is enabled for all object and pointer heap variables, except for IDLgrWindow and all subclasses. (When the actual window is closed, the IDLgrWindow is automatically destroyed.)
+  </p>
+  <p>
+   You can disable automatic garbage collection for all heap variables using the
+   <a href="../../Reference Material/H/HEAP_REFCOUNT.html" target="" title="" alt="" class="MCXref_0">
+    HEAP_REFCOUNT
+   </a>
+   function. This is useful when testing an application to ensure that variable cleanup is working as expected.
+  </p>
+  <p>
+   If you want to disable automatic garbage collection for a particular object reference or pointer, call HEAP_REFCOUNT with the pointer or object reference and the DISABLE keyword.
+  </p>
+  <p>
+   If you want to always disable garbage collection for a specific object class, you can add the following line of code to the class Init method:
+  </p>
+  <p class="Code">
+   void=HEAP_REFCOUNT(self, /DISABLE)
+  </p>
+  <p>
+   This code will disable garbage collection for all class instances.
+  </p>
+  <p>
+   To determine if garbage collection is enabled for a particular heap variable, call HEAP_REFCOUNT with the IS_ENABLED keyword.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

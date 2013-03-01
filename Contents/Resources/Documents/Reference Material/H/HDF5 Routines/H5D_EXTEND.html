@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF5 Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   H5D_EXTEND
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF5 Routines/H5D_EXTEND.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF5_Routines.html">
+    HDF5 Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    H5D_EXTEND
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF5_209170119_1006918">
+   </a>
+   <a name="HDF5_209170119_45402">
+   </a>
+   H5D_EXTEND
+  </h1>
+  <p>
+   The Dataspace of a dataset defines the number of dimensions and the size of each dimension. H5D_EXTEND
+   <a name="kanchor1367">
+   </a>
+   is used to change the current dimensions of the Dataset, within the limits of the Dataspace. Each dimension can be extended up to its maximum, or unlimited. The maximum dimension size is set when the Dataset is created and cannot be changed. The size of the dataset cannot be reduced after it is created. The actual dimension size can be incremented with calls to H5D_EXTEND, up to the maximum.
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_66374">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   H5D_EXTEND,
+   <span class="Italic">
+    Dataset_id
+   </span>
+   ,
+   <span class="Italic">
+    Size
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_22820">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Dataset_id
+  </h3>
+  <p>
+   An integer giving the dataset identifier to extend.
+  </p>
+  <h3 class="Argument">
+   Size
+  </h3>
+  <p>
+   Array containing the new magnitude of each dimension. The number of elements in Size must match the number of dimensions of the dataset.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The Size argument should be specified in IDL column-major order. Internally, the dimensions will be reversed to match HDF5/C row-major order.
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_61109">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_69703">
+   </a>
+   Example
+  </h2>
+  <p>
+   See the example under
+   <a class="MCXref_Heading_0" href="H5F_CREATE.html#HDF5_209170119_1007521">
+    H5F_CREATE
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="HDF5_209170119_64540">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="HDF5_209170119_35608">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="H5D_CREATE.html#HDF5_209170119_1006828">
+    H5D_CREATE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

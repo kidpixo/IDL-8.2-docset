@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C|CDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CDF_INQUIRE
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/C/CDF Routines/CDF_INQUIRE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../CDF_Routines.html">
+    CDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CDF_INQUIRE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="CDF_1744428779_1007715">
+   </a>
+   <a name="CDF_1744428779_24050">
+   </a>
+   CDF_INQUIRE
+  </h1>
+  <p>
+   The
+   <a name="kanchor248">
+   </a>
+   CDF_INQUIRE function returns global
+   <a name="kanchor249">
+   </a>
+   information about the Common Data Format file. The tags of this structure are described below.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997552_PageTOC_CDF_INQUIRE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = CDF_INQUIRE(
+   <span class="Italic">
+    Id
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_92732">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This information is returned in a structure of the form:
+  </p>
+  <p class="Code">
+   { NDIMS:0L, DECODING:"", ENCODING:"", MAJORITY:"", MAXREC:0L, $
+  </p>
+  <p class="Code">
+   &#160;&#160;NVARS:0L, NZVARS:0L, NATTS:0L, DIM:LONARR(NDIMS) }
+  </p>
+  <h3>
+   <a name="CDF_1744428779_997557_PageTOC_CDF_INQUIRE_">
+   </a>
+   Explanation of the Structure Tags
+  </h3>
+  <p>
+   The structure returned by this function consists of the following tags:
+  </p>
+  <table style="width: 499px;caption-side: bottom;mc-table-style: url('../../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    CDF_INQUIRE Structure Tags
+   </p>
+   <col width="120px" />
+   <col width="379px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Tag
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NDIMS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The longword integer specifying the number of dimensions in the rVariables in the current CDF.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       DECODING
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       A string describing the decoding type set in the CDF file, such as ‘MAC_DECODING’ or ‘ALPHAVMSD_ENCODING’.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ENCODING
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       A string describing the type of encoding used in the CDF file, such as ‘NETWORK_ENCODING’ or ‘SUN_ENCODING’.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       MAJORITY
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       A string describing the majority used in the CDF file. The majority will be either row (‘ROW_MAJOR’) or column (‘COL_MAJOR’).
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       MAXREC
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       A longword integer specifying the highest record number written in the rVariables in the current CDF. The MAXREC field will contain the value -1 if no rVariables have yet been written to the CDF.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       NVARS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       A longword integer specifying the number of rVariables (regular variables) in the CDF.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NZVARS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       A longword integer specifying the number of zVariables in the CDF.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       NATTS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       A longword integer specifying the number of attributes in the CDF. Note that the number returned in this field includes both global and variable attributes. You can use the GET_NUMATTR keyword to the
+       <a class="MCXref_Heading_0" href="CDF_CONTROL.html#CDF_1744428779_1006392">
+        CDF_CONTROL
+       </a>
+       routine to determine the number of each.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       DIM
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       A vector where each element contains the corresponding dimension size for the rVariables in the current CDF. For 0-dimensional CDF’s, this argument contains a single element (a zero).
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="CDF_1744428779_997554_PageTOC_CDF_INQUIRE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Id
+  </h3>
+  <p>
+   A CDF ID, returned from a previous call to CDF_OPEN or CDF_CREATE.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_17899">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997579_PageTOC_CDF_INQUIRE_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   cdfid = CDF_CREATE('CDFinquire', /HP_ENCODING, /MAC_DECODING)
+  </p>
+  <p class="Code">
+   attr1_id = CDF_ATTCREATE(cdfid, 'GLOBAL_ATT', /GLOBAL_SCOPE)
+  </p>
+  <p class="Code">
+   attr2_id = CDF_ATTCREATE(cdfid,'VARIABLE_ATT', /VARIABLE_SCOPE)
+  </p>
+  <p class="Code">
+   CDF_CONTROL, cdfid, GET_NUMATTRS = num_attrs
+  </p>
+  <p class="Code">
+   PRINT, 'This CDF has ', num_attrs(0), $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;'Global attribute(s) and ', num_attrs(1), $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;'Variable attribute(s).', $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;FORMAT='(A,I2,A,I2,A)'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   inquire = CDF_INQUIRE(cdfid)
+  </p>
+  <p class="Code">
+   HELP, inquire, /STRUCT
+  </p>
+  <p class="Code">
+   CDF_DELETE, cdfid ; Delete the CDF file.
+  </p>
+  <h4>
+   IDL Output
+  </h4>
+  <p class="Code">
+   T
+   <span class="_Override" style="letter-spacing: -0.02em;">
+    his CDF has  1 Global attribute(s) and  1 Variable attribute(s).
+   </span>
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ** Structure &lt;4003e0c0&gt;, 9 tags, length=48, refs=1:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;NDIMS           LONG                 0
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;DECODING        STRING&#160;&#160;&#160;&#160;'MAC_DECODING'
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENCODING        STRING&#160;&#160;&#160;&#160;'HP_ENCODING'
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;MAJORITY        STRING&#160;&#160;&#160;&#160;'ROW_MAJOR'
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;MAXREC          LONG                -1
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;NVARS           LONG                 0
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;NZVARS          LONG                 0
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;NATTS           LONG                 2
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;DIM             LONG      Array(1)
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_997602_PageTOC_CDF_INQUIRE_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="CDF_1744428779_1028650_PageTOC_CDF_INQUIRE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="CDF_CONTROL.html#CDF_1744428779_1006392">
+    CDF_CONTROL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="CDF_DOC.html#CDF_1744428779_1006963">
+    CDF_DOC
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="CDF_LIB_INFO.html#CDF_1744428779_1007858">
+    CDF_LIB_INFO
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

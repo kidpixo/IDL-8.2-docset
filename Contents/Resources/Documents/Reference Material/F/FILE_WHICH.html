@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: F" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   FILE_WHICH
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/F/FILE_WHICH.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="F_list.html">
+    Routines: F
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    FILE_WHICH
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="F_848155245_882442">
+   </a>
+   <a name="F_848155245_56374">
+   </a>
+   <a name="F_848155245_24585">
+   </a>
+   FILE_WHICH
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#F_848155245_882449">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_882451">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_882453">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_882458">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_882461">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_891300">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor961">
+   </a>
+   FILE_WHICH function separates a specified
+   <a name="kanchor962">
+   </a>
+   file path into its component directories, and searches each
+   <a name="kanchor963">
+   </a>
+   directory in turn for a specific file. This command is modeled after the UNIX
+   <span class="Courier">
+    which(1)
+   </span>
+   command, but is written in the IDL language and is available on all platforms. Its source code can be found in the file
+   <span class="Courier">
+    file_which.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_882449">
+   </a>
+   <a name="F_848155245_882449_PageTOC_FILE_WHICH_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = FILE_WHICH( [
+   <i>
+    Path
+   </i>
+   , ]
+   <i>
+    File
+   </i>
+   [, /
+   <a class="MCXref_Heading_0" href="#F_848155245_882459">
+    INCLUDE_CURRENT_DIR
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_882451">
+   </a>
+   <a name="F_848155245_882451_PageTOC_FILE_WHICH_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the path for the first file for the given name found by searching the specified path. If FILE_WHICH does not find the desired file, an empty string is returned.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_882453">
+   </a>
+   <a name="F_848155245_882453_PageTOC_FILE_WHICH_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Path
+  </h3>
+  <p>
+   A search path to be searched. If
+   <i>
+    Path
+   </i>
+   is not present, the value of the IDL !PATH system variable is used.
+  </p>
+  <h3 class="Argument">
+   File
+  </h3>
+  <p>
+   The file to look for in the directories given by
+   <i>
+    Path
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_882458">
+   </a>
+   <a name="F_848155245_882458_PageTOC_FILE_WHICH_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="F_848155245_882459">
+   </a>
+   <a name="F_848155245_882459_Keywords_FILE_WHICH__">
+   </a>
+   INCLUDE_CURRENT_DIR
+  </h3>
+  <p>
+   If set, FILE_WHICH looks in the current directory before starting to search
+   <i>
+    Path
+   </i>
+   for
+   <i>
+    File
+   </i>
+   . When IDL searches for a routine to compile, it looks in the current working directory before searching !PATH. The INCLUDE_CURRENT_DIR keyword allows FILE_WHICH to mimic this behavior.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_882461">
+   </a>
+   <a name="F_848155245_882461_PageTOC_FILE_WHICH_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To find the location of the
+   <span class="Courier">
+    file_which.pro
+   </span>
+   file:
+  </p>
+  <p class="Code">
+   Result = FILE_WHICH('file_which.pro')
+  </p>
+  <p>
+   To find the location of the UNIX
+   <span class="Courier">
+    ls
+   </span>
+   command:
+  </p>
+  <p class="Code">
+   Result = FILE_WHICH(getenv('PATH'), 'ls')
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_891300">
+   </a>
+   <a name="F_848155245_891300_PageTOC_FILE_WHICH_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   See Also
+  </h2>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

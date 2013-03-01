@@ -1,0 +1,580 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrClipboard" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrClipboard::Draw
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrClipboard__Draw.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrClipboard::Draw
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1008478">
+   </a>
+   <a name="objects_gr_2157407275_29112">
+   </a>
+   IDLgrClipboard::Draw
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1008500">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1008503">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1008513">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1008613">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLgrClipboard::
+   <a name="kanchor4186">
+   </a>
+   Draw procedure method draws the given picture to this graphics destination.
+  </p>
+  <h3>
+   <a name="objects_gr_2157407275_1340002">
+   </a>
+   <a name="objects_gr_2157407275_93478">
+   </a>
+   Writing to a File
+  </h3>
+  <p>
+   The file type produced when the IDLgrClipboard::Draw method is passed an IDLgrView, IDLgrViewgroup, or IDLgrScene object depends upon keyword settings and the platform on which the call is issued. If the FILENAME keyword is set to a non-empty string, the name of the file IDL creates is specified by the string.
+  </p>
+  <table style="width: 455px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    File Types Produced by IDLgrClipboard Draw Method
+   </p>
+   <col width="151px" />
+   <col width="159px" />
+   <col width="162px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Keyword Settings
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       File Type Created (Windows)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       File Type Created (UNIX)
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       VECTOR = 1, POSTSCRIPT&#160;= 1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Encapsulated PostScript (EPS)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Encapsulated PostScript (EPS)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       VECTOR = 1, POSTSCRIPT&#160;= 0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Enhanced MetaFile (EMF) (Windows only)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Encapsulated PostScript (EPS)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       VECTOR = 0, POSTSCRIPT&#160;= 1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Encapsulated PostScript (EPS)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Encapsulated PostScript (EPS)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       VECTOR = 0, POSTSCRIPT&#160;= 0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Bitmap (BMP)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Encapsulated PostScript (EPS)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       PDF=1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       Portable Document Format (PDF)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Portable Document Format (PDF)
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   Writing to the Clipboard
+  </h3>
+  <p>
+   Objects can be written to the operating system clipboard using IDLgrClipboard::Draw. When the FILENAME keyword equals an empty string (" "), equals 0 (zero), or is not specified, the output is written to the clipboard.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The IDLgrClipboard object empties the Windows clipboard before writing to it.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When VECT_SORTING=0, objects are drawn to the destination device in the order that they are added to the model, view, viewgroup, or scene object that contains them. Otherwise, objects are drawn to the destination device based on their average depth value.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1008500">
+   </a>
+   <a name="objects_gr_2157407275_1143937_PageTOC_IDLgrClipboard">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrClipboard.html#objects_gr_2157407275_1008370">
+    IDLgrClipboard
+   </a>
+   ::]Draw [,&#160;
+   <i>
+    Picture
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1345463">
+    CMYK
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1008514">
+    FILENAME
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    string
+   </span>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1843575">
+    ISOLATIN1
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1008516">
+    POSTSCRIPT
+   </a>
+   =
+   <span class="_Override" style="font-style: italic;">
+    value
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1340124">
+    VECT_SHADING
+   </a>
+   ={&#160;0&#160;|&#160;1 }&#160;] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1340189">
+    VECT_SORTING
+   </a>
+   ={&#160;0&#160;|&#160;1 }&#160;] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1340235">
+    VECT_TEXT_RENDER_METHOD
+   </a>
+   ={&#160;0&#160;|&#160;1&#160;}&#160;] [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1008518">
+    VECTOR
+   </a>
+   ={&#160;0&#160;|&#160;1 }&#160;]
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1008503">
+   </a>
+   <a name="objects_gr_2157407275_1143939_PageTOC_IDLgrClipboard">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Picture
+  </h3>
+  <p>
+   The view (an instance of an
+   <a class="MCXref_Heading_0" href="IDLgrView.html#objects_gr_2157407275_1016728">
+    IDLgrView
+   </a>
+   object), viewgroup (an instance of an
+   <a class="MCXref_Heading_0" href="IDLgrViewgroup.html#objects_gr_2157407275_1017081">
+    IDLgrViewgroup
+   </a>
+   object), or scene (an instance of an
+   <a class="MCXref_Heading_0" href="IDLgrScene.html#objects_gr_2157407275_1092773">
+    IDLgrScene
+   </a>
+   object) to be drawn.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1008513">
+   </a>
+   <a name="objects_gr_2157407275_1143948_PageTOC_IDLgrClipboard">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1345463">
+   </a>
+   <a name="objects_gr_2157407275_62766">
+   </a>
+   CMYK
+   <a name="kanchor4187">
+   </a>
+  </h3>
+  <p>
+   This keyword has an effect only when the output format is Encapsulated PostScript (POSTSCRIPT=1). Set this keyword to create a PostScript file using the CMYK (cyan, magenta, yellow, and black) color model. The default is a PostScript file using the RGB (red, green, blue) color model. This keyword applies to both bitmap and vector graphic PostScript files.
+  </p>
+  <p>
+   The CMYK format is a subtractive color model that is better suited for color printing. This color model allows some document processing applications and printer control software to easily adjust the overall brightness of an image by manipulating a single channel (K). PostScript files created with the CMYK color model must be processed by an interpreter capable of interpreting PostScript Language Level 2 or higher.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1008514">
+   </a>
+   <a name="objects_gr_2157407275_1008514_Keywords_IDLgrClipboard">
+   </a>
+   FILENAME
+  </h3>
+  <p>
+   To write to a file, set this keyword  to a file name string.
+  </p>
+  <p>
+   If the value is an empty string (" "), 0 (zero), or is not specified, the output is written to the clipboard.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You can also set this keyword to a non-zero numeric value, and IDL&#160;creates a file named
+   <span class="Courier">
+    idl.
+   </span>
+   <i style="font-family: 'Courier New';font-style: italic;">
+    ext
+   </i>
+   based upon the values of the PDF, POSTSCRIPT, and VECTOR keywords, and the platform. The possible file types to create are listed in the section
+   <a href="#objects_gr_2157407275_1340002" target="" title="" alt="" class="MCXref_Heading_0">
+    Writing to a File
+   </a>
+   . However, you are strongly encouraged to specify a string for this value. The ability to specify a numeric value is maintained for backward compatibility, but its usage should be deprecated.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1843575">
+   </a>
+   <a name="objects_gr_2157407275_1843575_Keywords_IDLgrClipboard">
+   </a>
+   ISOLATIN1
+  </h3>
+  <p>
+   Set this keyword to use Adobe ISO Latin 1 font encoding with any font that supports such coding. Use of this keyword allows access to many commonly-used foreign characters. This keyword is ignored if the generated output is not PostScript.
+  </p>
+  <h3 class="Keyword">
+   <a name="PDF">
+   </a>
+   <a name="objects_gr_2157407275_1008516">
+   </a>
+   <a name="objects_gr_2157407275_1008516_Keywords_IDLgrClipboard">
+   </a>
+   POSTSCRIPT
+  </h3>
+  <p>
+   Set this keyword to a non-zero value to indicate that the generated output should be in Encapsulated PostScript format. By default, the generated output is in Bitmap format on Windows platforms and Encapsulated PostScript on UNIX platforms.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1340124">
+   </a>
+   <a name="objects_gr_2157407275_23955">
+   </a>
+   VECT_SHADING
+  </h3>
+  <p>
+   This keyword has an effect only when generating vector output (VECTOR=1) and when the output format is Encapsulated PostScript (POSTSCRIPT=1).
+  </p>
+  <p>
+   This keyword controls the appearance of smooth (Gouraud) shaded IDLgrPolygon and IDLgrSurface objects. Valid values are:
+  </p>
+  <ul>
+   <li value="1">
+    0 = disable smooth shading. This causes all polygons and surfaces to be rendered with flat shading. This may be valuable when using slower PostScript interpreters or when memory and stack space are limited. Smoothly shaded polygons require more resources as well as time.
+   </li>
+   <li value="2">
+    1 = enable smooth shading (default). This renders smooth (Gouraud) shaded polygons and surfaces in the Encapsulated PostScript file.
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Polygons and surfaces in Enhanced MetaFiles (EMF) files will be rendered using flat shading. (EMF&#160;is a Windows-only format.) Only the output in Encapsulated PostScript (EPS) files is affected by this keyword, and only when the VECTOR keyword has been set.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1340189">
+   </a>
+   <a name="objects_gr_2157407275_13010">
+   </a>
+   VECT_SORTING
+  </h3>
+  <p>
+   This keyword has an effect only when generating vector output (VECTOR=1).
+  </p>
+  <p>
+   This keyword controls the way object primitives in a picture appear in the destination. Valid values are:
+  </p>
+  <ul>
+   <li value="1">
+    0 = disable sorting. The object primitives appear in the vector output file in the same order they are drawn on the display device. This is the order in which they appear in the graphics tree.
+   </li>
+   <li value="2">
+    1 = enable sorting (default). The objects are ordered from back to front based on each primitive object’s average depth value.
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Objects that intersect each other, IDLgrImage objects (which do not update the depth buffer), and objects contained within transparent views might not sort correctly.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1340235">
+   </a>
+   <a name="objects_gr_2157407275_38854">
+   </a>
+   VECT_TEXT_RENDER_METHOD
+  </h3>
+  <p>
+   This keyword has an effect only when generating vector output (VECTOR=1).
+  </p>
+  <p>
+   This keyword controls the way text is rendered in a vector graphic file. Valid values are:
+  </p>
+  <ul>
+   <li value="1">
+    0 = render text as text primitives (default). The output device renders the text as text primitives. This allows the text to be edited by object-based graphics programs.
+   </li>
+   <li value="2">
+    1 = render text as triangles. The text is rendered as a series of filled triangles in the vector file. This produces text that closely matches the text on the display device, but the output file size is larger, and the text can not be easily edited.
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The results of attempting to edit the text primitives depends upon the sophistication of the graphics program. An Enhanced MetaFile (EMF) inserted into a Microsoft Word document can be edited. However, not all versions of Microsoft Word support advanced 3-D graphic primitives such as those associated with obliquely or vertically aligned text. Choosing to edit a file with non-horizontally aligned text may result in the text being flattened into two dimensions. Typically, each letter becomes its own string and alignment is altered. To edit non-horizontal text and preserve the original quality, create an Encapsulated PostScript (EPS) file that can be modified in a more sophisticated object-oriented image editing program.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_gr_2157407275_1008518">
+   </a>
+   <a name="objects_gr_2157407275_1008518_Keywords_IDLgrClipboard">
+   </a>
+   VECTOR
+  </h3>
+  <p>
+   Set this keyword to indicate the type of graphics primitives generated. Valid values are:
+  </p>
+  <ul>
+   <li value="1">
+    0 = generate bitmap graphics (default). Render the scene to a buffer and then copy the buffer to the clipboard or file in bitmap format. The bitmap retains the quality of the original image, but the bitmaps cannot be effectively scaled on all devices.
+   </li>
+   <li value="2">
+    1 = generate vector graphics. Render the scene using simple vector operations that result in a representation of the scene that is scalable. The vector representation does not retain all the attributes of the original image, but it can be effectively scaled on other devices. On Windows, the representation is the Windows Enhanced Metafile (EMF). On UNIX platforms, the representation is Encapsulated PostScript (EPS).
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Transparent objects in a view are not rendered in vector graphic files. Semi-transparent objects are rendered fully opaque.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1008613">
+   </a>
+   <a name="objects_gr_2157407275_56156">
+   </a>
+   Version History
+  </h2>
+  <table style="caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Added CMYK, VECT_SHADING, VECT_SORTING, and VECT_TEXT_RENDER_METHOD keywords
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added ISOLATIN1 keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

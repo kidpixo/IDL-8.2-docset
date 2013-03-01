@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: S" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   STRCMP
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/S/STRCMP.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="S_list.html">
+    Routines: S
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    STRCMP
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="S_820040301_679036">
+   </a>
+   <a name="S_820040301_66214">
+   </a>
+   STRCMP
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#S_820040301_1069057">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1079257">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1069115">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1069069">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1069075">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1069525">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#S_820040301_1110445">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2463">
+   </a>
+   STRCMP function performs string comparisons between its two String arguments, returning True (1) for those that match and False (0) for those that do not. Normally, the IDL equality operator (EQ) is used for such comparisons, but STRCMP can optionally perform case-insensitive comparisons and can be limited to compare only the first N characters of the two strings, both of which require extra steps using the EQ operator.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1069057">
+   </a>
+   <a name="S_820040301_1069057_PageTOC_STRCMP_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = STRCMP(
+   <i>
+    String1
+   </i>
+   ,
+   <i>
+    String2
+   </i>
+   [,&#160;
+   <i>
+    N
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#S_820040301_1069071">
+    FOLD_CASE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1079257">
+   </a>
+   <a name="S_820040301_1079257_PageTOC_STRCMP_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   If all of the arguments are scalar, the result is scalar. If one of the arguments is an array, the result is an integer with the same structure. If more than one argument is an array, the result has the structure of the smallest array. Each element of the result contains True (1) if the corresponding elements of String1 and String2 are the same, and False (0) otherwise.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1069115">
+   </a>
+   <a name="S_820040301_1069115_PageTOC_STRCMP_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   String1, String2
+  </h3>
+  <p>
+   The strings to be compared.
+  </p>
+  <h3 class="Argument">
+   N
+  </h3>
+  <p>
+   Normally String1 and String2 are compared in their entirety. If N is specified, the comparison is made on at most the first N characters of each string.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1069069">
+   </a>
+   <a name="S_820040301_1069069_PageTOC_STRCMP_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="S_820040301_1069071">
+   </a>
+   <a name="S_820040301_1069071_Keywords_STRCMP__">
+   </a>
+   FOLD_CASE
+  </h3>
+  <p>
+   String comparison is normally a case sensitive operation. Set FOLD_CASE to perform case insensitive comparisons instead.
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1069075">
+   </a>
+   <a name="S_820040301_1069075_PageTOC_STRCMP_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Compare two strings in a case-insensitive manner, considering only the first 3 characters:
+  </p>
+  <p class="Code">
+   Result = STRCMP('Moose', 'moo', 3, /FOLD_CASE)
+   <br />
+   PRINT, Result
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p>
+   1
+  </p>
+  <h2 class="API">
+   <a name="S_820040301_1069525">
+   </a>
+   <a name="S_820040301_1069525_PageTOC_STRCMP_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="S_820040301_1110445">
+   </a>
+   <a name="S_820040301_1110445_PageTOC_STRCMP_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="STREGEX.html#S_820040301_1077065">
+    STREGEX
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRJOIN.html#S_820040301_1076861">
+    STRJOIN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRMATCH.html#S_820040301_679108">
+    STRMATCH
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRMID.html#S_820040301_1074010">
+    STRMID
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRPOS.html#S_820040301_679132">
+    STRPOS
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="STRSPLIT.html#S_820040301_679167">
+    STRSPLIT
+   </a>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

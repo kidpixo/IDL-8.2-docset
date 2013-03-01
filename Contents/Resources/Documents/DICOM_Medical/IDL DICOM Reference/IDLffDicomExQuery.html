@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Additional Topics|Medical Imaging in IDL|IDL DICOM Reference" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLffDicomExQuery
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/NoLines.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#DICOM_Medical/IDL DICOM Reference/IDLffDicomExQuery.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../OtherTopics.html">
+    Additional Topics
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Expanded DICOM Support in IDL/ExpandedDICOMFunctionality.html">
+    Medical Imaging in IDL
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="DICOMEX_GETCONFIGFILEPAT.html">
+    IDL DICOM Reference
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLffDicomExQuery
+   </span>
+  </div>
+  <h1 class="ObjClass">
+   <a name="dicom_ex_4010397576_1157043">
+   </a>
+   <a name="dicom_ex_4010397576_78061">
+   </a>
+   IDLffDicomExQuery
+  </h1>
+  <p>
+   The IDLffDicomExQuery object allows you to query the contents of a remote DICOM node that has been configured to work with IDL’s DICOM Network Service feature, and to retrieve DICOM files available on that node. See
+   <a href="../Using IDL DICOM Network Services/DefiningMachineToBeQueried.html">
+    Defining a Machine to Be Queried
+   </a>
+   for an overview of the process and information about parameters that need to be set on the remote and local machines. See
+   <a href="../Expanded DICOM Support in IDL/ExpandedDICOMFunctionality.html#Using">
+    Using IDL DICOM Network Services
+   </a>
+   for more information.
+  </p>
+  <p>
+   Any query that can be performed using this object can also be performed using the graphical user interface provided by the DICOM Network Services utility. See
+   <a href="../Using IDL DICOM Network Services/QueryingRemoteMachine.html">
+    Querying a Remote Machine
+   </a>
+   for a description of that utility. Parameters accessible through this object correspond to those shown on the Query Retrieve SCU tab of the DICOM Network Services utility.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This feature requires an additional-cost license key to access the functionality. For more information, contact your
+   <span class="DocumentTitleCompanyName">
+    Exelis
+   </span>
+   sales representative or technical support.
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133401">
+   </a>
+   <a name="dicom_ex_4010397576_1133401_PageTOC_IDLffDicomExQuery_">
+   </a>
+   Superclasses
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133403">
+   </a>
+   <a name="dicom_ex_4010397576_1133403_PageTOC_IDLffDicomExQuery_">
+   </a>
+   Creation
+  </h2>
+  <p>
+   See
+   <a href="IDLffDicomExQuery__Init.html">
+    IDLffDicomExQuery::Init
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133408">
+   </a>
+   <a name="dicom_ex_4010397576_1133408_PageTOC_IDLffDicomExQuery_">
+   </a>
+   Properties
+  </h2>
+  <p>
+   The IDLffDicomExQuery object has the following properties:
+  </p>
+  <table style="width: 504px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="252px" />
+   <col width="252px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1133730">
+        ACCESSION_NUMBER
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1133768">
+        CALLBACK_DATA
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1133806">
+        CALLBACK_FUNCTION
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1133844">
+        FAMILY_NAME
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1133887">
+        GIVEN_NAME
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1133930">
+        INSTANCE_NUMBER
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1133968">
+        MIDDLE_NAME
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134011">
+        MODALITY
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134049">
+        PATIENT_ID
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134087">
+        PATIENT_NAME
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134135">
+        PREFIX
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134178">
+        QUERY_LEVEL
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134235">
+        QUERY_MODEL
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134289">
+        QUERY_SCP
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134328">
+        SERIES_INSTANCE_UID
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134366">
+        SERIES_NUMBER
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134404">
+        SOP_INSTANCE_UID
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134442">
+        STORAGE_SCP
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134475">
+        STUDY_DATE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134513">
+        STUDY_ID
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134551">
+        STUDY_INSTANCE_UID
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134589">
+        STUDY_TIME
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       <a href="IDLffDicomExQuery Properties.html#dicom_ex_4010397576_1134627">
+        SUFFIX
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133532">
+   </a>
+   <a name="dicom_ex_4010397576_1133532_PageTOC_IDLffDicomExQuery_">
+   </a>
+   Methods
+   <a name="kanchor5031">
+   </a>
+  </h2>
+  <p>
+   This class has the following methods:
+  </p>
+  <ul>
+   <li value="1">
+    <a href="IDLffDicomExQuery__Cleanup.html">
+     IDLffDicomExQuery::Cleanup
+    </a>
+   </li>
+   <li value="2">
+    <a href="IDLffDicomExQuery__ClearProperties.html">
+     IDLffDicomExQuery::ClearProperties
+    </a>
+   </li>
+   <li value="3">
+    <a href="IDLffDicomExQuery__GetProperty.html">
+     IDLffDicomExQuery::GetProperty
+    </a>
+   </li>
+   <li value="4">
+    <a href="IDLffDicomExQuery__Init.html">
+     IDLffDicomExQuery::Init
+    </a>
+   </li>
+   <li value="5">
+    <a href="IDLffDicomExQuery__Query.html">
+     IDLffDicomExQuery::Query
+    </a>
+   </li>
+   <li value="6">
+    <a href="IDLffDicomExQuery__QueryModelsSupported.html">
+     IDLffDicomExQuery::QueryModelsSupported
+    </a>
+   </li>
+   <li value="7">
+    <a href="IDLffDicomExQuery__Retrieve.html">
+     IDLffDicomExQuery::Retrieve
+    </a>
+   </li>
+   <li value="8">
+    <a href="IDLffDicomExQuery__SetProperty.html">
+     IDLffDicomExQuery::SetProperty
+    </a>
+   </li>
+  </ul>
+  <p>
+   In addition, this class inherits the methods of its superclasses (if any).
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133567">
+   </a>
+   <a name="dicom_ex_4010397576_1133567_PageTOC_IDLffDicomExQuery_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See the Example sections of the following methods for examples using the IDLffDicomExQuery object:
+  </p>
+  <ul>
+   <li value="1">
+    <a href="IDLffDicomExQuery__Query.html">
+     IDLffDicomExQuery::Query
+    </a>
+   </li>
+   <li value="2">
+    <a href="IDLffDicomExQuery__Retrieve.html">
+     IDLffDicomExQuery::Retrieve
+    </a>
+   </li>
+  </ul>
+  <p>
+   In addition, the DICOM Network Services utility, which is included in the IDL distribution, includes the
+   <span class="Courier">
+    cw_dicomex_query.pro
+   </span>
+   routine, which makes extensive use of this object. The
+   <span class="Courier">
+    cw_dicomex_query.pro
+   </span>
+   routine is located in the
+   <span class="Courier">
+    lib/dicomex
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="dicom_ex_4010397576_1133579">
+   </a>
+   <a name="dicom_ex_4010397576_1133579_PageTOC_IDLffDicomExQuery_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

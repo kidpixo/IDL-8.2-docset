@@ -1,0 +1,574 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WIDGET_EVENT
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WIDGET_EVENT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WIDGET_EVENT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="W_811389549_680296">
+   </a>
+   <a name="W_811389549_89308">
+   </a>
+   WIDGET_EVENT
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#W_811389549_680299">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_1002026">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_680301">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_680306">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_820464">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_983447">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2814">
+   </a>
+   WIDGET_EVENT function returns
+   <a name="kanchor2815">
+   </a>
+   events for the widget hierarchy rooted at
+   <i>
+    Widget_ID
+   </i>
+   . Widgets communicate information by generating events. Events are generated when a button is pressed, a slider position is changed, and so forth.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Widget applications should use the
+   <a name="kanchor2816">
+   </a>
+   XMANAGER procedure in preference to calling WIDGET_EVENT directly. See
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Widget_Event_Processing.html#widget_apps_4063420628_1042201">
+    Widget Event Processing
+   </a>
+   .
+  </p>
+  <h3>
+   <a name="kanchor2817">
+   </a>
+   Event Processing
+  </h3>
+  <p>
+   Events for a given widget are processed in the order that they are generated. The event processing performed by WIDGET_EVENT consists of the following steps, applied iteratively:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Wait for an event from one of the specified widgets to arrive.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Starting with the widget that generated the event, move up the widget hierarchy looking for a widget that has an associated event-handling procedure or function. Event-handling routines are associated with a widget via the EVENT_PRO and EVENT_FUNC keywords to the widget creation functions or the WIDGET_CONTROL procedure.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     If an event-handling
+     <i>
+      procedure
+     </i>
+     is found, it is called with the event as its argument. The
+     <span class="Courier">
+      HANDLER
+     </span>
+     field of the event is set to the widget ID of the widget associated with the handling procedure. When the procedure returns, WIDGET_EVENT returns to the first step above and starts searching for events. Hence, event-handling procedures are said to “swallow” events.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     If an event-handling
+     <i>
+      function
+     </i>
+     is found, it is called with the event as its argument. The
+     <span class="Courier">
+      HANDLER
+     </span>
+     field of the event is set to the widget ID of the widget associated with the handling function.
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   When the function returns, its value is examined. If the value is not a structure, it is discarded and WIDGET_EVENT returns to the first step. This behavior allows event-handling functions to selectively act like event-handling procedures and “swallow” events.
+  </p>
+  <p class="indent">
+   If the returned value is a structure, it is checked to ensure that it has the standard first three fields:
+   <span class="Courier">
+    ID
+   </span>
+   ,
+   <span class="Courier">
+    TOP
+   </span>
+   , and
+   <span class="Courier">
+    HANDLER
+   </span>
+   . If any of these fields is missing, IDL issues an error. Otherwise, the returned value replaces the event found in the first step and WIDGET_EVENT continues moving up the widget hierarchy looking for another event handler routine, as described in step 2, above.
+  </p>
+  <p class="indent">
+   In situations where an event structure is returned, event functions are said to “rewrite” events. This ability to rewrite events is the basis of
+   <i>
+    compound widgets
+   </i>
+   , which combine several widgets to give the appearance of a single, more complicated widget. Compound widgets are an important widget programming concept. For more information, see
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Creating_a_Compound_Widg.html#widget_apps_4063420628_1042476">
+    Creating a Compound Widget
+   </a>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     If an event reaches the top of a widget hierarchy without being swallowed by an event handler, it is returned as the value of WIDGET_EVENT.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     If WIDGET_EVENT was called without an argument, and there are no widgets left on the screen that are being managed (as specified via the MANAGED keyword to the WIDGET_CONTROL procedure) and could generate events, WIDGET_EVENT ends the search and returns an
+     <i>
+      empty event
+     </i>
+     (a standard widget event structure with the top three fields set to zero).
+    </td>
+   </tr>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Do not interrupt the event loop by placing a STOP or EXIT command in the event-handler or other callback routine. The presence of either command will cause the widget routine to exit with an error.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_680299">
+   </a>
+   <a name="W_811389549_680299_PageTOC_WIDGET_EVENT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = WIDGET_EVENT([
+   <i>
+    Widget_ID
+   </i>
+   ]) [,&#160;
+   <a class="MCXref_Heading_0" href="#W_811389549_680307">
+    BAD_ID
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_680311">
+    NOWAIT
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_680313">
+    SAVE_HOURGLASS
+   </a>
+   ]
+  </p>
+  <p class="Syntax">
+   <span class="Bold">
+    UNIX Keywords:
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_675439">
+    YIELD_TO_TTY
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_1002026">
+   </a>
+   <a name="W_811389549_69487">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   <a name="kanchor2818">
+   </a>
+   A widget event is returned in a structure. The exact contents of this
+   <a name="kanchor2819">
+   </a>
+   structure vary depending upon the type of widget involved. The first three elements of this structure, however, are always the same.
+  </p>
+  <p class="Code">
+   {
+   <i>
+    WIDGET
+   </i>
+   , ID:0L, TOP:0L, HANDLER:0L, ... }
+  </p>
+  <p>
+   Any other elements vary from widget type to type. The three fixed elements are:
+  </p>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Common Event Structure Fields
+   </p>
+   <col width="120px" />
+   <col width="379px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Meaning
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ID
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The widget ID of the widget that generated the event.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       TOP
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       The widget ID of the top level base for the widget hierarchy containing
+       <span class="Courier">
+        ID
+       </span>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       HANDLER
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       When an event is passed as the argument to an event handling procedure or function, as discussed in the previous section, this field contains the identifier of the widget associated with the handler routine. When an event is returned from WIDGET_EVENT, this value is always zero to indicate that no handler routine was found.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="W_811389549_680301">
+   </a>
+   <a name="W_811389549_680301_PageTOC_WIDGET_EVENT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Widget_ID
+  </h3>
+  <p>
+   <i>
+    Widget_ID
+   </i>
+   specifies the widget hierarchy for which events are desired. The first available event for the specified widget or any of its children is returned. If this argument is not specified, WIDGET_EVENT processes events for all existing widgets.
+  </p>
+  <p>
+   <i>
+    Widget_ID
+   </i>
+   can also be an array of widget identifiers, in which case all of the specified widget hierarchies are searched.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Attempting to obtain events for a widget hierarchy which is not producing events will hang IDL, unless the NOWAIT keyword is used.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_680306">
+   </a>
+   <a name="W_811389549_680306_PageTOC_WIDGET_EVENT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="W_811389549_680307">
+   </a>
+   <a name="W_811389549_680307_Keywords_WIDGET_EVENT__">
+   </a>
+   BAD_ID
+  </h3>
+  <p>
+   <a name="kanchor2820">
+   </a>
+   If one of the values supplied via
+   <i>
+    Widget_ID
+   </i>
+   is not a valid widget identifier, this function normally issues an error and causes program execution to stop. However, if BAD_ID is present and specifies a named variable, the invalid ID is stored into the variable, and this routine quietly returns. If no error occurs, a zero is stored.
+  </p>
+  <p>
+   This keyword can be used to handle the situation in which IDL is waiting within WIDGET_EVENT when the user kills the widget hierarchy.
+  </p>
+  <p>
+   This keyword has meaning only if
+   <i>
+    Widget_ID
+   </i>
+   is explicitly specified.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_680311">
+   </a>
+   <a name="W_811389549_680311_Keywords_WIDGET_EVENT__">
+   </a>
+   NOWAIT
+  </h3>
+  <p>
+   When no events are currently available for the specified widget hierarchy, WIDGET_EVENT normally waits until one is available and then returns it. However, if NOWAIT is set and no events are present, it immediately returns. In this case, the ID field of the returned structure will be zero.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_680313">
+   </a>
+   <a name="W_811389549_680313_Keywords_WIDGET_EVENT__">
+   </a>
+   SAVE_HOURGLASS
+  </h3>
+  <p>
+   <a name="kanchor2821">
+   </a>
+   Set this keyword to prevent the hourglass cursor from being cleared by WIDGET_EVENT. This keyword can be of use if a program has to poll a widget periodically during a long computation.
+  </p>
+  <h3 class="Keyword">
+   <a name="W_811389549_675439">
+   </a>
+   <a name="W_811389549_675439_Keywords_WIDGET_EVENT__">
+   </a>
+   YIELD_TO_TTY
+  </h3>
+  <p>
+   <i>
+    This keyword is only available on UNIX platforms.
+   </i>
+  </p>
+  <p>
+   Unless the NOWAIT keyword is specified, WIDGET_EVENT does not return until the asked for event is available. If the user should enter a line of input from the keyboard, it cannot be processed until WIDGET_EVENT returns. If the YIELD_TO_TTY keyword is specified and the user enters a line of input, WIDGET_EVENT returns immediately. In this case, the ID field of the returned structure will be zero.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This keyword is supported under UNIX only, and there are no plans to extend it to other operating systems. Do not use it if you intend to use non-UNIX systems.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_820464">
+   </a>
+   <a name="W_811389549_820464_PageTOC_WIDGET_EVENT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre-4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="W_811389549_983447">
+   </a>
+   <a name="W_811389549_983447_PageTOC_WIDGET_EVENT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../X/XMANAGER.html#X_800576109_762775" target="" title="" alt="">
+    XMANAGER
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

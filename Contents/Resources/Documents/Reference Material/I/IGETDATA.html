@@ -1,0 +1,604 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: I" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IGETDATA
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/I/IGETDATA.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="I_list.html">
+    Routines: I
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IGETDATA
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="iTools_api_3860698369_1000906">
+   </a>
+   <a name="iTools_api_3860698369_15079">
+   </a>
+   <span class="_Override">
+    IGETDATA
+   </span>
+  </h1>
+  <p madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+   <span class="_Override">
+    <madcap:conditionaltext madcap:conditions="iTool_Procedures_only.Online_Help_Only">
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000934">
+      Syntax
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000943">
+      Arguments
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000949">
+      Keywords
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000958">
+      iTool Visualizations Compatible with IGETDATA
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1001046">
+      Examples
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1001052">
+      Version History
+     </a>
+     |
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1001060">
+      See Also
+     </a>
+    </madcap:conditionaltext>
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000934">
+   </a>
+   <a name="iTools_api_3860698369_1055898_PageTOC_IGETDATA_">
+   </a>
+   <span class="_Override">
+    Syntax
+   </span>
+  </h2>
+  <p class="Syntax">
+   <span class="_Override">
+    IGETDATA,
+   </span>
+   <span class="Italic">
+    ID
+   </span>
+   <span class="_Override">
+    ,
+   </span>
+   <span class="Italic">
+    Arg1
+   </span>
+   <span class="_Override">
+    ,
+   </span>
+   <span class="Italic">
+    Arg2
+   </span>
+   <span class="_Override">
+    , ... [,&#160;
+    <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000952">
+     OBJECT
+    </a>
+    =
+    <span class="Italic">
+     Value
+    </span>
+    <span class="_Override">
+     ] [,&#160;
+     <a class="MCXref_Heading_0" href="#iTools_api_3860698369_1000955">
+      TOOL
+     </a>
+     =
+     <span class="Italic">
+      iToolID
+     </span>
+     <span class="_Override">
+      ]
+     </span>
+    </span>
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000943">
+   </a>
+   <a name="iTools_api_3860698369_1055903_PageTOC_IGETDATA_">
+   </a>
+   <span class="_Override">
+    Arguments
+   </span>
+  </h2>
+  <h3 class="Argument">
+   <span class="_Override">
+    ID
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    A string containing the identifier of the iTools object from which to retrieve data. If you pass a partial identifier, the IGETID function is called to retrieve the full identifier string.
+   </span>
+  </p>
+  <h3 class="Argument">
+   <span class="_Override">
+    Args
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Named variables that will contain the returned data.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000949">
+   </a>
+   <a name="iTools_api_3860698369_1055908_PageTOC_IGETDATA_">
+   </a>
+   <span class="_Override">
+    Keywords
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    All other keywords are passed to the iTools object.
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000952">
+   </a>
+   <a name="iTools_api_3860698369_82836">
+   </a>
+   <span class="_Override">
+    OBJECT
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a named variable that will contain an object reference to the iTool visualization object specified by
+   </span>
+   <span class="Italic">
+    Id
+   </span>
+   <span class="_Override">
+    .
+   </span>
+  </p>
+  <h3 class="Keyword">
+   <a name="iTools_api_3860698369_1000955">
+   </a>
+   <a name="iTools_api_3860698369_36638">
+   </a>
+   <span class="_Override">
+    TOOL
+   </span>
+  </h3>
+  <p>
+   <span class="_Override">
+    Set this keyword to a string specifying one or more iTools in which to search for
+   </span>
+   <span class="Italic">
+    Id
+   </span>
+   <span class="_Override">
+    . If this keyword is not set, only the current iTool is searched.
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1000958">
+   </a>
+   <a name="iTools_api_3860698369_1055912_PageTOC_IGETDATA_">
+   </a>
+   <span class="_Override">
+    iTool Visualizations Compatible with IGETDATA
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    IGETDATA can retrieve data from the following iTool visualizations:
+   </span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="561px" style="margin-left: 0in;border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 576px;caption-side: bottom;">
+   <caption valign="bottom" style="padding-bottom: 15pt;">
+   </caption>
+   <p class="TableTitle">
+    iTool Visualizations Compatible with IGETDATA
+   </p>
+   <col width="157px" />
+   <col width="119px" />
+   <col width="300px" />
+   <thead>
+    <tr style="height: 20px;background-color: #cbcbff;">
+     <td>
+      <p>
+       Item
+      </p>
+     </td>
+     <td>
+      <p>
+       Arguments
+      </p>
+     </td>
+     <td>
+      <p>
+       Data Returned
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr style="height: 49px;">
+     <td>
+      <p>
+       Colorbar
+      </p>
+     </td>
+     <td>
+      <p>
+       RED
+       <br />
+       GREEN
+       <br />
+       BLUE
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns the color vectors from the contained palette. If only one argument is supplied, a 3x
+       <span class="Italic">
+        m
+       </span>
+       array is returned.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       Contour
+      </p>
+     </td>
+     <td>
+      <p>
+       Z, X, Y
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns the Z, X, and Y arrays of data.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       Image
+      </p>
+     </td>
+     <td>
+      <p>
+       DATA
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns the image data.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 49px;">
+     <td>
+      <p>
+       Plot
+      </p>
+     </td>
+     <td>
+      <p>
+       [X], Y [, Z]
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns Y (if one argument is supplied); X, Y (if two arguments are supplied); X, Y, Z (if three arguments are supplied and it is a 3D plot).
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 32px;">
+     <td>
+      <p>
+       Plot3D
+      </p>
+     </td>
+     <td>
+      <p>
+       X [, Y] [, Z]
+      </p>
+     </td>
+     <td>
+      <p>
+       If Y and Z are not supplied, a 3x
+       <span class="Italic">
+        m
+       </span>
+       array is returned in X.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 32px;">
+     <td>
+      <p>
+       Polygon
+      </p>
+     </td>
+     <td>
+      <p>
+       VERTICES
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns a 3x
+       <span class="Italic">
+        m
+       </span>
+       array of vertices in device coordinates.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 32px;">
+     <td>
+      <p>
+       Polyline
+      </p>
+     </td>
+     <td>
+      <p>
+       VERTICES
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns a 3x
+       <span class="Italic">
+        m
+       </span>
+       array of vertices in device coordinates.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 32px;">
+     <td>
+      <p>
+       Region of Interest (ROI)
+      </p>
+     </td>
+     <td>
+      <p>
+       VERTICES
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns a 3x
+       <span class="Italic">
+        m
+       </span>
+       array of vertices in device coordinates.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       Surface
+      </p>
+     </td>
+     <td>
+      <p>
+       Z
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns the surface as an
+       <span class="Italic">
+        m
+       </span>
+       x
+       <span class="Italic">
+        n
+       </span>
+       array.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 15px;">
+     <td>
+      <p>
+       Text
+      </p>
+     </td>
+     <td>
+      <p>
+       STRING
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns a string containing the text displayed.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 32px;">
+     <td>
+      <p>
+       Vector
+      </p>
+     </td>
+     <td>
+      <p>
+       U, V, X, Y
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns the U and V arrays, and the X and Y vectors.
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 67px;">
+     <td>
+      <p>
+       Volume
+      </p>
+     </td>
+     <td>
+      <p>
+       VOL0
+       <br />
+       VOL1
+       <br />
+       VOL2
+       <br />
+       VOL3
+      </p>
+     </td>
+     <td>
+      <p>
+       Returns the 3D volume arrays.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1001046">
+   </a>
+   <a name="iTools_api_3860698369_1055995_PageTOC_IGETDATA_">
+   </a>
+   <span class="_Override">
+    Examples
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    See the example for
+    <a class="MCXref_Heading_0" href="IPUTDATA.html#iTools_api_3860698369_1006430">
+     IPUTDATA
+    </a>
+    .
+   </span>
+  </p>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1001052">
+   </a>
+   <a name="iTools_api_3860698369_1056000_PageTOC_IGETDATA_">
+   </a>
+   <span class="_Override">
+    Version History
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    &#160;
+   </span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="Default" height="28px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr style="height: 13px;">
+     <td>
+      <p>
+       7.1
+      </p>
+     </td>
+     <td>
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="iTools_api_3860698369_1001060">
+   </a>
+   <a name="iTools_api_3860698369_1056007_PageTOC_IGETDATA_">
+   </a>
+   <span class="_Override">
+    See Also
+   </span>
+  </h2>
+  <p>
+   <span class="_Override">
+    <a class="MCXref_Heading_0" href="IPUTDATA.html#iTools_api_3860698369_1006430">
+     IPUTDATA
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="IGETID.html#iTools_api_3860698369_1001117">
+     IGETID
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="IGETCURRENT.html#iTools_api_3860698369_1000791">
+     IGETCURRENT
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="ISETCURRENT.html#iTools_api_3860698369_1007411">
+     ISETCURRENT
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="IGETPROPERTY.html#iTools_api_3860698369_1001275">
+     IGETPROPERTY
+    </a>
+    ,
+    <a class="MCXref_Heading_0" href="ISETPROPERTY.html#iTools_api_3860698369_1007484">
+     ISETPROPERTY
+    </a>
+   </span>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

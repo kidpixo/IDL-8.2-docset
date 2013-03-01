@@ -1,0 +1,472 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: B" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   BAR_PLOT Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/B/BAR_PLOT_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="B_list.html">
+    Routines: B
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    BAR_PLOT Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_878703">
+   </a>
+   <a name="dg_routines_3604229493_23438">
+   </a>
+   BAR_PLOT Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878727">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878772">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878776">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878820">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878826">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878834">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Please see the
+   <a href="BARPLOT.html" target="" title="" alt="" class="MCXref_Heading_0">
+    BARPLOT
+   </a>
+   function, which replicates the functionality of this routine and offers an interactive interface.
+  </p>
+  <p>
+   The
+   <a name="kanchor127">
+   </a>
+   BAR_PLOT procedure creates a
+   <a name="kanchor128">
+   </a>
+   bar graph. This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    bar_plot.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_878727">
+   </a>
+   <a name="dg_routines_3604229493_756712_PageTOC_BAR_PLOT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   BAR_PLOT,
+   <i>
+    Values
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878778">
+    BACKGROUND
+   </a>
+   =
+   <i>
+    color_index
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878781">
+    BARNAMES
+   </a>
+   =
+   <i>
+    string_array
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878784">
+    BAROFFSET
+   </a>
+   =
+   <i>
+    scalar
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878787">
+    BARSPACE
+   </a>
+   =
+   <i>
+    scalar
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878790">
+    BARWIDTH
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878793">
+    BASELINES
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878796">
+    BASERANGE
+   </a>
+   =
+   <i>
+    scalar
+   </i>
+   {0.0 to 1.0}] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878799">
+    COLORS
+   </a>
+   =
+   <i>
+    vector
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878802">
+    OUTLINE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878805">
+    OVERPLOT
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878808">
+    ROTATE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878811">
+    TITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878814">
+    XTITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_878817">
+    YTITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_878772">
+   </a>
+   <a name="dg_routines_3604229493_756714_PageTOC_BAR_PLOT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Values
+  </h3>
+  <p>
+   A vector containing the values to be represented by the bars. Each element in
+   <i>
+    Values
+   </i>
+   corresponds to a single bar in the output.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_878776">
+   </a>
+   <a name="dg_routines_3604229493_756717_PageTOC_BAR_PLOT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878778">
+   </a>
+   <a name="dg_routines_3604229493_756719_Keywords_BAR_PLOT__">
+   </a>
+   BACKGROUND
+  </h3>
+  <p>
+   A scalar that specifies the color index to be used for the background color. By default, the normal IDL background color is used.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878781">
+   </a>
+   <a name="dg_routines_3604229493_756722_Keywords_BAR_PLOT__">
+   </a>
+   BARNAMES
+  </h3>
+  <p>
+   A string array, containing one string label per bar. If the bars are vertical, the labels are placed beneath them. If horizontal (rotated) bars are specified, the labels are placed to the left of the bars.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878784">
+   </a>
+   <a name="dg_routines_3604229493_756725_Keywords_BAR_PLOT__">
+   </a>
+   BAROFFSET
+  </h3>
+  <p>
+   A scalar that specifies the offset to be applied to the first bar, in units of “nominal bar width”. This keyword allows, for example, different groups of bars to be overplotted on the same graph. If not specified, the default offset is equal to BARSPACE.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878787">
+   </a>
+   <a name="dg_routines_3604229493_756728_Keywords_BAR_PLOT__">
+   </a>
+   BARSPACE
+  </h3>
+  <p>
+   A scalar that specifies, in units of “nominal bar width”, the spacing between bars. For example, if BARSPACE is 1.0, then all bars will have one bar-width of space between them. If not specified, the bars are spaced apart by 20% of the bar width.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878790">
+   </a>
+   <a name="dg_routines_3604229493_756731_Keywords_BAR_PLOT__">
+   </a>
+   BARWIDTH
+  </h3>
+  <p>
+   A floating-point value that specifies the width of the bars in units of “nominal bar width”. The nominal bar width is computed so that all the bars (and the space between them, set by default to 20% of the width of the bars) will fill the available space (optionally controlled with the BASERANGE keyword).
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878793">
+   </a>
+   <a name="dg_routines_3604229493_756734_Keywords_BAR_PLOT__">
+   </a>
+   BASELINES
+  </h3>
+  <p>
+   A vector, the same size as
+   <i>
+    Values
+   </i>
+   , that contains the base value associated with each bar. If not specified, a base value of zero is used for all bars.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878796">
+   </a>
+   <a name="dg_routines_3604229493_756737_Keywords_BAR_PLOT__">
+   </a>
+   BASERANGE
+  </h3>
+  <p>
+   A floating-point scalar in the range 0.0 to 1.0, that determines the fraction of the total available plotting area (in the direction perpendicular to the bars) to be used. If not specified, the full available area is used.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878799">
+   </a>
+   <a name="dg_routines_3604229493_756740_Keywords_BAR_PLOT__">
+   </a>
+   COLORS
+  </h3>
+  <p>
+   A vector, the same size as
+   <i>
+    Values
+   </i>
+   , containing the color index to be used for each bar. If not specified, the colors are selected based on spacing the color indices as widely as possible within the range of available colors (specified by !D.N_COLORS).
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878802">
+   </a>
+   <a name="dg_routines_3604229493_756743_Keywords_BAR_PLOT__">
+   </a>
+   OUTLINE
+  </h3>
+  <p>
+   If set, this keyword specifies that an outline should be drawn around each bar.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878805">
+   </a>
+   <a name="dg_routines_3604229493_756746_Keywords_BAR_PLOT__">
+   </a>
+   OVERPLOT
+  </h3>
+  <p>
+   If set, this keyword specifies that the bar plot should be overplotted on an existing graph.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878808">
+   </a>
+   <a name="dg_routines_3604229493_756749_Keywords_BAR_PLOT__">
+   </a>
+   ROTATE
+  </h3>
+  <p>
+   If set, this keyword indicates that horizontal rather than vertical bars should be drawn. The bases of horizontal bars are on the left, “Y” axis and the bars extend to the right.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878811">
+   </a>
+   <a name="dg_routines_3604229493_756752_Keywords_BAR_PLOT__">
+   </a>
+   TITLE
+  </h3>
+  <p>
+   A string containing the main title for the bar plot.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878814">
+   </a>
+   <a name="dg_routines_3604229493_756755_Keywords_BAR_PLOT__">
+   </a>
+   XTITLE
+  </h3>
+  <p>
+   A string containing the title for the X axis.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_878817">
+   </a>
+   <a name="dg_routines_3604229493_756758_Keywords_BAR_PLOT__">
+   </a>
+   YTITLE
+  </h3>
+  <p>
+   A string containing the title for the Y axis.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_878820">
+   </a>
+   <a name="dg_routines_3604229493_756760_PageTOC_BAR_PLOT_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   By using the overplotting capability, it is relatively easy to create stacked bar charts, or different groups of bars on the same graph.
+  </p>
+  <p>
+   The example
+   <span class="Courier">
+    bar_plot_doc.pro
+   </span>
+   creates a two-dimensional array of 5 columns and 8 rows, and creates a plot with 5 bars, each of which is a “stacked” composite of 8 sections. This example file is installed in the IDL installation’s
+   <span class="Courier">
+    /examples/doc/plot
+   </span>
+   directory. To view the example code, enter
+   <span class="Courier">
+    .edit bar_plot_doc.pro
+   </span>
+   at the IDL command line. To execute the code, enter
+   <span class="Courier">
+    bar_plot_doc
+   </span>
+   at the IDL command line.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_878826">
+   </a>
+   <a name="dg_routines_3604229493_756782_PageTOC_BAR_PLOT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_878834">
+   </a>
+   <a name="dg_routines_3604229493_993387_PageTOC_BAR_PLOT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../P/PLOT_Procedure.html#dg_routines_3604229493_883230">
+    PLOT Procedure
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

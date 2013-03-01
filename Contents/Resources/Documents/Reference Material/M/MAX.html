@@ -1,0 +1,547 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: M" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   MAX
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/M/MAX.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="M_list.html">
+    Routines: M
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    MAX
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="M_824365677_888189">
+   </a>
+   <a name="M_824365677_18475">
+   </a>
+   MAX
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#M_824365677_888195">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_992303">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_888197">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_888202">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_965159">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_888227">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_972924">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1837">
+   </a>
+   MAX
+   <a name="kanchor1838">
+   </a>
+   function returns the value of the largest element of
+   <i>
+    Array
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_888195">
+   </a>
+   <a name="M_824365677_888195_PageTOC_MAX_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = MAX(
+   <i>
+    Array
+   </i>
+   [,&#160;
+   <i>
+    Max_Subscript
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#M_824365677_1047888">
+    ABSOLUTE
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_888204">
+    DIMENSION
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_963501">
+    MIN
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#M_824365677_888207">
+    NAN
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_929038">
+    SUBSCRIPT_MIN
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_992303">
+   </a>
+   <a name="M_824365677_16816">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Return the largest array element value. The type of the result is the same as the type of
+   <i>
+    Array
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_888197">
+   </a>
+   <a name="M_824365677_888197_PageTOC_MAX_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Array
+  </h3>
+  <p>
+   The array to be searched.
+  </p>
+  <h3 class="Argument">
+   Max_Subscript
+  </h3>
+  <p>
+   A named variable that, if supplied, is converted to a long integer containing the one-dimensional subscript of the maximum element. Otherwise, the system variable !C is set to the one-dimensional subscript of the maximum element.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_888202">
+   </a>
+   <a name="M_824365677_888202_PageTOC_MAX_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="M_824365677_1047888">
+   </a>
+   <a name="M_824365677_72632">
+   </a>
+   ABSOLUTE
+  </h3>
+  <p>
+   If this keyword is set, then the absolute value of each element is used when determining the maximum values.This keyword has no effect for arrays of type byte or unsigned integer.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If ABSOLUTE is set then the sign of each value is ignored when searching for the maximum. However, the return value retains the negative sign if the value was indeed negative.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   For complex input, MAX by default only compares the real component of each value. Use the ABSOLUTE keyword to force MAX to compare the absolute value of each value, and to return the complex value corresponding to the maximum absolute value.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_888204">
+   </a>
+   <a name="M_824365677_888204_Keywords_MAX__">
+   </a>
+   DIMENSION
+  </h3>
+  <p>
+   Set this keyword to the dimension over which to find the maximum values of an array. If this keyword is not present or is zero, the maximum is found over the entire array and is returned as a scalar value. If this keyword is present and nonzero, the result is the “slice” of the input array that contains the maximum value element, and the return values for
+   <i>
+    Result
+   </i>
+   ,
+   <i>
+    Max_Subscript
+   </i>
+   , MIN, and SUBSCRIPT_MIN will all be arrays of one dimension less than the input array. That is, if the dimensions of
+   <i>
+    Array
+   </i>
+   are
+   <i>
+    N1
+   </i>
+   ,
+   <i>
+    N2
+   </i>
+   ,
+   <i>
+    N3
+   </i>
+   , and DIMENSION=2, the dimensions of the result are (
+   <i>
+    N1
+   </i>
+   ,
+   <i>
+    N3
+   </i>
+   ), and element (
+   <i>
+    i
+   </i>
+   ,
+   <i>
+    j
+   </i>
+   ) of the result contains the maximum value of
+   <i>
+    Array
+   </i>
+   [
+   <i>
+    i
+   </i>
+   , *,
+   <i>
+    j
+   </i>
+   ].
+  </p>
+  <p>
+   For example:
+  </p>
+  <p class="Code">
+   arr = FINDGEN(2,3,2)
+   <br />
+   PRINT, arr
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   0.00000&#160;&#160;&#160;&#160;&#160;1.00000
+  </p>
+  <p class="Code">
+   2.00000&#160;&#160;&#160;&#160;&#160;3.00000
+  </p>
+  <p class="Code">
+   4.00000&#160;&#160;&#160;&#160;&#160;5.00000
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   6.00000&#160;&#160;&#160;&#160;&#160;7.00000
+  </p>
+  <p class="Code">
+   8.00000&#160;&#160;&#160;&#160;&#160;9.00000
+  </p>
+  <p class="Code">
+   10.0000&#160;&#160;&#160;&#160;&#160;11.0000
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   PRINT, MAX(arr, DIMENSION=2)
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   4.00000&#160;&#160;&#160;&#160;&#160;5.00000
+  </p>
+  <p class="Code">
+   10.0000&#160;&#160;&#160;&#160;&#160;11.0000
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   PRINT, MAX(arr, DIMENSION=1)
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   1.00000&#160;&#160;&#160;&#160;&#160;3.00000&#160;&#160;&#160;&#160;&#160;5.00000
+  </p>
+  <p class="Code">
+   7.00000&#160;&#160;&#160;&#160;&#160;9.00000&#160;&#160;&#160;&#160;&#160;11.0000
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_963501">
+   </a>
+   <a name="M_824365677_963501_Keywords_MAX__">
+   </a>
+   MIN
+  </h3>
+  <p>
+   A named variable to receive the value of the minimum array element. If you need to find both the minimum and maximum array values, use this keyword to avoid scanning the array twice with separate calls to MAX and MIN.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_888207">
+   </a>
+   <a name="M_824365677_888207_Keywords_MAX__">
+   </a>
+   NAN
+  </h3>
+  <p>
+   Set this keyword to cause the routine to check for occurrences of the IEEE floating-point values
+   <i>
+    NaN
+   </i>
+   or
+   <i>
+    Infinity
+   </i>
+   in the input data. Elements with the value
+   <i>
+    NaN
+   </i>
+   or
+   <i>
+    Infinity
+   </i>
+   are treated as missing data.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the MAX function is run on an array containing NaN values and the NAN keyword is not set, an invalid result will occur.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_929038">
+   </a>
+   <a name="M_824365677_929038_Keywords_MAX__">
+   </a>
+   SUBSCRIPT_MIN
+  </h3>
+  <p>
+   Set this keyword equal to a named variable that will contain the one-dimensional subscript of the minimum element, the value of which is available via the MIN keyword.
+  </p>
+  <h3>
+   <a name="M_824365677_965853_PageTOC_MAX_">
+   </a>
+   Thread Pool Keywords
+  </h3>
+  <p>
+   This routine is written to make use of IDL’s
+   <i>
+    thread pool
+   </i>
+   , which can increase execution speed on systems with multiple CPUs. The values stored in the !CPU system variable control whether IDL uses the thread pool for a given computation. In addition, you can use the thread pool keywords TPOOL_MAX_ELTS, TPOOL_MIN_ELTS, and TPOOL_NOTHREAD to override the defaults established by !CPU for a single invocation of this routine. See
+   <a class="MCXref_Chapter_Reference_0" href="../../Creating IDL Programs/Appendices/tpoolkeyw.html#tpoolkeyw_2501860834_317209">
+    Thread Pool Keywords
+   </a>
+   for details.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_965159">
+   </a>
+   <a name="M_824365677_965159_PageTOC_MAX_">
+   </a>
+   Examples
+  </h2>
+  <h3>
+   <a name="M_824365677_929039_Keywords_MAX__">
+   </a>
+   Example 1
+  </h3>
+  <p>
+   This example prints the maximum value in an array, and the subscript of that value:
+  </p>
+  <p class="Code">
+   ; Create a simple two-dimensional array:
+   <br />
+   D = DIST(100)
+   <br />
+   <br />
+   ; Print the maximum value in array D and its linear subscript:
+   <br />
+   PRINT, 'Maximum value in array D is:', MAX(D, I)
+   <br />
+   PRINT, 'The subscript of the maximum value is', I
+  </p>
+  <h4>
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   Output
+  </h4>
+  <p class="Code">
+   Maximum value in array D is:      70.7107
+  </p>
+  <p class="Code">
+   The subscript of the maximum value is        5050
+  </p>
+  <h3>
+   <a name="M_824365677_888222_Keywords_MAX__">
+   </a>
+   Example 2
+  </h3>
+  <p>
+   To convert I to a two-dimensional subscript, use the commands:
+  </p>
+  <p class="Code">
+   IX = I MOD 100
+   <br />
+   IY = I/100
+   <br />
+   PRINT, 'The maximum value of D is at location ('+ STRTRIM(IX, 1) $
+   <br />
+   &#160;&#160;&#160;+ ', ' + STRTRIM(IY, 1) + ')'
+  </p>
+  <h4>
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   Output
+  </h4>
+  <p class="Code">
+   The maximum value of D is at location (50, 50)
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_888227">
+   </a>
+   <a name="M_824365677_888227_PageTOC_MAX_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added ABSOLUTE keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="M_824365677_972924">
+   </a>
+   <a name="M_824365677_972924_PageTOC_MAX_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../A/ARRAY_INDICES.html#A_850317933_998503">
+    ARRAY_INDICES
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="MIN.html#M_824365677_888722" target="" title="" alt="">
+    MIN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../W/WHERE.html#W_811389549_679886">
+    WHERE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Tasks|Distributing IDL Applications" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Distributing Runtime Mode Applications
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Creating IDL Programs/Distributing IDL Applications/RuntimeModeApplications/DistributingRuntimeModeApplicationsIntro.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../Programming Tasks.html">
+    Tasks
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../DistributingIDLApplications.html">
+    Distributing IDL Applications
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Distributing Runtime Mode Applications
+   </span>
+  </div>
+  <h1>
+   Distributing Runtime Mode Applications
+  </h1>
+  <p>
+   An
+   <i>
+    IDL runtime mode application
+   </i>
+   is a program or set of programs written to use IDL’s data analysis and display capabilities in a stand-alone mode, without access to the IDL Workbench, the IDL command line, or the ability to compile IDL
+   <code>
+    .pro
+   </code>
+   files. All IDL code for a runtime mode application must be pre-compiled and provided in the binary SAVE file format. If a runtime mode application presents a user interface, it must be exposed via the IDL widget toolkit functionality, since no access to the IDL command line or command output log is provided to the user.
+  </p>
+  <p>
+   Runtime mode applications are generally intended for users who do not have an IDL development license, although users who
+   <i>
+    do
+   </i>
+   have a development license can execute runtime mode applications as well. Typically, a runtime mode application is distributed along with an IDL distribution hierarchy containing all of the files necessary to run the application. (The exception is an application written to be run in the
+   <a href="../VirtualMachineApplications/VirtualMachineApplicationsIntro.html">
+    IDL Virtual Machine
+   </a>
+   , which is installed separately from the IDL application itself.)
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   IDL applications written to run with an IDL development license — one that allows the application to compile
+   <code>
+    .pro
+   </code>
+   files and access to the IDL command line — can, of course, be distributed to other IDL users. Distributing applications that run with an IDL development license can be as simple as providing the application files to the end user along with instructions describing how to install the files and configure the application.
+  </p>
+  <p>
+   This chapter describes the process of packaging an application written entirely in IDL so that it can be distributed to end users who do not have an IDL development license. The following chapters describe the process of packaging an application to run in the
+   <a href="../VirtualMachineApplications/VirtualMachineApplicationsIntro.html">
+    IDL Virtual Machine
+   </a>
+   and packaging a
+   <a href="../CallableIDLApplications/CallableIDLApplicationsIntro.html">
+    callable IDL application
+   </a>
+   . Much of the information in these chapters is relevant whether or not your application end users have an IDL development license, but the assumption is that your end user will not have such a license.
+  </p>
+  <h2>
+   Steps to Distribute a Runtime Application
+  </h2>
+  <ol>
+   <li value="1">
+    Create your application using an IDL development license. Test the application using the type of license you expect your end user to have.
+   </li>
+   <li value="2">
+    If your application uses callable IDL, see
+    <a href="../CallableIDLApplications/CallableIDLApplicationsIntro.html">
+     Distributing Callable IDL Applications
+    </a>
+    for information on creating a runtime distribution.
+   </li>
+   <li value="3">
+    Decide on a
+    <a href="LicensingOptions.html">
+     licensing option
+    </a>
+    and obtain licenses for your application.
+   </li>
+   <li value="4">
+    <a href="CreatingApplicationDistributionRuntime.html">
+     Create an application distribution
+    </a>
+    .
+   </li>
+   <li value="5">
+    <a href="StartingRuntimeApplication.html">
+     Create invocation and use instructions
+    </a>
+    for your application.
+   </li>
+   <li value="6">
+    <a href="InstallingYourApplication.html">
+     Create an optional installer
+    </a>
+    and installation instructions for your application.
+   </li>
+  </ol>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

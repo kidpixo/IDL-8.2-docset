@@ -1,0 +1,493 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: B" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   BEGIN...END
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/B/BEGIN___END.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="B_list.html">
+    Routines: B
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    BEGIN...END
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="B_856805997_994490">
+   </a>
+   <a name="B_856805997_99589">
+   </a>
+   BEGIN...END
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#B_856805997_983767">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_994619">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_1041845">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor129">
+   </a>
+   BEGIN...
+   <a name="kanchor130">
+   </a>
+   END statement defines a block of statements.
+   <a name="kanchor131">
+   </a>
+   A block of statements is a group of statements that is treated as a single statement. Blocks are necessary when more than one statement is the subject of a conditional or repetitive statement.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_983767">
+   </a>
+   <a name="B_856805997_983767_PageTOC_BEGIN___END__">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   BEGIN
+  </p>
+  <p class="Syntax">
+   <i>
+    &#160;&#160;&#160;statements
+   </i>
+  </p>
+  <p class="Syntax">
+   END | ENDIF | ENDELSE | ENDFOR | ENDFOREACH | ENDREP | ENDWHILE
+  </p>
+  <p>
+   The END identifier used to terminate the block should correspond to the type of statement in which BEGIN is used. The following table lists the correct END identifiers to use with each type of statement.
+  </p>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Types of END Identifiers
+   </p>
+   <col width="205px" />
+   <col width="88px" />
+   <col width="211px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Statement
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       END
+       <br />
+       Identifier
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Example
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ELSE BEGIN
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ENDELSE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       IF (0) THEN A=1 ELSE BEGIN
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;A=2
+      </p>
+      <p class="Code">
+       ENDELSE
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       FOR
+       <i>
+        variable
+       </i>
+       =
+       <i>
+        init
+       </i>
+       ,
+       <i>
+        limit
+       </i>
+       DO BEGIN
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       ENDFOR
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       FOR i=1,5 DO BEGIN
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;PRINT, array[i]
+      </p>
+      <p class="Code">
+       ENDFOR
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       FOREACH
+       <i>
+        element
+       </i>
+       ,
+       <i>
+        variable
+       </i>
+       [,&#160;
+       <i>
+        key
+       </i>
+       ] DO BEGIN
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ENDFOREACH
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       arr = [1, 3, 5, 7, 9]
+      </p>
+      <p class="Code">
+       FOREACH element, arr DO BEGIN
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;PRINT, element
+      </p>
+      <p class="Code">
+       ENDFOREACH
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       IF
+       <i>
+        expression
+       </i>
+       THEN BEGIN
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       ENDIF
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       IF (0) THEN BEGIN
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;A=1
+      </p>
+      <p class="Code">
+       ENDIF
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       REPEAT BEGIN
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ENDREP
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       REPEAT BEGIN
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;A = A * 2
+      </p>
+      <p class="Code">
+       ENDREP UNTIL A GT B
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       WHILE
+       <i>
+        expression
+       </i>
+       DO BEGIN
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       ENDWHILE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       WHILE ~ EOF(1) DO BEGIN
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;READF, 1, A, B, C
+      </p>
+      <p class="Code">
+       ENDWHILE
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <i>
+        LABEL
+       </i>
+       : BEGIN
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       END
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       LABEL1: BEGIN
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;PRINT, A
+      </p>
+      <p class="Code">
+       END
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <i>
+        case_expression
+       </i>
+       : BEGIN
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       END
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       CASE name OF
+      </p>
+      <p class="Code">
+       'Moe': BEGIN
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PRINT, 'Stooge'
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;&#160;&#160;&#160;&#160;END
+      </p>
+      <p class="Code">
+       ENDCASE
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       <i>
+        switch_expression
+       </i>
+       : BEGIN
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       END
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       SWITCH name OF
+      </p>
+      <p class="Code">
+       'Moe': BEGIN
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PRINT, 'Stooge'
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;&#160;&#160;&#160;&#160;END
+      </p>
+      <p class="Code">
+       ENDSWITCH
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   CASE and SWITCH also have their own END identifiers. CASE should always be ended with ENDCASE, and SWITCH should always be ended with ENDSWITCH.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_994619">
+   </a>
+   <a name="B_856805997_994619_PageTOC_BEGIN___END__">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="B_856805997_1041845">
+   </a>
+   <a name="B_856805997_1041845_PageTOC_BEGIN___END__">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="BREAK.html">
+    BREAK
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../C/CASE.html">
+    CASE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../C/CONTINUE.html">
+    CONTINUE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../F/FOR.html">
+    FOR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../F/FOREACH.html">
+    FOREACH
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../G/GOTO.html">
+    GOTO
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../I/IF___THEN___ELSE.html">
+    IF...THEN...ELSE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/REPEAT___UNTIL.html">
+    REPEAT...UNTIL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SWITCH.html">
+    SWITCH
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../W/WHILE___DO.html">
+    WHILE...DO
+   </a>
+   <a class="MCXref_Heading_0" href="../../IDL Programming.html" target="" title="" alt="">
+    IDL Programming
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,5024 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrImage
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/NoLines.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrImage.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrImage
+   </span>
+  </div>
+  <h1 class="ObjClass">
+   <a name="objects_gr_2157407275_1010038">
+   </a>
+   <a name="objects_gr_2157407275_13854">
+   </a>
+   IDLgrImage
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1652490">
+     IDLgrImage
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1010069">
+     Creation
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1043925">
+     Properties
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1010075">
+     Methods
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1666287">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1010099">
+     See "Working with Image Objects" and  "Mapping an Image onto Elevation Data" (Chapter 3, Image Processing in IDL  in the help/pdf directory of your IDL installation) for a texture mapping example.
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   An
+   <a name="kanchor4229">
+   </a>
+   image object represents a mapping from a two-dimensional array of data values to a two dimensional array of pixel colors, resulting in a flat 2-D-scaled version of the image, drawn at Z = 0.
+  </p>
+  <p>
+   An IDLgrImage object is an
+   <i>
+    atomic graphic object
+   </i>
+   ; it is one of the basic drawable elements of the IDL Object Graphics system, and it is not a container for other objects.
+  </p>
+  <p>
+   Beginning with IDL 6.2, IDLgrImage renders an image by default using a texture-mapped polygon on graphics devices using the RGB color model, for a significant increase in functionality and performance. IDL continues to use a 2D bitmap primitive to draw an image on devices using the indexed color model, since texture mapping is not available on such devices.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   With the texture-mapping performance improvements of 6.2, interpolation results may differ slightly across graphics devices and from pre-6.2 results. See
+   <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052150">
+    INTERPOLATE
+   </a>
+   for details.
+  </p>
+  <h3>
+   <a name="objects_gr_2157407275_1010056">
+   </a>
+   <a name="objects_gr_2157407275_73284">
+   </a>
+   Transformations of IDLgrImage Objects
+  </h3>
+  <p>
+   By default, IDLgrImage objects are drawn at Z=0 and are positioned and sized with respect to two points:
+  </p>
+  <p class="Code">
+   p1 = [LOCATION(0), LOCATION(1), 0]
+  </p>
+  <p class="Code">
+   p2 = [LOCATION(0) + DIMENSION(0), LOCATION(1) + DIMENSION(1), 0].
+  </p>
+  <p>
+   where LOCATION and DIMENSION are properties of the image object. These two points are transformed in three dimensions, and then projected onto the screen to form the opposite corners of a 2-D rectangle using screen space points designated as
+   <span class="Courier">
+    p1'
+   </span>
+   and
+   <span class="Courier">
+    p2'
+   </span>
+   :
+  </p>
+  <p class="Code">
+   [ [p1'[0], p1'[1]], [[p2'[0], p1'[1]],
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;[[p2'[0], p2'[1]], [[p1'[0], p2'[1]] ]
+  </p>
+  <p>
+   The image data is drawn on the display as a 2-D image within this 2-D rectangle whose sides are parallel to the screen sides. The image data is
+   <i>
+    scaled
+   </i>
+   in two dimensions (not rotated) to fit into this projected rectangle and then drawn with Z buffering disabled.
+  </p>
+  <p>
+   To draw an image with the current full 3D transformation (the same way other objects such as polygons are transformed), set the IDLgrImage TRANSFORM_MODE property to 1. See the IDLgrImage
+   <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1665873">
+    TRANSFORM_MODE
+   </a>
+   property for details.
+  </p>
+  <p>
+   Objects are drawn to a destination device in the order that they are added (via the Add method) to the model, view, or scene that contains them. By default, image objects do not take into account the depth locations of other objects that may be included in the view object unless you enable depth testing (see
+   <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1095165" target="" title="" alt="">
+    DEPTH_TEST_DISABLE
+   </a>
+   for details).
+  </p>
+  <p>
+   This means that objects that are drawn to the destination object (window or printer) after the image is drawn will appear to be in front of the image, even if they are located behind the image object. Since the image is drawn by default with depth testing disabled, you can think of the image primitive as ‘painting’ the image onto the screen without regard for other objects that might already have been drawn there.
+  </p>
+  <p>
+   This behavior can be changed by enabling depth testing to make the image primitive behave like other primitives such as polygons when they are drawn with depth testing enabled.
+  </p>
+  <h2 class="API">
+   Image Ti
+   <a name="kanchor4230">
+   </a>
+   li
+   <a name="kanchor4231">
+   </a>
+   ng
+  </h2>
+  <p>
+   The IDLgrImage object supports tiling, which lets you display images that are too large to be read entirely into memory. For example, some satellite images can be over a gigabyte in size, which is impossible to fit into memory and display as a single unit on a typical computer. However, it can be displayed by segmenting it into smaller, more manageable image tiles.
+  </p>
+  <p>
+   When tiling is enabled for an IDLgrImage object, the image is initially created without any data. The image pixels are only loaded when a tile section comes into view through panning. Also, you can create an image pyramid to support level-of-detail (LOD) rendering for large images. This changes the resolution of an image when you zoom in or out within an image display. As you zoom out, successively smaller, less-detailed images can be displayed. This quickly provides a full view of the larger image, lets you choose an area of interest, and zoom in on that area. As you zoom in, progressively detailed image layers can be loaded. The IDLgrImage object is aware of the LOD required and will communicate that to the application when the application requests the tile visibility information.
+  </p>
+  <h2 class="API">
+   Annotating
+   <a name="kanchor4232">
+   </a>
+   Indexed Image Objects
+  </h2>
+  <p>
+   When using Object Graphics, the original color table does not need to be modified. The color table (palette) pertains only to the image object, not the window, view, model, polygon, or text objects. Color annotations are usually applied to label each color level within the image or to allow color comparisons. This section shows how to label each color level on an indexed image in Object Graphics. As an example, an image of average world temperature is imported from the
+   <span class="Courier">
+    worldtmp.png
+   </span>
+   file. This file does not contain a color table associated with this image, so a pre-defined color table will be applied. This table provides the colors for the polygons and text used to make a colorbar for this image. Each polygon uses the color of each level in the table. The text represents the average temperature (in Celsius) of each level.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    applycolorbar_indexed_object.
+    <a name="kanchor4233">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    applycolorbar_indexed_object
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT applycolorbar_indexed_object.pro
+   </code>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Determine the path to the
+     <span class="Courier">
+      worldtmp.png
+     </span>
+     file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   worldtmpFile = FILEPATH('worldtmp.png', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'demo', 'demodata'])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Import the image from the
+     <span class="Courier">
+      worldtmp.png
+     </span>
+     file into IDL:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   worldtmpImage = READ_PNG(worldtmpFile)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Determine the size of the imported image:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   worldtmpSize = SIZE(worldtmpImage, /DIMENSIONS)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Initialize the display objects necessary for an Object Graphics display:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', RETAIN = 2, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DIMENSIONS = [worldtmpSize[0], worldtmpSize[1]], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'Average World Temperature (in Celsius)')
+  </p>
+  <p class="Code_Indented">
+   oView = OBJ_NEW('IDLgrView', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;VIEWPLANE_RECT = [0, 0, worldtmpSize[0], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;worldtmpSize[1]])
+  </p>
+  <p class="Code_Indented">
+   oModel = OBJ_NEW('IDLgrModel')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Initialize the palette object, load the Rainbow18 color table into the palette, and then apply the palette to an image object:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oPalette = OBJ_NEW('IDLgrPalette')
+  </p>
+  <p class="Code_Indented">
+   oPalette -&gt; LoadCT, 38
+  </p>
+  <p class="Code_Indented">
+   oImage = OBJ_NEW('IDLgrImage', worldtmpImage, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;PALETTE = oPalette)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Add the image to the model, then add the model to the view, and finally draw the view in the window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oImage
+  </p>
+  <p class="Code_Indented">
+   oView -&gt; Add, oModel
+  </p>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The following figure is displayed.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Temperature Image and Rainbow18 Color Table (Object Graphics)
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgcolor35.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 6.000469px;margin-bottom: 6.000469px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="indent">
+   Before applying the color polygons and text of each level, you must first initialize their color values and their locations. The Rainbow18 color table has only 18 different color levels, but still has 256 elements. You can use the INDGEN routine to make an array of 18 elements ranging from 0 to 17 in value, where each element contains the index of that element. Then you can use the BYTSCL routine to scale these values to range from 0 to 255. The resulting array contains the initial color value (from 0 to 255) of the associated range (from 0 to 17, equalling 18 elements).
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Initialize the color level parameter:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   fillColor = BYTSCL(INDGEN(18))
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Initialize the average temperature of each level, which directly depends on the initial color value of each range. Temperature is linearly scaled to range from -60 to 40 Celsius. You can convert the resulting temperature value to a string variable to be used as text:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   temperature = STRTRIM(FIX(((20.*fillColor)/51.) - 60), 2)
+  </p>
+  <p class="NoteIndented">
+   When the
+   <i>
+    fillColor
+   </i>
+   variable in the previous statement is multiplied by the floating-point value of 20 (denoted by the decimal after the number), the elements of the array are converted from byte values to floating-point values. These elements are then converted to integer values with the FIX routine so the decimal part will not be displayed. The STRTRIM routine converts the integer values to string values to be displayed as text. The second argument to STRTRIM is set to 2 to note the leading and trailing black values should be trimmed away when the integer values are converted to string values.
+  </p>
+  <p class="indent">
+   With the polygon color and text now defined, you can determine their locations. You can use a polygon object to draw each polygon and text objects to display each element of text. The process is repetitive from level to level, so a FOR/DO loop is used to display the entire colorbar. Since each polygon and text is drawn individually within the loop, you only need to determine the location of a single polygon and an array of offsets for each step in the loop. The following two steps describe this process.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     Initialize the polygon and the text location parameters. Each polygon is 35 pixels in width and 18 pixels in height. The offset will move the y-location 18 pixels every time a new polygon is displayed:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   x = [5., 40., 40., 5., 5.]
+  </p>
+  <p class="Code_Indented">
+   y = [5., 5., 23., 23., 5.] + 5.
+  </p>
+  <p class="Code_Indented">
+   offset = 18.*FINDGEN(19) + 5.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     Initialize the polygon and text objects:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oPolygon = OBJARR(18)
+  </p>
+  <p class="Code_Indented">
+   oText = OBJARR(18)
+  </p>
+  <p class="Code_Indented">
+   FOR i = 0, (N_ELEMENTS(oPolygon) - 1) DO BEGIN &amp; $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;oPolygon[i] = OBJ_NEW('IDLgrPolygon', x, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;y + offset[i], COLOR = fillColor[i], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;PALETTE = oPalette) &amp; $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;oText[i] = OBJ_NEW('IDLgrText', temperature[i], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;LOCATIONS = [x[0] + 3., y[0] + offset[i] + 3.], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;COLOR = 255*(fillColor[i] LT 255), $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;PALETTE = oPalette) &amp; $
+  </p>
+  <p class="Code_Indented">
+   ENDFOR
+  </p>
+  <p class="NoteIndented">
+   The &amp; after BEGIN and the $ allow you to use the FOR/DO loop at the IDL command line. These &amp; and $ symbols are not required when the FOR/DO loop in placed in an IDL program as shown in
+   <span class="Courier">
+    ApplyColorbar_Indexed_Object.pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL installation.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      11.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="11. " valign="top">
+     Add the polygons and text to the model, then add the model to the view, and finally redraw the view in the window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oPolygon
+  </p>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oText
+  </p>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The following figure displays the colorbar annotation applied to the image.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Temperature Image and Colorbar (Object Graphics)
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgcolor36.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 6.000469px;margin-bottom: 6.000469px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      12.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="12. " valign="top">
+     Clean up object references. When working with objects always remember to clean up any object references with the OBJ_DESTROY routine. Since the view contains all the other objects, except for the window (which is destroyed by the user), you only need to use OBJ_DESTROY on the view and the palette objects:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   OBJ_DESTROY, [oView, oPalette]
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <h2 class="API">
+   <a name="obj_annotate_40295092_1008947">
+   </a>
+   <a name="obj_annotate_40295092_84650">
+   </a>
+   Annotating
+   <a name="kanchor4234">
+   </a>
+   RGB Image Objects
+  </h2>
+  <p>
+   When using Object Graphics, colors can be defined just by the values of their red, green, and blue components. In this example, a color spectrum of additive and subtractive primary colors will be drawn on an RGB image for comparison with the colors in that image. The
+   <span class="Courier">
+    glowing_gas.jpg
+   </span>
+   file (which is provided by the Hubble Heritage Team, made up of AURA, STScI, and NASA) contains an RGB image of an expanding shell of glowing gas surrounding a hot, massive star in our Milky Way Galaxy. This image contains all the colors of this spectrum. Complete the following steps for a detailed description of the process.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    applycolorbar_rgb_object.
+    <a name="kanchor4235">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    applycolorbar_rgb_object
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT applycolorbar_rgb_object.pro
+   </code>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Determine the path to the
+     <span class="Courier">
+      glowing_gas.jpg
+     </span>
+     file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   cosmicFile = FILEPATH('glowing_gas.jpg', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Import the image from the
+     <span class="Courier">
+      glowing_gas.jpg
+     </span>
+     file into IDL:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   READ_JPEG, cosmicFile, cosmicImage
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Determine the size of the imported image. The image contained within this file is pixel-interleaved (the color information is contained within the first dimension). You can use the SIZE routine to determine the other dimensions of this image:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   cosmicSize = SIZE(cosmicImage, /DIMENSIONS)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Initialize the display objects required for an Object Graphics display:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', RETAIN = 2, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DIMENSIONS = [cosmicSize[1], cosmicSize[2]], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'glowing_gas.jpeg')
+  </p>
+  <p class="Code_Indented">
+   oView = OBJ_NEW('IDLgrView', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;VIEWPLANE_RECT = [0., 0., cosmicSize[1], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;cosmicSize[2]])
+  </p>
+  <p class="Code_Indented">
+   oModel = OBJ_NEW('IDLgrModel')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Initialize the image object. The INTERLEAVE keyword is set to 0 because the RGB image is pixel-interleaved:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oImage = OBJ_NEW('IDLgrImage', cosmicImage, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;INTERLEAVE = 0, DIMENSIONS = [cosmicSize[1], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;cosmicSize[2]])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Add the image to the model, then add the model to the view, and finally draw the view in the window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oImage
+  </p>
+  <p class="Code_Indented">
+   oView -&gt; Add, oModel
+  </p>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The following image contains all of the colors of the additive and subtractive primary spectrum. A colorbar annotation can be added to compare the colors of that spectrum and the colors within the image. The color of each box is defined in the following array.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Cosmic RGB Image (Object Graphics)
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgcolor39.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999767px;margin-bottom: 5.999767px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="indent">
+   You can use the following to determine the color and location parameters for each polygon.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Initialize the color parameters:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   fillColor = [[0, 0, 0], $ ; black
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[255, 0, 0], $ ; red
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[255, 255, 0], $ ; yellow
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[0, 255, 0], $ ; green
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[0, 255, 255], $ ; cyan
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[0, 0, 255], $ ; blue
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[255, 0, 255], $ ; magenta
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[255, 255, 255]] ; white
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     After defining the polygon colors, you can determine their locations. Initialize polygon location parameters:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   x = [5., 25., 25., 5., 5.]
+  </p>
+  <p class="Code_Indented">
+   y = [5., 5., 25., 25., 5.] + 5.
+  </p>
+  <p class="Code_Indented">
+   offset = 20.*FINDGEN(9) + 5.
+  </p>
+  <p class="indent">
+   The
+   <i>
+    x
+   </i>
+   and
+   <i>
+    y
+   </i>
+   variables pertain to the x and y locations (in pixel units) of each box of color. The
+   <i>
+    offset
+   </i>
+   maintains the spacing (in pixel units) of each box. Since the image is made up of mostly a black background, the x border of the colorbar is also determined to draw a white border around the polygons.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     Initialize location of colorbar border:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   x_border = [x[0] + offset[0], x[1] + offset[7], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;x[2] + offset[7], x[3] + offset[0], x[4] + offset[0]]
+  </p>
+  <p class="indent">
+   The y border is already defined by the y variable.
+  </p>
+  <p class="indent">
+   These parameters are used when initializing the polygon and polyline objects These objects will be used to draw the boxes of the color spectrum and the colorbar border. Each polygon is 20 pixels wide and 20 pixels high. The offset will move the y-location 20 pixels every time a new polygon is displayed.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     Initialize the polygon objects. The process is repetitive from level to level, so a FOR/DO loop will be used to display the entire colorbar. Since each polygon is drawn individually within the loop, you only need to determine the location of a single polygon and an array of offsets for each step in the loop:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oPolygon = OBJARR(8)
+  </p>
+  <p class="Code_Indented">
+   FOR i = 0, (N_ELEMENTS(oPolygon) - 1) DO oPolygon[i] = $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;OBJ_NEW('IDLgrPolygon', x + offset[i], y, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;COLOR = fillColor[*, i])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      11.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="11. " valign="top">
+     The colorbar border is produced with a polyline object. This polyline object requires a
+     <i>
+      z
+     </i>
+     variable to define it slightly above the polygons and image. The z variable is required to place the polyline in front of the polygons. Initialize the polyline (border) object:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   z = [0.001, 0.001, 0.001, 0.001, 0.001]
+  </p>
+  <p class="Code_Indented">
+   oPolyline = OBJ_NEW('IDLgrPolyline', x_border, y, z, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;COLOR = [255, 255, 255])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      12.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="12. " valign="top">
+     The polygon and polyline objects can now be added to the model and then displayed (re-drawn) in the window. Add the polygons and polyline to the model, then add the model to the view, and finally redraw the view in the window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oPolygon
+  </p>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oPolyline
+  </p>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The following figure shows the colorbar annotation applied to the image.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Specified Colors on an RGB Image (Object Graphics)
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgcolor40.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999767px;margin-bottom: 5.999767px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      13.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="13. " valign="top">
+     Clean up object references. When working with objects always remember to clean up any object references with the OBJ_DESTROY routine. Since the view contains all the other objects, except for the window (which is destroyed by the user), you only need to use OBJ_DESTROY on the view object:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   OBJ_DESTROY, oView
+  </p>
+  <h2 class="API">
+   Superclasses
+  </h2>
+  <p>
+   <a href="../Miscellaneous/IDLitComponent.html">
+    IDLitComponent
+   </a>
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1010069">
+   </a>
+   <a name="objects_gr_2157407275_1003478_PageTOC_IDLgrImage__">
+   </a>
+   Creation
+  </h2>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="IDLgrImage__Init.html#objects_gr_2157407275_1809847" target="" title="" alt="">
+    IDLgrImage::Init
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1043925">
+   </a>
+   <a name="objects_gr_2157407275_76045">
+   </a>
+   Properties
+  </h2>
+  <p>
+   Objects of this class have the following properties. See
+   <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1044500" target="" title="" alt="">
+    IDLgrImage Properties
+   </a>
+   for details on individual properties.
+  </p>
+  <table style="mc-table-style: url('../../Resources/TableStyles/NoLines.css');" cellspacing="0" class="TableStyle_NoLines">
+   <col width="251px" />
+   <col width="251px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052050">
+        ALL
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1665614">
+        ALPHA_CHANNEL
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052068">
+        BLEND_FUNCTION
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052124">
+        CHANNEL
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1287882">
+        CLIP_PLANES
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052132">
+        DATA
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1665691">
+        DEPTH_OFFSET
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1095165">
+        DEPTH_TEST_DISABLE
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1095212">
+        DEPTH_TEST_FUNCTION
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1095251">
+        DEPTH_WRITE_DISABLE
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1095169">
+        DIMENSIONS
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052136">
+        GREYSCALE
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052140">
+        HIDE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1801050">
+        IMAGE_1D
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052144">
+        INTERLEAVE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1801217">
+        INTERNAL_DATA_TYPE
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052150">
+        INTERPOLATE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052152">
+        LOCATION
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052158">
+        ORDER
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052160">
+        PALETTE
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052253">
+        PARENT
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052251">
+        REGISTER_PROPERTIES
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1665804">
+        RENDER_METHOD
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1093772">
+        RESET_DATA
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1799401">
+        SHADER
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1813892">
+        SHARE_DATA
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052171">
+        SUB_RECT
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1808281">
+        TILE_BORDER_SIZE
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1810029">
+        TILE_COLOR
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1667130">
+        TILE_CURRENT_LEVEL
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1667167">
+        TILE_DIMENSIONS
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1667197">
+        TILE_LEVEL_MODE
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1667227">
+        TILE_NUM_LEVELS
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1709469">
+        TILE_SHOW_BOUNDARIES
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1667264">
+        TILED_IMAGE_DIMENSIONS
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1667509">
+        TILING
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1665873">
+        TRANSFORM_MODE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052175">
+        XCOORD_CONV
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052243">
+        XRANGE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052181">
+        YCOORD_CONV
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052233">
+        YRANGE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052187">
+        ZCOORD_CONV
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLgrImage_Properties.html#objects_gr_2157407275_1052223">
+        ZRANGE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_NoLines_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   In addition, objects of this class inherit the properties of all superclasses of this class.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1010075">
+   </a>
+   <a name="objects_gr_2157407275_1003491_PageTOC_IDLgrImage__">
+   </a>
+   Methods
+   <a name="kanchor4236">
+   </a>
+  </h2>
+  <p>
+   This class has the following methods:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="IDLgrImage__Cleanup.html#objects_gr_2157407275_1010104">
+     IDLgrImage::Cleanup
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="IDLgrImage__DeleteTileDa.html#objects_gr_2157407275_1667810">
+     IDLgrImage::DeleteTileData
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="IDLgrImage__GetCTM.html#objects_gr_2157407275_1010139">
+     IDLgrImage::GetCTM
+    </a>
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="IDLgrImage__GetProperty.html#objects_gr_2157407275_1010183">
+     IDLgrImage::GetProperty
+    </a>
+   </li>
+   <li value="5">
+    <a class="MCXref_Heading_0" href="IDLgrImage__Init.html#objects_gr_2157407275_1809847">
+     IDLgrImage::Init
+    </a>
+   </li>
+   <li value="6">
+    <a class="MCXref_Heading_0" href="IDLgrImage__ReadFiltered.html#objects_gr_2157407275_1812558">
+     IDLgrImage::ReadFilteredData
+    </a>
+   </li>
+   <li value="7">
+    <a class="MCXref_Heading_0" href="IDLgrImage__SetProperty.html#objects_gr_2157407275_1809748">
+     IDLgrImage::SetProperty
+    </a>
+   </li>
+   <li value="8">
+    <a class="MCXref_Heading_0" href="IDLgrImage__SetTileData.html#objects_gr_2157407275_1667909">
+     IDLgrImage::SetTileData
+    </a>
+   </li>
+   <li value="9">
+    <a class="MCXref_Heading_0" href="IDLgrImage__TileDataLoad.html#objects_gr_2157407275_1843416">
+     IDLgrImage::TileDataLoaded
+    </a>
+   </li>
+  </ul>
+  <p>
+   In addition, this class inherits the methods of its superclasses (if any).
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1666287">
+   </a>
+   <a name="objects_gr_2157407275_27732">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See "Working with Image Objects" and  "Mapping an Image onto Elevation Data" (Chapter 3,
+   <i>
+    Image Processing in IDL
+   </i>
+   in the
+   <code>
+    help/pdf
+   </code>
+   directory of your IDL installation) for a texture mapping example.
+   <a name="objects_gr_2157407275_1010099">
+   </a>
+   <a name="objects_gr_2157407275_1394979_PageTOC_IDLgrImage__">
+   </a>
+  </p>
+  <h3>
+   Displaying
+   <a name="kanchor4237">
+   </a>
+   Binary
+   <a name="kanchor4238">
+   </a>
+   Images with
+   <a name="kanchor4239">
+   </a>
+   Object Graphics
+  </h3>
+  <p>
+   <a name="kanchor4240">
+   </a>
+   Binary
+   <a name="kanchor4241">
+   </a>
+   images are composed of pixels having one of two values, usually zero or one. With most color tables, pixels having values of zero and one are displayed with almost the same color, such as with the default greyscale color table. Thus, a binary image is usually scaled to display the zeros as black and the ones as white.
+  </p>
+  <p>
+   The following example imports a binary image of the world from the
+   <span class="Courier">
+    continent_mask.dat
+   </span>
+   binary file. In this image, the oceans are zeros (black) and the continents are ones (white). This type of image can be used to mask out (omit) data over the oceans. The image contains byte data values and is 360 pixels by 360 pixels.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    displaybinaryimage_object.
+    <a name="kanchor4242">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    displaybinaryimage
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT displaybinaryimage.pro
+   </code>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Determine the path to the
+     <span class="Courier">
+      continent_mask.dat
+     </span>
+     file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   file = FILEPATH('continent_mask.dat', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Initialize the image size parameter:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   imageSize = [360, 360]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Use
+     <a class="MCXref_Heading_0" href="../../Reference Material/R/READ_BINARY.html#R_822202989_756090">
+      READ_BINARY
+     </a>
+     to import the image from the file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   image = READ_BINARY(file, DATA_DIMS = imageSize)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Initialize the display objects:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', RETAIN = 2, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DIMENSIONS = imageSize, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'A Binary Image, Not Scaled')
+  </p>
+  <p class="Code_Indented">
+   oView = OBJ_NEW('IDLgrView', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;VIEWPLANE_RECT = [0., 0., imageSize])
+  </p>
+  <p class="Code_Indented">
+   oModel = OBJ_NEW('IDLgrModel')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Initialize the image object:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oImage = OBJ_NEW('IDLgrImage', image)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Add the image object to the model, which is added to the view, then display the view in the window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oImage
+  </p>
+  <p class="Code_Indented">
+   oView -&gt; Add, oModel
+  </p>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The resulting window should be all black (blank). The binary image contains zeros and ones, which are almost the same color (black). A binary image should be scaled prior to displaying in order to show the ones as white.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Initialize another window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', RETAIN = 2, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DIMENSIONS = imageSize, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'A Binary Image, Scaled')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Update the image object with a scaled version of the image:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oImage -&gt; SetProperty, DATA = BYTSCL(image)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     Display the view in the window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The following figure shows the results of scaling this display.
+  </p>
+  <p class="TableAnchor_Indented">
+   <img src="../../images/imgdisp06.gif" />
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     Clean up the object references. When working with objects always remember to clean up any object references with the OBJ_DESTROY routine. Since the view contains all the other objects, except for the window (which is destroyed by the user), you only need to use OBJ_DESTROY on the view object.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   OBJ_DESTROY, oView
+  </p>
+  <h3>
+   Displaying
+   <a name="kanchor4243">
+   </a>
+   <a name="kanchor4244">
+   </a>
+   Greyscale
+   <a name="kanchor4245">
+   </a>
+   Images with
+   <a name="kanchor4246">
+   </a>
+   Object Graphics
+  </h3>
+  <p>
+   <a name="kanchor4247">
+   </a>
+   Since greyscale images are composed of pixels of varying intensities, they are best displayed with color tables that progress linearly from black to white. IDL provides several such pre-defined color tables, but the default greyscale color table is generally suitable.
+  </p>
+  <p>
+   The following example imports a greyscale image from the
+   <span class="Courier">
+    convec.dat
+   </span>
+   binary file. This greyscale image shows the convection of the Earth’s mantle. The image contains byte data values and is 248 pixels by 248 pixels. Since the data type is byte, this image does not need to be scaled before display. If the data was of any type other than byte and the data values were not within the range of 0 up to 255, the display would need to scale the image in order to show its intensities. Complete the following steps for a detailed description of the process.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    displaygrayscaleimage_object.
+    <a name="kanchor4248">
+    </a>
+    pro
+   </span>
+   in the e
+   <span class="Courier">
+    xamples/doc/objects
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    displaygrayscaleimage
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT displaygrayscaleimage.pro
+   </code>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Determine the path to the
+     <span class="Courier">
+      convec.dat
+     </span>
+     file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   file = FILEPATH('convec.dat', $
+  </p>
+  <p class="Code_Indented">
+   SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Initialize the image size parameter:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   imageSize = [248, 248]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Using
+     <a class="MCXref_Heading_0" href="../../Reference Material/R/READ_BINARY.html#R_822202989_756090">
+      READ_BINARY
+     </a>
+     , import the image from the file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   image = READ_BINARY(file, DATA_DIMS = imageSize)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Initialize the display objects:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', RETAIN = 2, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DIMENSIONS = imageSize, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'A Greyscale Image')
+  </p>
+  <p class="Code_Indented">
+   oView = OBJ_NEW('IDLgrView', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;VIEWPLANE_RECT = [0., 0., imageSize])
+  </p>
+  <p class="Code_Indented">
+   oModel = OBJ_NEW('IDLgrModel')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Initialize the image object:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oImage = OBJ_NEW('IDLgrImage', image, /GREYSCALE)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Add the image object to the model, which is added to the view, then display the view in the window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oImage
+  </p>
+  <p class="Code_Indented">
+   oView -&gt; Add, oModel
+  </p>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The following figure shows the resulting greyscale image display.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Greyscale Image in Object Graphics
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgdisp07.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 6.000469px;margin-bottom: 6.000469px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Clean up the object references. When working with objects always remember to clean up any object references with the OBJ_DESTROY routine. Since the view contains all the other objects, except for the window (which is destroyed by the user), you only need to use OBJ_DESTROY on the view object.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   OBJ_DESTROY, oView
+  </p>
+  <h3>
+   Displaying
+   <a name="kanchor4249">
+   </a>
+   <a name="kanchor4250">
+   </a>
+   Multiple
+   <a name="kanchor4251">
+   </a>
+   Ima
+   <a name="kanchor4252">
+   </a>
+   ges in
+   <a name="kanchor4253">
+   </a>
+   Object Graphics
+  </h3>
+  <p>
+   The following example imports an RGB image from the
+   <span class="Courier">
+    rose.jpg
+   </span>
+   image file. This RGB image is a close-up photograph of a red rose and is pixel interleaved. This example extracts the three color channels of this image, and displays them as greyscale images in various locations within the same window. Complete the following steps for a detailed description of the process.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    displaymultiples_object.
+    <a name="kanchor4254">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    displaymultiples_object
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT displaymultiples_object.pro
+   </code>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Determine the path to the
+     <span class="Courier">
+      rose.jpg
+     </span>
+     file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   file = FILEPATH('rose.jpg', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Use
+     <a href="../../Reference Material/Q/QUERY_IMAGE.html#Q_815714925_1095965" target="" title="" alt="" class="MCXref_0">
+      QUERY_IMAGE
+     </a>
+     to query the file to determine image parameters:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   queryStatus = QUERY_IMAGE(file, imageInfo)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Set the image size parameter from the query information:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   imageSize = imageInfo.dimensions
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Use
+     <a href="../../Reference Material/R/READ_IMAGE.html#R_822202989_1071039" target="" title="" alt="" class="MCXref_0">
+      READ_IMAGE
+     </a>
+     to import the image from the file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   image = READ_IMAGE(file)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Extract the channels (as images) from the pixel interleaved RGB image:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   redChannel = REFORM(image[0, *, *])
+  </p>
+  <p class="Code_Indented">
+   greenChannel = REFORM(image[1, *, *])
+  </p>
+  <p class="Code_Indented">
+   blueChannel = REFORM(image[2, *, *])
+  </p>
+  <p class="indent">
+   The LOCATION keyword to the Init method of the image object can be used to position an image within a window. The LOCATION keyword uses data coordinates, which are the same as device coordinates for images. Before initializing the image objects, you should initialize the display objects. The following steps display multiple images horizontally, vertically, and diagonally.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Initialize the display objects:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', RETAIN = 2, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DIMENSIONS = imageSize*[3, 1], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'The Channels of an RGB Image')
+  </p>
+  <p class="Code_Indented">
+   oView = OBJ_NEW('IDLgrView', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;VIEWPLANE_RECT = [0., 0., imageSize]*[0, 0, 3, 1])
+  </p>
+  <p class="Code_Indented">
+   oModel = OBJ_NEW('IDLgrModel')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Now initialize the image objects and arrange them with the LOCATION keyword:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oRedChannel = OBJ_NEW('IDLgrImage', redChannel)
+  </p>
+  <p class="Code_Indented">
+   oGreenChannel = OBJ_NEW('IDLgrImage', greenChannel, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;LOCATION = [imageSize[0], 0])
+  </p>
+  <p class="Code_Indented">
+   oBlueChannel = OBJ_NEW('IDLgrImage', blueChannel, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;LOCATION = [2*imageSize[0], 0])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Add the image objects to the model, which is added to the view, then display the view in the window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oRedChannel
+  </p>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oGreenChannel
+  </p>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oBlueChannel
+  </p>
+  <p class="Code_Indented">
+   oView -&gt; Add, oModel
+  </p>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The following figure shows the resulting greyscale images.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Horizontal Display of RGB Channels in Object Graphics
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgdisp14.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 6.000484px;margin-bottom: 6.000477px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="indent">
+   These images can be displayed vertically in another window by first initializing another window and then updating the view and images with different location information.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     Initialize another window object:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', RETAIN = 2, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DIMENSIONS = imageSize*[1, 3], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'The Channels of an RGB Image')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     Change the view from horizontal to vertical:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oView -&gt; SetProperty, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;VIEWPLANE_RECT = [0., 0., imageSize]*[0, 0, 1, 3]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      11.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="11. " valign="top">
+     Change the locations of the channels:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oGreenChannel -&gt; SetProperty, LOCATION = [0, imageSize[1]]
+  </p>
+  <p class="Code_Indented">
+   oBlueChannel -&gt; SetProperty, LOCATION = [0, 2*imageSize[1]]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      12.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="12. " valign="top">
+     Display the updated view within the new window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The following figure shows the resulting greyscale images.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Vertical Display of RGB Channels in Object Graphics
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgdisp15.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 6.000477px;margin-bottom: 5.999767px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="indent">
+   These images can also be displayed diagonally in another window by first initializing the other window and then updating the view and images with different location information.The LOCATION can also be used to create a display overlapping images. When overlapping images in Object Graphics, you must remember the last image added to the model will be in front of the previous images.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      13.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="13. " valign="top">
+     Initialize another window object:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', RETAIN = 2, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DIMENSIONS = imageSize*[2, 2], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'The Channels of an RGB Image')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      14.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="14. " valign="top">
+     Change the view to prepare for a diagonal display:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oView -&gt; SetProperty, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;VIEWPLANE_RECT = [0., 0., imageSize]*[0, 0, 2, 2]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      15.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="15. " valign="top">
+     Change the locations of the channels:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oGreenChannel -&gt; SetProperty, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;LOCATION = [imageSize[0]/2, imageSize[1]/2]
+  </p>
+  <p class="Code_Indented">
+   oBlueChannel -&gt; SetProperty, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;LOCATION = [imageSize[0], imageSize[1]]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      16.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="16. " valign="top">
+     Display the updated view within the new window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The following figure shows the resulting greyscale images.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Diagonal Display of RGB Channels in Object Graphics
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgdisp16.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999752px;margin-bottom: 6.000484px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      17.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="17. " valign="top">
+     Clean up the object references. When working with objects always remember to clean up any object references with the OBJ_DESTROY routine. Since the view contains all the other objects, except for the window (which is destroyed by the user), you only need to use OBJ_DESTROY on the view object.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   OBJ_DESTROY, oView
+  </p>
+  <h3>
+   Applying a Transparent Image Overlay
+  </h3>
+  <p>
+   The following example reads in two medical images, a computed tomography (CT) file that contains structural information, and a PET (positron emission tomography) file that contains metabolic data. A color table is applied to the PET file, and the transparency is set using the ALPHA_CHANNEL property. The PET image object is then overlaid on top of the base CT image. This is done by adding the transparent PET image to the model after (and therefore displayed in front of) the base CT image.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    alphaimage_obj_doc.pro
+    <a name="kanchor4255">
+    </a>
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    alphaimage_obj_doc
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT alphaimage_obj_doc.pro
+   </code>
+   .
+  </p>
+  <p>
+   To replicate this example, create a new
+   <span class="Courier">
+    .pro
+   </span>
+   file and complete the following steps:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Load CT and PET images and get the image dimensions.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   file_pt = FILEPATH('head_pt.dcm', $
+  </p>
+  <p class="Code_Indented">
+   SUBDIRECTORY=['examples', 'data'])
+  </p>
+  <p class="Code_Indented">
+   file_ct = FILEPATH('head_ct.dcm', $
+  </p>
+  <p class="Code_Indented">
+   SUBDIRECTORY=['examples', 'data'])
+  </p>
+  <p class="Code_Indented">
+   img_pt = READ_DICOM(file_pt)
+  </p>
+  <p class="Code_Indented">
+   img_ct = READ_DICOM(file_ct)
+  </p>
+  <p class="Code_Indented">
+   dims_ct = SIZE(img_ct, /DIMENSIONS)
+  </p>
+  <p class="Code_Indented">
+   dims_pt = SIZE(img_pt, /DIMENSIONS)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Check for dimension equality and resize if different.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   IF dims_pt[0] NE dims_ct[0] THEN BEGIN
+  </p>
+  <p class="Code_Indented">
+   x = dims_ct[0]/dims_pt[0]
+  </p>
+  <p class="Code_Indented">
+   img_pt = REBIN(img_pt, dims_pt[0]*x, dims_pt[1]*x)
+  </p>
+  <p class="Code_Indented">
+   dims_pt = x*dims_pt
+  </p>
+  <p class="Code_Indented">
+   If dims_pt[0] NE dims_ct[0] THEN BEGIN
+  </p>
+  <p class="Code_Indented">
+   status = DIALOG_MESSAGE ('Incompatible images', /ERROR)
+  </p>
+  <p class="Code_Indented">
+   ENDIF
+  </p>
+  <p class="Code_Indented">
+   ENDIF
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Change the data to byte type before creating the base CT image.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   img_ct = BYTSCL(img_ct)
+  </p>
+  <p class="Code_Indented">
+   oImageCT = OBJ_NEW('IDLgrImage', img_ct)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Create display objects and display the CT image.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', RETAIN=2, $
+  </p>
+  <p class="Code_Indented">
+   DIMENSIONS=[dims_ct[0], dims_ct[1]], TITLE='CT Image')
+  </p>
+  <p class="Code_Indented">
+   oView = OBJ_NEW('IDLgrView', VIEWPLANE_RECT=[0., 0., $
+  </p>
+  <p class="Code_Indented">
+   dims_ct[0], dims_ct[1]])
+  </p>
+  <p class="Code_Indented">
+   oModel = OBJ_NEW('IDLgrModel')
+  </p>
+  <p class="Code_Indented">
+   oModel-&gt;Add, oImageCT
+  </p>
+  <p class="Code_Indented">
+   oView-&gt;Add, oModel
+  </p>
+  <p class="Code_Indented">
+   oWindow-&gt;Draw, oView
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Create a palette object and load the red-temperature table.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oPalette = OBJ_NEW('IDLgrPalette')
+  </p>
+  <p class="Code_Indented">
+   oPalette-&gt;Loadct, 3
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Change the data type to byte and create the PET image object. Set the BLEND_FUNCTION and ALPHA_CHANNEL properties to support image transparency.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   img_pt = BYTSCL(img_pt)
+  </p>
+  <p class="Code_Indented">
+   oImagePT = OBJ_NEW('IDLgrImage', img_pt, $
+  </p>
+  <p class="Code_Indented">
+   PALETTE=oPalette, BLEND_FUNCTION=[3,4], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;ALPHA_CHANNEL=0.50)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Create a second window, add the semi-transparent image to the model containing the original image and display the overlay.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow2 = OBJ_NEW('IDLgrWindow', RETAIN=2, $
+  </p>
+  <p class="Code_Indented">
+   DIMENSIONS=[dims_pt[0], dims_pt[1]],  $
+  </p>
+  <p class="Code_Indented">
+   LOCATION=[dims_ct[0]+10, 0], TITLE='CT/PET Transparency')
+  </p>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oImagePT
+  </p>
+  <p class="Code_Indented">
+   oWindow2 -&gt; Draw, oView
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Clean-up object references.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   OBJ_DESTROY, [oView, oImageCT, oImagePT]
+  </p>
+  <p>
+   The results of this example are shown in the following figure.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    CT Image (Left) and CT with Semi-transparent PET Overlay (Right)
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/ct_alpha_pet.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 6.000484px;margin-bottom: 5.999752px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   Cumulative Alpha Blending
+  </h3>
+  <p>
+   The following example shows the additive effects of displaying an image object with alpha channel data and an image with an ALPHA_CHANNEL property setting. In this example, the alpha channel is used to mask out values, and the ALPHA_CHANNEL property is used to control the object transparency. However, it is easy to modify the code and investigate the relationship between setting image transparency using the alpha channel data and ALPHA_CHANNEL property. For example, defining 50% transparency for each results in 25% opacity overall.
+  </p>
+  <p>
+   The two initial images are displayed in the following figure. The black portion of the land classification image (left) will be removed and this image will then be overlaid on top of the map image.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Original Land and Map Images
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/alpha_org_map.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 6.000515px;margin-bottom: 5.999767px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    alphacomposite_image_doc.pro
+    <a name="kanchor4256">
+    </a>
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    alphacomposite_image
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT alphacomposite_image.pro
+   </code>
+   .
+  </p>
+  <p>
+   To replicate this example, create a new
+   <span class="Courier">
+    .pro
+   </span>
+   file complete the following steps:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Open the political map, the base image.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mapFile = FILEPATH('afrpolitsm.png', $
+  </p>
+  <p class="Code_Indented">
+   SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <p class="Code_Indented">
+   mapImg = READ_PNG(mapFile, mapR, mapG, mapB)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Assign the color table of the map image to a palette object.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mapPalette = OBJ_NEW('IDLgrPalette', mapR, mapG, mapB)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Create an image object containing the map data.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oMapImg = OBJ_NEW('IDLgrImage', mapImg, $
+  </p>
+  <p class="Code_Indented">
+   DIMENSIONS=[600, 600], PALETTE=mapPalette)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Open the land cover characteristics image.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   landFile = FILEPATH('africavlc.png', $
+  </p>
+  <p class="Code_Indented">
+   SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <p class="Code_Indented">
+   landImg = READ_PNG(landFile, landR, landG, landB)
+  </p>
+  <p class="Code_Indented">
+   landImgDims = SIZE(landImg, /DIMENSIONS)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     To mask out the black values of the land classification image, create a 4 channel array for the red, green, blue, and alpha data.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   alphaLand = BYTARR(4, landImgDims[0], landImgDims[1],$ &#160;&#160;&#160;/NOZERO)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Get the red, green and blue values used by the image and assign them to the first three channels of the alpha image array.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   alphaLand[0, *, *] = landR[landImg]
+  </p>
+  <p class="Code_Indented">
+   alphaLand[1, *, *] = landG[landImg]
+  </p>
+  <p class="Code_Indented">
+   alphaLand[2, *, *] = landB[landImg]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Mask out the black pixels with a value of 0. Multiply the mask value by 255 for complete opacity. You could set this to a value between 0 (completely transparent) and 255 (opaque) to control the transparency. Any value set here will be combined with any value set for the ALPHA_CHANNEL property on the image object.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mask = (landImg GT 0)
+  </p>
+  <p class="Code_Indented">
+   alphaLand [3, *, *] = mask*255B
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Create the semi-transparent image object. ALPHA_CHANNEL values can range from 0.0 (transparent) to 1.0 (opaque). The image will appear semi-transparent when the BLEND_FUNCTION property is set to [3,4].
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oAlphaLand = OBJ_NEW('IDLgrImage', alphaLand, $
+  </p>
+  <p class="Code_Indented">
+   DIMENSIONS=[600, 600], BLEND_FUNCTION=[3,4], $
+  </p>
+  <p class="Code_Indented">
+   ALPHA_CHANNEL=0.35)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     Create the display objects.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', $
+  </p>
+  <p class="Code_Indented">
+   DIMENSIONS=[600, 600], RETAIN=2, $
+  </p>
+  <p class="Code_Indented">
+   TITLE='Overlay of Land Cover Transparency')
+  </p>
+  <p class="Code_Indented">
+   viewRect = [0, 0, 600, 600]
+  </p>
+  <p class="Code_Indented">
+   oView = OBJ_NEW('IDLgrView', VIEWPLANE_RECT=viewRect)
+  </p>
+  <p class="Code_Indented">
+   oModel = OBJ_NEW('IDLgrModel')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     Add the semi-transparent image to the model after the base image.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel-&gt;Add, oMapImg
+  </p>
+  <p class="Code_Indented">
+   oModel-&gt;Add, oAlphaLand
+  </p>
+  <p class="Code_Indented">
+   oView-&gt;Add, oModel
+  </p>
+  <p class="Code_Indented">
+   oWindow-&gt;Draw, oView
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      11.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="11. " valign="top">
+     Clean up objects.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   OBJ_DESTROY, [oView, oMapImg, oAlphaLand, mapPalette]
+  </p>
+  <p>
+   The results appear in the following figure.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Land Image (35% Opaque) Overlaid the Map Image
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/alphaImg35.gif" style="margin-left: 0.75024px;margin-top: 1.49976px;margin-right: 3.000248px;margin-bottom: 0.75024px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You can use control points to warp the images and properly align the transparent image over the map image. See
+   <a href="#Warping" target="" title="" alt="" class="MCXref_0">
+    Warping Image Objects
+   </a>
+   for details.
+  </p>
+  <h3>
+   <a name="Warping">
+   </a>
+   Warping Image
+   <a name="kanchor4257">
+   </a>
+   Objects
+  </h3>
+  <p>
+   Object Graphics allows precise control over the color palettes used to display image objects. By initializing a palette object, both the reference image object and the transparent, warped image object can be displayed using individual color palettes.
+  </p>
+  <p>
+   The following example warps an African land-cover characteristics image to a political
+   <a name="kanchor4258">
+   </a>
+   map of the
+   <a name="kanchor4259">
+   </a>
+   continent. After displaying the images and selecting control points in each image using the XROI utility, the resulting warped image is altered to include an alpha channel, enabling transparency. Image objects are then created and displayed in an IDL Obj
+   <a name="kanchor4260">
+   </a>
+   ect Graphics display. Complete the following steps for a detailed description of the process.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    transparentwarping_object.
+    <a name="kanchor4261">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    transparentwarping_object
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT transparentwarping_object.pro
+   </code>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Select the political map image. This is the reference image to which the land cover image will be warped:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mapFile= FILEPATH('afrpolitsm.png', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;Subdirectory = ['examples', 'data'])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Use
+     <a class="MCXref_Heading_0" href="../../Reference Material/R/READ_PNG.html#R_822202989_1045821">
+      READ_PNG
+     </a>
+     routine to read in the file. Specify
+     <i>
+      mapR, mapG, mapB
+     </i>
+     to read in the image’s associated color table:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mapImg = READ_PNG(mapFile, mapR, mapG, mapB)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Using
+     <a class="MCXref_Heading_0" href="IDLgrPalette__Init.html#objects_gr_2157407275_1012290">
+      IDLgrPalette::Init
+     </a>
+     , assign the image’s color table to a palette object, which will be applied to an image object in a later step:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mapPalette = OBJ_NEW('IDLgrPalette', mapR, mapG, mapB)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Select and open the land cover input image, which will be warped to the map:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   landFile = FILEPATH('africavlc.png', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;Subdirectory = ['examples', 'data'])
+  </p>
+  <p class="Code_Indented">
+   landImg = READ_PNG (landFile, landR, landG, landB)
+  </p>
+  <h3>
+   Selecting Control Points for Image Object Warping
+  </h3>
+  <p>
+   This section desc
+   <a name="kanchor4262">
+   </a>
+   ribes using the XROI utility to select corresponding control points in the two images. The arrays of control points in the input image, (
+   <i>
+    X
+    <sub class="italic">
+     i
+    </sub>
+    , Y
+    <sub class="italic">
+     i
+    </sub>
+   </i>
+   ), will be mapped to the array of points selected in the reference image, (
+   <i>
+    X
+    <sub class="italic">
+     o
+    </sub>
+    , Y
+    <sub class="italic">
+     o
+    </sub>
+    )
+   </i>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The
+   <i>
+    X
+    <sub class="italic">
+     i
+    </sub>
+   </i>
+   and
+   <i>
+    Y
+    <sub class="italic">
+     i
+    </sub>
+   </i>
+   vectors and the
+   <i>
+    X
+    <sub class="italic">
+     o
+    </sub>
+   </i>
+   and
+   <i>
+    Y
+    <sub class="italic">
+     o
+    </sub>
+   </i>
+   vectors must be the same length, meaning that you must select the same number of control points in the reference image as you select in the input image. The control points must also be selected in the same order since the point
+   <i>
+    X
+    <sub class="italic">
+     i1
+    </sub>
+   </i>
+   ,
+   <i>
+    Y
+    <sub class="italic">
+     i1
+    </sub>
+   </i>
+   will be warped to
+   <i>
+    X
+    <sub class="italic">
+     o1
+    </sub>
+    , Y
+    <sub class="italic">
+     o1
+    </sub>
+   </i>
+   .
+  </p>
+  <p>
+   The following figure shows the points to be selected in the input image.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Selecting Control Points in the Input Image
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgwarp07.gif" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Reasonably precise warping of the land classification image to the political map requires selecting numerous control points because of the irregularity of the continent’s border. Select the control points in the land classification image as described in the following steps.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Load the image and its associated color table into the
+     <a class="MCXref_Heading_0" href="../../Reference Material/X/XROI.html#X_800576109_976751">
+      XROI
+     </a>
+     utility, specifying the REGIONS_OUT keyword to save the region defined by the control points in the
+     <i>
+      landROIout
+     </i>
+     object:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   XROI, landImg, landR, landG, landB, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;REGIONS_OUT = landROIout, /BLOCK
+  </p>
+  <p class="indent">
+   Select the
+   <span class="Bold">
+    Draw Polygon
+   </span>
+   button from the XROI utility toolbar shown in the following figure. Position the crosshairs symbol over CP1, shown in the previous figure, and click the left mouse button. Repeat this action for each successive control point. After selecting the sixteenth control point, position the crosshairs over the first point selected and click the right mouse button to close the region. Your display should appear similar to the following figure.&#160;
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Selecting Control Points Using XROI
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/draw_polygon.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999767px;margin-bottom: 6.000454px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="NoteIndented">
+   It is of no concern that portions of the continent lie outside the polygonal boundary. The EXTRAPOLATE keyword to WARP_TRI enables warping of the image areas lying outside of the boundary of control points. However, images requiring more aggressive warp models may not have good results outside of the extent of the control points when WARP_TRI is used with the /EXTRAPOLATE keyword.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Close the XROI window and assign the
+     <i>
+      landROIout
+     </i>
+     object data to the
+     <i>
+      X
+      <sub class="italic">
+       i
+      </sub>
+     </i>
+     <sub class="italic">
+      <![CDATA[ ]]>
+     </sub>
+     and
+     <i>
+      Y
+      <sub class="italic">
+       i
+      </sub>
+     </i>
+     control point vectors:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   landROIout -&gt; GetProperty, DATA = landROIdata
+  </p>
+  <p class="Code_Indented">
+   Xi = landROIdata[0,*]
+  </p>
+  <p class="Code_Indented">
+   Yi = landROIdata[1,*]
+  </p>
+  <p class="indent">
+   The following figure displays the corresponding control points to be selected in the reference image of the political map. These control points will make up the
+   <i>
+    X
+   </i>
+   <sub class="italic">
+    o
+   </sub>
+   and
+   <i>
+    Y
+   </i>
+   <sub class="italic">
+    o
+   </sub>
+   arrays required by the IDL warping routines.&#160;
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Control Points to be Selected in the Reference Image
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgwarp09.gif" style="margin-left: 7.5744px;margin-top: 2.0268px;margin-right: 5.966646px;margin-bottom: 2.562495px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Load the image of the political map and its associated color table into the XROI utility, specifying the REGIONS_OUT keyword to save the selected region in the
+     <i>
+      mapROIout
+     </i>
+     object:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   XROI, mapImg, mapR, mapG, mapB, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;REGIONS_OUT=mapROIout,/BLOCK
+  </p>
+  <p class="indent">
+   Select the
+   <span class="Bold">
+    Draw Polygon
+   </span>
+   button from the XROI utility toolbar. Position the crosshairs symbol over CP1, shown in the previous figure, and click the left mouse button. Repeat this action for each successive control point. After selecting the sixteenth control point, position the crosshairs over the first point selected and click the right mouse button to close the region. Your display should appear similar to the following figure.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Selecting Control Points Using XROI
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgwarp10.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 9.292324px;margin-bottom: 4.06509px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Close the XROI window and assign the
+     <i>
+      mapROIout
+     </i>
+     object data to the
+     <i>
+      X
+      <sub class="italic">
+       o
+      </sub>
+     </i>
+     and
+     <i>
+      Y
+      <sub class="italic">
+       o
+      </sub>
+     </i>
+     control point vectors:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mapROIout -&gt; GetProperty, DATA=mapROIdata
+  </p>
+  <p class="Code_Indented">
+   Xo = mapROIdata[0,*]
+  </p>
+  <p class="Code_Indented">
+   Yo = mapROIdata[1,*]
+  </p>
+  <h3>
+   <a name="obj_image_3577551095_38426">
+   </a>
+   Warping and Displaying a Transparent Image Object
+  </h3>
+  <p>
+   The following section describes warping the land cover image to the political map and creating image objects. The resulting warped image will then be made into a transparency by creating an alpha channel for the image. Finally, the transparent object will be displayed as an overlay to the original political map.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Warp the input image,
+     <code>
+      landImg
+     </code>
+     , onto the reference image using
+     <a class="MCXref_Heading_0" href="../../Reference Material/W/WARP_TRI.html#W_811389549_758712">
+      WARP_TRI
+     </a>
+     . This function uses the irregular grid of the reference image, defined by
+     <i>
+      X
+      <span class="SubScript">
+       o
+      </span>
+      , Y
+      <span class="SubScript">
+       o
+      </span>
+      ,
+     </i>
+     as a basis for triangulation, defining the surfaces associated with (
+     <i>
+      X
+      <span class="SubScript">
+       o
+      </span>
+      , Y
+      <span class="SubScript">
+       o
+      </span>
+      , X
+      <span class="SubScript">
+       i
+      </span>
+     </i>
+     ) and (
+     <i>
+      X
+      <span class="SubScript">
+       o
+      </span>
+      , Y
+      <span class="SubScript">
+       o
+      </span>
+      , Y
+      <span class="SubScript">
+       i
+      </span>
+     </i>
+     ). Each pixel in the input image is then transferred to the appropriate position in the resulting output image as designated by interpolation. Using the WARP_TRI syntax,
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   <i>
+    Result
+   </i>
+   <span class="Courier">
+    = WARP_TRI( Xo, Yo, Xi, Yi,
+   </span>
+   <i style="line-height: 11pt;">
+    Image
+   </i>
+   <br />
+   &#160;&#160;
+   <span class="Courier">
+    [, OUTPUT_SIZE=vector][, /QUINTIC] [, /EXTRAPOLATE] )
+   </span>
+  </p>
+  <p class="indent">
+   set the OUTPUT_SIZE equal to the reference image dimensions since this image forms the basis of the warped, output image. Use the EXTRAPOLATE keyword to display the portions of the image which fall outside of the boundary of selected control points:
+  </p>
+  <p class="Code_Indented">
+   warpImg = WARP_TRI(Xo, Yo, Xi, Yi, landImg, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;OUTPUT_SIZE=[600, 600], /EXTRAPOLATE)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     While not required, you can quickly check the precision of the warp in a Direct Graphics display before proceeding with creating a transparency by entering the following lines:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   DEVICE, DECOMPOSED = 0
+  </p>
+  <p class="Code_Indented">
+   TVLCT, landR, landG, landB
+  </p>
+  <p class="Code_Indented">
+   WINDOW, 3, XSIZE = 600, YSIZE = 600, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'Image Warped with WARP_TRI'
+  </p>
+  <p class="Code_Indented">
+   TV, warpImg
+  </p>
+  <p class="indent">
+   Precise control point selection results in accurate warping. If there is little distortion, as in the following figure, control points were successfully selected in nearly corresponding positions in both images.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Resulting Warped Image
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgwarp11.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 3.520092px;margin-bottom: 4.520168px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     A transparent image object must be a greyscale or an RGB (24-bit) image containing an alpha channel. The alpha channel controls the transparency of the pixels. See
+     <a class="MCXref_Heading_0" href="IDLgrImage__Init.html#objects_gr_2157407275_1809847">
+      IDLgrImage::Init
+     </a>
+     for more information.
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   The following lines convert the warped image and its associated color table into a RGB image containing four channels (red, green, blue, and alpha). First, get the dimensions of the warped image and then use BYTARR to create
+   <i>
+    alphaWarp,
+   </i>
+   a 4-channel by
+   <i>
+    xdim
+   </i>
+   by
+   <i>
+    ydim
+   </i>
+   array, where (
+   <i>
+    xdim, ydim
+   </i>
+   ) are the dimensions of the warped image:
+  </p>
+  <p class="Code_Indented">
+   warpImgDims = SIZE(warpImg, /Dimensions)
+  </p>
+  <p class="Code_Indented">
+   alphaWarp = BYTARR(4, warpImgDims[0], warpImgDims[1], /NOZERO)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Load the red, green and blue channels of the warped land characteristics image into the first three channels of the
+     <i>
+      alphaWarp
+     </i>
+     array:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   alphaWarp[0, *, *] = landR[warpImg]
+  </p>
+  <p class="Code_Indented">
+   alphaWarp[1, *, *] = landG[warpImg]
+  </p>
+  <p class="Code_Indented">
+   alphaWarp[2, *, *] = landB[warpImg]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Define the transparency of the alpha channel. First, create an array, masking out the black background of the warped image (where pixel values equal 0) by retaining only pixels with values greater than 0:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mask = (warpImg GT 0)
+  </p>
+  <p class="indent">
+   Apply the resulting mask to the alpha channel, the fourth channel of the array. This channel creates a 50% transparency of the pixels of the first three channels (red, green, blue) of the
+   <i>
+    alphaWarp
+   </i>
+   by multiplying the
+   <i>
+    mask
+   </i>
+   by 128B (byte). Alpha channel values range from 0 (completely transparent) to 255 (completely opaque):
+  </p>
+  <p class="Code_Indented">
+   alphaWarp [3, *, *] = mask*128B
+  </p>
+  <p class="NoteIndented">
+   You can set the transparency of an entire image. To set the transparency of
+   <i>
+    all
+   </i>
+   pixels at 50% in this example, your could replace the two previous steps with the following two lines:
+   <br />
+   <span class="Courier">
+    &#160;&#160;&#160;&#160;mask = BYTARR(s[0], s[1]) + 128
+   </span>
+   <br />
+   <span class="Courier">
+    &#160;&#160;&#160;&#160;
+   </span>
+   <span class="_Override" style="font-family: Courier;font-size: 9pt;line-height: 11pt;">
+    alphaWarp
+   </span>
+   <span class="Courier">
+    [3, *, *] = mask
+   </span>
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Initialize the transparent image object using
+     <a class="MCXref_Heading_0" href="IDLgrImage__Init.html#objects_gr_2157407275_1809847">
+      IDLgrImage::Init
+     </a>
+     . Specify the BLEND_FUNCTION property of the image object to control how the alpha channel is interpreted. Setting the BLEND_FUNCTION to [3, 4] allows you to see through the foreground image to the background. The foreground opacity is defined by the alpha channel value, specified in the previous step:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oAlphaWarp = OBJ_NEW('IDLgrImage', alphaWarp, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DIMENSIONS = [600, 600], BLEND_FUNCTION = [3, 4])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Initialize the reference image object, applying the palette created earlier:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oMapImg = OBJ_NEW('IDLgrImage', mapImg, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DIMENSIONS = [600,600], PALETTE = mapPalette)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Using
+     <a class="MCXref_Heading_0" href="IDLgrWindow__Init.html#objects_gr_2157407275_1018813">
+      IDLgrWindow::Init
+     </a>
+     , initialize a window object in which to display the images:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oWindow = OBJ_NEW('IDLgrWindow', DIMENSIONS = [600, 600], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;RETAIN = 2, TITLE = 'Overlay of Land Cover Transparency')
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     Create a view object using
+     <a class="MCXref_Heading_0" href="IDLgrView__Init.html#objects_gr_2157407275_1016943">
+      IDLgrView::Init
+     </a>
+     . The VIEWPLANE_RECT keyword controls the image display in the Object Graphics window. First create an array,
+     <i>
+      viewRect
+     </i>
+     , which specifies the
+     <i>
+      x-placement
+     </i>
+     ,
+     <i>
+      y&#8209;placement
+     </i>
+     ,
+     <i>
+      width,
+     </i>
+     and
+     <i>
+      height
+     </i>
+     of the view surface. The values
+     <span class="Courier">
+      0,
+     </span>
+     <span class="Courier">
+      0
+     </span>
+     place the (0, 0) coordinate of viewing surface in the lower-left corner of the Object Graphics window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   viewRect = [0, 0, 600, 600]
+  </p>
+  <p class="Code_Indented">
+   oView = OBJ_NEW('IDLgrView', VIEWPLANE_RECT = viewRect)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     Using
+     <a class="MCXref_Heading_0" href="IDLgrModel__Init.html#objects_gr_2157407275_1011430">
+      IDLgrModel::Init
+     </a>
+     , initialize a model object to which the images will be applied. Add the base image and the transparent alpha image to the model:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel = OBJ_NEW('IDLgrModel')
+  </p>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oMapImg
+  </p>
+  <p class="Code_Indented">
+   oModel -&gt; Add, oAlphaWarp
+  </p>
+  <p class="NoteIndented">
+   Image objects appear in the Object Graphics window in the order in which they are added to the model. If a transparent object is added to the model before an opaque object, it will not be visible.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      11.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="11. " valign="top">
+     Add the model, containing the images, to the view and draw the view in the window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oView -&gt; Add, oModel
+  </p>
+  <p class="Code_Indented">
+   oWindow -&gt; Draw, oView
+  </p>
+  <p class="indent">
+   The following figure shows the warped image transparency overlaid onto the original reference image, the political map.
+  </p>
+  <p class="TableAnchor_Indented">
+   &#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Object Graphics Display of the Political Map with a Transparent Land Cover Overlay
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/93_12.jpg" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      12.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="12. " valign="top">
+     Use OBJ_DESTROY to clean up unneeded object references including the region objects:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   OBJ_DESTROY, [oView, oMapImg, oAlphaWarp, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;mapPalette, landROIout, mapROIout]
+  </p>
+  <h3>
+   Mapping an Image Object onto a Sph
+   <span class="_Override" style="font-size: 16pt;line-height: 18pt;">
+    <a name="kanchor4263">
+    </a>
+   </span>
+   ere
+  </h3>
+  <p>
+   This example maps an image containing world elevation data onto the surface of a sphere and displays the result using the XOBJVIEW utility. This utility automatically creates the window object and the view object. Therefore, this
+   <a name="kanchor4264">
+   </a>
+   example creates an object based on IDLgrModel that contains the sphere, the image and the image palette, as shown in the conceptual representation in the following figure.&#160;
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Conceptualization of XOBJVIEW Object Graphics Example
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/xobjview_example.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 3.770657px;margin-bottom: 9.840969px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Complete the following steps for a detailed description of the process.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    maponsphere_object.
+    <a name="kanchor4265">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    maponsphere_object
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT maponsphere_object.pro
+   </code>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Select the world elevation image. Define the array, read in the data and close the file.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   file = FILEPATH('worldelv.dat', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <p class="Code_Indented">
+   image = READ_BINARY(file, DATA_DIMS = [360, 360])
+   <br />
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Use the
+     <a href="../../Reference Material/M/MESH_OBJ.html#M_824365677_929903" target="" title="" alt="" class="MCXref_0">
+      MESH_OBJ
+     </a>
+     procedure to create a sphere onto which the image will be mapped. The following invocation of MESH_OBJ uses a value of 4, which represents a spherical mesh:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   MESH_OBJ, 4, vertices, polygons, REPLICATE(0.25, 101, 101)
+  </p>
+  <p class="indent">
+   When the MESH_OBJ procedure completes, the
+   <i>
+    vertices
+   </i>
+   and
+   <i>
+    polygons
+   </i>
+   variables contain the mesh vertices and polygonal mesh connectivity information, respectively. Although our image is 360 by 360, we can texture map the image to a mesh that has fewer vertices. IDL interpolates the image data across the mesh, retaining all the image detail between polygon vertices. The number of mesh vertices determines how close to perfectly round the sphere will be. Fewer vertices produce a sphere with larger facets, while more vertices make a sphere with smaller facets and more closely approximates a perfect sphere. A large number of mesh vertices will increase the time required to draw the sphere. In this example, MESH_OBJ produces a 101 by 101 array of vertices that are located in a sphere shape with a radius of 0.25.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Initialize the display objects. In this example, it is necessary to define a model object that will contain the sphere, the image and the color table palette. Using the syntax,
+     <span class="Courier" style="font-style: italic;">
+      oNewObject
+     </span>
+     <span class="Courier">
+      &#160;=&#160;OBJ_NEW('
+     </span>
+     <i>
+      Class_Name
+     </i>
+     <span class="Courier">
+      ')
+     </span>
+     , create the model, palette and image objects:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel = OBJ_NEW('IDLgrModel')
+  </p>
+  <p class="Code_Indented">
+   oPalette = OBJ_NEW('IDLgrPalette')
+  </p>
+  <p class="Code_Indented">
+   oPalette -&gt; LOADCT, 33
+  </p>
+  <p class="Code_Indented">
+   oPalette -&gt; SetRGB, 255, 255, 255, 255
+  </p>
+  <p class="Code_Indented">
+   oImage = OBJ_NEW('IDLgrImage', image, PALETTE = oPalette)
+  </p>
+  <p class="indent">
+   The previous lines initialize the
+   <i>
+    oPalette
+   </i>
+   object with the color table and then set the final index value of the red, green and blue bands to 255 (white) in order to use white (instead of black) to designate the highest areas of elevation. The palette object is created before the image object so that the palette can be applied when initializing the image object. For more information, see
+   <a class="MCXref_Heading_0" href="IDLgrModel__Init.html#objects_gr_2157407275_1011430">
+    IDLgrModel::Init
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IDLgrPalette__Init.html#objects_gr_2157407275_1012290">
+    IDLgrPalette::Init
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="IDLgrImage__Init.html#objects_gr_2157407275_1809847">
+    IDLgrImage::Init
+   </a>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     Create texture coordinates that define how the texture map is applied to the mesh. A texture coordinate is associated with each vertex in the mesh. The value of the texture coordinate at a vertex determines what part of the texture will be mapped to the mesh at that vertex. Texture coordinates run from 0.0 to 1.0 across a texture, so a texture coordinate of [0.5, 0.5] at a vertex specifies that the image pixel at the exact center of the image is mapped to the mesh at that vertex.
+    </td>
+   </tr>
+  </table>
+  <p class="indent">
+   In this example, we want to do a simple linear mapping of the texture around the sphere, so we create a convenience vector that describes the mapping in each of the texture’s
+   <i>
+    x-
+   </i>
+   and
+   <i>
+    y-
+   </i>
+   directions, and then create these texture coordinates:
+  </p>
+  <p class="Code_Indented">
+   vector = FINDGEN(101)/100.
+  </p>
+  <p class="Code_Indented">
+   texure_coordinates = FLTARR(2, 101, 101)
+  </p>
+  <p class="Code_Indented">
+   texure_coordinates[0, *, *] = vector # REPLICATE(1., 101)
+  </p>
+  <p class="Code_Indented">
+   texure_coordinates[1, *, *] = REPLICATE(1., 101) # vector
+  </p>
+  <p class="indent">
+   The code above copies the convenience vector through the array in each direction.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Enter the following line to initialize a polygon object with the image and geometry data using the
+     <a class="MCXref_Heading_0" href="IDLgrPolygon__Init.html#objects_gr_2157407275_1013254">
+      IDLgrPolygon::Init
+     </a>
+     function. Set
+     <span class="Courier">
+      SHADING&#160;=&#160;1
+     </span>
+     for gouraud (smoother) shading. Set the
+     <span class="Courier">
+      DATA
+     </span>
+     keyword equal to the sphere defined with the MESH_OBJ function. Set
+     <span class="Courier">
+      COLOR
+     </span>
+     to draw a white sphere onto which the image will be mapped. Set
+     <span class="Courier">
+      TEXTURE_COORD
+     </span>
+     equal to the texture coordinates created in the previous steps. Assign the image object to the polygon object using the
+     <span class="Courier">
+      TEXTURE_MAP
+     </span>
+     keyword and force bilinear interpolation:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oPolygons = OBJ_NEW('IDLgrPolygon', SHADING = 1, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DATA = vertices, POLYGONS = polygons, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;COLOR = [255, 255, 255], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TEXTURE_COORD = texure_coordinates, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TEXTURE_MAP = oImage, /TEXTURE_INTERP)
+  </p>
+  <p class="NoteIndented">
+   When mapping an image onto an IDLgrPolygon object, you must specify both TEXTURE_MAP and TEXTURE_COORD keywords.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Add the polygon containing the image and the palette to the model object:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel -&gt; ADD, oPolygons
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Rotate the model -90° along the
+     <i>
+      x
+     </i>
+     -axis and
+     <i>
+      y
+     </i>
+     -axis:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   oModel -&gt; ROTATE, [1, 0, 0], -90
+  </p>
+  <p class="Code_Indented">
+   oModel -&gt; ROTATE, [0, 1, 0], -90
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Display the results using
+     <a href="../../Reference Material/X/XOBJVIEW.html#X_800576109_956910" target="" title="" alt="" class="MCXref_0">
+      XOBJVIEW
+     </a>
+     , an interactive utility allowing you to rotate and resize objects:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   XOBJVIEW, oModel, /BLOCK
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Magnified View of World Elevation Object
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/imgtex08.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 4.499996px;margin-bottom: 4.500713px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="indent">
+   After displaying the object, you can rotate the sphere by clicking in the display window and dragging your mouse. Select the magnify button and click near the middle of the sphere. Drag your mouse away from the center of the display to magnify the image or toward the center of the display to shrink the image. Select the left-most button on the XOBJVIEW toolbar to reset the display. The previous figure shows a rotated and magnified view of the world elevation object.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     After closing the XOBJVIEW display, remove unneeded object references:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   OBJ_DESTROY, [oModel, oImage, oPalette]
+  </p>
+  <h3>
+   JPEG2000 Files for
+   <a name="kanchor4266">
+   </a>
+   Tiling
+  </h3>
+  <p>
+   This example takes a 5000 by 5000 pixel JPEG file containing an aerial photograph of Chicago’s O’Hare International Airport and creates a JPEG2000 file from the data. This file type provides inherent support for image tiles.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    tilingjp2_doc.
+    <a name="kanchor4267">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/objects
+   </span>
+   subdirectory of the IDL installation directory for the tiling application code. Run the example procedure by entering
+   <code>
+    tilingjp2_doc
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT tilingjp2_doc.pro
+   </code>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The first time you run this application, it generates the JPEG2000 file. This might take a noticeable amount of time, depending on your system speed. However, once the JPEG2000 image is created, this file will be used instead of being recreated.
+  </p>
+  <p>
+   The following figure shows the O’Hare image. When the application opens, the view is positioned in the upper-left corner of the full-resolution image.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    O’Hare Image
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/tiling_app.gif" style="margin-left: 3.74976px;margin-top: 3.00024px;margin-right: 1.290248px;margin-bottom: 2.039052px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   Version History
+  </h2>
+  <table style="caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       5.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColSep">
+      <p>
+       5.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowSep_ColEnd">
+      <p>
+       Added CLIP_PLANES property
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       6.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Removed NO_COPY property and documented it as an IDLgrImage::Init keyword.
+      </p>
+      <p>
+       Added ALPHA_CHANNEL, DEPTH_OFFSET, RENDER_METHOD, TILE_COLOR, TILE_CURRENT_LEVEL, TILE_DIMENSIONS, TILE_LEVEL_MODE, TILE_NUM_LEVELS, TILE_SHOW_BOUNDARIES, TILED_IMAGE_DIMENSIONS, TILING, and TRANSFORM_MODE properties
+      </p>
+      <p>
+       Added DeleteTileData and SetTileData methods
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added IMAGE_1D, INTERNAL_DATA_TYPE, SHADER, and TILE_BORDER_SIZE properties
+      </p>
+      <p>
+       Added ReadFilteredData and TileDataLoaded methods
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,432 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: M" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   MK_HTML_HELP
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/M/MK_HTML_HELP.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="M_list.html">
+    Routines: M
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    MK_HTML_HELP
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="M_824365677_888832">
+   </a>
+   <a name="M_824365677_95205">
+   </a>
+   MK_HTML_HELP
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#M_824365677_888852">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_888854">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_888861">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_888868">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_888874">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#M_824365677_973009">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1892">
+   </a>
+   MK_HTML_HELP procedure, given a list of IDL procedure filenames (
+   <span class="Courier">
+    .pro
+   </span>
+   files) or the names of directories containing such files, generates a file in
+   <a name="kanchor1893">
+   </a>
+   HTML (
+   <a name="kanchor1894">
+   </a>
+   HyperText Markup Language) format that contains documentation for those routines that contain standard IDL documentation headers. The resulting file can then be viewed with a
+   <a name="kanchor1895">
+   </a>
+   web browser.
+  </p>
+  <p>
+   MK_HTML_HELP procedure makes a single HTML file that starts with a list of the routines documented in the file. The names of routines in that list are hypertext links to the documentation for those routines. The documentation for each routine is simply the text of the documentation header copied from the corresponding
+   <span class="Courier">
+    .pro
+   </span>
+   file—no reformatting is performed.
+  </p>
+  <p>
+   The documentation headers of the
+   <span class="Courier">
+    .pro
+   </span>
+   files in question must have the following format:
+  </p>
+  <ul>
+   <li value="1">
+    The first line of the documentation block contains only the characters
+    <span class="Courier">
+     ;+
+    </span>
+    , starting in column 1.
+   </li>
+   <li value="2">
+    The last line of the documentation block contains only the characters
+    <span class="Courier">
+     ;-
+    </span>
+    , starting in column 1.
+   </li>
+   <li value="3">
+    All other lines in the documentation block contain a
+    <span class="Courier">
+     ;
+    </span>
+    in column 1.
+   </li>
+   <li value="4">
+    If a line containing the string “NAME:” exists in the documentation block, the contents of the following line are used as the name of the routine being described. If the NAME: field is not present, the name of the source file is used as the routine name.
+   </li>
+  </ul>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   The file
+   <span class="Courier">
+    template.
+    <a name="kanchor1896">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples
+   </span>
+   subdirectory of the IDL distribution contains a template for creating your own documentation headers. Run the example procedure by entering
+   <span class="Courier">
+    template
+   </span>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <span class="Courier">
+    .EDIT template.pro
+   </span>
+   .
+  </p>
+  <p>
+   This routine is supplied to allow users to make
+   <a name="kanchor1897">
+   </a>
+   online documentation from their own IDL programs. Although it could be used to create an HTML documentation file from the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution, we do not recommend doing so. The documentation headers on the files in the
+   <span class="Courier">
+    lib
+   </span>
+   directory are used for historical purposes—most do not contain the most current or accurate documentation for those routines. The most current documentation for IDL’s built-in and library routines is found in IDL’s online help system (enter
+   <span class="Courier">
+    ?
+   </span>
+   at the IDL prompt).
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    mk_html_help.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_888852">
+   </a>
+   <a name="M_824365677_888852_PageTOC_MK_HTML_HELP_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   MK_HTML_HELP,
+   <i>
+    Sources
+   </i>
+   ,
+   <i>
+    Filename
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#M_824365677_888862">
+    STRICT
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#M_824365677_888864">
+    TITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#M_824365677_888866">
+    VERBOSE
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_888854">
+   </a>
+   <a name="M_824365677_888854_PageTOC_MK_HTML_HELP_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Sources
+  </h3>
+  <p>
+   A string array containing the names of IDL procedure files (
+   <span class="Courier">
+    .pro
+   </span>
+   files) or directories containing such files. The
+   <i>
+    Sources
+   </i>
+   array may contain both individual file and directory names. Each IDL procedure file must have the file extension
+   <span class="Courier">
+    .pro
+   </span>
+   . Elements of the
+   <i>
+    Sources
+   </i>
+   array that do not have either of these extensions are assumed to be directories.
+  </p>
+  <p>
+   All
+   <span class="Courier">
+    .pro
+   </span>
+   files found in
+   <i>
+    Sources
+   </i>
+   are searched for documentation headers. The documentation headers are extracted and saved in HTML format in the file specified by
+   <i>
+    Filename
+   </i>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   More than one documentation block may exist in a single input file.
+  </p>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A string containing the name of the output file to be generated. HTML files are usually saved in files named with a
+   <span class="Courier">
+    .html
+   </span>
+   or
+   <span class="Courier">
+    .htm
+   </span>
+   extension.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_888861">
+   </a>
+   <a name="M_824365677_888861_PageTOC_MK_HTML_HELP_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="M_824365677_888862">
+   </a>
+   <a name="M_824365677_888862_Keywords_MK_HTML_HELP__">
+   </a>
+   STRICT
+  </h3>
+  <p>
+   Set this keyword to force MK_HTML_HELP to adhere strictly to the HTML format by scanning the documentation blocks for HTML reserved characters and replacing them in the output file with the appropriate HTML syntax. HTML reserved characters include
+   <span class="Courier">
+    &lt;
+   </span>
+   ,
+   <span class="Courier">
+    &gt;
+   </span>
+   ,
+   <span class="Courier">
+    &amp;
+   </span>
+   , and
+   <span class="Courier">
+    "
+   </span>
+   . By default, this keyword is set to zero to allow for faster processing of the input files.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_888864">
+   </a>
+   <a name="M_824365677_888864_Keywords_MK_HTML_HELP__">
+   </a>
+   TITLE
+  </h3>
+  <p>
+   A string that supples the name to be used as the title of the HTML document. The default is “Extended IDL Help”.
+  </p>
+  <h3 class="Keyword">
+   <a name="M_824365677_888866">
+   </a>
+   <a name="M_824365677_888866_Keywords_MK_HTML_HELP__">
+   </a>
+   VERBOSE
+  </h3>
+  <p>
+   Set this keyword to display informational messages as MK_HTML_HELP generates the HTML file. Normally, MK_HTML_HELP works silently.
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_888868">
+   </a>
+   <a name="M_824365677_888868_PageTOC_MK_HTML_HELP_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To generate an HTML help file named
+   <span class="Courier">
+    myhelp.html
+   </span>
+   from the
+   <span class="Courier">
+    .pro
+   </span>
+   files in the directory
+   <span class="Courier">
+    /usr/home/dave/myroutines
+   </span>
+   , use the command:
+  </p>
+  <p class="Code">
+   MK_HTML_HELP, '/usr/home/dave/myroutines', 'myhelp.html'
+  </p>
+  <p>
+   To generate an HTML help file for all routines in a given directory whose file names contain the word “plot”, use the following commands:
+  </p>
+  <p class="Code">
+   plotfiles=FILE_SEARCH('/usr/home/dave/myroutines/*plot*.pro')
+  </p>
+  <p class="Code">
+   MK_HTML_HELP, plotfiles, 'myplot.html'
+  </p>
+  <h2 class="API">
+   <a name="M_824365677_888874">
+   </a>
+   <a name="M_824365677_888874_PageTOC_MK_HTML_HELP_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="M_824365677_973009">
+   </a>
+   <a name="M_824365677_973009_PageTOC_MK_HTML_HELP_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../D/DOC_LIBRARY.html#D_843829869_983949">
+    DOC_LIBRARY
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

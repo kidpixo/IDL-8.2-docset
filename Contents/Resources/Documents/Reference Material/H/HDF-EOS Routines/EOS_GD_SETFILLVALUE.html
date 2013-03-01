@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF-EOS Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   EOS_GD_SETFILLVALUE
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF-EOS Routines/EOS_GD_SETFILLVALUE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF-EOS Routines.html">
+    HDF-EOS Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    EOS_GD_SETFILLVALUE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_EOS_3103509269_1008179">
+   </a>
+   <a name="HDF_EOS_3103509269_82104">
+   </a>
+   EOS_GD_SETFILLVALUE
+  </h1>
+  <p>
+   This function
+   <a name="kanchor783">
+   </a>
+   sets the fill value for the specified field. The fill value is placed in all elements of the field which have not been explicitly defined.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1031114_PageTOC_EOS_GD_SETFILLVALUE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = EOS_GD_SETFILLVALUE(
+   <span class="Italic">
+    gridID
+   </span>
+   ,
+   <span class="Italic">
+    fieldname
+   </span>
+   ,
+   <span class="Italic">
+    fillvalue
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1031117_PageTOC_EOS_GD_SETFILLVALUE_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns SUCCEED(0) if successful and FAIL(–1) otherwise.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1031119_PageTOC_EOS_GD_SETFILLVALUE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   gridID
+  </h3>
+  <p>
+   Grid id (long) returned by
+   <a class="MCXref_Heading_0" href="EOS_GD_CREATE.html#HDF_EOS_3103509269_1005799">
+    EOS_GD_CREATE
+   </a>
+   or
+   <a class="MCXref_Heading_0" href="EOS_GD_ATTACH.html#HDF_EOS_3103509269_1005515">
+    EOS_GD_ATTACH
+   </a>
+   .
+  </p>
+  <h3 class="Argument">
+   fieldname
+  </h3>
+  <p>
+   Fieldname (string).
+  </p>
+  <h3 class="Argument">
+   fillvalue
+  </h3>
+  <p>
+   The fill value to be used.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1063945_PageTOC_EOS_GD_SETFILLVALUE_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1031128_PageTOC_EOS_GD_SETFILLVALUE_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   In this example, we set a fill value for the “Temperature” field:
+  </p>
+  <p class="Code">
+   tempfill = -999.0
+  </p>
+  <p class="Code">
+   status = EOS_GD_SETFILLVALUE(gridID, "Temperature", tempfill)
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1052480_PageTOC_EOS_GD_SETFILLVALUE_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

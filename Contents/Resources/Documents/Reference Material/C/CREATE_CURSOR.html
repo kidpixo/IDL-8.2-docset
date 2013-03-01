@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CREATE_CURSOR
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CREATE_CURSOR.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CREATE_CURSOR
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_1375274">
+   </a>
+   <a name="C_854643309_31950">
+   </a>
+   CREATE_CURSOR
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_1192482">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1192493">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1192496">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1192514">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1192526">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1192540">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1345322">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor398">
+   </a>
+   CREATE_CURSOR function cr
+   <a name="kanchor399">
+   </a>
+   eates an image array from a string array that represents a 16 by 16 cursor. The returned image array can be passed to the
+   <a class="MCXref_Heading_0" href="../R/REGISTER_CURSOR.html#R_822202989_1105371">
+    REGISTER_CURSOR
+   </a>
+   procedure
+   <i>
+    Image
+   </i>
+   argument. This allows you to quickly design a cursor using a simple string array.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1192482">
+   </a>
+   <a name="C_854643309_17642">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = CREATE_CURSOR(
+   <i>
+    StringArray
+   </i>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1192516">
+    HOTSPOT
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1222423">
+    MASK
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1192493">
+   </a>
+   <a name="C_854643309_71042">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Translates the input string array into an image that satisfies the
+   <i>
+    Image
+   </i>
+   argument of the
+   <a class="MCXref_Heading_0" href="../R/REGISTER_CURSOR.html#R_822202989_1105371">
+    REGISTER_CURSOR
+   </a>
+   procedure.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1192496">
+   </a>
+   <a name="C_854643309_90867">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   StringArray
+  </h3>
+  <p>
+   This must be a 16 element string array of 16 characters each that represents a window cursor. The array can consist of the “#” character, space and non-space characters, and optionally, a “$” character as follows:
+  </p>
+  <p class="Bullet">
+   The “#” characters define the black outline of the cursor.
+  </p>
+  <p class="Bullet">
+   Any non-space characters define the shape of the white mask. Adding a mask ensures the cursor’s visibility in light and dark areas of a visualization. Use the
+   <a class="MCXref_Heading_0" href="#C_854643309_1222423">
+    MASK
+   </a>
+   keyword to return the array of masked out values.
+  </p>
+  <p class="Bullet">
+   The “$” defines a hot spot. Use the
+   <a class="MCXref_Heading_0" href="#C_854643309_1192516">
+    HOTSPOT
+   </a>
+   keyword to return the location of this character within the string array.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1192514">
+   </a>
+   <a name="C_854643309_13578">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="C_854643309_1192516">
+   </a>
+   <a name="C_854643309_34762">
+   </a>
+   HOTSPOT
+  </h3>
+  <p>
+   Set this keyword to a variable that will contain a two-element vector indicating the location of the “$” character in the
+   <i>
+    StringArray
+   </i>
+   . This is considered to be the mouse position of the cursor. If there is no “$” present, then [0,0] is returned. This variable can be directly passed to the HOTSPOT keyword of
+   <a class="MCXref_Heading_0" href="../R/REGISTER_CURSOR.html#R_822202989_1105371">
+    REGISTER_CURSOR
+   </a>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1222423">
+   </a>
+   <a name="C_854643309_56165">
+   </a>
+   MASK
+  </h3>
+  <p>
+   Set this keyword to return a 16 by 16 byte array containing any non-space characters, which indicates the area to be masked out. This variable can be passed to the MASK keyword of
+   <a class="MCXref_Heading_0" href="../R/REGISTER_CURSOR.html#R_822202989_1105371">
+    REGISTER_CURSOR
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1192526">
+   </a>
+   <a name="C_854643309_38966">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following code creates a simple cursor. Define a string array representing the body and mask portions of the cursor. Notice the hotspot (“$”) in the cursor structure.
+  </p>
+  <p class="Code">
+   strArray = [ $
+  </p>
+  <p class="Code">
+   '       .        ', $
+  </p>
+  <p class="Code">
+   '      .#.       ', $
+  </p>
+  <p class="Code">
+   '     .###.      ', $
+  </p>
+  <p class="Code">
+   '    .#####.     ', $
+  </p>
+  <p class="Code">
+   '   ....#....    ', $
+  </p>
+  <p class="Code">
+   '  .#. .#. .#.   ', $
+  </p>
+  <p class="Code">
+   ' .##...#...##.  ', $
+  </p>
+  <p class="Code">
+   '.######$######. ', $
+  </p>
+  <p class="Code">
+   ' .##...#...##.  ', $
+  </p>
+  <p class="Code">
+   '  .#. .#. .#.   ', $
+  </p>
+  <p class="Code">
+   '   ....#....    ', $
+  </p>
+  <p class="Code">
+   '    .#####.     ', $
+  </p>
+  <p class="Code">
+   '     .###.      ', $
+  </p>
+  <p class="Code">
+   '      .#.       ', $
+  </p>
+  <p class="Code">
+   '       .        ', $
+  </p>
+  <p class="Code">
+   '                ']
+  </p>
+  <p class="Code">
+   cursor_image = CREATE_CURSOR(strArray, HOTSPOT=hotspot, MASK=mask)
+  </p>
+  <p class="Code">
+   REGISTER_CURSOR, 'translate', cursor_image, HOTSPOT=hotspot, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;MASK=mask
+  </p>
+  <p>
+   After registering a cursor, you can set the current cursor using the
+   <a class="MCXref_Heading_0" href="../../Object Classes/Graphics/IDLgrWindow__SetCurrentC.html#objects_gr_2157407275_1019088">
+    IDLgrWindow::SetCurrentCursor
+   </a>
+   method. The previous string results in the following cursor.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    String Array Translated into a Cursor
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p style="text-align: center;">
+       <img src="../../images/create_cursor.gif" style="margin-left: 3.00024px;margin-top: 2.25px;margin-right: 1.650242px;margin-bottom: 0.3002396px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1192540">
+   </a>
+   <a name="C_854643309_83464">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1345322">
+   </a>
+   <a name="C_854643309_24560">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../R/REGISTER_CURSOR.html#R_822202989_1105371">
+    REGISTER_CURSOR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Object Classes/Graphics/IDLgrWindow__SetCurrentC.html#objects_gr_2157407275_1019088" target="" title="" alt="">
+    IDLgrWindow::SetCurrentCursor
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

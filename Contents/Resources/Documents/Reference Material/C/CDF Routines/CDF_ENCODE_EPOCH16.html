@@ -1,0 +1,531 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C|CDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CDF_ENCODE_EPOCH16
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/C/CDF Routines/CDF_ENCODE_EPOCH16.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../CDF_Routines.html">
+    CDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CDF_ENCODE_EPOCH16
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="CDF_1744428779_1007169">
+   </a>
+   <a name="CDF_1744428779_51736">
+   </a>
+   CDF_ENCODE_EPOCH16
+  </h1>
+  <p>
+   The
+   <a name="kanchor236">
+   </a>
+   CDF_ENCODE_EPOCH16 function encodes a CDF_EPOCH16 value into the standard date and time character string.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071276_PageTOC_CDF_ENCODE_EPOCH16_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   Result = CDF_ENCODE_EPOCH16(
+   <span class="Italic">
+    Epoch16
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#CDF_1744428779_1007217">
+    EPOCH
+   </a>
+   ={0&#160;|&#160;1&#160;|&#160;2&#160;|&#160;3}] )
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071278_PageTOC_CDF_ENCODE_EPOCH16_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns the string representation of the given CDF_EPOCH16 value.
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071280_PageTOC_CDF_ENCODE_EPOCH16_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Epoch16
+  </h3>
+  <p>
+   The double-precision CDF_EPOCH16 value to be encoded.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The CDF_EPOCH16 value can be obtained by calling
+   <a class="MCXref_Heading_0" href="CDF_EPOCH16.html#CDF_1744428779_1007399">
+    CDF_EPOCH16
+   </a>
+   with the COMPUTE keyword, or by calling
+   <a class="MCXref_Heading_0" href="CDF_PARSE_EPOCH16.html#CDF_1744428779_1008112">
+    CDF_PARSE_EPOCH16
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071290_PageTOC_CDF_ENCODE_EPOCH16_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="CDF_1744428779_1007217">
+   </a>
+   <a name="CDF_1744428779_1071291_Keywords_CDF_ENCODE_EPOCH16_">
+   </a>
+   EPOCH
+  </h3>
+  <p>
+   Set this keyword equal to one of the following integer values, specifying the epoch mode to use for output of the epoch date string:
+  </p>
+  <table style="width: 498px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="64px" class="Column-Column1" />
+   <col width="434px" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <td class="HeadE-Column1-Header1">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="HeadD-Column1-Header1">
+      <p>
+       Date Format
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       <span class="Courier">
+        DD-Mon-YYYY hh:mm:ss.ccc.uuu.nnn.ppp
+       </span>
+       <br />
+       (This is the default)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        YYYYMMDD.ttttttttttttttt
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        YYYYMMDDss
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       <span class="Courier">
+        YYYY-MM-DDThh:mm:ss.ccc.uuu.nnn.pppZ
+       </span>
+       <br />
+       (The characters
+       <span class="Courier">
+        T
+       </span>
+       and
+       <span class="Courier">
+        Z
+       </span>
+       are the CDF_EPOCH16 type 3 place holders)
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   where:
+  </p>
+  <table style="width: 500px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle-Keyword_Table" cellspacing="0">
+   <col width="133px" class="Column-Column1" />
+   <col width="367px" class="Column-Column1" />
+   <thead>
+    <tr class="Head-Header1">
+     <td class="HeadE-Column1-Header1">
+      <p>
+       Date Element
+      </p>
+     </td>
+     <td class="HeadD-Column1-Header1">
+      <p>
+       Represents
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        DD
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       the day of the month (1-31)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        Mon
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       the abbreviated month name: (
+       <span class="Courier">
+        Jan
+       </span>
+       ,
+       <span class="Courier">
+        Feb
+       </span>
+       ,
+       <span class="Courier">
+        Mar
+       </span>
+       ,
+       <span class="Courier">
+        Apr
+       </span>
+       ,
+       <span class="Courier">
+        May
+       </span>
+       ,
+       <span class="Courier">
+        Jun
+       </span>
+       ,
+       <span class="Courier">
+        Jul
+       </span>
+       ,
+       <span class="Courier">
+        Aug
+       </span>
+       ,
+       <span class="Courier">
+        Sep
+       </span>
+       ,
+       <span class="Courier">
+        Oct
+       </span>
+       ,
+       <span class="Courier">
+        Nov
+       </span>
+       , or
+       <span class="Courier">
+        Dec
+       </span>
+       )
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        MM
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       the month number (1-12)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        YYYY
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       the year (A.D.)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        hh
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       the hour (0-23)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        mm
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       the minute (0-59)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        ss
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       the second (0-59)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        ccc
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       the millisecond (0-999)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        uuu
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       the microsecond (0-999)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyE-Column1-Body2">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        nnn
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body2">
+      <p>
+       the nanosecond (0-999)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body1">
+     <td class="BodyE-Column1-Body1">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        ppp
+       </span>
+      </p>
+     </td>
+     <td class="BodyD-Column1-Body1">
+      <p>
+       the picosecond (0-999)
+      </p>
+     </td>
+    </tr>
+    <tr class="Body-Body2">
+     <td class="BodyB-Column1-Body2">
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;">
+       <span class="Courier">
+        ttttttttttttttt
+       </span>
+      </p>
+     </td>
+     <td class="BodyA-Column1-Body2">
+      <p>
+       the fraction of the day (
+       <span class="Italic">
+        e.g.
+       </span>
+       500000000000000 is noon).
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071368_PageTOC_CDF_ENCODE_EPOCH16_">
+   </a>
+   Examples
+  </h2>
+  <p class="Code">
+   test_string = '04-Dec-2005 20:19:18.176.214.648.000'
+  </p>
+  <p class="Code">
+   test_epoch = CDF_PARSE_EPOCH16(test_string)
+  </p>
+  <p class="Code">
+   PRINT, CDF_ENCODE_EPOCH16(test_epoch)
+  </p>
+  <p>
+   IDL Output
+  </p>
+  <p class="Code">
+   04-Dec-2005 20:19:18.176.214.648.000
+  </p>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071374_PageTOC_CDF_ENCODE_EPOCH16_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="CDF_1744428779_1071381_PageTOC_CDF_ENCODE_EPOCH16_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="CDF_EPOCH16.html#CDF_1744428779_1007399">
+    CDF_EPOCH16
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="CDF_PARSE_EPOCH16.html#CDF_1744428779_1008112">
+    CDF_PARSE_EPOCH16
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Concepts" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Date/Time Data
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/Date_Time_Data.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">
+    Concepts
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Date/Time Data
+   </span>
+  </div>
+  <h1>
+   <a name="constants_818058343_700041">
+   </a>
+   <a name="constants_818058343_18726">
+   </a>
+   Date/Time
+   <a name="kanchor3511">
+   </a>
+   Dat
+   <a name="kanchor3512">
+   </a>
+   a
+  </h1>
+  <p>
+   Dates and times are among the many types of information that numerical data can represent. IDL provides a number of routines that offer specialized support for generating, analyzing, and displaying date- and time- based data (herein referred to as date/time data).
+  </p>
+  <h3>
+   Julian Dates and Times
+  </h3>
+  <p>
+   Within IDL, dates and times are typically stored as Julian dates. A Julian date is defined to be the number of days elapsed since noon on January 1, 4713 BCE. Following the astronomical convention, a Julian day is defined to start at 12pm (noon). The following table shows a few examples of calendar dates
+   <a name="kanchor3513">
+   </a>
+   <a name="kanchor3514">
+   </a>
+   and their corresponding Julian dates.
+  </p>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Example Julian Dates
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Calendar Date
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Julian Date
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       January 1, 4713 B.C.E., at 12pm
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       0
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       January 2, 4713 B.C.E., at 12pm
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       1
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       January 1, 2000 at 12pm
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       2451545
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   Julian dates can also include fractional portions of a day, thereby incorporating hours, minutes, and seconds. If the day fraction is included in a Julian date, it is represented as a double-precision floating point value. The day fraction is computed as follows:
+  </p>
+  <p style="text-align: left;">
+   <img src="../../images/62_1.jpg" />
+  </p>
+  <p>
+   One advantage of using Julian dates to represent dates and times is that a given date/time can be stored within a single variable (rather than storing the year, month, day, hour, minute, and second information in six different variables). Because each Julian date is simply a number, IDL’s numerical routines can be applied to Julian dates just as for any other type of number.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Julian values must be in the range -1095 to 1827933925, which corresponds to calendar dates 1 Jan 4716 B.C.E. and 31 Dec 5000000, respectively.
+  </p>
+  <h3>
+   Precision of Date/Time Data
+   <a name="kanchor3515">
+   </a>
+  </h3>
+  <p>
+   The precision of any numerical value is defined as the smallest possible number that can be added to that value that produces a new value different from the first. Precision is typically limited by the data type of the variable used to store the number and the magnitude of the number itself. Within IDL, the following guide should be used when choosing a data format for date/time data:
+  </p>
+  <ul>
+   <li value="1">
+    Time values that require a high precision, and that span a range of a few days or less, should be stored as double-precision values in units of “time elapsed” since the starting time, rather than in Julian date format. An example would be the “seconds elapsed” since the beginning of an experiment. In this case, the data can be treated within IDL as standard numeric data without the need to utilize IDL’s specialized date/time features.
+   </li>
+   <li value="2">
+    Date values that do not include the time of day may be stored as long-integer Julian dates. The Julian date format has the advantage of being compact (one value per date) and being evenly spaced in days. As an example, January 1st for the years 2000, 2001, and 2002 can be stored as Julian days 2451545, 2451911, and 2452276. The precision of this format is 1 day.
+   </li>
+   <li value="3">
+    Date values where it is necessary to include the time of day can be stored as double-precision Julian dates, with the time included as a day fraction. Because of the large magnitude of the Julian date (such as Julian day 2451545 for 1 January 2000), the precision of most Julian dates is limited to 1 millisecond (0.001 seconds).
+   </li>
+  </ul>
+  <p>
+   To determine the precision of a Julian date/time value, you can use the IDL
+   <a class="MCXref_Heading_0" href="../../Reference Material/M/MACHAR.html#M_824365677_887317" target="" title="" alt="">
+    MACHAR
+   </a>
+   function:
+  </p>
+  <p class="Code">
+   ; Set date to January 1, 2000, at 12:15pm:
+  </p>
+  <p class="Code">
+   julian = JULDAY(1,1,2000,12,15,0)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Get machine characteristics:
+  </p>
+  <p class="Code">
+   machine = MACHAR(/DOUBLE)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Multiply by floating-point precision:
+  </p>
+  <p class="Code">
+   precision = julian*machine.eps
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Convert to seconds:
+  </p>
+  <p class="Code">
+   PRINT, precision*86400d0
+  </p>
+  <h2 class="API">
+   <a name="constants_818058343_39280">
+   </a>
+   How to Generate Date/Time Data
+   <a name="kanchor3516">
+   </a>
+  </h2>
+  <p>
+   The
+   <a class="MCXref_Heading_0" href="../../Reference Material/T/TIMEGEN.html#T_809226861_1077128" target="" title="" alt="">
+    TIMEGEN
+   </a>
+   function returns an array of double precision floating point values that represent date/time in terms of Julian dates. The first value of the returned array corresponds to a start date/time, and each subsequent value corresponds to the start date/time plus that array element's one-dimensional subscript multiplied by a step size for a given date/time unit. Unlike the other array generation routines in IDL, TIMEGEN includes a START keyword, which is necessary if the starting date/time is originally provided in calendar (month, day, year) form.
+  </p>
+  <p>
+   The following example begins with a start date of March 1, 2000 and increments every month for a full year:
+  </p>
+  <p class="Code">
+   date_time = TIMEGEN(12, UNIT = 'Months', $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;START = JULDAY(3, 1, 2000))
+  </p>
+  <p>
+   where the UNIT keyword is set to 'Months' to increment by month and the START keyword is set to the Julian date form of March 1, 2000. The results of the above call to TIMEGEN can be output using either of the following methods:
+  </p>
+  <ol>
+   <li value="1">
+    <p>
+     Using the CALDAT
+     <a name="kanchor3517">
+     </a>
+     procedure to convert the Julian dates to calendar dates:
+    </p>
+    <p class="Code">
+     CALDAT, date_time, month, day, year
+    </p>
+    <p class="Code">
+     FOR i = 0, (N_ELEMENTS(date_time) - 1) DO PRINT, $
+    </p>
+    <p class="Code">
+     &#160;&#160;&#160;month[i], day[i], year[i], $
+    </p>
+    <p class="Code">
+     &#160;&#160;&#160;FORMAT = '(i2.2, "/", i2.2, "/", i4)'
+    </p>
+   </li>
+   <li value="2">
+    <p>
+     Using the calendar format codes:
+    </p>
+    <p class="Code">
+     PRINT, date_time, format = '(C(CMOI2.2, "/", CDI2.2, "/", CYI))'
+    </p>
+   </li>
+  </ol>
+  <p>
+   The resulting calendar dates are printed out as follows:
+  </p>
+  <p class="Code">
+   03/01/2000
+  </p>
+  <p class="Code">
+   04/01/2000
+  </p>
+  <p class="Code">
+   05/01/2000
+  </p>
+  <p class="Code">
+   06/01/2000
+  </p>
+  <p class="Code">
+   07/01/2000
+  </p>
+  <p class="Code">
+   08/01/2000
+  </p>
+  <p class="Code">
+   09/01/2000
+  </p>
+  <p class="Code">
+   10/01/2000
+  </p>
+  <p class="Code">
+   11/01/2000
+  </p>
+  <p class="Code">
+   12/01/2000
+  </p>
+  <p class="Code">
+   01/01/2001
+  </p>
+  <p class="Code">
+   02/01/2001
+  </p>
+  <p>
+   The TIMEGEN routine contains several keywords to provide specific date/time data generation. For more information, see
+   <a class="MCXref_Heading_0" href="../../Reference Material/T/TIMEGEN.html#T_809226861_1077128" target="" title="" alt="">
+    TIMEGEN
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   Date/Time Data Examples
+  </h2>
+  <p>
+   You can display date/time data on IDLgrAxis objects (through the TICKFORMAT property) plots, contours, and surfaces by setting tick mark attributes.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

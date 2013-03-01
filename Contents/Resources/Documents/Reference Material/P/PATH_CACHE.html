@@ -1,0 +1,909 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: P" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   PATH_CACHE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/P/PATH_CACHE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="P_list.html">
+    Routines: P
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    PATH_CACHE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="P_817877613_1092955">
+   </a>
+   <a name="P_817877613_62376">
+   </a>
+   PATH_CACHE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#P_817877613_1105524">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_1105527">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_1105530">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_1105602">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_1105615">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#P_817877613_1105618">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2014">
+   </a>
+   PATH_CACHE procedure is used to control IDL’s use of the
+   <a name="kanchor2015">
+   </a>
+   <i>
+    path cache
+   </i>
+   . By default, as IDL searches directories included in the !PATH system variable for
+   <span class="Courier">
+    .pro
+   </span>
+   or
+   <span class="Courier">
+    .sav
+   </span>
+   files to compile, it creates an in-memory list of
+   <i>
+    all
+   </i>
+   <span class="Courier">
+    .pro
+   </span>
+   and
+   <span class="Courier">
+    .sav
+   </span>
+   files contained in each directory. When IDL later searches for a
+   <span class="Courier">
+    .pro
+   </span>
+   or
+   <span class="Courier">
+    .sav
+   </span>
+   file, before attempting to open the file in a given directory, IDL checks the path cache to determine whether the directory has already been cached. If the directory is included in the cache, IDL uses the cached information to determine whether the file will be found in that directory, and will only attempt to open the file there if the cache tells it that the file exists. By eliminating unnecessary attempts to open files, the path cache speeds the path searching process.
+  </p>
+  <p>
+   The path cache is enabled by default, and in almost all cases its operation is transparent to the IDL user, save for the boost in path searching speed it provides. Because the cache automatically adjusts to changes made to IDL’s path, use of PATH_CACHE should not be necessary in typical IDL operation. It is provided to allow complete control over the details of how and when the
+   <a name="kanchor2016">
+   </a>
+   caching operation is performed.
+  </p>
+  <p class="Bullet">
+   For information on when the path cache is
+   <i>
+    not
+   </i>
+   used, see
+   <span class="Link">
+    <a href="#P_817877613_1105541">
+     Situations in which IDL will not use the Path Cache
+    </a>
+   </span>
+   .
+  </p>
+  <p class="Bullet">
+   For information on disabling the path cache, see
+   <a href="#P_817877613_1105561">
+    Disabling the Path Cache
+   </a>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Prior to IDL 6.0, IDL did not use a path cache. Aside from the improvement in performance, the behavior of IDL with the path cache is identical to that without in almost all cases. The rare cases in which it differs, and options for disabling its use, are discussed in
+   <span class="Link">
+    <a href="#P_817877613_1105581">
+     <span class="Link">
+      Options for Avoiding Use of the Path Cache
+     </span>
+     .
+    </a>
+   </span>
+  </p>
+  <h3>
+   About the Path Cache
+  </h3>
+  <p>
+   The first time an IDL session attempts to call a function or procedure written in the IDL language, it must locate and compile the file containing the code for that routine. The file containing the routine must have the same name as the routine, with either a
+   <span class="Courier">
+    .pro
+   </span>
+   or a
+   <span class="Courier">
+    .sav
+   </span>
+   extension. After trying to open the file in the user’s current working directory, IDL will attempt to open the file in each of the directories listed in the !PATH system variable, in the order specified by !PATH. The search stops when a file with the desired name is found or no directories remain in !PATH.
+  </p>
+  <p>
+   By default, IDL maintains an in-memory cache of the locations of
+   <span class="Courier">
+    .pro
+   </span>
+   and
+   <span class="Courier">
+    .sav
+   </span>
+   files stored in directories included in the !PATH system variable. The path cache is built automatically during normal operation, as IDL searches the directories specified by !PATH. Once a directory is cached, IDL knows whether or not it contains a given file, without the need to actually attempt to open that file. This information allows IDL to bypass directories that do not contain the desired file, providing a significant boost in the speed of path searching. The path cache can significantly improve the startup speed of large, object-oriented applications, because method resolution requires extensive path searching.
+  </p>
+  <p>
+   The path cache operates on a per-directory basis; if IDL searches a directory for a
+   <span class="Courier">
+    .pro
+   </span>
+   or
+   <span class="Courier">
+    .sav
+   </span>
+   file, the locations of
+   <i>
+    all
+   </i>
+   <span class="Courier">
+    .pro
+   </span>
+   and
+   <span class="Courier">
+    .sav
+   </span>
+   files in that directory are added to the cache, and the directory is not searched again until the cache is cleared and rebuilt.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The current contents of the path cache can be viewed using the PATH_CACHE keyword to the HELP procedure.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_1105524">
+   </a>
+   <a name="P_817877613_43659">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   PATH_CACHE[,&#160;/
+   <a class="MCXref_Heading_0" href="#P_817877613_1105531">
+    CLEAR
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#P_817877613_1105534">
+    ENABLE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#P_817877613_1105537">
+    REBUILD
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_1105527">
+   </a>
+   <a name="P_817877613_92176">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_1105530">
+   </a>
+   <a name="P_817877613_13475">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="P_817877613_1105531">
+   </a>
+   <a name="P_817877613_1105531_Keywords_PATH_CACHE_">
+   </a>
+   CLEAR
+  </h3>
+  <p>
+   Set this keyword to clear the entire contents of the path cache, leaving it completely empty. If path caching is enabled, IDL will begin rebuilding the cache the next time it needs to locate a
+   <span class="Courier">
+    .pro
+   </span>
+   or
+   <span class="Courier">
+    .sav
+   </span>
+   file. If you wish to prevent the rebuilding of the cache, set the ENABLE keyword equal to zero as well.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The .RESET_SESSION executive command clears the entire path cache as part of resetting the IDL session.
+  </p>
+  <h3 class="Keyword">
+   <a name="P_817877613_1105534">
+   </a>
+   <a name="P_817877613_1105534_Keywords_PATH_CACHE_">
+   </a>
+   ENABLE
+  </h3>
+  <p>
+   Set this keyword to a non-zero value to specify that IDL should use the path cache when searching for files and also add new directories to the cache as they are opened. Set this keyword to zero to disable use of the cache when searching for files, and to discontinue adding new directories.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Disabling the cache does not cause the current contents of the cache to be discarded. To discard the cache information, specify the CLEAR keyword.
+  </p>
+  <h3 class="Keyword">
+   <a name="P_817877613_1105537">
+   </a>
+   <a name="P_817877613_1105537_Keywords_PATH_CACHE_">
+   </a>
+   REBUILD
+  </h3>
+  <p>
+   Set this keyword to discard the current contents of the path cache (as if the CLEAR keyword had been specified), and then immediately rebuild the cache by searching the directories specified by the current value of the !PATH system variable for
+   <span class="Courier">
+    .pro
+   </span>
+   and
+   <span class="Courier">
+    .sav
+   </span>
+   files.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If !PATH contains many directories, or if access to those directories is slow, rebuilding the cache using this method may also be slow. In many cases, the CLEAR keyword is sufficient, since IDL will rebuild the empty cache as program execution requires it to search for
+   <span class="Courier">
+    .pro
+   </span>
+   and
+   <span class="Courier">
+    .sav
+   </span>
+   files.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_1105541">
+   </a>
+   <a name="P_817877613_48272">
+   </a>
+   Situations in which IDL will not use the Path Cache
+  </h2>
+  <p>
+   By default, IDL uses the path cache whenever it tries to locate
+   <span class="Courier">
+    .pro
+   </span>
+   or
+   <span class="Courier">
+    .sav
+   </span>
+   files. However, IDL will never use the path cache in the following situations:
+  </p>
+  <h3>
+   <a name="P_817877613_1105543_Keywords_PATH_CACHE_">
+   </a>
+   Current Working Directory
+  </h3>
+  <p>
+   The path cache is neither checked nor added to if the file being searched for exists in the current working directory. Before IDL searches !PATH for a file to compile, it always looks in the current working directory without checking the cache.
+  </p>
+  <h3>
+   <a name="P_817877613_1105545_Keywords_PATH_CACHE_">
+   </a>
+   Relative Paths
+  </h3>
+  <p>
+   The path cache does not cache directories specified relative to the current directory, even though relative paths are allowed in the specification of !PATH.
+  </p>
+  <p>
+   An absolute (or
+   <i>
+    fully qualified
+   </i>
+   ) path is a path that completely specifies the location of a file. Under UNIX, an absolute path is specified relative to the root of the filesystem, and therefore starts with a slash (
+   <span class="Courier">
+    /
+   </span>
+   ) character. Under Microsoft Windows, an absolute path starts with a drive letter (
+   <span class="Courier">
+    C:
+   </span>
+   , for example) or a double backslash (
+   <span class="Courier">
+    \\
+   </span>
+   ) (if the file is specified using the Universal Naming Convention format). In contrast, a relative path is incomplete, and must be interpreted relative to the current working directory of the IDL process. IDL only caches absolute paths.
+  </p>
+  <h3>
+   <a name="P_817877613_1105548_Keywords_PATH_CACHE_">
+   </a>
+   Executive Commands
+  </h3>
+  <p>
+   The path cache is neither checked nor added to when a
+   <span class="Courier">
+    .COMPILE
+   </span>
+   or
+   <span class="Courier">
+    .RUN
+   </span>
+   executive command is issued. In such cases, IDL performs a standard directory-by-directory search of the directories included in !PATH.
+  </p>
+  <h3>
+   <a name="P_817877613_1105550_Keywords_PATH_CACHE_">
+   </a>
+   IDL_NOCACHE File Present
+  </h3>
+  <p>
+   IDL will not cache the contents of any directory that contains a file named
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   . See
+   <span class="Link">
+    <a href="#P_817877613_1105571">
+     Marking Specific Directories as Uncacheable
+    </a>
+   </span>
+   for additional information on this feature.
+  </p>
+  <h3>
+   <a name="P_817877613_1105555_Keywords_PATH_CACHE_">
+   </a>
+   Path Cache Disabled
+  </h3>
+  <p>
+   IDL will neither check nor add files to the path cache if it has been disabled. See
+   <a class="MCXref_Heading_0" href="#P_817877613_1105561" target="" title="" alt="">
+    Disabling the Path Cache
+   </a>
+   , below, for additional information.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_1105561">
+   </a>
+   <a name="P_817877613_42795">
+   </a>
+   Disabling the Path Cache
+  </h2>
+  <p>
+   By default, IDL caches the locations of
+   <span class="Courier">
+    .pro
+   </span>
+   and
+   <span class="Courier">
+    .sav
+   </span>
+   files in all directories specified by the !PATH system variable. Use of the path cache can be fully disabled in the following ways:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     By issuing the PATH_CACHE command with the ENABLE keyword set equal to zero. This will disable the path cache until you manually re-enable it, or for the duration of the current IDL session. See the description of the ENABLE keyword, above, for details.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     By unchecking the “Enable Path Caching” checkbox on the Path tab of the workbench Preferences dialog.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     By defining setting the
+     <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Appendices/prefs_directory.html#preferences_2247882535_1025604">
+      IDL_PATH_CACHE_DISABLE
+     </a>
+     preference to true. See
+     <a href="../Preferences.html">
+      System Preferences
+     </a>
+     for details.
+    </td>
+   </tr>
+  </table>
+  <p>
+   In addition, you can selectively disable use of the path cache for specific directories by creating a file named
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   in the directory. See
+   <a href="#P_817877613_1105571">
+    Marking Specific Directories as Uncacheable
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_1105571">
+   </a>
+   <a name="P_817877613_55165">
+   </a>
+   Marking Specific Directories as Uncacheable
+  </h2>
+  <p>
+   You can mark specific directories as being uncacheable even though the directory is included in !PATH. To do so, create a file named
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   in that directory.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   IDL does not inspect the contents of an
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   file; it can contain anything you wish, or nothing at all. Under Unix operating systems, the
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   file must be named exactly as shown, using all uppercase characters in the name. Under Microsoft Windows, the characters can have any case, but use upper case for consistency.
+  </p>
+  <p>
+   When IDL encounters a directory containing an
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   file during normal path searching, it makes a special entry in the path cache telling it that the directory must not be cached. Once this is done, all future attempts to locate files in that directory will be done without using cached information.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If the directory to which you add an
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   file has already been added to the path cache for the current IDL session, you must clear the existing cache (using the CLEAR keyword to the PATH_CACHE procedure) before the no-cache setting will take effect.
+  </p>
+  <p>
+   To re-enable path caching for a directory that has been marked as uncacheable, remove the
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   file, and then reset IDL’s path cache in one of the following ways:
+  </p>
+  <p class="Bullet">
+   Specify the CLEAR keyword to the PATH_CACHE procedure.
+  </p>
+  <p class="Bullet">
+   Issue the .RESET_SESSION executive command.
+  </p>
+  <p class="Bullet">
+   Exit and restart the IDL session.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_1105581">
+   </a>
+   <a name="P_817877613_29780">
+   </a>
+   Options for Avoiding Use of the Path Cache
+  </h2>
+  <p>
+   In most cases, the files contained in directories included in !PATH do not change during an IDL session. In such cases the path cache is completely transparent to the IDL user, and serves only to speed compilation of IDL routines. As a result, there is rarely a reason to globally disable the path cache.
+  </p>
+  <p>
+   If files are created or deleted in a directory included in !PATH during an IDL session, the path cache can become confused and provide bad information to IDL about the contents of that directory. There are several ways to handle this situation. The following list of alternatives is given in rough order of preference, with the easiest and lowest-impact options given first:
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Leave the path cache enabled, and change your current working directory to the directory in which files are created or deleted. Since IDL checks the current working directory before checking the directories in !PATH, use of the path cache does not affect IDL’s ability to find these files.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     If the addition or deletion of files in a directory included in !PATH is a rare occurrence, leave the path cache enabled and clear it in one of the following ways after the contents of the directory have changed:
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     Specify the CLEAR keyword to the PATH_CACHE procedure.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     Issue the .RESET_SESSION executive command.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 35.99999px;" />
+   <col style="width: 24.00001px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      •
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="• " valign="top">
+     Exit and restart the IDL session.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Leave the path cache enabled and use the .COMPILE or .RUN executive commands to force the compilation of any file, regardless of the contents of the path cache.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     If you have a directory (other than your current working directory) in which files are regularly added or deleted during the execution of IDL sessions, you can leave path caching enabled but explicitly disable caching of that specific directory by creating an
+     <span class="Courier">
+      IDL_NOCACHE
+     </span>
+     file (see
+     <a href="#P_817877613_1105571">
+      Marking Specific Directories as Uncacheable
+     </a>
+     ). This approach works for all IDL sessions that access the directory, and is therefore convenient in long-term or multi-user situations.
+    </td>
+   </tr>
+  </table>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     You can completely disable operation of the path cache using one of several methods (described under
+     <a class="MCXref_Heading_0" href="#P_817877613_1105561" target="" title="" alt="">
+      Disabling the Path Cache
+     </a>
+     ). This is not recommended, because most directories are not dynamic, and completely disabling path caching sacrifices the performance advantages of caching directories whose contents
+     <i>
+      are
+     </i>
+     static.
+    </td>
+   </tr>
+  </table>
+  <h2 class="API">
+   <a name="P_817877613_85283">
+   </a>
+   Note on Behavior at Startup
+  </h2>
+  <p>
+   Depending on the value of your !PATH system variable, you may notice that some directories are being cached immediately when IDL starts up. This will occur if your path definition string includes the
+   <span class="Courier">
+    &lt;IDL_DEFAULT&gt;
+   </span>
+   token, or if one or more entries include the “+” symbol. In these cases, in order for IDL to build the !PATH system variable, it must inspect subdirectories of the specified directories for the presence of
+   <span class="Courier">
+    .pro
+   </span>
+   and
+   <span class="Courier">
+    .sav
+   </span>
+   files, with the side effect of adding these directories to the path cache. See EXPAND_PATH for a discussion of IDL’s path expansion behavior.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_1105602">
+   </a>
+   <a name="P_817877613_44790">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following statement disables path caching for the current session:
+  </p>
+  <p class="Code">
+   PATH_CACHE, ENABLE = 0
+  </p>
+  <p>
+   The following statement disables path caching for the current session and throws away the current contents of the cache:
+  </p>
+  <p class="Code">
+   PATH_CACHE, ENABLE = 0, /CLEAR
+  </p>
+  <p>
+   Suppose you want to remove a directory included in !PATH from the cache without resetting your IDL session. The following statements cause the specified directory not to be included in future caching by creating a file named
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   in that directory:
+  </p>
+  <p class="Code">
+   OPENW, UNIT = u, '/home/idluser/idl_dev_dir/IDL_NOCACHE', /GET_LUN
+  </p>
+  <p class="Code">
+   FREE_LUN, u
+  </p>
+  <p>
+   The OPENW and FREE_LUN statements create an empty file with the desired name in the target directory. Executing the following statement clears the cache so as to reflect the change in the current IDL session:
+  </p>
+  <p class="Code">
+   PATH_CACHE, /CLEAR
+  </p>
+  <p>
+   The next time IDL encounters this directory in a path search, it will see the presence of the
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   and make a note in the path cache that the directory is not cacheable.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You can also create the
+   <span class="Courier">
+    IDL_NOCACHE
+   </span>
+   file outside IDL using any convenient command (text editor, Unix
+   <span class="Courier">
+    touch
+   </span>
+   command,
+   <i>
+    etc
+   </i>
+   .). If the file is created outside IDL, only the
+   <span class="Courier">
+    PATH_CACHE, /CLEAR
+   </span>
+   statement is necessary.
+  </p>
+  <h2 class="API">
+   <a name="P_817877613_1105615">
+   </a>
+   <a name="P_817877613_79734">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="P_817877613_1105618">
+   </a>
+   <a name="P_817877613_94364">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../Dot Commands/_FULL_RESET_SESSION.html#symbols_612366544_983163">
+    .FULL_RESET_SESSION
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../Dot Commands/_RESET_SESSION.html#symbols_612366544_983175">
+    .RESET_SESSION
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Appendices/IDL_Environment_System_V.html#sysvars_272074529_997094" target="" title="" alt="">
+    !PATH
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,635 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Concepts|Operators" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Operator Precedence
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/Operator_Precedence.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">
+    Concepts
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Operators.html">
+    Operators
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Operator Precedence
+   </span>
+  </div>
+  <h1>
+   <a name="expressions_2976722315_1033406">
+   </a>
+   <a name="expressions_2976722315_58205">
+   </a>
+   Operator Precedence
+  </h1>
+  <p>
+   The following table lists IDL’s operator
+   <a name="kanchor3432">
+   </a>
+   precedence. Operators with the highest precedence are evaluated first. Operators with equal precedence are evaluated from left to right.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   See
+   <a class="MCXref_Heading_0" href="#expressions_2976722315_1033942" target="" title="" alt="">
+    Efficiency and Expression Evaluation Order
+   </a>
+   for information on creating efficient statements.
+  </p>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Operator Precedence
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Priority
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Operator
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td rowspan="2" class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       First (highest)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       ( ) (parentheses, to group expressions)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       [ ] (brackets, to concatenate arrays)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td rowspan="3" class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Second
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       . (structure field dereference)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       [ ] (brackets, to subscript an array)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       ( ) (parentheses, used in a function call)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td rowspan="4" class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Third
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span class="Courier">
+        *
+       </span>
+       (pointer dereference)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        ^
+       </span>
+       (exponentiation)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       ++ (increment)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       -- (decrement)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td rowspan="4" class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Fourth
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span class="Courier">
+        *
+       </span>
+       (multiplication)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        #
+       </span>
+       and
+       <span style="font-family: Courier;">
+        ##
+       </span>
+       (matrix multiplication)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        /
+       </span>
+       (division)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        MOD
+       </span>
+       (modulus)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td rowspan="6" class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Fifth
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        +
+       </span>
+       (addition)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        -
+       </span>
+       (subtraction and negation)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        &lt;
+       </span>
+       (minimum)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Helvetica;">
+        &gt;
+       </span>
+       (maximum)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        NOT
+       </span>
+       (bitwise negation)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span class="Courier">
+        ~
+       </span>
+       (logical negation)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td rowspan="6" class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Sixth
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        EQ
+       </span>
+       (equality)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        NE
+       </span>
+       (not equal)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        LE
+       </span>
+       (less than or equal)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        LT
+       </span>
+       (less than)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        GE
+       </span>
+       (greater than or equal)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        GT
+       </span>
+       (greater than)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td rowspan="3" class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       Seventh
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        AND
+       </span>
+       (bitwise AND)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        OR
+       </span>
+       (bitwise OR)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span style="font-family: Courier;">
+        XOR
+       </span>
+       (bitwise exclusive OR)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td rowspan="2" class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Eighth
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       <span class="Courier">
+        &amp;&amp;
+       </span>
+       (logical AND)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <span class="Courier">
+        ||
+       </span>
+       (logical OR)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       Ninth
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       ?: (conditional expression)
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   There is also a data type hierarchy that affects the result of mathematical operations. See
+   <a class="MCXref_Heading_0" href="Data_Type_and_Structure.html#constants_818058343_699867" target="" title="" alt="">
+    Data Type and Structure of Expressions
+   </a>
+   for details.
+  </p>
+  <p>
+   The effect of a given operator is based on both position and the rules of operator precedence. This concept is shown by the following examples.
+  </p>
+  <p class="Code">
+   A = 4 + 5 * 2
+  </p>
+  <p>
+   A is equal to 14 since the multiplication operator has a higher precedence than the addition operator. Parentheses can be used to override the default evaluation.
+  </p>
+  <p class="Code">
+   A = (4 + 5) * 2
+  </p>
+  <p>
+   In this case, A equals 18 because the parentheses have higher operator precedence than the multiplication operator; the expression inside the parentheses is evaluated first, and the result is multiplied by two.
+  </p>
+  <p>
+   Position within the expression is used to determine the order of evaluation when two or more operators share the same operator precedence. Consider the following:
+  </p>
+  <p class="Code">
+   A = 6 / 2 * 3
+  </p>
+  <p>
+   In this case, A equals 9, since the division operator is to the left of the multiplication operator. The subexpression
+   <span class="Courier">
+    6 / 2
+   </span>
+   is evaluated before the multiplication is done, even though the multiplication and division operators have the same precedence. Again, parentheses can be used to override the default evaluation order:
+  </p>
+  <p class="Code">
+   A = 6 / (2 * 3)
+  </p>
+  <p>
+   In this case, A equals 1, because the expression inside parentheses is evaluated first.
+  </p>
+  <p>
+   A useful rule of thumb is, “when in doubt, parenthesize”. Some examples of expressions are provided in the following table.
+  </p>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Examples of Expressions
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Expression
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Value
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       A + 1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The sum of A and 1.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       A &lt; 2 + 1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       The smaller of A or two, plus one.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       A &lt; 2 * 3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       The smaller of A and six, since * has higher precedence than &lt;.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       2 * SQRT(A)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Twice the square root of A.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       A + 'Thursday'
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       The concatenation of the strings A and “Thursday.” An error results if A is not a string
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="expressions_2976722315_1033942">
+   </a>
+   <a name="expressions_2976722315_26496">
+   </a>
+   Efficiency and Expression Evaluation Order
+  </h2>
+  <p>
+   The order in which an expression is evaluated can have a significant effect on program speed. Consider the following statement, where A is an array:
+  </p>
+  <p class="Code">
+   ; Scale A from 0 to 16.
+  </p>
+  <p class="Code">
+   B = A * 16. / MAX(A)
+  </p>
+  <p>
+   This statement first multiplies every element in A by 16 and then divides each element by the value of the maximum element. The number of operations required is twice the number of elements in A. A much faster way of computing the same result is used in the following statement:
+  </p>
+  <p class="Code">
+   ; Scale A from 0 to 16 using only one array operation.
+  </p>
+  <p class="Code">
+   B = A * (16./MAX(A))
+  </p>
+  <p>
+   or
+  </p>
+  <p class="Code">
+   ; Operators of equal priority are evaluated from left to right.
+  </p>
+  <p class="Code">
+   ; Only one array operation is required.
+  </p>
+  <p class="Code">
+   B = 16./MAX(A) * A
+  </p>
+  <p>
+   The faster method only performs one operation for each element in A, plus one scalar division. To see the speed difference on your own machine, execute the following statements:
+  </p>
+  <p class="Code">
+   A = RANDOMU(seed, 512, 512)
+  </p>
+  <p class="Code">
+   t1 = SYSTIME(1) &amp; B = A*16./MAX(A) &amp; t2 = SYSTIME(1)
+  </p>
+  <p class="Code">
+   PRINT, 'Time for inefficient calculation: ', t2-t1
+  </p>
+  <p class="Code">
+   t3 = SYSTIME(1) &amp; B = 16./MAX(A)*A &amp; t4 = SYSTIME(1)
+  </p>
+  <p class="Code">
+   PRINT, 'Time for efficient calculation: ', t4-t3
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

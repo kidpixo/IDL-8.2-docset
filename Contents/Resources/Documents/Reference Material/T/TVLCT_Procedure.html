@@ -1,0 +1,1494 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: T" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   TVLCT Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/T/TVLCT_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="T_list.html">
+    Routines: T
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    TVLCT Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_888627">
+   </a>
+   <a name="dg_routines_3604229493_77837">
+   </a>
+   TVLCT Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888657">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888680">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888697">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888715">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888869">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888877">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2626">
+   </a>
+   TVLCT procedure loads the display color translation tables from the specified variables. Although
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   uses the RGB color system internally, color tables can be specified to TVLCT using any of the following color systems: RGB (Red, Green, Blue),
+   <a name="kanchor2627">
+   </a>
+   HLS (Hue, Lightness, Saturation), and
+   <a name="kanchor2628">
+   </a>
+   HSV (Hue, Saturation, Value). Alpha values may also be used when using the second form of the command. The type and meaning of each argument is dependent upon the color system selected, as described below. Color arguments can be either scalar or vector expressions. If no color-system keywords are present, the
+   <a name="kanchor2629">
+   </a>
+   RGB color system is used.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888657">
+   </a>
+   <a name="dg_routines_3604229493_679743_PageTOC_TVLCT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   TVLCT,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   [,
+   <i>
+    Start
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888699">
+    GET
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888707">
+    HLS
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888711">
+    HSV
+   </a>
+   ]
+  </p>
+  <p>
+   or
+  </p>
+  <p class="Syntax">
+   TVLCT,
+   <i>
+    V
+   </i>
+   [,
+   <i>
+    Start
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888699">
+    GET
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888707">
+    HLS
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888711">
+    HSV
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888680">
+   </a>
+   <a name="dg_routines_3604229493_679745_PageTOC_TVLCT_">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   TVLCT will accept either three
+   <i>
+    n
+   </i>
+   -element vectors (
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   , and
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   ) or a single
+   <i>
+    n
+   </i>
+   -by-3 array (
+   <i>
+    V
+   </i>
+   ) as an argument. The vectors (or rows of the array) have different meanings depending on the color system chosen. If an array
+   <i>
+    V
+   </i>
+   is specified,
+   <i>
+    V
+   </i>
+   [*,0] is the same as
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   [*,1] is the same as
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   [*,2] is the same as
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   . In the description below, we assume that three vectors,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   , and
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   are specified.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_888682">
+   </a>
+   V
+   <span class="SubScript">
+    1
+   </span>
+   , V
+   <span class="SubScript">
+    2
+   </span>
+   , and V
+   <span class="SubScript">
+    3
+   </span>
+  </h3>
+  <p>
+   The
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   , and
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   arguments have different meanings depending upon which color system they represent.
+  </p>
+  <p>
+   If the
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888699">
+    GET
+   </a>
+   keyword is specified,
+   <i>
+    V
+   </i>
+   <span style="font-style: italic;font-size: 80%;vertical-align: sub;">
+    1
+   </span>
+   ,
+   <span style="font-style: italic;">
+    V
+   </span>
+   <span style="font-style: italic;font-size: 80%;vertical-align: sub;">
+    2
+   </span>
+   , and
+   <span style="font-style: italic;">
+    V
+   </span>
+   <span style="font-style: italic;font-size: 80%;vertical-align: sub;">
+    3
+   </span>
+   should be set to named variables.
+  </p>
+  <h4>
+   R, G, B Color System
+  </h4>
+  <p>
+   The parameters
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   , and
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   contain the red, green, and blue values, respectively. Values are interpreted as integers in the range 0 (lowest intensity) to 255 (highest intensity). The parameters can be scalars or vectors of up to 256 elements. By default, the three arguments are assumed to be R, G, and B values.
+  </p>
+  <h4>
+   H, L, S Color System
+  </h4>
+  <p>
+   Parameters
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   , and
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   contain the Hue, Lightness, and Saturation values respectively. All parameters are floating-point. Hue is expressed in degrees and is reduced modulo 360.
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   (lightness) and
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   (saturation) and can range from 0 to 1.0. Set the HLS keyword to have the arguments interpreted this way.
+  </p>
+  <h4>
+   H, S, V Color System
+  </h4>
+  <p>
+   Parameters
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   , and
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   contain values for Hue, Saturation, and Value (similar to intensity). All parameters are floating-point. Hue is in degrees. The Saturation and Value can range from 0 to 1.0. Set the HSV keyword to have the arguments interpreted this way.
+  </p>
+  <h3 class="Argument">
+   Start
+  </h3>
+  <p>
+   An integer value that specifies the starting point in the color translation table into which the color intensities (
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   , and
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   ) are loaded. If this argument is not specified, a value of zero is used, causing the tables to be loaded starting at the first element of the translation tables. The
+   <i>
+    Start
+   </i>
+   argument can be used to change only part of the color table.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888697">
+   </a>
+   <a name="dg_routines_3604229493_679755_PageTOC_TVLCT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_888699">
+   </a>
+   <a name="dg_routines_3604229493_844142_Keywords_TVLCT__">
+   </a>
+   GET
+  </h3>
+  <p>
+   Set this keyword to return the RGB values from the internal color tables into the
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   , and
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   parameters. For example, the statements:
+  </p>
+  <p class="Code">
+   TVLCT, H, S, V, /HSV
+  </p>
+  <p class="Code">
+   TVLCT, R, G, B, /GET
+  </p>
+  <p>
+   load a color table based in the HSV system, and then read the equivalent RGB values into the variables R, G, and B.
+  </p>
+  <p>
+   If GET is specified, either
+   <i>
+    V
+   </i>
+   (for the single argument form), or
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    1
+   </span>
+   ,
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    2
+   </span>
+   , and
+   <i>
+    V
+   </i>
+   <span class="SubScript">
+    3
+   </span>
+   (for the three argument form) must be set to named variables.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_888707">
+   </a>
+   <a name="dg_routines_3604229493_679761_Keywords_TVLCT__">
+   </a>
+   HLS
+  </h3>
+  <p>
+   Set this keyword to indicate that the parameters specify color using the HLS
+   <a name="kanchor2630">
+   </a>
+   color system. The plain argument parameters are in the order H-L-S. Hue is expressed in degrees, and the lightness and saturation range from 0 to 1.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_888711">
+   </a>
+   <a name="dg_routines_3604229493_679763_Keywords_TVLCT__">
+   </a>
+   HSV
+  </h3>
+  <p>
+   Set this keyword to indicate that the parameters specify color using the HSV
+   <a name="kanchor2631">
+   </a>
+   color system. The plain argument parameters are in the order H-S-V. As above, hue is in degrees, and the saturation and value range from 0 to 1.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888715">
+   </a>
+   <a name="dg_routines_3604229493_679765_PageTOC_TVLCT_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   This section includes the following simple example as well as the following, more extensive examples:
+  </p>
+  <p class="Bullet">
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888729" target="" title="" alt="">
+    Highlighting Features with Color in Direct Graphics
+   </a>
+  </p>
+  <p class="Bullet">
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888818" target="" title="" alt="">
+    Converting Indexed Images to RGB Images
+   </a>
+  </p>
+  <p class="Code">
+   ; Initialize display.
+   <br />
+   DEVICE, DECOMPOSED = 0
+   <br />
+   <br />
+   ; Create a set of R, G, and B colormap vectors:
+   <br />
+   R = BYTSCL(SIN(FINDGEN(256)))
+   <br />
+   G = BYTSCL(COS(FINDGEN(256)))
+   <br />
+   B = BINDGEN(256)
+   <br />
+   <br />
+   ; Load these vectors into the color table:
+   <br />
+   TVLCT, R, G, B
+   <br />
+   <br />
+   ; Display an image to see the effect of the new color table:
+   <br />
+   TVSCL, DIST(400)
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_888729">
+   </a>
+   <a name="dg_routines_3604229493_76248">
+   </a>
+   Highlighting Features with Color in
+   <a name="kanchor2632">
+   </a>
+   Direct
+   <a name="kanchor2633">
+   </a>
+   Graphics
+  </h3>
+  <p>
+   The data in the
+   <span class="Courier">
+    mineral.png
+   </span>
+   file in the
+   <span class="Courier">
+    examples/data
+   </span>
+   directory comes with its own color table. The following example will apply this related color table, then a pre-defined color table, and finally derive a new color table to highlight specific features. Complete the following steps for a detailed description of the process.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    highlightfeatures_direct.
+    <a name="kanchor2634">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/image
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    highlightfeatures_direct
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT highlightfeatures_direct.pro
+   </code>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Determine the path to the
+     <span class="Courier">
+      mineral.png
+     </span>
+     file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mineralFile = FILEPATH('mineral.png', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Import the image from the
+     <span class="Courier">
+      mineral.png
+     </span>
+     file into IDL:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mineralImage = READ_PNG(mineralFile, red, green, blue)
+  </p>
+  <p class="indent">
+   The image's associated color table is contained within the resulting red, green, and blue vectors.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Determine the size of the imported image:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   mineralSize = SIZE(mineralImage, /DIMENSIONS)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     If you are running IDL on a TrueColor display, set the DECOMPOSED keyword to the DEVICE command to zero before your first color table related routine is used within an IDL session or program.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   DEVICE, DECOMPOSED = 0
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Load the image’s associated color table with the TVLCT routine:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   TVLCT, red, green, blue
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Initialize the display:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   WINDOW, 0, XSIZE = mineralSize[0], YSIZE = mineralSize[1], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'mineral.png'
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Display the imported image:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   TV, mineralImage
+  </p>
+  <p class="indent">
+   This scanning electron microscope image shows mineral deposits in a sample of polished granite and gneiss. The associated color table is a reverse grayscale.
+  </p>
+  <p class="indent">
+   The following figure shows that the associated color table highlights the gneiss very well, but the other features are not very clear. The other features can be defined with IDL’s pre-defined color table, RAINBOW.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Mineral Image and Default Color Table (Direct Graphics)
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p>
+       <img src="../../Resources/Images/imgcolor18.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999767px;margin-bottom: 5.999752px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p madcap:conditions="Direct Graphics.Comment">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Comment">
+    imgcolor18.tif at 150
+   </madcap:conditionaltext>
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Load the RAINBOW color table and redisplay the image in another window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   LOADCT, 13
+  </p>
+  <p class="Code_Indented">
+   WINDOW, 1, XSIZE = mineralSize[0], YSIZE = mineralSize[1], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;TITLE = 'RAINBOW Color'
+  </p>
+  <p class="Code_Indented">
+   TV, mineralImage
+  </p>
+  <p class="indent">
+   The following figure shows that the yellow, cyan, and red sections are now apparent, but the cracks are no longer visible. Details within the yellow areas and the green background are also difficult to distinguish. These features can be highlighted by designing your own color table.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Mineral Image and RAINBOW Color Table (Direct Graphics)
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p>
+       <img src="../../Resources/Images/imgcolor19.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999767px;margin-bottom: 5.999752px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p madcap:conditions="Direct Graphics.Comment">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Comment">
+    imgcolor19.tif at 150
+   </madcap:conditionaltext>
+  </p>
+  <p class="indent">
+   The features within the image are at specific ranges in between 0 and 255. Instead of a progressive color table, specific colors can be defined to be constant over these ranges. Any contrasting colors can be used, but it is easiest to derive the additive and subtractive primary colors used in the previous section.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     Define the colors for a new color table:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   colorLevel = [[0, 0, 0], $ ; black
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[255, 0, 0], $ ; red
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[255, 255, 0], $ ; yellow
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[0, 255, 0], $ ; green
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[0, 255, 255], $ ; cyan
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[0, 0, 255], $ ; blue
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[255, 0, 255], $ ; magenta
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;[255, 255, 255]] ; white
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     Create a new color table that contains eight levels, including the highest end boundary by first deriving levels for each color in the new color table:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   numberOfLevels = CEIL(!D.TABLE_SIZE/8.)
+  </p>
+  <p class="Code_Indented">
+   level = INDGEN(!D.TABLE_SIZE)/numberOfLevels
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      11.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="11. " valign="top">
+     Place each color level into its appropriate range.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   newRed = colorLevel[0, level]
+  </p>
+  <p class="Code_Indented">
+   newGreen = colorLevel[1, level]
+  </p>
+  <p class="Code_Indented">
+   newBlue = colorLevel[2, level]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      12.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="12. " valign="top">
+     Include the last color in the last level:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   newRed[!D.TABLE_SIZE - 1] = 255
+  </p>
+  <p class="Code_Indented">
+   newGreen[!D.TABLE_SIZE - 1] = 255
+  </p>
+  <p class="Code_Indented">
+   newBlue[!D.TABLE_SIZE - 1] = 255
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      13.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="13. " valign="top">
+     Make the new color table current:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   TVLCT, newRed, newGreen, newBlue
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      14.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="14. " valign="top">
+     Display the image with this new color table in another window:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   WINDOW, 2, XSIZE = mineralSize[0], $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;YSIZE = mineralSize[1], TITLE = 'Cube Corner Colors'
+  </p>
+  <p class="Code_Indented">
+   TV, mineralImage
+  </p>
+  <p class="indent">
+   The following figure shows that each feature is now highlighted including the cracks. The color table also highlights at least three different types of cracks.
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Mineral Image and Derived Color Table (Direct Graphics)
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p>
+       <img src="../../Resources/Images/imgcolor20.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 5.999767px;margin-bottom: 5.999752px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p madcap:conditions="Direct Graphics.Comment">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Comment">
+    imgcolor20.tif at 150
+   </madcap:conditionaltext>
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_888818">
+   </a>
+   <a name="dg_routines_3604229493_48836">
+   </a>
+   Converting
+   <a name="kanchor2635">
+   </a>
+   Indexed
+   <a name="kanchor2636">
+   </a>
+   Images to RGB Images
+  </h3>
+  <p>
+   The
+   <span class="Courier">
+    convec.dat
+   </span>
+   file is a binary file that contains an indexed image (a two-dimensional image and its associated color table) of the convection of the earth’s mantle. This file does not contain a related color table. The following example applies a color table to this image and then converts the image and table to an RGB image (which contains its own color information) and writes it to a JPEG file. Complete the following steps for a detailed description of the process.
+  </p>
+  <p class="ExampleCode" madcap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Example Code:
+     </b>
+    </span>
+   </span>
+   See
+   <span class="Courier">
+    indexedtorgb.
+    <a name="kanchor2637">
+    </a>
+    pro
+   </span>
+   in the
+   <span class="Courier">
+    examples/doc/image
+   </span>
+   subdirectory of the IDL installation directory for code that duplicates this example. Run the example procedure by entering
+   <code>
+    indexedtorgb
+   </code>
+   at the IDL command prompt or view the file in an IDL Editor window by entering
+   <code>
+    .EDIT indexedtorgb.pro
+   </code>
+   .
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      1.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="1. " valign="top">
+     Determine the path to the
+     <span class="Courier">
+      convec.dat
+     </span>
+     binary file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   convecFile = FILEPATH('convec.dat', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      2.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="2. " valign="top">
+     Initialize the image size parameter:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   convecSize = [248, 248]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      3.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="3. " valign="top">
+     Import the image from the file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   convecImage = READ_BINARY(convecFile, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;DATA_DIMS = convecSize)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      4.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="4. " valign="top">
+     If you are running IDL on a TrueColor display, set the DECOMPOSED keyword to the DEVICE command to zero before your first color table related routine is used within an IDL session or program.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   DEVICE, DECOMPOSED = 0
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      5.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="5. " valign="top">
+     Load the EOS B color table (index number 27) to highlight the image’s features and initialize the display:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   LOADCT, 27
+  </p>
+  <p class="Code_Indented">
+   WINDOW, 0, TITLE = 'convec.dat', $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;XSIZE = convecSize[0], YSIZE = convecSize[1]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      6.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="6. " valign="top">
+     Now display the image with this color table.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   TV, convecImage
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Example of an Indexed Image With Associated Color Table
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p>
+       <img src="../../Resources/Images/imgcolor16.gif" style="margin-left: 5.99976px;margin-top: 2.25px;margin-right: 6.000469px;margin-bottom: 1.499763px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="indent">
+   A color table is formed from three vectors (the red vector, the green vector, and the blue vector). The same element of each vector together form an RGB triplet to create a color. For example, the
+   <i>
+    i-th
+   </i>
+   element of the red vector may be 255, the
+   <i>
+    ith
+   </i>
+   element of the green vector may be 255, and the
+   <i>
+    ith
+   </i>
+   element of the blue vector maybe 0. The RGB triplet of the
+   <i>
+    ith
+   </i>
+   element would then be (255, 255, 0), which is the color yellow. Since a color table contains 256 indices, its three vectors have 256 elements each. You can access these vectors with the TVLCT routine using the GET keyword.
+  </p>
+  <p class="NoteIndented">
+   On some PseudoColor displays, fewer than 256 entries will be available.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      7.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="7. " valign="top">
+     Access the values of the color table by setting the GET keyword to the TVLCT routine.
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   TVLCT, red, green, blue, /GET
+  </p>
+  <p class="indent">
+   This color table (color information) can be stored within the image by converting it to an RGB image. For this example, the RGB image will be pixel interleaved in order to be exported to a JPEG file.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   If the original indexed image contains values of a data type other than byte, you should byte-scale the image (with the BYTSCL routine) before using the following method.
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      8.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="8. " valign="top">
+     Before converting the indexed image into an RGB image, the resulting three-dimensional array must be initialized. Initialize the data type and the dimensions of the resulting RGB image:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   imageRGB = BYTARR(3, convecSize[0], convecSize[1], /NOZERO)
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      9.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="9. " valign="top">
+     Use the red, green, and blue vectors of the color table and the original indexed image to form a single image composed of these channels:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   imageRGB[0, *, *] = red[convecImage]
+  </p>
+  <p class="Code_Indented">
+   imageRGB[1, *, *] = green[convecImage]
+  </p>
+  <p class="Code_Indented">
+   imageRGB[2, *, *] = blue[convecImage]
+  </p>
+  <table class="AutoNumber_p_Numbered1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+   <col style="width: 16px;" />
+   <col style="width: 24px;" />
+   <col style="width: auto;" />
+   <tr>
+    <td valign="top">
+    </td>
+    <td class="AutoNumber_p_Numbered1" valign="top">
+     <span>
+      10.
+     </span>
+    </td>
+    <td class="AutoNumber_p_Numbered1" madcap:autonum="10. " valign="top">
+     Export the resulting RGB image to a JPEG file:
+    </td>
+   </tr>
+  </table>
+  <p class="Code_Indented">
+   WRITE_JPEG, 'convecImage.jpg', imageRGB, TRUE = 1, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;&#160;QUALITY = 100.
+  </p>
+  <p class="indent">
+   The TRUE keyword is set to 1 because the resulting RGB image is pixel interleaved. See
+   <a class="MCXref_Heading_0" href="../W/WRITE_JPEG.html" target="" title="" alt="">
+    WRITE_JPEG
+   </a>
+   for more information.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888869">
+   </a>
+   <a name="dg_routines_3604229493_795988_PageTOC_TVLCT_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888877">
+   </a>
+   <a name="dg_routines_3604229493_1086573_PageTOC_TVLCT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a href="../L/LOADCT_Procedure.html">
+    LOADCT
+   </a>
+   ,
+   <a href="../X/XLOADCT_Procedure.html">
+    XLOADCT
+   </a>
+   ,
+   <a href="../X/XPALETTE_Procedure.html">
+    XPALETTE
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

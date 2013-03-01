@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HDF-EOS Overview
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF-EOS Routines/HDF-EOS Overview.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <h1>
+   <a name="kanchor5343">
+   </a>
+   HDF-EOS Overview
+  </h1>
+  <p>
+   <b>
+    Current version: 2.8
+   </b>
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   HDF-EOS (Hierarchical Data Format-Earth Observing System) is an extension of NCSA (National Center for Supercomputing Applications) HDF and uses HDF calls as an underlying basis. This API contains functionality for creating, accessing and manipulating Grid, Point and Swath structures.
+  </p>
+  <p>
+   IDL’s HDF-EOS routines all begin with the prefix "EOS_".
+  </p>
+  <h2 class="API">
+   <a name="kanchor5344">
+   </a>
+   Programming Model
+  </h2>
+  <h3>
+   Writing
+  </h3>
+  <p class="Bullet">
+   open file
+  </p>
+  <p class="Bullet">
+   create object
+  </p>
+  <p class="Bullet">
+   define structure
+  </p>
+  <p class="Bullet">
+   detach object
+  </p>
+  <p class="Bullet">
+   attach object
+  </p>
+  <p class="Bullet">
+   write data
+  </p>
+  <p class="Bullet">
+   detach object
+  </p>
+  <p class="Bullet">
+   close file
+  </p>
+  <h3>
+   Reading
+  </h3>
+  <p class="Bullet">
+   open file
+  </p>
+  <p class="Bullet">
+   attach object
+  </p>
+  <p class="Bullet">
+   inquire object
+  </p>
+  <p class="Bullet">
+   read data
+  </p>
+  <p class="Bullet">
+   detach object
+  </p>
+  <p class="Bullet">
+   close file
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When writing an HDF-EOS object, be sure to detach the object before attaching it for the first time. This will initialize the library for the new object. The object will not be written correctly if the above model is not followed.
+  </p>
+  <h2 class="API">
+   <a name="kanchor5345">
+   </a>
+   Feature Routines
+  </h2>
+  <p>
+   HDF-EOS is an extension of NCSA (National Center for Supercomputing Applications) HDF and uses HDF calls as an underlying basis. This API contains functionality for creating, accessing and manipulating Grid, Point and Swath structures.
+  </p>
+  <p>
+   The Grid interface is designed to support data that has been stored in a rectilinear array based on a well-defined and explicitly supported projection.
+  </p>
+  <p>
+   Tips on writing a grid:
+  </p>
+  <p class="Bullet">
+   Setting a compression method affects all subsequently defined fields
+  </p>
+  <p class="Bullet">
+   Setting a tiling scheme affects all subsequently defined fields
+  </p>
+  <p>
+   The Point interface is designed to support data that has associated geolocation information, but is not organized in any well-defined spatial or temporal way.
+  </p>
+  <p>
+   Tips on writing a point:
+  </p>
+  <p class="Bullet">
+   Every level in a point data set must be linked into the hierarchy
+  </p>
+  <p class="Bullet">
+   Before two levels can be linked, a link field must exist
+  </p>
+  <p>
+   The Swath interface is tailored to support time-oriented data such as satellite swaths (which consist of a time-oriented series of scanlines), or profilers (which consist of a time-oriented series of profiles).
+  </p>
+  <p>
+   Tips on writing a swath:
+  </p>
+  <p class="Bullet">
+   Define dimensions before using them to define fields of maps
+  </p>
+  <p class="Bullet">
+   Setting a compression method affects all subsequently defined fields
+  </p>
+  <p class="Bullet">
+   If a dimension map is not defined, a one-to-one mapping is assumed during subsetting.
+  </p>
+  <h2 class="API">
+   &#160;
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

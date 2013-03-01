@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Miscellaneous Object Classes|IDL_IDLBridge" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDL_IDLBridge::Execute
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDL_IDLBridge__Execute.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_misc.html">
+    Miscellaneous Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDL_IDLBridge::Execute
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_misc_904195448_1077268">
+   </a>
+   <a name="objects_misc_904195448_61398">
+   </a>
+   IDL_IDLBridge::Execute
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077358">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077363">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077294">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077475">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077297">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDL_IDLBridge::
+   <a name="kanchor4659">
+   </a>
+   Execute procedure method causes the child IDL process to execute a given IDL command. There are two possible modes in which this can be done:
+  </p>
+  <ul>
+   <li value="1">
+    <span class="Bold">
+     Synchronous —
+    </span>
+    IDL waits until the child process completes the specified operation before IDL_IDLBridge::Execute returns. (Execution will halt in the main process if an error is generated. This is the default operation.
+   </li>
+   <li value="2">
+    <span class="Bold">
+     Asynchronous
+    </span>
+    —The call to IDL_IDLBridge::Execute returns immediately, and the caller can use the
+    <a class="MCXref_Heading_0" href="IDL_IDLBridge__Status.html#objects_misc_904195448_1077870">
+     IDL_IDLBridge::Status
+    </a>
+    method to track its progress. In addition, the
+    <a class="MCXref_Heading_0" href="IDL_IDLBridge__OnCallbac.html#objects_misc_904195448_1091592">
+     IDL_IDLBridge::OnCallback
+    </a>
+    method (and
+    <a class="MCXref_Heading_0" href="IDL_IDLBridge_Properties.html#objects_misc_904195448_1087185">
+     CALLBACK
+    </a>
+    procedure) will be called automatically when the command is completed. This mode of overlapped execution can be used to perform expensive computations and visualizations in parallel with the main IDL process. Asynchronous operation is specified via the
+    <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077295">
+     NOWAIT
+    </a>
+    keyword.
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   A process that presents a user interface (such as a dialog in the child process or the workbench interface in the main process) will typically execute time-consuming commands asynchronously to allow access to the user interface during processing. If execution requires a noticeable amount of time (which can vary depending on the process and your expectations), specify the NOWAIT keyword to maintain user interface responsiveness during command execution.
+  </p>
+  <p>
+   Once Execute launches the child process only the
+   <a class="MCXref_Heading_0" href="IDL_IDLBridge__Status.html#objects_misc_904195448_1077870">
+    IDL_IDLBridge::Status
+   </a>
+   method can interact with the process. You can call
+   <a class="MCXref_Heading_0" href="IDL_IDLBridge__SetVar.html#objects_misc_904195448_1077712">
+    IDL_IDLBridge::SetVar
+   </a>
+   or
+   <a class="MCXref_Heading_0" href="IDL_IDLBridge__GetVar.html#objects_misc_904195448_1077401">
+    IDL_IDLBridge::GetVar
+   </a>
+   before or after, but not during command execution. Attempting to get variables from or pass variables to a currently executing child process will generate an error.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   In asynchronous mode, IDL execution will throw an error in the parent IDL process if you attempt to modify variables or execute a second command (in the same child session) before execution of the first command completes. The error “The object's associated IDL process is currently busy.” appears. A child process performs asynchronous operations in the sense that it lets you continue to interact with the parent process or other child processes, but the child process itself executes commands synchronously. For an example of how to avoid such an error, see
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1082271">
+    Avoiding Busy Execution Errors
+   </a>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This method is disabled in IDL Virtual Machine mode.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1077358">
+   </a>
+   <a name="objects_misc_904195448_64607">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDL_IDLBridge.html#objects_misc_904195448_1076300">
+    IDL_IDLBridge
+   </a>
+   ::]Execute,
+   <i>
+    IDLStmt
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#objects_misc_904195448_1077295">
+    NOWAIT
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1077363">
+   </a>
+   <a name="objects_misc_904195448_52143">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   IDLStmt
+  </h3>
+  <p>
+   A string containing an IDL command to be executed by the child IDL process.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1077294">
+   </a>
+   <a name="objects_misc_904195448_54670">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_misc_904195448_1077295">
+   </a>
+   <a name="objects_misc_904195448_76629">
+   </a>
+   NOWAIT
+  </h3>
+  <p>
+   Set this keyword to cause IDL_IDLBridge::Execute to return immediately, rather than waiting for the child process to complete. When NOWAIT is set, the parent IDL process continues to execute in parallel with the child process.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1077475">
+   </a>
+   <a name="objects_misc_904195448_58432">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following example creates an IDL_IDLBridge object and executes a simple command to display data:
+  </p>
+  <p class="Code">
+   oBridge = OBJ_NEW('IDL_IDLBridge')
+  </p>
+  <p class="Code">
+   oBridge-&gt;Execute, 'WINDOW, XSIZE=300, YSIZE=300'
+  </p>
+  <p class="Code">
+   oBridge-&gt;Execute, 'TV, DIST(300)'
+  </p>
+  <p>
+   Note that the argument to the Execute method is always a string containing an IDL command. This command is parsed and executed by the child IDL process in the usual way—much as if it had been entered at the IDL command line by an interactive user.
+  </p>
+  <p>
+   When constructing a command string to pass to the Execute method, it is important to clearly delineate between the parent and child IDL processes, which are separate IDL instances and do not share a common environment. For example, assume that the parent process has a variable named
+   <span class="Courier">
+    curindex
+   </span>
+   containing the numeric index of the current plot. In a standard IDL session, you could use the following simple IDL command to add the index value to a window title string:
+  </p>
+  <p class="Code">
+   WINDOW, TITLE='Process ' + STRING(curindex)
+  </p>
+  <p>
+   It might be tempting to send this command to the IDL_IDLBridge child process in order to achieve the same effect:
+  </p>
+  <p class="Code">
+   oBridge-&gt;Execute, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;"WINDOW, TITLE='Process ' + STRING(curindex)"
+  </p>
+  <p>
+   This will fail however:
+   <span class="Courier">
+    curindex
+   </span>
+   is a variable in the
+   <i>
+    parent
+   </i>
+   IDL process, but not in the
+   <i>
+    child
+   </i>
+   process. Instead, we must make a subtle alteration such that the string concatenation is performed by the parent rather than the child process:
+  </p>
+  <p class="Code">
+   oBridge-&gt;Execute, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;"WINDOW, TITLE='Process " + STRING(curindex) + "'"
+  </p>
+  <p>
+   Alternatively, we could use the
+   <a class="MCXref_Heading_0" href="IDL_IDLBridge__SetVar.html#objects_misc_904195448_1077712">
+    IDL_IDLBridge::SetVar
+   </a>
+   method to send the
+   <span class="Courier">
+    curindex
+   </span>
+   variable to the child process. This might be a better choice if the value of
+   <span class="Courier">
+    curindex
+   </span>
+   was needed there for other purposes in addition to constructing a window title, but in this simple example, it is better to do the work locally.
+  </p>
+  <h3>
+   <a name="objects_misc_904195448_1082271">
+   </a>
+   <a name="objects_misc_904195448_84217">
+   </a>
+   Avoiding Busy Execution Errors
+  </h3>
+  <p>
+   Calling the Execute, GetVar or SetVar method on a currently executing child process causes the parent IDL process to throw an error:
+  </p>
+  <p class="indent">
+   The object's associated IDL process is currently busy
+  </p>
+  <p>
+   To avoid this condition, use the
+   <a class="MCXref_Heading_0" href="IDL_IDLBridge__Status.html#objects_misc_904195448_1077870">
+    IDL_IDLBridge::Status
+   </a>
+   method to make sure the child process is in the idle state (0) before calling the Execute method:
+  </p>
+  <p class="Code">
+   IF (oBridge-&gt;Status() EQ 0) THEN $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;oBridge-&gt;Execute, 'IDLStmt'
+  </p>
+  <h3>
+   <a name="objects_misc_904195448_1082365">
+   </a>
+   <a name="objects_misc_904195448_71630">
+   </a>
+   Executing a Batch File in a Child Process
+  </h3>
+  <p>
+   A child process can execute batch files in the same manner as the parent IDL process. For example, the following batch file,
+   <span class="Courier">
+    plot06
+   </span>
+   , is in the IDL path:
+  </p>
+  <p class="Code">
+   oBridge = OBJ_NEW('IDL_IDLBRIDGE')
+  </p>
+  <p class="Code">
+   oBridge-&gt;EXECUTE, '@plot06'
+  </p>
+  <p>
+   However, your startup file is
+   <span class="_Override" style="font-style: italic;">
+    not
+   </span>
+   automatically executed when a new IDL child process is created. To manually call your startup file, use the following code:
+  </p>
+  <p class="Code">
+   oBridge-&gt;EXECUTE, '@' + PREF_GET('IDL_STARTUP')
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   See
+   <a class="MCXref_Heading_0" href="IDL_IDLBridge.html#objects_misc_904195448_1076887">
+    Examples
+   </a>
+   for addition examples of using the Execute method.
+  </p>
+  <h2 class="API">
+   <a name="objects_misc_904195448_1077297">
+   </a>
+   <a name="objects_misc_904195448_67466">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.3
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

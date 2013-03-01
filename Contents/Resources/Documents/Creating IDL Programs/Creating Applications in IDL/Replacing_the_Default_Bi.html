@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Interfaces (Widgets)|About Tree Widgets" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Replacing the Default Bitmaps
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Creating Applications in IDL/Replacing_the_Default_Bi.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Widget Application Techniques.html">
+    Interfaces (Widgets)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="About_Tree_Widgets.html">
+    About Tree Widgets
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Replacing the Default Bitmaps
+   </span>
+  </div>
+  <h1>
+   <a name="widget_tree_1678712652_98769">
+   </a>
+   <a name="widget_tree_1678712652_52357">
+   </a>
+   Replacing the Default Bitmaps
+  </h1>
+  <p>
+   By default, tree
+   <a name="kanchor4949">
+   </a>
+   widgets use bitmap images of a folder and a single piece of paper as the icons representing branch and leaf nodes in a tree widget hierarchy. You can modify the look of the tree widget by supplying your own bitmap for a given node. Set the BITMAP keyword to WIDGET_TREE equal to a 16 x 16 x 3 array that contains a 24-bit color image.
+  </p>
+  <p>
+   For example, suppose you have a 16 x 16 pixel TrueColor icon stored in a TIFF file. The following commands make the image the icon used for the root node of a tree widget hierarchy:
+  </p>
+  <p class="Code">
+   myIcon = READ_TIFF('/
+   <i>
+    path_to
+   </i>
+   /myicon.tif', INTERLEAVE=2)
+  </p>
+  <p class="Code">
+   wtRoot = WIDGET_TREE(wTree, /FOLDER, BITMAP=myIcon)
+  </p>
+  <p>
+   Note the use of the INTERLEAVE keyword to ensure that the resulting image array has dimensions 16 x 16 x 3. Depending on your image file format, you may need to modify the image array in other ways.
+  </p>
+  <h2 class="API">
+   Using Images from the IDL Distribution
+  </h2>
+  <p>
+   The
+   <span class="Courier">
+    /resources/bitmaps
+   </span>
+   subdirectory of the IDL distribution contains a selection of 16-color (4-bit), 16 x 16 pixel icon images. To use these images as bitmaps in a tree widget, you must convert them to 16 x 16 x 3 (24-bit color) arrays.
+  </p>
+  <p>
+   The following code snippet loads the camera icon stored in
+   <span class="Courier">
+    IDLDIR/resources/bitmaps/camera.bmp
+   </span>
+   into a 16 x 16 x 3 array:
+  </p>
+  <p class="Code">
+   ; Create a 24-bit image array.
+  </p>
+  <p class="Code">
+   imageRGB = BYTARR(16,16,3,/NOZERO)
+  </p>
+  <p class="Code">
+   ; Read in the bitmap.
+  </p>
+  <p class="Code">
+   file=FILEPATH('camera.bmp', SUBDIR=['resource', 'bitmaps'])
+  </p>
+  <p class="Code">
+   image8 = READ_BMP(file, Red, Green, Blue)
+  </p>
+  <p class="Code">
+   ; Pass the image through the color table
+  </p>
+  <p class="Code">
+   imageRGB[0,0,0] = Red[image8]
+  </p>
+  <p class="Code">
+   imageRGB[0,0,1] = Green[image8]
+  </p>
+  <p class="Code">
+   imageRGB[0,0,2] = Blue[image8]
+  </p>
+  <p>
+   To use the camera icon in a tree widget, you would specify the
+   <span class="Courier">
+    imageRGB
+   </span>
+   variable as the value of the BITMAP keyword to WIDGET_TREE.
+  </p>
+  <h2 class="API">
+   Adding Transparency to Icons
+  </h2>
+  <p>
+   User supplied bitmaps can have transparent pixels, just as the default icons do. This ensures that the icon’s background matches the background of your tree widget, which you can customize. It also enables one bitmap to suffice for all platforms, which often have different default tree widget background colors.
+  </p>
+  <p>
+   The MASK family of keywords is used to affect tree widget bitmaps. When a tree widget is created with a bitmap or given a new bitmap, the MASK keyword serves to set the masked sub-property of the bitmap. Those pixels in the bitmap that have the same color as the lower left pixel are made to be transparent. Internally, a mask is built and then used to draw only those non-transparent pixels.
+  </p>
+  <p>
+   The following code creates a tree widget node with an unmasked bitmap and then changes it to a different, masked bitmap.
+  </p>
+  <p class="Code">
+   node = WIDGET_TREE( parentNode, BITMAP = icon1 )
+  </p>
+  <p class="Code">
+   WIDGET_CONTROL( node, SET_TREE_BITMAP = icon2, /SET_MASK )
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The MASK keyword of WIDGET_CONTROL has no effect when not used with SET_TREE_BITMAP. The MASK keyword to WIDGET_INFO can be used to determine if a tree’s bitmap is masked. For more information see
+   <a class="MCXref_Heading_0" href="../../Reference Material/W/WIDGET_CONTROL.html#W_811389549_1232714" target="" title="" alt="">
+    WIDGET_CONTROL
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="../../Reference Material/W/WIDGET_INFO.html#W_811389549_680333" target="" title="" alt="">
+    WIDGET_INFO
+   </a>
+   in the
+   <i>
+    IDL Reference Guide
+   </i>
+   .
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

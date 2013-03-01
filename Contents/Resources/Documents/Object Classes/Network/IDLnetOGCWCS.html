@@ -1,0 +1,1436 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Network Object Classes" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLnetOGCWCS
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Property_Table.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Network/IDLnetOGCWCS.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_network.html">
+    Network Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLnetOGCWCS
+   </span>
+  </div>
+  <h1 class="ObjClass">
+   <a name="objects_network_1009015_1403015">
+   </a>
+   <a name="objects_network_1009015_86680">
+   </a>
+   IDLnetOGCWCS
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1390834">
+     Superclasses
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1383322">
+     Creation
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1383328">
+     Properties
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1383462">
+     Methods
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1390520">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1383509">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   An
+   <a name="kanchor4764">
+   </a>
+   IDLnetOGCWCS object lets you access a Web Coverage Service (WCS) server that supports the Open Geospatial Consortium (OGC) standards. The OGC is an international group working to develop standards for the exchange of geospatial content and services including specifications for web delivery of data that combines location and geospatial information.
+  </p>
+  <p>
+   For additional information on IDL’s WCS features, see the following sections:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1402326">
+     Web Coverage Service (WCS) Overview
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1402384">
+     Supported OGC WCS Version
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1402440">
+     Translating a URL into Property Values
+    </a>
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1402515">
+     Using Callbacks with the IDLnetOGCWCS Object
+    </a>
+   </li>
+   <li value="5">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1402552">
+     HTTP Authentication, Security and Encoding
+    </a>
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   A sample IDL program included in the IDL distribution provides a generic WCS browser that lets you peruse and request coverages from a remote OGC server. See
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1390604">
+    Sample WCS Browser
+   </a>
+   for details.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1390834">
+   </a>
+   <a name="objects_network_1009015_1334536_PageTOC_IDLffDICOM__">
+   </a>
+   Superclasses
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1383322">
+   </a>
+   <a name="objects_network_1009015_1334540_PageTOC_IDLffDICOM__">
+   </a>
+   Creation
+  </h2>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS__Init.html#objects_network_1009015_1387609" target="" title="" alt="">
+    IDLnetOGCWCS::Init
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1383328">
+   </a>
+   <a name="objects_network_1009015_56751">
+   </a>
+   Properties
+  </h2>
+  <p>
+   Objects of this class have the following properties. See
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383518">
+    IDLnetOGCWCS Properties
+   </a>
+   for details on individual properties.
+  </p>
+  <table class="TableStyle_Property_Table" style="mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="228px" />
+   <col width="279px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1398190">
+        AUTHENTICATION
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383709">
+        CALLBACK_DATA
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383740">
+        CALLBACK_FUNCTION
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383772">
+        CAPABILITIES_FILENAME
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383811">
+        CONNECT_TIMEOUT
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383839">
+        CONTENT_TYPE
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383867">
+        COVERAGE_FILENAME
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383909">
+        DESCRIBE_COVERAGE_FILENAME
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383948">
+        ENCODE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384004">
+        HEADERS
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384043">
+        LAST_FILE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384071">
+        PASSWORD
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384099">
+        PROXY_AUTHENTICATION
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384151">
+        PROXY_HOSTNAME
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384179">
+        PROXY_PASSWORD
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384207">
+        PROXY_PORT
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384235">
+        PROXY_USERNAME
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384263">
+        RESPONSE_HEADER
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384291">
+        SSL_CERTIFICATE_FILE
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384319">
+        SSL_VERIFY_HOST
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384353">
+        SSL_VERIFY_PEER
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384390">
+        TIMEOUT
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384418">
+        URL_HOSTNAME
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384457">
+        URL_PATH
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384496">
+        URL_PORT
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384530">
+        URL_QUERY_PREFIX
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384564">
+        URL_QUERY_SUFFIX
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384595">
+        URL_SCHEME
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384652">
+        USERNAME
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384680">
+        VERBOSE
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1391763">
+        WCS_VERSION
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1383462">
+   </a>
+   <a name="objects_network_1009015_1334548_PageTOC_IDLffDICOM__">
+   </a>
+   Methods
+  </h2>
+  <p>
+   This class has the following methods:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__Cleanup.html#objects_network_1009015_1391793">
+     IDLnetOGCWCS::Cleanup
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__DescribeCo.html#objects_network_1009015_1384809">
+     IDLnetOGCWCS::DescribeCoverage
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCapabil.html#objects_network_1009015_1384972">
+     IDLnetOGCWCS::GetCapabilities
+    </a>
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag.html#objects_network_1009015_1387554">
+     IDLnetOGCWCS::GetCoverage
+    </a>
+   </li>
+   <li value="5">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag1.html#objects_network_1009015_1385325">
+     IDLnetOGCWCS::GetCoverageOffering
+    </a>
+   </li>
+   <li value="6">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag2.html#objects_network_1009015_1386082">
+     IDLnetOGCWCS::GetCoverageOfferingBriefs
+    </a>
+   </li>
+   <li value="7">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetPropert.html#objects_network_1009015_1387707">
+     IDLnetOGCWCS::GetProperty
+    </a>
+   </li>
+   <li value="8">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetService.html#objects_network_1009015_1386264">
+     IDLnetOGCWCS::GetServiceSection
+    </a>
+   </li>
+   <li value="9">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__Init.html#objects_network_1009015_1387609">
+     IDLnetOGCWCS::Init
+    </a>
+   </li>
+   <li value="10">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__ParseUrl.html#objects_network_1009015_1386464">
+     IDLnetOGCWCS::ParseUrl
+    </a>
+   </li>
+   <li value="11">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__SetPropert.html#objects_network_1009015_1386557">
+     IDLnetOGCWCS::SetProperty
+    </a>
+   </li>
+  </ul>
+  <h2 class="API">
+   <a name="objects_network_1009015_1390520">
+   </a>
+   <a name="objects_network_1009015_97721">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See the following methods for examples:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__DescribeCo.html#objects_network_1009015_1384809">
+     IDLnetOGCWCS::DescribeCoverage
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCapabil.html#objects_network_1009015_1384972">
+     IDLnetOGCWCS::GetCapabilities
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag.html#objects_network_1009015_1387554">
+     IDLnetOGCWCS::GetCoverage
+    </a>
+   </li>
+   <li value="4">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag2.html#objects_network_1009015_1386082">
+     IDLnetOGCWCS::GetCoverageOfferingBriefs
+    </a>
+   </li>
+   <li value="5">
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__ParseUrl.html#objects_network_1009015_1386464">
+     IDLnetOGCWCS::ParseUrl
+    </a>
+   </li>
+  </ul>
+  <h3>
+   <a name="objects_network_1009015_1390604">
+   </a>
+   <a name="objects_network_1009015_74073">
+   </a>
+   Sample WCS Browser
+  </h3>
+  <p>
+   The IDL distribution includes a sample program that allows you to enter a working URL to an OGC server and then call GetCapabilities, DescribeCoverage and GetCoverage from within the user interface. You can modify property values and query characteristics to return the desired data. To run the browser program, enter
+   <span class="Courier">
+    OGC_WCS
+   </span>
+   at the command line. See the browser help for more information.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   You can use the example IDL OGC WCS Browser as a template for creating an application that queries a remote WCS server. This example is located in the
+   <span class="Courier-Italic">
+    IDL_DIR
+   </span>
+   <span class="Courier">
+    \examples\ogc\wcs
+   </span>
+   directory where
+   <span class="Courier-Italic">
+    IDL_DIR
+   </span>
+   is the directory where you have installed IDL. Running the example lets you parse a known, working URL to an OGC WCS server, and then make GetCapabilities, DescribeCoverage and GetCoverage requests. By default, returned files are written to your application user directory, a subdirectory of your home directory.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1383509">
+   </a>
+   <a name="objects_network_1009015_14998">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_network_1009015_1402326">
+   </a>
+   <a name="objects_network_1009015_83188">
+   </a>
+   Web Coverage Service (WCS) Overview
+  </h2>
+  <p>
+   A request for coverage data from an OGC WCS server involves three main requests: GetCapabilities, DescribeCoverage, and GetCoverage. The following describes these operations in terms of the IDLnetOGCWCS object:
+  </p>
+  <ul>
+   <li value="1">
+    GetCapabilities — a general query that returns information about what types of requests are allowed and available. This includes service and summary information about data collections that are contained in “coverage offering briefs,” which are transmitted in an XML file that is written to disk.
+   </li>
+   <li value="2">
+    DescribeCoverage — a request that asks for detailed information about one or more specific coverages where each coverage is a data collection. The server returns details about the coverage(s) in an XML file that is written to disk.
+   </li>
+   <li value="3">
+    GetCoverage — a request for data relating to a specific coverage. The server transmits a copy of the raw data, containing values or properties of a set of geographic locations, in a file that is written to disk.
+   </li>
+  </ul>
+  <p>
+   For details on how to use the IDLnetOGCWCS object properties and methods to request and receive information from an OGC server, see
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1402388">
+    Making OGC WCS Server Requests
+   </a>
+   . Also see
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1390604">
+    Sample WCS Browser
+   </a>
+   for information about the IDL OGC WCS Browser, a sample program included in the IDL distribution.
+  </p>
+  <h3>
+   Additional OGC Web Coverage Service Resources
+  </h3>
+  <p>
+   The Open Geospatial Consortium web site provides complete details on the Web Coverage Service protocol including the WCS specification and schema documents. You may find the following documents helpful if you need additional WCS resources. See OGC web site (
+   <span class="Link">
+    <a href="http://www.opengeospatial.org">
+     www.opengeospatial.org
+    </a>
+   </span>
+   ) to search for these and other resource files.
+  </p>
+  <table style="width: 501px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    <span class="_Override" style="font-family: Helvetica;line-height: 13pt;">
+     OGC WCS Reference Documents
+    </span>
+   </p>
+   <col width="184px" />
+   <col width="317px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Document
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       Specification
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       OGC Web Coverage Service, Version 1.0.0,
+       <br />
+       Ref# OGC 05-076r6, 2005-10-14
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="2" class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Bold">
+        Schema Definition Documents
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        wcsCapabilities.xsd
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       XML schema definition used by the remote server when creating a GetCapabilities response, which contains one or more coverage offering briefs
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        describeCoverage.xsd
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       XML schema definition used by the remote server when creating a DescribeCoverage response, which contains one or more coverage offerings
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        owsBase.xsd
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       XML schema definition containing base types used in the
+       <span class="Courier">
+        wcsCapabilities.xsd
+       </span>
+       and
+       <span class="Courier">
+        describeCoverage.xsd
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <span class="Courier">
+        values.xsd
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       XML schema definition containing base types used in the
+       <span class="Courier">
+        wcsCapabilities.xsd
+       </span>
+       and
+       <span class="Courier">
+        describeCoverage.xsd
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       <span class="Courier">
+        gml4wcs.xsd
+       </span>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       XML schema definition containing GML types used in the
+       <span class="Courier">
+        wcsCapabilities.xsd
+       </span>
+       ,
+       <span class="Courier">
+        describeCoverage.xsd
+       </span>
+       and
+       <span class="Courier">
+        owsBase.xsd
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_network_1009015_1402384">
+   </a>
+   <a name="objects_network_1009015_74642">
+   </a>
+   Supported OGC WCS Version
+  </h2>
+  <p>
+   This object supports version 1.0.0 of the OGC WCS standard. The IDLnetOGCWCS object conforms to the OGC WCS standard and is designed to communicate with OGC WCS compliant servers.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Since this object is designed as an OGC WCS client, OGC WCS certification is not applicable. Compliance testing and certification is valid only for WCS servers.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1402388">
+   </a>
+   <a name="objects_network_1009015_30544">
+   </a>
+   Making OGC WCS Server Requests
+  </h2>
+  <p>
+   This section outlines the steps required to query and return information from an OGC server. The goal is to return a data file containing a specific geospatial coverage as unrendered data. A coverage is gridded data that typically has a 1-, 2-, or 3-axis spatial coordinate reference system. Broadly, an information request from a WCS sever requires determining what data is available from a server (coverage offering briefs), determining what data collection (coverage offerings) from which you want to request data (a coverage), making the requests, and returning unrendered data.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You can implement a callback to return information about the status of requests. See
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1402515">
+    Using Callbacks with the IDLnetOGCWCS Object
+   </a>
+   for details.
+  </p>
+  <p>
+   After you create an IDLnetOGCWCS object, you will need to complete the following steps:
+  </p>
+  <ol>
+   <li value="1">
+    <p>
+     Identify the WCS server. The easiest way to do this is to pass a
+     <i>
+      working
+     </i>
+     URL to the
+     <a class="MCXref_Heading_0" href="IDLnetOGCWCS__ParseUrl.html#objects_network_1009015_1386464">
+      IDLnetOGCWCS::ParseUrl
+     </a>
+     method, which sets the required URL_HOSTNAME and URL_PATH properties. Alternately, you can manually set properties related to the URL. See
+     <a class="MCXref_Heading_0" href="#objects_network_1009015_1402440">
+      Translating a URL into Property Values
+     </a>
+     for information on which URL components belong to which IDLnetOGCWCS properties.
+    </p>
+    <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+     <span class="autonumber">
+      <span>
+       <b>
+        Note:
+       </b>
+      </span>
+     </span>
+     If dealing with secure WCS servers, see
+     <a class="MCXref_Heading_0" href="#objects_network_1009015_1402552">
+      HTTP Authentication, Security and Encoding
+     </a>
+     for additional information.
+    </p>
+   </li>
+   <li value="2">
+    Determine what information is available on the WCS server by making a GetCapabilities request. This typically returns and parses an XML file that contains brief information about the available coverages. See
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCapabil.html#objects_network_1009015_1384972">
+     IDLnetOGCWCS::GetCapabilities
+    </a>
+    for details. You can modify the
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383772">
+     CAPABILITIES_FILENAME
+    </a>
+    property to define the location this file is stored.
+   </li>
+   <li value="3">
+    Return the information contained in the coverage offering briefs by calling
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag2.html#objects_network_1009015_1386082">
+     IDLnetOGCWCS::GetCoverageOfferingBriefs
+    </a>
+    . You must call this method to return information for the specified coverage offering brief(s) in an IDL structure. The NAME field value of this structure is required to request additional information from an OGC server using the DescribeCoverage method, described next. If you wish, you can also call
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetService.html#objects_network_1009015_1386264">
+     IDLnetOGCWCS::GetServiceSection
+    </a>
+    to return service information from the XML file, but this is not necessary.
+   </li>
+   <li value="4">
+    Request detailed information about one or more coverage offerings by specifying a value for the NAME keyword in the
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__DescribeCo.html#objects_network_1009015_1384809">
+     IDLnetOGCWCS::DescribeCoverage
+    </a>
+    call. The server will typically return an XML file containing detailed information about the coverage(s). You can modify the
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383909">
+     DESCRIBE_COVERAGE_FILENAME
+    </a>
+    property to define the location this file is stored.
+   </li>
+   <li value="5">
+    Access the information in the XML file returned by DescribeCoverage by calling
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag1.html#objects_network_1009015_1385325">
+     IDLnetOGCWCS::GetCoverageOffering
+    </a>
+    . This returns a complex structure describing the offering details.
+   </li>
+   <li value="6">
+    Return data from the server by calling
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag.html#objects_network_1009015_1387554">
+     IDLnetOGCWCS::GetCoverage
+    </a>
+    with a number of parameters describing the exact data to be returned. You can modify the
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383867">
+     COVERAGE_FILENAME
+    </a>
+    property to define the location this file is stored.
+   </li>
+   <li value="7">
+    Model and render the data as defined by your application.
+   </li>
+  </ol>
+  <h2 class="API">
+   <a name="objects_network_1009015_1402440">
+   </a>
+   <a name="objects_network_1009015_28576">
+   </a>
+   Translating a URL into Property Values
+  </h2>
+  <p>
+   A valid WCS server URL is required to establish communication with an OGC WCS server. Additionally, IDLnetOGCWCS URL-related property values must be set before data can be successfully requested from a OGC WCS server. Either set the required properties manually (using SetProperty) or pass a URL to ParseURL. The
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS__ParseUrl.html#objects_network_1009015_1386464">
+    IDLnetOGCWCS::ParseUrl
+   </a>
+   method automatically parses a given URL and sets related property values.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Regardless of how properties are set, the URL_HOSTNAME and URL_PATH properties must be set before calling the GetCapabilities, DescribeCoverage or GetCoverage methods.
+  </p>
+  <p>
+   The following table describes how the components of a given URL should be assigned to property values. Consider the following URL (which would typically exist on a single line):
+  </p>
+  <p class="Code">
+   http://my.hostname.com:8080/demo/cgi_path?customprefix&amp;
+  </p>
+  <p class="Code">
+   Version=1.0.0&amp;SERVICE=WCS&amp;CustomMiddle&amp;Request=GetCapabilities&amp;
+  </p>
+  <p class="Code">
+   CustomSuffix
+  </p>
+  <p>
+   Components of this URL map to properties as follows.
+  </p>
+  <table style="width: 467px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    Mapping URL Components to Properties
+   </p>
+   <col width="195px" />
+   <col width="272px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Property
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Value
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384595">
+        URL_SCHEME
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       http
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384418">
+        URL_HOSTNAME
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       my.hostname.com
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384496">
+        URL_PORT
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       8080
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384457">
+        URL_PATH
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       demo/cgi_path
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1391763">
+        WCS_VERSION
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       Version=1.0.0
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384530">
+        URL_QUERY_PREFIX
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       CustomPrefix&amp;CustomMiddle
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384564">
+        URL_QUERY_SUFFIX
+       </a>
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       CustomSuffix
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   The
+   <i>
+    query
+   </i>
+   portion of the URL passed to a WCS server (the
+   <i>
+    parameter
+   </i>
+   =
+   <i>
+    value
+   </i>
+   pairs following the ? character) always includes the following three parameters:
+  </p>
+  <ul>
+   <li value="1">
+    <i>
+     Version
+    </i>
+    takes its value from the WCS_VERSION property
+   </li>
+   <li value="2">
+    <i>
+     Service
+    </i>
+    is set equal to “WCS” for the IDLnetOGCWCS object
+   </li>
+   <li value="3">
+    <i>
+     Request
+    </i>
+    is one of “GetCapabilities” “DescribeCoverage”, or “GetCoverage” depending on the method in use
+   </li>
+  </ul>
+  <p>
+   These three parameters are inserted into the URL automatically by IDL; any values specified for these parameters in the URL are ignored. They are
+   <i>
+    not
+   </i>
+   included when the URL_QUERY_PREFIX or URL_QUERY_SUFFIX properties are returned by the GetProperty method. Any query parameters that precede
+   <i>
+    any
+   </i>
+   of the three required parameters will be included in the URL_QUERY_PREFIX property by the ParseURL method; other nonrequired parameters will be included in the URL_QUERY_SUFFIX property.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If not specified in the URL, property values besides URL_HOSTNAME and URL_PATH are set to default values. For example, the URL_PORT property defaults to 80 and the WCS_VERSION defaults to 1.0.0.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1402515">
+   </a>
+   <a name="objects_network_1009015_89794">
+   </a>
+   Using Callbacks with the IDLnetOGCWCS Object
+  </h2>
+  <p>
+   Callbacks from the IDLnetOGCWCS object provide a way to transmit information back to the caller based on the status of a request made to a remote OGC WCS server. The value returned by the callback function is then used by the IDLnetOGCWCS object to determine whether to continue or abort the request.
+  </p>
+  <p>
+   The IDLnetOGCWCS object lets you define a single function (written in IDL) that will be called during a GetCapabilities, DescribeCoverage, or GetCoverage method call. If a callback function is specified via the CALLBACK_FUNCTION property, it is called in the following circumstances:
+  </p>
+  <ul>
+   <li value="1">
+    For the
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCapabil.html#objects_network_1009015_1384972">
+     IDLnetOGCWCS::GetCapabilities
+    </a>
+    method, the callback function is called each time a packet is received from the OGC WCS server. If the FROM_FILE keyword is set, the callback function is called before and after the XML file is parsed.
+   </li>
+   <li value="2">
+    For the
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__DescribeCo.html#objects_network_1009015_1384809">
+     IDLnetOGCWCS::DescribeCoverage
+    </a>
+    method, the callback function is called each time a packet is received from the OGC WCS server. If the FROM_FILE keyword is set, the callback function is called before and after the XML file is parsed.
+   </li>
+   <li value="3">
+    For the
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCoverag.html#objects_network_1009015_1387554">
+     IDLnetOGCWCS::GetCoverage
+    </a>
+    method, the callback function is called each time a packet of data is received from the OGC WCS server.
+   </li>
+  </ul>
+  <p>
+   All methods invoke the callback function with an array of strings indicating status as the first parameter, an array of integers containing progress information as the second parameter, and with the value (if any) specified by the CALLBACK_DATA property as the third parameter. A callback function returns a value of type Int.
+  </p>
+  <h3>
+   <a name="objects_network_1009015_1402531">
+   </a>
+   <a name="objects_network_1009015_27450">
+   </a>
+   Cancelling a Request
+  </h3>
+  <p>
+   The return value of the callback function should be an integer zero or one. If the return value is zero, a cancel message will be sent to the remote node. If the return value is one, the operation will continue.
+  </p>
+  <h3>
+   Callback Routine Signature
+  </h3>
+  <p>
+   A callback function is written in IDL and has the following signature:
+  </p>
+  <p class="Code">
+   Function Callback_Function_Name, StatusInfo, ProgressInfo, &#160;&#160;&#160;CallbackData
+  </p>
+  <p>
+   where
+  </p>
+  <ul>
+   <li value="1">
+    <span class="Courier">
+     Callback_Function_Name
+    </span>
+    is the name of the callback function. This value is specified as the value of the
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383740">
+     CALLBACK_FUNCTION
+    </a>
+    property.
+   </li>
+   <li value="2">
+    <span class="Courier">
+     StatusInfo
+    </span>
+    is an array of strings that contain status information about the operation. The status strings are provided for information and human inspection rather than for programmatic processing; the exact strings included in the array will depend on numerous factors including the status of the operation and the type of OGC WCS server.
+   </li>
+   <li value="3">
+    <span class="Courier">
+     ProgressInfo
+    </span>
+    is an array of five 64-bit long integers that contain progress information for the transfer:
+   </li>
+   <li class="Indent" value="4">
+    ProgressInfo[0] – Contains 1 (one) when the
+    <span class="Courier">
+     ProgressInfo
+    </span>
+    array contains valid data, or 0 (zero) when the array does not contain valid data.
+   </li>
+   <li class="Indent" value="5">
+    ProgressInfo[1] – Contains the total number of bytes to be downloaded. This array element will contain 0 (zero) when the transfer encoding is “chunked.”
+   </li>
+   <li class="Indent" value="6">
+    ProgressInfo[2] – Contains the number of bytes that have been downloaded during the current transfer.
+   </li>
+   <li class="Indent" value="7">
+    ProgressInfo[3] – Contains the total number of bytes to be uploaded.
+   </li>
+   <li class="Indent" value="8">
+    ProgressInfo[4] – Contains the number of bytes that have been uploaded during the current transfer.
+   </li>
+   <li value="9">
+    <span class="Courier">
+     CallbackData
+    </span>
+    is the data specified via the
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383709">
+     CALLBACK_DATA
+    </a>
+    property. The value of this property is passed to the callback function unmodified. If the CALLBACK_DATA property is unspecified, an integer zero is passed to the callback function as the value of this parameter.
+   </li>
+  </ul>
+  <p class="indent">
+   The CallbackData parameter is useful for passing static information, such as the widget ID of a widget where the status information is displayed, from the IDLnetOGCWCS object to the callback routine.
+  </p>
+  <p class="indent">
+   For a simple example of using a callback to return additional status information, see
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS__GetCapabil.html#objects_network_1009015_1384972">
+    IDLnetOGCWCS::GetCapabilities
+   </a>
+   . The
+   <span class="Courier">
+    StatusInfo
+   </span>
+   details are printed to the Output window.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1402552">
+   </a>
+   <a name="objects_network_1009015_50415">
+   </a>
+   HTTP Authentication, Security and Encoding
+  </h2>
+  <p>
+   The following sections describe the IDLnetOGCWCS object’s support of HTTP protocols including:
+  </p>
+  <ul>
+   <li value="1">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1402567">
+     HTTP Authentication
+    </a>
+   </li>
+   <li value="2">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1402594">
+     HTTP Security
+    </a>
+   </li>
+   <li value="3">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1402611">
+     HTTP Encoding
+    </a>
+   </li>
+  </ul>
+  <h3>
+   <a name="objects_network_1009015_1402567">
+   </a>
+   <a name="objects_network_1009015_47872">
+   </a>
+   HTTP Authentication
+  </h3>
+  <p>
+   The IDLnetOGCWCS object supports the following HTTP authentication modes for WCS and proxy servers:
+  </p>
+  <ul>
+   <li value="1">
+    Disabled—no authentication
+   </li>
+   <li value="2">
+    Basic—plain text transmission of username and password
+   </li>
+   <li value="3">
+    Digest—encrypted transmission of username and password
+   </li>
+  </ul>
+  <p>
+   By default,
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1398190">
+    AUTHENTICATION
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384099">
+    PROXY_AUTHENTICATION
+   </a>
+   properties are set to “Basic and Digest” option, meaning that either basic or digest authentication are supported. However, for this setting to be honored, the corresponding username and password properties must also be set:
+  </p>
+  <ul>
+   <li value="1">
+    For authentication on an OGC server, set
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384652">
+     USERNAME
+    </a>
+    and
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384071">
+     PASSWORD
+    </a>
+    properties
+   </li>
+   <li value="2">
+    For authentication on a proxy server, set
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384235">
+     PROXY_USERNAME
+    </a>
+    and
+    <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384179">
+     PROXY_PASSWORD
+    </a>
+    properties
+   </li>
+  </ul>
+  <h3>
+   <a name="objects_network_1009015_1402594">
+   </a>
+   <a name="objects_network_1009015_67569">
+   </a>
+   HTTP Security
+  </h3>
+  <p>
+   The IDLnetOGCWCS object also supports HTTPS through the implementation of Secure Socket Layer (SSL). With SSL encryption, all requests and responses are encrypted. When the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384595">
+    URL_SCHEME
+   </a>
+   property is set to “https”, use the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384291">
+    SSL_CERTIFICATE_FILE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384319">
+    SSL_VERIFY_HOST
+   </a>
+   , and
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1384353">
+    SSL_VERIFY_PEER
+   </a>
+   properties to define security-related parameters.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you receive a
+   <a name="kanchor4765">
+   </a>
+   PRNG (Pseudo Random Number Generator) error when attempting to use HTTPS on UNIX, you need to install either
+   <span class="Courier">
+    dev/random
+   </span>
+   or
+   <span class="Courier">
+    dev/urandom
+   </span>
+   in order to generate secure keys.
+  </p>
+  <h3>
+   <a name="objects_network_1009015_1402611">
+   </a>
+   <a name="objects_network_1009015_79896">
+   </a>
+   HTTP Encoding
+  </h3>
+  <p>
+   The IDLnetOGCWCS object supports compressed and encoded responses from a remote OGC WCS server. Supported encoding formats are:
+  </p>
+  <ul>
+   <li value="1">
+    DEFLATE
+   </li>
+   <li value="2">
+    GZIP
+   </li>
+  </ul>
+  <p>
+   See the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWCS_Properties.html#objects_network_1009015_1383948">
+    ENCODE
+   </a>
+   property for details.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

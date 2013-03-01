@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: E" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   ELMHES
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/E/ELMHES.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="E_list.html">
+    Routines: E
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    ELMHES
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="E_841667181_50586">
+   </a>
+   <a name="E_841667181_12703">
+   </a>
+   ELMHES
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#E_841667181_50594">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_996246">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_50596">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_50599">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_50606">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_992725">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#E_841667181_992727">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor729">
+   </a>
+   ELMHES
+   <a name="kanchor730">
+   </a>
+   function reduces a real, nonsymmetric
+   <i>
+    n
+   </i>
+   by
+   <i>
+    n
+   </i>
+   array
+   <i>
+    A
+   </i>
+   to upper Hessenberg form. ELMHES is based on the routine
+   <span class="Courier">
+    elmhes
+   </span>
+   described in section 11.5 of
+   <i>
+    Numerical Recipes in C: The Art of Scientific Computing
+   </i>
+   (Second Edition), published by Cambridge University Press, and is used by permission.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If you are working with complex inputs, use the LA_ELMHES function instead.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_50594">
+   </a>
+   <a name="E_841667181_50594_PageTOC_ELMHES_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = ELMHES(
+   <i>
+    A
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#E_841667181_983389">
+    COLUMN
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#E_841667181_50601">
+    DOUBLE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#E_841667181_50604">
+    NO_BALANCE
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_996246">
+   </a>
+   <a name="E_841667181_19955">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result is an upper
+   <a name="kanchor731">
+   </a>
+   Hessenberg array with
+   <a name="kanchor732">
+   </a>
+   eigenvalues that are identical to those of the original array
+   <i>
+    A
+   </i>
+   . The Hessenberg array is stored in the upper triangle and the first subdiagonal. Elements below the subdiagonal should be ignored but are not automatically set to zero.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_50596">
+   </a>
+   <a name="E_841667181_50596_PageTOC_ELMHES_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   A
+  </h3>
+  <p>
+   An
+   <i>
+    n
+   </i>
+   by
+   <i>
+    n
+   </i>
+   real, nonsymmetric array.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_50599">
+   </a>
+   <a name="E_841667181_50599_PageTOC_ELMHES_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="E_841667181_983389">
+   </a>
+   <a name="E_841667181_983389_Keywords_ELMHES__">
+   </a>
+   COLUMN
+  </h3>
+  <p>
+   Set this keyword if the input array
+   <i>
+    A
+   </i>
+   is in column-major format (composed of column vectors) rather than in row-major format (composed of row vectors).
+  </p>
+  <h3 class="Keyword">
+   <a name="E_841667181_50601">
+   </a>
+   <a name="E_841667181_50601_Keywords_ELMHES__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to force the computation to be done in double-precision arithmetic.
+  </p>
+  <h3 class="Keyword">
+   <a name="E_841667181_50604">
+   </a>
+   <a name="E_841667181_50604_Keywords_ELMHES__">
+   </a>
+   NO_BALANCE
+  </h3>
+  <p>
+   Set this keyword to disable balancing. By default, a balancing algorithm is applied to
+   <i>
+    A
+   </i>
+   . Balancing a nonsymmetric array is recommended to reduce the sensitivity of eigenvalues to rounding errors.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_50606">
+   </a>
+   <a name="E_841667181_50606_PageTOC_ELMHES_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   See the description of the
+   <a class="MCXref_Heading_0" href="../H/HQR.html#H_835179117_50733" target="" title="" alt="">
+    HQR
+   </a>
+   for an example using this function.
+  </p>
+  <h2 class="API">
+   <a name="E_841667181_992725">
+   </a>
+   <a name="E_841667181_992725_PageTOC_ELMHES_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="E_841667181_992727">
+   </a>
+   <a name="E_841667181_992727_PageTOC_ELMHES_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="EIGENVEC.html#E_841667181_47274">
+    EIGENVEC
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../H/HQR.html#H_835179117_50733" target="" title="" alt="">
+    HQR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LA_ELMHES.html#L_826528365_959174">
+    LA_ELMHES
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/TRIQL.html#T_809226861_52198">
+    TRIQL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../T/TRIRED.html#T_809226861_52262">
+    TRIRED
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

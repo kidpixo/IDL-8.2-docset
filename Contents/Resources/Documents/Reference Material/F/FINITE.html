@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: F" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   FINITE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/F/FINITE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="F_list.html">
+    Routines: F
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    FINITE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="F_848155245_676884">
+   </a>
+   <a name="F_848155245_48972">
+   </a>
+   FINITE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#F_848155245_676887">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_901250">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_676889">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_676892">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_862770">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_903685">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#F_848155245_956995">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor968">
+   </a>
+   FINITE function identifies whether or not a given argument is finite.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_676887">
+   </a>
+   <a name="F_848155245_676887_PageTOC_FINITE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = FINITE(
+   <i>
+    X
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_862771">
+    INFINITY
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#F_848155245_862772">
+    NAN
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#F_848155245_887616">
+    SIGN
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_901250">
+   </a>
+   <a name="F_848155245_83754">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns 1 (True) if its argument is finite. If the argument is infinite or not a defined number (
+   <i>
+    NaN
+   </i>
+   ), the FINITE function returns 0 (False). The result is a byte expression of the same structure as the argument
+   <i>
+    X
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_676889">
+   </a>
+   <a name="F_848155245_676889_PageTOC_FINITE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   A floating-point, double-precision, or complex scalar or array expression. Strings are first converted to floating-point. This function is meaningless for byte, integer, or longword arguments.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_676892">
+   </a>
+   <a name="F_848155245_676892_PageTOC_FINITE_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="F_848155245_862771">
+   </a>
+   <a name="F_848155245_862771_Keywords_FINITE__">
+   </a>
+   INFINITY
+  </h3>
+  <p>
+   Set this keyword to cause FINITE to return True if the
+   <i>
+    X
+   </i>
+   argument is the IEEE special floating-point value
+   <i>
+    Infinity
+   </i>
+   (either positive or negative), or False otherwise.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_862772">
+   </a>
+   <a name="F_848155245_862772_Keywords_FINITE__">
+   </a>
+   NAN
+  </h3>
+  <p>
+   Set this keyword to cause FINITE to return True if the
+   <i>
+    X
+   </i>
+   argument is the IEEE special floating-point value “Not A Number” (
+   <i>
+    NaN
+   </i>
+   ), or False otherwise.
+  </p>
+  <h3 class="Keyword">
+   <a name="F_848155245_887616">
+   </a>
+   <a name="F_848155245_887616_Keywords_FINITE__">
+   </a>
+   SIGN
+  </h3>
+  <p>
+   If the INFINITY or NAN keyword is set, then set this keyword to one of the following values:
+  </p>
+  <table style="width: 499px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    SIGN Keyword Values
+   </p>
+   <col width="120px" />
+   <col width="379px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       &gt; 0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       If the INFINITY keyword is set, return True (1) if
+       <i>
+        X
+       </i>
+       is positive infinity, False (0) otherwise. If the NAN keyword is set, return True (1) if
+       <i>
+        X
+       </i>
+       is +NaN (negative sign bit is not set), False (0) otherwise.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       0 (the default)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       The sign of
+       <i>
+        X
+       </i>
+       (positive or negative) is ignored.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       &lt; 0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p>
+       If the INFINITY is set, return True (1) if
+       <i>
+        X
+       </i>
+       is negative infinity, False (0) otherwise. If the NAN keyword is set, return True (1) if
+       <i>
+        X
+       </i>
+       is -NaN (negative sign bit is set), False (0) otherwise.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   If neither the INFINITY nor NAN keyword is set, then this keyword is ignored.
+  </p>
+  <h3>
+   Thread Pool Keywords
+  </h3>
+  <p>
+   This routine is written to make use of IDL’s
+   <i>
+    thread pool
+   </i>
+   , which can increase execution speed on systems with multiple CPUs. The values stored in the !CPU system variable control whether IDL uses the thread pool for a given computation. In addition, you can use the thread pool keywords TPOOL_MAX_ELTS, TPOOL_MIN_ELTS, and TPOOL_NOTHREAD to override the defaults established by !CPU for a single invocation of this routine. See
+   <a class="MCXref_Chapter_Reference_0" href="../../Creating IDL Programs/Appendices/tpoolkeyw.html#tpoolkeyw_2501860834_317209">
+    Thread Pool Keywords
+   </a>
+   for details.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_862770">
+   </a>
+   <a name="F_848155245_862770_PageTOC_FINITE_">
+   </a>
+   Examples
+  </h2>
+  <h3>
+   <a name="F_848155245_875022_Keywords_FINITE__">
+   </a>
+   Example 1
+  </h3>
+  <p>
+   To find out if the logarithm of 5.0 is finite, enter:
+  </p>
+  <p class="Code">
+   PRINT, FINITE(ALOG(5.0))
+  </p>
+  <p>
+   IDL prints “1” because the argument is finite.
+  </p>
+  <h3>
+   <a name="F_848155245_875023_Keywords_FINITE__">
+   </a>
+   Example 2
+  </h3>
+  <p>
+   To determine which elements of an array are infinity or NaN (Not a Number) values:
+  </p>
+  <p class="Code">
+   A = FLTARR(10)
+   <br />
+   <br />
+   ; Set some values to +/-NaN and positive or negative Infinity:
+   <br />
+   A[3] = !VALUES.F_NAN
+   <br />
+   A[4] = -!VALUES.F_NAN
+   <br />
+   A[6] = !VALUES.F_INFINITY
+   <br />
+   A[7] = -!VALUES.F_INFINITY
+   <br />
+  </p>
+  <p>
+   Find the location of values in A that are positive or negative Infinity:
+  </p>
+  <p class="Code">
+   PRINT, WHERE(FINITE(A, /INFINITY))
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   6           7
+  </p>
+  <p>
+   Find the location of values in A that are NaN:
+  </p>
+  <p class="Code">
+   PRINT, WHERE(FINITE(A, /NAN))
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   3           4
+  </p>
+  <p>
+   Find the location of values in A that are negative Infinity:
+  </p>
+  <p class="Code">
+   PRINT, WHERE(FINITE(A, /INFINITY, SIGN=-1))
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   7
+  </p>
+  <p>
+   Find the location of values in A that are +NaN:
+  </p>
+  <p class="Code">
+   PRINT, WHERE(FINITE(A, /NAN, SIGN=1))
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   3
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   On some platforms, there is no distinction between +NaN and -NaN.
+  </p>
+  <h2 class="API">
+   <a name="F_848155245_903685">
+   </a>
+   <a name="F_848155245_35180_PageTOC_FINITE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="F_848155245_956995">
+   </a>
+   <a name="F_848155245_891319_PageTOC_FINITE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/CHECK_MATH.html#C_854643309_676079">
+    CHECK_MATH
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../M/MACHAR.html#M_824365677_887317">
+    MACHAR
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Appendices/Constant_System_Variable.html#sysvars_272074529_996962">
+    !VALUES
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

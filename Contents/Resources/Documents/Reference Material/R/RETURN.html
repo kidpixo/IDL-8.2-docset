@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: R" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   RETURN
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/R/RETURN.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="R_list.html">
+    Routines: R
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    RETURN
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="R_822202989_836821">
+   </a>
+   <a name="R_822202989_42262">
+   </a>
+   RETURN
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#R_822202989_836839">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_836824">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_836907">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_836842">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#R_822202989_1093101">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2297">
+   </a>
+   RETURN command causes the program context to revert to the next-higher program level. RETURN can be called at the interactive command prompt (see
+   <a class="MCXref_Heading_0" href="../Dot Commands/_RETURN.html#symbols_612366544_987044" target="" title="" alt="">
+    .RETURN
+   </a>
+   ), inside a procedure definition, or inside a function definition.
+  </p>
+  <p>
+   Calling RETURN from the main program level has no effect other than to print an informational message in the command log.
+  </p>
+  <p>
+   Calling RETURN inside a procedure definition returns control to the calling routine, or to the main level. Since the END statement in a procedure definition also returns control to the calling routine, it is only necessary to use RETURN in a procedure definition if you wish control to revert to the calling routine before the procedure reaches its END statement.
+  </p>
+  <p>
+   In a function definition, RETURN serves to define the value passed out of the function. Only a single value can be returned from a function.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The value can be an array or structure containing multiple data items.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_836839">
+   </a>
+   <a name="R_822202989_836839_PageTOC_RETURN_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   RETURN [,&#160;
+   <i>
+    Return_value
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_836824">
+   </a>
+   <a name="R_822202989_836824_PageTOC_RETURN_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Return_value
+  </h3>
+  <p>
+   In a function definition, the
+   <i>
+    Return_value
+   </i>
+   is the value passed out of the function when it completes its processing.
+  </p>
+  <p>
+   Return values are not allowed in procedure definitions, or when calling RETURN at the interactive command prompt.
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_836907">
+   </a>
+   <a name="R_822202989_836907_PageTOC_RETURN_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   You can use RETURN within a procedure definition to exit the procedure at some point other than the end. For example, note the following procedure:
+  </p>
+  <p class="Code">
+   PRO RET_EXAMPLE, value
+   <br />
+   &#160;&#160;&#160;IF (value NE 0) THEN BEGIN
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, value, ' is nonzero'
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;RETURN
+   <br />
+   &#160;&#160;&#160;&#160;&#160;&#160;END
+   <br />
+   &#160;&#160;&#160;PRINT, 'Input argument was zero.'
+   <br />
+   END
+  </p>
+  <p>
+   If the input argument is non-zero, the routine prints the value and exits back to the calling procedure or main level. If the input argument is zero, control proceeds until the END statement is reached.
+  </p>
+  <p>
+   When defining functions, use RETURN to specify the value returned from the function. For example, the following function:
+  </p>
+  <p class="Code">
+   FUNCTION RET_EXAMPLE2, value
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, value * 2
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   multiplies the input value by two and returns the result. If this function is defined at the main level, calling it from the IDL command prompt produces the following:
+  </p>
+  <p class="Code">
+   PRINT, RET_EXAMPLE2(4)
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   8
+  </p>
+  <h2 class="API">
+   <a name="R_822202989_836842">
+   </a>
+   <a name="R_822202989_836842_PageTOC_RETURN_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="R_822202989_1093101">
+   </a>
+   <a name="R_822202989_1093101_PageTOC_RETURN_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="RETALL.html#R_822202989_836817">
+    RETALL
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

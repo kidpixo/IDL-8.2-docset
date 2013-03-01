@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WRITE_PPM
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WRITE_PPM.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WRITE_PPM
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="W_811389549_67905">
+   </a>
+   <a name="W_811389549_13011">
+   </a>
+   WRITE_PPM
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#W_811389549_67914">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_67916">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_67921">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_67925">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_67928">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#W_811389549_983519">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2925">
+   </a>
+   WRITE_PPM procedure writes an image to a
+   <a name="kanchor2926">
+   </a>
+   PPM (TrueColor) or
+   <a name="kanchor2927">
+   </a>
+   PGM (gray scale) file. This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    write_ppm.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   WRITE_PPM only writes 8-bit deep PGM/PPM files of the standard type. Images should be ordered so that the first row is the top row.
+   <br />
+   <br />
+   PPM/PGM format is supported by the PBMPLUS toolkit for converting various image formats to and from portable formats, and by the Netpbm package.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_67914">
+   </a>
+   <a name="W_811389549_67914_PageTOC_WRITE_PPM_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   WRITE_PPM,
+   <i>
+    Filename
+   </i>
+   ,
+   <i>
+    Image
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#W_811389549_67923">
+    ASCII
+   </a>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_67916">
+   </a>
+   <a name="W_811389549_67916_PageTOC_WRITE_PPM_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string specifying the full pathname of the PPM or PGM file to write.
+  </p>
+  <h3 class="Argument">
+   Image
+  </h3>
+  <p>
+   The 2D (gray scale) or 3D (TrueColor) array to be written to a file.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_67921">
+   </a>
+   <a name="W_811389549_67921_PageTOC_WRITE_PPM_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="W_811389549_67923">
+   </a>
+   <a name="W_811389549_67923_Keywords_WRITE_PPM__">
+   </a>
+   ASCII
+  </h3>
+  <p>
+   Set this keyword to force WRITE_PPM to use formatted ASCII input/output to write the image data. The default is to use the far more efficient binary input/output (RAWBITS) format.
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_67925">
+   </a>
+   <a name="W_811389549_67925_PageTOC_WRITE_PPM_">
+   </a>
+   Example
+  </h2>
+  <p>
+   The following lines create an image in an IDL graphics window, read it from the window and write it as a
+   <span class="Courier">
+    .ppm
+   </span>
+   file in the temporary directory, then read the
+   <span class="Courier">
+    .ppm
+   </span>
+   file and display it in the same graphics window:
+  </p>
+  <p class="Code">
+   ; Save device settings and tell IDL to use a color table
+   <br />
+   DEVICE, GET_DECOMPOSED=old_decomposed
+   <br />
+   DEVICE, DECOMPOSED=0
+   <br />
+   LOADCT, 14
+   <br />
+   <br />
+   ; Create an image and display it
+   <br />
+   IMAGE1 = DIST(300)
+   <br />
+   WINDOW, 1, XSIZE=300, YSIZE=300
+   <br />
+   TV, IMAGE1
+   <br />
+   <br />
+   ; Write a PNG file to the temporary directory
+   <br />
+   ; Note the use of the TRUE keyword to TVRD
+   <br />
+   filename = FILEPATH('test.ppm', /TMP)
+   <br />
+   WRITE_PPM, filename, TVRD(/TRUE)
+   <br />
+   PRINT, 'File written to ', filename
+   <br />
+   <br />
+   ; Read in the file
+   <br />
+   IMAGE2 = READ_PPM(filename)
+   <br />
+   <br />
+   ; Display the IMAGE1 and IMAGE2 side by side
+   <br />
+   ; Note the use of the TRUE keyword to TV
+   <br />
+   WINDOW, 1, XSIZE=600, YSIZE=300, $
+   <br />
+   &#160;&#160;&#160;TITLE='Original (left) and Image read from file (right)'
+   <br />
+   TV, IMAGE1, 0
+   <br />
+   TV, IMAGE2, 1, /TRUE
+   <br />
+   <br />
+   ; Restore device settings.
+   <br />
+   DEVICE, DECOMPOSED=old_decomposed
+  </p>
+  <h2 class="API">
+   <a name="W_811389549_67928">
+   </a>
+   <a name="W_811389549_67928_PageTOC_WRITE_PPM_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="W_811389549_983519">
+   </a>
+   <a name="W_811389549_983519_PageTOC_WRITE_PPM_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../R/READ_PPM.html#R_822202989_67791">
+    READ_PPM
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../Q/QUERY___Routines.html#Q_815714925_982368">
+    QUERY_* Routines
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

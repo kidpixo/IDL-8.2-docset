@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: T" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   TYPENAME
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/T/TYPENAME.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="T_list.html">
+    Routines: T
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    TYPENAME
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="T_809226861_1160964">
+   </a>
+   <a name="T_809226861_62968">
+   </a>
+   TYPENAME
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#T_809226861_1160979">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1160982">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1160987">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1160994">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1161117">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#T_809226861_1161125">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2644">
+   </a>
+   TYPENAME function retrieves a variable’s IDL type name, class name, or structure name.
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1160979">
+   </a>
+   <a name="T_809226861_1160979_PageTOC_TYPENAME_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = TYPENAME(
+   <i>
+    Variable
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1160982">
+   </a>
+   <a name="T_809226861_1160982_PageTOC_TYPENAME_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a string containing the IDL type name, or an empty string if
+   <i>
+    Variable
+   </i>
+   is undefined. For objects, the class name is returned. For structures, the structure name (or “ANONYMOUS” if the variable is an anonymous structure) is returned.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If
+   <i>
+    Variable
+   </i>
+   is a scalar object or a one-element object array,
+   <i>
+    Result
+   </i>
+   will be the object class name. If
+   <i>
+    Variable
+   </i>
+   is an object array with two or more elements,
+   <i>
+    Result
+   </i>
+   will be the IDL basic type name “OBJECT”. Structure arrays do not have this restriction because every element in a structure array must be of the same structure type, and
+   <i>
+    Result
+   </i>
+   will always be the structure name.
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1160987">
+   </a>
+   <a name="T_809226861_1160987_PageTOC_TYPENAME_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Variable
+  </h3>
+  <p>
+   An IDL variable or expression.
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1160994">
+   </a>
+   <a name="T_809226861_1160994_PageTOC_TYPENAME_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   For the undefined variable
+   <span class="Courier">
+    foo
+   </span>
+   , the following IDL statement:
+  </p>
+  <p class="Code">
+   PRINT, TYPENAME(foo)
+  </p>
+  <p>
+   produces the output:
+  </p>
+  <p class="Code">
+   UNDEFINED
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   For the variable
+   <span class="Courier">
+    a = 1.0,
+   </span>
+   the following IDL statement:
+  </p>
+  <p class="Code">
+   PRINT, TYPENAME(a)
+  </p>
+  <p>
+   produces the output:
+  </p>
+  <p class="Code">
+   FLOAT
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   For the variable
+   <span class="Courier">
+    list = LIST(1,2,3),
+   </span>
+   the following IDL statement:
+  </p>
+  <p class="Code">
+   PRINT, TYPENAME(list)
+  </p>
+  <p>
+   produces the output:
+  </p>
+  <p class="Code">
+   LIST
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   For the variable
+   <span class="Courier">
+    struct = {MYSTRUCT, field1: 'hi'},
+   </span>
+   the following IDL statement:
+  </p>
+  <p class="Code">
+   PRINT, TYPENAME(struct)
+  </p>
+  <p>
+   produces the output:
+  </p>
+  <p class="Code">
+   MYSTRUCT
+  </p>
+  <p>
+   &#160;
+  </p>
+  <p>
+   For the variable
+   <span class="Courier">
+    obj = OBJ_NEW('IDLgrModel'),
+   </span>
+   the following IDL statement:
+  </p>
+  <p class="Code">
+   PRINT, TYPENAME(obj)
+  </p>
+  <p>
+   produces the output:
+  </p>
+  <p class="Code">
+   IDLGRMODEL
+  </p>
+  <h2 class="API">
+   <a name="T_809226861_1161117">
+   </a>
+   <a name="T_809226861_1161117_PageTOC_TYPENAME_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       8.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="T_809226861_1161125">
+   </a>
+   <a name="T_809226861_1161125_PageTOC_TYPENAME_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../I/ISA.html#I_833016429_1127569">
+    ISA
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/SIZE.html#S_820040301_678885">
+    SIZE
+   </a>
+   ,
+   <a href="../../Creating IDL Programs/Components of the IDL Language/IDL_Data_Types.html#constants_818058343_672352" target="" title="" alt="" class="MCXref_0">
+    IDL Data Types
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

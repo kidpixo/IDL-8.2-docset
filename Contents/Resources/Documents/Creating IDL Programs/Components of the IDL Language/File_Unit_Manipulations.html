@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   File Unit Manipulations
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/File_Unit_Manipulations.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <h1>
+   <a name="files_2839720996_2882799">
+   </a>
+   <a name="files_2839720996_94072">
+   </a>
+   File Unit Manipulations
+  </h1>
+  <p>
+   The following sections describe common tasks when working with file units.
+  </p>
+  <h2 class="API">
+   <a name="kanchor5085">
+   </a>
+   <a name="files_2839720996_84223">
+   </a>
+   Flushing File Units
+  </h2>
+  <p>
+   For efficiency, IDL buffers its input/output in memory. Therefore, when data are output, there is a window of time during which data are in memory and have not been actually placed into the file. Normally, this behavior is transparent to the user (except for the improved performance). The FLUSH routine exists for those rare occasions where a program needs to be certain that the data has actually been written to the file immediately. For example, use the statement,
+  </p>
+  <p class="Code">
+   FLUSH, 1
+  </p>
+  <p>
+   to flush file unit one.
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="../../Reference Material/F/FLUSH.html#F_848155245_676952" target="" title="" alt="">
+    FLUSH
+   </a>
+   for details.
+  </p>
+  <h2 class="API">
+   <a name="kanchor5086">
+   </a>
+   <a name="files_2839720996_69180">
+   </a>
+   Positioning
+   <a name="kanchor5087">
+   </a>
+   File Pointers
+  </h2>
+  <p>
+   Each open file unit has a current file pointer associated with it. This file pointer indicates the position in the file at which the next input/output operation will take place. The file position is specified as the number of bytes from the start of the file. The first position in the file is position zero. The following statement will rewind file unit 1 to its start:
+  </p>
+  <p class="Code">
+   POINT_LUN, 1, 0
+  </p>
+  <p>
+   The following sequence of statements will position it at the end of the file:
+  </p>
+  <p class="Code">
+   tmp = FSTAT(1)
+  </p>
+  <p class="Code">
+   POINT_LUN, 1, tmp.size
+  </p>
+  <p>
+   POINT_LUN has the following operating-system specific behavior:
+  </p>
+  <ul>
+   <li value="1">
+    <span class="Bold">
+     UNIX:
+    </span>
+    the current file pointer can be positioned arbitrarily – moving to a position beyond the current end-of-file causes the file to grow out to that point. The gap created is filled with zeroes.
+   </li>
+   <li value="2">
+    <span class="Bold">
+     Windows:
+    </span>
+    the current file pointer can be positioned arbitrarily – moving to a position beyond the current end-of-file causes the file to grow out to that point. Unlike UNIX, the gap created is filled with arbitrary data instead of zeroes.
+   </li>
+  </ul>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="../../Reference Material/P/POINT_LUN.html#P_817877613_678184" target="" title="" alt="">
+    POINT_LUN
+   </a>
+   for details.
+  </p>
+  <h2 class="API">
+   <a name="kanchor5088">
+   </a>
+   <a name="files_2839720996_76781">
+   </a>
+   Testing for End-Of-File
+  </h2>
+  <p>
+   The EOF function is used to test a f
+   <a name="kanchor5089">
+   </a>
+   ile unit to see if it is currently positioned at the end of the file. It returns true (1) if the end-of-file condition is true and false (0) otherwise.
+  </p>
+  <p>
+   For example, to read the contents of a file and print it on the screen, use the following statements:
+  </p>
+  <p class="Code">
+   ;Open file demo.doc for reading.
+  </p>
+  <p class="Code">
+   OPENR, 1, 'demo.doc'
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;Create a variable of type string.
+  </p>
+  <p class="Code">
+   LINE = ''
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;Read and print each line until the end of the file is encountered.
+  </p>
+  <p class="Code">
+   WHILE(~ EOF(1)) DO BEGIN READF,1,LINE &amp; PRINT,LINE &amp; END
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;Done with the file.
+  </p>
+  <p class="Code">
+   CLOSE, 1
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="../../Reference Material/E/EOF.html#E_841667181_984141" target="" title="" alt="">
+    EOF
+   </a>
+   for details.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

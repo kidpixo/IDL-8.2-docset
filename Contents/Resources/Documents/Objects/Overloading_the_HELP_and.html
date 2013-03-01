@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Object-Oriented Programming|Operator Overloading" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Overloading the HELP and PRINT/PRINTF Procedures
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#Objects/Overloading_the_HELP_and.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Object Classes/ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbsSelf">
+    Object-Oriented Programming
+   </span>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Overloading the HELP and PRINT/PRINTF Procedures
+   </span>
+  </div>
+  <h1>
+   <a name="obj_operators_3013489070_1008312">
+   </a>
+   <a name="obj_operators_3013489070_84941">
+   </a>
+   Overloading the HELP and PRINT/PRINTF Procedures
+  </h1>
+  <p>
+   If the PRINT/PRINTF procedure is called with a scalar object that inherits from the IDL_Object class, PRINT/PRINTF calls the object’s
+   <span class="Courier">
+    _overloadPrint
+   </span>
+   function method, which can return a variable of any type that is used as the PRINT/PRINTF output. The default behavior for
+   <span class="Courier">
+    IDL_Object::_overloadPrint
+   </span>
+   is to return the implicit self variable, which causes normal print output for a scalar object reference.
+  </p>
+  <p>
+   If the HELP procedure is called with a scalar object that inherits from IDL_Object, HELP calls the object’s
+   <span class="Courier">
+    _overloadHelp
+   </span>
+   function method. This method must return a scalar string or array of strings containing the “help” information for the object, which is used as the output for the HELP procedure. The default behavior for
+   <span class="Courier">
+    IDL_Object::_overloadHelp
+   </span>
+   is to return the normal help output for a scalar object reference.
+  </p>
+  <p>
+   The
+   <span class="Courier">
+    _overloadHelp
+   </span>
+   argument
+   <i>
+    Varname
+   </i>
+   is set to the name of the variable supplied to the HELP procedure. You may want to use this variable name when constructing the help output for your object class.
+  </p>
+  <p>
+   See
+   <a href="Example__Overloading_the2.html#obj_operators_3013489070_1008489" target="" title="" alt="" class="MCXref_0">
+    Example: Overloading the HELP and PRINT/PRINTF Procedures
+   </a>
+   for a complete code example.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

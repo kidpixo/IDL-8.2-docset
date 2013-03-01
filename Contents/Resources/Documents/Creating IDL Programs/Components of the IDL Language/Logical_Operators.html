@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Concepts|Operators" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Logical Operators
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/Logical_Operators.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">
+    Concepts
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Operators.html">
+    Operators
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Logical Operators
+   </span>
+  </div>
+  <h1>
+   <a name="expressions_2976722315_1032730">
+   </a>
+   <a name="expressions_2976722315_77678">
+   </a>
+   Logical Operators
+   <a name="kanchor3417">
+   </a>
+  </h1>
+  <p>
+   Beginning in IDL 6.0, IDL supports three logical operators:
+   <a class="MCXref_Heading_0" href="#expressions_2976722315_1032751" target="" title="" alt="">
+    &amp;&amp;
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="#expressions_2976722315_1032775">
+    ||
+   </a>
+   , and
+   <a class="MCXref_Heading_0" href="#expressions_2976722315_1032795">
+    ~
+   </a>
+   . When dealing with logical operators, non-zero numerical values, non-empty strings, and non-empty heap variables (pointers and object references) are considered true, everything else is false.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Programmers familiar with the C programming language, and the many languages that share its syntax, may expect
+   <span class="Courier">
+    ~
+   </span>
+   to perform bitwise negation (1’s complement), and for
+   <span class="Courier">
+    !
+   </span>
+   to be used for logical negation. This is not the case in IDL:
+   <span class="Courier">
+    !
+   </span>
+   is used to reference system variables, the NOT operator performs bitwise negation, and
+   <span class="Courier">
+    ~
+   </span>
+   performs logical negation.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   If one or both of the operands are objects, the operator may be overloaded. See
+   <a class="MCXref_Heading_0" href="../../Objects/Object_Operator_Overload.html#obj_operators_3013489070_998687" target="" title="" alt="">
+    Object Operator Overloading Overview
+   </a>
+   for more information.
+  </p>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Logical Operators
+   </caption>
+   <col />
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Operator
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Description
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Example
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="expressions_2976722315_1032751">
+       </a>
+       <a name="expressions_2976722315_11697">
+       </a>
+       &amp;&amp;
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3418">
+       </a>
+       Logical AND
+      </p>
+      <p>
+       Returns 1 whenever both of its operands are true; otherwise, returns 0. Non-zero numerical values, non-empty strings, and non-null heap variables (pointers and object references) are considered true, everything else is false.
+      </p>
+      <p>
+       Operands must be scalars or single-element arrays. The &amp;&amp; operator
+       <i>
+        short-circuits
+       </i>
+       ; the second operand will not be evaluated if the first is false. See
+       <a class="MCXref_Heading_0" href="#expressions_2976722315_1032819" target="" title="" alt="">
+        Short-circuiting
+       </a>
+       for details.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       PRINT, 5 &amp;&amp; 7
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p>
+       <span class="Courier">
+        1
+       </span>
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       PRINT, 5 &amp;&amp; 2
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p>
+       <span class="Courier">
+        1
+       </span>
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       PRINT, 4 &amp;&amp; 0
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p>
+       <span class="Courier">
+        0
+       </span>
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       PRINT, "" &amp;&amp; "sun"
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p class="Code">
+       <span class="Courier">
+        0
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="expressions_2976722315_1032775">
+       </a>
+       <a name="expressions_2976722315_70560">
+       </a>
+       ||
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3419">
+       </a>
+       Logical OR
+      </p>
+      <p>
+       Returns 1 whenever either of its operands are true; otherwise, returns 0. Uses the same test for “truth” as the
+       <a class="MCXref_Heading_0" href="#expressions_2976722315_1032751" target="" title="" alt="">
+        &amp;&amp;
+       </a>
+       operator.
+      </p>
+      <p>
+       Operands must be scalars or single-element arrays. The || operator
+       <i>
+        short-circuits
+       </i>
+       ; the second operand will not be evaluated if the first is true. See
+       <a class="MCXref_Heading_0" href="#expressions_2976722315_1032819" target="" title="" alt="">
+        Short-circuiting
+       </a>
+       for details.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       IF ((5 GT 3) || (4 GT 5)) $
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;THEN PRINT, 'True'
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;">
+       <span class="Courier">
+        True
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       <a name="expressions_2976722315_1032795">
+       </a>
+       <a name="expressions_2976722315_24703">
+       </a>
+       ~
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       <a name="kanchor3420">
+       </a>
+       Logical negation
+      </p>
+      <p>
+       Returns 1 when its operand is false; otherwise, returns 0.
+       <br />
+       Uses the same test for “truth” as the
+       <a class="MCXref_Heading_0" href="#expressions_2976722315_1032751">
+        &amp;&amp;
+       </a>
+       operator.
+      </p>
+      <p>
+       &#160;
+      </p>
+      <p>
+       For lists and hashes, the logical negation operator returns 1 if the list or hash is empty; otherwise it returns 0.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       PRINT, ~ [1, 2, 0]
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;">
+       <span class="Courier">
+        0&#160;&#160;0&#160;&#160;1
+       </span>
+      </p>
+      <p>
+       &#160;
+      </p>
+      <p>
+       &#160;
+      </p>
+      <p class="Code">
+       list = LIST()
+      </p>
+      <p class="Code">
+       IF (~list) $
+      </p>
+      <p class="Code">
+       &#160;&#160;&#160;THEN PRINT, 'Empty List'
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p>
+       IDL Prints:
+      </p>
+      <p>
+       <span class="Courier">
+        Empty List
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="expressions_2976722315_1032819">
+   </a>
+   <a name="expressions_2976722315_16756">
+   </a>
+   Short-circuiting
+  </h2>
+  <p>
+   The
+   <span class="Courier">
+    &amp;&amp;
+   </span>
+   and
+   <span class="Courier">
+    ||
+   </span>
+   logical operators, added to IDL in version 6.0, are
+   <i>
+    short-circuiting
+   </i>
+   operators. This means that IDL does not evaluate the second operand unless it is necessary in order to determine the proper overall answer. Short-circuiting behavior can be powerful, since it allows you to base the decision to compute the value of the second operand on the value of the first operand. For instance, in the expression:
+  </p>
+  <p class="Code">
+   Result = Op1 &amp;&amp; Op2
+  </p>
+  <p>
+   IDL does not evaluate
+   <span class="Courier">
+    Op2
+   </span>
+   if
+   <span class="Courier">
+    Op1
+   </span>
+   is false, because it already knows that the result of the entire operation will be false. Similarly in the expression:
+  </p>
+  <p class="Code">
+   Result = Op1 || Op2
+  </p>
+  <p>
+   IDL does not evaluate
+   <span class="Courier">
+    Op2
+   </span>
+   if
+   <span class="Courier">
+    Op1
+   </span>
+   is true, because it already knows that the result of the entire operation will be true.
+  </p>
+  <p>
+   If you want to ensure that both operands are evaluated (perhaps because the operand is an expression that changes value when evaluated), use the
+   <a class="MCXref_Heading_0" href="../../Reference Material/L/LOGICAL_AND.html#L_826528365_983100" target="" title="" alt="">
+    LOGICAL_AND
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="../../Reference Material/L/LOGICAL_OR.html#L_826528365_983101" target="" title="" alt="">
+    LOGICAL_OR
+   </a>
+   functions or the bitwise AND and OR operators.
+  </p>
+  <h2 class="API">
+   Additional Logical Operator Examples
+  </h2>
+  <p>
+   Results of relational expressions can be combined into more complex expressions using the logical operators. Some examples of relational and logical expressions are as follows:
+  </p>
+  <p class="Code">
+   ;True if A is between 25 and 50. If A is an array, then the result
+  </p>
+  <p class="Code">
+   ;is an array of zeros and ones.
+  </p>
+  <p class="Code">
+   (A LE 50) &amp;&amp; (A GE 25)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ;True if A is less than 25 or greater than 50. This is the inverse
+  </p>
+  <p class="Code">
+   ;of the first.
+  </p>
+  <p class="Code">
+   (A GT 50) || (A LT 25)
+  </p>
+  <h2 class="API">
+   Version History
+  </h2>
+  <p>
+   The logical operators &amp;&amp;, ||, and ~, and the LOGICAL_AND and LOGICAL_OR functions were added to IDL in version 6.0.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

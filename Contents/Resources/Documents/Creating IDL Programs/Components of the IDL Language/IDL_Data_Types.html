@@ -1,0 +1,950 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Concepts" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDL Data Types
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/IDL_Data_Types.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">
+    Concepts
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDL Data Types
+   </span>
+  </div>
+  <h1>
+   <a name="constants_818058343_672352">
+   </a>
+   <a name="constants_818058343_81705">
+   </a>
+   IDL Data Types
+  </h1>
+  <p>
+   In IDL there are twelve basic, atomic data
+   <a name="kanchor3303">
+   </a>
+   types, each with its own form of constant. The data type assigned to a variable is determined either by the syntax used when creating the variable, or as a result of some operation that changes the type of the variable. IDL’s basic data types are discussed in more detail beginning with
+   <a class="MCXref_Heading_0" href="Defining_and_Using_Const.html#constants_818058343_701726" target="" title="" alt="">
+    Defining and Using Constants
+   </a>
+   .
+  </p>
+  <p>
+   In addition, IDL provides several compound data types that serve as containers for variables of other data types. Examples of compound data types include pointers, structures, objects, lists, and hashes. You cannot create a constant of a compound data type, but it is generally possible to create an “empty” variable of a compound data type. See
+   <a class="MCXref_Heading_0" href="Compound_Data_Types.html#constants_818058343_705352" target="" title="" alt="">
+    Compound Data Types
+   </a>
+   for additional information.
+  </p>
+  <p>
+   Finally, there is the special !NULL system variable, which represents an undefined variable.
+  </p>
+  <p>
+   The following table lists IDL’s data types, provides examples of how to explicitly create a variable of each type, and list the routines used to create variables and arrays of each type. Type codes shown in the
+   <span class="Bold">
+    Type Code
+   </span>
+   column correspond to the type code returned by the
+   <a class="MCXref_Heading_0" href="../../Reference Material/S/SIZE.html#S_820040301_678885" target="" title="" alt="">
+    SIZE
+   </a>
+   function. Type names shown in the
+   <b>
+    Type Name
+   </b>
+   column correspond to the string returned by the
+   <a href="../../Reference Material/T/TYPENAME.html" target="" title="" alt="" class="MCXref_Heading_0">
+    TYPENAME
+   </a>
+   function.
+  </p>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Data Types
+   </caption>
+   <col />
+   <col />
+   <col />
+   <col />
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Data Type
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Description
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Type
+       <br />
+       Code
+      </p>
+     </td>
+     <th class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      Type Name
+     </th>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Creation
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Routines
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      Null
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      An undefined variable. !NULL&#160;may be used for array concatenation, array indexing, and for comparison.
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      0
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      UNDEFINED
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       a&#160;=&#160;!NULL
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       a = [ ]
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       a = { }
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <a href="../Appendices/Constant_System_Variable.html#!NULL" target="" title="" alt="" class="MCXref_Heading_0">
+       !NULL
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3304">
+       </a>
+       Byte
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       An 8-bit unsigned integer ranging in value from 0 to 255. Pixels in images are commonly represented as byte data.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      BYTE
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       a&#160;=&#160;5B
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       a&#160;=&#160;BYTE(5)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/B/BYTE.html#B_856805997_675883" target="" title="" alt="">
+        BYTE
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/B/BYTARR.html#B_856805997_675870" target="" title="" alt="">
+        BYTARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3305">
+       </a>
+       Integer
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       A 16-bit signed integer ranging from
+       <span style="font-family: Symbol;">
+        -
+       </span>
+       32,768 to +32,767.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      INT
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       b&#160;=&#160;0
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       b&#160;=&#160;0S
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       b&#160;=&#160;FIX(0)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/F/FIX.html#F_848155245_957011" target="" title="" alt="">
+        FIX
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/I/INTARR.html#I_833016429_677245" target="" title="" alt="">
+        INTARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3306">
+       </a>
+       Unsigned Integer
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       A 16-bit unsigned integer ranging from 0 to 65535.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       12
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      UINT
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       c&#160;=&#160;0U
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       c&#160;=&#160;UINT(0)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/U/UINT.html#U_807064173_950191" target="" title="" alt="">
+        UINT
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/U/UINTARR.html#U_807064173_950250" target="" title="" alt="">
+        UINTARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3307">
+       </a>
+       Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       A 32-bit signed integer ranging in value from
+       <br />
+       <span style="font-family: Symbol;">
+        -
+       </span>
+       2&#160;147&#160;483&#160;648 to +2&#160;147&#160;483&#160;647.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      LONG
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       d&#160;=&#160;0L
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       d&#160;=&#160;LONG(0)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/L/LONG.html#L_826528365_928337" target="" title="" alt="">
+        LONG
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/L/LONARR.html#L_826528365_916547" target="" title="" alt="">
+        LONARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3308">
+       </a>
+       Unsigned Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       A 32-bit unsigned integer ranging in value from 0 to 4&#160;294&#160;967&#160;296.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       13
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      ULONG
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       e&#160;=&#160;0UL
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       e&#160;=&#160;ULONG(0)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/U/ULONG.html#U_807064173_950523" target="" title="" alt="">
+        ULONG
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/U/ULONARR.html#U_807064173_950466" target="" title="" alt="">
+        ULONARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3309">
+       </a>
+       64-bit Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       A 64-bit signed integer ranging in value from
+       <br />
+       <span style="font-family: Symbol;">
+        -
+       </span>
+       9&#160;223&#160;372&#160;036&#160;854&#160;775&#160;808 to +9&#160;223&#160;372&#160;036&#160;854&#160;775&#160;807.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       14
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      LONG64
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       f&#160;=&#160;0LL
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       f&#160;=&#160;LONG64(0)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/L/LONG64.html#L_826528365_918926" target="" title="" alt="">
+        LONG64
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/L/LON64ARR.html#L_826528365_983144" target="" title="" alt="">
+        LON64ARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3310">
+       </a>
+       64-bit Unsigned Long
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       A 64-bit unsigned integer ranging in value from 0 to 18&#160;446&#160;744&#160;073&#160;709&#160;551&#160;615.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       15
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      ULONG64
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       g&#160;=&#160;0ULL
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       g&#160;=&#160;ULONG64(0)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/U/ULONG64.html#U_807064173_950582" target="" title="" alt="">
+        ULONG64
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/U/ULON64ARR.html#U_807064173_950409" target="" title="" alt="">
+        ULON64ARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3311">
+       </a>
+       Floating-point
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       A 32-bit, single-precision, floating-point number in the range of
+       <span style="font-family: Symbol;font-size: 14pt;line-height: 16pt;">
+        ±
+       </span>
+       10
+       <sup>
+        38
+       </sup>
+       , with approximately six or seven significant digits.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       4
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      FLOAT
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       h&#160;=&#160;0.0
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       h&#160;=&#160;FLOAT(0)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/F/FLOAT.html#F_848155245_676911" target="" title="" alt="">
+        FLOAT
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/F/FLTARR.html#F_848155245_676939" target="" title="" alt="">
+        FLTARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3312">
+       </a>
+       Double-precision
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       A 64-bit, double-precision, floating-point number in the range of
+       <span style="font-family: Symbol;font-size: 14pt;line-height: 16pt;">
+        ±
+       </span>
+       10
+       <sup>
+        308
+       </sup>
+       with approximately 14 significant digits.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       5
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      DOUBLE
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       i&#160;=&#160;0.0D
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       i&#160;=&#160;DOUBLE(0)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/D/DOUBLE.html#D_843829869_37011" target="" title="" alt="">
+        DOUBLE
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/D/DBLARR.html#D_843829869_1060809" target="" title="" alt="">
+        DBLARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3313">
+       </a>
+       Complex
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       A real-imaginary pair of single-precision, floating-point numbers. Complex numbers are useful for signal processing and frequency domain filtering.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       6
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      COMPLEX
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       j&#160;=&#160;$
+       <br />
+       COMPLEX(1.0, 0.0)
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       j&#160;=&#160;COMPLEX(1,0)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/C/COMPLEX.html#C_854643309_1052509" target="" title="" alt="">
+        COMPLEX
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/C/COMPLEXARR.html#C_854643309_676228" target="" title="" alt="">
+        COMPLEXARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3314">
+       </a>
+       Double-precision complex
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       A real-imaginary pair of double-precision, floating-point numbers.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       9
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      DCOMPLEX
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       k&#160;=&#160;$
+       <br />
+       DCOMPLEX(1.0, 0.0)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/D/DCOMPLEX.html#D_843829869_37570" target="" title="" alt="">
+        DCOMPLEX
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/D/DCOMPLEXARR.html#D_843829869_37687" target="" title="" alt="">
+        DCOMPLEXARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3315">
+       </a>
+       String
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       A sequence of characters, from 0 to 2&#160;147&#160;483&#160;647 (2.1 GB) characters in length, which is interpreted as text.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       7
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      STRING
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       l&#160;=&#160;'Hello'
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code">
+       l&#160;=&#160;$
+       <br />
+       STRING([72B, 101B, $
+      </p>
+      <p class="Code">
+       108B, 108B, 111B])
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/S/STRING.html#S_820040301_679053" target="" title="" alt="">
+        STRING
+       </a>
+      </p>
+      <p>
+       <a class="MCXref_Heading_0" href="../../Reference Material/S/STRARR.html#S_820040301_679026" target="" title="" alt="">
+        STRARR
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3316">
+       </a>
+       Structure
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       A compound data type that contains pairs of tags and values, where the values can be of any data type. Once a structure is created, neither the tags nor the data types of the values associated with the tags can be changed.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       8
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      Structure name or ANONYMOUS
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       s = {name,tag:0b}
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+      <p class="Code" style="font-family: Courier;letter-spacing: -0.01em;">
+       s = $
+       <br />
+       CREATE_STRUCT( tag1,$
+       <br />
+       0b, tag2, 'string')
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/C/CREATE_STRUCT.html#C_854643309_676445" target="" title="" alt="">
+        CREATE_STRUCT
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3317">
+       </a>
+       Pointer
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       A compound data type that contains a reference to a single value, where the value can be of any data type. The data type of the value referred to can be changed.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       10
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      POINTER
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       p = PTR_NEW(0b)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/P/PTR_NEW.html#P_817877613_1086484" target="" title="" alt="">
+        PTR_NEW
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3318">
+       </a>
+       Object
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       A compound data type that contains a reference to an instance of an IDL object class. Object instances can contain data of any type, but the data types allowed are defined by the object class and cannot be changed after creation.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       11
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      Class name or OBJREF (for null objects)
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p class="Code">
+       o = OBJ_NEW('class')
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/O/OBJ_NEW.html#O_828691053_889454" target="" title="" alt="">
+        OBJ_NEW
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="kanchor3319">
+       </a>
+       List
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       A compound data type that contains a reference to a collection of values. The individual values can be of any data type, and the data types and values can be changed.
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       11
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      LIST
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p class="Code">
+       l = LIST(1,2)
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/L/LIST.html#L_826528365_1077832" target="" title="" alt="">
+        LIST
+       </a>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      Hash
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      A compound data type that contains a reference to a collection of key-value pairs. The key can be of any scalar type, and the value can be of any type. The data types and values can be changed.
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      11
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      HASH
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      h = HASH('Id', 1234)
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p style="margin-bottom: 3pt;">
+       <a class="MCXref_Heading_0" href="../../Reference Material/H/HASH.html#L_826528365_1077832" target="" title="" alt="">
+        HASH
+       </a>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   Precision of Floating-Point Numbers
+  </h3>
+  <p>
+   The precision of IDL’s floating-point numbers depends somewhat on the platform involved and the compiler and specific compiler switches used to compile the IDL executable. The values shown here are minimum values; in some cases, IDL may deliver slightly more precision than we have indicated. If your application uses numbers that are sensitive to floating-point truncation or round-off errors, or values that cannot be represented exactly as floating-point numbers, this is something you should consider.
+  </p>
+  <p>
+   For more information on floating-point mathematics, see
+   <a class="MCXref_Heading_0" href="Accuracy_and_Floating_Po.html#constants_818058343_705345" target="" title="" alt="">
+    Accuracy and Floating Point Operations
+   </a>
+   . For information on your machine’s precision, see
+   <a class="MCXref_Heading_0" href="../../Reference Material/M/MACHAR.html#M_824365677_887317" target="" title="" alt="">
+    MACHAR
+   </a>
+   .
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

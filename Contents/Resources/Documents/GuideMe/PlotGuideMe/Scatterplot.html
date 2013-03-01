@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Scatterplot
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#GuideMe/PlotGuideMe/Scatterplot.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <h1>
+   Scatterplot
+  </h1>
+  <p>
+   You can create a scatterplot using two bands of image data. Two-dimensional (2D) scatterplots show the range of pixel values in each band, creating a visual way to assess data variance.
+  </p>
+  <p>
+   <img src="../../Resources/Images/scatterplot.png" />
+  </p>
+  <p>
+   The code shown below creates the graphic shown above. You can copy the entire block and paste it into the IDL&#160;command line to run it.
+  </p>
+  <p class="Code">
+   ; Read in a 2-band image
+  </p>
+  <p class="Code">
+   file = FILE_WHICH('glowing_gas.jpg')
+  </p>
+  <p class="Code">
+   !null = QUERY_IMAGE(file, info)
+  </p>
+  <p class="Code">
+   gas = READ_IMAGE(file)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   red_band_pixels = REFORM(gas[0,*,*], product(info.dimensions))
+  </p>
+  <p class="Code">
+   green_band_pixels = REFORM(gas[1,*,*], product(info.dimensions))
+  </p>
+  <p class="Code">
+   ; Plot red versus green band
+  </p>
+  <p class="Code">
+   s = PLOT(red_band_pixels, green_band_pixels, $
+  </p>
+  <p class="Code">
+   &#160;&#160;SYMBOL = 'dot', $
+  </p>
+  <p class="Code">
+   &#160;&#160;/SYM_FILLED, $
+  </p>
+  <p class="Code">
+   &#160;&#160;SYM_COLOR = 'purple', $
+  </p>
+  <p class="Code">
+   &#160;&#160;LINESTYLE = 'none', $
+  </p>
+  <p class="Code">
+   &#160;&#160;XTITLE = 'Red band value', $
+  </p>
+  <p class="Code">
+   &#160;&#160;YTITLE = 'Green band value', $
+  </p>
+  <p class="Code">
+   &#160;&#160;TITLE = 'Red vs. green band of "glowing_gas.jpg"')
+  </p>
+  <h2 class="API">
+   Resources
+  </h2>
+  <ul>
+   <li value="1">
+    <a href="../../Reference Material/F/FILE_WHICH.html">
+     FILE_WHICH
+    </a>
+   </li>
+   <li value="2">
+    <a href="../../Reference Material/Q/QUERY_IMAGE.html">
+     QUERY_IMAGE
+    </a>
+   </li>
+   <li value="3">
+    <a href="../../Reference Material/R/READ_IMAGE.html">
+     READ_IMAGE
+    </a>
+   </li>
+   <li value="4">
+    <a href="../../Reference Material/R/REFORM.html">
+     REFORM
+    </a>
+   </li>
+   <li value="5">
+    <a href="../../Reference Material/P/PLOT.html">
+     PLOT
+    </a>
+   </li>
+   <li value="6">
+    <a href="../../IDL Graphics/FormattingSymsAndLines.html">
+     Formatting Symbols and Lines
+    </a>
+   </li>
+  </ul>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

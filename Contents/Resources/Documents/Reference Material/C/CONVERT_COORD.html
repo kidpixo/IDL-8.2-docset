@@ -1,0 +1,539 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CONVERT_COORD
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CONVERT_COORD.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CONVERT_COORD
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_891342">
+   </a>
+   <a name="dg_routines_3604229493_98010">
+   </a>
+   CONVERT_COORD
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891379">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891406">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891409">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891417">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891446">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891480">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891488">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor370">
+   </a>
+   CONVERT_COORD function transforms one or more sets of coordinates to and from the
+   <a name="kanchor371">
+   </a>
+   coordinate systems supported by
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   .
+  </p>
+  <p>
+   The input coordinates
+   <i>
+    X
+   </i>
+   and, optionally,
+   <i>
+    Y
+   </i>
+   and/or
+   <i>
+    Z
+   </i>
+   can be given in data, device, or normalized form by using the DATA, DEVICE, or NORMAL keywords. The default input coordinate system is DATA. The keywords TO_DATA, TO_DEVICE, and TO_NORMAL specify the output coordinate system.
+  </p>
+  <p>
+   If the input points are in 3D data coordinates, be sure to set the T3D keyword.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   CONVERT_COORD utilizes values currently stored in the !X, !Y, !Z and !P system variables to compute coordinate conversion factors.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   For devices that support windows, CONVERT_COORD can only provide valid results if a window is open and current. Also, CONVERT_COORD only applies to Direct Graphics devices.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_891379">
+   </a>
+   <a name="dg_routines_3604229493_676367_PageTOC_CONVERT_COORD_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = CONVERT_COORD(
+   <i>
+    X
+   </i>
+   [,&#160;
+   <i>
+    Y
+   </i>
+   [,&#160;
+   <i>
+    Z
+   </i>
+   ]] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891419">
+    DATA
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891423">
+    DEVICE
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891430">
+    NORMAL
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891427">
+    DOUBLE
+   </a>
+   ][,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891434">
+    T3D
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891437">
+    TO_DATA
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891440">
+    TO_DEVICE
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_891443">
+    TO_NORMAL
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_891406">
+   </a>
+   <a name="dg_routines_3604229493_62262">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The result of the function is a (3,
+   <i>
+    n
+   </i>
+   ) vector containing the (
+   <i>
+    x, y, z
+   </i>
+   ) components of the n output coordinates.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_891409">
+   </a>
+   <a name="dg_routines_3604229493_676369_PageTOC_CONVERT_COORD_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   A vector or scalar argument providing the X components of the input coordinates. If only one argument is specified,
+   <i>
+    X
+   </i>
+   must be an array of either two or three vectors (i.e.,
+   <span class="Courier">
+    (2,*)
+   </span>
+   or
+   <span class="Courier">
+    (3,*)
+   </span>
+   ). In this special case,
+   <span class="Courier">
+    X[0,*]
+   </span>
+   are taken as the X values,
+   <span class="Courier">
+    X[1,*]
+   </span>
+   are taken as the Y values, and, if present,
+   <span class="Courier">
+    X[2,*]
+   </span>
+   are taken as the Z values.
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   An optional argument providing the Y input coordinate(s).
+  </p>
+  <h3 class="Argument">
+   Z
+  </h3>
+  <p>
+   An optional argument providing the Z input coordinate(s).
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_891417">
+   </a>
+   <a name="dg_routines_3604229493_676376_PageTOC_CONVERT_COORD_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_891419">
+   </a>
+   <a name="dg_routines_3604229493_676377_Keywords_CONVERT_COORD__">
+   </a>
+   DATA
+  </h3>
+  <p>
+   Set this keyword if the input coordinates are in
+   <a name="kanchor372">
+   </a>
+   data space (the default).
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_891423">
+   </a>
+   <a name="dg_routines_3604229493_676379_Keywords_CONVERT_COORD__">
+   </a>
+   DEVICE
+  </h3>
+  <p>
+   Set this keyword if the input coordinates are in
+   <a name="kanchor373">
+   </a>
+   device space.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_891427">
+   </a>
+   <a name="dg_routines_3604229493_1015017_Keywords_CONVERT_COORD__">
+   </a>
+   DOUBLE
+  </h3>
+  <p>
+   Set this keyword to indicate that the returned coordinates should be double-precision. If this keyword is not set, the default is to return single-precision coordinates (unless double-precision arguments are input, in which case the returned coordinates will be double-precision).
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_891430">
+   </a>
+   <a name="dg_routines_3604229493_676381_Keywords_CONVERT_COORD__">
+   </a>
+   NORMAL
+  </h3>
+  <p>
+   Set this keyword if the input coordinates are in
+   <a name="kanchor374">
+   </a>
+   normalized space.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_891434">
+   </a>
+   <a name="dg_routines_3604229493_676383_Keywords_CONVERT_COORD__">
+   </a>
+   T3D
+  </h3>
+  <p>
+   Set this keyword if the 3D transformation !P.T is to be applied.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_891437">
+   </a>
+   <a name="dg_routines_3604229493_676385_Keywords_CONVERT_COORD__">
+   </a>
+   TO_DATA
+  </h3>
+  <p>
+   Set this keyword if the output coordinates are to be in data space.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_891440">
+   </a>
+   <a name="dg_routines_3604229493_676387_Keywords_CONVERT_COORD__">
+   </a>
+   TO_DEVICE
+  </h3>
+  <p>
+   Set this keyword if the output coordinates are to be in device space.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_891443">
+   </a>
+   <a name="dg_routines_3604229493_676389_Keywords_CONVERT_COORD__">
+   </a>
+   TO_NORMAL
+  </h3>
+  <p>
+   Set this keyword if the output coordinates are to be in normalized space.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_891446">
+   </a>
+   <a name="dg_routines_3604229493_676391_PageTOC_CONVERT_COORD_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Convert, using the currently established viewing transformation, 11 points along the parametric line
+   <i>
+    x = t
+   </i>
+   ,
+   <i>
+    y
+   </i>
+   = 2
+   <i>
+    t
+   </i>
+   ,
+   <i>
+    z
+   </i>
+   =
+   <i>
+    t
+   </i>
+   <span class="SuperScript">
+    2
+   </span>
+   , along the interval [0, 1] from data coordinates to device coordinates:
+  </p>
+  <p class="Code">
+   ; Establish a valid transformation matrix:
+  </p>
+  <p class="Code">
+   SURFACE, DIST(20), /SAVE
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Make a vector of X values:
+  </p>
+  <p class="Code">
+   X = FINDGEN(11)/10.
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Convert the coordinates. D will be a (3,11) element array:
+  </p>
+  <p class="Code">
+   D = CONVERT_COORD(X, 2*X, X^2, /T3D, /TO_DEVICE)
+  </p>
+  <p>
+   To convert the endpoints of a line from data coordinates (0, 1) to (5, 7) to device coordinates, use the following statement:
+  </p>
+  <p class="Code">
+   D = CONVERT_COORD([0, 5], [1, 7], /DATA, /TO_DEVICE)
+  </p>
+  <p>
+   On completion, the variable
+   <i>
+    D
+   </i>
+   is a (3, 2) vector, containing the
+   <i>
+    x
+   </i>
+   ,
+   <i>
+    y
+   </i>
+   , and
+   <i>
+    z
+   </i>
+   coordinates of the two endpoints.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_891460">
+   </a>
+   <a name="dg_routines_3604229493_59058">
+   </a>
+   Three-Dimensional Direct Graphic Coordinate Conversion
+  </h3>
+  <p>
+   The CONVERT_COORD function performs the three-dimensional coordinate conversion process (described in
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/Coordinate_Conversions.html#Using_DG_66131095_1031959" target="" title="" alt="">
+    Three-Dimensional Coordinate Conversion
+   </a>
+   ) when converting to and from coordinate systems when the T3D keyword is specified. For example, if a three-dimensional coordinate system is established, then the device coordinates of the data point (0,&#160;1,&#160;2) can be computed as follows:
+  </p>
+  <p class="Code">
+   D = CONVERT_COORD(0, 1, 2, /TO_DEVICE, /T3D, /DATA)
+  </p>
+  <p>
+   On completion, the three-element vector
+   <i>
+    D
+   </i>
+   <a name="dg_routines_3604229493_91088">
+   </a>
+   will contain the desired device coordinates. The process of converting from three-dimensional to two-dimensional coordinates also can be written as an IDL function. This function accepts a three-dimensional data coordinate, returns a two-element vector containing the coordinate transformed to two-dimensional normalized coordinates using the current transformation matrix:
+  </p>
+  <p class="Code">
+   FUNCTION CVT_TO_2D, X, Y, Z
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Make a homogeneous vector of normalized 3D coordinates:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;P = [!X.S[0] + !X.S[1] * X, !Y.S[0] + !Y.S[1] * Y, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;!Z.S[0] + !Z.S[1] * Z, 1]
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Transform by !P.T:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;P = P # !P.T
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Return the scaled result as a two-element,
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; two-dimensional, xy vector:
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN, [P[0] / P[3], P[1] / P[3]]
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_891480">
+   </a>
+   <a name="dg_routines_3604229493_823445_PageTOC_CONVERT_COORD_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_891488">
+   </a>
+   <a name="dg_routines_3604229493_1052209_PageTOC_CONVERT_COORD_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a href="CV_COORD.html">
+    CV_COORD
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

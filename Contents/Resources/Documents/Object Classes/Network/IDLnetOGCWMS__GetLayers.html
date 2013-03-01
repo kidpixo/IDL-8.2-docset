@@ -1,0 +1,2688 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Network Object Classes|IDLnetOGCWMS" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLnetOGCWMS::GetLayers
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Network/IDLnetOGCWMS__GetLayers.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_network.html">
+    Network Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLnetOGCWMS::GetLayers
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_network_1009015_1394533">
+   </a>
+   <a name="objects_network_1009015_77689">
+   </a>
+   I
+   <a name="kanchor4784">
+   </a>
+   DLnetOGCWMS::GetLayers
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1394568">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1394583">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1395441">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1395444">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1395459">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1395550">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_network_1009015_1395558">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLnetOGCWMS::GetLayers function method provides access to the layer details that were returned and parsed by the
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetCapabil.html#objects_network_1009015_1393865">
+    IDLnetOGCWMS::GetCapabilities
+   </a>
+   method. You can return information for all layers or a subset of the layers, which can be useful when:
+  </p>
+  <ul>
+   <li value="1">
+    A large number of layers would require significant amounts of memory to return all of them at a single time
+   </li>
+   <li value="2">
+    A user interface needs to display a subset of the available items
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Use
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetService.html#objects_network_1009015_1395976">
+    IDLnetOGCWMS::GetServiceSection
+   </a>
+   to return information related to the service section of the layer information.
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1394568">
+   </a>
+   <a name="objects_network_1009015_99088">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result = Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS.html#objects_network_1009015_1392001">
+    IDLnetOGCWMS
+   </a>
+   ::]GetLayers ([,&#160;
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1395446">
+    COUNT
+   </a>
+   =
+   <i>
+    variable
+   </i>
+   ], [,&#160;
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1395449">
+    NUMBER
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1395456">
+    INDEX
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ])
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1394583">
+   </a>
+   <a name="objects_network_1009015_78044">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   The return value is an array of structures containing one or more layers. Use the COUNT keyword to verify that layers are available since the returned value can be zero when layers are not available. The layer structure contains single values, arrays of strings, and structures.
+  </p>
+  <h3>
+   Layer Structure
+  </h3>
+  <p>
+   The layer structure is complex. Some elements in the main structure return other structures, as shown in the following figure:
+  </p>
+  <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="FigureTitle">
+    Layer Structure and Sub-structures
+   </p>
+   <col width="517px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../../images/37_2.jpg" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_layer_struct">
+   </a>
+   <a name="objects_network_1009015_1394651">
+   </a>
+   <a name="objects_network_1009015_24775">
+   </a>
+   Main Layer Structure
+  </h3>
+  <p>
+   The following table contains a list of tags found in the main level Layer structure. All items return string values unless otherwise noted. All tags are valid in versions 1.1.1 and 1.3.0 unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Layer Structure
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field Name
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_58600">
+       </a>
+       LAYER
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Contains the zero-based layer number as a convenience. Layers are numbered sequentially as they are encountered in the XML file returned by GetCapabilities. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       PARENT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Contains the layer number of the parent of this child level as a convenience. If the layer is at the root level, the value is -1. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       LEVEL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Contains the nesting level of the layer as a convenience. Layers at the root level have a LEVEL value of 1, children of the root level have a value of 2. This value increases with increasing nesting level and is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       VERSION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;WMT_MS_Capabilities&gt;&lt;version&gt;
+      </p>
+      <p class="Code">
+       1.3.0 XML source: &lt;WMS_Capabilities&gt;&lt;version&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       UPDATE_SEQUENCE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;WMT_MS_Capabilities&gt;&lt;updatesequence&gt;
+      </p>
+      <p class="Code">
+       1.3.0 XML source: &lt;WMS_Capabilities&gt;&lt;updatesequence&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394683">
+       </a>
+       <a name="objects_network_1009015_25371">
+       </a>
+       NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;name&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394688">
+       </a>
+       <a name="objects_network_1009015_18588">
+       </a>
+       TITLE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;title&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       ABSTRACT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;abstract&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NUM_MAP_FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of map formats as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394701">
+       </a>
+       <a name="objects_network_1009015_15052">
+       </a>
+       MAP_FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Array of strings (0 to many).
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;capability&gt;&lt;request&gt;&lt;getmap&gt;&lt;format&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NUM_FEATURE_FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of feature formats as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394711">
+       </a>
+       <a name="objects_network_1009015_95255">
+       </a>
+       FEATURE_FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Array of strings (0 to many).
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;capability&gt;&lt;request&gt;&lt;getfeatureinfo&gt;&lt;format&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NUM_KEYWORD
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of keywords as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       KEYWORD
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Array of strings (0 to many).
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;keywordlist&gt;&lt;keyword&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NUM_SRS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of SRS elements as a convenience. This value is generated by IDL.
+      </p>
+      <p>
+       Valid in version 1.1.1 only (version 1.3.0 always returns 0).
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394731">
+       </a>
+       <a name="objects_network_1009015_57988">
+       </a>
+       SRS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Array of strings (0 to many).
+      </p>
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;srs&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NUM_CRS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of CRS elements as a convenience. This value is generated by IDL.
+      </p>
+      <p>
+       Valid in version 1.3.0 only (version 1.1.1 always returns 0).
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394742">
+       </a>
+       <a name="objects_network_1009015_75841">
+       </a>
+       CRS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Array of strings (0 to many).
+      </p>
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;crs&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394748">
+       </a>
+       <a name="objects_network_1009015_78575">
+       </a>
+       LAT_LON_BBOX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Returns a structure. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1394946">
+        Lat_Lon_Bbox Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;latlonboundingbox&gt;
+      </p>
+      <p>
+       Valid in version 1.1.1 only.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394758">
+       </a>
+       <a name="objects_network_1009015_70879">
+       </a>
+       EX_GEOBOX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Returns a structure. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1394985">
+        Ex_GeoBox Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;ex_geographicboundingbox&gt;
+      </p>
+      <p>
+       Valid in version 1.3.0 only.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394768">
+       </a>
+       <a name="objects_network_1009015_78193">
+       </a>
+       NUM_BOUNDING_BOX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of BOUNDING_BOX elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394773">
+       </a>
+       <a name="objects_network_1009015_40795">
+       </a>
+       BOUNDING_BOX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Returns an array of structures (0 to many). See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1395024">
+        Bounding_Box Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;bounding_box&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394782">
+       </a>
+       <a name="objects_network_1009015_91657">
+       </a>
+       NUM_EXTENT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of EXTENT elements as a convenience. This value is generated by IDL.
+      </p>
+      <p>
+       Valid in version 1.1.1 only (version 1.3.0 always returns 0).
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394788">
+       </a>
+       <a name="objects_network_1009015_56469">
+       </a>
+       EXTENT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Returns an array of structures (0 to many). See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1395077">
+        Extent Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;extent&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394797">
+       </a>
+       <a name="objects_network_1009015_90087">
+       </a>
+       NUM_DIMENSION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Provides the number of DIMENSION elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394802">
+       </a>
+       <a name="objects_network_1009015_36526">
+       </a>
+       DIMENSION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Returns an array of structures (0 to many). See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1395119">
+        Dimension Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;dimension&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394811">
+       </a>
+       <a name="objects_network_1009015_92107">
+       </a>
+       ATTRIBUTION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Structure. See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1395177">
+        Attribution Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;attribution&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394820">
+       </a>
+       <a name="objects_network_1009015_29854">
+       </a>
+       NUM_AUTHORITY
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Provides the number of AUTHORITY elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394825">
+       </a>
+       <a name="objects_network_1009015_34732">
+       </a>
+       AUTHORITY
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Returns an array of structures (0 to many). See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1395221">
+        Authority Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;authority&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394834">
+       </a>
+       <a name="objects_network_1009015_33141">
+       </a>
+       NUM_IDENTIFIER
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Provides the number of IDENTIFIER elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394839">
+       </a>
+       <a name="objects_network_1009015_85494">
+       </a>
+       IDENTIFIER
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Returns an array of structures (0 to many). See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1395251">
+        Identifier Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;identifier&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394848">
+       </a>
+       <a name="objects_network_1009015_33464">
+       </a>
+       NUM_METADATA_URL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Provides the number of METADATA_URL elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394853">
+       </a>
+       <a name="objects_network_1009015_16984">
+       </a>
+       METADATA_URL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Returns an array of structures (0 to many). See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1395281">
+        Metadata_URL Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;metadataurl&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394862">
+       </a>
+       <a name="objects_network_1009015_64394">
+       </a>
+       NUM_DATA_URL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Provides the number of DATA_URL elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394867">
+       </a>
+       <a name="objects_network_1009015_19759">
+       </a>
+       DATA_URL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Returns an array of structures (0 to many). See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1395315">
+        Data_URL Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;dataurl&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394876">
+       </a>
+       <a name="objects_network_1009015_77319">
+       </a>
+       NUM_FEATURE_URL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Provides the number of FEATURE_URL elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394881">
+       </a>
+       <a name="objects_network_1009015_46635">
+       </a>
+       FEATURE_URL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Returns an array of structures (0 to many). See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1395345">
+        Feature_URL Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;featurelisturl&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394890">
+       </a>
+       <a name="objects_network_1009015_57389">
+       </a>
+       NUM_STYLE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Provides the number of STYLE elements as a convenience. This value is generated by IDL.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394895">
+       </a>
+       <a name="objects_network_1009015_70096">
+       </a>
+       STYLE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Returns an array of structures (0 to many). See
+       <a class="MCXref_Heading_0" href="#objects_network_1009015_1395375">
+        Style Structure
+       </a>
+       for details.
+      </p>
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       MIN_SCALE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;scalehint&gt;&lt;min&gt;
+      </p>
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;minscaledenominator&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       MAX_SCALE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;scalehint&gt;&lt;max&gt;
+      </p>
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;maxscaledenominator&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1394914">
+       </a>
+       <a name="objects_network_1009015_39205">
+       </a>
+       QUERYABLE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;queryable&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       CASCADED
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;cascaded&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       OPAQUE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;opaque&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NO_SUBSETS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;nosubsets&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       FIXED_WIDTH
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;fixedwidth&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       FIXED_HEIGHT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;fixedheight&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_lat_lon_bbox_struct">
+   </a>
+   <a name="objects_network_1009015_1394946">
+   </a>
+   <a name="objects_network_1009015_95846">
+   </a>
+   Lat_Lon_Bbox Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394748">
+    LAT_LON_BBOX
+   </a>
+   field of the parent layer structure. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" class="TableStyle_Description" cellspacing="0">
+   <caption>
+    Lat_Lon_Bbox Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       MINX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;latlonboundingbox&gt;&lt;minx&gt;
+      </p>
+      <p>
+       Valid only in version 1.1.1.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       MINY
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;latlonboundingbox&gt;&lt;miny&gt;
+      </p>
+      <p>
+       Valid only in version 1.1.1.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       MAXX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;latlonboundingbox&gt;&lt;maxx&gt;
+      </p>
+      <p>
+       Valid only in version 1.1.1.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       MAXY
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;latlonboundingbox&gt;&lt;maxy&gt;
+      </p>
+      <p>
+       Valid only in version 1.1.1.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_ex_geobox_struct">
+   </a>
+   <a name="objects_network_1009015_1394985">
+   </a>
+   <a name="objects_network_1009015_34744">
+   </a>
+   Ex_GeoBox Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394758">
+    EX_GEOBOX
+   </a>
+   field of the parent layer structure. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Ex_GeoBox Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       WEST
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;ex_geographicboundingbox&gt;&lt;westboundlongitude&gt;
+      </p>
+      <p>
+       Valid only in version 1.3.0.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       EAST
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;ex_geographicboundingbox&gt;&lt;eastboundlongitude&gt;
+      </p>
+      <p>
+       Valid only in version 1.3.0.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       SOUTH
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;ex_geographicboundingbox&gt;&lt;southboundlatitude&gt;
+      </p>
+      <p>
+       Valid only in version 1.3.0.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       NORTH
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;ex_geographicboundingbox&gt;&lt;northboundlatitude&gt;
+      </p>
+      <p>
+       Valid only in version 1.3.0.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_bounding_box_struct">
+   </a>
+   <a name="objects_network_1009015_1395024">
+   </a>
+   <a name="objects_network_1009015_75834">
+   </a>
+   Bounding_Box Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394773">
+    BOUNDING_BOX
+   </a>
+   field of the parent layer structure. To determine the number of Bounding_Box structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394768">
+    NUM_BOUNDING_BOX
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Bounding_Box Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       SRS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;boundingbox&gt;&lt;srs&gt;
+      </p>
+      <p>
+       Valid only in version 1.1.1.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       CRS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;boundingbox&gt;&lt;crs&gt;
+      </p>
+      <p>
+       Valid only in version 1.3.0.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       MINX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;boundingbox&gt;&lt;minx&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       MINY
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;boundingbox&gt;&lt;miny&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       MAXX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;boundingbox&gt;&lt;maxx&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       MAXY
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;boundingbox&gt;&lt;maxy&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       RESX
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;boundingbox&gt;&lt;resx&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       RESY
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;boundingbox&gt;&lt;resy&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_extent_struct">
+   </a>
+   <a name="objects_network_1009015_1395077">
+   </a>
+   <a name="objects_network_1009015_97438">
+   </a>
+   Extent Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394788">
+    EXTENT
+   </a>
+   field of the parent layer structure. To determine the number of Extent structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394782">
+    NUM_EXTENT
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Extent Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;extent&gt;&lt;name&gt;
+      </p>
+      <p>
+       Valid only in version 1.1.1.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       DEFAULT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;extent&gt;&lt;default&gt;
+      </p>
+      <p>
+       Valid only in version 1.1.1.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NEAREST_VALUE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;extent&gt;&lt;nearestvalue&gt;
+      </p>
+      <p>
+       Valid only in version 1.1.1.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       EXTENT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1 XML source: &lt;layer&gt;&lt;extent&gt;
+      </p>
+      <p>
+       Valid only in version 1.1.1.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_dimension_struct">
+   </a>
+   <a name="objects_network_1009015_1395119">
+   </a>
+   <a name="objects_network_1009015_90033">
+   </a>
+   Dimension Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394802">
+    DIMENSION
+   </a>
+   field of the parent layer structure. To determine the number of Dimension structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394797">
+    NUM_DIMENSION
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Dimension Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;dimension&gt;&lt;name&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       UNITS
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;dimension&gt;&lt;units&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       UNIT_SYMBOL
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;dimension&gt;&lt;unitsymbol&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       DEFAULT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;dimension&gt;&lt;default&gt;
+      </p>
+      <p>
+       Valid only in version 1.3.0.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       MULTIPLE_VALUES
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;dimension&gt;&lt;multiplevalues&gt;
+      </p>
+      <p>
+       Valid only in version 1.3.0.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       NEAREST_VALUE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;dimension&gt;&lt;nearestvalue&gt;
+      </p>
+      <p>
+       Valid only in version 1.3.0.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       CURRENT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.3.0 XML source: &lt;layer&gt;&lt;dimension&gt;&lt;current&gt;
+      </p>
+      <p class="Code">
+       Valid only in version 1.3.0.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       DIMENSION
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;dimension&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_attribution_struct">
+   </a>
+   <a name="objects_network_1009015_1395177">
+   </a>
+   <a name="objects_network_1009015_55464">
+   </a>
+   Attribution Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394811">
+    ATTRIBUTION
+   </a>
+   field of the parent layer structure. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Attribution Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       TITLE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;attribution&gt;&lt;title&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       ONLINE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;attribution&gt;&lt;onlineresource&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       LOGO_FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;attribution&gt;&lt;logourl&gt;&lt;format&gt;
+      </p>
+      <p class="Code">
+       &#160;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       LOGO_ONLINE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;attribution&gt;&lt;logourl&gt;&lt;onlineresource&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       LOGO_WIDTH
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;attribution&gt;&lt;logourl&gt;&lt;width&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       LOGO_HEIGHT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;attribution&gt;&lt;logourl&gt;&lt;height&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_authority_struct">
+   </a>
+   <a name="objects_network_1009015_1395221">
+   </a>
+   <a name="objects_network_1009015_76867">
+   </a>
+   Authority Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394825">
+    AUTHORITY
+   </a>
+   field of the parent layer structure. To determine the number of Authority structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394820">
+    NUM_AUTHORITY
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Authority Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;authorityurl&gt;&lt;name&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       ONLINE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;authorityurl&gt;&lt;onlineresource&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_identifier_struct">
+   </a>
+   <a name="objects_network_1009015_1395251">
+   </a>
+   <a name="objects_network_1009015_37975">
+   </a>
+   Identifier Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394839">
+    IDENTIFIER
+   </a>
+   field of the parent layer structure. To determine the number of Identifier structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394834">
+    NUM_IDENTIFIER
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Identifier Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ID
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;identifier&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       AUTHORITY
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;identifier&gt;&lt;authority&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_metadata_url_struct">
+   </a>
+   <a name="objects_network_1009015_1395281">
+   </a>
+   <a name="objects_network_1009015_98728">
+   </a>
+   Metadata_URL Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394853">
+    METADATA_URL
+   </a>
+   field of the parent layer structure. To determine the number of Metadata_URL structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394848">
+    NUM_METADATA_URL
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Metadata_URL Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       TYPE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;metadataurl&gt;&lt;type&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;metadataurl&gt;&lt;format&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       ONLINE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;metadataurl&gt;&lt;onlineresource&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_data_url_struct">
+   </a>
+   <a name="objects_network_1009015_1395315">
+   </a>
+   <a name="objects_network_1009015_64090">
+   </a>
+   Data_URL Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394867">
+    DATA_URL
+   </a>
+   field of the parent layer structure. To determine the number of Data_URL structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394862">
+    NUM_DATA_URL
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Data_URL Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;dataurl&gt;&lt;format&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       ONLINE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;dataurl&gt;&lt;onlineresource&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_feature_url_struct">
+   </a>
+   <a name="objects_network_1009015_1395345">
+   </a>
+   <a name="objects_network_1009015_15366">
+   </a>
+   Feature_URL Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394881">
+    FEATURE_URL
+   </a>
+   field of the parent layer structure. To determine the number of Feature_URL structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394876">
+    NUM_FEATURE_URL
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Feature_URL Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;featurelisturl&gt;&lt;format&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       ONLINE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;featurelisturl&gt;&lt;onlineresource&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3>
+   <a name="objects_network_1009015_style_struct">
+   </a>
+   <a name="objects_network_1009015_1395375">
+   </a>
+   <a name="objects_network_1009015_24744">
+   </a>
+   Style Structure
+  </h3>
+  <p>
+   This child structure is accessed through the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394895">
+    STYLE
+   </a>
+   field of the parent layer structure. To determine the number of Style structures, access the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1394890">
+    NUM_STYLE
+   </a>
+   field value. The number of structures can be 0 to many. All elements are strings unless otherwise noted.
+  </p>
+  <table style="caption-side: bottom;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption>
+    Style Structure Fields
+   </caption>
+   <col />
+   <col />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Field
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       <a name="objects_network_1009015_1395390">
+       </a>
+       <a name="objects_network_1009015_50843">
+       </a>
+       NAME
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;name&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       TITLE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;title&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       ABSTRACT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;title&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       LEGEND_FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;legendurl&gt;&lt;format&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       LEGEND_ONLINE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;legendurl&gt;&lt;onlineresource&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       LEGEND_WIDTH
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;legendurl&gt;&lt;width&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       LEGEND_HEIGHT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;legendurl&gt;&lt;height&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       SHEET_FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;stylesheeturl&gt;&lt;format&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       SHEET_ONLINE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;stylesheeturl&gt;
+       <br />
+       &lt;onlineresource&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       STYLE_FORMAT
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;styleurl&gt;&lt;format&gt;
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColSep">
+      <p>
+       STYLE_ONLINE
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowEnd_ColEnd">
+      <p class="Code">
+       1.1.1, 1.3.0 XML source: &lt;layer&gt;&lt;style&gt;&lt;styleurl&gt;&lt;onlineresource&gt;
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_network_1009015_1395441">
+   </a>
+   <a name="objects_network_1009015_40003">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1395444">
+   </a>
+   <a name="objects_network_1009015_59626">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="objects_network_1009015_1395446">
+   </a>
+   <a name="objects_network_1009015_92422">
+   </a>
+   COUNT
+  </h3>
+  <p>
+   Set this keyword to a variable that will contain the number of layer structures returned in this method’s structure array. This value can be zero.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_network_1009015_1395449">
+   </a>
+   <a name="objects_network_1009015_48997">
+   </a>
+   NUMBER
+  </h3>
+  <p>
+   Set this keyword to the number of layers to return. If this keyword is not set, all layers will be returned minus the number of those skipped up to the
+   <a class="MCXref_Heading_0" href="#objects_network_1009015_1395456">
+    INDEX
+   </a>
+   keyword, if it is set. If this value is zero, zero layers will be returned. If the value is greater than the number of available layers, then this value is ignored and the number of available layers (COUNT) is returned.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   When populating a user interface, it is useful to set this keyword equal to the number of rows in the table.
+  </p>
+  <h3 class="Keyword">
+   <a name="objects_network_1009015_1395456">
+   </a>
+   <a name="objects_network_1009015_65613">
+   </a>
+   INDEX
+  </h3>
+  <p>
+   Set this keyword to the zero-based index of the first layer to return, skipping over all preceding layers. If this keyword is not set, all layers will be returned. You can use this property to enable navigation through a list of layers displayed in a user interface. For example, suppose there are 10 rows in a table. On the first call to GetLayers, set this value to 0 and NUMBER to 10. To display the next set of values, you would set this keyword to 10 (skip the first 10 values and display the next ten).
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1395459">
+   </a>
+   <a name="objects_network_1009015_29420">
+   </a>
+   Examples
+  </h2>
+  <p>
+   The following code parses the URL of WMS server, queries its capabilities (using GetCapabilities) and then extracts information from the returned XML file using GetLayers and GetServiceSection. Information is printed to the IDL Output Log.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You may need to replace the URL in the following example as there is no guarantee that the given OCG server will be available when you attempt to establish the connection.
+  </p>
+  <p class="Code">
+   FUNCTION ogcwms_callback,  StatusInfo, CallbackData
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   PRINT, StatusInfo
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Indicate all is well.
+  </p>
+  <p class="Code">
+   vCancelFlag = 1
+  </p>
+  <p class="Code">
+   RETURN, vCancelFlag
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   PRO ogc_wms_getlayers_doc
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Use the GetLayers method to access data returned in
+  </p>
+  <p class="Code">
+   ; the XML file by the GetCapabilities method.
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; This example queries an OGC server at the following URL. Change
+  </p>
+  <p class="Code">
+   ; the value of this variable to access a server of your choice.
+  </p>
+  <p class="Code">
+   url="http://data.exelisvis.com:80/cgi-bin/mapserv.exe?" + $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;"map=/OGC_Data/WMS/wms_demo.map&amp;service=WMS"
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Catch error.
+  </p>
+  <p class="Code">
+   CATCH, errorStatus
+  </p>
+  <p class="Code">
+   IF (errorStatus NE 0) THEN BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;CATCH,/CANCEL
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, !ERROR_STATE.MSG
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;IF OBJ_VALID(oWms) THEN OBJ_DESTROY, oWms
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN
+  </p>
+  <p class="Code">
+   ENDIF
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Create an IDLnetOGCWMS object and parse a known, working URL
+  </p>
+  <p class="Code">
+   ; to set mandatory properties. Use /VERBOSE to show additional
+  </p>
+  <p class="Code">
+   ; information.
+  </p>
+  <p class="Code">
+   oWms = OBJ_NEW("IDLnetOGCWMS", $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;CALLBACK_FUNCTION="ogcwms_callback", /VERBOSE)
+  </p>
+  <p class="Code">
+   oWms-&gt;ParseUrl, url
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Return and parse a description of all data holdings on
+  </p>
+  <p class="Code">
+   ; the WMS server.
+  </p>
+  <p class="Code">
+   count = oWMS-&gt;GetCapabilities()
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Make sure the server returned some layers.
+  </p>
+  <p class="Code">
+   If (count NE 0) THEN BEGIN
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Use the GetLayers method to translate the
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; parsed XML data into an array of IDL structures. The NAME
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; field of this structure is used to identify what layer
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; to request data for from the server.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;layerStruct = oWMS-&gt;GetLayers $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;(COUNT=layercount, NUMBER=5, INDEX = 1)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, "Returning structures for ", + layercount, + " layers"
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Access elements of the GetLayers structure.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;FOR x=0, layerCount-1 DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, 'Layer = ', strtrim(x,2)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, '  parent &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= ', layerStruct[x].parent
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, '  level &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; = ', layerStruct[x].level
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, '  name &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; = ', layerStruct[x].name
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, '  title &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; = ', layerStruct[x].title
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, '  version &#160;&#160;&#160;&#160;&#160;&#160;&#160; = ', layerStruct[x].version
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, '  authority_url &#160; = ', layerStruct[x].authority
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, '  num styles &#160;&#160;&#160;&#160;&#160;=  ', layerStruct[x].num_style
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;FOR j=0, layerStruct[x].num_style-1 do begin
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PRINT, '  style name &#160;&#160;= ' , layerStruct[x].style[j].name
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PRINT, '  style title &#160;= ' , layerStruct[x].style[j].title
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;ENDFOR
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENDFOR
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; Use the GetServiceSection method to get the Service section
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;; data from the XML file containing the layer info.
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;serviceStruct = oWMS-&gt;GetServiceSection()
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, 'Service Section'
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, '  name              = ', serviceStruct.name
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, '  title             = ', serviceStruct.title
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, '  abstract &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; = ', serviceStruct.abstract
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;HELP, serviceStruct.keyword
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, '  keywords          = ', serviceStruct.keyword
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;PRINT, '  accessConstraints = ', serviceStruct.access
+  </p>
+  <p class="Code">
+   ENDIF ELSE BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;void = DIALOG_MESSAGE("No information available " $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;+ "from WMS Server", /ERROR)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;RETURN
+  </p>
+  <p class="Code">
+   ENDELSE
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Cleanup.
+  </p>
+  <p class="Code">
+   OBJ_DESTROY, oWms
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   Also see
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS.html#objects_network_1009015_1397425">
+    Sample WMS Browser
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_network_1009015_1395550">
+   </a>
+   <a name="objects_network_1009015_73509">
+   </a>
+   Version History
+  </h2>
+  <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.4
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="objects_network_1009015_1395558">
+   </a>
+   <a name="objects_network_1009015_11010">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetCapabil.html#objects_network_1009015_1393865">
+    IDLnetOGCWMS::GetCapabilities
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="IDLnetOGCWMS__GetService.html#objects_network_1009015_1395976">
+    IDLnetOGCWMS::GetServiceSection
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

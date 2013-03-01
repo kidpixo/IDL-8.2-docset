@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HDF_AN_FILEINFO
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF Routines/HDF_AN_FILEINFO.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF_Routines.html">
+    HDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    HDF_AN_FILEINFO
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_1733484267_1005635">
+   </a>
+   <a name="HDF_1733484267_71011">
+   </a>
+   HDF_AN_FILEINFO
+  </h1>
+  <p>
+   This function retrieves
+   <a name="kanchor1131">
+   </a>
+   the total number of the four kinds of annotations and stores them in the appropriate parameters. Note that the numbers of data labels and descriptions refer to the total number of data labels and data descriptions in the file, not for a specific object. Use HDF_AN_NUMANN to determine these numbers for a specific object. This function is generally used to find the range of acceptable indices for HDF_AN_SELECT calls.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1056702_PageTOC_HDF_AN_FILEINFO_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = HDF_AN_FILEINFO(
+   <span class="Italic">
+    Annotation_id
+   </span>
+   ,
+   <span class="Italic">
+    n_file_labels
+   </span>
+   ,
+   <span class="Italic">
+    n_file_descs
+   </span>
+   ,
+   <span class="Italic">
+    n_data_labels
+   </span>
+   ,
+   <span class="Italic">
+    n_data_descs
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1056704_PageTOC_HDF_AN_FILEINFO_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns SUCCEED (0) if successful or FAIL (-1) otherwise.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1056706_PageTOC_HDF_AN_FILEINFO_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Annotation_id
+  </h3>
+  <p>
+   HDF AN interface identifier returned by HDF_AN_START.
+  </p>
+  <h3 class="Argument">
+   n_file_labels
+  </h3>
+  <p>
+   A named variable that will contain the number of file labels.
+  </p>
+  <h3 class="Argument">
+   n_file_descs
+  </h3>
+  <p>
+   A named variable that will contain the number of file descriptions.
+  </p>
+  <h3 class="Argument">
+   n_data_labels
+  </h3>
+  <p>
+   A named variable that will contain the total number of data labels of all data objects in the file.
+  </p>
+  <h3 class="Argument">
+   n_data_descs
+  </h3>
+  <p>
+   A named variable that will contain the total number of data descriptions of all data objects in the file.
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_52593">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="HDF_1733484267_1117363_PageTOC_HDF_AN_FILEINFO_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

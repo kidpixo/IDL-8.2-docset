@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: Q" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   QUERY_PNG
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/Q/QUERY_PNG.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="Q_list.html">
+    Routines: Q
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    QUERY_PNG
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="Q_815714925_1045630">
+   </a>
+   <a name="Q_815714925_42691">
+   </a>
+   QUERY_PNG
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#Q_815714925_1045638">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1073772">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1045640">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1045649">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1045651">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1125445">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#Q_815714925_1076508">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   QU
+   <a name="kanchor2165">
+   </a>
+   ERY_PNG is a method of obtaining information about a PNG image file without having to read the file. See
+   <a class="MCXref_Heading_0" href="QUERY___Routines.html#Q_815714925_982368" target="" title="" alt="">
+    QUERY_* Routines
+   </a>
+   for more information.
+  </p>
+  <p>
+   When an image is read by
+   <a href="../R/READ_PNG.html">
+    READ_PNG
+   </a>
+   , it is scaled to the sBIT value, if it is provided in the file. The sBit provides the actual bit depth, which can be different from the "bit depth" byte. See
+   <a href="www.w3.org/TR/PNG-Chunks.html">
+    www.w3.org/TR/PNG-Chunks.html
+   </a>
+   for more information.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1045638">
+   </a>
+   <a name="Q_815714925_1045638_PageTOC_QUERY_PNG_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = QUERY_PNG (
+   <span class="_Override" style="font-style: italic;">
+    Filename
+   </span>
+   [,&#160;
+   <i>
+    Info
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1073772">
+   </a>
+   <a name="Q_815714925_1073772_PageTOC_QUERY_PNG_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This routine returns a long with the value of 1 (one) if the query was successful (and the file type was correct) or 0 (zero) on failure.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1045640">
+   </a>
+   <a name="Q_815714925_1045640_PageTOC_QUERY_PNG_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Filename
+  </h3>
+  <p>
+   A scalar string containing the pathname of the PNG file to query.
+  </p>
+  <h3 class="Argument">
+   Info
+  </h3>
+  <p>
+   Returns an anonymous structure containing information about the image in the file. The Info.TYPE field will return the value ‘PNG’.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   See
+   <a class="MCXref_Heading_0" href="QUERY___Routines.html#Q_815714925_1072337" target="" title="" alt="">
+    General Query * Routine Info Structures
+   </a>
+   for detailed structure information.
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1045649">
+   </a>
+   <a name="Q_815714925_1045649_PageTOC_QUERY_PNG_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1045651">
+   </a>
+   <a name="Q_815714925_1045651_PageTOC_QUERY_PNG_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Query included in creating RGBA (16-bit/channel) and Color Indexed
+   <br />
+   (8-bits/channel) image.
+  </p>
+  <p class="Code">
+   PRO ex_query_png
+  </p>
+  <p class="Code">
+   rgbdata = UINDGEN(4,320,240)
+  </p>
+  <p class="Code">
+   cidata = BYTSCL(DIST(256))
+  </p>
+  <p class="Code">
+   red = indgen(256)
+  </p>
+  <p class="Code">
+   green = indgen(256)
+  </p>
+  <p class="Code">
+   blue = indgen(256)
+  </p>
+  <p class="Code">
+   tempdir = GETENV('IDL_TMPDIR')
+  </p>
+  <p class="Code">
+   WRITE_PNG, tempdir+'rgb_image.png',rgbdata
+  </p>
+  <p class="Code">
+   WRITE_PNG, tempdir+'ci_image.png',cidata,red,green,blue
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Query and Read the data:
+  </p>
+  <p class="Code">
+   names = [tempdir+'rgb_image.png',$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;tempdir+'ci_image.png',$
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;tempdir+'unknown.png']
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   FOR i=0,N_ELEMENTS(names)-1 DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ok = QUERY_PNG(names[i],s)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;IF (ok) THEN BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;HELP,s,/STRUCTURE
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;IF (s.HAS_PALETTE) THEN BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;img = READ_PNG(names[i],rpal,gpal,bpal)
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;HELP,img,rpal,gpal,bpal
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENDIF ELSE BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;img = READ_PNG(names[i])
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;HELP,img
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENDELSE
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENDIF ELSE BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT,names[i],' is not a PNG file'
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;ENDELSE
+  </p>
+  <p class="Code">
+   ENDFOR
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h2 class="API">
+   <a name="Q_815714925_1125445">
+   </a>
+   <a name="Q_815714925_1045679_PageTOC_QUERY_PNG_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       5.2
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="Q_815714925_1076508">
+   </a>
+   <a name="Q_815714925_1076508_PageTOC_QUERY_PNG_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="QUERY___Routines.html#Q_815714925_982368">
+    QUERY_* Routines
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/READ_PNG.html#R_822202989_1045821" target="" title="" alt="">
+    READ_PNG
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../W/WRITE_PNG.html#W_811389549_950641">
+    WRITE_PNG
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   HIST_2D
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/H/HIST_2D.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    HIST_2D
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="H_835179117_758132">
+   </a>
+   <a name="H_835179117_87584">
+   </a>
+   HIST_2D
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#H_835179117_758136">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_883186">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_758138">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_758141">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_832276">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_832270">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#H_835179117_880170">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor1495">
+   </a>
+   HIST_2D function returns the two dimensional density function (histogram) of two variables.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    hist_2d.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758136">
+   </a>
+   <a name="H_835179117_758136_PageTOC_HIST_2D_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = HIST_2D(
+   <i>
+    V
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   ,
+   <i>
+    V
+   </i>
+   <sub class="italic">
+    2
+   </sub>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_832830">
+    BIN1
+   </a>
+   =
+   <i>
+    width
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_832832">
+    BIN2
+   </a>
+   =
+   <i>
+    height
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_832284">
+    MAX1
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_832345">
+    MAX2
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_832837">
+    MIN1
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#H_835179117_832839">
+    MIN2
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_883186">
+   </a>
+   <a name="H_835179117_52435">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a longword array of dimensions (MAX(
+   <i>
+    V1
+   </i>
+   )+1, MAX(
+   <i>
+    V2
+   </i>
+   )+1).
+   <i>
+    Result
+   </i>
+   (
+   <i>
+    i,j
+   </i>
+   ) is equal to the number of simultaneous occurrences of
+   <i>
+    V1
+   </i>
+   =
+   <i>
+    i
+   </i>
+   and
+   <i>
+    V2
+   </i>
+   =
+   <i>
+    j
+   </i>
+   at the specified element.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758138">
+   </a>
+   <a name="H_835179117_758138_PageTOC_HIST_2D_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   V1, V2
+  </h3>
+  <p>
+   The arguments are arrays containing the variables.
+   <i>
+    V1
+   </i>
+   and
+   <i>
+    V2
+   </i>
+   may be of any numeric type except complex. If
+   <i>
+    V1
+   </i>
+   and
+   <i>
+    V2
+   </i>
+   do not contain the same number of elements, then the extra elements in the longer array are ignored.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_758141">
+   </a>
+   <a name="H_835179117_758141_PageTOC_HIST_2D_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="H_835179117_832830">
+   </a>
+   <a name="H_835179117_832830_Keywords_HIST_2D__">
+   </a>
+   BIN1
+  </h3>
+  <p>
+   Set this keyword equal to the size of each bin in the
+   <i>
+    V1
+   </i>
+   direction (column width). If this keyword is not specified, the size is set to 1.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_832832">
+   </a>
+   <a name="H_835179117_832832_Keywords_HIST_2D__">
+   </a>
+   BIN2
+  </h3>
+  <p>
+   Set this keyword equal to the size of each bin in the
+   <i>
+    V2
+   </i>
+   direction (row height). If this keyword is not specified, the size is set to 1.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_832284">
+   </a>
+   <a name="H_835179117_832284_Keywords_HIST_2D__">
+   </a>
+   MAX1
+  </h3>
+  <p>
+   Set this keyword equal to the maximum
+   <i>
+    V1
+   </i>
+   value to consider. If this keyword is not specified, then
+   <i>
+    V1
+   </i>
+   is searched for its largest value.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_832345">
+   </a>
+   <a name="H_835179117_832345_Keywords_HIST_2D__">
+   </a>
+   MAX2
+  </h3>
+  <p>
+   Set this keyword equal to the maximum
+   <i>
+    V2
+   </i>
+   value to consider. If this keyword is not specified, then
+   <i>
+    V2
+   </i>
+   is searched for its largest value.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_832837">
+   </a>
+   <a name="H_835179117_832837_Keywords_HIST_2D__">
+   </a>
+   MIN1
+  </h3>
+  <p>
+   Set this keyword to the minimum
+   <i>
+    V1
+   </i>
+   value to consider. If this keyword is not specified and if the smallest value of
+   <i>
+    V1
+   </i>
+   is greater than zero, then MIN1=0 is used, otherwise the smallest value of
+   <i>
+    V1
+   </i>
+   is used.
+  </p>
+  <h3 class="Keyword">
+   <a name="H_835179117_832839">
+   </a>
+   <a name="H_835179117_832839_Keywords_HIST_2D__">
+   </a>
+   MIN2
+  </h3>
+  <p>
+   Set this keyword to the minimum
+   <i>
+    V2
+   </i>
+   value to consider. If this keyword is not specified and if the smallest value of
+   <i>
+    V2
+   </i>
+   is greater than zero, then MIN2=0 is used; otherwise, the smallest value of
+   <i>
+    V2
+   </i>
+   is used.
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_832276">
+   </a>
+   <a name="H_835179117_832276_PageTOC_HIST_2D_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To return the 2D histogram of two byte images:
+  </p>
+  <p class="Code">
+   R = HIST_2D(image1, image2)
+  </p>
+  <p>
+   To display the 2D histogram made from two floating point images, restricting the range from -1 to +1, and with 101 bins:
+  </p>
+  <p class="Code">
+   F1 = RANDOMN(seed, 256, 256)
+   <br />
+   F2 = RANDOMN(seed, 256, 256)
+   <br />
+   Result = HIST_2D(F1, F2, MIN1=-1, MAX1=1, $
+   <br />
+   &#160;&#160;&#160;MIN2=-1, MAX2=1, BIN1=0.02, BIN2=0.02)
+   <br />
+   TVSCL, Result
+  </p>
+  <h2 class="API">
+   <a name="H_835179117_832270">
+   </a>
+   <a name="H_835179117_832270_PageTOC_HIST_2D_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="H_835179117_880170">
+   </a>
+   <a name="H_835179117_880170_PageTOC_HIST_2D_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="H_EQ_CT.html#H_835179117_931377">
+    H_EQ_CT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="H_EQ_INT.html#H_835179117_759200">
+    H_EQ_INT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HIST_EQUAL.html#H_835179117_758147">
+    HIST_EQUAL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="HISTOGRAM.html#H_835179117_677165">
+    HISTOGRAM
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

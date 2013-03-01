@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Program Control" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Jump Statements
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Application Programming/Jump_Statements.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Program Control.html">
+    Program Control
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Jump Statements
+   </span>
+  </div>
+  <h1>
+   <a name="prog_control_2688138422_711018">
+   </a>
+   <a name="prog_control_2688138422_32658">
+   </a>
+   Jump Statements
+  </h1>
+  <p>
+   Jump statements can be used to modify the behavior of conditional and iterative statements. Jump statements allow you to exit a loop, start the next iteration of a loop, or explicitly transfer program control to a specified location in your program.
+  </p>
+  <h2 class="API">
+   <a name="kanchor3649">
+   </a>
+   <a name="prog_control_2688138422_34379">
+   </a>
+   Statement Labels
+  </h2>
+  <p>
+   Labels are the destinations of GOTO statements as well as the ON_ERROR and ON_IOERROR procedures. The label field is simply an identifier followed by a colon. Label identifiers, as with variable names, consist of 1 to 15 alphanumeric characters, and are case insensitive. The dollar sign ($) and underscore (_) characters can appear after the first character. Some examples of labels are as follows:
+  </p>
+  <p class="Code">
+   LABEL1:
+  </p>
+  <p class="Code">
+   LOOP_BACK: A = 12
+  </p>
+  <p class="Code">
+   I$QUIT: RETURN &#160;&#160;;Comments are allowed.
+  </p>
+  <h2 class="API">
+   <a name="prog_control_2688138422_711053">
+   </a>
+   <a name="prog_control_2688138422_68075">
+   </a>
+   BREAK
+  </h2>
+  <p>
+   The
+   <a name="kanchor3650">
+   </a>
+   BREAK statement provides a convenient way to immediately exit from a loop (FOR, FOREACH, WHILE, REPEAT), CASE, or SWITCH statement without resorting to the GOTO statement.
+  </p>
+  <h3>
+   Example
+  </h3>
+  <p>
+   This example illustrates a situation in which using the BREAK statement makes a loop more efficient. In this example, we create a 10,000-element array of integers from 0 to 9999, ordered randomly. Then we use a loop to find where in the array the value 5 is located. If the value is found, we BREAK out of the loop because there is no need to check the rest of the array:
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This example could be written more efficiently using the
+   <a class="MCXref_Heading_0" href="../../Reference Material/W/WHERE.html#W_811389549_679886" target="" title="" alt="">
+    WHERE
+   </a>
+   function. This example is intended only to illustrate how BREAK might be used.
+  </p>
+  <p class="Code">
+   ; Create a randomly-ordered array of integers
+  </p>
+  <p class="Code">
+   ; from 0 to 9999:
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   array = SORT(RANDOMU(seed,10000))
+  </p>
+  <p class="Code">
+   n = N_ELEMENTS(array)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Find where in array the value 5 in located:
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   FOR i = 0,n-1 DO BEGIN
+  </p>
+  <p class="Code">
+   IF (array[i] EQ 5) THEN BREAK
+  </p>
+  <p class="Code">
+   ENDFOR
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   PRINT, i
+  </p>
+  <p>
+   We could write this loop without using the BREAK statement, but this would require us to continue the loop even after we find the value we’re looking for (or resort to using a GOTO statement):
+  </p>
+  <p class="Code">
+   FOR i = 0, n-1 DO BEGIN
+  </p>
+  <p class="Code">
+   IF (array[i] EQ 5) THEN found=i
+  </p>
+  <p class="Code">
+   ENDFOR
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   PRINT, found
+  </p>
+  <h2 class="API">
+   <a name="prog_control_2688138422_711063">
+   </a>
+   <a name="prog_control_2688138422_71672">
+   </a>
+   CONTINUE
+  </h2>
+  <p>
+   The
+   <a name="kanchor3651">
+   </a>
+   CONTINUE statement provides a convenient way to immediately start the next iteration of the enclosing FOR, FOREACH, WHILE, or REPEAT loop. Whereas the BREAK statement exits from a loop, the CONTINUE statement exits only from the current loop iteration, proceeding immediately to the next iteration.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Do not confuse the CONTINUE statement described here with the
+   <a class="MCXref_Heading_0" href="../../Reference Material/Dot Commands/_CONTINUE.html#symbols_612366544_983151">
+    .CONTINUE
+   </a>
+   executive command The two constructs are not related, and serve completely different purposes.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   CONTINUE is not allowed within CASE or SWITCH statements. This is in contrast with the C language, which does allow this.
+  </p>
+  <h3>
+   Example
+  </h3>
+  <p>
+   This example presents one way (not necessarily the best) to print the even numbers between 1 and 10:
+  </p>
+  <p class="Code">
+   FOR I=1,10 DO BEGIN
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;IF (I AND 1) THEN CONTINUE&#160;&#160;; If odd, start next iteration
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;&#160;&#160;&#160;PRINT, I
+  </p>
+  <p class="Code">
+   ENDFOR
+  </p>
+  <h2 class="API">
+   <a name="prog_control_2688138422_711027">
+   </a>
+   <a name="prog_control_2688138422_42899">
+   </a>
+   GOTO
+  </h2>
+  <p>
+   The
+   <a name="kanchor3652">
+   </a>
+   GOTO statement is used to transfer program control to a point in the program specified by the label. The GOTO statement is generally considered to be a poor programming practice that leads to unwieldy programs. Its use should be avoided. However, for those cases in which the use of a GOTO is appropriate, IDL does provide the GOTO statement.
+  </p>
+  <p>
+   Note that using a GOTO to jump into the middle of a loop results in an error.
+  </p>
+  <p>
+   The syntax of the GOTO statement is as follows:
+  </p>
+  <p class="Code">
+   GOTO,
+   <i>
+    Label
+   </i>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   You must be careful in programming with GOTO statements. It is not difficult to get into a loop that will never terminate, especially if there is not an escape (or test) within the statements spanned by the GOTO.
+  </p>
+  <h3>
+   Example
+  </h3>
+  <p>
+   In the following example, the statement at label JUMP1 is executed after the GOTO statement, skipping any intermediate statements:
+  </p>
+  <p class="Code">
+   GOTO, JUMP1
+  </p>
+  <p class="Code">
+   PRINT, 'Skip this' ; This statement is skipped
+  </p>
+  <p class="Code">
+   PRINT, 'Skip this' ; This statement is also skipped
+  </p>
+  <p class="Code">
+   JUMP1: PRINT, 'Do this'
+  </p>
+  <p>
+   The label can also occur before the GOTO statement that refers to the label, but you must be careful to avoid an endless loop. GOTO statements are frequently the subjects of IF statements, as in the following statement:
+  </p>
+  <p class="Code">
+   IF A NE G THEN GOTO, MISTAKE
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

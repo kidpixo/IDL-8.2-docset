@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: N|NCDF Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   NCDF_VARPUT
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/N/NetCDF Routines/NCDF_VARPUT.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../N_list.html">
+    Routines: N
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../NCDF_Routines.html">
+    NCDF Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    NCDF_VARPUT
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="netCDF_2618656010_1007819">
+   </a>
+   <a name="netCDF_2618656010_78210">
+   </a>
+   NCDF_VARPUT
+  </h1>
+  <p>
+   The
+   <a name="kanchor1962">
+   </a>
+   NCDF_VARPUT procedure writes a hyperslab of values to a NetCDF variable. The NetCDF file must be in
+   <span class="Italic">
+    data
+   </span>
+   mode to use this procedure.
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_997616_PageTOC_NCDF_VARPUT_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   NCDF_VARPUT,
+   <span class="Italic">
+    Cdfid, Varid, Value
+   </span>
+   [,&#160;
+   <a class="MCXref_Heading_0" href="#netCDF_2618656010_1007874">
+    COUNT
+   </a>
+   =
+   <span class="Italic">
+    vector
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#netCDF_2618656010_1007877">
+    OFFSET
+   </a>
+   =
+   <span class="Italic">
+    vector
+   </span>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#netCDF_2618656010_1007880">
+    STRIDE
+   </a>
+   =
+   <span class="Italic">
+    vector
+   </span>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_997618_PageTOC_NCDF_VARPUT_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Cdfid
+  </h3>
+  <p>
+   The NetCDF ID, returned from a previous call to
+   <a class="MCXref_Heading_0" href="NCDF_OPEN.html#netCDF_2618656010_1007165">
+    NCDF_OPEN
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="NCDF_CREATE.html#netCDF_2618656010_1006152">
+    NCDF_CREATE
+   </a>
+   , or
+   <a class="MCXref_Heading_0" href="NCDF_GROUPDEF.html#netCDF_2618656010_1006704">
+    NCDF_GROUPDEF
+   </a>
+   .
+  </p>
+  <h3 class="Argument">
+   Varid
+  </h3>
+  <p>
+   The NetCDF variable ID, returned from a previous call to NCDF_VARDEF or NCDF_VARID, or the name of the variable.
+  </p>
+  <h3 class="Argument">
+   Value
+  </h3>
+  <p>
+   Data values to be written to the NetCDF file. If the data type of
+   <span class="Italic">
+    Value
+   </span>
+   does not match that of the NetCDF variable, it is converted to the correct data type before writing.
+   <span class="Italic">
+    Value
+   </span>
+   must have a dimensionality less than or equal to that of the variable being written.
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_997625_PageTOC_NCDF_VARPUT_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="netCDF_2618656010_1007874">
+   </a>
+   <a name="netCDF_2618656010_997627_Keywords_NCDF_VARPUT_">
+   </a>
+   COUNT
+  </h3>
+  <p>
+   An optional vector containing the counts to be used in writing
+   <span class="Italic">
+    Value
+   </span>
+   . COUNT is a 1-based vector with an element for each dimension of the data to be written. Note that counts do not have to match the dimensions of
+   <span class="Italic">
+    Value
+   </span>
+   . The default count vector is the dimensionality of
+   <span class="Italic">
+    Value
+   </span>
+   .
+  </p>
+  <h3 class="Keyword">
+   <a name="netCDF_2618656010_1007877">
+   </a>
+   <a name="netCDF_2618656010_997630_Keywords_NCDF_VARPUT_">
+   </a>
+   OFFSET
+  </h3>
+  <p>
+   An optional vector containing the starting position to write. The default start position is [0, 0, ...].
+  </p>
+  <h3 class="Keyword">
+   <a name="netCDF_2618656010_1007880">
+   </a>
+   <a name="netCDF_2618656010_997633_Keywords_NCDF_VARPUT_">
+   </a>
+   STRIDE
+  </h3>
+  <p>
+   An optional vector containing the strides, or writing intervals, between written values of the NetCDF variable. The default stride vector is that for a contiguous write, [1, 1, ...].
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_997635_PageTOC_NCDF_VARPUT_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Suppose that you wish to create a 100x100 byte (0 &amp; 1) checker board:
+  </p>
+  <p class="Code">
+   ; Create offsets for even and odd rows:
+  </p>
+  <p class="Code">
+   offset_even = [0,0] &amp; offset_odd = [1,1]
+  </p>
+  <p class="Code">
+   ; Create count and stride values:
+  </p>
+  <p class="Code">
+   count = [50,50] &amp; stride = [2,2]
+  </p>
+  <p class="Code">
+   ; Make the "black" spaces of the checker board:
+  </p>
+  <p class="Code">
+   black = BYTARR(50,50, /NOZERO) &gt; 1B
+  </p>
+  <p class="Code">
+   ; Create the NetCDF file:
+  </p>
+  <p class="Code">
+   id = NCDF_CREATE('checker.nc', /CLOBBER)
+  </p>
+  <p class="Code">
+   ; Fill the file with BYTE zeros:
+  </p>
+  <p class="Code">
+   NCDF_CONTROL, id, /FILL
+  </p>
+  <p class="Code">
+   ; Define the X dimension:
+  </p>
+  <p class="Code">
+   xid = NCDF_DIMDEF(id, 'x', 100)
+  </p>
+  <p class="Code">
+   ; Define the Y dimension:
+  </p>
+  <p class="Code">
+   yid = NCDF_DIMDEF(id, 'y', 100)
+  </p>
+  <p class="Code">
+   ; Define the Z dimension, UNLIMITED:
+  </p>
+  <p class="Code">
+   zid = NCDF_DIMDEF(id, 'yy', /UNLIMITED)
+  </p>
+  <p class="Code">
+   ; Define a variable with the name "board":
+  </p>
+  <p class="Code">
+   vid = NCDF_VARDEF(id, 'board', [yid, xid], /BYTE)
+  </p>
+  <p class="Code">
+   ; Rename 'yy' to 'z' as the zid dimension name:
+  </p>
+  <p class="Code">
+   NCDF_DIMRENAME, id, zid, 'z'
+  </p>
+  <p class="Code">
+   ; Put the file into data mode:
+  </p>
+  <p class="Code">
+   NCDF_CONTROL, id, /ENDEF
+  </p>
+  <p class="Code">
+   ; Use NCDF_DIMID and NCDF_DIMINQ to verify the name and size
+  </p>
+  <p class="Code">
+   ; of the zid dimension:
+  </p>
+  <p class="Code">
+   check_id = NCDF_DIMID(id,'z')
+  </p>
+  <p class="Code">
+   NCDF_DIMINQ, id, check_id, dim_name, dim_size
+  </p>
+  <p class="Code">
+   HELP, check_id, dim_name, dim_size
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   CHECK_ID&#160;&#160;&#160;&#160;&#160;LONG&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;=&#160;&#160;&#160;2
+  </p>
+  <p class="Code">
+   DIM_NAME&#160;&#160;&#160;&#160;&#160;STRING&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;=&#160;'z'
+  </p>
+  <p class="Code">
+   DIM_SIZE&#160;&#160;&#160;&#160;&#160;LONG&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;=&#160;&#160;&#160;0
+  </p>
+  <p>
+   Note that the DIM_SIZE is 0 because no records have been written yet for this dimension.
+  </p>
+  <p class="Code">
+   NCDF_VARPUT, id, vid, black, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;COUNT=count, STRIDE=stride, OFFSET=offset_even
+  </p>
+  <p class="Code">
+   NCDF_VARPUT, id, vid, black, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;COUNT=count, STRIDE=stride, OFFSET=offset_odd
+  </p>
+  <p class="Code">
+   ; Get the full image:
+  </p>
+  <p class="Code">
+   NCDF_VARGET, id, vid, output
+  </p>
+  <p class="Code">
+   ; Create a window for displaying the image:
+  </p>
+  <p class="Code">
+   WINDOW, XSIZE=100, YSIZE=100
+  </p>
+  <p class="Code">
+   ; Display the image:
+  </p>
+  <p class="Code">
+   TVSCL, output
+  </p>
+  <p class="Code">
+   ; Make stride larger than possible:
+  </p>
+  <p class="Code">
+   stride = [2,3]
+  </p>
+  <p class="Code">
+   ; As an experiment, attempt to write to an array larger than
+  </p>
+  <p class="Code">
+   ; the one we previously allocated with NCDF_VARDEF:
+  </p>
+  <p class="Code">
+   NCDF_VARPUT, id, vid, black, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;COUNT=count, STRIDE=stride, OFFSET=offset_odd
+  </p>
+  <p>
+   IDL prints:
+  </p>
+  <p class="Code">
+   % NCDF_VARPUT: Requested write is larger than the available data area.
+  </p>
+  <p>
+   You will need to change the OFFSET/COUNT/STRIDE, or redefine the variable dimensions. You attempted to access 150 elements in a 100 array.
+  </p>
+  <p class="Code">
+   NCDF_CLOSE, id ; Close the NetCDF file.
+  </p>
+  <h2 class="API">
+   <a name="netCDF_2618656010_997660_PageTOC_NCDF_VARPUT_">
+   </a>
+   Version History
+  </h2>
+  <p>
+   &#160;
+  </p>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="netCDF_2618656010_1019104_PageTOC_NCDF_VARPUT_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="NCDF_VARGET.html#netCDF_2618656010_1007409">
+    NCDF_VARGET
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="NCDF_VARGET1.html#netCDF_2618656010_1007518">
+    NCDF_VARGET1
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="NCDF_VARID.html#netCDF_2618656010_1007608">
+    NCDF_VARID
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="NCDF_VARINQ.html#netCDF_2618656010_1007741">
+    NCDF_VARINQ
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

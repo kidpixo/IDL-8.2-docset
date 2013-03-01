@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: T" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   TVCRS Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/T/TVCRS_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="T_list.html">
+    Routines: T
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    TVCRS Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_894259">
+   </a>
+   <a name="dg_routines_3604229493_99624">
+   </a>
+   TVCRS Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888397">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888436">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888444">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888482">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888488">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888496">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor2621">
+   </a>
+   TVCRS procedure manipulates the display device
+   <a name="kanchor2622">
+   </a>
+   cu
+   <a name="kanchor2623">
+   </a>
+   rsor. The initial state of the cursor is device dependent. Call TVCRS with one argument to enable or disable the cursor. Call TV
+   <a name="kanchor2624">
+   </a>
+   CRS with two parameters to enable the cursor and place it on pixel location
+   <i>
+    (X, Y)
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888397">
+   </a>
+   <a name="dg_routines_3604229493_679720_PageTOC_TVCRS_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   TVCRS [,&#160;
+   <i>
+    ON_OFF
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888446">
+    CENTIMETERS
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888449">
+    INCHES
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888452">
+    HIDE_CURSOR
+   </a>
+   ]
+  </p>
+  <p>
+   or
+  </p>
+  <p class="Syntax">
+   TVCRS [,&#160;
+   <i>
+    X
+   </i>
+   ,
+   <i>
+    Y
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888446">
+    CENTIMETERS
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888449">
+    INCHES
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_888452">
+    HIDE_CURSOR
+   </a>
+   ]
+  </p>
+  <p>
+   <span class="Bold">
+    Graphics Keywords:
+   </span>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315961">
+    DATA
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_369990">
+    DEVICE
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315963">
+    NORMAL
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315956">
+    T3D
+   </a>
+   |
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332658">
+    Z
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888436">
+   </a>
+   <a name="dg_routines_3604229493_679724_PageTOC_TVCRS_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   ON_OFF
+  </h3>
+  <p>
+   This argument specifies whether the cursor should be on or off. If this argument is present and nonzero, the cursor is enabled. If
+   <i>
+    ON_OFF
+   </i>
+   is zero or no parameters are specified, the cursor is turned off.
+  </p>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   The column to which the cursor is set.
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   The row to which the cursor is set.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888444">
+   </a>
+   <a name="dg_routines_3604229493_679731_PageTOC_TVCRS_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_888446">
+   </a>
+   <a name="dg_routines_3604229493_679732_Keywords_TVCRS__">
+   </a>
+   CENTIMETERS
+  </h3>
+  <p>
+   Set this keyword to cause X and Y to be interpreted as centimeters, based on the current device resolution.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_888449">
+   </a>
+   <a name="dg_routines_3604229493_817861_Keywords_TVCRS__">
+   </a>
+   INCHES
+  </h3>
+  <p>
+   Set this keyword to cause X and Y to be interpreted as inches, based on the current device resolution.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_888452">
+   </a>
+   <a name="dg_routines_3604229493_817846_Keywords_TVCRS__">
+   </a>
+   HIDE_CURSOR
+  </h3>
+  <p>
+   <a name="kanchor2625">
+   </a>
+   By default, disabling the cursor works differently for window systems than for other devices. For window systems, the cursor is restored to the standard cursor used for non-
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   windows (and remains visible), while for other devices it is completely blanked out. If the HIDE keyword is set, disabling the cursor causes it to always be blanked out.
+  </p>
+  <h3>
+   <a name="dg_routines_3604229493_888460">
+   </a>
+   <a name="dg_routines_3604229493_679734_Keywords_TVCRS__">
+   </a>
+   <a name="dg_routines_3604229493_679734_PageTOC_TVCRS_">
+   </a>
+   Graphics Keywords Accepted
+  </h3>
+  <p>
+   See
+   <a class="MCXref_Chapter_Reference_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_317209" target="" title="" alt="">
+    Direct Graphics Keywords
+   </a>
+   for the description of the following graphics and plotting keywords:
+  </p>
+  <p>
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315961">
+    DATA
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_369990">
+    DEVICE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315963">
+    NORMAL
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_315956">
+    T3D
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../../Direct Graphics/graphkeyw.html#graphkeyw_3288778166_332658">
+    Z
+   </a>
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888482">
+   </a>
+   <a name="dg_routines_3604229493_679736_PageTOC_TVCRS_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To enable the graphics cursor and position it at device coordinate (100, 100), enter:
+  </p>
+  <p class="Code">
+   TVCRS, 100, 100
+  </p>
+  <p>
+   To position the cursor at data coordinate (0.5, 3.2), enter:
+  </p>
+  <p class="Code">
+   TVCRS, 0.5, 3.2, /DATA
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888488">
+   </a>
+   <a name="dg_routines_3604229493_795986_PageTOC_TVCRS_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_888496">
+   </a>
+   <a name="dg_routines_3604229493_1086569_PageTOC_TVCRS_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/CURSOR_Procedure.html#dg_routines_3604229493_880371">
+    CURSOR Procedure
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../R/RDPIX_Procedure.html#dg_routines_3604229493_884618">
+    RDPIX Procedure
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

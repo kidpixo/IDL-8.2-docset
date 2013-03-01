@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Graphics|Modifying Visualizations" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Draw Lines and Arrows
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#GuideMe/polylines.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../GUInavigation/visualize.html">
+    Graphics
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../GUInavigation/visualize.html#Annotati">
+    Modifying Visualizations
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Lines and Arrows
+   </span>
+  </div>
+  <h1>
+   <a name="kanchor40">
+   </a>
+   Draw Lines and Arrows
+  </h1>
+  <p>
+   Use the POLYLINE function to draw lines or arrows on existing graphics. You can use POLYLINE at the time you create the graphic, or from the command line after the graphic is displayed.
+  </p>
+  <p>
+   The example shows an image of Mars with an arrow that points to a landing site.
+  </p>
+  <p>
+   <img src="../Resources/Images/polyline.gif" class="ImgFloatRight" />
+  </p>
+  <p>
+   The code shown below creates the graphic shown above. You can copy the entire block and paste it into the IDL&#160;command line to run it.
+  </p>
+  <p class="Code">
+   ; Define the image to display.
+  </p>
+  <p class="Code">
+   file = FILEPATH('marsglobe.jpg', $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Display the mars image.
+  </p>
+  <p class="Code">
+   mglobe = IMAGE(file, TITLE='Mars Study')
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Draw the line pointing to the landing site.
+  </p>
+  <p class="Code">
+   landingsite = ARROW([[35, 251],[68,300]], $
+  </p>
+  <p class="Code">
+   TARGET=mglobe, /DATA, ARROW_STYLE=1, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;COLOR='blue', THICK=2)
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Draw the text for the landing site.
+  </p>
+  <p class="Code">
+   landtext = TEXT(11, 236, TARGET=mglobe, $
+  </p>
+  <p class="Code">
+   &#160;&#160;&#160;'Landing site', /DATA, COLOR='blue', FONT_SIZE=14)
+  </p>
+  <h2 class="API">
+   Resources
+  </h2>
+  <ul>
+   <li value="1">
+    <a href="../GUInavigation/visualize.html" class="MCXref_0">
+     Graphics Examples
+    </a>
+   </li>
+   <li value="2">
+    <a href="../Reference Material/Functional List of IDL Routines/Graphics.html" class="MCXref_0">
+     Graphics
+    </a>
+   </li>
+   <li value="3">
+    <a href="../Reference Material/A/ARROW.html">
+     ARROW
+    </a>
+   </li>
+   <li value="4">
+    <a href="../Reference Material/E/ELLIPSE.html" class="MCXref_0">
+     ELLIPSE
+    </a>
+   </li>
+   <li value="5">
+    <a href="../Reference Material/I/IMAGE.html">
+     IMAGE
+    </a>
+   </li>
+   <li value="6">
+    <a href="../Reference Material/P/POLYGON.html" class="MCXref_0">
+     POLYGON
+    </a>
+   </li>
+   <li value="7">
+    <a href="../Reference Material/T/TEXT.html" class="MCXref_0">
+     TEXT
+    </a>
+   </li>
+   <li value="8">
+    <a href="propChanges.html" target="" title="" alt="" class="MCXref_0">
+     Change Graphics Properties
+    </a>
+   </li>
+   <li value="9">
+    <a href="MultiViz.html" class="MCXref_0">
+     Multiple Graphics in One Window
+    </a>
+   </li>
+   <li value="10">
+    <a href="ImageGuideMe/SaveImage.html" class="MCXref_0">
+     Saving Graphics
+    </a>
+   </li>
+   <li value="11">
+    <a href="../IDL Graphics/FormattingSymsAndLines.html" class="MCXref_0">
+     Formatting IDL&#160;Graphics Symbols and Lines
+    </a>
+   </li>
+  </ul>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

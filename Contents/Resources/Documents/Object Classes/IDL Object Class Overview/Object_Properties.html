@@ -1,0 +1,512 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Object-Oriented Programming|The Basics of Using IDL Objects" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Modifying Object Properties
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Property_Table.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/IDL Object Class Overview/Object_Properties.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbsSelf">
+    Object-Oriented Programming
+   </span>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Object Properties
+   </span>
+  </div>
+  <h1>
+   <a name="objects_3041994433_1016190">
+   </a>
+   <a name="kanchor3665">
+   </a>
+   <a name="objects_3041994433_92054">
+   </a>
+   Modifying Object Properties
+  </h1>
+  <p>
+   Some
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   objects have
+   <i>
+    prope
+    <a name="kanchor3666">
+    </a>
+    rties
+   </i>
+   ass
+   <a name="kanchor3667">
+   </a>
+   ociated with them — things like color, line style, size, and so on.
+   <a name="kanchor3668">
+   </a>
+  </p>
+  <p>
+   You can set properties at object initialization by providing property-value pairs in a call to the object's Init method:
+  </p>
+  <p class="Code">
+   Obj = OBJ_NEW('ObjectClass',
+   <i>
+    PROPERTY
+   </i>
+   &#160;=&#160;
+   <i>
+    value
+   </i>
+   , ... )
+  </p>
+  <p>
+   If your object inherits from the IDL_Object class, you can set or change the object's properties after object initialization by calling the property directly using the dot operator:
+  </p>
+  <p class="Code">
+   Obj.PROPERTY =&#160;
+   <i>
+    value
+   </i>
+   , ...
+  </p>
+  <p style="font-family: Times;font-style: italic;letter-spacing: 0em;">
+   <i>
+    or
+   </i>
+  </p>
+  <p>
+   By calling the object's SetProperty method with a property-value pair:
+  </p>
+  <p class="Code">
+   &#160;Obj.SetProperty,
+   <i>
+    PROPERTY
+   </i>
+   &#160;=&#160;
+   <i>
+    value
+   </i>
+   , ...
+  </p>
+  <p>
+   where
+   <i>
+    PROPERTY
+   </i>
+   is the name of an object property and
+   <i>
+    value
+   </i>
+   is the associated property value.
+  </p>
+  <p>
+   If your object inherits from the IDL_Object class, you can retrieve property values by calling the property directly with the dot operator:
+  </p>
+  <p class="Code">
+   <i>
+    variable
+   </i>
+   = Obj.PROPERTY
+  </p>
+  <p style="font-family: Times;font-style: italic;letter-spacing: 0em;">
+   <i>
+    or
+   </i>
+  </p>
+  <p>
+   By calling the object's GetProperty method with a property-value pair:
+  </p>
+  <p class="Code">
+   Obj.GetProperty,
+   <i>
+    PROPERTY
+   </i>
+   &#160;=&#160;
+   <i>
+    variable
+   </i>
+   , ...
+  </p>
+  <p>
+   where
+   <i>
+    PROPERTY
+   </i>
+   is the name of a property and
+   <i>
+    variable
+   </i>
+   is the name of an IDL variable that will hold the associated property value.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Property-value pairs behave in exactly the same way as Keyword-value pairs. This means that you can set the value of a boolean property to 1 by preceding the name of the property with a “/” character. Assuming that Obj inherits from IDL_Object, then the following are equivalent:
+   <br />
+  </p>
+  <p class="Code">
+   <span class="Courier">
+    Obj.MYPROPERTY = 1
+   </span>
+  </p>
+  <p class="Code">
+   Obj.SetProperty, MYPROPERTY&#160;=&#160;1
+  </p>
+  <p class="Code">
+   Obj.SetProperty, /MYPROPERTY
+  </p>
+  <p>
+   If you are familiar with
+   <span class="DocumentTitleProductNameDirGraph">
+    (Undefined variable: DocumentTitle.ProductNameDirGraph)
+   </span>
+   , you will note that many of the properties of IDL objects correspond to keywords to the Direct Graphics routines. Unlike
+   <span class="DocumentTitleProductNameDirGraph">
+    (Undefined variable: DocumentTitle.ProductNameDirGraph)
+   </span>
+   , the
+   <span class="DocumentTitleProductNameObjGraph">
+    (Undefined variable: DocumentTitle.ProductNameObjGraph)
+   </span>
+   system allows you to change the value of an object’s properties without re-creating the entire object. Objects must be redrawn, however, with a call to the destination object’s Draw method, for the changes to become visible.
+  </p>
+  <h2 class="API">
+   Properties and the Property Sheet Interface
+  </h2>
+  <p>
+   In addition to being able to set and change object property values programmatically, IDL provides a way for users to change property values via a graphical user interface. The
+   <a class="MCXref_Heading_0" href="../../Reference Material/W/WIDGET_PROPERTYSHEET.html#W_811389549_1020327" target="" title="" alt="">
+    WIDGET_PROPERTYSHEET
+   </a>
+   function creates a user interface that allows users to select and change property values using the mouse and keyboard.
+  </p>
+  <p>
+   For an object property to be displayed in a property sheet, the property must be registered.
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="Registered_Properties.html#objects_intro_4100679965_1525007" target="" title="" alt="">
+    Registered Properties
+   </a>
+   for additional discussion.
+  </p>
+  <h2 class="API">
+   Setting Properties at Initialization
+  </h2>
+  <p>
+   Often, you will set an object’s properties when creating the object for the
+   <a name="kanchor3669">
+   </a>
+   first time, which is done on object creation by calling the object name and specifying keywords to the object’s Init method as function parameters. For example, suppose you are creating a plot and wish to use a red line to draw the plot line. You could specify the COLOR keyword when calling the PLOT function:
+  </p>
+  <p class="Code">
+   myPlot&#160;=&#160;PLOT(xdata, ydata, COLOR&#160;=&#160;[255, 0, 0])
+  </p>
+  <p>
+   In most cases, an object’s Init method cannot be called directly. Arguments to object creation are passed directly to the Init method when the object is created.
+  </p>
+  <p>
+   For some graphics objects, you can specify a keyword that has the same meaning as an argument. In Object Graphics, the value of the keyword overrides the value set by the argument. For example,
+  </p>
+  <p class="Code">
+   myPlot&#160;=&#160;PLOT(xdata, ydata, DATAX&#160;=&#160;newXData)
+  </p>
+  <p>
+   The Plot object uses the data in
+   <span class="Courier">
+    newXData
+   </span>
+   for the plot’s X data.
+  </p>
+  <h2 class="API">
+   Setting Properties of Existing Objects
+  </h2>
+  <p>
+   After you have created an object, you can set or change its
+   <a name="kanchor3670">
+   </a>
+   properties by calling the property directly with the dot operator (if the object inherits from IDL_Object) or by calling the object’s SetProperty method.
+  </p>
+  <p>
+   The following code duplicates the single call to PLOT shown previously:
+  </p>
+  <p class="Code">
+   myPlot&#160;=&#160;PLOT(xdata, ydata)
+  </p>
+  <p class="Code">
+   myPlot.COLOR&#160;=&#160;"red"
+  </p>
+  <p>
+   You can achieve the same results by calling the object's SetProperty method:
+  </p>
+  <p class="Code">
+   myPlot&#160;=&#160;PLOT(xdata, ydata)
+  </p>
+  <p class="Code">
+   myPlot.SetProperty, COLOR&#160;=&#160;"red"
+  </p>
+  <h2 class="API">
+   Retrieving Property Settings
+  </h2>
+  <p>
+   You can retrieve the value of a particular
+   <a name="kanchor3671">
+   </a>
+   property using an object’s dot operator (if the object inherits from IDL_Object) or by calling the object's GetProperty method.
+  </p>
+  <p>
+   To retrieve a property value with the dot operator, simply assign the result to a variable:
+  </p>
+  <p class="Code">
+   plotcolor = myPlot.COLOR
+  </p>
+  <p>
+   The GetProperty method accepts a list of keyword-variable pairs and returns the value of the specified properties in the variables specified.
+  </p>
+  <p class="Code">
+   myPlot.GetProperty, COLOR&#160;=&#160;plotcolor
+  </p>
+  <p>
+   The value of the COLOR property is returned in the
+   <span class="DocumentTitleProductName">
+    IDL
+   </span>
+   variable
+   <span class="Courier">
+    plotcolor
+   </span>
+   .
+  </p>
+  <h2 class="API">
+   Getting/Setting Properties and Method Scope
+  </h2>
+  <p>
+   Under most circumstances, if you get or set an object property using the dot operator, IDL will call the object's GetProperty or SetProperty method. However, if inside of a method you get or set a property of the
+   <i>
+    self
+   </i>
+   object, IDL will access the property directly.
+  </p>
+  <h2 class="API">
+   Accessing Properties with Nested Object References
+  </h2>
+  <p>
+   The following examples illustrate how to use nested object references:
+  </p>
+  <p class="Code">
+   p = PLOT(/TEST, TITLE="My Plot")
+  </p>
+  <p class="Code">
+   ax = p.AXES
+  </p>
+  <p class="Code">
+   ax[3].COLOR= 'red'
+  </p>
+  <p>
+   In the
+   <code>
+    ax
+   </code>
+   object array, the fourth object is retrieved, and SetProperty, COLOR='red' is called for the object.
+  </p>
+  <p class="Code">
+   p["Title"].COLOR = "green"
+  </p>
+  <p>
+   For the scalar object
+   <code>
+    p
+   </code>
+   that inherits from IDL_Object, the object's _overloadBracketRightSide method is called to retrieve the value (presumably an object), and SetProperty, COLOR="green" is called for the retrieved object.
+  </p>
+  <p class="Code">
+   PRINT, p.TITLE.STRING
+  </p>
+  <p>
+   For the object
+   <code>
+    p
+   </code>
+   , GetProperty is called to retrieve the TITLE object, and then GetProperty is called on the title object to retrieve the title's string value.
+  </p>
+  <h2 class="API">
+   <a name="objects_3041994433_52552">
+   </a>
+   About Object Property Descriptions
+  </h2>
+  <p>
+   In the documentation for the IDL object class library, the description of each class is followed by a section describing the properties of the class. Each property description is followed by a table that looks like this:
+  </p>
+  <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+   <col width="130px" />
+   <col width="122px" />
+   <col width="122px" />
+   <col width="145px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       <span class="Helvetica_Bold" style="font-family: Helvetica;">
+        Property Type
+       </span>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+      <p>
+       Boolean
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       <b>
+        Name String
+       </b>
+      </p>
+     </td>
+     <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+      <p>
+       Hide
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Get:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Set:
+       </b>
+       No
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+      <p>
+       <b>
+        Init:
+       </b>
+       Yes
+      </p>
+     </td>
+     <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+      <p>
+       <b>
+        Registered:
+       </b>
+       Yes
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   where
+  </p>
+  <ul>
+   <li value="1">
+    <b>
+     Property Type
+    </b>
+    describes the property type associated with the property. If the property is
+    <i>
+     registered
+    </i>
+    , the property type will be one of a number of registered property data types. If the property is not registered, this field will describe the generic IDL data type of the property value.
+   </li>
+   <li value="2">
+    <b>
+     Name String
+    </b>
+    is the default value of the Name property attribute. If the property is registered, this is the value that appears in the left-hand column when the property is displayed in a property sheet widget. If the property is not registered, this field will contain the words
+    <i>
+     not displayed
+    </i>
+    .
+   </li>
+   <li value="3">
+    <span class="Helvetica_Bold">
+     Get
+    </span>
+    ,
+    <span class="Helvetica_Bold">
+     Set
+    </span>
+    , and
+    <span class="Helvetica_Bold">
+     Init
+    </span>
+    describe whether the property can be specified as a keyword to the GetProperty, SetProperty, and Init methods, respectively.
+   </li>
+   <li value="4">
+    <span class="Helvetica_Bold">
+     Registered
+    </span>
+    describes whether the property is registered for display in a property sheet widget.
+   </li>
+  </ul>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="Registered_Properties.html#objects_intro_4100679965_1525893" target="" title="" alt="">
+    Registered Property Data Types
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="Registered_Properties.html#objects_intro_4100679965_1525007" target="" title="" alt="">
+    Registered Properties
+   </a>
+   for additional information.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

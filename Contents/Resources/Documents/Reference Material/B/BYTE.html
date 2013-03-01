@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: B" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   BYTE
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/B/BYTE.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="B_list.html">
+    Routines: B
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    BYTE
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="B_856805997_675883">
+   </a>
+   <a name="B_856805997_28497">
+   </a>
+   BYTE
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#B_856805997_675885">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_675887">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_996787">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_991086">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_675894">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_795864">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#B_856805997_993476">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The
+   <a name="kanchor175">
+   </a>
+   BYTE function returns a result equal to
+   <i>
+    Expression
+   </i>
+   converted
+   <a name="kanchor176">
+   </a>
+   to byte type. If
+   <i>
+    Expression
+   </i>
+   is a string, each string is converted to a byte vector of the same length as the string. Each element of the vector is the character code of the corresponding character in the string. The BYTE function can also be used to extract data from
+   <i>
+    Expression
+   </i>
+   and place it in a byte scalar or array without modification, if more than one parameter is present. See
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Components of the IDL Language/Type_Conversion_Function.html#constants_818058343_674656" target="" title="" alt="">
+    Type Conversion Functions
+   </a>
+   for details.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_675885">
+   </a>
+   <a name="B_856805997_675885_PageTOC_BYTE_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = BYTE(
+   <i>
+    Expression[
+   </i>
+   ,&#160;
+   <i>
+    Offset [
+   </i>
+   ,&#160;
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    1
+   </sub>
+   <i>
+    [
+   </i>
+   ,
+   <i>
+    ...
+   </i>
+   ,
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    8
+   </sub>
+   <i>
+    ]]]
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_675887">
+   </a>
+   <a name="B_856805997_91906">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns a byte value or array of the same dimensions as the
+   <i>
+    Expression.
+   </i>
+   If
+   <i>
+    Expression
+   </i>
+   is a complex number, BYTE returns the real part.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_996787">
+   </a>
+   <a name="B_856805997_675887_PageTOC_BYTE_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Expression
+  </h3>
+  <p>
+   The expression to be converted to type byte.
+  </p>
+  <h3 class="Argument">
+   Offset
+  </h3>
+  <p>
+   The byte offset from the beginning of
+   <i>
+    Expression
+   </i>
+   . Specifying this argument allows fields of data extracted from
+   <i>
+    Expression
+   </i>
+   to be treated as byte data without conversion.
+  </p>
+  <h3 class="Argument">
+   D
+   <sub class="italic">
+    i
+   </sub>
+  </h3>
+  <p>
+   When extracting fields of data, the
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   arguments specify the dimensions of the result. If no dimension arguments are given, the result is taken to be scalar.
+  </p>
+  <p>
+   The
+   <i>
+    D
+   </i>
+   <sub class="italic">
+    i
+   </sub>
+   arguments can be either an array or a series of scalar expressions. If a single argument is specified, it can be either a scalar expression or an array of up to eight elements. If multiple arguments are specified, they must all be scalar expressions. Up to eight dimensions can be specified.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_991086">
+   </a>
+   <a name="B_856805997_991086_PageTOC_BYTE_">
+   </a>
+   Keywords
+  </h2>
+  <h3>
+   Thread Pool Keywords
+  </h3>
+  <p>
+   This routine is written to make use of IDL’s
+   <i>
+    thread pool
+   </i>
+   , which can increase execution speed on systems with multiple CPUs. The values stored in the !CPU system variable control whether IDL uses the thread pool for a given computation. In addition, you can use the thread pool keywords TPOOL_MAX_ELTS, TPOOL_MIN_ELTS, and TPOOL_NOTHREAD to override the defaults established by !CPU for a single invocation of this routine. See
+   <a class="MCXref_Chapter_Reference_0" href="../../Creating IDL Programs/Appendices/tpoolkeyw.html#tpoolkeyw_2501860834_317209" target="" title="" alt="">
+    Thread Pool Keywords
+   </a>
+   for details.
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_675894">
+   </a>
+   <a name="B_856805997_675894_PageTOC_BYTE_">
+   </a>
+   Example
+  </h2>
+  <p>
+   If the variable A contains the floating-point value 10.0, it can be converted to byte type and saved in the variable B by entering:
+  </p>
+  <p class="Code">
+   B = BYTE(A)
+  </p>
+  <h2 class="API">
+   <a name="B_856805997_795864">
+   </a>
+   <a name="B_856805997_795864_PageTOC_BYTE_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="B_856805997_993476">
+   </a>
+   <a name="B_856805997_993476_PageTOC_BYTE_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="../C/COMPLEX.html#C_854643309_1052509">
+    COMPLEX
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../D/DCOMPLEX.html#D_843829869_37570">
+    DCOMPLEX
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../D/DOUBLE.html#D_843829869_37011">
+    DOUBLE
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../F/FIX.html#F_848155245_957011">
+    FIX
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../F/FLOAT.html#F_848155245_676911">
+    FLOAT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LONG.html#L_826528365_928337">
+    LONG
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../L/LONG64.html#L_826528365_918926">
+    LONG64
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../S/STRING.html#S_820040301_679053">
+    STRING
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../U/UINT.html#U_807064173_950191">
+    UINT
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../U/ULONG.html#U_807064173_950523">
+    ULONG
+   </a>
+   ,
+   <a class="MCXref_Heading_0" href="../U/ULONG64.html#U_807064173_950582">
+    ULONG64
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

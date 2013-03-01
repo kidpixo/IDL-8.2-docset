@@ -1,0 +1,467 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: W" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   WINDOW Procedure
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/W/WINDOW_Procedure.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="W_list.html">
+    Routines: W
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    WINDOW Procedure
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="dg_routines_3604229493_890262">
+   </a>
+   <a name="dg_routines_3604229493_24067">
+   </a>
+   WINDOW Procedure
+  </h1>
+  <p madcap:conditions="Direct Graphics.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Direct Graphics.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890297">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890327">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890331">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890393">
+     Examples
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890397">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890405">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Please see the
+   <a href="WINDOW.html" target="" title="" alt="" class="MCXref_Heading_0">
+    WINDOW
+   </a>
+   function, which replicates the functionality of this routine and offers an interactive interface.
+  </p>
+  <p>
+   The
+   <a name="kanchor2905">
+   </a>
+   WINDOW procedure creates a window for a Direct Graphics window display of graphics or text. It is only necessary to use WINDOW if more than one simultaneous window or a special size window is desired because a window is created automatically the first time any display procedure attempts to access the window system. The newly-created window becomes the current window, and the
+   <a name="kanchor2906">
+   </a>
+   system variable !D.WINDOW is set to that window’s window index. (See the description of the
+   <a class="MCXref_Heading_0" href="WSHOW_Procedure.html#dg_routines_3604229493_890525">
+    WSHOW Procedure
+   </a>
+   for a discussion of the current IDL window.)
+  </p>
+  <p>
+   The behavior of WINDOW varies slightly depending on the window system in effect.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890297">
+   </a>
+   <a name="dg_routines_3604229493_680611_PageTOC_WINDOW_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   WINDOW [,&#160;
+   <i>
+    Window_Index
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890333">
+    COLORS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890343">
+    FREE
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890347">
+    PIXMAP
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890351">
+    RETAIN
+   </a>
+   ={0 | 1 | 2}] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890362">
+    TITLE
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890366">
+    XPOS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890382">
+    YPOS
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890385">
+    XSIZE
+   </a>
+   =
+   <i>
+    pixels
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#dg_routines_3604229493_890389">
+    YSIZE
+   </a>
+   =
+   <i>
+    pixels
+   </i>
+   ]
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890327">
+   </a>
+   <a name="dg_routines_3604229493_680613_PageTOC_WINDOW_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Window_Index
+  </h3>
+  <p>
+   The window index for the newly-created window. A window index is an integer value between 0 and 31 that is used to refer to the window. If this parameter is omitted, window index 0 is used. If the value of
+   <i>
+    Window_Index
+   </i>
+   specifies an existing window, the existing window is deleted and a new one is created. If you need to create more than 32 windows, use the FREE keyword described below.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890331">
+   </a>
+   <a name="dg_routines_3604229493_680616_PageTOC_WINDOW_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890333">
+   </a>
+   <a name="dg_routines_3604229493_896410_Keywords_WINDOW__">
+   </a>
+   COLORS
+  </h3>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This keyword is ignored under Microsoft Windows.
+  </p>
+  <p>
+   The maximum number of
+   <a name="kanchor2907">
+   </a>
+   color table indices to be used when drawing. This keyword has an effect only if supplied when the first window is created. If COLORS is not present when the first window is created, all or most of the available color indices are allocated depending upon the window system in use.
+  </p>
+  <p>
+   To use monochrome windows on a color display in X Windows, use COLORS = 2 when creating the first window. One color table is maintained for all windows. A negative value for COLORS specifies that all but the given number of colors from the shared color table should be allocated.
+  </p>
+  <p>
+   Although this keyword is ignored under Microsoft Windows, we could use the following code to use a monochrome window on all platforms:
+  </p>
+  <p class="Code">
+   WINDOW, COLORS=2 ; ignored on Windows
+  </p>
+  <p class="Code">
+   white=!D.N_COLORS-1
+  </p>
+  <p class="Code">
+   PLOT, FINDGEN(20), COLOR=white
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890343">
+   </a>
+   <a name="dg_routines_3604229493_680620_Keywords_WINDOW__">
+   </a>
+   FREE
+  </h3>
+  <p>
+   Set this keyword to create a window using the smallest unused window index above 32. If this keyword is present, the
+   <i>
+    Window_Index
+   </i>
+   argument can be omitted. The default position of the new window is opposite that of the current window. Using the FREE keyword allows the creation of a large number of windows. The system variable !D.WINDOW is set to the index of the newly-created window.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890347">
+   </a>
+   <a name="dg_routines_3604229493_680622_Keywords_WINDOW__">
+   </a>
+   PIXMAP
+  </h3>
+  <p>
+   Set the PIXMAP keyword to specify that the window being created is actually an invisible portion of the display memory called a pixmap.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   On Microsoft Windows systems, the number of pixmap windows that can be created is limited by system GDI resources. The number of pixmap windows IDL can create is constrained by the total amount of GDI memory, the amount of GDI memory used by other applications, and the size of the IDL pixmap windows.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890351">
+   </a>
+   <a name="dg_routines_3604229493_680624_Keywords_WINDOW__">
+   </a>
+   RETAIN
+  </h3>
+  <p>
+   <a name="kanchor2908">
+   </a>
+   Set this keyword to 0, 1, or 2 to specify how backing store should be handled for the window:
+  </p>
+  <p class="Bullet">
+   0 = no backing store
+  </p>
+  <p class="Bullet">
+   1 = requests that the server or window system provide backing store
+  </p>
+  <p class="Bullet">
+   2 = specifies that IDL provide backing store directly
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890362">
+   </a>
+   <a name="dg_routines_3604229493_680625_Keywords_WINDOW__">
+   </a>
+   TITLE
+  </h3>
+  <p>
+   A scalar string that contains the window’s label. If not specified, the window is given a label of the form “IDL
+   <i>
+    n
+   </i>
+   ”, where
+   <i>
+    n
+   </i>
+   is the index number of the window. For example, to create a window with the label “IDL Graphics”, enter:
+  </p>
+  <p class="Code">
+   WINDOW, TITLE='IDL Graphics'
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890366">
+   </a>
+   <a name="dg_routines_3604229493_680628_Keywords_WINDOW__">
+   </a>
+   XPOS
+  </h3>
+  <p>
+   The X
+   <a name="kanchor2909">
+   </a>
+   position of the window, specified in device coordinates. On Motif platforms, XPOS specifies the X position of the
+   <i>
+    lower
+   </i>
+   left corner and is measured from the lower left corner of the screen. On Windows platforms, XPOS specifies the X position of the
+   <i>
+    upper
+   </i>
+   left corner and is measured from the upper left corner of the screen. That is, specifying
+  </p>
+  <p class="Code">
+   WINDOW, XPOS = 0, YPOS = 0
+  </p>
+  <p>
+   will create a window in the lower left corner on Motif machines and in the upper left corner on Windows machines.
+  </p>
+  <p>
+   If no position is specified, the position of the window is determined from the value of Window Index using the following rules:
+  </p>
+  <p class="Bullet">
+   Window 0 is placed in the upper right hand corner.
+  </p>
+  <p class="Bullet">
+   Even numbered windows are placed on the top half of the screen and odd numbered windows are placed on the bottom half.
+  </p>
+  <p class="Bullet">
+   Windows 0,1,4,5,8, and 9 are placed on the right side of the screen and windows 2,3,6, and 7 are placed on the left.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   The order of precedence (highest to lowest) for positioning windows is: XPOS/YPOS keywords to WINDOW, the value of the IDL_GR_WIN_LAYOUT preference (Microsoft Windows only), and the optional index argument to WINDOW. Also realize that setting LOCATION is only a request to the Window manager and may not always be honored due to system peculiarities.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890382">
+   </a>
+   <a name="dg_routines_3604229493_680633_Keywords_WINDOW__">
+   </a>
+   YPOS
+  </h3>
+  <p>
+   The Y position of the window, specified in device coordinates. See the description of XPOS for details.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890385">
+   </a>
+   <a name="dg_routines_3604229493_680635_Keywords_WINDOW__">
+   </a>
+   XSIZE
+  </h3>
+  <p>
+   The width of the window in pixels.
+  </p>
+  <h3 class="Keyword">
+   <a name="dg_routines_3604229493_890389">
+   </a>
+   <a name="dg_routines_3604229493_680637_Keywords_WINDOW__">
+   </a>
+   YSIZE
+  </h3>
+  <p>
+   The height of the window in pixels.
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890393">
+   </a>
+   <a name="dg_routines_3604229493_680639_PageTOC_WINDOW_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   Create graphics window number 0 with a size of 400 by 400 pixels and a title that reads “Square Window” by entering:
+  </p>
+  <p class="Code">
+   WINDOW, 0, XSIZE=400, YSIZE=400, TITLE='Square Window'
+  </p>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890397">
+   </a>
+   <a name="dg_routines_3604229493_796058_PageTOC_WINDOW_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       Original
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="dg_routines_3604229493_890405">
+   </a>
+   <a name="dg_routines_3604229493_983477_PageTOC_WINDOW_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a href="WDELETE_Procedure.html">
+    WDELETE
+   </a>
+   ,
+   <a href="WSHOW_Procedure.html">
+    WSHOW Procedure
+   </a>
+   <a class="MCXref_Heading_0" href="WSHOW_Procedure.html#dg_routines_3604229493_890525">
+    WSHOW Procedure
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

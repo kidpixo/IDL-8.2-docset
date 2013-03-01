@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Tasks|Code Commenting with IDLdoc" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Code Comments
+  </title>
+  <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../idl_CSH.html#IDLdoc/Code_Comments.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Creating IDL Programs/Programming Tasks.html">
+    Tasks
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="IDLdoc.html">
+    Code Commenting with IDLdoc
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Code Comments
+   </span>
+  </div>
+  <h1>
+   <a name="IDLdoc_2379806813_1004180">
+   </a>
+   <a name="IDLdoc_2379806813_20355">
+   </a>
+   Code Comments
+  </h1>
+  <p>
+   When you open a code file, isn’t it a relief to see that the developer left some documentation?
+   <a name="kanchor3599">
+   </a>
+   You can return the favor for other developers by using the commenting features available in IDL.
+  </p>
+  <p>
+   For basic documentation, you can use the standard comments that begin with a semicolon (;). IDL ignores the text that follows it until the end of the line.
+  </p>
+  <p>
+   To develop more advanced documentation, you can use the format created for a third-party program called
+   <span class="Italic">
+    IDLdoc
+   </span>
+   . This format extends the commenting format, providing tokens that allow you to insert complex documentation inside
+   <span class="Courier">
+    .pro
+   </span>
+   code.
+  </p>
+  <p>
+   The biggest advantage of using the IDLdoc style is that the workbench uses the IDLdoc format to display formatted text as Hover Help and provide Content Assist for user-written routines. (See the
+   <a class="MCXref_Heading_0" href="IDLdoc_Comment_Tags.html#IDLdoc_2379806813_1005333">
+    Hover Help Example
+   </a>
+   and
+   <a class="MCXref_Heading_0" href="IDLdoc_Comment_Tags.html#IDLdoc_2379806813_1006037">
+    Inserting Tags using Content Assist
+   </a>
+   .)
+  </p>
+  <p>
+   The following illustrations show the differences between simple IDL comments and the IDLdoc format:
+  </p>
+  <table cellpadding="0" cellspacing="0" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 469px;caption-side: top;" height="585px">
+   <col width="234px" />
+   <col width="235px" />
+   <tbody>
+    <tr style="height: 275px;">
+     <td>
+      <p>
+       <span>
+        Simple IDL comments are not displayed in Hover Help:
+       </span>
+       <![CDATA[ ]]>
+      </p>
+      <p>
+       &#160;
+      </p>
+      <p style="text-align: center;">
+       <img src="../Resources/Images/idldoc_HH_plain.gif" style="width: 151.6791px;height: 126.0787px;margin-left: 5.99976px;margin-top: 7.50024px;margin-right: 7.920704px;margin-bottom: 4.500004px;" />
+      </p>
+      <p>
+       &#160;
+      </p>
+      <p>
+       &#160;
+      </p>
+      <p>
+       &#160;
+      </p>
+     </td>
+     <td>
+      <p>
+       Using just the IDLdoc opening (+) and closing (-) tags displays unformatted information in Hover Help:
+      </p>
+      <p style="text-align: center;">
+       <img src="../Resources/Images/idldoc_HH_some.gif" style="width: 202.8797px;height: 195.839px;margin-left: 5.99976px;margin-top: 2.25px;margin-right: 5.999752px;margin-bottom: 4.5px;" />
+      </p>
+     </td>
+    </tr>
+    <tr style="height: 286px;">
+     <td colspan="2">
+      <p style="text-align: center;">
+       <span>
+        Using full IDLdoc comments with indented styles displays fully formatted Hover Help
+       </span>
+       :
+      </p>
+      <p style="text-align: center;">
+       <img src="../Resources/Images/idldoc_HH_full.gif" style="width: 190.7194px;height: 238.08px;margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 10.80072px;margin-bottom: 5.999767px;" />
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <h2 class="API">
+   About IDLdoc
+  </h2>
+  <p>
+   IDLdoc is a third-party application, written in IDL by Michael Galloy. The IDLdoc package consists of the following:
+  </p>
+  <ul>
+   <li value="1">
+    A set of comment tags that allows you to insert specific pieces of information into your IDL source code.
+   </li>
+   <li value="2">
+    An IDL program that parses IDL source code and uses the comment tags to generate formatted HTML output.
+   </li>
+  </ul>
+  <p>
+   When an IDL source code file is located in the IDL path (defined by the !PATH system variable), the workbench parses any IDLdoc comment tags and uses the information when displaying Hover Help or Content Assist for the routines defined in the file. You do not need to install the IDLdoc application itself to take advantage of the Hover Help and Content Assist features of the IDL Workbench. If you wish to generate HTML output from your IDL source code, you must install the IDLdoc application, described in
+   <a class="MCXref_Heading_0" href="Using_IDLdoc_to_Generate.html#IDLdoc_2379806813_1003449">
+    Installing the IDLdoc Package
+   </a>
+   .
+  </p>
+  <h2 class="API">
+   IDLdoc Comment Block Types
+  </h2>
+  <p>
+   The IDLdoc style provides for file comments and routine comments.
+  </p>
+  <ul>
+   <li value="1">
+    <b>
+     File Comments
+    </b>
+    —use file comments to describe an entire file, rather than a particular routine.
+    <b>
+     IDL Hover Help ignores file comments,
+    </b>
+    but they appear in the generated IDLdoc HTML output. File comments are located at the beginning of the file.
+   </li>
+   <li value="2">
+    <b>
+     Routine comments
+    </b>
+    —use routine comments to document individual routines. If there are multiple routines in a file, document each one separately using routine comments.
+    <b>
+     IDL recognizes routine comments and uses them in Hover Help
+    </b>
+    . Routine comments are located just above or below a routine declaration.
+   </li>
+  </ul>
+  <p>
+   Both types of comments use the same basic formatting, discussed in
+   <a class="MCXref_Heading_0" href="Formatting_IDLdoc_Commen.html#IDLdoc_2379806813_1003585">
+    Formatting IDLdoc Comment Blocks
+   </a>
+   . For information on customizing comment blocks and inserting them in code, see
+   <a class="MCXref_Heading_0" href="Formatting_IDLdoc_Commen.html#IDLdoc_2379806813_1005982">
+    Inserting Formatted Comment Blocks
+   </a>
+   .
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   Use file comments only in conjunction with routine comments. If file comments exist in a
+   <span class="Courier">
+    .pro
+   </span>
+   file without routine comments, Hover Help will display the file comment for the following routine.
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

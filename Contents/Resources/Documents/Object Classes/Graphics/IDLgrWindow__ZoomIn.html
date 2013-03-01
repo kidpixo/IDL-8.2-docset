@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrWindow" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrWindow::ZoomIn
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrWindow__ZoomIn.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrWindow::ZoomIn
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1342703">
+   </a>
+   <a name="objects_gr_2157407275_13679">
+   </a>
+   IDLgrWindow::ZoomIn
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1360412">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1342723">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1342727">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1875973">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1342730">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLgrWindow::
+   <a name="kanchor4609">
+   </a>
+   ZoomIn procedure method does the following:
+  </p>
+  <ul>
+   <li value="1">
+    Increments the value of the
+    <a class="MCXref_Heading_0" href="IDLgrWindow_Properties.html#objects_gr_2157407275_1342953">
+     ZOOM_NSTEP
+    </a>
+    property.
+   </li>
+   <li value="2">
+    Updates the value of the
+    <a class="MCXref_Heading_0" href="IDLgrWindow_Properties.html#objects_gr_2157407275_1249228">
+     CURRENT_ZOOM
+    </a>
+    property to reflect the product of the
+    <a class="MCXref_Heading_0" href="IDLgrWindow_Properties.html#objects_gr_2157407275_1342797">
+     ZOOM_BASE
+    </a>
+    and
+    <a class="MCXref_Heading_0" href="IDLgrWindow_Properties.html#objects_gr_2157407275_1342953">
+     ZOOM_NSTEP
+    </a>
+    properties.
+   </li>
+  </ul>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   This method does not change the window contents automatically. The application is responsible for updating the window content based on the new zoom value.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1360412">
+   </a>
+   <a name="objects_gr_2157407275_1360412_PageTOC_IDLgrWindow">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrWindow.html#objects_gr_2157407275_1018335">
+    IDLgrWindow
+   </a>
+   ::]ZoomIn
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1342723">
+   </a>
+   <a name="objects_gr_2157407275_1342723_PageTOC_IDLgrWindow">
+   </a>
+   Arguments
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1342727">
+   </a>
+   <a name="objects_gr_2157407275_1342727_PageTOC_IDLgrWindow">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1875973">
+   </a>
+   <a name="objects_gr_2157407275_1875973_PageTOC_IDLgrWindow">
+   </a>
+   Example
+  </h2>
+  <p>
+   While you are free to use the value of the CURRENT_ZOOM, ZOOM_BASE, and ZOOM_NSTEP properties to modify the contents of the IDLgrWindow in any way you see fit, one choice is to modify the value of the VIEWPLANE_RECT property of the IDLgrView object that contains your graphics.
+  </p>
+  <p>
+   First, we create an IDLgrWindow containing a simple plot:
+  </p>
+  <p class="Code">
+   mywindow = OBJ_NEW('IDLgrWindow', RETAIN=2)
+   <br />
+   myview = OBJ_NEW('IDLgrView', VIEWPLANE_RECT=[-10,-10,20,20])
+   <br />
+   mymodel = OBJ_NEW('IDLgrModel')
+   <br />
+   <br />
+   x = (FINDGEN(21) / 10.0 - 1.0) * 10.0
+   <br />
+   y = RANDOMU(seed, 21) * 10.0 - 5.0
+   <br />
+   myplot1 = OBJ_NEW('IDLgrPlot', x, y)
+   <br />
+   <br />
+   myview-&gt;Add, mymodel
+   <br />
+   mymodel-&gt;Add, myplot1
+   <br />
+   mywindow-&gt;Draw, myview
+  </p>
+  <p>
+   Next, we use the ZoomIn method to change the current zoom, and then change the VIEWPLANE_RECT property by the current zoom amount:
+  </p>
+  <p class="Code">
+   mywindow-&gt;ZoomIn
+   <br />
+   mywindow-&gt;GetProperty, CURRENT_ZOOM=cz
+   <br />
+   myview-&gt;GetProperty, VIEWPLANE_RECT=vr
+   <br />
+   myview-&gt;SetProperty, VIEWPLANE_RECT=vr*cz
+   <br />
+   mywindow-&gt;Draw, myview
+  </p>
+  <p>
+   (Another option would be to use the
+   <a class="MCXref_Heading_0" href="IDLgrModel__Scale.html#objects_gr_2157407275_1011592">
+    IDLgrModel::Scale
+   </a>
+   method to modify the scale factors used by the model object.)
+  </p>
+  <p>
+   When you have finished with the example, destroy the IDLgrWindow and IDLgrView objects:
+  </p>
+  <p class="Code">
+   OBJ_DESTROY, mywindow
+   <br />
+   OBJ_DESTROY, myview
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1342730">
+   </a>
+   <a name="objects_gr_2157407275_1342730_PageTOC_IDLgrWindow">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Objects|Graphics Object Classes|IDLgrText" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   IDLgrText::GetIndexAtCoord
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrText__GetIndexAtCoo.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../ref_part2.html">
+    Objects
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="objects_gr.html">
+    Graphics Object Classes
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    IDLgrText::GetIndexAtCoord
+   </span>
+  </div>
+  <h1 class="ObjMethod">
+   <a name="objects_gr_2157407275_1877882">
+   </a>
+   <a name="objects_gr_2157407275_72017">
+   </a>
+   IDLgrText::GetIndexAtCoord
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1878360">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1881535">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1878380">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1877909">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1879229">
+     Example
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#objects_gr_2157407275_1877911">
+     Version History
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The IDLgrText::
+   <a name="kanchor4509">
+   </a>
+   GetIndexAtCoord function method returns the index of the character in the string closest to a specified screen coordinate.
+  </p>
+  <p class="Tip" madcap:autonum="&lt;b&gt;Tip: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Tip:
+     </b>
+    </span>
+   </span>
+   In the context of this method, screen coordinates are normalized coordinates defined by the bounding box of the text object.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1878360">
+   </a>
+   <a name="objects_gr_2157407275_1878360_PageTOC_IDLgrText">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result = Obj
+   </i>
+   -&gt;[
+   <a class="MCXref_Heading_0" href="IDLgrText.html#objects_gr_2157407275_1016385">
+    IDLgrText
+   </a>
+   ::]GetIndexAtCoord(
+   <i style="font-style: italic;">
+    Window,
+   </i>
+   <i>
+    X, Y
+   </i>
+   )
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1881535">
+   </a>
+   <a name="objects_gr_2157407275_1881535_PageTOC_IDLgrText">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   An integer specifying the character index of the character closest to the position specified by
+   <i>
+    X
+   </i>
+   and
+   <i>
+    Y
+   </i>
+   .
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1878380">
+   </a>
+   <a name="objects_gr_2157407275_1878380_PageTOC_IDLgrText">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Window
+  </h3>
+  <p>
+   An object reference to the IDLgrWindow object in which the text appears.
+  </p>
+  <h3 class="Argument">
+   X
+  </h3>
+  <p>
+   A floating-point value between 0.0 and 1.0 specifying the horizontal coordinates relative to the bounding box of the text object.
+  </p>
+  <h3 class="Argument">
+   Y
+  </h3>
+  <p>
+   A floating-point value between 0.0 and 1.0 specifying the vertical coordinates relative to the bounding box of the text object.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1877909">
+   </a>
+   <a name="objects_gr_2157407275_1877909_PageTOC_IDLgrText">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1879229">
+   </a>
+   <a name="objects_gr_2157407275_1879229_PageTOC_IDLgrText">
+   </a>
+   Example
+  </h2>
+  <p>
+   The bounding box of the IDLgrText object is defined as shown below. The coordinates are the same regardless of the size of the text box. So the following call:
+  </p>
+  <p class="Code">
+   index=Obj-&gt;GetIndexAtCoord(oWin, 0.22, 0.77)
+  </p>
+  <p>
+   returns 2, which is the index of the closest insertion point.
+  </p>
+  <p style="text-align: center;">
+   <img src="../../images/GetIndexAtCoord.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 6.000484px;margin-bottom: 6.000492px;" />
+  </p>
+  <p class="FigureTitle">
+   GetIndexAtCoord Example
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="IDLgrText.html#objects_gr_2157407275_1881241" target="" title="" alt="">
+    Character Indices in Text Strings
+   </a>
+   for more information.
+  </p>
+  <h2 class="API">
+   <a name="objects_gr_2157407275_1877911">
+   </a>
+   <a name="objects_gr_2157407275_1877911_PageTOC_IDLgrText">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       7.0.6
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p>
+   &#160;
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

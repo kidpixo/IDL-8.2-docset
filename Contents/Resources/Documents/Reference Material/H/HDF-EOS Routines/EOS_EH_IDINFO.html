@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: H|HDF-EOS Routines" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   EOS_EH_IDINFO
+  </title>
+  <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../../idl_CSH.html#Reference Material/H/HDF-EOS Routines/EOS_EH_IDINFO.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../H_list.html">
+    Routines: H
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../HDF-EOS Routines.html">
+    HDF-EOS Routines
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    EOS_EH_IDINFO
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="HDF_EOS_3103509269_1005422">
+   </a>
+   <a name="HDF_EOS_3103509269_17817">
+   </a>
+   EOS_EH_IDINFO
+  </h1>
+  <p>
+   This function
+   <a name="kanchor743">
+   </a>
+   returns the HDF file IDs corresponding to the HDF-EOS file ID returned by EOS_SW_OPEN, EOS_GD_OPEN, or EOS_PT_OPEN. These IDs can then be used to create or access native HDF structures such as SDS arrays, Vdatas, or HDF attributes within an HDF-EOS file.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1029954_PageTOC_EOS_EH_IDINFO_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <span class="Italic">
+    Result
+   </span>
+   = EOS_EH_IDINFO(
+   <span class="Italic">
+    fid
+   </span>
+   ,
+   <span class="Italic">
+    HDFfid
+   </span>
+   ,
+   <span class="Italic">
+    sdInterfaceID
+   </span>
+   )
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1029957_PageTOC_EOS_EH_IDINFO_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   Returns SUCCEED(0) if successful and FAIL(–1) otherwise.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1029959_PageTOC_EOS_EH_IDINFO_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   fid
+  </h3>
+  <p>
+   File ID (long) returned by EOS_SW_OPEN, EOS_GD_OPEN, or EOS_PT_OPEN.
+  </p>
+  <h3 class="Argument">
+   HDFfid
+  </h3>
+  <p>
+   A named variable that will contain the HDF file ID (long) returned by Hopen.
+  </p>
+  <h3 class="Argument">
+   sdInterfaceID
+  </h3>
+  <p>
+   A named variable that will contain the SD interface ID (long) returned by SDstart.
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1063736_PageTOC_EOS_EH_IDINFO_">
+   </a>
+   Keywords
+  </h2>
+  <p>
+   None
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1029968_PageTOC_EOS_EH_IDINFO_">
+   </a>
+   Examples
+  </h2>
+  <p>
+   To create a vdata within an existing HDF-EOS file:
+  </p>
+  <p class="Code">
+   fid = EOS_SW_OPEN("SwathFile.hdf", /RDWR)
+  </p>
+  <p class="Code">
+   status = EOS_EH_IDINFO(fid, hdffid, sdid)
+  </p>
+  <h2 class="API">
+   <a name="HDF_EOS_3103509269_1052138_PageTOC_EOS_EH_IDINFO_">
+   </a>
+   Version History
+  </h2>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

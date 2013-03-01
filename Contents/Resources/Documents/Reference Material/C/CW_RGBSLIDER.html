@@ -1,0 +1,605 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="Routines (alphabetical)|Routines: C" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   CW_RGBSLIDER
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/Description.css" rel="stylesheet" />
+  <link href="../../Resources/TableStyles/VersionTable.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Reference Material/C/CW_RGBSLIDER.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">
+    Routines (alphabetical)
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="C_list.html">
+    Routines: C
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    CW_RGBSLIDER
+   </span>
+  </div>
+  <h1 class="Routine">
+   <a name="C_854643309_755775">
+   </a>
+   <a name="C_854643309_75978">
+   </a>
+   CW_RGBSLIDER
+   <a name="kanchor484">
+   </a>
+   <![CDATA[ ]]>
+  </h1>
+  <p madcap:conditions="Reference Material.Online_Help_Only">
+   <madcap:conditionaltext madcap:conditions="Reference Material.Online_Help_Only">
+    <a class="MCXref_Heading_0" href="#C_854643309_755788">
+     Syntax
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_755790">
+     Return Value
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1027110">
+     Arguments
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_755793">
+     Keywords
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1083349">
+     Widget Events Returned by the CW_RGBSLIDER Widget
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_755827">
+     Version History
+    </a>
+    |
+    <a class="MCXref_Heading_0" href="#C_854643309_1052385">
+     See Also
+    </a>
+   </madcap:conditionaltext>
+  </p>
+  <p>
+   The CW_RGBSLIDER function creates a compound
+   <a name="kanchor485">
+   </a>
+   widget that provides three sliders for adjusting
+   <a name="kanchor486">
+   </a>
+   color values. The
+   <a name="kanchor487">
+   </a>
+   RGB,
+   <a name="kanchor488">
+   </a>
+   CMY,
+   <a name="kanchor489">
+   </a>
+   HSV, and
+   <a name="kanchor490">
+   </a>
+   HLS
+   <a name="kanchor491">
+   </a>
+   color systems can all be used. No matter which color system is in use, the resulting color is always supplied in RGB, which is the base system for IDL.
+  </p>
+  <p>
+   This routine is written in the IDL language. Its source code can be found in the file
+   <span class="Courier">
+    cw_rgbslider.pro
+   </span>
+   in the
+   <span class="Courier">
+    lib
+   </span>
+   subdirectory of the IDL distribution.
+  </p>
+  <h3>
+   Using CW_RGBSLIDER
+  </h3>
+  <p>
+   The CW_RGBSLIDER widget consists of a pulldown menu which allows the user to change between the supported color systems, and three color adjustment sliders, allowing the user to select a new color value.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_755788">
+   </a>
+   <a name="C_854643309_755788_PageTOC_CW_RGBSLIDER_">
+   </a>
+   Syntax
+  </h2>
+  <p class="Syntax">
+   <i>
+    Result
+   </i>
+   = CW_RGBSLIDER(
+   <i>
+    Parent
+   </i>
+   [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_755795">
+    CMY
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#C_854643309_1025517">
+    HSV
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#C_854643309_755810">
+    HLS
+   </a>
+   | , /
+   <a class="MCXref_Heading_0" href="#C_854643309_755816">
+    RGB
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_755798">
+    COLOR_INDEX
+   </a>
+   | ,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_755807">
+    GRAPHICS_LEVEL
+   </a>
+   ={1 | 2}] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_755801">
+    DRAG
+   </a>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_755804">
+    FRAME
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_755813">
+    LENGTH
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_755816">
+    RGB
+   </a>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_1190402">
+    TAB_MODE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_996685">
+    UNAME
+   </a>
+   =
+   <i>
+    string
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_755819">
+    UVALUE
+   </a>
+   =
+   <i>
+    value
+   </i>
+   ] [,&#160;
+   <a class="MCXref_Heading_0" href="#C_854643309_755822">
+    VALUE
+   </a>
+   =
+   <i>
+    [r,&#160;g,&#160;b]
+   </i>
+   ] [,&#160;/
+   <a class="MCXref_Heading_0" href="#C_854643309_1025592">
+    VERTICAL
+   </a>
+   ] )
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_755790">
+   </a>
+   <a name="C_854643309_755790_PageTOC_CW_RGBSLIDER_">
+   </a>
+   Return Value
+  </h2>
+  <p>
+   This function returns the widget ID of the newly-created color adjustment widget.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1027110">
+   </a>
+   <a name="C_854643309_1027110_PageTOC_CW_RGBSLIDER_">
+   </a>
+   Arguments
+  </h2>
+  <h3 class="Argument">
+   Parent
+  </h3>
+  <p>
+   The widget ID of the parent widget.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_755793">
+   </a>
+   <a name="C_854643309_755793_PageTOC_CW_RGBSLIDER_">
+   </a>
+   Keywords
+  </h2>
+  <h3 class="Keyword">
+   <a name="C_854643309_755795">
+   </a>
+   <a name="C_854643309_755795_Keywords_CW_RGBSLIDER__">
+   </a>
+   CMY
+  </h3>
+  <p>
+   If set, the initial color system used is CMY.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755798">
+   </a>
+   <a name="C_854643309_755798_Keywords_CW_RGBSLIDER__">
+   </a>
+   COLOR_INDEX
+  </h3>
+  <p>
+   Set this keyword to display a small rectangle with the selected color. The color is updated as the values are changed. The color initially displayed in this rectangle corresponds to the value specified with the VALUE keyword. If using Object Graphics, it is recommended that you set the GRAPHICS_LEVEL keyword to 2, in which case the COLOR_INDEX keyword is ignored.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755801">
+   </a>
+   <a name="C_854643309_755801_Keywords_CW_RGBSLIDER__">
+   </a>
+   DRAG
+  </h3>
+  <p>
+   Set this keyword and
+   <a name="kanchor492">
+   </a>
+   events will be generated continuously when the sliders are adjusted. If not set, events will only be generated when the mouse button is released. Note: On slow systems, /DRAG performance can be inadequate. The default is DRAG = 0.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755804">
+   </a>
+   <a name="C_854643309_755804_Keywords_CW_RGBSLIDER__">
+   </a>
+   FRAME
+  </h3>
+  <p>
+   If set, a frame will be drawn around the widget. The default is FRAME = 0.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755807">
+   </a>
+   <a name="C_854643309_755807_Keywords_CW_RGBSLIDER__">
+   </a>
+   GRAPHICS_LEVEL
+  </h3>
+  <p>
+   Set this keyword to 2 to use Object Graphics. Set to 1 for Direct Graphics (the default). If set to 2, a small rectangle is displayed with the selected color. The color is updated as the values are changed. The color initially displayed in this rectangle corresponds to the value specified with the VALUE keyword. If this keyword is set, the COLOR_INDEX keyword is ignored.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1025517">
+   </a>
+   <a name="C_854643309_1025517_Keywords_CW_RGBSLIDER__">
+   </a>
+   HSV
+  </h3>
+  <p>
+   If set, the initial color system used is HSV.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755810">
+   </a>
+   <a name="C_854643309_755810_Keywords_CW_RGBSLIDER__">
+   </a>
+   HLS
+  </h3>
+  <p>
+   If set, the initial color system used is HLS.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755813">
+   </a>
+   <a name="C_854643309_755813_Keywords_CW_RGBSLIDER__">
+   </a>
+   LENGTH
+  </h3>
+  <p>
+   The length of the sliders. The default = 256.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755816">
+   </a>
+   <a name="C_854643309_755816_Keywords_CW_RGBSLIDER__">
+   </a>
+   RGB
+  </h3>
+  <p>
+   If set, the initial color system used is RGB. This is the default.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1190402">
+   </a>
+   <a name="C_854643309_45571">
+   </a>
+   TAB_MODE
+  </h3>
+  <p>
+   Set this keyword to one of the values shown in the table below to determine how the widget hierarchy can be navigated using the
+   <span class="Bold">
+    Tab
+   </span>
+   key. The TAB_MODE setting is inherited by lower-level bases and child widgets unless it is explicitly set on an individual widget.
+  </p>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   It is not possible to tab to disabled (SENSITIVE=0) or hidden (MAP=0) widgets.
+  </p>
+  <p>
+   Valid settings are:
+  </p>
+  <table style="width: 500px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Description.css');" cellspacing="0" class="TableStyle_Description">
+   <caption valign="bottom" style="padding-bottom: 12pt;">
+   </caption>
+   <p class="TableTitle">
+    TAB_MODE Keyword Options
+   </p>
+   <col width="103px" />
+   <col width="397px" />
+   <thead>
+    <tr>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColSep">
+      <p>
+       Value
+      </p>
+     </td>
+     <td class="TableStyle_Description_Head_0_0_RowSep_ColEnd">
+      <p>
+       Description
+      </p>
+     </td>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       0
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Disable navigation onto or off of the widget. This is the default. Child widgets automatically inherit the tab mode of the parent base as described in
+       <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Enhancing_Widget_Applica.html#widget_techniques_4218446668_142828" target="" title="" alt="">
+        Inheriting the TAB_MODE Value
+       </a>
+       .
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColSep">
+      <p>
+       1
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowSep_ColEnd">
+      <p>
+       Enable navigation onto and off of the widget.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColSep">
+      <p>
+       2
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_0_0_RowSep_ColEnd">
+      <p>
+       Navigate only onto the widget.
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColSep">
+      <p>
+       3
+      </p>
+     </td>
+     <td class="TableStyle_Description_Body_1_0_RowEnd_ColEnd">
+      <p>
+       Navigate only off of the widget.
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="Note" madcap:autonum="&lt;b&gt;Note: &lt;/b&gt;">
+   <span class="autonumber">
+    <span>
+     <b>
+      Note:
+     </b>
+    </span>
+   </span>
+   In widget applications on the UNIX platform, the Motif library controls what widgets are brought into and released from focus using tabbing. The TAB_MODE keyword value is always zero, and any attempt to change it is ignored when running a widget application on the UNIX platform. Tabbing behavior may vary significantly between UNIX platforms; do not rely on a particular behavior being duplicated on all UNIX systems.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_996685">
+   </a>
+   <a name="C_854643309_996685_Keywords_CW_RGBSLIDER__">
+   </a>
+   UNAME
+  </h3>
+  <p>
+   Set this keyword to a string that can be used to identify the widget in your code. You can associate a name with each widget in a specific hierarchy, and then use that name to query the widget hierarchy and get the correct widget ID.
+  </p>
+  <p>
+   To query the widget hierarchy, use the
+   <a class="MCXref_Heading_0" href="../W/WIDGET_INFO.html#W_811389549_680333">
+    WIDGET_INFO
+   </a>
+   function with the FIND_BY_UNAME keyword. The UNAME should be unique to the widget hierarchy because the FIND_BY_UNAME keyword returns the ID of the first widget with the specified name.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755819">
+   </a>
+   <a name="C_854643309_755819_Keywords_CW_RGBSLIDER__">
+   </a>
+   UVALUE
+  </h3>
+  <p>
+   The “user value” to be assigned to the widget.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_755822">
+   </a>
+   <a name="C_854643309_755822_Keywords_CW_RGBSLIDER__">
+   </a>
+   VALUE
+  </h3>
+  <p>
+   Set this keyword to a 3-element [
+   <i>
+    r,&#160;g,&#160;b
+   </i>
+   ] vector representing the initial RGB value for the CW_RGBSLIDER widget. If the GRAPHICS_LEVEL keyword is set to 2, the color swatch will also initially display this RGB value.
+  </p>
+  <h3 class="Keyword">
+   <a name="C_854643309_1025592">
+   </a>
+   <a name="C_854643309_1025592_Keywords_CW_RGBSLIDER__">
+   </a>
+   VERTICAL
+  </h3>
+  <p>
+   If set, the sliders will be oriented vertically. The default is VERTICAL = 0.
+  </p>
+  <h3>
+   <a name="C_854643309_837882_Keywords_CW_RGBSLIDER__">
+   </a>
+   <a name="C_854643309_42564">
+   </a>
+   Keywords to WIDGET_CONTROL and WIDGET_INFO
+  </h3>
+  <p>
+   The widget ID returned by most compound widgets is actually the ID of the compound widget’s base widget. This means that many keywords to the WIDGET_CONTROL and WIDGET_INFO routines that affect or return information on base widgets can be used with compound widgets.
+  </p>
+  <p>
+   See
+   <a class="MCXref_Heading_0" href="../../Creating IDL Programs/Creating Applications in IDL/Creating_a_Compound_Widg.html#widget_apps_4063420628_1042476" target="" title="" alt="">
+    Creating a Compound Widget
+   </a>
+   for a more complete discussion of controlling compound widgets using WIDGET_CONTROL and WIDGET_INFO.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_1083349">
+   </a>
+   <a name="C_854643309_39280">
+   </a>
+   Widget Events Returned by the CW_RGBSLIDER Widget
+  </h2>
+  <p>
+   This widget generates event structures with the following definition:
+  </p>
+  <p class="Code">
+   event = {ID:0L, TOP:0L, HANDLER:0L, R:0B, G:0B, B:0B }
+  </p>
+  <p>
+   The ‘R’, ‘G’, and ‘B’ fields contain the Red, Green and Blue components of the selected color. Note that CW_RGBSLIDER reports back the Red, Green, and Blue values no matter which color system is selected.
+  </p>
+  <h2 class="API">
+   <a name="C_854643309_755827">
+   </a>
+   <a name="C_854643309_755827_PageTOC_CW_RGBSLIDER_">
+   </a>
+   Version History
+  </h2>
+  <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/VersionTable.css');" cellspacing="0" class="TableStyle_VersionTable">
+   <col width="91px" />
+   <col width="408px" />
+   <tbody>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_ColSep">
+      <p>
+       Pre 4.0
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_ColEnd">
+      <p>
+       Introduced
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColSep">
+      <p>
+       6.1
+      </p>
+     </td>
+     <td class="TableStyle_VersionTable_Body_0_0_RowEnd_ColEnd">
+      <p>
+       Added TAB_MODE keyword
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="API">
+   <a name="C_854643309_1052385">
+   </a>
+   <a name="C_854643309_1052385_PageTOC_CW_RGBSLIDER_">
+   </a>
+   See Also
+  </h2>
+  <p>
+   <a class="MCXref_Heading_0" href="CW_CLR_INDEX.html#C_854643309_854083">
+    CW_CLR_INDEX
+   </a>
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>

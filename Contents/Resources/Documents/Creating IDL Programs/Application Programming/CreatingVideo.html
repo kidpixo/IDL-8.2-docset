@@ -1,0 +1,642 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:madcap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" madcap:lastblockdepth="2" madcap:lastheight="135.6667" madcap:lastwidth="592" madcap:disablemasterstylesheet="true" madcap:tocpath="IDL Programming|Tasks" madcap:medium="non-print" madcap:inpreviewmode="false" madcap:preloadimages="false" madcap:runtimefiletype="Topic" madcap:targettype="WebHelp" lang="en-US" xml:lang="en-US" madcap:pathtohelpsystem="../../../" madcap:helpsystemfilename="idl.xml" madcap:searchtype="Stem">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   Creating Video
+  </title>
+  <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+  <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+  <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <p class="MCWebHelpFramesetLink" style="display: none;">
+   <a href="../../../idl_CSH.html#Creating IDL Programs/Application Programming/CreatingVideo.html" style="">
+    Open topic with navigation
+   </a>
+  </p>
+  <div class="MCBreadcrumbsBox_0">
+   <span class="MCBreadcrumbsPrefix">
+    <![CDATA[ ]]>
+   </span>
+   <a class="MCBreadcrumbsLink" href="../../IDL Programming.html">
+    IDL Programming
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <a class="MCBreadcrumbsLink" href="../Programming Tasks.html">
+    Tasks
+   </a>
+   <span class="MCBreadcrumbsDivider">
+    &gt;
+   </span>
+   <span class="MCBreadcrumbs">
+    Creating Video
+   </span>
+  </div>
+  <h1>
+   Creating Video
+  </h1>
+  <p>
+   Video is generally stored as a collection of compressed streams in a container file.  Each  stream may be video images, an audio track, or other data (such as subtitles), synchronized with each other.  The container (file format) determines how those streams are stored.
+   <a href="../../Object Classes/File Format/IDLffVideoWrite.html">
+    IDLffVideoWrite
+   </a>
+   supports a number of file formats, including:
+  </p>
+  <ul>
+   <li value="1">
+    <b>
+     .avi
+    </b>
+    — Audio Video Interleave.  A very widely supported file format, which can be used to contain audio and video compressed with almost any codec.
+   </li>
+   <li value="2">
+    <b>
+     .flv —
+    </b>
+    Adobe Flash Video.  Similar to Adobe Flash, although not meant to be embedded in web pages directly, but rather used by other Flash applets.
+   </li>
+   <li value="3">
+    <b>
+     .gif
+    </b>
+    — animated GIF.  This format has relatively poor quality and compression, but is very simple to put in web pages. GIFs do not support audio, and only support the 'raw' video codec.
+   </li>
+   <li value="4">
+    <b>
+     .mov
+    </b>
+    — Apple Quicktime format.
+   </li>
+   <li value="5">
+    <b>
+     .mp4
+    </b>
+    — MPEG-4 File Format.  Also widely supported, but may only use the H.263 or H.264 video codecs, and the AAC audio codec.
+   </li>
+   <li value="6">
+    <b>
+     .swf —
+    </b>
+    Adobe Flash.  This is a better format for embedding in web pages, though still not very suitable for other uses.
+   </li>
+   <li value="7">
+    <b>
+     .webm —
+    </b>
+    Google WebM.  Uses the VP8 codec for video, and the Vorbis codec for audio.  VP8 and Vorbis are among the best codecs, and unique in that they are completely open, royalty-free, and free of patent restrictions.  However, they are not yet widely supported.
+   </li>
+  </ul>
+  <p>
+   <a href="../../Object Classes/File Format/IDLffVideoWrite.html">
+    IDLffVideoWrite
+   </a>
+   attempts to guess the intended file format from the filename, if one isn't explicitly specified  using the FORMAT keyword in the
+   <a href="../../Object Classes/File Format/IDLffVideoWrite.html#IDLffVid">
+    IDLffVideoWrite::Init
+   </a>
+   method.
+  </p>
+  <p>
+   In the following example, you can change the extension of the filename to try the different formats.
+  </p>
+  <p class="Code">
+   PRO VIDEO_EXAMPLE_FILE_FORMAT
+  </p>
+  <p class="Code_Indented">
+   width = 500
+  </p>
+  <p class="Code_Indented">
+   height = 500
+  </p>
+  <p class="Code_Indented">
+   fps = 20
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   surf = SURFACE(/TEST, /BUFFER, DIMENSIONS=[width,height])
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   ; Each of the following lines produces a file in
+  </p>
+  <p class="Code_Indented">
+   ; a different format.
+  </p>
+  <p class="Code_Indented">
+   oVid = IDLffVideoWrite('video_example_file_format.webm')
+  </p>
+  <p class="Code_Indented">
+   ;oVid = IDLffVideoWrite('video_example_file_format.gif')
+  </p>
+  <p class="Code_Indented">
+   ;oVid = IDLffVideoWrite('video_example_file_format.swf')
+  </p>
+  <p class="Code_Indented">
+   ;oVid = IDLffVideoWrite('video_example_file_format.bin', FORMAT='mp4')
+  </p>
+  <p class="Code_Indented">
+   ; Prints out a list of supported file formats
+  </p>
+  <p class="Code_Indented">
+   PRINT, "Supported file formats: ", oVid.GetFormats()
+  </p>
+  <p class="Code_Indented">
+   vidStream = oVid.AddVideoStream(width, height, fps)
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   FOR i = 0, 90 do begin
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;surf.Rotate, 4, /YAXIS
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;frame = surf.CopyWindow()
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;!NULL = oVid.Put(vidStream, frame)
+  </p>
+  <p class="Code_Indented">
+   ENDFOR
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   oVid.Cleanup
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <h2>
+   Compression (Codecs)
+  </h2>
+  <p>
+   There are many different ways to compress each of these formats. A&#160;codec (short for COder/DECoder) is  software for compressing and decompressing a stream. Each format's support for different audio and video codecs vary.  If the codecs aren't explicitly set, IDLffVideoWrite will try to choose a default appropriate for the file format. Some common video codecs are: MPEG-2 Video, MPEG-4 Visual, and H.264.
+  </p>
+  <p>
+   Some common audio codecs are AAC, MP3, FLAC, and PCM.  Some codecs are better than others, some are more widely supported than others, and some have strengths and weaknesses that make them best suited for specific purposes.
+  </p>
+  <p>
+   In general, which codec you use plays a big role in file size and quality, but the choice of file format matters little so long as it supports your chosen codecs, and is supported by the player software.
+  </p>
+  <p>
+   Each file format supports a different set of codecs for its streams.  In general, we suggest using MP4 or AVI files with MPEG-4 compressed video. The following example makes an AVI file using the default bitrates and codecs: 2 Mbps MPEG-4 video, and 128 Kbps MP2 audio.
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; A helper function to create the audio
+  </p>
+  <p class="Code">
+   FUNCTION create_audio, offset, length, scale
+  </p>
+  <p class="Code_Indented">
+   t = (lindgen(length) + offset*length) / scale
+  </p>
+  <p class="Code_Indented">
+   s = (t/(2^7) OR&#160;t OR t/(2^6)) * 10 + 4 * (t AND t/(2^13) or t/(2^6))
+  </p>
+  <p class="Code_Indented">
+   RETURN, FIX(s, type=1) * (2^5)
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Now create the video
+  </p>
+  <p class="Code">
+   PRO VIDEO_EXAMPLE_DEFAULT_SETTING
+  </p>
+  <p class="Code_Indented">
+   width      = 500
+  </p>
+  <p class="Code_Indented">
+   height     = 500
+  </p>
+  <p class="Code_Indented">
+   fps        = 20
+  </p>
+  <p class="Code_Indented">
+   sampleRate = 44100
+  </p>
+  <p class="Code_Indented">
+   surf = SURFACE(/TEST, /BUFFER, DIMENSIONS=[width,height])
+  </p>
+  <p class="Code_Indented">
+   oVid = IDLffVideoWrite('video_example_default_setting.avi')
+  </p>
+  <p class="Code_Indented">
+   vidStream = oVid.AddVideoStream(width, height, fps)
+  </p>
+  <p class="Code_Indented">
+   audStream = oVid.AddAudioStream(sampleRate)
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   for i = 0, 100 do begin
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;surf.Rotate, 4, /YAXIS
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;audio = create_audio(i, sampleRate/fps, 5)
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;frame = surf.CopyWindow()
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;!NULL = oVid.Put(audStream, audio)
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;!NULL = oVid.Put(vidStream, frame)
+  </p>
+  <p class="Code_Indented">
+   ENDFOR
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   oVid.Cleanup
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   You can explicitly set the codec used to compress audio and video.  For example, you might prefer the
+   <code>
+    msmpeg4v2
+   </code>
+   codec  over standard
+   <code>
+    mpeg4
+   </code>
+   , because Windows Media Player in certain versions of Windows  can play msmpeg4v2 video but not mpeg4.
+  </p>
+  <p>
+   You can also set what bitrate the codec should attempt to compress down to, in bits per second.  In general, quality and file size are directly proportional to bitrate.  Bitrate simply sets a goal for the codec; actual results may be higher or lower.  Different codecs respond to adjusted bitrates differently; you may need to experiment to find the right tradeoff for your application.
+  </p>
+  <p>
+   The following example prints the supported audio and video codecs, then sets the codec and bitrate.
+  </p>
+  <p class="Code">
+   PRO VIDEO_EXAMPLE_CUSTOM_SETTING
+  </p>
+  <p class="Code_Indented">
+   width      = 500
+  </p>
+  <p class="Code_Indented">
+   height     = 500
+  </p>
+  <p class="Code_Indented">
+   fps        = 20
+  </p>
+  <p class="Code_Indented">
+   surf = SURFACE(/TEST, /BUFFER, DIMENSIONS=[width,height])
+  </p>
+  <p class="Code_Indented">
+   oVid = IDLffVideoWrite('video_example_custom_setting.avi')
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   ; Prints out a list of supported file formats
+  </p>
+  <p class="Code_Indented">
+   PRINT, "Supported audio codecs: ", oVid.GetCodecs(/AUDIO)
+  </p>
+  <p class="Code_Indented">
+   PRINT, "Supported video codecs: ", oVid.GetCodecs(/VIDEO)
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   ; Uses the msmpeg4v2 codec, rather than the default mpeg4.
+  </p>
+  <p class="Code_Indented">
+   ; Also, sets a very low bitrate of 800Kbps to show how file
+  </p>
+  <p class="Code_Indented">
+   ; size is reduced and quality suffers.  Try comparing with
+  </p>
+  <p class="Code_Indented">
+   ; a fairly high setting of 8Mbps- 8e6.
+  </p>
+  <p class="Code_Indented">
+   vidStream = oVid.AddVideoStream(width, height, fps, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;CODEC='msmpeg4', BIT_RATE=8e5)
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   FOR i = 0, 90 DO BEGIN
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;surf.Rotate, 4, /YAXIS
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;frame = surf.CopyWindow()
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;!NULL = oVid.Put(vidStream, frame)
+  </p>
+  <p class="Code_Indented">
+   ENDFOR
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   oVid.Cleanup
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   It is also possible to output audio-only files, shown in the following example:
+  </p>
+  <p class="Code">
+   ; A helper function to create the audio
+  </p>
+  <p class="Code">
+   FUNCTION make_music, offset, length, scale
+  </p>
+  <p class="Code_Indented">
+   t = (lindgen(length) + offset*length) / scale
+  </p>
+  <p class="Code_Indented">
+   s = (t/(2^7) OR t OR t/(2^6)) * 10 + 4 * (t AND t/(2^13) or t/(2^6))
+  </p>
+  <p class="Code_Indented">
+   return, fix(s, type=1) * (2^5)
+  </p>
+  <p class="Code">
+   end
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Now create the audio file
+  </p>
+  <p class="Code">
+   PRO audio_example
+  </p>
+  <p class="Code_Indented">
+   sampleRate = 44100
+  </p>
+  <p class="Code_Indented">
+   oVid = IDLffVideoWrite('audio_example.wav')
+  </p>
+  <p class="Code_Indented">
+   audStream = oVid.AddAudioStream(sampleRate)
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   FOR i = 0, 60 DO&#160;BEGIN
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;audio = make_music(i, sampleRate, 5)
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;!NULL = oVid.Put(audStream, audio)
+  </p>
+  <p class="Code_Indented">
+   ENDFOR
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   oVid.Cleanup
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="NoteIndented">
+   If you have trouble playing videos, we recommend using VLC Media Player (
+   <a href="http://www.videolan.org/">
+    http://www.videolan.org/
+   </a>
+   ).  It is free, open-source, available for virtually every operating system, and can play nearly any type of video.
+  </p>
+  <p>
+   <a href="../../Object Classes/File Format/IDLffVideoWrite.html">
+    IDLffVideoWrite
+   </a>
+   uses the open-source FFmpeg library to handle video file formats and compression.  FFmpeg supports many file formats, audio codecs, and video codecs, but copyright and patent concerns prevent us from being able to include some of these features in the version that comes with IDL.
+  </p>
+  <p>
+   However, we have designed
+   <a href="../../Object Classes/File Format/IDLffVideoWrite.html">
+    IDLffVideoWrite
+   </a>
+   so that you can replace the default version of FFmpeg in IDL with a different one.  If you wish to replace IDL's version of FFmpeg with another one, see the following section.
+  </p>
+  <h3>
+   <![CDATA[ ]]>
+   <a name="Replacin">
+   </a>
+   Replacing the FFmpeg Version
+  </h3>
+  <p>
+   Some reasons you might want to replace the FFmpeg version include: being able to put audio in MP4 files with the AAC audio codec, putting MP3-compressed audio in AVI files or by itself into an MP3 file, using the Apple Quicktime (*.mov) file format, and using the H.264 video codec.
+  </p>
+  <p>
+   To replace the IDL version of FFmpeg, the following files need to be to replaced. They are located in
+   <code>
+    IDL_DIR\bin\bin.x86
+   </code>
+   (for 32-bit IDL)
+   <code>
+    <![CDATA[ ]]>
+   </code>
+   or
+   <code>
+    IDL_DIR\bin\bin.x86_64
+   </code>
+   (for 64-bit IDL).
+  </p>
+  <ul>
+   <li value="1">
+    avcodec-53.dll
+   </li>
+   <li value="2">
+    avformat-53.dll
+   </li>
+   <li value="3">
+    avutil-51.dll
+   </li>
+   <li value="4">
+    swscale-2.dll
+   </li>
+  </ul>
+  <p>
+   Because building FFmpeg for Windoes can be difficult, there are web sites that maintain builds of the latest versions. To locate one of these, try searching for something like "ffmpeg-0.8-win32-shared."
+  </p>
+  <p>
+   Please  make copies of the .dll files before replacing them. Instructions on how to build FFmpeg for  Linux and Mac OS are also available on various online sites. As with Windows, just the four FFmpeg library files in the appropriate IDL bin directory need to be replaced to upgrade.
+  </p>
+  <p>
+   You can check if your replacement was successful by printing out the values of IDLffVideoWrite::GetCodecs() and ::GetFormats() before and after — the lists of supported codecs and formats should become much longer after you replace the files.
+  </p>
+  <p>
+   H.264 is widely supported and one of the best video codecs today.  If you have replaced IDL's version of FFmpeg with one that includes H.264, you can use it by specifying the 'libx264' codec when adding the video stream. We recommend using an MP4 container format, because AVI does not support H.264 and is likely to have problems. When adding an H.264 stream to a video, you can use the PRESET keyword to select one of the built-in groups of settings for the H.264 compression.
+  </p>
+  <p>
+   See
+   <a href="../../Object Classes/File Format/IDLffVideoWrite.html">
+    IDLffVideoWrite
+   </a>
+   for the full list of presets. Most of them (with names such as 'ultrafast', 'medium', 'slower', etc.) simply adjust the tradeoff between encoding speed and video quality, with fairly constant file size.  The 'lossless' presets will guarantee perfect video quality, each with a different tradeoff between encoding speed and file size.  Not all players that support H.264 can play lossless video.
+  </p>
+  <p>
+   The following example uses a replaced FFmpeg version and specifies the  'libx264' codec:
+  </p>
+  <p class="Code">
+   ; A helper function to create the audio
+  </p>
+  <p class="Code">
+   FUNCTION audio_helper, offset, length, scale
+  </p>
+  <p class="Code_Indented">
+   t = (lindgen(length) + offset*length) / scale
+  </p>
+  <p class="Code_Indented">
+   s = (t/(2^7) OR t OR t/(2^6)) * 10 + 4 * (t AND t/(2^13) or t/(2^6))
+  </p>
+  <p class="Code_Indented">
+   RETURN, FIX(s, type=1) * (2^5)
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p class="Code">
+   &#160;
+  </p>
+  <p class="Code">
+   ; Now create the video
+  </p>
+  <p class="Code">
+   PRO&#160;video_example_custom_ffmpeg
+  </p>
+  <p class="Code_Indented">
+   width      = 500
+  </p>
+  <p class="Code_Indented">
+   height     = 500
+  </p>
+  <p class="Code_Indented">
+   fps        = 20
+  </p>
+  <p class="Code_Indented">
+   sampleRate = 44100
+  </p>
+  <p class="Code_Indented">
+   surf = surface(/TEST, /BUFFER, DIMENSIONS=[width,height])
+  </p>
+  <p class="Code_Indented">
+   oVid = IDLffVideoWrite('video_example_custom_ffmpeg.mp4')
+  </p>
+  <p class="Code_Indented">
+   vidStream = oVid.AddVideoStream(width, height, fps, $
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;CODEC='libx264', PRESET='medium')
+  </p>
+  <p class="Code_Indented">
+   audStream = oVid.AddAudioStream(sampleRate, CODEC='aac')
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   FOR i = 0, 200 DO&#160;BEGIN
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;surf.Rotate, 4, /YAXIS
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;audio = audio_helper(i, sampleRate/fps, 5)
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;frame = surf.CopyWindow()
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;!NULL = oVid.Put(audStream, audio)
+  </p>
+  <p class="Code_Indented">
+   &#160;&#160;!NULL = oVid.Put(vidStream, frame)
+  </p>
+  <p class="Code_Indented">
+   ENDFOR
+  </p>
+  <p class="Code_Indented">
+   &#160;
+  </p>
+  <p class="Code_Indented">
+   oVid.Cleanup
+  </p>
+  <p class="Code">
+   END
+  </p>
+  <p>
+   For more information, see
+   <a href="../../Object Classes/File Format/IDLffVideoWrite.html">
+    IDLffVideoWrite
+   </a>
+   .
+  </p>
+  <div class="mp_footer">
+   Copyright ©
+   <span class="DocumentTitleCopyrightYear">
+    2012
+   </span>
+   <![CDATA[ ]]>
+   <span class="DocumentTitleCopyrightCompanyName">
+    Exelis Visual Information Solutions, Inc.
+   </span>
+   All Rights Reserved.
+  </div>
+  <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+  </script>
+ </body>
+</html>
